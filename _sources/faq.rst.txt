@@ -1,0 +1,36 @@
+FAQ
+===
+
+Below are some frequently asked questions about **pyworldatlas**. If you have any additional questions, feel free to check the `GitHub Issue Tracker <https://github.com/yourrepo/pyworldatlas/issues>`_.
+
+Does pyworldatlas require an internet connection to work?
+---------------------------------------------------------
+No, **pyworldatlas** ships with a built-in SQLite database called `worldatlas.sqlite3`, so all the data is stored locally. This ensures that you can use the package without needing an internet connection.
+
+How does pyworldatlas ensure political neutrality?
+--------------------------------------------------
+The data compiled by **pyworldatlas** aims to be politically neutral. I rely on publicly available sources and focus on objective data like official country names, population, geography, and economic statistics. I avoid any subjective or political opinions.
+
+What is the minimum Python version required to use pyworldatlas?
+----------------------------------------------------------------
+**pyworldatlas** requires Python 3.8 or higher to work properly. However, Python 3.9 is best for maximum performance.
+
+Does pyworldatlas depend on any external libraries?
+---------------------------------------------------
+No, **pyworldatlas** does not have any external dependencies. It is designed to be lightweight, with everything handled internally using Python’s standard libraries, such as SQLite.
+
+What data can I get from pyworldatlas?
+--------------------------------------
+**pyworldatlas** provides a wide range of data for each country, including official names, population, capital, largest city, GDP, government structure, and more. For a full list of available data, refer to the `API Reference <api_reference.html>`_.
+
+Where does pyworldatlas source its data from?
+---------------------------------------------
+The data in **pyworldatlas** is manually compiled from publicly available resources, primarily sourced from the `List of Countries on Simple Wikipedia <https://simple.wikipedia.org/wiki/List_of_countries>`_. The goal is to ensure that the information provided is accurate and up to date.
+
+How can I verify the source of the data for each country?
+---------------------------------------------------------
+Each country's profile in **pyworldatlas** includes the main Wikipedia article revision ID from which the information was sourced. This ensures transparency and allows users to verify the exact version of the data used. A method to quickly retrieve the revision ID will be available soon for convenience.
+
+How do I report an issue or suggest a feature?
+----------------------------------------------
+If you encounter any issues or have suggestions for new features, please visit our `GitHub Issue Tracker <https://github.com/yourrepo/pyworldatlas/issues>`_ and create a new issue. Contributions are always welcome!

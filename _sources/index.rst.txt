@@ -1,0 +1,42 @@
+Welcome to pyworldatlas's Documentation
+========================================
+
+**pyworldatlas** is a Python package that compiles detailed data about every country, offering easy-to-use methods for retrieving country profiles, statistics, and more.
+
+Key Features
+------------
+- Extensive country data, including official names, population, geography, government details, GDP, and more.
+- Lightweight and efficient, ensuring fast access to country information.
+- No external dependencies, making it easy to install and integrate into any Python project.
+
+Get started by following the instructions below.
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   introduction
+   installation
+   getting_started
+   api_reference
+   country_data
+   database_download
+   faq
+   contributing
+   roadmap
+   changelog
+   license
+
+Quick Links
+-----------
+- `GitHub Repository <https://github.com/yourrepo/pyworldatlas>`_
+- `Issue Tracker <https://github.com/yourrepo/pyworldatlas/issues>`_
+- `PyPI Page <https://pypi.org/project/pyworldatlas>`_
+
+Contributing
+------------
+Contributions are welcome! Please see the `Contributing Guide <contributing.html>`_ for more details.
+
+License
+-------
+pyworldatlas is licensed under the MIT License. See the `License <license.html>`_ for more information.

@@ -1,0 +1,35 @@
+Roadmap
+=======
+
+The development of **pyworldatlas** is ongoing, with a focus on building a comprehensive and reliable package of country data. Below is the current plan for the package's growth.
+
+Data Collection Approach
+------------------------
+The data collection for **pyworldatlas** is done manually. This process is not automated because I want to take the time to personally learn about each country. This ensures that the data is carefully curated and accurate while providing me with a deeper understanding of global information.
+
+
+Goals and Focus Areas
+---------------------
+
+**Data Collection**
+- **Ongoing**: Adding new countries to the database. The aim is to add around 5 countries per week, though this may vary depending on the complexity and availability of data. Each country requires careful compilation, as information does not always follow a consistent format.
+- **Target**: Aim for steady progress toward complete global coverage.
+
+**Package Core Enhancements**
+- **Ongoing**: Improve and refine the core methods for retrieving and processing country data.
+- **Short-Term**: Implement a quick access method for retrieving the Wikipedia article revision ID for each country.
+- **Mid-Term**: Further optimize performance, especially regarding database queries.
+
+**Progress Visualization**
+- **Planned**: Introduce a visual representation of package progress, such as a bar or graph comparing the expected number of countries to be added versus the actual number of countries in the database. This will be updated periodically to reflect the progress.
+
+Future Plans
+------------
+
+As the package evolves, there may be opportunities to introduce additional features and optimizations. However, the current priority remains:
+1. **Completing the country dataset**.
+2. **Improving the performance and usability of the package**.
+
+Once the dataset is nearing completion, additional goals such as opening the package for contributions and expanding the documentation will be considered.
+
+Thank you for following the development of **pyworldatlas**. Stay tuned for updates!

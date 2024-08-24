@@ -1,0 +1,41 @@
+Installation
+============
+
+To start using **pyworldatlas**, follow these simple steps to get the package installed on your system.
+
+Requirements
+------------
+- **Python 3.8+** is required to run pyworldatlas.
+- For maximum performance, **Python 3.9** is recommended.
+
+Installing pyworldatlas
+-----------------------
+To install pyworldatlas, simply run the following command using `pip`:
+
+.. code-block:: bash
+
+   pip install pyworldatlas
+
+This will automatically install pyworldatlas and make it available for use in your Python environment.
+
+Verifying Installation
+----------------------
+To verify that pyworldatlas has been successfully installed, you can check the version using the command line:
+
+.. code-block:: bash
+
+   pyworldatlas --version
+
+Alternatively, you can verify it in your Python interpreter:
+
+.. code-block:: python
+
+   import pyworldatlas
+
+   print(pyworldatlas.__version__)
+
+Either method should display the current version of pyworldatlas, confirming that the installation was successful.
+
+Next Steps
+----------
+Once installed, proceed to the `Getting Started <getting_started.html>`_ guide to learn how to use pyworldatlas.

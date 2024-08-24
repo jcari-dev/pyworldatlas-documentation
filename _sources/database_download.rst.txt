@@ -1,0 +1,51 @@
+Database Download
+=================
+
+The `pyworldatlas` database is available for download. This database contains all the current information compiled about the countries in the package.
+
+.. note::
+   The database is included by default when you install `pyworldatlas`, so downloading it manually is optional unless you want to access it separately.
+
+Download Link
+-------------
+You can download the latest version of the database from the link below:
+
+- **Database File (Uncompressed)**: :download:`worldatlas.sqlite3 <worldatlas.sqlite3>`
+- **Database File (Compressed)**: :download:`worldatlas.sqlite3.gz <worldatlas.sqlite3.gz>`
+
+File Details
+------------
+
+- **Uncompressed**:
+
+  - **Size**: 288 KB
+  - **SHA-256 Hash**:
+    
+    `2e8b9594da57e0e80f0a692530136dffb06d631375a159ea1bd242642d837760`
+
+  
+- **Compressed (GZIP)**:
+
+  - **Size**: 10 KB
+  - **SHA-256 Hash**:
+    
+    `1fd820212aa6cbc3f07ab32c3a4db3b7f683c1101a80a7649ddcf2fdf0aa7bd0`
+
+
+
+Verifying the File
+------------------
+To ensure the integrity of the downloaded database file, you can verify the SHA-256 hash. This can be done with the following command, depending on your operating system:
+
+**Linux/Mac**:
+
+.. code-block:: bash
+
+    sha256sum worldatlas.sqlite3
+
+**Windows (PowerShell)**:
+
+.. code-block:: powershell
+
+    Get-FileHash worldatlas.sqlite3 -Algorithm SHA256
+

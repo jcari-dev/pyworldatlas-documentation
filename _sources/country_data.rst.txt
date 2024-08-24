@@ -1,0 +1,17 @@
+Country Data
+============
+
+This page lists all the countries currently available in the `pyworldatlas` database. If a country is shown below, it indicates that its information is present in the database. Otherwise, the country is yet to be added.
+
+.. list-table:: Countries in pyworldatlas Database
+   :header-rows: 1
+   :widths: 20 10
+
+   * - **Country**
+     - **ISO 3166 CODE**
+   * - Afghanistan
+     - AF
+   * - Albania
+     - AL
+   * - Algeria
+     - DZ

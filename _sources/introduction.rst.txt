@@ -1,0 +1,31 @@
+Introduction
+============
+
+Welcome to **pyworldatlas**, a Python package designed to provide comprehensive data about every country in the world. Whether you are building an application that requires detailed country profiles, or you simply need to access accurate and up-to-date information on global statistics, pyworldatlas has you covered.
+
+What is pyworldatlas?
+----------------------
+**pyworldatlas** is a lightweight, efficient, and easy-to-use Python package that compiles a wide range of data on countries. The package is designed with simplicity in mind, offering methods to retrieve detailed country profiles that include:
+
+- Official names
+- Population statistics
+- Geographic information
+- Government details
+- Economic data (GDP, Gini Index)
+- Ethnic groups, religions, and languages
+- Timezones, currencies, and much more
+
+Key Benefits
+------------
+- **No external dependencies**: Easily install and use without any hassle.
+- **Lightweight and fast**: Minimal footprint with efficient performance.
+- **Comprehensive**: Covers a wide array of country-related data in a single package.
+- **Easy to integrate**: Works seamlessly in any Python project, whether you’re building applications, performing data analysis, or just exploring global data.
+
+Who is it for?
+--------------
+**pyworldatlas** is designed for developers, data scientists, and anyone interested in accessing detailed country-level data for their projects. Whether you're building a web application, running data analysis, or working on personal projects, pyworldatlas offers a flexible and reliable tool for working with global data.
+
+Next Steps
+----------
+To start using pyworldatlas, follow the `Installation <installation.html>`_ guide or jump right into the `Getting Started <getting_started.html>`_ page to begin working with the package.

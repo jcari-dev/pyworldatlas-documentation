@@ -1,0 +1,123 @@
+API Reference
+=============
+
+This section provides a detailed overview of the available methods and their usage in **pyworldatlas**. Each method is designed to retrieve specific data about countries, with simple and intuitive interfaces.
+
+.. note::
+   Throughout the examples, we will assume **pyworldatlas** has been imported as `pwa`.
+
+.. code-block:: python
+
+   import pyworldatlas as pwa
+   atlas = pwa.Atlas()
+
+Classes and Methods
+-------------------
+
+Atlas Class
+-----------
+The **Atlas** class is the main interface for accessing country data. It provides several methods to retrieve specific country profiles, lists of countries, and other data.
+
+get_country_profile
+-------------------
+Fetches detailed profile information for a specific country.
+
+**Parameters**:
+- **name** (*str*) – The name or ISO 3166 Alpha-2 code of the country.
+
+**Returns**:
+- **dict** – A dictionary containing detailed information about the country's official names, capital, largest city, area, population, government, and more.
+
+**Example**:
+
+.. code-block:: python
+
+   profile = atlas.get_country_profile("France")
+   print(profile)
+
+**Example Output**:
+
+.. code-block:: python
+
+   {
+       'capital': {
+           'name': 'Paris',
+           'coordinates_degree_east': 2.3522,
+           'coordinates_degree_north': 48.8566,
+           'is_largest_city': True,
+       },
+       'driving_side': 'Right',
+       'calling_code': '+33',
+       'iso_3166_code': 'FR',
+       'internet_tld': '.fr',
+   }
+
+get_countries (WIP)
+-------------------
+Fetches a list of countries, optionally filtered by continents or population/GDP ranges.
+
+**Parameters:**
+
+- **continents** (*list of str, optional*) – The continents to filter by (e.g., ``["Asia", "Europe"]``).
+- **min_population** (*float, optional*) – The minimum population to filter by.
+- **max_population** (*float, optional*) – The maximum population to filter by.
+- **min_gdp** (*float, optional*) – The minimum GDP to filter by.
+- **max_gdp** (*float, optional*) – The maximum GDP to filter by.
+
+**Returns**:
+
+- **list of str** – A list of country names that match the criteria.
+
+**Example**:
+
+.. code-block:: python
+
+    countries = atlas.get_countries(continents=["Europe"], min_population=1000000)
+    print(countries)
+
+**Example Output**:
+
+.. code-block:: python
+
+    ['France', 'Germany', 'Italy', 'Spain']
+
+get_progress
+------------
+Returns the percentage of data that the package currently contains.
+
+**Returns**:
+- **float** – The percentage of the dataset that is complete.
+
+**Example**:
+
+.. code-block:: python
+
+   progress = atlas.get_progress()
+
+**Example Output**:
+
+.. code-block:: python
+
+    "Current data size: 3, Total data size: 285, Progress: 1.1%"
+
+Error Handling
+--------------
+
+**pyworldatlas** provides custom exceptions to help identify and handle errors efficiently.
+
+CountryNotFoundError
+--------------------
+Raised when a country is not found in the dataset.
+
+**Example**:
+
+.. code-block:: python
+
+   try:
+       profile = atlas.get_country_profile("Nonexistentland")
+   except pwa.Atlas.CountryNotFoundError:
+       print("Country not found.")
+
+Additional Features
+-------------------
+**pyworldatlas** is continually evolving. Refer to the `Roadmap <roadmap.html>`_ for upcoming features and improvements.

@@ -1,0 +1,46 @@
+Changelog
+=========
+
+0.0.7 - 2024-08-24
+------------------
+**Added**
+- Polished documentation, added database download and country data pages.
+- Finished the `get_country_profile` method, now it is a lot more refined and better.
+- Database is now shipped as a gzip and then decompressed for the package to use.
+- Added basic tests (need to be expanded).
+- Incorporated tox, to be able to test in different Python versions and tests behave accordingly.
+- Bumped the requirement for the package to Python 3.8+ (support for Python 3.7 or earlier is now deprecated).
+- Added the --version cli command for the package.
+- Methods are now fragmented to facilitate testing.
+- Many smaller other fixes and enhancements.
+- Databases are now de-fragmented prior to final release.
+
+0.0.6 - 2024-08-20
+------------------
+**Added**
+- Added Algeria country data.
+- Ensured uniqueness for languages in the dataset.
+
+0.0.5 - 2024-08-19
+------------------
+**Added**
+- Completed country data for Albania.
+- Added support for Daylight Savings Time (DST).
+
+**Fixed**
+- Updated largest city and coordinates for each country model.
+
+0.0.4 - 2024-08-19
+------------------
+**Added**
+- Introduced the `Continent` model following the 7-continent approach.
+- Added the `needs_updated` and `last_updated` fields to the country model.
+- Introduced office terms for prime ministers, presidents, and other leaders.
+
+0.0.3 - 2024-08-16
+------------------
+**Added**
+- Initial base model.
+- Added data for Afghanistan (0.35% completion).
+- Added official country names for stronger profiles (e.g., "Albania" -> "Republic of Albania").
+- Added Wikipedia revision ID for each country to track data sources.

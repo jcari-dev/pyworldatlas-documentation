@@ -1,0 +1,12 @@
+Contributing
+============
+
+Thank you for your interest in contributing to **pyworldatlas**. 
+
+At this time, **pyworldatlas** is a personal project, and I am not accepting any external contributions. The goal is to fully complete the package before opening it up to collaboration. 
+
+Once the project reaches a stable and complete state, I will provide detailed guidelines for contributing, including coding standards, issue reporting, and feature requests.
+
+Stay tuned for updates! In the meantime, feel free to use the package and provide feedback via the `GitHub Issue Tracker <https://github.com/yourrepo/pyworldatlas/issues>`_.
+
+Thank you for your understanding!
