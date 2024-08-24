@@ -35,7 +35,7 @@ Quick Links
 
 Contributing
 ------------
-Please see the `Contributing Guide <contributing.html>`_ for more details.
+Please see the `Contributing Page <contributing.html>`_ for more details.
 
 License
 -------
