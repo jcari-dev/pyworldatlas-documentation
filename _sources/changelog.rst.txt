@@ -1,19 +1,29 @@
 Changelog
 =========
 
+0.0.8 - 2024-08-24
+------------------
+*Released*
+- Launched live documentation on GitHub Pages.
+- Documentation now links properly to all relevant sections and is stable.
+
 0.0.7 - 2024-08-24
 ------------------
-**Added**
-- Polished documentation, added database download and country data pages.
-- Finished the `get_country_profile` method, now it is a lot more refined and better.
-- Database is now shipped as a gzip and then decompressed for the package to use.
-- Added basic tests (need to be expanded).
-- Incorporated tox, to be able to test in different Python versions and tests behave accordingly.
-- Bumped the requirement for the package to Python 3.8+ (support for Python 3.7 or earlier is now deprecated).
-- Added the --version cli command for the package.
-- Methods are now fragmented to facilitate testing.
-- Many smaller other fixes and enhancements.
-- Databases are now de-fragmented prior to final release.
+*Added*
+- Polished documentation, introduced database download and country data pages.
+- Completed the `get_country_profile` method, making it more refined.
+- Basic tests integrated (will be expanded).
+- Added `--version` CLI command.
+- Fragmented methods to improve testability.
+- Python version requirement updated to 3.8+. Support for Python 3.7 and earlier deprecated.
+- Added tox for multi-version testing.
+- Database shipped as gzip, decompressed for use.
+
+*Fixed*
+- Applied various smaller fixes and enhancements.
+
+*Enhanced*
+- Defragmented databases before final release.
 
 0.0.6 - 2024-08-20
 ------------------
