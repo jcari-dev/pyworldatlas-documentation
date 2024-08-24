@@ -4,12 +4,15 @@ Changelog
 0.0.8 - 2024-08-24
 ------------------
 *Released*
+
 - Launched live documentation on GitHub Pages.
 - Documentation now links properly to all relevant sections and is stable.
+
 
 0.0.7 - 2024-08-24
 ------------------
 *Added*
+
 - Polished documentation, introduced database download and country data pages.
 - Completed the `get_country_profile` method, making it more refined.
 - Basic tests integrated (will be expanded).
@@ -20,37 +23,55 @@ Changelog
 - Database shipped as gzip, decompressed for use.
 
 *Fixed*
+
 - Applied various smaller fixes and enhancements.
 
 *Enhanced*
+
 - Defragmented databases before final release.
+
 
 0.0.6 - 2024-08-20
 ------------------
-**Added**
+*Added*
+
 - Added Algeria country data.
 - Ensured uniqueness for languages in the dataset.
 
+
 0.0.5 - 2024-08-19
 ------------------
-**Added**
+*Added*
+
 - Completed country data for Albania.
 - Added support for Daylight Savings Time (DST).
 
-**Fixed**
+*Fixed*
+
 - Updated largest city and coordinates for each country model.
+
 
 0.0.4 - 2024-08-19
 ------------------
-**Added**
-- Introduced the `Continent` model following the 7-continent approach.
-- Added the `needs_updated` and `last_updated` fields to the country model.
+*Added*
+
+- Introduced `Continent` model (7-continent approach).
+- Added `needs_updated` and `last_updated` fields to country model.
 - Introduced office terms for prime ministers, presidents, and other leaders.
+
 
 0.0.3 - 2024-08-16
 ------------------
-**Added**
+*Added*
+
 - Initial base model.
-- Added data for Afghanistan (0.35% completion).
-- Added official country names for stronger profiles (e.g., "Albania" -> "Republic of Albania").
-- Added Wikipedia revision ID for each country to track data sources.
+- Added Afghanistan country data (0.35% complete).
+- Added official country names (e.g., "Republic of Albania").
+- Added Wikipedia revision ID to track data sources.
+
+0.0.1 ~ 0.0.2 - 2024-08-16
+--------------------------
+*Ghost / Test Releases*
+
+- Setup of PyPi package live release.
+
