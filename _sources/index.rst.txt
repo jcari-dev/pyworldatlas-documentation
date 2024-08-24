@@ -29,9 +29,9 @@ Get started by following the instructions below.
 
 Quick Links
 -----------
-- `GitHub Repository <https://github.com/yourrepo/pyworldatlas>`_
-- `Issue Tracker <https://github.com/yourrepo/pyworldatlas/issues>`_
-- `PyPI Page <https://pypi.org/project/pyworldatlas>`_
+- `GitHub Repository <https://github.com/jcari-dev/pyworldatlas-documentation>`_
+- `Issue Tracker <https://github.com/jcari-dev/pyworldatlas-issue-tracker>`_
+- `PyPI Page <https://pypi.org/project/pyworldatlas/>`_
 
 Contributing
 ------------
