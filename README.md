@@ -62,7 +62,7 @@ Comprehensive documentation is available, including examples, API references, an
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute, please check out the [Contributing Guide](https://jcari-dev.github.io/pyworldatlas-documentation/contributing.html) for details.
+If you'd like to contribute, please check out the [Contributing Guide](https://jcari-dev.github.io/pyworldatlas-documentation/contributing.html) for details.
 
 ## License
 
