@@ -120,22 +120,91 @@
 <p><strong>Returns</strong>:
 - <strong>dict</strong> – A dictionary containing detailed information about the country’s official names, capital, largest city, area, population, government, and more.</p>
 <p><strong>Example</strong>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">profile</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">get_country_profile</span><span class="p">(</span><span class="s2">&quot;France&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">profile</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">get_country_profile</span><span class="p">(</span><span class="s2">&quot;Algeria&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
 </pre></div>
 </div>
 <p><strong>Example Output</strong>:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s1">&#39;capital&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Paris&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;coordinates_degree_east&#39;</span><span class="p">:</span> <span class="mf">2.3522</span><span class="p">,</span>
-        <span class="s1">&#39;coordinates_degree_north&#39;</span><span class="p">:</span> <span class="mf">48.8566</span><span class="p">,</span>
-        <span class="s1">&#39;is_largest_city&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s2">&quot;capital&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Algiers&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;coordinates_degree_east&quot;</span><span class="p">:</span> <span class="mf">3.13</span><span class="p">,</span>
+        <span class="s2">&quot;coordinates_degree_north&quot;</span><span class="p">:</span> <span class="mf">36.42</span><span class="p">,</span>
+        <span class="s2">&quot;is_largest_city&quot;</span><span class="p">:</span> <span class="kc">True</span>
     <span class="p">},</span>
-    <span class="s1">&#39;driving_side&#39;</span><span class="p">:</span> <span class="s1">&#39;Right&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;calling_code&#39;</span><span class="p">:</span> <span class="s1">&#39;+33&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;iso_3166_code&#39;</span><span class="p">:</span> <span class="s1">&#39;FR&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;internet_tld&#39;</span><span class="p">:</span> <span class="s1">&#39;.fr&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;total_km2_including_disputed_territories&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;total_km2_internationally_recognized&quot;</span><span class="p">:</span> <span class="mf">2381741.0</span><span class="p">,</span>
+        <span class="s2">&quot;water_percentage&quot;</span><span class="p">:</span> <span class="mf">1.1</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;driving_side&quot;</span><span class="p">:</span> <span class="s2">&quot;Right&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calling_code&quot;</span><span class="p">:</span> <span class="s2">&quot;+213&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;iso_3166_code&quot;</span><span class="p">:</span> <span class="s2">&quot;DZ&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;internet_tld&quot;</span><span class="p">:</span> <span class="s2">&quot;.dz&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;population&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">44700000</span><span class="p">,</span>
+        <span class="s2">&quot;density_km2&quot;</span><span class="p">:</span> <span class="mf">17.7</span><span class="p">,</span>
+        <span class="s2">&quot;date_year&quot;</span><span class="p">:</span> <span class="mi">2021</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;gini_index&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">27.6</span><span class="p">,</span>
+        <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2011</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;gdp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;ppp_trillions&quot;</span><span class="p">:</span> <span class="mf">0.684649</span><span class="p">,</span>
+        <span class="s2">&quot;ppp_per_capita&quot;</span><span class="p">:</span> <span class="s2">&quot;15,765&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;nominal_total_trillions&quot;</span><span class="p">:</span> <span class="mf">0.183687</span><span class="p">,</span>
+        <span class="s2">&quot;nominal_per_capita&quot;</span><span class="p">:</span> <span class="s2">&quot;4,229&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;ppp_gdp_year&quot;</span><span class="p">:</span> <span class="mi">2019</span><span class="p">,</span>
+        <span class="s2">&quot;nominal_gdp_year&quot;</span><span class="p">:</span> <span class="mi">2019</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;government&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;president&quot;</span><span class="p">:</span> <span class="s2">&quot;Abdelmadjid Tebboune&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;prime_minister&quot;</span><span class="p">:</span> <span class="s2">&quot;Nadir Larbaoui&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;declaration_of_state_sovereignty&quot;</span><span class="p">:</span> <span class="s2">&quot;1962-07-05&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;other_leader_title&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;other_leader&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;government_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Unitary semi-presidential constitutional republic&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;president_assumed_office&quot;</span><span class="p">:</span> <span class="s2">&quot;2019-12-19&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;prime_minister_assumed_office&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;other_leader_assumed_office&quot;</span><span class="p">:</span> <span class="kc">None</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;official_names&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;English&quot;</span><span class="p">:</span> <span class="s2">&quot;People&#39;s Democratic Republic of Algeria&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Arabic&quot;</span><span class="p">:</span> <span class="s2">&quot;الجمهورية الجزائرية الديمقراطية الشعبية&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;French&quot;</span><span class="p">:</span> <span class="s2">&quot;République algérienne démocratique et populaire&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Berber&quot;</span><span class="p">:</span> <span class="s2">&quot;ⵜⴰⴳⴷⵓⴷⴰ ⵜⴰⵎⴳⴷⴰⵢⵜ ⵜⴰⵖⵔⴼⴰⵏⵜ ⵜⴰⴷⵣⴰⵢⵔⵉⵢⵜ&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;anthem&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;English&quot;</span><span class="p">:</span> <span class="s2">&quot;We Pledge&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;motto&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Arabic&quot;</span><span class="p">:</span> <span class="s2">&quot;بالشّعب وللشّعب&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;English&quot;</span><span class="p">:</span> <span class="s2">&quot;By the people and for the people&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;religion&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Islam&quot;</span><span class="p">:</span> <span class="mf">99.0</span><span class="p">,</span>
+        <span class="s2">&quot;Others&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;ethnic_groups&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Arab-Berber&quot;</span><span class="p">:</span> <span class="mf">99.0</span><span class="p">,</span>
+        <span class="s2">&quot;Others&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;languages&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;official_languages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Arabic&quot;</span><span class="p">,</span> <span class="s2">&quot;Berber&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;recognized_languages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;French&quot;</span><span class="p">,</span> <span class="s2">&quot;Algerian Arabic (Darja)&quot;</span><span class="p">,</span> <span class="s2">&quot;Kabyle&quot;</span><span class="p">]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;currency&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Dinar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;دج&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;iso_code&quot;</span><span class="p">:</span> <span class="s2">&quot;DA&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;continent&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Africa&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;timezones&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;UTC+1&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;DST&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>

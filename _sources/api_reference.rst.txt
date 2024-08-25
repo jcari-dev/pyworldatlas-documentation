@@ -32,25 +32,95 @@ Fetches detailed profile information for a specific country.
 
 .. code-block:: python
 
-   profile = atlas.get_country_profile("France")
+   profile = atlas.get_country_profile("Algeria")
    print(profile)
 
 **Example Output**:
 
 .. code-block:: python
 
-   {
-       'capital': {
-           'name': 'Paris',
-           'coordinates_degree_east': 2.3522,
-           'coordinates_degree_north': 48.8566,
-           'is_largest_city': True,
-       },
-       'driving_side': 'Right',
-       'calling_code': '+33',
-       'iso_3166_code': 'FR',
-       'internet_tld': '.fr',
-   }
+    {
+        "capital": {
+            "name": "Algiers",
+            "coordinates_degree_east": 3.13,
+            "coordinates_degree_north": 36.42,
+            "is_largest_city": True
+        },
+        "area": {
+            "total_km2_including_disputed_territories": None,
+            "total_km2_internationally_recognized": 2381741.0,
+            "water_percentage": 1.1
+        },
+        "driving_side": "Right",
+        "calling_code": "+213",
+        "iso_3166_code": "DZ",
+        "internet_tld": ".dz",
+        "population": {
+            "total": 44700000,
+            "density_km2": 17.7,
+            "date_year": 2021
+        },
+        "gini_index": {
+            "value": 27.6,
+            "year": 2011
+        },
+        "gdp": {
+            "ppp_trillions": 0.684649,
+            "ppp_per_capita": "15,765",
+            "nominal_total_trillions": 0.183687,
+            "nominal_per_capita": "4,229",
+            "ppp_gdp_year": 2019,
+            "nominal_gdp_year": 2019
+        },
+        "government": {
+            "president": "Abdelmadjid Tebboune",
+            "prime_minister": "Nadir Larbaoui",
+            "declaration_of_state_sovereignty": "1962-07-05",
+            "other_leader_title": None,
+            "other_leader": None,
+            "government_type": "Unitary semi-presidential constitutional republic",
+            "president_assumed_office": "2019-12-19",
+            "prime_minister_assumed_office": None,
+            "other_leader_assumed_office": None
+        },
+        "official_names": {
+            "English": "People's Democratic Republic of Algeria",
+            "Arabic": "الجمهورية الجزائرية الديمقراطية الشعبية",
+            "French": "République algérienne démocratique et populaire",
+            "Berber": "ⵜⴰⴳⴷⵓⴷⴰ ⵜⴰⵎⴳⴷⴰⵢⵜ ⵜⴰⵖⵔⴼⴰⵏⵜ ⵜⴰⴷⵣⴰⵢⵔⵉⵢⵜ"
+        },
+        "anthem": {
+            "English": "We Pledge"
+        },
+        "motto": {
+            "Arabic": "بالشّعب وللشّعب",
+            "English": "By the people and for the people"
+        },
+        "religion": {
+            "Islam": 99.0,
+            "Others": 1.0
+        },
+        "ethnic_groups": {
+            "Arab-Berber": 99.0,
+            "Others": 1.0
+        },
+        "languages": {
+            "official_languages": ["Arabic", "Berber"],
+            "recognized_languages": ["French", "Algerian Arabic (Darja)", "Kabyle"]
+        },
+        "currency": {
+            "name": "Dinar",
+            "symbol": "دج",
+            "iso_code": "DA"
+        },
+        "continent": ["Africa"],
+        "timezones": {
+            "UTC+1": {
+                "DST": 0
+            }
+        }
+    }
+
 
 get_countries (WIP)
 -------------------

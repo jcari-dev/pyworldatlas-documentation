@@ -111,7 +111,7 @@
 <span class="n">atlas</span> <span class="o">=</span> <span class="n">pwa</span><span class="o">.</span><span class="n">Atlas</span><span class="p">()</span>
 
 <span class="c1"># Fetch the profile of a country by name</span>
-<span class="n">profile</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">get_country_profile</span><span class="p">(</span><span class="s2">&quot;United States&quot;</span><span class="p">)</span>
+<span class="n">profile</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">get_country_profile</span><span class="p">(</span><span class="s2">&quot;Albania&quot;</span><span class="p">)</span>
 
 <span class="c1"># Display the profile information</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">profile</span><span class="p">)</span>
@@ -123,21 +123,87 @@
 <h2>Example Output<a class="headerlink" href="#example-output" title="Link to this heading"></a></h2>
 <p>The output will look something like this:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-    <span class="s1">&#39;capital&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;Washington, D.C.&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;coordinates_degree_east&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">77.0369</span><span class="p">,</span>
-        <span class="s1">&#39;coordinates_degree_north&#39;</span><span class="p">:</span> <span class="mf">38.9072</span><span class="p">,</span>
-        <span class="s1">&#39;is_largest_city&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+    <span class="s2">&quot;capital&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Tirana&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;coordinates_degree_east&quot;</span><span class="p">:</span> <span class="mf">19.49</span><span class="p">,</span>
+        <span class="s2">&quot;coordinates_degree_north&quot;</span><span class="p">:</span> <span class="mf">41.19</span><span class="p">,</span>
+        <span class="s2">&quot;is_largest_city&quot;</span><span class="p">:</span> <span class="kc">True</span>
     <span class="p">},</span>
-    <span class="s1">&#39;largest_city&#39;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;New York City&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;coordinates_degree_east&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mf">74.0060</span><span class="p">,</span>
-        <span class="s1">&#39;coordinates_degree_north&#39;</span><span class="p">:</span> <span class="mf">40.7128</span><span class="p">,</span>
+    <span class="s2">&quot;area&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;total_km2_including_disputed_territories&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;total_km2_internationally_recognized&quot;</span><span class="p">:</span> <span class="mf">28748.0</span><span class="p">,</span>
+        <span class="s2">&quot;water_percentage&quot;</span><span class="p">:</span> <span class="mf">4.7</span>
     <span class="p">},</span>
-    <span class="s1">&#39;driving_side&#39;</span><span class="p">:</span> <span class="s1">&#39;Right&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;calling_code&#39;</span><span class="p">:</span> <span class="s1">&#39;+1&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;iso_3166_code&#39;</span><span class="p">:</span> <span class="s1">&#39;US&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;internet_tld&#39;</span><span class="p">:</span> <span class="s1">&#39;.us&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;driving_side&quot;</span><span class="p">:</span> <span class="s2">&quot;Right&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;calling_code&quot;</span><span class="p">:</span> <span class="s2">&quot;355&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;iso_3166_code&quot;</span><span class="p">:</span> <span class="s2">&quot;AL&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;internet_tld&quot;</span><span class="p">:</span> <span class="s2">&quot;.al&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;population&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;total&quot;</span><span class="p">:</span> <span class="mi">2994667</span><span class="p">,</span>
+        <span class="s2">&quot;density_km2&quot;</span><span class="p">:</span> <span class="mf">111.1</span><span class="p">,</span>
+        <span class="s2">&quot;date_year&quot;</span><span class="p">:</span> <span class="mi">2011</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;gini_index&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;value&quot;</span><span class="p">:</span> <span class="mf">26.7</span><span class="p">,</span>
+        <span class="s2">&quot;year&quot;</span><span class="p">:</span> <span class="mi">2005</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;gdp&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;ppp_trillions&quot;</span><span class="p">:</span> <span class="mf">0.025035</span><span class="p">,</span>
+        <span class="s2">&quot;ppp_per_capita&quot;</span><span class="p">:</span> <span class="mf">7780.0</span><span class="p">,</span>
+        <span class="s2">&quot;nominal_total_trillions&quot;</span><span class="p">:</span> <span class="mf">0.013292</span><span class="p">,</span>
+        <span class="s2">&quot;nominal_per_capita&quot;</span><span class="p">:</span> <span class="mf">4131.0</span><span class="p">,</span>
+        <span class="s2">&quot;ppp_gdp_year&quot;</span><span class="p">:</span> <span class="mi">2011</span><span class="p">,</span>
+        <span class="s2">&quot;nominal_gdp_year&quot;</span><span class="p">:</span> <span class="mi">2011</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;government&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;president&quot;</span><span class="p">:</span> <span class="s2">&quot;Bajram Begaj&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;prime_minister&quot;</span><span class="p">:</span> <span class="s2">&quot;Edi Rama&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;declaration_of_state_sovereignty&quot;</span><span class="p">:</span> <span class="s2">&quot;1912-11-28&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;other_leader_title&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;other_leader&quot;</span><span class="p">:</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="s2">&quot;government_type&quot;</span><span class="p">:</span> <span class="s2">&quot;Parliamentary republic&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;president_assumed_office&quot;</span><span class="p">:</span> <span class="s2">&quot;2022-07-24&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;prime_minister_assumed_office&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-09-15&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;other_leader_assumed_office&quot;</span><span class="p">:</span> <span class="kc">None</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;official_names&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Albanian&quot;</span><span class="p">:</span> <span class="s2">&quot;Republika e Shqipërisë&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;English&quot;</span><span class="p">:</span> <span class="s2">&quot;Republic of Albania&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;anthem&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Albanian&quot;</span><span class="p">:</span> <span class="s2">&quot;Himni i Flamurit&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;English&quot;</span><span class="p">:</span> <span class="s2">&quot;Hymn to the Flag&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;motto&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Albanian&quot;</span><span class="p">:</span> <span class="s2">&quot;Ti, Shqipëri, më jep nder, më jep emrin Shqiptar&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;English&quot;</span><span class="p">:</span> <span class="s2">&quot;You, Albania, give me honor, give me the name Albanian&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;religion&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Islam&quot;</span><span class="p">:</span> <span class="mf">50.67</span><span class="p">,</span>
+        <span class="s2">&quot;Christianity&quot;</span><span class="p">:</span> <span class="mf">16.02</span><span class="p">,</span>
+        <span class="s2">&quot;Non-denominational&quot;</span><span class="p">:</span> <span class="mf">13.83</span><span class="p">,</span>
+        <span class="s2">&quot;Atheism&quot;</span><span class="p">:</span> <span class="mf">3.55</span><span class="p">,</span>
+        <span class="s2">&quot;Others&quot;</span><span class="p">:</span> <span class="mf">0.15</span><span class="p">,</span>
+        <span class="s2">&quot;Undeclared&quot;</span><span class="p">:</span> <span class="mf">15.77</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;ethnic_groups&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Albanians&quot;</span><span class="p">:</span> <span class="mf">98.2</span><span class="p">,</span>
+        <span class="s2">&quot;Others&quot;</span><span class="p">:</span> <span class="mf">1.8</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;languages&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;official_languages&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Albanian&quot;</span><span class="p">],</span>
+        <span class="s2">&quot;recognized_languages&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;currency&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Lek&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;L&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;iso_code&quot;</span><span class="p">:</span> <span class="s2">&quot;ALL&quot;</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;continent&quot;</span><span class="p">:</span> <span class="s2">&quot;Europe&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;timezones&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;UTC+1&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;DST&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">},</span>
+        <span class="s2">&quot;UTC+2&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;DST&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}</span>
+    <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
