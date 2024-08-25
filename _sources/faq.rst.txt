@@ -25,7 +25,7 @@ What data can I get from pyworldatlas?
 
 Where does pyworldatlas source its data from?
 ---------------------------------------------
-The data in **pyworldatlas** is manually compiled from publicly available resources, primarily sourced from the `List of Countries on Simple Wikipedia <https://simple.wikipedia.org/wiki/List_of_countries>`_. The goal is to ensure that the information provided is accurate and up to date.
+The data in **pyworldatlas** is manually compiled from publicly available resources, primarily sourced from the `List of Countries on Wikipedia <https://simple.wikipedia.org/wiki/List_of_countries>`_. The goal is to ensure that the information provided is accurate and up to date.
 
 How can I verify the source of the data for each country?
 ---------------------------------------------------------
