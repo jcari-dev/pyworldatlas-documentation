@@ -3,9 +3,12 @@ Changelog
 
 0.0.9 - 2024-08-24
 ------------------
-*Added*
+*Fixed*
 
 - Fixed data typo on the country Algeria.
+
+*Enhanced*
+
 - Consolidated the return documentation samples for the `get_country_profile` method.
 
 0.0.8 - 2024-08-24
