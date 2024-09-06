@@ -17,3 +17,5 @@ This page lists all the countries currently available in the `pyworldatlas` data
      - DZ
    * - Andorra
      - AD
+   * - Angola
+     - AO

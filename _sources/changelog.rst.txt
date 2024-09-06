@@ -1,6 +1,15 @@
 Changelog
 =========
 
+0.0.11 - 2024-09-06
+-------------------
+
+**Added**
+- Data for the country Angola.
+
+*Note*: Apologies for the delay. I’ve been busy with take-home assignments and interviews.
+
+
 0.0.10 - 2024-08-25
 -------------------
 *Added*
