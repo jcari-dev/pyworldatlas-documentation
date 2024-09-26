@@ -1,6 +1,16 @@
 Changelog
 =========
 
+0.0.12 - 2024-09-25
+-------------------
+
+**Added**
+
+- Data for the country Antigua and Barbuda.
+- Coordinates degree south and west for capitals and largest cities.
+- Vernacular languages.
+
+
 0.0.11 - 2024-09-06
 -------------------
 
