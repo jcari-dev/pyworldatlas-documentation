@@ -1,5 +1,3 @@
-Quick Git Test
-
 ## Issue Tracker
 
 Here for the Issue tracker? Please find it here: [pyworldatlas-issue-tracker](https://github.com/jcari-dev/pyworldatlas-issue-tracker)
