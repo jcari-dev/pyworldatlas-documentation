@@ -3,24 +3,24 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search &mdash; PyWorldAtlas 0.2.1</title>
+  <title>Official local names &mdash; PyWorldAtlas 0.2.1</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-    
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="_static/documentation_options.js?v=37f418d5"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
-    <script src="_static/searchtools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Capitals and major cities" href="capitals_cities.html" />
+    <link rel="prev" title="Country discovery and learning tools" href="discovery.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,7 +35,7 @@
             PyWorldAtlas
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -72,7 +72,7 @@
 <li class="toctree-l1"><a class="reference internal" href="playground.html">Repository playground</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Explore the atlas</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="country_profile.html">Country profiles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#profile-example">Profile example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#current-field-coverage">Current field coverage</a></li>
@@ -96,9 +96,9 @@
 <li class="toctree-l2"><a class="reference internal" href="discovery.html#executable-example">Executable example</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="local_names.html">Official local names</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="local_names.html#source-policy">Source policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="local_names.html#coverage-boundary">Coverage boundary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Official local names</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#source-policy">Source policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coverage-boundary">Coverage boundary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="capitals_cities.html">Capitals and major cities</a><ul>
@@ -230,8 +230,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Search</li>
+      <li class="breadcrumb-item active">Official local names</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/local_names.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -239,22 +240,58 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search functionality.
-    </p>
-  </div>
-  </noscript>
+  <section id="official-local-names">
+<h1>Official local names<a class="headerlink" href="#official-local-names" title="Link to this heading"></a></h1>
+<p>Version 0.2.1 includes reviewed official short and formal country names for
+Brazil and Switzerland. These records are bundled in SQLite, remain available
+after an <a class="reference internal" href="api.html#pyworldatlas.Atlas" title="pyworldatlas.Atlas"><code class="xref py py-class docutils literal notranslate"><span class="pre">Atlas</span></code></a> closes, and require no network access.</p>
+<p>Countries without bundled records return an empty tuple, and the convenience
+methods return <code class="docutils literal notranslate"><span class="pre">None</span></code>. No English fallback is supplied. Romanized forms are
+returned only when the source provides them.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span> <span class="o">=</span> <span class="n">Atlas</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">brazil</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">brazil</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
+<span class="go">&#39;Brasil&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">brazil</span><span class="o">.</span><span class="n">official_name_in</span><span class="p">(</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
+<span class="go">&#39;República Federativa do Brasil&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">brazil</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">brazil</span><span class="o">.</span><span class="n">romanized_name_in</span><span class="p">(</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">swiss</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="n">name</span><span class="o">.</span><span class="n">language_code</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">short_name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">swiss</span><span class="o">.</span><span class="n">local_names</span><span class="p">]</span>
+<span class="go">[(&#39;de&#39;, &#39;Schweiz&#39;), (&#39;fr&#39;, &#39;Suisse&#39;), (&#39;it&#39;, &#39;Svizzera&#39;), (&#39;rm&#39;, &#39;Svizra&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">swiss</span><span class="o">.</span><span class="n">official_name_in</span><span class="p">(</span><span class="s2">&quot;rm&quot;</span><span class="p">)</span>
+<span class="go">&#39;Confederaziun svizra&#39;</span>
+</pre></div>
+</div>
+<p>Each record in <code class="docutils literal notranslate"><span class="pre">country.local_names</span></code> includes a language code and display
+name, ISO 15924 script code, short and formal forms, explicit romanization
+fields, an official-language flag, and a <a class="reference internal" href="api.html#pyworldatlas.SourceReference" title="pyworldatlas.SourceReference"><code class="xref py py-class docutils literal notranslate"><span class="pre">SourceReference</span></code></a>.</p>
+<section id="source-policy">
+<h2>Source policy<a class="headerlink" href="#source-policy" title="Link to this heading"></a></h2>
+<p>The pilot is a reviewed transcription of the UNGEGN Working Group on Country
+Names document <code class="docutils literal notranslate"><span class="pre">E/CONF.105/13/CRP.13</span></code> dated 17 July 2017. The exact PDF is
+captured with a SHA-256 manifest, and every reviewed row carries an entry and
+page locator.</p>
+</section>
+<section id="coverage-boundary">
+<h2>Coverage boundary<a class="headerlink" href="#coverage-boundary" title="Link to this heading"></a></h2>
+<p>Coverage is currently limited to two countries and five records. An empty result
+means that this dataset does not yet contain a reviewed record for the requested
+country and language; it does not mean that no local name exists.</p>
+</section>
+</section>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="discovery.html" class="btn btn-neutral float-left" title="Country discovery and learning tools" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="capitals_cities.html" class="btn btn-neutral float-right" title="Capitals and major cities" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
@@ -276,14 +313,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-  <script>
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script id="searchindexloader"></script>
-   
-
+  </script> 
 
 </body>
 </html>

@@ -3,24 +3,24 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Search &mdash; PyWorldAtlas 0.2.1</title>
+  <title>Coordinates and distances &mdash; PyWorldAtlas 0.2.1</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-    
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
       <script src="_static/documentation_options.js?v=37f418d5"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
-    <script src="_static/searchtools.js"></script>
-    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="#" /> 
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Lookup, search, and filtering" href="searching.html" />
+    <link rel="prev" title="Capitals and major cities" href="capitals_cities.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,7 +35,7 @@
             PyWorldAtlas
           </a>
 <div role="search">
-  <form id="rtd-search-form" class="wy-form" action="#" method="get">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
     <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
@@ -72,7 +72,7 @@
 <li class="toctree-l1"><a class="reference internal" href="playground.html">Repository playground</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Explore the atlas</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="country_profile.html">Country profiles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#profile-example">Profile example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#current-field-coverage">Current field coverage</a></li>
@@ -109,12 +109,12 @@
 <li class="toctree-l2"><a class="reference internal" href="capitals_cities.html#major-cities">Major cities</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="coordinates_distances.html">Coordinates and distances</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#look-up-coordinates">Look up coordinates</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#distance-between-places">Distance between places</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#country-and-model-inputs">Country and model inputs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#raw-latitude-and-longitude">Raw latitude and longitude</a></li>
-<li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#country-coordinates">Country coordinates</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Coordinates and distances</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#look-up-coordinates">Look up coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#distance-between-places">Distance between places</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#country-and-model-inputs">Country and model inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#raw-latitude-and-longitude">Raw latitude and longitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#country-coordinates">Country coordinates</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="searching.html">Lookup, search, and filtering</a><ul>
@@ -230,8 +230,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Search</li>
+      <li class="breadcrumb-item active">Coordinates and distances</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/coordinates_distances.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -239,22 +240,105 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <noscript>
-  <div id="fallback" class="admonition warning">
-    <p class="last">
-      Please activate JavaScript to enable the search functionality.
-    </p>
-  </div>
-  </noscript>
+  <section id="coordinates-and-distances">
+<h1>Coordinates and distances<a class="headerlink" href="#coordinates-and-distances" title="Link to this heading"></a></h1>
+<p>PyWorldAtlas stores signed WGS84 latitude and longitude on every bundled
+capital and populated-place record. Version 0.2.1 adds exact lookup within the
+6,265 bundled place records and dependency-free great-circle calculations.</p>
+<section id="look-up-coordinates">
+<h2>Look up coordinates<a class="headerlink" href="#look-up-coordinates" title="Link to this heading"></a></h2>
+<p>Constrain city lookups by country whenever a name may be shared:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span> <span class="o">=</span> <span class="n">Atlas</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tokyo</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">city</span><span class="p">(</span><span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tokyo</span><span class="o">.</span><span class="n">coordinates</span><span class="o">.</span><span class="n">as_tuple</span><span class="p">()</span>
+<span class="go">(35.6895, 139.69171)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paris_coordinates</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">coordinates</span><span class="p">(</span><span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;FR&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paris_coordinates</span><span class="o">.</span><span class="n">as_tuple</span><span class="p">()</span>
+<span class="go">(48.85341, 2.3488)</span>
+</pre></div>
+</div>
+<p>An unconstrained exact name that matches multiple stored cities raises
+<a class="reference internal" href="api.html#pyworldatlas.AmbiguousPlaceError" title="pyworldatlas.AmbiguousPlaceError"><code class="xref py py-class docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a> instead of choosing silently.</p>
+<p>String inputs are resolved as bundled city names, not country names.
+<code class="docutils literal notranslate"><span class="pre">first_country</span></code> and <code class="docutils literal notranslate"><span class="pre">second_country</span></code> only disambiguate those city-name
+strings. Pass <a class="reference internal" href="api.html#pyworldatlas.Country" title="pyworldatlas.Country"><code class="xref py py-class docutils literal notranslate"><span class="pre">Country</span></code></a> objects for country distance.</p>
+</section>
+<section id="distance-between-places">
+<h2>Distance between places<a class="headerlink" href="#distance-between-places" title="Link to this heading"></a></h2>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">paris</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">city</span><span class="p">(</span><span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;France&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">distance_between</span><span class="p">(</span><span class="n">tokyo</span><span class="p">,</span> <span class="n">paris</span><span class="p">))</span>
+<span class="go">9713</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">distance_between</span><span class="p">(</span><span class="n">tokyo</span><span class="p">,</span> <span class="n">paris</span><span class="p">,</span> <span class="n">unit</span><span class="o">=</span><span class="s2">&quot;mi&quot;</span><span class="p">))</span>
+<span class="go">6035</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">distance_between</span><span class="p">(</span>
+<span class="gp">... </span>    <span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="n">first_country</span><span class="o">=</span><span class="s2">&quot;JP&quot;</span><span class="p">,</span> <span class="n">second_country</span><span class="o">=</span><span class="s2">&quot;FR&quot;</span>
+<span class="gp">... </span><span class="p">))</span>
+<span class="go">9713</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">unit</span></code> accepts <code class="docutils literal notranslate"><span class="pre">&quot;km&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;mi&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;nmi&quot;</span></code>. Calculations use the
+standard haversine formula and the WGS84 mean Earth radius. Results represent
+surface great-circle distance, not road, rail, or flight-routing distance.</p>
+</section>
+<section id="country-and-model-inputs">
+<h2>Country and model inputs<a class="headerlink" href="#country-and-model-inputs" title="Link to this heading"></a></h2>
+<p>Country inputs use the selected primary capital. Capital and city objects use
+their own coordinates:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">japan</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">france</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;France&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">distance_between</span><span class="p">(</span><span class="n">japan</span><span class="p">,</span> <span class="n">france</span><span class="p">))</span>
+<span class="go">9713</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">distance_between</span><span class="p">(</span><span class="n">japan</span><span class="o">.</span><span class="n">capital</span><span class="p">,</span> <span class="n">france</span><span class="o">.</span><span class="n">capital</span><span class="p">))</span>
+<span class="go">9713</span>
+</pre></div>
+</div>
+<p>An area without primary-capital coordinates raises
+<a class="reference internal" href="api.html#pyworldatlas.CapitalNotFoundError" title="pyworldatlas.CapitalNotFoundError"><code class="xref py py-class docutils literal notranslate"><span class="pre">CapitalNotFoundError</span></code></a> when used as a country input.</p>
+</section>
+<section id="raw-latitude-and-longitude">
+<h2>Raw latitude and longitude<a class="headerlink" href="#raw-latitude-and-longitude" title="Link to this heading"></a></h2>
+<p>Use <a class="reference internal" href="api.html#pyworldatlas.Coordinate" title="pyworldatlas.Coordinate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coordinate</span></code></a> directly or pass <code class="docutils literal notranslate"><span class="pre">(latitude,</span> <span class="pre">longitude)</span></code>
+tuples to the atlas helper:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Coordinate</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">london</span> <span class="o">=</span> <span class="n">Coordinate</span><span class="p">(</span><span class="mf">51.5074</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1278</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paris_center</span> <span class="o">=</span> <span class="n">Coordinate</span><span class="p">(</span><span class="mf">48.8566</span><span class="p">,</span> <span class="mf">2.3522</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">london</span><span class="o">.</span><span class="n">distance_to</span><span class="p">(</span><span class="n">paris_center</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">343.6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">london</span><span class="o">.</span><span class="n">bearing_to</span><span class="p">(</span><span class="n">paris_center</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">148.1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">midpoint</span> <span class="o">=</span> <span class="n">london</span><span class="o">.</span><span class="n">midpoint_to</span><span class="p">(</span><span class="n">paris_center</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">midpoint</span><span class="o">.</span><span class="n">latitude</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">midpoint</span><span class="o">.</span><span class="n">longitude</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+<span class="go">(50.1886, 1.1466)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">start</span> <span class="o">=</span> <span class="p">(</span><span class="mf">51.5074</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1278</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">finish</span> <span class="o">=</span> <span class="p">(</span><span class="mf">48.8566</span><span class="p">,</span> <span class="mf">2.3522</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">distance_between</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">finish</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">343.6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Latitude must be from -90 through 90 and longitude from -180 through 180.
+Invalid coordinates and unsupported units raise <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code>.
+Initial bearing is undefined for coincident or antipodal coordinates, and a
+unique spherical midpoint is undefined for antipodal coordinates; those cases
+also raise <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code>.</p>
+</section>
+<section id="country-coordinates">
+<h2>Country coordinates<a class="headerlink" href="#country-coordinates" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">country.capital_coordinates</span></code> exposes the primary capital position when one
+is available. Passing a <a class="reference internal" href="api.html#pyworldatlas.Country" title="pyworldatlas.Country"><code class="xref py py-class docutils literal notranslate"><span class="pre">Country</span></code></a> to
+<code class="docutils literal notranslate"><span class="pre">atlas.distance_between</span></code> uses that position. Country inputs therefore produce
+capital-to-capital distances, not centroid distances.</p>
+</section>
+</section>
 
-  
-  <div id="search-results">
-  
-  </div>
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="capitals_cities.html" class="btn btn-neutral float-left" title="Capitals and major cities" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="searching.html" class="btn btn-neutral float-right" title="Lookup, search, and filtering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 
@@ -276,14 +360,7 @@
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-  <script>
-    jQuery(function() { Search.loadIndex("searchindex.js"); });
-  </script>
-  
-  <script id="searchindexloader"></script>
-   
-
+  </script> 
 
 </body>
 </html>

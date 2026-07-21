@@ -32,8 +32,9 @@ GeoNames
 
 **Purpose**
    Capitals, populated places, WGS84 coordinates, city population snapshots,
-   elevation where present, timezone identifiers, GeoNames IDs, and an area
-   fallback for this milestone.
+   country population snapshots, currency metadata, language codes, calling
+   codes, internet domains, elevation where present, timezone identifiers,
+   GeoNames IDs, and an area fallback for this milestone.
 
 **Official location**
    https://download.geonames.org/export/dump/
@@ -51,11 +52,39 @@ GeoNames
    arrangement. Those roles are reviewed in later milestones.
 
 **Current coverage**
-   241 usable primary capitals and 6,265 populated places at the configured
-   threshold.
+   241 usable primary capitals and 6,265 populated places: records at or above
+   100,000 population, plus retained capitals.
 
-Source priority in 0.1.0
+UNGEGN List of Country Names
+----------------------------
+
+**Purpose**
+   National official short and formal country names, with language context.
+
+**Official location**
+   https://unstats.un.org/unsd/ungegn/working_groups/wg1.cshtml
+
+**Current snapshot**
+   ``E/CONF.105/13/CRP.13`` dated 2017-07-17, captured as the exact PDF with a
+   SHA-256 manifest. Reviewed rows retain entry and page locators.
+
+**Current coverage**
+   Five names across Brazil and Switzerland. This is not full-world coverage.
+
+Derived discovery values
 ------------------------
+
+Flag emoji are calculated from the UN/ISO alpha-2 code. Population density is
+the captured GeoNames population divided by the captured area value. Discovery
+cards, deterministic samples, and flashcards only select, arrange, or calculate
+from already attributed profile fields; they add no external country facts.
+
+The sampling algorithm ranks M49 identifiers with SHA-256 and never calls a
+remote service. Flashcard wording is package code; answers retain the
+provenance, coverage, and freshness limits of their underlying profile fields.
+
+Source priority in the 0.2.1 checkout
+-------------------------------------
 
 .. list-table::
    :header-rows: 1
@@ -72,13 +101,16 @@ Source priority in 0.1.0
      - None
    * - Capital and coordinates
      - GeoNames
-     - None in 0.1.0
-   * - Major cities
+     - None
+   * - Populated places
      - GeoNames
      - None
    * - Total area
      - GeoNames milestone fallback
      - World Bank planned later
+   * - Official local names
+     - UNGEGN country-names list
+     - None; uncovered countries return an empty tuple
 
 Inspect sources in Python
 -------------------------

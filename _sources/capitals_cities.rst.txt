@@ -42,9 +42,9 @@ States Minor Outlying Islands, and Western Sahara.
 Major cities
 ------------
 
-Release 0.1.0 retains populated places at or above the configured 100,000-person
-threshold and always retains capitals. Results are ordered by population, then
-name. The current snapshot contains 6,265 records.
+The current dataset retains populated places at or above the configured
+100,000-person threshold and always retains capitals. Results are ordered by
+population, then name. The current snapshot contains 6,265 records.
 
 .. doctest::
 

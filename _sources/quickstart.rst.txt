@@ -60,8 +60,57 @@ Library, schema, and data versions change independently:
 
    >>> info = atlas.dataset_info()
    >>> (info.library_version, info.schema_version, info.dataset_version)
-   ('0.1.0', 1, '2026.07.20')
+   ('0.2.1', 2, '2026.07.20.1')
    >>> atlas.close()
+
+Read profile metadata
+---------------------
+
+Profile fields are typed and may be absent when the captured sources do not
+provide a value:
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     japan = atlas.country("Japan")
+   ...     print(japan.population)
+   ...     print(japan.currency.code if japan.currency else None)
+   ...     print([language.code for language in japan.languages])
+   126529100
+   JPY
+   ['ja']
+
+Build reproducible learning material
+------------------------------------
+
+Country samples and flashcards use a stable seed-based ordering:
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     japan = atlas.country("Japan")
+   ...     print(japan.flag_emoji, round(japan.population_density, 2))
+   ...     print([country.alpha2 for country in atlas.sample_countries(count=3, seed=42)])
+   ...     card = atlas.flashcards(topic="capitals", count=1, seed=42)[0]
+   ...     print(card.prompt, card.answer)
+   🇯🇵 334.88
+   ['KW', 'BS', 'BI']
+   What is the capital of Kuwait? Kuwait City
+
+Measure city-to-city distance
+-----------------------------
+
+String inputs to :meth:`~pyworldatlas.Atlas.distance_between` are exact bundled
+city names. Country arguments disambiguate cities with shared names.
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     distance = atlas.distance_between(
+   ...         "Tokyo", "Paris", first_country="JP", second_country="FR"
+   ...     )
+   >>> round(distance)
+   9713
 
 Executable example
 ------------------

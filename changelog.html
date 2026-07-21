@@ -6,20 +6,20 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Changelog &mdash; PyWorldAtlas 0.1.0</title>
+  <title>Changelog &mdash; PyWorldAtlas 0.2.1</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/documentation_options.js?v=37f418d5"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="Migration from 0.0.x" href="migration.html" /> 
+    <link rel="prev" title="API reference" href="api.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -51,8 +51,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#install-from-pypi">Install from PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="installation.html#install-this-checkout-in-vs-code">Install this checkout in VS Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#published-package">Published package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-a-source-checkout">Install a source checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#install-the-built-wheel-offline">Install the built wheel offline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#verify-the-installation">Verify the installation</a></li>
 </ul>
@@ -62,19 +62,42 @@
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#look-up-countries-naturally">Look up countries naturally</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#use-it-like-a-python-collection">Use it like a Python collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-profile-metadata">Read profile metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#measure-city-to-city-distance">Measure city-to-city distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#executable-example">Executable example</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="playground.html">VS Code playground</a></li>
+<li class="toctree-l1"><a class="reference internal" href="playground.html">Repository playground</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Explore the atlas</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="country_profile.html">Country profiles</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="country_profile.html#a-complete-current-example">A complete current example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#profile-example">Profile example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#current-field-coverage">Current field coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#convenience-and-discovery-views">Convenience and discovery views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#names-and-aliases">Names and aliases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#capital-and-cities">Capital and cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#sources">Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="discovery.html">Country discovery and learning tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html#flag-emoji">Flag emoji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html#derived-profile-facts">Derived profile facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html#discovery-cards">Discovery cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html#reproducible-country-samples">Reproducible country samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html#structured-flashcards">Structured flashcards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="discovery.html#supported-topics">Supported topics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html#data-and-interpretation">Data and interpretation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html#executable-example">Executable example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="local_names.html">Official local names</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="local_names.html#source-policy">Source policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_names.html#coverage-boundary">Coverage boundary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="capitals_cities.html">Capitals and major cities</a><ul>
@@ -83,6 +106,14 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="capitals_cities.html#major-cities">Major cities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="coordinates_distances.html">Coordinates and distances</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#look-up-coordinates">Look up coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#distance-between-places">Distance between places</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#country-and-model-inputs">Country and model inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#raw-latitude-and-longitude">Raw latitude and longitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#country-coordinates">Country coordinates</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="searching.html">Lookup, search, and filtering</a><ul>
@@ -95,6 +126,7 @@
 <li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#dictionary-output">Dictionary output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#json-output">JSON output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#discovery-values">Discovery values</a></li>
 </ul>
 </li>
 </ul>
@@ -103,7 +135,9 @@
 <li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data sources and freshness</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-m49">United Nations M49</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#geonames">GeoNames</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-0-1-0">Source priority in 0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-2-1-checkout">Source priority in the 0.2.1 checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -117,13 +151,16 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap and visible progress</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="roadmap.html#current-release-boundary">Current release boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#release-boundary">Release boundary</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="api.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#profile-conventions">Profile conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#distance-input-contract">Distance input contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#profile-field-notes">Profile field notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#atlas">Atlas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Atlas"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code></a></li>
 </ul>
@@ -133,6 +170,10 @@
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryCodes"><code class="docutils literal notranslate"><span class="pre">CountryCodes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryStatus"><code class="docutils literal notranslate"><span class="pre">CountryStatus</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.LocalizedName"><code class="docutils literal notranslate"><span class="pre">LocalizedName</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Currency"><code class="docutils literal notranslate"><span class="pre">Currency</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Language"><code class="docutils literal notranslate"><span class="pre">Language</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryReference"><code class="docutils literal notranslate"><span class="pre">CountryReference</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryDiscoveryCard"><code class="docutils literal notranslate"><span class="pre">CountryDiscoveryCard</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#geographic-models">Geographic models</a><ul>
@@ -145,6 +186,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#results-and-metadata">Results and metadata</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetInfo"><code class="docutils literal notranslate"><span class="pre">DatasetInfo</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.SourceReference"><code class="docutils literal notranslate"><span class="pre">SourceReference</span></code></a></li>
 </ul>
@@ -165,16 +207,10 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="migration.html">Migration from 0.0.x</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="migration.html#core-lookup">Core lookup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="migration.html#before">Before</a></li>
-<li class="toctree-l2"><a class="reference internal" href="migration.html#after">After</a></li>
-<li class="toctree-l2"><a class="reference internal" href="migration.html#compatibility-scope">Compatibility scope</a></li>
-</ul>
-</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">0.1.0 — 2026-07-20</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#legacy-releases">Legacy releases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -206,7 +242,35 @@
   <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading"></a></h1>
 <section id="id1">
-<h2>0.1.0 — 2026-07-20<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<h2>0.2.1 — 2026-07-21<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>First production candidate for the complete 0.2 country-profile, coordinate,
+and discovery feature set.</p></li>
+<li><p>Supersedes the unpublished 0.2.0 candidate without changing its public API or
+bundled dataset.</p></li>
+</ul>
+</section>
+<section id="unpublished-candidate">
+<h2>0.2.0 — Unpublished candidate<a class="headerlink" href="#unpublished-candidate" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Added rich profile fields for population snapshots, currency, language codes,
+calling codes, top-level domains, observed timezones, and capital coordinates.</p></li>
+<li><p>Added exact city lookup, coordinate validation, great-circle distance, initial
+bearing, spherical midpoint, and named-place distance helpers.</p></li>
+<li><p>Added five sourced official local-name records across Brazil and Switzerland.</p></li>
+<li><p>Added language and script metadata, formal names, explicit romanization
+fields, provenance, and no-fallback convenience methods.</p></li>
+<li><p>Added flag emoji, calculated population density, compact country references,
+and serializable discovery cards.</p></li>
+<li><p>Added deterministic country sampling and structured flashcards covering
+capitals, flags, codes, currencies, communications, regions, local names,
+and snapshot population/area facts.</p></li>
+<li><p>Upgraded the generated dataset to schema 2 while retaining the 0.1.0 country,
+capital, city, lookup, and collection behaviors.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>0.1.0 — 2026-07-20<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Rebuilt the project from scratch around a standard-library runtime and one
 generated SQLite database.</p></li>
@@ -218,14 +282,9 @@ with explicit missing values for areas without usable capitals.</p></li>
 normalized records, provenance, validation, and reproducibility checks.</p></li>
 <li><p>Added clean-wheel installation tests, executable examples, and documentation
 generated from the installed wheel.</p></li>
-<li><p>Added a comprehensive VS Code playground that audits every exposed record.</p></li>
-<li><p>Added a polished, source-owned Sphinx documentation experience.</p></li>
+<li><p>Added a repository playground with all-record audits.</p></li>
+<li><p>Added Sphinx documentation with executable doctests.</p></li>
 </ul>
-</section>
-<section id="legacy-releases">
-<h2>Legacy releases<a class="headerlink" href="#legacy-releases" title="Link to this heading"></a></h2>
-<p>Versions 0.0.1 through 0.0.12 belong to the legacy prototype. PyPI retains their
-release history, while 0.1.0 begins the new source-aware architecture.</p>
 </section>
 </section>
 
@@ -233,7 +292,7 @@ release history, while 0.1.0 begins the new source-aware architecture.</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="migration.html" class="btn btn-neutral float-left" title="Migration from 0.0.x" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-left" title="API reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
     </div>
 
   <hr/>

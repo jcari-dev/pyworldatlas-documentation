@@ -8,26 +8,20 @@ Requirements
 - No third-party runtime packages.
 - No API key or network access after installation.
 
-Install from PyPI
+Published package
 -----------------
 
-After release 0.1.0 is published:
+Install the latest published release from PyPI:
 
 .. code-block:: console
 
-   python -m pip install pyworldatlas
+   python -m pip install --upgrade pyworldatlas
 
-.. important::
+Install a source checkout
+-------------------------
 
-   PyPI currently serves the legacy 0.0.12 package until the new 0.1.0 release
-   is published. Contributors testing this checkout should use the local wheel
-   or editable installation below.
-
-Install this checkout in VS Code
---------------------------------
-
-Open the project folder, select a Python interpreter, create a ``.venv``, and
-run this in VS Code's integrated terminal:
+Create or activate a virtual environment, open a terminal in the repository
+root, and install the runtime and builder projects:
 
 .. code-block:: console
 
@@ -46,11 +40,11 @@ no Sphinx dependency.
 Install the built wheel offline
 -------------------------------
 
-The strongest local installation test uses the exact wheel:
+Test the exact release artifact without consulting a package index:
 
 .. code-block:: console
 
-   python -m pip install --no-index --no-deps dist/pyworldatlas-0.1.0-py3-none-any.whl
+   python -m pip install --no-index --no-deps dist/pyworldatlas-0.2.1-py3-none-any.whl
 
 Verify the installation
 -----------------------
@@ -59,9 +53,8 @@ Verify the installation
 
    >>> import pyworldatlas
    >>> pyworldatlas.__version__
-   '0.1.0'
+   '0.2.1'
    >>> from pyworldatlas import Atlas
    >>> with Atlas() as atlas:
    ...     print(atlas.country("DO").capital.name)
    Santo Domingo
-

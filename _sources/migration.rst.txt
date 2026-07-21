@@ -1,3 +1,5 @@
+:orphan:
+
 Migration from 0.0.x
 ====================
 
@@ -52,4 +54,3 @@ Compatibility scope
 
 The legacy database schema and query code are not retained. This keeps the new
 runtime simple and prevents two competing data models from drifting apart.
-

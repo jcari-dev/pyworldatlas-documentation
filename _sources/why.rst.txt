@@ -20,13 +20,19 @@ Small enough to understand
    database. There is no ORM, dataframe layer, or GIS framework hidden beneath
    a simple call.
 
-Honest about uncertainty
-   Missing values stay missing. Values are not invented from model knowledge,
-   and later-roadmap features are not advertised as present.
+Missing values remain missing
+   Published values must be traceable to a documented source. An unavailable
+   scalar remains ``None`` and an unavailable collection remains empty.
 
 Traceable to sources
-   Country identity and regional classification come from UN M49. Capital and
-   city records come from GeoNames. Source references travel with profiles.
+   Country identity and regional classification come from UN M49. Profile,
+   capital, and populated-place records come from GeoNames. Reviewed official
+   local names come from UNGEGN. Source references are exposed on profiles.
+
+Useful for learning
+   Flag emoji, compact discovery cards, reproducible samples, and structured
+   flashcards turn the same attributed profiles into reusable lesson material
+   without adding a game framework or hidden data source.
 
 Who is it for?
 --------------
@@ -41,6 +47,5 @@ What it is not
 --------------
 
 PyWorldAtlas is not a live-news service, professional GIS engine, routing
-system, or replacement for authoritative statistical agencies. Its job is to
-make a carefully scoped offline atlas delightful to use.
-
+system, or replacement for authoritative statistical agencies. It is a scoped,
+offline reference with explicit source and coverage boundaries.
