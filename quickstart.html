@@ -1,0 +1,308 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>60-second quickstart &mdash; PyWorldAtlas 0.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="VS Code playground" href="playground.html" />
+    <link rel="prev" title="Installation" href="installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            PyWorldAtlas
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Start here</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="why.html">Why PyWorldAtlas?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="why.html#the-product-promise">The product promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why.html#who-is-it-for">Who is it for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why.html#what-it-is-not">What it is not</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-from-pypi">Install from PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-this-checkout-in-vs-code">Install this checkout in VS Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-the-built-wheel-offline">Install the built wheel offline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verify-the-installation">Verify the installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">60-second quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#create-the-atlas">Create the atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#look-up-countries-naturally">Look up countries naturally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#use-it-like-a-python-collection">Use it like a Python collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inspect-the-dataset-version">Inspect the dataset version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#executable-example">Executable example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="playground.html">VS Code playground</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Explore the atlas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="country_profile.html">Country profiles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#a-complete-current-example">A complete current example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#names-and-aliases">Names and aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#capital-and-cities">Capital and cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#sources">Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="capitals_cities.html">Capitals and major cities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="capitals_cities.html#capital-records">Capital records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="capitals_cities.html#missing-capitals">Missing capitals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="capitals_cities.html#major-cities">Major cities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="searching.html">Lookup, search, and filtering</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="searching.html#exact-lookup">Exact lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html#safe-lookup">Safe lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html#ranked-search">Ranked search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html#filtering">Filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#dictionary-output">Dictionary output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#json-output">JSON output</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and trust</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data sources and freshness</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-m49">United Nations M49</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#geonames">GeoNames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-0-1-0">Source priority in 0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_quality.html">Data quality and limitations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#validation-layers">Validation layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#coverage">Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#missing-data-is-a-valid-value">Missing data is a valid value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#interpretation-cautions">Interpretation cautions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#run-the-audit-yourself">Run the audit yourself</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap and visible progress</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#current-release-boundary">Current release boundary</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#atlas">Atlas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Atlas"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#country-models">Country models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Country"><code class="docutils literal notranslate"><span class="pre">Country</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryCodes"><code class="docutils literal notranslate"><span class="pre">CountryCodes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryStatus"><code class="docutils literal notranslate"><span class="pre">CountryStatus</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.LocalizedName"><code class="docutils literal notranslate"><span class="pre">LocalizedName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#geographic-models">Geographic models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Coordinate"><code class="docutils literal notranslate"><span class="pre">Coordinate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Area"><code class="docutils literal notranslate"><span class="pre">Area</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Geography"><code class="docutils literal notranslate"><span class="pre">Geography</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Capital"><code class="docutils literal notranslate"><span class="pre">Capital</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.City"><code class="docutils literal notranslate"><span class="pre">City</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#results-and-metadata">Results and metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetInfo"><code class="docutils literal notranslate"><span class="pre">DatasetInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.SourceReference"><code class="docutils literal notranslate"><span class="pre">SourceReference</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AtlasError"><code class="docutils literal notranslate"><span class="pre">AtlasError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AtlasClosedError"><code class="docutils literal notranslate"><span class="pre">AtlasClosedError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetError"><code class="docutils literal notranslate"><span class="pre">DatasetError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetNotFoundError"><code class="docutils literal notranslate"><span class="pre">DatasetNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetVersionError"><code class="docutils literal notranslate"><span class="pre">DatasetVersionError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetIntegrityError"><code class="docutils literal notranslate"><span class="pre">DatasetIntegrityError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryNotFoundError"><code class="docutils literal notranslate"><span class="pre">CountryNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AmbiguousCountryError"><code class="docutils literal notranslate"><span class="pre">AmbiguousCountryError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PlaceNotFoundError"><code class="docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AmbiguousPlaceError"><code class="docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CapitalNotFoundError"><code class="docutils literal notranslate"><span class="pre">CapitalNotFoundError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="migration.html">Migration from 0.0.x</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="migration.html#core-lookup">Core lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html#before">Before</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html#after">After</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html#compatibility-scope">Compatibility scope</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#legacy-releases">Legacy releases</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">PyWorldAtlas</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">60-second quickstart</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/quickstart.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="second-quickstart">
+<h1>60-second quickstart<a class="headerlink" href="#second-quickstart" title="Link to this heading"></a></h1>
+<section id="create-the-atlas">
+<h2>Create the atlas<a class="headerlink" href="#create-the-atlas" title="Link to this heading"></a></h2>
+<p>Use a context manager when practical so the read-only SQLite connection closes
+promptly:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">country</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">capital</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="go">Japan</span>
+<span class="go">Tokyo</span>
+</pre></div>
+</div>
+</section>
+<section id="look-up-countries-naturally">
+<h2>Look up countries naturally<a class="headerlink" href="#look-up-countries-naturally" title="Link to this heading"></a></h2>
+<p>The same country can be resolved by familiar names and standard codes:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span> <span class="o">=</span> <span class="n">Atlas</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;JP&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;JPN&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;392&quot;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Holy See&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Vatican City&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="use-it-like-a-python-collection">
+<h2>Use it like a Python collection<a class="headerlink" href="#use-it-like-a-python-collection" title="Link to this heading"></a></h2>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="p">[</span><span class="s2">&quot;DO&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Dominican Republic&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;France&quot;</span> <span class="ow">in</span> <span class="n">atlas</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;Atlantis&quot;</span> <span class="ow">in</span> <span class="n">atlas</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">atlas</span><span class="p">)</span>
+<span class="go">248</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">europe</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">continent</span><span class="o">=</span><span class="s2">&quot;Europe&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">europe</span><span class="p">)</span>
+<span class="go">51</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="s2">&quot;FR&quot;</span><span class="p">,</span> <span class="s2">&quot;DE&quot;</span><span class="p">,</span> <span class="s2">&quot;VA&quot;</span><span class="p">}</span><span class="o">.</span><span class="n">issubset</span><span class="p">({</span><span class="n">country</span><span class="o">.</span><span class="n">alpha2</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">europe</span><span class="p">})</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</section>
+<section id="inspect-the-dataset-version">
+<h2>Inspect the dataset version<a class="headerlink" href="#inspect-the-dataset-version" title="Link to this heading"></a></h2>
+<p>Library, schema, and data versions change independently:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">info</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">dataset_info</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">library_version</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">schema_version</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">dataset_version</span><span class="p">)</span>
+<span class="go">(&#39;0.1.0&#39;, 1, &#39;2026.07.20&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="executable-example">
+<h2>Executable example<a class="headerlink" href="#executable-example" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="n">japan</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
+<span class="linenos">5</span>    <span class="nb">print</span><span class="p">(</span><span class="n">japan</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">japan</span><span class="o">.</span><span class="n">alpha2</span><span class="p">,</span> <span class="n">japan</span><span class="o">.</span><span class="n">capital</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="linenos">6</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="playground.html" class="btn btn-neutral float-right" title="VS Code playground" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, PyWorldAtlas maintainers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

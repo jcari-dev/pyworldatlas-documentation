@@ -1,114 +1,24 @@
 Changelog
 =========
 
-0.0.12 - 2024-09-25
--------------------
-
-**Added**
-
-- Data for the country Antigua and Barbuda.
-- Coordinates degree south and west for capitals and largest cities.
-- Vernacular languages.
-
-
-0.0.11 - 2024-09-06
--------------------
-
-**Added**
-
-- Data for the country Angola.
-
-*Note*: Apologies for the delay. I’ve been busy with take-home assignments and interviews.
-
-
-0.0.10 - 2024-08-25
--------------------
-*Added*
-
-- Data for the country Andorra.
-
-
-0.0.9 - 2024-08-24
+0.1.0 — 2026-07-20
 ------------------
-*Fixed*
 
-- Fixed data typo on the country Algeria.
+- Rebuilt the project from scratch around a standard-library runtime and one
+  generated SQLite database.
+- Added lookup, aliases, standard identifiers, and UN regions for 248 countries
+  and areas.
+- Added 241 primary-capital records and 6,265 major-city records from GeoNames,
+  with explicit missing values for areas without usable capitals.
+- Added a separate deterministic source-ingestion project with raw manifests,
+  normalized records, provenance, validation, and reproducibility checks.
+- Added clean-wheel installation tests, executable examples, and documentation
+  generated from the installed wheel.
+- Added a comprehensive VS Code playground that audits every exposed record.
+- Added a polished, source-owned Sphinx documentation experience.
 
-*Enhanced*
+Legacy releases
+---------------
 
-- Consolidated the return documentation samples for the `get_country_profile` method.
-
-0.0.8 - 2024-08-24
-------------------
-*Released*
-
-- Launched live documentation on GitHub Pages.
-- Documentation now links properly to all relevant sections and is stable.
-
-
-0.0.7 - 2024-08-24
-------------------
-*Added*
-
-- Polished documentation, introduced database download and country data pages.
-- Completed the `get_country_profile` method, making it more refined.
-- Basic tests integrated (will be expanded).
-- Added `--version` CLI command.
-- Fragmented methods to improve testability.
-- Python version requirement updated to 3.8+. Support for Python 3.7 and earlier deprecated.
-- Added tox for multi-version testing.
-- Database shipped as gzip, decompressed for use.
-
-*Fixed*
-
-- Applied various smaller fixes and enhancements.
-
-*Enhanced*
-
-- Defragmented databases before final release.
-
-
-0.0.6 - 2024-08-20
-------------------
-*Added*
-
-- Added Algeria country data.
-- Ensured uniqueness for languages in the dataset.
-
-
-0.0.5 - 2024-08-19
-------------------
-*Added*
-
-- Completed country data for Albania.
-- Added support for Daylight Savings Time (DST).
-
-*Fixed*
-
-- Updated largest city and coordinates for each country model.
-
-
-0.0.4 - 2024-08-19
-------------------
-*Added*
-
-- Introduced `Continent` model (7-continent approach).
-- Added `needs_updated` and `last_updated` fields to country model.
-- Introduced office terms for prime ministers, presidents, and other leaders.
-
-
-0.0.3 - 2024-08-16
-------------------
-*Added*
-
-- Initial base model.
-- Added Afghanistan country data (0.35% complete).
-- Added official country names (e.g., "Republic of Albania").
-- Added Wikipedia revision ID to track data sources.
-
-0.0.1 ~ 0.0.2 - 2024-08-16
---------------------------
-*Ghost / Test Releases*
-
-- Setup of PyPi package live release.
-
+Versions 0.0.1 through 0.0.12 belong to the legacy prototype. PyPI retains their
+release history, while 0.1.0 begins the new source-aware architecture.

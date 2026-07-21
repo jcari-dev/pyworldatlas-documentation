@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>pyworldatlas.atlas &mdash; PyWorldAtlas 0.1.0</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=01f34227"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            PyWorldAtlas
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Start here</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../why.html">Why PyWorldAtlas?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../why.html#the-product-promise">The product promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../why.html#who-is-it-for">Who is it for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../why.html#what-it-is-not">What it is not</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#install-from-pypi">Install from PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#install-this-checkout-in-vs-code">Install this checkout in VS Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#install-the-built-wheel-offline">Install the built wheel offline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#verify-the-installation">Verify the installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">60-second quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#create-the-atlas">Create the atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#look-up-countries-naturally">Look up countries naturally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#use-it-like-a-python-collection">Use it like a Python collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#executable-example">Executable example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../playground.html">VS Code playground</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Explore the atlas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../country_profile.html">Country profiles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#a-complete-current-example">A complete current example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#names-and-aliases">Names and aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#capital-and-cities">Capital and cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#sources">Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../capitals_cities.html">Capitals and major cities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../capitals_cities.html#capital-records">Capital records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../capitals_cities.html#missing-capitals">Missing capitals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../capitals_cities.html#major-cities">Major cities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../searching.html">Lookup, search, and filtering</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../searching.html#exact-lookup">Exact lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching.html#safe-lookup">Safe lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching.html#ranked-search">Ranked search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching.html#filtering">Filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../serialization.html">Serialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../serialization.html#dictionary-output">Dictionary output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../serialization.html#json-output">JSON output</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and trust</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../data_sources.html">Data sources and freshness</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#united-nations-m49">United Nations M49</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#geonames">GeoNames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-0-1-0">Source priority in 0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_quality.html">Data quality and limitations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#validation-layers">Validation layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#coverage">Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#missing-data-is-a-valid-value">Missing data is a valid value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#interpretation-cautions">Interpretation cautions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#run-the-audit-yourself">Run the audit yourself</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../_generated/project_status.html">Project status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap and visible progress</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../roadmap.html#current-release-boundary">Current release boundary</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#atlas">Atlas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Atlas"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#country-models">Country models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Country"><code class="docutils literal notranslate"><span class="pre">Country</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryCodes"><code class="docutils literal notranslate"><span class="pre">CountryCodes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryStatus"><code class="docutils literal notranslate"><span class="pre">CountryStatus</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.LocalizedName"><code class="docutils literal notranslate"><span class="pre">LocalizedName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#geographic-models">Geographic models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Coordinate"><code class="docutils literal notranslate"><span class="pre">Coordinate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Area"><code class="docutils literal notranslate"><span class="pre">Area</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Geography"><code class="docutils literal notranslate"><span class="pre">Geography</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Capital"><code class="docutils literal notranslate"><span class="pre">Capital</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.City"><code class="docutils literal notranslate"><span class="pre">City</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#results-and-metadata">Results and metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.DatasetInfo"><code class="docutils literal notranslate"><span class="pre">DatasetInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.SourceReference"><code class="docutils literal notranslate"><span class="pre">SourceReference</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#exceptions">Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.AtlasError"><code class="docutils literal notranslate"><span class="pre">AtlasError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.AtlasClosedError"><code class="docutils literal notranslate"><span class="pre">AtlasClosedError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.DatasetError"><code class="docutils literal notranslate"><span class="pre">DatasetError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.DatasetNotFoundError"><code class="docutils literal notranslate"><span class="pre">DatasetNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.DatasetVersionError"><code class="docutils literal notranslate"><span class="pre">DatasetVersionError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.DatasetIntegrityError"><code class="docutils literal notranslate"><span class="pre">DatasetIntegrityError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryNotFoundError"><code class="docutils literal notranslate"><span class="pre">CountryNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.AmbiguousCountryError"><code class="docutils literal notranslate"><span class="pre">AmbiguousCountryError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.PlaceNotFoundError"><code class="docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.AmbiguousPlaceError"><code class="docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CapitalNotFoundError"><code class="docutils literal notranslate"><span class="pre">CapitalNotFoundError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../migration.html">Migration from 0.0.x</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../migration.html#core-lookup">Core lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migration.html#before">Before</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migration.html#after">After</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../migration.html#compatibility-scope">Compatibility scope</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#legacy-releases">Legacy releases</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PyWorldAtlas</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pyworldatlas.atlas</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for pyworldatlas.atlas</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;Primary offline atlas interface.&quot;&quot;&quot;</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterator</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">._normalization</span><span class="w"> </span><span class="kn">import</span> <span class="n">normalize_name</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._version</span><span class="w"> </span><span class="kn">import</span> <span class="n">SCHEMA_VERSION</span><span class="p">,</span> <span class="n">__version__</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.database</span><span class="w"> </span><span class="kn">import</span> <span class="n">Database</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">AtlasClosedError</span><span class="p">,</span> <span class="n">CountryNotFoundError</span><span class="p">,</span> <span class="n">DatasetVersionError</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">Area</span><span class="p">,</span> <span class="n">Capital</span><span class="p">,</span> <span class="n">City</span><span class="p">,</span> <span class="n">Coordinate</span><span class="p">,</span> <span class="n">Country</span><span class="p">,</span> <span class="n">CountryCodes</span><span class="p">,</span>
+                     <span class="n">CountryMatch</span><span class="p">,</span> <span class="n">CountryStatus</span><span class="p">,</span> <span class="n">DatasetInfo</span><span class="p">,</span> <span class="n">Geography</span><span class="p">,</span>
+                     <span class="n">LocalizedName</span><span class="p">,</span> <span class="n">SourceReference</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_flag</span><span class="p">(</span><span class="n">alpha2</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s2">&quot;&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">chr</span><span class="p">(</span><span class="mh">0x1F1E6</span> <span class="o">+</span> <span class="nb">ord</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span> <span class="o">-</span> <span class="nb">ord</span><span class="p">(</span><span class="s2">&quot;A&quot;</span><span class="p">))</span> <span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">alpha2</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="Atlas">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Atlas</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Explore the bundled atlas without network access or runtime dependencies.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">database_path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_db</span> <span class="o">=</span> <span class="n">Database</span><span class="p">(</span><span class="n">database_path</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="n">found</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="p">(</span><span class="s2">&quot;schema_version&quot;</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">found</span> <span class="o">!=</span> <span class="n">SCHEMA_VERSION</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="k">raise</span> <span class="n">DatasetVersionError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Dataset schema </span><span class="si">{</span><span class="n">found</span><span class="si">}</span><span class="s2"> is incompatible with runtime schema </span><span class="si">{</span><span class="n">SCHEMA_VERSION</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_ensure_open</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">AtlasClosedError</span><span class="p">(</span><span class="s2">&quot;This Atlas has been closed&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_meta</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT value FROM schema_meta WHERE key = ?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">key</span><span class="p">,))</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="n">row</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+
+<div class="viewcode-block" id="Atlas.dataset_info">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.dataset_info">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">dataset_info</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DatasetInfo</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return independent library, schema, and dataset versions.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">DatasetInfo</span><span class="p">(</span><span class="n">__version__</span><span class="p">,</span> <span class="n">SCHEMA_VERSION</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="p">(</span><span class="s2">&quot;dataset_version&quot;</span><span class="p">),</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">_meta</span><span class="p">(</span><span class="s2">&quot;built_at&quot;</span><span class="p">))</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_country_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
+        <span class="n">normalized</span> <span class="o">=</span> <span class="n">normalize_name</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;SELECT id FROM country WHERE upper(alpha2)=upper(?) OR upper(alpha3)=upper(?)</span>
+<span class="sd">               OR numeric_code=? OR id IN (SELECT country_id FROM country_name WHERE normalized_name=?)</span>
+<span class="sd">               ORDER BY id LIMIT 2&quot;&quot;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">query</span><span class="p">,</span> <span class="n">normalized</span><span class="p">))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">row</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span> <span class="k">else</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="Atlas.country">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.country">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">country</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Country</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Resolve a country by common name, alias, alpha-2, alpha-3, or M49 code.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
+        <span class="n">country_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_country_id</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">country_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">suggestions</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">match</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">match</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">search_countries</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">))</span>
+            <span class="n">hint</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot; Try: </span><span class="si">{</span><span class="n">suggestions</span><span class="si">}</span><span class="s2">.&quot;</span> <span class="k">if</span> <span class="n">suggestions</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+            <span class="k">raise</span> <span class="n">CountryNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No unambiguous country matches </span><span class="si">{</span><span class="n">query</span><span class="si">!r}</span><span class="s2">.</span><span class="si">{</span><span class="n">hint</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_country</span><span class="p">(</span><span class="n">country_id</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Atlas.get">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.get">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">default</span><span class="p">:</span> <span class="n">Country</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Country</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Safely resolve a country, returning ``default`` when it is absent.&quot;&quot;&quot;</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">except</span> <span class="n">CountryNotFoundError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">default</span></div>
+
+
+<div class="viewcode-block" id="Atlas.search_countries">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.search_countries">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">search_countries</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">CountryMatch</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return deterministic ranked partial-name matches.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
+        <span class="n">normalized</span> <span class="o">=</span> <span class="n">normalize_name</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;SELECT country_id, name, normalized_name FROM country_name</span>
+<span class="sd">               WHERE normalized_name LIKE ? ORDER BY normalized_name, country_id&quot;&quot;&quot;</span><span class="p">,</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;%</span><span class="si">{</span><span class="n">normalized</span><span class="si">}</span><span class="s2">%&quot;</span><span class="p">,))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">best</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+            <span class="n">score</span> <span class="o">=</span> <span class="mi">100</span> <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;normalized_name&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="n">normalized</span> <span class="k">else</span> <span class="mi">80</span> <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;normalized_name&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="n">normalized</span><span class="p">)</span> <span class="k">else</span> <span class="mi">50</span>
+            <span class="n">old</span> <span class="o">=</span> <span class="n">best</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;country_id&quot;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">old</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="n">old</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">best</span><span class="p">[</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;country_id&quot;</span><span class="p">]]</span> <span class="o">=</span> <span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+        <span class="n">ranked</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">best</span><span class="o">.</span><span class="n">items</span><span class="p">(),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">item</span><span class="p">:</span> <span class="p">(</span><span class="o">-</span><span class="n">item</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_country</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span><span class="o">.</span><span class="n">name</span><span class="p">))[:</span><span class="n">limit</span><span class="p">]</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">CountryMatch</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_country</span><span class="p">(</span><span class="n">cid</span><span class="p">),</span> <span class="n">matched</span><span class="p">,</span> <span class="n">score</span><span class="p">)</span> <span class="k">for</span> <span class="n">cid</span><span class="p">,</span> <span class="p">(</span><span class="n">score</span><span class="p">,</span> <span class="n">matched</span><span class="p">)</span> <span class="ow">in</span> <span class="n">ranked</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Atlas.countries">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.countries">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">countries</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">continent</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">region</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Country</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return countries alphabetically, optionally filtered by UN classifications.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
+        <span class="n">clauses</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">continent</span><span class="p">:</span>
+            <span class="n">clauses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;continent = ?&quot;</span><span class="p">)</span>
+            <span class="n">params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">continent</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">region</span><span class="p">:</span>
+            <span class="n">clauses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;(region = ? OR subregion = ?)&quot;</span><span class="p">)</span>
+            <span class="n">params</span><span class="o">.</span><span class="n">extend</span><span class="p">((</span><span class="n">region</span><span class="p">,</span> <span class="n">region</span><span class="p">))</span>
+        <span class="n">where</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot; WHERE </span><span class="si">{</span><span class="s1">&#39; AND &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">clauses</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">clauses</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SELECT id FROM country</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2"> ORDER BY name&quot;</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_country</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Atlas.major_cities">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.major_cities">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">major_cities</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">country</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">limit</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">City</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return major cities for a country, ordered by population and name.&quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="n">country</span><span class="p">)</span><span class="o">.</span><span class="n">major_cities</span>
+        <span class="k">return</span> <span class="n">result</span> <span class="k">if</span> <span class="n">limit</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">result</span><span class="p">[:</span><span class="n">limit</span><span class="p">]</span></div>
+
+
+    <span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">64</span><span class="p">)</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_load_country</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">country_id</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Country</span><span class="p">:</span>
+        <span class="n">row</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM country WHERE id=?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">country_id</span><span class="p">,))</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+        <span class="n">names_rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM country_name WHERE country_id=? ORDER BY preferred DESC, kind, name&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">country_id</span><span class="p">,))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">LocalizedName</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="s2">&quot;language_code&quot;</span><span class="p">],</span> <span class="n">n</span><span class="p">[</span><span class="s2">&quot;kind&quot;</span><span class="p">],</span> <span class="nb">bool</span><span class="p">(</span><span class="n">n</span><span class="p">[</span><span class="s2">&quot;preferred&quot;</span><span class="p">]))</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names_rows</span><span class="p">)</span>
+        <span class="n">aliases</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">n</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">names</span> <span class="k">if</span> <span class="n">n</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;alias&quot;</span><span class="p">)</span>
+        <span class="n">capital_rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM capital WHERE country_id=? ORDER BY is_primary DESC, name&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">country_id</span><span class="p">,))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">capitals</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">Capital</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;alpha2&quot;</span><span class="p">],</span> <span class="n">Coordinate</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;latitude&quot;</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;longitude&quot;</span><span class="p">]),</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;role&quot;</span><span class="p">],</span> <span class="nb">bool</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;is_primary&quot;</span><span class="p">]),</span> <span class="kc">None</span><span class="p">,</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;population&quot;</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;elevation_m&quot;</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;timezone_id&quot;</span><span class="p">],</span> <span class="p">(),</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;geonames_id&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">capital_rows</span><span class="p">)</span>
+        <span class="n">city_rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM city WHERE country_id=? ORDER BY population DESC, name&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">country_id</span><span class="p">,))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">cities</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">City</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;alpha2&quot;</span><span class="p">],</span> <span class="n">Coordinate</span><span class="p">(</span><span class="n">c</span><span class="p">[</span><span class="s2">&quot;latitude&quot;</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;longitude&quot;</span><span class="p">]),</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;population&quot;</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;elevation_m&quot;</span><span class="p">],</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;timezone_id&quot;</span><span class="p">],</span> <span class="p">(</span><span class="s2">&quot;official&quot;</span><span class="p">,)</span> <span class="k">if</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;is_capital&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="p">(),</span> <span class="p">(),</span> <span class="n">c</span><span class="p">[</span><span class="s2">&quot;geonames_id&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">city_rows</span><span class="p">)</span>
+        <span class="n">source_rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT DISTINCT s.* FROM source s JOIN field_source f ON f.source_id=s.id WHERE f.country_id=? ORDER BY s.id&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">country_id</span><span class="p">,))</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">sources</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">SourceReference</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="s2">&quot;id&quot;</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;homepage&quot;</span><span class="p">],</span> <span class="n">s</span><span class="p">[</span><span class="s2">&quot;retrieved_at&quot;</span><span class="p">])</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">source_rows</span><span class="p">)</span>
+        <span class="n">geography</span> <span class="o">=</span> <span class="n">Geography</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;continent&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;subregion&quot;</span><span class="p">],</span> <span class="n">Area</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;total_area_km2&quot;</span><span class="p">]))</span>
+        <span class="k">return</span> <span class="n">Country</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;official_name&quot;</span><span class="p">],</span> <span class="n">names</span><span class="p">,</span> <span class="n">aliases</span><span class="p">,</span> <span class="n">CountryCodes</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;alpha2&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;alpha3&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;numeric_code&quot;</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;geonames_id&quot;</span><span class="p">]),</span> <span class="n">_flag</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;alpha2&quot;</span><span class="p">]),</span> <span class="n">CountryStatus</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]),</span> <span class="n">geography</span><span class="p">,</span> <span class="n">capitals</span><span class="p">,</span> <span class="n">cities</span><span class="p">,</span> <span class="n">sources</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Country</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__contains__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_country_id</span><span class="p">(</span><span class="n">query</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__len__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&quot;SELECT count(*) FROM country&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()[</span><span class="mi">0</span><span class="p">])</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__iter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Iterator</span><span class="p">[</span><span class="n">Country</span><span class="p">]:</span>
+        <span class="k">return</span> <span class="nb">iter</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">countries</span><span class="p">())</span>
+
+<div class="viewcode-block" id="Atlas.close">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.close">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">close</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Close the atlas connection.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_closed</span> <span class="o">=</span> <span class="kc">True</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_load_country</span><span class="o">.</span><span class="n">cache_clear</span><span class="p">()</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__enter__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;Atlas&quot;</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__exit__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">close</span><span class="p">()</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, PyWorldAtlas maintainers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

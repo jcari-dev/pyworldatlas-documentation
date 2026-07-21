@@ -1,29 +1,26 @@
+
+
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Roadmap &mdash; pyworldatlas 0.0.8 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
-      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+  <title>Roadmap and visible progress &mdash; PyWorldAtlas 0.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
-    <link rel="shortcut icon" href="_static/python.ico"/>
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
-  
-        <script src="_static/jquery.js?v=5d32c60e"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-        <script src="_static/documentation_options.js?v=53b53b71"></script>
-        <script src="_static/doctools.js?v=9a2dae69"></script>
-        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=01f34227"></script>
+      <script src="_static/doctools.js?v=9bcbadda"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Changelog" href="changelog.html" />
-    <link rel="prev" title="Contributing" href="contributing.html" /> 
+    <link rel="next" title="API reference" href="api.html" />
+    <link rel="prev" title="Project status" href="_generated/project_status.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -35,7 +32,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            pyworldatlas
+            PyWorldAtlas
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -45,24 +42,142 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
-<li class="toctree-l1"><a class="reference internal" href="getting_started.html">Getting Started</a></li>
-<li class="toctree-l1"><a class="reference internal" href="api_reference.html">API Reference</a></li>
-<li class="toctree-l1"><a class="reference internal" href="country_data.html">Country Data</a></li>
-<li class="toctree-l1"><a class="reference internal" href="database_download.html">Database Download</a></li>
-<li class="toctree-l1"><a class="reference internal" href="faq.html">FAQ</a></li>
-<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Roadmap</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#data-collection-approach">Data Collection Approach</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#goals-and-focus-areas">Goals and Focus Areas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#future-plans">Future Plans</a></li>
+              <p class="caption" role="heading"><span class="caption-text">Start here</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="why.html">Why PyWorldAtlas?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="why.html#the-product-promise">The product promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why.html#who-is-it-for">Who is it for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why.html#what-it-is-not">What it is not</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
-<li class="toctree-l1"><a class="reference internal" href="license.html">License</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-from-pypi">Install from PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-this-checkout-in-vs-code">Install this checkout in VS Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#install-the-built-wheel-offline">Install the built wheel offline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verify-the-installation">Verify the installation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">60-second quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#create-the-atlas">Create the atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#look-up-countries-naturally">Look up countries naturally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#use-it-like-a-python-collection">Use it like a Python collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#executable-example">Executable example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="playground.html">VS Code playground</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Explore the atlas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="country_profile.html">Country profiles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#a-complete-current-example">A complete current example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#names-and-aliases">Names and aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#capital-and-cities">Capital and cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#sources">Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="capitals_cities.html">Capitals and major cities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="capitals_cities.html#capital-records">Capital records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="capitals_cities.html#missing-capitals">Missing capitals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="capitals_cities.html#major-cities">Major cities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="searching.html">Lookup, search, and filtering</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="searching.html#exact-lookup">Exact lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html#safe-lookup">Safe lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html#ranked-search">Ranked search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html#filtering">Filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#dictionary-output">Dictionary output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#json-output">JSON output</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and trust</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data sources and freshness</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-m49">United Nations M49</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#geonames">GeoNames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-0-1-0">Source priority in 0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data_quality.html">Data quality and limitations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#validation-layers">Validation layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#coverage">Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#missing-data-is-a-valid-value">Missing data is a valid value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#interpretation-cautions">Interpretation cautions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#run-the-audit-yourself">Run the audit yourself</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Roadmap and visible progress</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#current-release-boundary">Current release boundary</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="api.html#atlas">Atlas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Atlas"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#country-models">Country models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Country"><code class="docutils literal notranslate"><span class="pre">Country</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryCodes"><code class="docutils literal notranslate"><span class="pre">CountryCodes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryStatus"><code class="docutils literal notranslate"><span class="pre">CountryStatus</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.LocalizedName"><code class="docutils literal notranslate"><span class="pre">LocalizedName</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#geographic-models">Geographic models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Coordinate"><code class="docutils literal notranslate"><span class="pre">Coordinate</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Area"><code class="docutils literal notranslate"><span class="pre">Area</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Geography"><code class="docutils literal notranslate"><span class="pre">Geography</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Capital"><code class="docutils literal notranslate"><span class="pre">Capital</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.City"><code class="docutils literal notranslate"><span class="pre">City</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#results-and-metadata">Results and metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetInfo"><code class="docutils literal notranslate"><span class="pre">DatasetInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.SourceReference"><code class="docutils literal notranslate"><span class="pre">SourceReference</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AtlasError"><code class="docutils literal notranslate"><span class="pre">AtlasError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AtlasClosedError"><code class="docutils literal notranslate"><span class="pre">AtlasClosedError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetError"><code class="docutils literal notranslate"><span class="pre">DatasetError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetNotFoundError"><code class="docutils literal notranslate"><span class="pre">DatasetNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetVersionError"><code class="docutils literal notranslate"><span class="pre">DatasetVersionError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetIntegrityError"><code class="docutils literal notranslate"><span class="pre">DatasetIntegrityError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryNotFoundError"><code class="docutils literal notranslate"><span class="pre">CountryNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AmbiguousCountryError"><code class="docutils literal notranslate"><span class="pre">AmbiguousCountryError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PlaceNotFoundError"><code class="docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AmbiguousPlaceError"><code class="docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CapitalNotFoundError"><code class="docutils literal notranslate"><span class="pre">CapitalNotFoundError</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="migration.html">Migration from 0.0.x</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="migration.html#core-lookup">Core lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html#before">Before</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html#after">After</a></li>
+<li class="toctree-l2"><a class="reference internal" href="migration.html#compatibility-scope">Compatibility scope</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#legacy-releases">Legacy releases</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -71,15 +186,15 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">pyworldatlas</a>
+          <a href="index.html">PyWorldAtlas</a>
       </nav>
 
       <div class="wy-nav-content">
-        <div class="rst-content">
+        <div class="rst-content style-external-links">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Roadmap</li>
+      <li class="breadcrumb-item active">Roadmap and visible progress</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/roadmap.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -89,32 +204,83 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="roadmap">
-<h1>Roadmap<a class="headerlink" href="#roadmap" title="Link to this heading"></a></h1>
-<p>The development of <strong>pyworldatlas</strong> is ongoing, with a focus on building a comprehensive and reliable package of country data. Below is the current plan for the package’s growth.</p>
-<section id="data-collection-approach">
-<h2>Data Collection Approach<a class="headerlink" href="#data-collection-approach" title="Link to this heading"></a></h2>
-<p>The data collection for <strong>pyworldatlas</strong> is done manually. This process is not automated because I want to take the time to personally learn about each country. This ensures that the data is carefully curated and accurate while providing me with a deeper understanding of global information.</p>
-</section>
-<section id="goals-and-focus-areas">
-<h2>Goals and Focus Areas<a class="headerlink" href="#goals-and-focus-areas" title="Link to this heading"></a></h2>
-<p><strong>Data Collection</strong>
-- <strong>Ongoing</strong>: Adding new countries to the database. The aim is to add around 5 countries per week, though this may vary depending on the complexity and availability of data. Each country requires careful compilation, as information does not always follow a consistent format.
-- <strong>Target</strong>: Aim for steady progress toward complete global coverage.</p>
-<p><strong>Package Core Enhancements</strong>
-- <strong>Ongoing</strong>: Improve and refine the core methods for retrieving and processing country data.
-- <strong>Short-Term</strong>: Implement a quick access method for retrieving the Wikipedia article revision ID for each country.
-- <strong>Mid-Term</strong>: Further optimize performance, especially regarding database queries.</p>
-<p><strong>Progress Visualization</strong>
-- <strong>Planned</strong>: Introduce a visual representation of package progress, such as a bar or graph comparing the expected number of countries to be added versus the actual number of countries in the database. This will be updated periodically to reflect the progress.</p>
-</section>
-<section id="future-plans">
-<h2>Future Plans<a class="headerlink" href="#future-plans" title="Link to this heading"></a></h2>
-<p>As the package evolves, there may be opportunities to introduce additional features and optimizations. However, the current priority remains:
-1. <strong>Completing the country dataset</strong>.
-2. <strong>Improving the performance and usability of the package</strong>.</p>
-<p>Once the dataset is nearing completion, additional goals such as opening the package for contributions and expanding the documentation will be considered.</p>
-<p>Thank you for following the development of <strong>pyworldatlas</strong>. Stay tuned for updates!</p>
+  <section id="roadmap-and-visible-progress">
+<h1>Roadmap and visible progress<a class="headerlink" href="#roadmap-and-visible-progress" title="Link to this heading"></a></h1>
+<p>Each milestone must remain installable, tested, documented, and honest about
+coverage. Later features are not merged into the README before they work.</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Release train</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 14.0%" />
+<col style="width: 24.0%" />
+<col style="width: 46.0%" />
+<col style="width: 16.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version</p></th>
+<th class="head"><p>Status</p></th>
+<th class="head"><p>Visible improvement</p></th>
+<th class="head"><p>Release state</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0.1.0</p></td>
+<td><p>Implemented</p></td>
+<td><p>248-country-and-area core, lookup, 241 capitals, 6,265 cities, documentation</p></td>
+<td><p>Not published</p></td>
+</tr>
+<tr class="row-odd"><td><p>0.2.0</p></td>
+<td><p>Not started</p></td>
+<td><p>Distances, bearings, midpoints, antipodes, nearby capitals</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>0.3.0</p></td>
+<td><p>Not started</p></td>
+<td><p>Borders, neighbors, shared neighbors, border paths</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>0.4.0</p></td>
+<td><p>Not started</p></td>
+<td><p>Geometry, coordinate lookup, GeoJSON</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>0.5.0</p></td>
+<td><p>Not started</p></td>
+<td><p>Population, GDP, indicator history, comparison and ranking</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>0.6.0</p></td>
+<td><p>Not started</p></td>
+<td><p>Heads of state, heads of government, monarchs</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>0.7.0</p></td>
+<td><p>Not started</p></td>
+<td><p>Languages, currencies, timezones, communication and culture</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>0.8.0</p></td>
+<td><p>Not started</p></td>
+<td><p>Quizzes, calculated facts, exports, expanded CLI</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>0.9.0</p></td>
+<td><p>Not started</p></td>
+<td><p>Full-world validation, refresh automation, and release hardening</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.0.0</p></td>
+<td><p>Not started</p></td>
+<td><p>Stable offline atlas</p></td>
+<td><p>—</p></td>
+</tr>
+</tbody>
+</table>
+<section id="current-release-boundary">
+<h2>Current release boundary<a class="headerlink" href="#current-release-boundary" title="Link to this heading"></a></h2>
+<p>Release 0.1.0 is locally release-ready: tests, clean-wheel installation,
+examples, HTML documentation, doctests, and wheel-content auditing pass. Public
+GitHub, documentation, and PyPI deployment remain pending.</p>
 </section>
 </section>
 
@@ -122,14 +288,14 @@
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="contributing.html" class="btn btn-neutral float-left" title="Contributing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="_generated/project_status.html" class="btn btn-neutral float-left" title="Project status" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2024, Jorge Caridad.</p>
+    <p>&#169; Copyright 2026, PyWorldAtlas maintainers.</p>
   </div>
 
   Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a

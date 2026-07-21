@@ -1,41 +1,67 @@
 Installation
 ============
 
-To start using **pyworldatlas**, follow these simple steps to get the package installed on your system.
-
 Requirements
 ------------
-- **Python 3.8+** is required to run pyworldatlas.
-- For maximum performance, **Python 3.9** is recommended.
 
-Installing pyworldatlas
+- Python 3.10 or newer for the 0.x release series.
+- No third-party runtime packages.
+- No API key or network access after installation.
+
+Install from PyPI
+-----------------
+
+After release 0.1.0 is published:
+
+.. code-block:: console
+
+   python -m pip install pyworldatlas
+
+.. important::
+
+   PyPI currently serves the legacy 0.0.12 package until the new 0.1.0 release
+   is published. Contributors testing this checkout should use the local wheel
+   or editable installation below.
+
+Install this checkout in VS Code
+--------------------------------
+
+Open the project folder, select a Python interpreter, create a ``.venv``, and
+run this in VS Code's integrated terminal:
+
+.. code-block:: console
+
+   python -m pip install -e . -e pipeline
+
+Documentation dependencies are optional:
+
+.. code-block:: console
+
+   python -m pip install -r docs/requirements.txt
+
+Python 3.10 receives the compatible Sphinx 8.1 line; newer Python versions use
+Sphinx 8.2. This distinction affects contributors only—the installed atlas has
+no Sphinx dependency.
+
+Install the built wheel offline
+-------------------------------
+
+The strongest local installation test uses the exact wheel:
+
+.. code-block:: console
+
+   python -m pip install --no-index --no-deps dist/pyworldatlas-0.1.0-py3-none-any.whl
+
+Verify the installation
 -----------------------
-To install pyworldatlas, simply run the following command using `pip`:
 
-.. code-block:: bash
+.. doctest::
 
-   pip install pyworldatlas
+   >>> import pyworldatlas
+   >>> pyworldatlas.__version__
+   '0.1.0'
+   >>> from pyworldatlas import Atlas
+   >>> with Atlas() as atlas:
+   ...     print(atlas.country("DO").capital.name)
+   Santo Domingo
 
-This will automatically install pyworldatlas and make it available for use in your Python environment.
-
-Verifying Installation
-----------------------
-To verify that pyworldatlas has been successfully installed, you can check the version using the command line:
-
-.. code-block:: bash
-
-   pyworldatlas --version
-
-Alternatively, you can verify it in your Python interpreter:
-
-.. code-block:: python
-
-   import pyworldatlas
-
-   print(pyworldatlas.__version__)
-
-Either method should display the current version of pyworldatlas, confirming that the installation was successful.
-
-Next Steps
-----------
-Once installed, proceed to the `Getting Started <getting_started.html>`_ guide to learn how to use pyworldatlas.
