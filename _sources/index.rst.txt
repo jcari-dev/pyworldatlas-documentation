@@ -5,15 +5,14 @@ PyWorldAtlas is a compact, source-aware world atlas for Python. It provides
 typed country, capital, and city records from one bundled SQLite database and
 works without an API key, runtime download, or third-party dependency.
 
-**Documented version:** 0.2.1 | **Dataset:** 2026.07.20.1 | **Python:** 3.10–3.14 |
+**Documented version:** 0.3.0 | **Dataset:** 2026.07.21.1 | **Python:** 3.10–3.14 |
 **Runtime dependencies:** 0
 
 .. note::
 
-   The 0.2.1 checkout contains 248 countries and areas from the captured UN M49
-   scope, 241 GeoNames capital records, and 6,265 populated-place records. Later
-   milestones deepen the available facts and geographic operations. Official
-   local names currently have pilot coverage for Brazil and Switzerland.
+   The 0.3.0 checkout contains 248 countries and areas, 241 capital records,
+   6,265 populated-place records, and 319 reviewed land-border relationships.
+   Official local names currently have pilot coverage for Brazil and Switzerland.
 
 Installation
 ------------
@@ -46,7 +45,7 @@ Documentation
 -------------
 
 - Follow the :doc:`quickstart` for a guided first session.
-- Use the :doc:`playground` to audit and explore every bundled record.
+- Explore immediate neighbors and shortest land routes in :doc:`borders`.
 - Read :doc:`country_profile` for the complete current data model.
 - Build lessons with :doc:`discovery` cards, stable samples, and flashcards.
 - Explore the reviewed :doc:`local_names` records and coverage boundary.
@@ -71,6 +70,8 @@ What works in this checkout
 - Exact city lookup plus latitude/longitude distance, bearing, and midpoint calculations.
 - Flag emoji, calculated density, compact discovery cards, deterministic country
   sampling, and structured geography flashcards.
+- Reviewed land neighbors, shared neighbors, shortest border paths, crossing
+  counts, connected components, and borderless-entity discovery.
 
 Current coverage
 ----------------
@@ -88,6 +89,10 @@ Current coverage
      - 241 / 241
    * - Populated places
      - 6,265, including retained capitals
+   * - Reviewed land borders
+     - 319 undirected relationships
+   * - Countries and areas without an accepted land border
+     - 85
 
 .. toctree::
    :hidden:
@@ -97,7 +102,6 @@ Current coverage
    why
    installation
    quickstart
-   playground
 
 .. toctree::
    :hidden:
@@ -109,6 +113,7 @@ Current coverage
    local_names
    capitals_cities
    coordinates_distances
+   borders
    searching
    serialization
 

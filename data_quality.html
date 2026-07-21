@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data quality and limitations &mdash; PyWorldAtlas 0.2.1</title>
+  <title>Data quality and limitations &mdash; PyWorldAtlas 0.3.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=37f418d5"></script>
+      <script src="_static/documentation_options.js?v=e259d695"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -66,10 +66,10 @@
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-profile-metadata">Read profile metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#measure-city-to-city-distance">Measure city-to-city distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#explore-land-connections">Explore land connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#executable-example">Executable example</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="playground.html">Repository playground</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Explore the atlas</span></p>
 <ul>
@@ -117,6 +117,15 @@
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#country-coordinates">Country coordinates</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="borders.html">Land borders and paths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#neighbors">Neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#shared-neighbors">Shared neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#shortest-land-paths">Shortest land paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#connected-land-regions">Connected land regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#data-policy">Data policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#executable-example">Executable example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="searching.html">Lookup, search, and filtering</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#exact-lookup">Exact lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#safe-lookup">Safe lookup</a></li>
@@ -136,9 +145,11 @@
 <li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data sources and freshness</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-m49">United Nations M49</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#geonames">GeoNames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#natural-earth">Natural Earth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-2-1-checkout">Source priority in the 0.2.1 checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-0-checkout">Source priority in the 0.3.0 checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -147,7 +158,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#coverage">Coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#missing-data-is-a-valid-value">Missing data is a valid value</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#interpretation-cautions">Interpretation cautions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#run-the-audit-yourself">Run the audit yourself</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#run-the-validation-suite">Run the validation suite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a></li>
@@ -186,6 +197,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#results-and-metadata">Results and metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.BorderPathResult"><code class="docutils literal notranslate"><span class="pre">BorderPathResult</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetInfo"><code class="docutils literal notranslate"><span class="pre">DatasetInfo</span></code></a></li>
@@ -209,9 +221,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -259,6 +272,9 @@
 <li><p>Unique country/language pairs and explicit romanization values.</p></li>
 <li><p>Non-negative population snapshots and validated profile collection types.</p></li>
 <li><p>Coordinate constructor bounds and known-route geodesic reference checks.</p></li>
+<li><p>Canonical undirected border edges with valid country endpoints and no self-edges.</p></li>
+<li><p>Exact accounting for every difference between the two pinned border sources.</p></li>
+<li><p>Symmetric neighbor behavior and shortest-path consistency across the graph.</p></li>
 </ul>
 </section>
 <section id="coverage">
@@ -329,6 +345,14 @@
 <td><p>242</p></td>
 <td><p>Zones found on bundled places</p></td>
 </tr>
+<tr class="row-odd"><td><p>Reviewed land-border relationships</p></td>
+<td><p>319</p></td>
+<td><p>315 cross-source agreements plus 4 reviewed inclusions</p></td>
+</tr>
+<tr class="row-even"><td><p>Countries and areas with no accepted land border</p></td>
+<td><p>85</p></td>
+<td><p>248-entity package scope</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -352,15 +376,16 @@ intersection, so their capital is <code class="docutils literal notranslate"><sp
 This is a source-priority rule, not a statement about sovereignty.</p></li>
 <li><p>Political entity type is not classified by the current source model. Every
 profile therefore uses <code class="docutils literal notranslate"><span class="pre">CountryStatus.OTHER</span></code>.</p></li>
-<li><p>No boundary geometry, point-in-country, or border claim exists yet.</p></li>
+<li><p>Border relationships are topological claims, not boundary geometry. Border
+length, point-in-country, and map rendering remain outside this release.</p></li>
 <li><p>Political names and classifications follow documented source conventions and
 do not imply a position on disputed sovereignty.</p></li>
 </ul>
 </section>
-<section id="run-the-audit-yourself">
-<h2>Run the audit yourself<a class="headerlink" href="#run-the-audit-yourself" title="Link to this heading"></a></h2>
-<p>The repository playground validates every exposed record:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python playground.py --audit-only</span>
+<section id="run-the-validation-suite">
+<h2>Run the validation suite<a class="headerlink" href="#run-the-validation-suite" title="Link to this heading"></a></h2>
+<p>The maintainer command runs the runtime, graph, and pipeline tests:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python maintain.py test</span>
 </pre></div>
 </div>
 </section>

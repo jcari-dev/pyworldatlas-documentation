@@ -60,7 +60,7 @@ Library, schema, and data versions change independently:
 
    >>> info = atlas.dataset_info()
    >>> (info.library_version, info.schema_version, info.dataset_version)
-   ('0.2.1', 2, '2026.07.20.1')
+   ('0.3.0', 3, '2026.07.21.1')
    >>> atlas.close()
 
 Read profile metadata
@@ -111,6 +111,18 @@ city names. Country arguments disambiguate cities with shared names.
    ...     )
    >>> round(distance)
    9713
+
+Explore land connections
+------------------------
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     print([country.name for country in atlas.neighbors("Brazil")])
+   ...     path = atlas.border_path("Portugal", "China")
+   ...     print(path.crossings)
+   ['Argentina', 'Bolivia', 'Colombia', 'French Guiana', 'Guyana', 'Paraguay', 'Peru', 'Suriname', 'Uruguay', 'Venezuela']
+   6
 
 Executable example
 ------------------

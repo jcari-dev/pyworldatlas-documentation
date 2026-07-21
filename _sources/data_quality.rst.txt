@@ -19,6 +19,9 @@ The current build checks:
 - Unique country/language pairs and explicit romanization values.
 - Non-negative population snapshots and validated profile collection types.
 - Coordinate constructor bounds and known-route geodesic reference checks.
+- Canonical undirected border edges with valid country endpoints and no self-edges.
+- Exact accounting for every difference between the two pinned border sources.
+- Symmetric neighbor behavior and shortest-path consistency across the graph.
 
 Coverage
 --------
@@ -69,6 +72,12 @@ Coverage
    * - Profiles with observed timezones
      - 242
      - Zones found on bundled places
+   * - Reviewed land-border relationships
+     - 319
+     - 315 cross-source agreements plus 4 reviewed inclusions
+   * - Countries and areas with no accepted land border
+     - 85
+     - 248-entity package scope
 
 Missing data is a valid value
 -----------------------------
@@ -91,15 +100,16 @@ Interpretation cautions
   This is a source-priority rule, not a statement about sovereignty.
 - Political entity type is not classified by the current source model. Every
   profile therefore uses ``CountryStatus.OTHER``.
-- No boundary geometry, point-in-country, or border claim exists yet.
+- Border relationships are topological claims, not boundary geometry. Border
+  length, point-in-country, and map rendering remain outside this release.
 - Political names and classifications follow documented source conventions and
   do not imply a position on disputed sovereignty.
 
-Run the audit yourself
-----------------------
+Run the validation suite
+------------------------
 
-The repository playground validates every exposed record:
+The maintainer command runs the runtime, graph, and pipeline tests:
 
 .. code-block:: console
 
-   python playground.py --audit-only
+   python maintain.py test

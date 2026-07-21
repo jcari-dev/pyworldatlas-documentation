@@ -1,6 +1,20 @@
 Changelog
 =========
 
+0.3.0 — 2026-07-21
+------------------
+
+- Added 319 reviewed, undirected land-border relationships.
+- Added neighbor lookup, shared neighbors, deterministic shortest border paths,
+  crossing counts, land-connected components, and borderless-entity discovery.
+- Added the immutable, serializable ``BorderPathResult`` model.
+- Added a strict source-difference review gate using pinned GeoNames and Natural
+  Earth snapshots.
+- Upgraded the generated database to schema 3 and documented the complete
+  border API, source policy, and limitations.
+- Consolidated validation into focused executable examples and automated
+  runtime, graph, and pipeline tests.
+
 0.2.1 — 2026-07-21
 ------------------
 
@@ -40,5 +54,5 @@ Changelog
   normalized records, provenance, validation, and reproducibility checks.
 - Added clean-wheel installation tests, executable examples, and documentation
   generated from the installed wheel.
-- Added a repository playground with all-record audits.
+- Added automated all-record audits.
 - Added Sphinx documentation with executable doctests.

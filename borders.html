@@ -6,21 +6,21 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Repository playground &mdash; PyWorldAtlas 0.2.1</title>
+  <title>Land borders and paths &mdash; PyWorldAtlas 0.3.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=37f418d5"></script>
+      <script src="_static/documentation_options.js?v=e259d695"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Country profiles" href="country_profile.html" />
-    <link rel="prev" title="60-second quickstart" href="quickstart.html" /> 
+    <link rel="next" title="Lookup, search, and filtering" href="searching.html" />
+    <link rel="prev" title="Coordinates and distances" href="coordinates_distances.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -43,7 +43,7 @@
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Start here</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="why.html">Why PyWorldAtlas?</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="why.html#the-product-promise">The product promise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="why.html#who-is-it-for">Who is it for?</a></li>
@@ -66,13 +66,13 @@
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-profile-metadata">Read profile metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#measure-city-to-city-distance">Measure city-to-city distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#explore-land-connections">Explore land connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#executable-example">Executable example</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Repository playground</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Explore the atlas</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="country_profile.html">Country profiles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#profile-example">Profile example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#current-field-coverage">Current field coverage</a></li>
@@ -117,6 +117,15 @@
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#country-coordinates">Country coordinates</a></li>
 </ul>
 </li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Land borders and paths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#neighbors">Neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shared-neighbors">Shared neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shortest-land-paths">Shortest land paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#connected-land-regions">Connected land regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-policy">Data policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#executable-example">Executable example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="searching.html">Lookup, search, and filtering</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#exact-lookup">Exact lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#safe-lookup">Safe lookup</a></li>
@@ -136,9 +145,11 @@
 <li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data sources and freshness</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-m49">United Nations M49</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#geonames">GeoNames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#natural-earth">Natural Earth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-2-1-checkout">Source priority in the 0.2.1 checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-0-checkout">Source priority in the 0.3.0 checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -147,7 +158,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#coverage">Coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#missing-data-is-a-valid-value">Missing data is a valid value</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#interpretation-cautions">Interpretation cautions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_quality.html#run-the-audit-yourself">Run the audit yourself</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#run-the-validation-suite">Run the validation suite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a></li>
@@ -186,6 +197,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#results-and-metadata">Results and metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.BorderPathResult"><code class="docutils literal notranslate"><span class="pre">BorderPathResult</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetInfo"><code class="docutils literal notranslate"><span class="pre">DatasetInfo</span></code></a></li>
@@ -209,9 +221,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -230,9 +243,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Repository playground</li>
+      <li class="breadcrumb-item active">Land borders and paths</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/playground.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/borders.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -240,32 +253,114 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="repository-playground">
-<h1>Repository playground<a class="headerlink" href="#repository-playground" title="Link to this heading"></a></h1>
-<p>The repository-level <code class="docutils literal notranslate"><span class="pre">playground.py</span></code> is the fastest way to inspect the
-current checkout. Its default mode validates every country, capital, and stored
-city record before demonstrating lookup, aliases, filtering, profile fields,
-coordinate calculations, sources, and serialization.</p>
-<p>The playground can run directly from a repository checkout before the package
-is installed into the selected virtual environment. This convenience is limited
-to the playground; normal applications should install the package first.</p>
-<p>Focused modes are available from a terminal in the repository root:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python playground.py --audit-only</span>
-<span class="go">python playground.py --country Japan</span>
-<span class="go">python playground.py --json &quot;Dominican Republic&quot;</span>
-<span class="go">python playground.py --country &quot;United States&quot; --all-cities</span>
+  <section id="land-borders-and-paths">
+<h1>Land borders and paths<a class="headerlink" href="#land-borders-and-paths" title="Link to this heading"></a></h1>
+<p>PyWorldAtlas 0.3.0 includes a reviewed, undirected graph of 319 land-border
+relationships. It supports immediate neighbors, shared neighbors, shortest
+paths, connected land regions, and countries or areas with no accepted land
+border. Every operation works from the bundled SQLite database.</p>
+<section id="neighbors">
+<h2>Neighbors<a class="headerlink" href="#neighbors" title="Link to this heading"></a></h2>
+<p>Country lookup follows the same name-and-code rules as the rest of the API.
+Results are immutable tuples ordered by country name.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="s2">&quot;France&quot;</span><span class="p">)]</span>
+<span class="go">[&#39;Andorra&#39;, &#39;Belgium&#39;, &#39;Germany&#39;, &#39;Italy&#39;, &#39;Luxembourg&#39;, &#39;Monaco&#39;, &#39;Spain&#39;, &#39;Switzerland&#39;]</span>
 </pre></div>
 </div>
-<p>The full run prints every country profile. Use <code class="docutils literal notranslate"><span class="pre">--audit-only</span></code> for the shortest
-all-record integrity check.</p>
+<p>Maritime proximity is not a border. A country never shares a border with
+itself.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">shares_border</span><span class="p">(</span><span class="s2">&quot;Spain&quot;</span><span class="p">,</span> <span class="s2">&quot;Morocco&quot;</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">shares_border</span><span class="p">(</span><span class="s2">&quot;United States&quot;</span><span class="p">,</span> <span class="s2">&quot;Cuba&quot;</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</section>
+<section id="shared-neighbors">
+<h2>Shared neighbors<a class="headerlink" href="#shared-neighbors" title="Link to this heading"></a></h2>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">shared</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">shared_neighbors</span><span class="p">(</span><span class="s2">&quot;Germany&quot;</span><span class="p">,</span> <span class="s2">&quot;Italy&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="p">[</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">shared</span><span class="p">]</span>
+<span class="go">[&#39;Austria&#39;, &#39;France&#39;, &#39;Switzerland&#39;]</span>
+</pre></div>
+</div>
+</section>
+<section id="shortest-land-paths">
+<h2>Shortest land paths<a class="headerlink" href="#shortest-land-paths" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="api.html#pyworldatlas.Atlas.border_path" title="pyworldatlas.Atlas.border_path"><code class="xref py py-meth docutils literal notranslate"><span class="pre">border_path()</span></code></a> uses breadth-first search. Both
+endpoints appear in the returned <a class="reference internal" href="api.html#pyworldatlas.BorderPathResult" title="pyworldatlas.BorderPathResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">BorderPathResult</span></code></a>, and
+<code class="docutils literal notranslate"><span class="pre">crossings</span></code> is one fewer than the number of countries. Alphabetic neighbor
+order makes equal-length choices deterministic.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">path</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">border_path</span><span class="p">(</span><span class="s2">&quot;Portugal&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">crossings</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot; -&gt; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">countries</span><span class="p">))</span>
+<span class="go">6</span>
+<span class="go">Portugal -&gt; Spain -&gt; France -&gt; Germany -&gt; Poland -&gt; Russia -&gt; China</span>
+</pre></div>
+</div>
+<p>The result is detached from the database and serializable. If no land route
+exists, <code class="docutils literal notranslate"><span class="pre">border_path</span></code> and <code class="docutils literal notranslate"><span class="pre">border_crossings</span></code> return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">border_path</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">border_crossings</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">))</span>
+<span class="go">None</span>
+<span class="go">None</span>
+</pre></div>
+</div>
+</section>
+<section id="connected-land-regions">
+<h2>Connected land regions<a class="headerlink" href="#connected-land-regions" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">countries_reachable_by_land(country)</span></code> returns the rest of the starting
+country’s connected component. The starting country is excluded. An island or
+other borderless entity returns an empty tuple.</p>
+<p><code class="docutils literal notranslate"><span class="pre">countries_with_no_land_borders()</span></code> returns all 85 entities that have no edge
+in the reviewed graph. This classification follows the package entity scope and
+border policy; it is not a general definition of an island country.</p>
+</section>
+<section id="data-policy">
+<h2>Data policy<a class="headerlink" href="#data-policy" title="Link to this heading"></a></h2>
+<p>The automatic acceptance rule requires agreement between the pinned GeoNames
+neighbor field and shared polygon segments derived from Natural Earth 1:50m map
+units. The current snapshots agree on 315 relationships. Six differences are
+recorded in <code class="docutils literal notranslate"><span class="pre">build_data/reviewed/border_decisions.csv</span></code>; four are included and
+two are excluded, producing 319 accepted relationships in total.</p>
+<p>The build fails if the sources develop an unreviewed difference, if an endpoint
+is missing from the 248-entity scope, or if a duplicate, self-edge, or
+non-canonical edge appears. Geometry, border length, point-in-country tests, and
+route planning are outside this release.</p>
+</section>
+<section id="executable-example">
+<h2>Executable example<a class="headerlink" href="#executable-example" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;Explore reviewed land borders and a shortest border path.&quot;&quot;&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="linenos"> 7</span>    <span class="n">france</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="s2">&quot;France&quot;</span><span class="p">)</span>
+<span class="linenos"> 8</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;France:&quot;</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">france</span><span class="p">))</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>    <span class="n">path</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">border_path</span><span class="p">(</span><span class="s2">&quot;Portugal&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">)</span>
+<span class="linenos">11</span>    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+<span class="linenos">12</span>        <span class="n">route</span> <span class="o">=</span> <span class="s2">&quot; -&gt; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">countries</span><span class="p">)</span>
+<span class="linenos">13</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="o">.</span><span class="n">crossings</span><span class="si">}</span><span class="s2"> crossings: </span><span class="si">{</span><span class="n">route</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Japan to China by land:&quot;</span><span class="p">,</span> <span class="n">atlas</span><span class="o">.</span><span class="n">border_path</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="quickstart.html" class="btn btn-neutral float-left" title="60-second quickstart" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="country_profile.html" class="btn btn-neutral float-right" title="Country profiles" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="coordinates_distances.html" class="btn btn-neutral float-left" title="Coordinates and distances" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="searching.html" class="btn btn-neutral float-right" title="Lookup, search, and filtering" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

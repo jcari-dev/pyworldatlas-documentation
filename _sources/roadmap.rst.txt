@@ -17,13 +17,13 @@ documentation update.
      - 248-country-and-area core, lookup, 241 capitals, 6,265 cities, documentation
      - Rebuilt baseline tagged
    * - 0.2.1
-     - Release candidate
+     - Complete
      - Rich profiles, coordinate tools, flags, discovery cards, stable samples, flashcards
-     - Local release gate complete; external publication pending
+     - Published
    * - 0.3.0
-     - Planned
-     - Borders, neighbors, shared neighbors, border paths
-     - —
+     - Complete
+     - 319 reviewed land borders, neighbors, shared neighbors, paths, connected components
+     - Release candidate
    * - 0.4.0
      - Planned
      - Boundary geometry, point-in-boundary lookup, GeoJSON
@@ -63,5 +63,9 @@ language and calling-code metadata, top-level domains, observed timezones,
 capital coordinates, exact city lookup, and great-circle distance, bearing, and
 midpoint calculations. It also retains the verified Brazil/Switzerland UNGEGN
 local-name pilot and adds flag emoji, calculated density, discovery cards,
-stable sampling, and structured flashcards. Borders and border paths are
-reserved for 0.3.0.
+stable sampling, and structured flashcards.
+
+Version 0.3.0 adds a reviewed land-border graph, neighbor and shared-neighbor
+queries, deterministic shortest paths, crossing counts, connected land regions,
+and borderless-entity discovery. Boundary geometry, border lengths,
+point-in-country lookup, and GeoJSON remain reserved for 0.4.0.

@@ -55,6 +55,40 @@ GeoNames
    241 usable primary capitals and 6,265 populated places: records at or above
    100,000 population, plus retained capitals.
 
+Natural Earth
+-------------
+
+**Purpose**
+   Independent land-border topology derived from shared segments in the 1:50m
+   Admin 0 map-unit polygons. Country polygons and land boundary lines are also
+   retained with the source capture for review.
+
+**Official location**
+   https://www.naturalearthdata.com/downloads/50m-cultural-vectors/
+
+**Current snapshot**
+   Boundary lines version 5.1.0 and country/map-unit archives version 5.1.1,
+   captured 2026-07-21 with SHA-256 checksums.
+
+**Terms**
+   Natural Earth data is in the public domain. The official terms permit
+   personal, educational, and commercial use without permission.
+
+**Known limitation**
+   Natural Earth is generalized cartographic data. Very small territories and
+   enclaves may not retain a shared segment at 1:50m, and its map units express
+   a documented de facto worldview. It is used as a cross-check, not as an
+   unreviewed authority.
+
+Reviewed border decisions
+-------------------------
+
+The accepted graph begins with the 315 relationships on which GeoNames and
+Natural Earth agree. ``build_data/reviewed/border_decisions.csv`` accounts for
+all six source differences: four explicit inclusions and two exclusions. Any
+new unreviewed difference fails the build. The resulting dataset contains 319
+undirected land-border relationships.
+
 UNGEGN List of Country Names
 ----------------------------
 
@@ -83,7 +117,7 @@ The sampling algorithm ranks M49 identifiers with SHA-256 and never calls a
 remote service. Flashcard wording is package code; answers retain the
 provenance, coverage, and freshness limits of their underlying profile fields.
 
-Source priority in the 0.2.1 checkout
+Source priority in the 0.3.0 checkout
 -------------------------------------
 
 .. list-table::
@@ -111,6 +145,9 @@ Source priority in the 0.2.1 checkout
    * - Official local names
      - UNGEGN country-names list
      - None; uncovered countries return an empty tuple
+   * - Land-border relationships
+     - GeoNames and Natural Earth agreement
+     - Explicit reviewed decision for each source difference
 
 Inspect sources in Python
 -------------------------
@@ -121,4 +158,4 @@ Inspect sources in Python
    >>> with Atlas() as atlas:
    ...     sources = atlas.country("Japan").sources
    >>> [source.id for source in sources]
-   ['geonames', 'un-m49']
+   ['geonames', 'natural-earth', 'reviewed-borders', 'un-m49']

@@ -105,6 +105,9 @@ Geographic models
 Results and metadata
 --------------------
 
+.. autoclass:: pyworldatlas.BorderPathResult
+   :members:
+
 .. autoclass:: pyworldatlas.CountryMatch
    :members:
 

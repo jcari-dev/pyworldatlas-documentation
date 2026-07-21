@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PyWorldAtlas &mdash; PyWorldAtlas 0.2.1</title>
+  <title>PyWorldAtlas &mdash; PyWorldAtlas 0.3.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=37f418d5"></script>
+      <script src="_static/documentation_options.js?v=e259d695"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -65,10 +65,10 @@
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-profile-metadata">Read profile metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#measure-city-to-city-distance">Measure city-to-city distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#explore-land-connections">Explore land connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#executable-example">Executable example</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="playground.html">Repository playground</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Explore the atlas</span></p>
 <ul>
@@ -116,6 +116,15 @@
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#country-coordinates">Country coordinates</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="borders.html">Land borders and paths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#neighbors">Neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#shared-neighbors">Shared neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#shortest-land-paths">Shortest land paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#connected-land-regions">Connected land regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#data-policy">Data policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#executable-example">Executable example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="searching.html">Lookup, search, and filtering</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#exact-lookup">Exact lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#safe-lookup">Safe lookup</a></li>
@@ -135,9 +144,11 @@
 <li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data sources and freshness</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-m49">United Nations M49</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#geonames">GeoNames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#natural-earth">Natural Earth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-2-1-checkout">Source priority in the 0.2.1 checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-0-checkout">Source priority in the 0.3.0 checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -146,7 +157,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#coverage">Coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#missing-data-is-a-valid-value">Missing data is a valid value</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#interpretation-cautions">Interpretation cautions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_quality.html#run-the-audit-yourself">Run the audit yourself</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#run-the-validation-suite">Run the validation suite</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a></li>
@@ -185,6 +196,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#results-and-metadata">Results and metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.BorderPathResult"><code class="docutils literal notranslate"><span class="pre">BorderPathResult</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetInfo"><code class="docutils literal notranslate"><span class="pre">DatasetInfo</span></code></a></li>
@@ -208,9 +220,10 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -244,14 +257,13 @@
 <p>PyWorldAtlas is a compact, source-aware world atlas for Python. It provides
 typed country, capital, and city records from one bundled SQLite database and
 works without an API key, runtime download, or third-party dependency.</p>
-<p><strong>Documented version:</strong> 0.2.1 | <strong>Dataset:</strong> 2026.07.20.1 | <strong>Python:</strong> 3.10–3.14 |
+<p><strong>Documented version:</strong> 0.3.0 | <strong>Dataset:</strong> 2026.07.21.1 | <strong>Python:</strong> 3.10–3.14 |
 <strong>Runtime dependencies:</strong> 0</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The 0.2.1 checkout contains 248 countries and areas from the captured UN M49
-scope, 241 GeoNames capital records, and 6,265 populated-place records. Later
-milestones deepen the available facts and geographic operations. Official
-local names currently have pilot coverage for Brazil and Switzerland.</p>
+<p>The 0.3.0 checkout contains 248 countries and areas, 241 capital records,
+6,265 populated-place records, and 319 reviewed land-border relationships.
+Official local names currently have pilot coverage for Brazil and Switzerland.</p>
 </div>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
@@ -280,7 +292,7 @@ does not load the complete dataset into memory.</p>
 <h2>Documentation<a class="headerlink" href="#documentation" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Follow the <a class="reference internal" href="quickstart.html"><span class="doc">60-second quickstart</span></a> for a guided first session.</p></li>
-<li><p>Use the <a class="reference internal" href="playground.html"><span class="doc">Repository playground</span></a> to audit and explore every bundled record.</p></li>
+<li><p>Explore immediate neighbors and shortest land routes in <a class="reference internal" href="borders.html"><span class="doc">Land borders and paths</span></a>.</p></li>
 <li><p>Read <a class="reference internal" href="country_profile.html"><span class="doc">Country profiles</span></a> for the complete current data model.</p></li>
 <li><p>Build lessons with <a class="reference internal" href="discovery.html"><span class="doc">Country discovery and learning tools</span></a> cards, stable samples, and flashcards.</p></li>
 <li><p>Explore the reviewed <a class="reference internal" href="local_names.html"><span class="doc">Official local names</span></a> records and coverage boundary.</p></li>
@@ -306,6 +318,8 @@ language codes, internet domain, observed timezones, and capital coordinates.</p
 <li><p>Exact city lookup plus latitude/longitude distance, bearing, and midpoint calculations.</p></li>
 <li><p>Flag emoji, calculated density, compact discovery cards, deterministic country
 sampling, and structured geography flashcards.</p></li>
+<li><p>Reviewed land neighbors, shared neighbors, shortest border paths, crossing
+counts, connected components, and borderless-entity discovery.</p></li>
 </ul>
 </section>
 <section id="current-coverage">
@@ -329,6 +343,12 @@ sampling, and structured geography flashcards.</p></li>
 </tr>
 <tr class="row-odd"><td><p>Populated places</p></td>
 <td><p>6,265, including retained capitals</p></td>
+</tr>
+<tr class="row-even"><td><p>Reviewed land borders</p></td>
+<td><p>319 undirected relationships</p></td>
+</tr>
+<tr class="row-odd"><td><p>Countries and areas without an accepted land border</p></td>
+<td><p>85</p></td>
 </tr>
 </tbody>
 </table>
