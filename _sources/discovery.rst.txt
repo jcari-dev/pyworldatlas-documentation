@@ -8,6 +8,11 @@ dependency-free, and deterministic. They do not maintain scores or user state.
 Flag emoji
 ----------
 
+.. container:: atlas-flag-row
+
+   |flag-jp| Japan · |flag-br| Brazil · |flag-ch| Switzerland ·
+   |flag-cn| China · |flag-fr| France · |flag-ae| United Arab Emirates
+
 ``Country.flag`` and ``Country.flag_emoji`` expose the same regional-indicator
 Unicode sequence derived from the profile's alpha-2 code:
 
@@ -21,9 +26,16 @@ Unicode sequence derived from the profile's alpha-2 code:
    >>> japan.flag_emoji
    '🇯🇵'
 
-Flag appearance depends on the operating system, font, and application. Some
-terminals display a pair of regional-indicator letters instead of a flag image.
-The package does not bundle flag artwork.
+The value itself remains ordinary Unicode. Flag artwork in Python output
+depends on the operating system, font, terminal, browser, or application, so
+some environments display a pair of regional-indicator letters. Showcase rows
+on this documentation site use a small, locally hosted Twemoji fallback for
+consistent presentation. The installed Python package does not bundle or
+download flag artwork.
+
+The documentation fallback uses `Twemoji <https://github.com/jdecked/twemoji>`_
+graphics, licensed under `CC BY 4.0
+<https://creativecommons.org/licenses/by/4.0/>`_.
 
 Derived profile facts
 ---------------------

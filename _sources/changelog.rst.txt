@@ -1,6 +1,9 @@
 Changelog
 =========
 
+This record summarizes user-visible package, data, documentation, and release
+changes. The newest published release appears first.
+
 0.7.0 — 2026-07-22
 ------------------
 

@@ -5,11 +5,40 @@ PyWorldAtlas is most useful when country facts and geographic calculations can
 be combined in ordinary Python. These examples run entirely from the bundled
 database: no API key, network request, or third-party runtime package is used.
 
+.. container:: atlas-card-grid
+
+   .. container:: atlas-card atlas-card-blue
+
+      .. rubric:: Profiles and names
+
+      Flags, local names, capitals, reference facts, languages, currencies,
+      timezones, and provenance.
+
+   .. container:: atlas-card atlas-card-teal
+
+      .. rubric:: Physical geography
+
+      Area, coastlines, elevations, rivers, lakes, and climate classes.
+
+   .. container:: atlas-card atlas-card-gold
+
+      .. rubric:: Geographic tools
+
+      Distances, bearings, midpoints, neighbors, paths, filters, and rankings.
+
+Every result below comes from the same :class:`~pyworldatlas.Atlas` object.
+The examples are tested during every documentation build.
+
 Make a country postcard
 -----------------------
 
 Country profiles combine names, reference facts, physical geography, practical
 metadata, and exact source references.
+
+.. container:: atlas-flag-row
+
+   |flag-br| **Brazil** · local display name **Brasil** · capital
+   **Brasília**
 
 .. doctest::
 
@@ -28,6 +57,22 @@ metadata, and exact source references.
    Pico da Neblina 2,994 m
    >>> print(brazil.climate.dominant_zone.code, brazil.climate.dominant_zone.name)
    Aw Tropical, savannah
+
+Cross writing systems
+---------------------
+
+A local identity keeps its original Unicode text, language, script, evidence,
+source locator, and source-provided romanization when available.
+
+.. doctest::
+
+   >>> china = atlas.country("China")
+   >>> print(china.name_in("zh"))
+   中国
+   >>> print(china.official_name_in("zh"))
+   中华人民共和国
+   >>> print(china.romanized_name_in("zh"))
+   Zhongguo
 
 Follow a feature across profiles
 --------------------------------
@@ -70,6 +115,35 @@ The result uses the same dependency-free great-circle calculation as
    >>> [(item.capital.name, round(item.distance)) for item in nearby]
    [('Seoul', 1153), ('Pyongyang', 1285), ('Beijing', 2093)]
 
+Measure and orient
+------------------
+
+Distance, initial bearing, and midpoint calculations accept coordinate objects
+as well as named bundled places.
+
+.. doctest::
+
+   >>> tokyo = atlas.coordinates("Tokyo", country="JP")
+   >>> paris = atlas.coordinates("Paris", country="FR")
+   >>> round(tokyo.distance_to(paris))
+   9713
+   >>> round(tokyo.bearing_to(paris), 1)
+   333.5
+
+Follow a land path
+------------------
+
+The reviewed border graph supports deterministic shortest paths and explicit
+crossing counts without pretending to be a road-routing service.
+
+.. doctest::
+
+   >>> path = atlas.border_path("Portugal", "China")
+   >>> path.names
+   ('Portugal', 'Spain', 'France', 'Germany', 'Poland', 'Russia', 'China')
+   >>> path.crossings
+   6
+
 Build a small collection
 ------------------------
 
@@ -99,6 +173,22 @@ plans, examples, and tests.
    >>> card = atlas.flashcards(topic="highest_points", count=1, seed="Friday")[0]
    >>> (card.prompt, card.answer)
    ('What is the highest point listed for Austria?', 'Grossglockner (3798 m)')
+
+Carry the data elsewhere
+------------------------
+
+Public models serialize to JSON-compatible values while preserving Unicode and
+structured nested records.
+
+.. doctest::
+
+   >>> japan_card = atlas.country("Japan").discovery_card().to_dict()
+   >>> japan_card["country"]["alpha2"]
+   'JP'
+   >>> japan_card["highest_point"]["name"]
+   'Mount Fuji'
+   >>> japan_card["climate_zone_codes"][:3]
+   ['Cfa', 'Dfb', 'Dfa']
    >>> atlas.close()
 
 Runnable tour

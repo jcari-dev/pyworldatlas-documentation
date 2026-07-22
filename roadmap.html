@@ -9,6 +9,7 @@
   <title>Roadmap and visible progress &mdash; PyWorldAtlas 0.7.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=eaf36b4e" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -46,11 +47,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="explore.html">Explore the atlas in five minutes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#make-a-country-postcard">Make a country postcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#cross-writing-systems">Cross writing systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#follow-a-feature-across-profiles">Follow a feature across profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#rank-the-bundled-snapshots">Rank the bundled snapshots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#find-the-nearest-capitals">Find the nearest capitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#measure-and-orient">Measure and orient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#follow-a-land-path">Follow a land path</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#build-a-small-collection">Build a small collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#create-a-repeatable-geography-quiz">Create a repeatable geography quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#carry-the-data-elsewhere">Carry the data elsewhere</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#runnable-tour">Runnable tour</a></li>
 </ul>
 </li>
@@ -237,10 +242,15 @@
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#run-the-validation-suite">Run the validation suite</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#coverage-at-a-glance">Coverage at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#detailed-coverage">Detailed coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#build-identity">Build identity</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Roadmap and visible progress</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#version-0-6-boundary">Version 0.6 boundary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#version-0-7-boundary">Version 0.7 boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-0-6-established">What 0.6 established</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-0-7-established">What 0.7 established</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#explicitly-deferred">Explicitly deferred</a></li>
 </ul>
 </li>
@@ -358,6 +368,23 @@
 <p>Each release has a defined feature boundary, source review, test gate, and
 documentation update. A planned feature is not part of the public contract
 until its release is built and published.</p>
+<div class="atlas-card-grid docutils container">
+<div class="atlas-card atlas-card-blue docutils container">
+<p class="rubric">Current release</p>
+<p><strong>0.7.0</strong> is published with physical profiles, source-listed features,
+climate classes, rankings, and learning tools.</p>
+</div>
+<div class="atlas-card atlas-card-teal docutils container">
+<p class="rubric">Next milestone</p>
+<p><strong>0.8.0</strong> is a planning boundary for geometry and spatial queries. Its
+source, model, and license review must finish before it becomes public.</p>
+</div>
+<div class="atlas-card atlas-card-gold docutils container">
+<p class="rubric">Stable destination</p>
+<p><strong>1.0.0</strong> represents a stable offline atlas contract after the remaining
+data and API hardening milestones.</p>
+</div>
+</div>
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Release train</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
 <colgroup>
@@ -400,9 +427,9 @@ until its release is built and published.</p>
 <td><p>Published</p></td>
 </tr>
 <tr class="row-odd"><td><p>0.7.0</p></td>
-<td><p>Release candidate</p></td>
+<td><p>Complete</p></td>
 <td><p>Physical geography: land/water area, coastline, elevation extremes, source-listed rivers/lakes, Köppen-Geiger climate, physical rankings and flashcards</p></td>
-<td><p>Local release gate required before publication</p></td>
+<td><p>Published</p></td>
 </tr>
 <tr class="row-even"><td><p>Later release</p></td>
 <td><p>Deferred</p></td>
@@ -416,8 +443,8 @@ until its release is built and published.</p>
 </tr>
 </tbody>
 </table>
-<section id="version-0-6-boundary">
-<h2>Version 0.6 boundary<a class="headerlink" href="#version-0-6-boundary" title="Link to this heading"></a></h2>
+<section id="what-0-6-established">
+<h2>What 0.6 established<a class="headerlink" href="#what-0-6-established" title="Link to this heading"></a></h2>
 <p>The 0.6 release intentionally includes anthem titles without lyrics, audio,
 credits, or adoption dates. Mottos use a conservative reviewed source-listed
 layer and do not infer legal status. Demonyms preserve structured English source
@@ -425,8 +452,8 @@ forms. Currency, language, timezone, and postal objects gain practical labels
 and provenance. Filters, rankings, and nearest-capital results make those facts
 easy to explore.</p>
 </section>
-<section id="version-0-7-boundary">
-<h2>Version 0.7 boundary<a class="headerlink" href="#version-0-7-boundary" title="Link to this heading"></a></h2>
+<section id="what-0-7-established">
+<h2>What 0.7 established<a class="headerlink" href="#what-0-7-established" title="Link to this heading"></a></h2>
 <p>The 0.7 release is about physical geography, not polygons. It adds sourced land
 and water area, coastline, highest and lowest points, mean elevation,
 source-listed major rivers and lakes, plain-language climate summaries, and

@@ -9,6 +9,7 @@
   <title>Project status &mdash; PyWorldAtlas 0.7.0</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/pyworldatlas.css?v=eaf36b4e" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -46,11 +47,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../explore.html">Explore the atlas in five minutes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../explore.html#make-a-country-postcard">Make a country postcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../explore.html#cross-writing-systems">Cross writing systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../explore.html#follow-a-feature-across-profiles">Follow a feature across profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../explore.html#rank-the-bundled-snapshots">Rank the bundled snapshots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../explore.html#find-the-nearest-capitals">Find the nearest capitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../explore.html#measure-and-orient">Measure and orient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../explore.html#follow-a-land-path">Follow a land path</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../explore.html#build-a-small-collection">Build a small collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../explore.html#create-a-repeatable-geography-quiz">Create a repeatable geography quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../explore.html#carry-the-data-elsewhere">Carry the data elsewhere</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../explore.html#runnable-tour">Runnable tour</a></li>
 </ul>
 </li>
@@ -237,10 +242,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../data_quality.html#run-the-validation-suite">Run the validation suite</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Project status</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Project status</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#coverage-at-a-glance">Coverage at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#detailed-coverage">Detailed coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#build-identity">Build identity</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../roadmap.html">Roadmap and visible progress</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../roadmap.html#version-0-6-boundary">Version 0.6 boundary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../roadmap.html#version-0-7-boundary">Version 0.7 boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../roadmap.html#what-0-6-established">What 0.6 established</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../roadmap.html#what-0-7-established">What 0.7 established</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../roadmap.html#explicitly-deferred">Explicitly deferred</a></li>
 </ul>
 </li>
@@ -355,24 +365,81 @@
              
   <section id="project-status">
 <h1>Project status<a class="headerlink" href="#project-status" title="Link to this heading"></a></h1>
-<p>Library version: 0.7.0
-Dataset version: 2026.07.22.7
-Schema version: 7</p>
-<p>Countries and areas: 248 (UN M49 scope)
-Capitals: 241 / 248
-Capital coordinates: 241 / 241
-Populated places: 6265
-Local identity names: 248 / 248 countries and areas / 80 languages / 21 scripts
-Reviewed national official forms: 10 / official-language selections: 244 / 248
-English formal names: 240 / 248 profiles / 195 distinct long forms
-Profile fields: 248 population / 247 currency / 245 language-code records
-Reference facts: 234 anthem titles / 32 reviewed mottos / 227 English demonym profiles
-Practical profiles: 246 timezone profiles / 176 postal formats / 245 currency symbols
-Reviewed land borders: 319 / borderless entities: 85
-Physical profiles: 240 source profiles / 238 coastlines / 240 elevation-extreme pairs
-Named physical features: 188 rivers across 80 profiles / 187 lakes across 69 profiles
-Climate: 240 summaries / 241 Köppen-Geiger profiles
-Last validation: PASS</p>
+<p>This page is generated from the validated build report. It is a compact
+snapshot of the package, dataset, and coverage that ship together.</p>
+<div class="atlas-stat-grid docutils container">
+<div class="atlas-stat docutils container">
+<p><strong>0.7.0</strong></p>
+<p>library version</p>
+</div>
+<div class="atlas-stat docutils container">
+<p><strong>2026.07.22.7</strong></p>
+<p>dataset version</p>
+</div>
+<div class="atlas-stat docutils container">
+<p><strong>PASS</strong></p>
+<p>latest validation</p>
+</div>
+</div>
+<section id="coverage-at-a-glance">
+<h2>Coverage at a glance<a class="headerlink" href="#coverage-at-a-glance" title="Link to this heading"></a></h2>
+<div class="atlas-card-grid docutils container">
+<div class="atlas-card atlas-card-blue docutils container">
+<p class="rubric">Profiles and identity</p>
+<p><strong>248</strong> profiles · <strong>248</strong> local identities · <strong>240</strong> English formal names</p>
+</div>
+<div class="atlas-card atlas-card-teal docutils container">
+<p class="rubric">Places and connections</p>
+<p><strong>241</strong> capitals · <strong>6,265</strong> populated places · <strong>319</strong> reviewed land borders</p>
+</div>
+<div class="atlas-card atlas-card-gold docutils container">
+<p class="rubric">Physical world</p>
+<p><strong>240</strong> physical profiles · <strong>188</strong> rivers · <strong>187</strong> lakes · <strong>241</strong> climate profiles</p>
+</div>
+</div>
+</section>
+<section id="detailed-coverage">
+<h2>Detailed coverage<a class="headerlink" href="#detailed-coverage" title="Link to this heading"></a></h2>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Validated dataset coverage</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<colgroup>
+<col style="width: 34.0%" />
+<col style="width: 66.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Area</p></th>
+<th class="head"><p>Included records</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Core geography</p></td>
+<td><p>248 countries and areas; 241 capitals; 241 capital coordinates</p></td>
+</tr>
+<tr class="row-odd"><td><p>Names and profiles</p></td>
+<td><p>248 local identities across 80 languages and 21 scripts; 248 population profiles</p></td>
+</tr>
+<tr class="row-even"><td><p>Reference facts</p></td>
+<td><p>234 anthem titles; 32 reviewed mottos; 227 English demonym profiles</p></td>
+</tr>
+<tr class="row-odd"><td><p>Practical metadata</p></td>
+<td><p>246 timezone profiles; 176 postal formats; 245 currency symbols</p></td>
+</tr>
+<tr class="row-even"><td><p>Physical geography</p></td>
+<td><p>238 coastlines; 240 elevation-extreme pairs; 240 climate summaries</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="build-identity">
+<h2>Build identity<a class="headerlink" href="#build-identity" title="Link to this heading"></a></h2>
+<p>Schema version: <strong>7</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This page is regenerated by <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">maintain.py</span> <span class="pre">status</span></code> and every
+strict documentation build. Edit the report generator or source data,
+not the generated page.</p>
+</div>
+</section>
 </section>
 
 

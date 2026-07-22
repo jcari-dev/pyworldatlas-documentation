@@ -1,6 +1,10 @@
 Installation
 ============
 
+PyWorldAtlas has no third-party runtime dependencies. Install the published
+wheel for ordinary use or an editable checkout when contributing to the data
+pipeline and documentation.
+
 Requirements
 ------------
 

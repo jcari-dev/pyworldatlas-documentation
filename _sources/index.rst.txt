@@ -1,15 +1,55 @@
 PyWorldAtlas
 ============
 
-PyWorldAtlas is a compact, source-aware world atlas for Python. It puts country
-profiles, capitals, cities, physical geography, climate classes, coordinates,
-distances, reviewed land neighbors, rankings, and learning tools into one
-bundled SQLite database that works fully offline.
+.. container:: atlas-hero
 
-No API key. No runtime download. No third-party runtime dependency.
+   :atlas-kicker:`Offline · source-aware · dependency-free`
+
+   .. container:: atlas-hero-title
+
+      Geography data that feels like ordinary Python.
+
+   .. container:: atlas-hero-copy
+
+      Explore country profiles, names and writing systems, capitals, cities,
+      physical geography, climate classes, coordinates, distances, reviewed
+      land neighbors, rankings, and learning tools from one bundled database.
+      No API key and no runtime download.
 
 **Documented version:** 0.7.0 | **Dataset:** 2026.07.22.7 |
 **Python:** 3.10–3.14 | **Profiles:** 248
+
+.. container:: atlas-stat-grid
+
+   .. container:: atlas-stat
+
+      **248**
+
+      country and area profiles
+
+   .. container:: atlas-stat
+
+      **6,265**
+
+      bundled populated places
+
+   .. container:: atlas-stat
+
+      **0**
+
+      runtime dependencies
+
+A small taste of the atlas
+--------------------------
+
+.. container:: atlas-flag-row
+
+   |flag-br| Brazil · |flag-jp| Japan · |flag-ch| Switzerland ·
+   |flag-cn| China · |flag-fr| France · |flag-ae| United Arab Emirates
+
+Flag values are Unicode regional-indicator emoji derived from each alpha-2
+code. The row above uses local documentation artwork for consistent display;
+see :doc:`discovery` for the exact API and rendering contract.
 
 Start with something interesting
 --------------------------------
@@ -31,6 +71,62 @@ Start with something interesting
 The installed wheel contains ordinary Python source and one read-only database.
 Constructing :class:`~pyworldatlas.Atlas` never contacts a server and does not
 load every country into memory.
+
+See what you can build
+----------------------
+
+.. container:: atlas-card-grid
+
+   .. container:: atlas-card atlas-card-blue
+
+      .. rubric:: Meet a country
+
+      Combine local names, flag emoji, capital, anthem title, motto, demonym,
+      currency, languages, timezones, and source references in one typed
+      profile. Start with :doc:`country_profile`.
+
+   .. container:: atlas-card atlas-card-teal
+
+      .. rubric:: Explore the physical world
+
+      Read coastlines, area components, elevation extremes, source-listed
+      rivers and lakes, and represented Köppen-Geiger classes. Visit
+      :doc:`physical_geography`.
+
+   .. container:: atlas-card atlas-card-gold
+
+      .. rubric:: Measure between places
+
+      Calculate great-circle distance, initial bearing, and spherical midpoint
+      from cities, capitals, countries, or coordinates. Try
+      :doc:`coordinates_distances`.
+
+   .. container:: atlas-card atlas-card-teal
+
+      .. rubric:: Follow land connections
+
+      Discover reviewed neighbors, shared neighbors, shortest land-border
+      paths, crossings, and connected components in :doc:`borders`.
+
+   .. container:: atlas-card atlas-card-gold
+
+      .. rubric:: Discover and compare
+
+      Compose exact filters, inspect nearby capitals, and rank sourced or
+      transparently derived values with :doc:`rankings`.
+
+   .. container:: atlas-card atlas-card-blue
+
+      .. rubric:: Teach, quiz, or publish
+
+      Create stable samples, deterministic flashcards, compact discovery cards,
+      and Unicode-preserving JSON with :doc:`discovery` and
+      :doc:`serialization`.
+
+.. tip::
+
+   Start with :doc:`explore` for a five-minute tour made entirely from
+   executable examples.
 
 Try these next
 --------------

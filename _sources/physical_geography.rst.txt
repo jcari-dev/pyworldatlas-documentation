@@ -6,8 +6,35 @@ reference: land and water area, coastline, elevation, named highest and lowest
 points, source-listed major rivers and lakes, a plain-language climate summary,
 and represented Köppen-Geiger climate classes. Everything works offline.
 
+.. container:: atlas-stat-grid
+
+   .. container:: atlas-stat
+
+      **240**
+
+      elevation-extreme profiles
+
+   .. container:: atlas-stat
+
+      **375**
+
+      source-listed river and lake records
+
+   .. container:: atlas-stat
+
+      **241**
+
+      Köppen-Geiger profiles
+
 A country in four lines
 -----------------------
+
+.. container:: atlas-card atlas-card-teal
+
+   |flag-br| **Brazil at a glance**
+
+   **8,358,140 km²** land · **157,630 km²** water · **7,491 km** coastline ·
+   highest point **Pico da Neblina** · dominant represented class **Aw**
 
 .. doctest::
 

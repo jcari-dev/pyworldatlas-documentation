@@ -5,6 +5,29 @@ Each release has a defined feature boundary, source review, test gate, and
 documentation update. A planned feature is not part of the public contract
 until its release is built and published.
 
+.. container:: atlas-card-grid
+
+   .. container:: atlas-card atlas-card-blue
+
+      .. rubric:: Current release
+
+      **0.7.0** is published with physical profiles, source-listed features,
+      climate classes, rankings, and learning tools.
+
+   .. container:: atlas-card atlas-card-teal
+
+      .. rubric:: Next milestone
+
+      **0.8.0** is a planning boundary for geometry and spatial queries. Its
+      source, model, and license review must finish before it becomes public.
+
+   .. container:: atlas-card atlas-card-gold
+
+      .. rubric:: Stable destination
+
+      **1.0.0** represents a stable offline atlas contract after the remaining
+      data and API hardening milestones.
+
 .. list-table:: Release train
    :header-rows: 1
    :widths: 14 20 50 16
@@ -34,9 +57,9 @@ until its release is built and published.
      - Anthem titles, reviewed mottos, demonyms, richer currency/language/timezone/postal metadata, filters, rankings, nearest capitals
      - Published
    * - 0.7.0
-     - Release candidate
+     - Complete
      - Physical geography: land/water area, coastline, elevation extremes, source-listed rivers/lakes, Köppen-Geiger climate, physical rankings and flashcards
-     - Local release gate required before publication
+     - Published
    * - Later release
      - Deferred
      - Boundary geometry, GeoJSON, bounding boxes, centroids, point-in-country
@@ -46,7 +69,7 @@ until its release is built and published.
      - Stable offline atlas contract
      - —
 
-Version 0.6 boundary
+What 0.6 established
 --------------------
 
 The 0.6 release intentionally includes anthem titles without lyrics, audio,
@@ -56,7 +79,7 @@ forms. Currency, language, timezone, and postal objects gain practical labels
 and provenance. Filters, rankings, and nearest-capital results make those facts
 easy to explore.
 
-Version 0.7 boundary
+What 0.7 established
 --------------------
 
 The 0.7 release is about physical geography, not polygons. It adds sourced land

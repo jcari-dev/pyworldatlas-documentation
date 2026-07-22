@@ -9,6 +9,7 @@
   <title>PyWorldAtlas &mdash; PyWorldAtlas 0.7.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=eaf36b4e" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -45,11 +46,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="explore.html">Explore the atlas in five minutes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#make-a-country-postcard">Make a country postcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#cross-writing-systems">Cross writing systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#follow-a-feature-across-profiles">Follow a feature across profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#rank-the-bundled-snapshots">Rank the bundled snapshots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#find-the-nearest-capitals">Find the nearest capitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#measure-and-orient">Measure and orient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#follow-a-land-path">Follow a land path</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#build-a-small-collection">Build a small collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#create-a-repeatable-geography-quiz">Create a repeatable geography quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#carry-the-data-elsewhere">Carry the data elsewhere</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#runnable-tour">Runnable tour</a></li>
 </ul>
 </li>
@@ -236,10 +241,15 @@
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#run-the-validation-suite">Run the validation suite</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#coverage-at-a-glance">Coverage at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#detailed-coverage">Detailed coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#build-identity">Build identity</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap and visible progress</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="roadmap.html#version-0-6-boundary">Version 0.6 boundary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="roadmap.html#version-0-7-boundary">Version 0.7 boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#what-0-6-established">What 0.6 established</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#what-0-7-established">What 0.7 established</a></li>
 <li class="toctree-l2"><a class="reference internal" href="roadmap.html#explicitly-deferred">Explicitly deferred</a></li>
 </ul>
 </li>
@@ -354,13 +364,44 @@
              
   <section id="pyworldatlas">
 <h1>PyWorldAtlas<a class="headerlink" href="#pyworldatlas" title="Link to this heading"></a></h1>
-<p>PyWorldAtlas is a compact, source-aware world atlas for Python. It puts country
-profiles, capitals, cities, physical geography, climate classes, coordinates,
-distances, reviewed land neighbors, rankings, and learning tools into one
-bundled SQLite database that works fully offline.</p>
-<p>No API key. No runtime download. No third-party runtime dependency.</p>
+<div class="atlas-hero docutils container">
+<p><span class="atlas-kicker">Offline · source-aware · dependency-free</span></p>
+<div class="atlas-hero-title docutils container">
+<p>Geography data that feels like ordinary Python.</p>
+</div>
+<div class="atlas-hero-copy docutils container">
+<p>Explore country profiles, names and writing systems, capitals, cities,
+physical geography, climate classes, coordinates, distances, reviewed
+land neighbors, rankings, and learning tools from one bundled database.
+No API key and no runtime download.</p>
+</div>
+</div>
 <p><strong>Documented version:</strong> 0.7.0 | <strong>Dataset:</strong> 2026.07.22.7 |
 <strong>Python:</strong> 3.10–3.14 | <strong>Profiles:</strong> 248</p>
+<div class="atlas-stat-grid docutils container">
+<div class="atlas-stat docutils container">
+<p><strong>248</strong></p>
+<p>country and area profiles</p>
+</div>
+<div class="atlas-stat docutils container">
+<p><strong>6,265</strong></p>
+<p>bundled populated places</p>
+</div>
+<div class="atlas-stat docutils container">
+<p><strong>0</strong></p>
+<p>runtime dependencies</p>
+</div>
+</div>
+<section id="a-small-taste-of-the-atlas">
+<h2>A small taste of the atlas<a class="headerlink" href="#a-small-taste-of-the-atlas" title="Link to this heading"></a></h2>
+<div class="atlas-flag-row docutils container">
+<p><a class="atlas-flag-image reference internal" href="_images/1f1e7-1f1f7.svg"><img alt="Brazil flag emoji" class="atlas-flag-image" src="_images/1f1e7-1f1f7.svg" style="width: 1.45em;" /></a> Brazil · <a class="atlas-flag-image reference internal" href="_images/1f1ef-1f1f5.svg"><img alt="Japan flag emoji" class="atlas-flag-image" src="_images/1f1ef-1f1f5.svg" style="width: 1.45em;" /></a> Japan · <a class="atlas-flag-image reference internal" href="_images/1f1e8-1f1ed.svg"><img alt="Switzerland flag emoji" class="atlas-flag-image" src="_images/1f1e8-1f1ed.svg" style="width: 1.45em;" /></a> Switzerland ·
+<a class="atlas-flag-image reference internal" href="_images/1f1e8-1f1f3.svg"><img alt="China flag emoji" class="atlas-flag-image" src="_images/1f1e8-1f1f3.svg" style="width: 1.45em;" /></a> China · <a class="atlas-flag-image reference internal" href="_images/1f1eb-1f1f7.svg"><img alt="France flag emoji" class="atlas-flag-image" src="_images/1f1eb-1f1f7.svg" style="width: 1.45em;" /></a> France · <a class="atlas-flag-image reference internal" href="_images/1f1e6-1f1ea.svg"><img alt="United Arab Emirates flag emoji" class="atlas-flag-image" src="_images/1f1e6-1f1ea.svg" style="width: 1.45em;" /></a> United Arab Emirates</p>
+</div>
+<p>Flag values are Unicode regional-indicator emoji derived from each alpha-2
+code. The row above uses local documentation artwork for consistent display;
+see <a class="reference internal" href="discovery.html"><span class="doc">Country discovery and learning tools</span></a> for the exact API and rendering contract.</p>
+</section>
 <section id="start-with-something-interesting">
 <h2>Start with something interesting<a class="headerlink" href="#start-with-something-interesting" title="Link to this heading"></a></h2>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
@@ -379,6 +420,50 @@ bundled SQLite database that works fully offline.</p>
 <p>The installed wheel contains ordinary Python source and one read-only database.
 Constructing <a class="reference internal" href="api.html#pyworldatlas.Atlas" title="pyworldatlas.Atlas"><code class="xref py py-class docutils literal notranslate"><span class="pre">Atlas</span></code></a> never contacts a server and does not
 load every country into memory.</p>
+</section>
+<section id="see-what-you-can-build">
+<h2>See what you can build<a class="headerlink" href="#see-what-you-can-build" title="Link to this heading"></a></h2>
+<div class="atlas-card-grid docutils container">
+<div class="atlas-card atlas-card-blue docutils container">
+<p class="rubric">Meet a country</p>
+<p>Combine local names, flag emoji, capital, anthem title, motto, demonym,
+currency, languages, timezones, and source references in one typed
+profile. Start with <a class="reference internal" href="country_profile.html"><span class="doc">Country profiles</span></a>.</p>
+</div>
+<div class="atlas-card atlas-card-teal docutils container">
+<p class="rubric">Explore the physical world</p>
+<p>Read coastlines, area components, elevation extremes, source-listed
+rivers and lakes, and represented Köppen-Geiger classes. Visit
+<a class="reference internal" href="physical_geography.html"><span class="doc">Physical geography</span></a>.</p>
+</div>
+<div class="atlas-card atlas-card-gold docutils container">
+<p class="rubric">Measure between places</p>
+<p>Calculate great-circle distance, initial bearing, and spherical midpoint
+from cities, capitals, countries, or coordinates. Try
+<a class="reference internal" href="coordinates_distances.html"><span class="doc">Coordinates and distances</span></a>.</p>
+</div>
+<div class="atlas-card atlas-card-teal docutils container">
+<p class="rubric">Follow land connections</p>
+<p>Discover reviewed neighbors, shared neighbors, shortest land-border
+paths, crossings, and connected components in <a class="reference internal" href="borders.html"><span class="doc">Land borders and paths</span></a>.</p>
+</div>
+<div class="atlas-card atlas-card-gold docutils container">
+<p class="rubric">Discover and compare</p>
+<p>Compose exact filters, inspect nearby capitals, and rank sourced or
+transparently derived values with <a class="reference internal" href="rankings.html"><span class="doc">Filters, rankings, and nearby capitals</span></a>.</p>
+</div>
+<div class="atlas-card atlas-card-blue docutils container">
+<p class="rubric">Teach, quiz, or publish</p>
+<p>Create stable samples, deterministic flashcards, compact discovery cards,
+and Unicode-preserving JSON with <a class="reference internal" href="discovery.html"><span class="doc">Country discovery and learning tools</span></a> and
+<a class="reference internal" href="serialization.html"><span class="doc">Serialization</span></a>.</p>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Start with <a class="reference internal" href="explore.html"><span class="doc">Explore the atlas in five minutes</span></a> for a five-minute tour made entirely from
+executable examples.</p>
+</div>
 </section>
 <section id="try-these-next">
 <h2>Try these next<a class="headerlink" href="#try-these-next" title="Link to this heading"></a></h2>

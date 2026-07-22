@@ -9,6 +9,7 @@
   <title>Physical geography &mdash; PyWorldAtlas 0.7.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=eaf36b4e" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -46,11 +47,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="explore.html">Explore the atlas in five minutes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#make-a-country-postcard">Make a country postcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#cross-writing-systems">Cross writing systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#follow-a-feature-across-profiles">Follow a feature across profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#rank-the-bundled-snapshots">Rank the bundled snapshots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#find-the-nearest-capitals">Find the nearest capitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#measure-and-orient">Measure and orient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#follow-a-land-path">Follow a land path</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#build-a-small-collection">Build a small collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#create-a-repeatable-geography-quiz">Create a repeatable geography quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#carry-the-data-elsewhere">Carry the data elsewhere</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#runnable-tour">Runnable tour</a></li>
 </ul>
 </li>
@@ -237,10 +242,15 @@
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#run-the-validation-suite">Run the validation suite</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#coverage-at-a-glance">Coverage at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#detailed-coverage">Detailed coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#build-identity">Build identity</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap and visible progress</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="roadmap.html#version-0-6-boundary">Version 0.6 boundary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="roadmap.html#version-0-7-boundary">Version 0.7 boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#what-0-6-established">What 0.6 established</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#what-0-7-established">What 0.7 established</a></li>
 <li class="toctree-l2"><a class="reference internal" href="roadmap.html#explicitly-deferred">Explicitly deferred</a></li>
 </ul>
 </li>
@@ -359,8 +369,27 @@
 reference: land and water area, coastline, elevation, named highest and lowest
 points, source-listed major rivers and lakes, a plain-language climate summary,
 and represented Köppen-Geiger climate classes. Everything works offline.</p>
+<div class="atlas-stat-grid docutils container">
+<div class="atlas-stat docutils container">
+<p><strong>240</strong></p>
+<p>elevation-extreme profiles</p>
+</div>
+<div class="atlas-stat docutils container">
+<p><strong>375</strong></p>
+<p>source-listed river and lake records</p>
+</div>
+<div class="atlas-stat docutils container">
+<p><strong>241</strong></p>
+<p>Köppen-Geiger profiles</p>
+</div>
+</div>
 <section id="a-country-in-four-lines">
 <h2>A country in four lines<a class="headerlink" href="#a-country-in-four-lines" title="Link to this heading"></a></h2>
+<div class="atlas-card atlas-card-teal docutils container">
+<p><a class="atlas-flag-image reference internal" href="_images/1f1e7-1f1f7.svg"><img alt="Brazil flag emoji" class="atlas-flag-image" src="_images/1f1e7-1f1f7.svg" style="width: 1.45em;" /></a> <strong>Brazil at a glance</strong></p>
+<p><strong>8,358,140 km²</strong> land · <strong>157,630 km²</strong> water · <strong>7,491 km</strong> coastline ·
+highest point <strong>Pico da Neblina</strong> · dominant represented class <strong>Aw</strong></p>
+</div>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">brazil</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">)</span>

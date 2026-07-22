@@ -9,6 +9,7 @@
   <title>Explore the atlas in five minutes &mdash; PyWorldAtlas 0.7.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=eaf36b4e" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
@@ -46,11 +47,15 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Explore the atlas in five minutes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#make-a-country-postcard">Make a country postcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cross-writing-systems">Cross writing systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#follow-a-feature-across-profiles">Follow a feature across profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rank-the-bundled-snapshots">Rank the bundled snapshots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#find-the-nearest-capitals">Find the nearest capitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#measure-and-orient">Measure and orient</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#follow-a-land-path">Follow a land path</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#build-a-small-collection">Build a small collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-a-repeatable-geography-quiz">Create a repeatable geography quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#carry-the-data-elsewhere">Carry the data elsewhere</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#runnable-tour">Runnable tour</a></li>
 </ul>
 </li>
@@ -237,10 +242,15 @@
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#run-the-validation-suite">Run the validation suite</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="_generated/project_status.html">Project status</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#coverage-at-a-glance">Coverage at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#detailed-coverage">Detailed coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#build-identity">Build identity</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap and visible progress</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="roadmap.html#version-0-6-boundary">Version 0.6 boundary</a></li>
-<li class="toctree-l2"><a class="reference internal" href="roadmap.html#version-0-7-boundary">Version 0.7 boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#what-0-6-established">What 0.6 established</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#what-0-7-established">What 0.7 established</a></li>
 <li class="toctree-l2"><a class="reference internal" href="roadmap.html#explicitly-deferred">Explicitly deferred</a></li>
 </ul>
 </li>
@@ -358,10 +368,31 @@
 <p>PyWorldAtlas is most useful when country facts and geographic calculations can
 be combined in ordinary Python. These examples run entirely from the bundled
 database: no API key, network request, or third-party runtime package is used.</p>
+<div class="atlas-card-grid docutils container">
+<div class="atlas-card atlas-card-blue docutils container">
+<p class="rubric">Profiles and names</p>
+<p>Flags, local names, capitals, reference facts, languages, currencies,
+timezones, and provenance.</p>
+</div>
+<div class="atlas-card atlas-card-teal docutils container">
+<p class="rubric">Physical geography</p>
+<p>Area, coastlines, elevations, rivers, lakes, and climate classes.</p>
+</div>
+<div class="atlas-card atlas-card-gold docutils container">
+<p class="rubric">Geographic tools</p>
+<p>Distances, bearings, midpoints, neighbors, paths, filters, and rankings.</p>
+</div>
+</div>
+<p>Every result below comes from the same <a class="reference internal" href="api.html#pyworldatlas.Atlas" title="pyworldatlas.Atlas"><code class="xref py py-class docutils literal notranslate"><span class="pre">Atlas</span></code></a> object.
+The examples are tested during every documentation build.</p>
 <section id="make-a-country-postcard">
 <h2>Make a country postcard<a class="headerlink" href="#make-a-country-postcard" title="Link to this heading"></a></h2>
 <p>Country profiles combine names, reference facts, physical geography, practical
 metadata, and exact source references.</p>
+<div class="atlas-flag-row docutils container">
+<p><a class="atlas-flag-image reference internal" href="_images/1f1e7-1f1f7.svg"><img alt="Brazil flag emoji" class="atlas-flag-image" src="_images/1f1e7-1f1f7.svg" style="width: 1.45em;" /></a> <strong>Brazil</strong> · local display name <strong>Brasil</strong> · capital
+<strong>Brasília</strong></p>
+</div>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span> <span class="o">=</span> <span class="n">Atlas</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">brazil</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">)</span>
@@ -377,6 +408,20 @@ metadata, and exact source references.</p>
 <span class="go">Pico da Neblina 2,994 m</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">brazil</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">dominant_zone</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">brazil</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">dominant_zone</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="go">Aw Tropical, savannah</span>
+</pre></div>
+</div>
+</section>
+<section id="cross-writing-systems">
+<h2>Cross writing systems<a class="headerlink" href="#cross-writing-systems" title="Link to this heading"></a></h2>
+<p>A local identity keeps its original Unicode text, language, script, evidence,
+source locator, and source-provided romanization when available.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">china</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;China&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">china</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">&quot;zh&quot;</span><span class="p">))</span>
+<span class="go">中国</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">china</span><span class="o">.</span><span class="n">official_name_in</span><span class="p">(</span><span class="s2">&quot;zh&quot;</span><span class="p">))</span>
+<span class="go">中华人民共和国</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">china</span><span class="o">.</span><span class="n">romanized_name_in</span><span class="p">(</span><span class="s2">&quot;zh&quot;</span><span class="p">))</span>
+<span class="go">Zhongguo</span>
 </pre></div>
 </div>
 </section>
@@ -415,6 +460,31 @@ The result uses the same dependency-free great-circle calculation as
 </pre></div>
 </div>
 </section>
+<section id="measure-and-orient">
+<h2>Measure and orient<a class="headerlink" href="#measure-and-orient" title="Link to this heading"></a></h2>
+<p>Distance, initial bearing, and midpoint calculations accept coordinate objects
+as well as named bundled places.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tokyo</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">coordinates</span><span class="p">(</span><span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;JP&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">paris</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">coordinates</span><span class="p">(</span><span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;FR&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">tokyo</span><span class="o">.</span><span class="n">distance_to</span><span class="p">(</span><span class="n">paris</span><span class="p">))</span>
+<span class="go">9713</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">tokyo</span><span class="o">.</span><span class="n">bearing_to</span><span class="p">(</span><span class="n">paris</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="go">333.5</span>
+</pre></div>
+</div>
+</section>
+<section id="follow-a-land-path">
+<h2>Follow a land path<a class="headerlink" href="#follow-a-land-path" title="Link to this heading"></a></h2>
+<p>The reviewed border graph supports deterministic shortest paths and explicit
+crossing counts without pretending to be a road-routing service.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">path</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">border_path</span><span class="p">(</span><span class="s2">&quot;Portugal&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span><span class="o">.</span><span class="n">names</span>
+<span class="go">(&#39;Portugal&#39;, &#39;Spain&#39;, &#39;France&#39;, &#39;Germany&#39;, &#39;Poland&#39;, &#39;Russia&#39;, &#39;China&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span><span class="o">.</span><span class="n">crossings</span>
+<span class="go">6</span>
+</pre></div>
+</div>
+</section>
 <section id="build-a-small-collection">
 <h2>Build a small collection<a class="headerlink" href="#build-a-small-collection" title="Link to this heading"></a></h2>
 <p>Filters can be combined to select profiles by geography, currency, language
@@ -438,6 +508,20 @@ plans, examples, and tests.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">card</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">flashcards</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="s2">&quot;highest_points&quot;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="s2">&quot;Friday&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">card</span><span class="o">.</span><span class="n">prompt</span><span class="p">,</span> <span class="n">card</span><span class="o">.</span><span class="n">answer</span><span class="p">)</span>
 <span class="go">(&#39;What is the highest point listed for Austria?&#39;, &#39;Grossglockner (3798 m)&#39;)</span>
+</pre></div>
+</div>
+</section>
+<section id="carry-the-data-elsewhere">
+<h2>Carry the data elsewhere<a class="headerlink" href="#carry-the-data-elsewhere" title="Link to this heading"></a></h2>
+<p>Public models serialize to JSON-compatible values while preserving Unicode and
+structured nested records.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">japan_card</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">discovery_card</span><span class="p">()</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">japan_card</span><span class="p">[</span><span class="s2">&quot;country&quot;</span><span class="p">][</span><span class="s2">&quot;alpha2&quot;</span><span class="p">]</span>
+<span class="go">&#39;JP&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">japan_card</span><span class="p">[</span><span class="s2">&quot;highest_point&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
+<span class="go">&#39;Mount Fuji&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">japan_card</span><span class="p">[</span><span class="s2">&quot;climate_zone_codes&quot;</span><span class="p">][:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">[&#39;Cfa&#39;, &#39;Dfb&#39;, &#39;Dfa&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>

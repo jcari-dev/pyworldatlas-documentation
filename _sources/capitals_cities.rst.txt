@@ -1,6 +1,10 @@
 Capitals and major cities
 =========================
 
+Explore primary capitals and the bundled populated-place collection as typed,
+coordinate-bearing records. Lookups remain local and require no mapping
+service.
+
 Capital records
 ---------------
 

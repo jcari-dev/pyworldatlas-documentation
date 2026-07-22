@@ -1,6 +1,10 @@
 Data quality and limitations
 ============================
 
+Quality means more than having a value: each field needs a defined source,
+validation rule, coverage boundary, and honest missing-data behavior. This page
+documents those guarantees and their limits.
+
 Educational and editorial quality
 ---------------------------------
 

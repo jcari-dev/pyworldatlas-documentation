@@ -1,6 +1,9 @@
 Lookup, search, and filtering
 =============================
 
+Use exact identifiers when you know the profile, safe lookup when absence is
+expected, ranked search for human input, and composable filters for discovery.
+
 Exact lookup
 ------------
 
