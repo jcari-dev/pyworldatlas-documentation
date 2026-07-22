@@ -1,7 +1,7 @@
 Filters, rankings, and nearby capitals
 ======================================
 
-Version 0.6 adds small, composable discovery methods. They return immutable
+PyWorldAtlas provides small, composable discovery methods. They return immutable
 models and never contact a remote service.
 
 Profile filters
@@ -18,10 +18,17 @@ case-insensitive profile filters:
    atlas.countries(language_code="es")
    atlas.countries(script_code="Arab")
    atlas.countries(timezone_id="Asia/Tokyo")
+   atlas.countries(coastal=False)
+   atlas.countries(koppen_geiger_code="Af")
+   atlas.countries(has_rivers=True, has_lakes=True)
 
 Multiple arguments are combined with ``AND``. Language values describe the
 captured GeoNames country metadata; they are not promoted to legal-language
 claims.
+
+``coastal``, ``has_rivers``, and ``has_lakes`` accept only booleans or
+``None``. Physical filters use covered source records: ``coastal=False`` means
+the source reports zero coastline and never turns missing data into a result.
 
 Country rankings
 ----------------
@@ -50,6 +57,33 @@ alias :meth:`Atlas.rank <pyworldatlas.Atlas.rank>` support these metrics:
    * - ``major_city_count``
      - Bundled populated-place records
      - ``places``
+   * - ``land_area`` / ``land_area_km2``
+     - Source-reported land area
+     - ``km²``
+   * - ``water_area`` / ``water_area_km2``
+     - Source-reported water area
+     - ``km²``
+   * - ``water_percent``
+     - Water area divided by total area
+     - ``%``
+   * - ``coastline`` / ``coastline_km``
+     - Source-reported coastline length
+     - ``km``
+   * - ``mean_elevation`` / ``mean_elevation_m``
+     - Source-reported mean elevation
+     - ``m``
+   * - ``highest_elevation`` / ``highest_point``
+     - Elevation of the named highest point
+     - ``m``
+   * - ``lowest_elevation`` / ``lowest_point``
+     - Elevation of the named lowest point
+     - ``m``
+   * - ``river_count`` / ``lake_count``
+     - Number of source-listed major feature records
+     - ``rivers`` / ``lakes``
+   * - ``climate_zone_count``
+     - Represented Köppen-Geiger classes above the extraction threshold
+     - ``classes``
 
 .. doctest::
 
@@ -65,6 +99,19 @@ alias :meth:`Atlas.rank <pyworldatlas.Atlas.rank>` support these metrics:
 Rankings are descriptions of bundled values, not judgments about countries or
 people. Equal values use country name as a stable tie-breaker, and missing
 values are excluded.
+
+.. doctest::
+
+   >>> coastlines = atlas.rank("coastline", limit=3)
+   >>> [(row.country.name, row.value, row.unit) for row in coastlines]
+   [('Canada', 202080.0, 'km'), ('Indonesia', 54716.0, 'km'), ('Greenland', 44087.0, 'km')]
+   >>> peaks = atlas.rank("highest_elevation", limit=3)
+   >>> [(row.country.name, row.value) for row in peaks]
+   [('China', 8849.0), ('Nepal', 8849.0), ('Pakistan', 8611.0)]
+
+River and lake counts measure source-listed records, not every physical feature.
+Climate counts depend on the documented 0.1% class-share threshold. See
+:doc:`physical_geography` before interpreting those metrics.
 
 Nearest capitals
 ----------------

@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Local names and writing systems &mdash; PyWorldAtlas 0.6.0</title>
+  <title>Local names and writing systems &mdash; PyWorldAtlas 0.7.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=8fa8b3e9"></script>
+      <script src="_static/documentation_options.js?v=fe7df9b0"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -46,6 +46,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="explore.html">Explore the atlas in five minutes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#make-a-country-postcard">Make a country postcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#follow-a-feature-across-profiles">Follow a feature across profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#rank-the-bundled-snapshots">Rank the bundled snapshots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#find-the-nearest-capitals">Find the nearest capitals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#build-a-small-collection">Build a small collection</a></li>
@@ -60,6 +61,7 @@
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-profile-metadata">Read profile metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#add-reference-facts">Add reference facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#explore-physical-geography">Explore physical geography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-the-three-english-name-fields">Read the three English name fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#meet-countries-in-their-own-languages">Meet countries in their own languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
@@ -100,10 +102,22 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#profile-example">Profile example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#current-field-coverage">Current field coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#convenience-and-discovery-views">Convenience and discovery views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#physical-geography">Physical geography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#names-and-aliases">Names and aliases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#capital-and-cities">Capital and cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#sources">Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="physical_geography.html">Physical geography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#a-country-in-four-lines">A country in four lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#area-and-coastline">Area and coastline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#elevation-and-named-extremes">Elevation and named extremes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#rivers-and-lakes">Rivers and lakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#climate-profiles">Climate profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#physical-filters-and-rankings">Physical filters and rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#learning-prompts">Learning prompts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#executable-example">Executable example</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference_facts.html">Country reference facts</a><ul>
@@ -203,13 +217,14 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#unicode-cldr-48-2">Unicode CLDR 48.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-country-name-profiles">CIA World Factbook country-name profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-6-0-release">Source priority in the 0.6.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-7-0-release">Source priority in the 0.7.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -237,6 +252,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#country-identity-provenance">Country identity provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#reference-fact-provenance">Reference-fact provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#discovery-calculations">Discovery calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#physical-geography-provenance">Physical-geography provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#distance-input-contract">Distance input contract</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-field-notes">Profile field notes</a></li>
@@ -262,6 +278,12 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#geographic-models">Geographic models</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Coordinate"><code class="docutils literal notranslate"><span class="pre">Coordinate</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Area"><code class="docutils literal notranslate"><span class="pre">Area</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.ElevationPoint"><code class="docutils literal notranslate"><span class="pre">ElevationPoint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.River"><code class="docutils literal notranslate"><span class="pre">River</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Lake"><code class="docutils literal notranslate"><span class="pre">Lake</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.ClimateZone"><code class="docutils literal notranslate"><span class="pre">ClimateZone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.ClimateProfile"><code class="docutils literal notranslate"><span class="pre">ClimateProfile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PhysicalGeography"><code class="docutils literal notranslate"><span class="pre">PhysicalGeography</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Geography"><code class="docutils literal notranslate"><span class="pre">Geography</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Capital"><code class="docutils literal notranslate"><span class="pre">Capital</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.City"><code class="docutils literal notranslate"><span class="pre">City</span></code></a></li>
@@ -294,14 +316,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.6.0 — 2026-07-22</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.5.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.7.0 — 2026-07-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.6.0 — 2026-07-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.5.0 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.3.1 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>

@@ -30,13 +30,13 @@ until its release is built and published.
      - Complete selected local identities, English formal names, editorial policy
      - Published
    * - 0.6.0
-     - Release candidate
+     - Complete
      - Anthem titles, reviewed mottos, demonyms, richer currency/language/timezone/postal metadata, filters, rankings, nearest capitals
-     - Local release gate passed; publication pending
+     - Published
    * - 0.7.0
-     - Planned
-     - Physical geography: land/water area, coastline, elevation extremes, named rivers/lakes/mountains, reviewed Köppen climate, physical rankings
-     - —
+     - Release candidate
+     - Physical geography: land/water area, coastline, elevation extremes, source-listed rivers/lakes, Köppen-Geiger climate, physical rankings and flashcards
+     - Local release gate required before publication
    * - Later release
      - Deferred
      - Boundary geometry, GeoJSON, bounding boxes, centroids, point-in-country
@@ -59,17 +59,23 @@ easy to explore.
 Version 0.7 boundary
 --------------------
 
-The next release is about physical geography, not polygons. It will require
-field-specific source decisions and coverage gates for land and water area,
-coastline, highest and lowest points, elevation, named major physical features,
-and reviewed Köppen climate classifications. Physical rankings will be derived
-only after the corresponding source fields pass review.
+The 0.7 release is about physical geography, not polygons. It adds sourced land
+and water area, coastline, highest and lowest points, mean elevation,
+source-listed major rivers and lakes, plain-language climate summaries, and
+represented Köppen-Geiger classes. It also adds exact physical filters,
+feature-discovery helpers, rankings, discovery-card fields, and deterministic
+learning prompts.
+
+A separate major-mountain inventory was not added: the reviewed source can
+identify a profile's highest point, but that does not make every point a
+mountain or provide an honest global “major” threshold.
 
 Explicitly deferred
 -------------------
 
 Boundary geometry, GeoJSON export, bounding boxes, centroids, and
-point-in-country lookup are not part of 0.6 or 0.7. Reference dates and anthem
+point-in-country lookup are not part of 0.6 or 0.7 and remain candidates for
+0.8 after their own modeling and licensing review. Reference dates and anthem
 contributors/adoption histories are also outside the current source contract.
 This keeps each release useful without mixing distinct licensing, modeling, and
 interpretation problems.

@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Data sources and freshness &mdash; PyWorldAtlas 0.6.0</title>
+  <title>Data sources and freshness &mdash; PyWorldAtlas 0.7.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=8fa8b3e9"></script>
+      <script src="_static/documentation_options.js?v=fe7df9b0"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -46,6 +46,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="explore.html">Explore the atlas in five minutes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#make-a-country-postcard">Make a country postcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#follow-a-feature-across-profiles">Follow a feature across profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#rank-the-bundled-snapshots">Rank the bundled snapshots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#find-the-nearest-capitals">Find the nearest capitals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#build-a-small-collection">Build a small collection</a></li>
@@ -60,6 +61,7 @@
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-profile-metadata">Read profile metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#add-reference-facts">Add reference facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#explore-physical-geography">Explore physical geography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-the-three-english-name-fields">Read the three English name fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#meet-countries-in-their-own-languages">Meet countries in their own languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
@@ -100,10 +102,22 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#profile-example">Profile example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#current-field-coverage">Current field coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#convenience-and-discovery-views">Convenience and discovery views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#physical-geography">Physical geography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#names-and-aliases">Names and aliases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#capital-and-cities">Capital and cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#sources">Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="physical_geography.html">Physical geography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#a-country-in-four-lines">A country in four lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#area-and-coastline">Area and coastline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#elevation-and-named-extremes">Elevation and named extremes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#rivers-and-lakes">Rivers and lakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#climate-profiles">Climate profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#physical-filters-and-rankings">Physical filters and rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#learning-prompts">Learning prompts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#executable-example">Executable example</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference_facts.html">Country reference facts</a><ul>
@@ -203,13 +217,14 @@
 <li class="toctree-l2"><a class="reference internal" href="#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unicode-cldr-48-2">Unicode CLDR 48.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cia-world-factbook-country-name-profiles">CIA World Factbook country-name profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#source-priority-in-the-0-6-0-release">Source priority in the 0.6.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-priority-in-the-0-7-0-release">Source priority in the 0.7.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -237,6 +252,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#country-identity-provenance">Country identity provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#reference-fact-provenance">Reference-fact provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#discovery-calculations">Discovery calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#physical-geography-provenance">Physical-geography provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#distance-input-contract">Distance input contract</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-field-notes">Profile field notes</a></li>
@@ -262,6 +278,12 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#geographic-models">Geographic models</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Coordinate"><code class="docutils literal notranslate"><span class="pre">Coordinate</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Area"><code class="docutils literal notranslate"><span class="pre">Area</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.ElevationPoint"><code class="docutils literal notranslate"><span class="pre">ElevationPoint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.River"><code class="docutils literal notranslate"><span class="pre">River</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Lake"><code class="docutils literal notranslate"><span class="pre">Lake</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.ClimateZone"><code class="docutils literal notranslate"><span class="pre">ClimateZone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.ClimateProfile"><code class="docutils literal notranslate"><span class="pre">ClimateProfile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PhysicalGeography"><code class="docutils literal notranslate"><span class="pre">PhysicalGeography</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Geography"><code class="docutils literal notranslate"><span class="pre">Geography</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Capital"><code class="docutils literal notranslate"><span class="pre">Capital</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.City"><code class="docutils literal notranslate"><span class="pre">City</span></code></a></li>
@@ -294,14 +316,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.6.0 — 2026-07-22</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.5.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.7.0 — 2026-07-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.6.0 — 2026-07-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.5.0 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.3.1 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -398,7 +421,8 @@ profiles with 417 records; 176 profiles have postal-code formats.</p>
 <dl class="simple">
 <dt><strong>Purpose</strong></dt><dd><p>Independent land-border topology derived from shared segments in the 1:50m
 Admin 0 map-unit polygons. Country polygons and land boundary lines are also
-retained with the source capture for review.</p>
+retained with the source capture for review. The map-unit polygons support
+build-time aggregation of Köppen-Geiger raster cells into country profiles.</p>
 </dd>
 <dt><strong>Official location</strong></dt><dd><p><a class="reference external" href="https://www.naturalearthdata.com/downloads/50m-cultural-vectors/">https://www.naturalearthdata.com/downloads/50m-cultural-vectors/</a></p>
 </dd>
@@ -411,7 +435,8 @@ personal, educational, and commercial use without permission.</p>
 <dt><strong>Known limitation</strong></dt><dd><p>Natural Earth is generalized cartographic data. Very small territories and
 enclaves may not retain a shared segment at 1:50m, and its map units express
 a documented map convention. It is used as a cross-check, not as an
-unreviewed authority.</p>
+unreviewed authority. No Natural Earth polygon is exposed as public boundary
+geometry in 0.7.</p>
 </dd>
 </dl>
 </section>
@@ -463,20 +488,22 @@ are dedicated under CC0 1.0. See <a class="reference external" href="https://www
 </dd>
 </dl>
 </section>
-<section id="cia-world-factbook-country-name-profiles">
-<h2>CIA World Factbook country-name profiles<a class="headerlink" href="#cia-world-factbook-country-name-profiles" title="Link to this heading"></a></h2>
+<section id="cia-world-factbook-structured-country-profiles">
+<h2>CIA World Factbook structured country profiles<a class="headerlink" href="#cia-world-factbook-structured-country-profiles" title="Link to this heading"></a></h2>
 <dl class="simple">
-<dt><strong>Purpose</strong></dt><dd><p>Base English formal-name layer, national-anthem titles, and English demonym
-noun/adjective forms.</p>
+<dt><strong>Purpose</strong></dt><dd><p>Base English formal-name layer, national-anthem titles, English demonym
+noun/adjective forms, total/land/water area, coastline, mean elevation,
+named highest and lowest points, source-listed major rivers and lakes, and
+short climate descriptions.</p>
 </dd>
 <dt><strong>Locations</strong></dt><dd><p><a class="reference external" href="https://www.cia.gov/the-world-factbook/">https://www.cia.gov/the-world-factbook/</a> and
 <a class="reference external" href="https://github.com/factbook/factbook.json">https://github.com/factbook/factbook.json</a></p>
 </dd>
 <dt><strong>Source revision</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">factbook.json</span></code> commit
 <code class="docutils literal notranslate"><span class="pre">8662a8b17a784841ab4528631b04090eb2f183eb</span></code>. The standard-library
-extractor retains only structured country-name, national-anthem-title, and
-nationality fields. It excludes lyrics, audio, contributor credits,
-adoption histories, and profile narrative text.</p>
+extractor retains only the documented identity, reference, and structured
+physical-geography fields. It excludes lyrics, audio, contributor credits,
+adoption histories, political narrative, and general profile narrative.</p>
 </dd>
 <dt><strong>Terms</strong></dt><dd><p>Public domain under the CIA site policy and the structured repository’s
 public-domain dedication.</p>
@@ -484,7 +511,40 @@ public-domain dedication.</p>
 <dt><strong>Current coverage</strong></dt><dd><p>240 profiles: 195 distinct long forms and 45 cases where the source supplies
 the short form as the formal identity. AX, BQ, GF, GP, MQ, RE, UM, and YT
 remain outside the formal-name source intersection. The same capture yields
-234 anthem-title profiles and 227 English demonym profiles.</p>
+234 anthem-title profiles and 227 English demonym profiles. Physical coverage
+is 238 total-area, land-area, and coastline profiles; 233 numeric water-area
+profiles; 240 highest-point, lowest-point, and climate-summary profiles; 166
+mean-elevation profiles; 188 river records across 80 profiles; and 187 lake
+records across 69 profiles.</p>
+</dd>
+</dl>
+</section>
+<section id="koppen-geiger-climate-classification-maps">
+<h2>Köppen-Geiger climate classification maps<a class="headerlink" href="#koppen-geiger-climate-classification-maps" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><strong>Purpose</strong></dt><dd><p>Broad physical-climate classification for country and area profiles.</p>
+</dd>
+<dt><strong>Official publication and data</strong></dt><dd><p><a class="reference external" href="https://doi.org/10.1038/s41597-023-02549-6">https://doi.org/10.1038/s41597-023-02549-6</a> and
+<a class="reference external" href="https://doi.org/10.6084/m9.figshare.21937571.v1">https://doi.org/10.6084/m9.figshare.21937571.v1</a></p>
+</dd>
+<dt><strong>Current snapshot</strong></dt><dd><p>The 0.1-degree 1991–2020 historical raster and its 30-class legend from
+Beck et al. dataset version 1. The source archive, compact inputs, extractor,
+and generated country-zone snapshot all have pinned checksums.</p>
+</dd>
+<dt><strong>Terms</strong></dt><dd><p>The Figshare data release is dedicated under CC0 1.0. The accompanying
+Scientific Data article documents the method and validation.</p>
+</dd>
+<dt><strong>Derivation</strong></dt><dd><p>The development extractor samples raster cell centres against pinned Natural
+Earth 1:50m map-unit polygons, weights represented cells by latitude, groups
+them by country profile, and omits classes below 0.1% of represented area.
+It publishes rounded class shares, the 1991–2020 reference period, source
+resolution, threshold, and provenance. The runtime does not load the raster
+or polygon files.</p>
+</dd>
+<dt><strong>Current coverage and limits</strong></dt><dd><p>241 / 248 profiles. BV, GI, MH, MV, TK, TV, and UM have no represented raster
+cells after the pinned geometry/intersection rules. Class shares are
+generalized, area-weighted estimates suitable for broad education; they are
+not a local forecast or property-boundary result.</p>
 </dd>
 </dl>
 </section>
@@ -576,8 +636,8 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.</p>
 </section>
-<section id="source-priority-in-the-0-6-0-release">
-<h2>Source priority in the 0.6.0 release<a class="headerlink" href="#source-priority-in-the-0-6-0-release" title="Link to this heading"></a></h2>
+<section id="source-priority-in-the-0-7-0-release">
+<h2>Source priority in the 0.7.0 release<a class="headerlink" href="#source-priority-in-the-0-7-0-release" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 34.0%" />
@@ -612,8 +672,24 @@ introduce no additional border claims.</p>
 <td><p>None</p></td>
 </tr>
 <tr class="row-odd"><td><p>Total area</p></td>
-<td><p>GeoNames milestone fallback</p></td>
-<td><p>World Bank planned later</p></td>
+<td><p>CIA World Factbook structured area field</p></td>
+<td><p>GeoNames for profiles outside the source intersection</p></td>
+</tr>
+<tr class="row-even"><td><p>Land/water area, coastline, elevation extremes, mean elevation</p></td>
+<td><p>CIA World Factbook structured physical fields</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Source-listed major rivers and lakes</p></td>
+<td><p>CIA World Factbook structured physical-feature fields</p></td>
+<td><p>None; missing lists remain empty rather than inferred</p></td>
+</tr>
+<tr class="row-even"><td><p>Plain-language climate summary</p></td>
+<td><p>CIA World Factbook climate field</p></td>
+<td><p>None</p></td>
+</tr>
+<tr class="row-odd"><td><p>Köppen-Geiger climate classes and shares</p></td>
+<td><p>Beck et al. 1991–2020 raster aggregated with Natural Earth map units</p></td>
+<td><p>None</p></td>
 </tr>
 <tr class="row-even"><td><p>Local-language display name</p></td>
 <td><p>Unicode CLDR 48.2</p></td>
@@ -652,14 +728,16 @@ introduce no additional border claims.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">sources</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">sources</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">source</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">]</span>
-<span class="go">[&#39;cia-world-factbook-2025&#39;, &#39;geonames&#39;, &#39;geonames-timezones-2026-07-22&#39;, &#39;natural-earth&#39;, &#39;reviewed-borders&#39;, &#39;un-m49&#39;, &#39;ungegn-country-names-2017&#39;, &#39;unicode-cldr-48.2-reference&#39;]</span>
+<span class="go">[&#39;cia-world-factbook-2025&#39;, &#39;geonames&#39;, &#39;geonames-timezones-2026-07-22&#39;, &#39;koppen-geiger-1991-2020&#39;, &#39;natural-earth&#39;, &#39;reviewed-borders&#39;, &#39;un-m49&#39;, &#39;ungegn-country-names-2017&#39;, &#39;unicode-cldr-48.2-reference&#39;]</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">Country.sources</span></code> is a profile-level summary. Fact-bearing 0.6 models also
+<p><code class="docutils literal notranslate"><span class="pre">Country.sources</span></code> is a profile-level summary. Fact-bearing models also
 expose their direct <code class="docutils literal notranslate"><span class="pre">source</span></code>. Use
 <code class="docutils literal notranslate"><span class="pre">country.local_name(language_code).source</span></code> and <code class="docutils literal notranslate"><span class="pre">source_locator</span></code> for the
 exact local-identity record provenance and inspect <code class="docutils literal notranslate"><span class="pre">kind</span></code> before describing a
-value as a national official name.</p>
+value as a national official name. Physical records expose their direct source
+through <code class="docutils literal notranslate"><span class="pre">country.physical.source</span></code>, <code class="docutils literal notranslate"><span class="pre">country.climate.summary_source</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">country.climate.classification_source</span></code>.</p>
 </section>
 </section>
 

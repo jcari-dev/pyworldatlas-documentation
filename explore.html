@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Explore the atlas in five minutes &mdash; PyWorldAtlas 0.6.0</title>
+  <title>Explore the atlas in five minutes &mdash; PyWorldAtlas 0.7.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=8fa8b3e9"></script>
+      <script src="_static/documentation_options.js?v=fe7df9b0"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -46,6 +46,7 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Explore the atlas in five minutes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#make-a-country-postcard">Make a country postcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#follow-a-feature-across-profiles">Follow a feature across profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rank-the-bundled-snapshots">Rank the bundled snapshots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#find-the-nearest-capitals">Find the nearest capitals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#build-a-small-collection">Build a small collection</a></li>
@@ -60,6 +61,7 @@
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-profile-metadata">Read profile metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#add-reference-facts">Add reference facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#explore-physical-geography">Explore physical geography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-the-three-english-name-fields">Read the three English name fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#meet-countries-in-their-own-languages">Meet countries in their own languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
@@ -100,10 +102,22 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#profile-example">Profile example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#current-field-coverage">Current field coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#convenience-and-discovery-views">Convenience and discovery views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#physical-geography">Physical geography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#names-and-aliases">Names and aliases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#capital-and-cities">Capital and cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#sources">Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="physical_geography.html">Physical geography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#a-country-in-four-lines">A country in four lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#area-and-coastline">Area and coastline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#elevation-and-named-extremes">Elevation and named extremes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#rivers-and-lakes">Rivers and lakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#climate-profiles">Climate profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#physical-filters-and-rankings">Physical filters and rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#learning-prompts">Learning prompts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#executable-example">Executable example</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference_facts.html">Country reference facts</a><ul>
@@ -203,13 +217,14 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#unicode-cldr-48-2">Unicode CLDR 48.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-country-name-profiles">CIA World Factbook country-name profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-6-0-release">Source priority in the 0.6.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-7-0-release">Source priority in the 0.7.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -237,6 +252,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#country-identity-provenance">Country identity provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#reference-fact-provenance">Reference-fact provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#discovery-calculations">Discovery calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#physical-geography-provenance">Physical-geography provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#distance-input-contract">Distance input contract</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-field-notes">Profile field notes</a></li>
@@ -262,6 +278,12 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#geographic-models">Geographic models</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Coordinate"><code class="docutils literal notranslate"><span class="pre">Coordinate</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Area"><code class="docutils literal notranslate"><span class="pre">Area</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.ElevationPoint"><code class="docutils literal notranslate"><span class="pre">ElevationPoint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.River"><code class="docutils literal notranslate"><span class="pre">River</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Lake"><code class="docutils literal notranslate"><span class="pre">Lake</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.ClimateZone"><code class="docutils literal notranslate"><span class="pre">ClimateZone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.ClimateProfile"><code class="docutils literal notranslate"><span class="pre">ClimateProfile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PhysicalGeography"><code class="docutils literal notranslate"><span class="pre">PhysicalGeography</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Geography"><code class="docutils literal notranslate"><span class="pre">Geography</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Capital"><code class="docutils literal notranslate"><span class="pre">Capital</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.City"><code class="docutils literal notranslate"><span class="pre">City</span></code></a></li>
@@ -294,14 +316,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.6.0 — 2026-07-22</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.5.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.7.0 — 2026-07-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.6.0 — 2026-07-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.5.0 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.3.1 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -337,8 +360,8 @@ be combined in ordinary Python. These examples run entirely from the bundled
 database: no API key, network request, or third-party runtime package is used.</p>
 <section id="make-a-country-postcard">
 <h2>Make a country postcard<a class="headerlink" href="#make-a-country-postcard" title="Link to this heading"></a></h2>
-<p>Country profiles combine names, reference facts, practical metadata, and exact
-source references.</p>
+<p>Country profiles combine names, reference facts, physical geography, practical
+metadata, and exact source references.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span> <span class="o">=</span> <span class="n">Atlas</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">brazil</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">)</span>
@@ -350,6 +373,20 @@ source references.</p>
 <span class="go">Ordem e Progresso — Order and Progress</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">brazil</span><span class="o">.</span><span class="n">currency</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">brazil</span><span class="o">.</span><span class="n">currency</span><span class="o">.</span><span class="n">symbol</span><span class="p">)</span>
 <span class="go">Brazilian Real R$</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">brazil</span><span class="o">.</span><span class="n">highest_point</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">highest_point</span><span class="o">.</span><span class="n">elevation_m</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
+<span class="go">Pico da Neblina 2,994 m</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">brazil</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">dominant_zone</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">brazil</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">dominant_zone</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="go">Aw Tropical, savannah</span>
+</pre></div>
+</div>
+</section>
+<section id="follow-a-feature-across-profiles">
+<h2>Follow a feature across profiles<a class="headerlink" href="#follow-a-feature-across-profiles" title="Link to this heading"></a></h2>
+<p>Source-listed rivers and lakes can connect more than one country profile:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_river</span><span class="p">(</span><span class="s2">&quot;Amazon&quot;</span><span class="p">)]</span>
+<span class="go">[&#39;Brazil&#39;, &#39;Peru&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_lake</span><span class="p">(</span><span class="s2">&quot;Geneva&quot;</span><span class="p">)]</span>
+<span class="go">[&#39;France&#39;, &#39;Switzerland&#39;]</span>
 </pre></div>
 </div>
 </section>
@@ -362,6 +399,8 @@ calculations. Missing values are excluded.</p>
 <span class="go">[&#39;China&#39;, &#39;India&#39;, &#39;United States&#39;, &#39;Indonesia&#39;, &#39;Pakistan&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="n">result</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">largest</span><span class="p">[:</span><span class="mi">2</span><span class="p">]]</span>
 <span class="go">[(1, &#39;people&#39;), (2, &#39;people&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">result</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="s2">&quot;coastline&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)]</span>
+<span class="go">[&#39;Canada&#39;, &#39;Indonesia&#39;, &#39;Greenland&#39;]</span>
 </pre></div>
 </div>
 </section>
@@ -379,13 +418,16 @@ The result uses the same dependency-free great-circle calculation as
 <section id="build-a-small-collection">
 <h2>Build a small collection<a class="headerlink" href="#build-a-small-collection" title="Link to this heading"></a></h2>
 <p>Filters can be combined to select profiles by geography, currency, language
-metadata, script, or timezone.</p>
+metadata, script, timezone, coast, physical-feature coverage, or represented
+climate class.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">currency_code</span><span class="o">=</span><span class="s2">&quot;JPY&quot;</span><span class="p">)]</span>
 <span class="go">[&#39;Japan&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">timezone_id</span><span class="o">=</span><span class="s2">&quot;America/Santo_Domingo&quot;</span><span class="p">)]</span>
 <span class="go">[&#39;Dominican Republic&#39;]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">language_code</span><span class="o">=</span><span class="s2">&quot;ja&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">languages</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">name</span>
 <span class="go">&#39;Japanese&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">continent</span><span class="o">=</span><span class="s2">&quot;Europe&quot;</span><span class="p">,</span> <span class="n">coastal</span><span class="o">=</span><span class="kc">False</span><span class="p">))</span>
+<span class="go">14</span>
 </pre></div>
 </div>
 </section>
@@ -393,9 +435,9 @@ metadata, script, or timezone.</p>
 <h2>Create a repeatable geography quiz<a class="headerlink" href="#create-a-repeatable-geography-quiz" title="Link to this heading"></a></h2>
 <p>Samples and flashcards use stable seeds, which makes them suitable for lesson
 plans, examples, and tests.</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">card</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">flashcards</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="s2">&quot;capitals&quot;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="s2">&quot;Friday&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">card</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">flashcards</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="s2">&quot;highest_points&quot;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="s2">&quot;Friday&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">card</span><span class="o">.</span><span class="n">prompt</span><span class="p">,</span> <span class="n">card</span><span class="o">.</span><span class="n">answer</span><span class="p">)</span>
-<span class="go">(&#39;What is the capital of Austria?&#39;, &#39;Vienna&#39;)</span>
+<span class="go">(&#39;What is the highest point listed for Austria?&#39;, &#39;Grossglockner (3798 m)&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -403,7 +445,7 @@ plans, examples, and tests.</p>
 <section id="runnable-tour">
 <h2>Runnable tour<a class="headerlink" href="#runnable-tour" title="Link to this heading"></a></h2>
 <p>The repository includes the complete script used for the introductory tour:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;A compact tour of country profiles, rankings, and distances.&quot;&quot;&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;A compact tour of country profiles, physical geography, and distances.&quot;&quot;&quot;</span>
 <span class="linenos"> 2</span>
 <span class="linenos"> 3</span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
 <span class="linenos"> 4</span>
@@ -414,17 +456,27 @@ plans, examples, and tests.</p>
 <span class="linenos"> 9</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Anthem: </span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">anthem</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">anthem</span><span class="o">.</span><span class="n">english_title</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
 <span class="linenos">10</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Motto: </span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">motto</span><span class="o">.</span><span class="n">text</span><span class="si">}</span><span class="s2"> — </span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">motto</span><span class="o">.</span><span class="n">english_text</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="linenos">11</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Currency: </span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">currency</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">currency</span><span class="o">.</span><span class="n">symbol</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
-<span class="linenos">12</span>
-<span class="linenos">13</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Largest population snapshots:&quot;</span><span class="p">)</span>
-<span class="linenos">14</span>    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="s2">&quot;population&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
-<span class="linenos">15</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">position</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">16</span>
-<span class="linenos">17</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Capitals nearest to Tokyo:&quot;</span><span class="p">)</span>
-<span class="linenos">18</span>    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">nearest_capitals</span><span class="p">(</span><span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;JP&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
-<span class="linenos">19</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">capital</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">distance</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+<span class="linenos">12</span>    <span class="nb">print</span><span class="p">(</span>
+<span class="linenos">13</span>        <span class="sa">f</span><span class="s2">&quot;Highest point: </span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">highest_point</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> &quot;</span>
+<span class="linenos">14</span>        <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">highest_point</span><span class="o">.</span><span class="n">elevation_m</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> m)&quot;</span>
+<span class="linenos">15</span>    <span class="p">)</span>
+<span class="linenos">16</span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Climate: </span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">dominant_zone</span><span class="o">.</span><span class="n">code</span><span class="si">}</span><span class="s2"> — </span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">dominant_zone</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">17</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rivers:&quot;</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">river</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">river</span> <span class="ow">in</span> <span class="n">brazil</span><span class="o">.</span><span class="n">rivers</span><span class="p">[:</span><span class="mi">3</span><span class="p">]))</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Largest population snapshots:&quot;</span><span class="p">)</span>
+<span class="linenos">20</span>    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="s2">&quot;population&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="linenos">21</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">position</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">22</span>
+<span class="linenos">23</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Longest sourced coastlines:&quot;</span><span class="p">)</span>
+<span class="linenos">24</span>    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="s2">&quot;coastline&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="linenos">25</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">position</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
+<span class="linenos">26</span>
+<span class="linenos">27</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Capitals nearest to Tokyo:&quot;</span><span class="p">)</span>
+<span class="linenos">28</span>    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">nearest_capitals</span><span class="p">(</span><span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;JP&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+<span class="linenos">29</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">capital</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">distance</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> km&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Continue with <a class="reference internal" href="quickstart.html"><span class="doc">60-second quickstart</span></a>, explore <a class="reference internal" href="reference_facts.html"><span class="doc">Country reference facts</span></a>, or jump to
+<p>Continue with <a class="reference internal" href="quickstart.html"><span class="doc">60-second quickstart</span></a>, explore <a class="reference internal" href="physical_geography.html"><span class="doc">Physical geography</span></a>, or jump to
 <a class="reference internal" href="rankings.html"><span class="doc">Filters, rankings, and nearby capitals</span></a> for the complete method contracts.</p>
 </section>
 </section>

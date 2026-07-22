@@ -38,11 +38,11 @@ Profile example
    >>> japan.subregion
    'Eastern Asia'
    >>> japan.area_km2
-   377835.0
+   377915.0
    >>> japan.population
    126529100
    >>> round(japan.population_density, 2)
-   334.88
+   334.81
    >>> (japan.currency.code, japan.currency.name, japan.currency.symbol)
    ('JPY', 'Japanese Yen', '¥')
    >>> japan.calling_codes
@@ -115,6 +115,30 @@ Current field coverage
    * - Postal-code formats
      - 176 / 248
      - Display pattern and optional regular expression
+   * - Total-area profiles
+     - 248 / 248
+     - Factbook value with GeoNames fallback outside the source intersection
+   * - Land area and coastline
+     - 238 / 248 each
+     - Structured measurements from the pinned Factbook snapshot
+   * - Highest and lowest points
+     - 240 / 248 each
+     - Named point and elevation in metres
+   * - Mean elevation
+     - 166 / 248
+     - Source-reported mean elevation when available
+   * - Source-listed major rivers
+     - 188 records across 80 profiles
+     - Named source entries; not an exhaustive inventory
+   * - Source-listed major lakes
+     - 187 records across 69 profiles
+     - Named source entries; not an exhaustive inventory
+   * - Plain-language climate summaries
+     - 240 / 248
+     - Short source descriptions
+   * - Köppen-Geiger profiles
+     - 241 / 248
+     - Latitude-area-weighted classes from the 1991–2020 raster
 
 Availability is field-specific. Code should handle optional scalar fields and
 empty collection fields even when a familiar country currently has values.
@@ -125,12 +149,36 @@ Convenience and discovery views
 ``language_codes``, ``currency_code``, ``timezone_ids``, and
 ``major_city_count`` provide common
 read-only projections without changing the underlying typed values.
-``population_density`` is calculated from the captured population and area
-snapshots. :meth:`Country.discovery_card <pyworldatlas.Country.discovery_card>`
+``population_density`` is calculated from the captured population and total
+area snapshots. Physical conveniences include ``land_area_km2``,
+``water_area_km2``, ``water_percent``, ``coastline_km``,
+``mean_elevation_m``, ``highest_point``, ``lowest_point``, ``rivers``,
+``lakes``, ``climate``, ``is_coastal``, and ``is_landlocked``.
+:meth:`Country.discovery_card <pyworldatlas.Country.discovery_card>`
 creates a compact serializable teaching view; see :doc:`discovery`.
 ``anthem``, ``motto``, and ``demonym`` return the first optional typed record;
 their complete tuples remain available as ``anthems``, ``mottos``, and
 ``demonyms``. See :doc:`reference_facts`.
+
+Physical geography
+------------------
+
+.. doctest::
+
+   >>> japan.land_area_km2, japan.water_area_km2, round(japan.water_percent, 2)
+   (364485.0, 13430.0, 3.55)
+   >>> japan.coastline_km, japan.mean_elevation_m
+   (29751.0, 438.0)
+   >>> (japan.highest_point.name, japan.highest_point.elevation_m)
+   ('Mount Fuji', 3776.0)
+   >>> japan.climate.zone_codes
+   ('Cfa', 'Dfb', 'Dfa', 'Af', 'Dfc')
+
+``Country.physical`` groups coastline, elevation points, rivers, lakes, climate,
+and direct source metadata in one :class:`~pyworldatlas.PhysicalGeography`
+record. Area components remain under ``Country.geography.area`` as
+:class:`~pyworldatlas.Area`. See :doc:`physical_geography` for the complete
+contract and interpretation cautions.
 
 Names and aliases
 -----------------
@@ -167,11 +215,12 @@ Sources
 -------
 
 ``country.sources`` lists the source snapshots that contributed somewhere in
-the profile. Fact-bearing 0.6 models also carry their own ``SourceReference``;
+the profile. Fact-bearing models also carry their own ``SourceReference``;
 anthem, motto, and demonym records retain exact locators. Core profiles
 reference UN M49 and GeoNames; English formal names add Factbook, UN Protocol,
-or Wikidata where used. Each local identity carries its own CLDR or UNGEGN
-source reference and exact locator.
+or Wikidata where used. Physical profiles add the Factbook and, where covered,
+Köppen-Geiger sources. Each local identity carries its own CLDR or UNGEGN source
+reference and exact locator.
 
 Immutability
 ------------

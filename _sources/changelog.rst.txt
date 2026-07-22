@@ -1,6 +1,27 @@
 Changelog
 =========
 
+0.7.0 — 2026-07-22
+------------------
+
+- Added sourced total, land, and water area; coastline; mean elevation; and
+  named highest and lowest points.
+- Added 188 source-listed major river records across 80 profiles and 187
+  source-listed major lake records across 69 profiles.
+- Added 240 plain-language climate summaries and represented Köppen-Geiger
+  classes for 241 profiles from the 1991–2020 0.1-degree raster.
+- Added immutable ``ElevationPoint``, ``River``, ``Lake``, ``ClimateZone``,
+  ``ClimateProfile``, and ``PhysicalGeography`` models.
+- Added physical filters, river/lake discovery helpers, climate-zone discovery,
+  physical rankings, discovery-card fields, and five physical flashcard topics.
+- Added exact snapshot hashes, reproducible extraction, source coverage gates,
+  physical-data validation, and source-role documentation.
+- Reworked the documentation opening around offline physical-geography examples
+  and added a dedicated interpretation guide.
+- Kept country boundary geometry, GeoJSON, bounding boxes, centroids,
+  point-in-country lookup, and a separate major-mountain inventory outside this
+  release.
+
 0.6.0 — 2026-07-22
 ------------------
 

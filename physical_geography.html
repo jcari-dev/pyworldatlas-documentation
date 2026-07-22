@@ -6,7 +6,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Serialization &mdash; PyWorldAtlas 0.7.0</title>
+  <title>Physical geography &mdash; PyWorldAtlas 0.7.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -19,8 +19,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Data sources and freshness" href="data_sources.html" />
-    <link rel="prev" title="Lookup, search, and filtering" href="searching.html" /> 
+    <link rel="next" title="Country reference facts" href="reference_facts.html" />
+    <link rel="prev" title="Country profiles" href="country_profile.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -109,15 +109,15 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="physical_geography.html">Physical geography</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#a-country-in-four-lines">A country in four lines</a></li>
-<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#area-and-coastline">Area and coastline</a></li>
-<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#elevation-and-named-extremes">Elevation and named extremes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#rivers-and-lakes">Rivers and lakes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#climate-profiles">Climate profiles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#physical-filters-and-rankings">Physical filters and rankings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#learning-prompts">Learning prompts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#executable-example">Executable example</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Physical geography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#a-country-in-four-lines">A country in four lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#area-and-coastline">Area and coastline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#elevation-and-named-extremes">Elevation and named extremes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rivers-and-lakes">Rivers and lakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#climate-profiles">Climate profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#physical-filters-and-rankings">Physical filters and rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#learning-prompts">Learning prompts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#executable-example">Executable example</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference_facts.html">Country reference facts</a><ul>
@@ -197,13 +197,13 @@
 <li class="toctree-l2"><a class="reference internal" href="searching.html#filtering">Filtering</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Serialization</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#dictionary-output">Dictionary output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#json-output">JSON output</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#local-name-provenance">Local-name provenance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#discovery-values">Discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#reference-facts-and-ranking-results">Reference facts and ranking results</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#border-paths">Border paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#dictionary-output">Dictionary output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#json-output">JSON output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#local-name-provenance">Local-name provenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#discovery-values">Discovery values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#reference-facts-and-ranking-results">Reference facts and ranking results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#border-paths">Border paths</a></li>
 </ul>
 </li>
 </ul>
@@ -343,9 +343,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Serialization</li>
+      <li class="breadcrumb-item active">Physical geography</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/serialization.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/physical_geography.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -353,103 +353,184 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="serialization">
-<h1>Serialization<a class="headerlink" href="#serialization" title="Link to this heading"></a></h1>
-<p>Country models serialize to JSON-compatible primitives without exposing SQLite
-rows or implementation details.</p>
-<section id="dictionary-output">
-<h2>Dictionary output<a class="headerlink" href="#dictionary-output" title="Link to this heading"></a></h2>
+  <section id="physical-geography">
+<h1>Physical geography<a class="headerlink" href="#physical-geography" title="Link to this heading"></a></h1>
+<p>Version 0.7 turns each covered profile into a compact physical-geography
+reference: land and water area, coastline, elevation, named highest and lowest
+points, source-listed major rivers and lakes, a plain-language climate summary,
+and represented Köppen-Geiger climate classes. Everything works offline.</p>
+<section id="a-country-in-four-lines">
+<h2>A country in four lines<a class="headerlink" href="#a-country-in-four-lines" title="Link to this heading"></a></h2>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">data</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;DO&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;codes&quot;</span><span class="p">][</span><span class="s2">&quot;alpha2&quot;</span><span class="p">]</span>
-<span class="go">&#39;DO&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;capitals&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
-<span class="go">&#39;Santo Domingo&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;official_name&quot;</span><span class="p">],</span> <span class="n">data</span><span class="p">[</span><span class="s2">&quot;formal_name&quot;</span><span class="p">])</span>
-<span class="go">(&#39;Dominican Republic&#39;, &#39;Dominican Republic&#39;, &#39;Dominican Republic&#39;)</span>
+<span class="gp">... </span>    <span class="n">brazil</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">flag</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Land </span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">land_area_km2</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> km² | Water </span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">water_area_km2</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> km²&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">brazil</span><span class="o">.</span><span class="n">highest_point</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">highest_point</span><span class="o">.</span><span class="n">elevation_m</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">brazil</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">summary</span><span class="p">)</span>
+<span class="go">🇧🇷 Brazil</span>
+<span class="go">Land 8,358,140 km² | Water 157,630 km²</span>
+<span class="go">Pico da Neblina 2,994 m</span>
+<span class="go">mostly tropical, but temperate in south</span>
 </pre></div>
 </div>
 </section>
-<section id="json-output">
-<h2>JSON output<a class="headerlink" href="#json-output" title="Link to this heading"></a></h2>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">payload</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;JP&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_json</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">payload</span><span class="p">)[</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
-<span class="go">&#39;Japan&#39;</span>
-</pre></div>
-</div>
-<p>Tuples become JSON arrays and enums become their string values.
-<code class="docutils literal notranslate"><span class="pre">include_history</span></code> is accepted for compatibility but currently has no effect
-because historical series are not bundled.</p>
-<p>English <code class="docutils literal notranslate"><span class="pre">formal_name</span></code> is serialized as a string for the 240 covered profiles
-and as JSON <code class="docutils literal notranslate"><span class="pre">null</span></code> for the eight profiles outside the source intersection.
-The language-specific formal value remains inside each <code class="docutils literal notranslate"><span class="pre">local_names</span></code> record.</p>
-</section>
-<section id="local-name-provenance">
-<h2>Local-name provenance<a class="headerlink" href="#local-name-provenance" title="Link to this heading"></a></h2>
-<p>Local-name records keep their evidence kind, language status, script,
-romanization, source, and exact locator when a country is serialized:</p>
+<section id="area-and-coastline">
+<h2>Area and coastline<a class="headerlink" href="#area-and-coastline" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Country.area_km2</span></code> is total area. <code class="docutils literal notranslate"><span class="pre">land_area_km2</span></code> and <code class="docutils literal notranslate"><span class="pre">water_area_km2</span></code>
+are its source components when available, while <code class="docutils literal notranslate"><span class="pre">water_percent</span></code> is calculated
+from water divided by total area. <code class="docutils literal notranslate"><span class="pre">coastline_km</span></code> is the source-reported
+coastline length.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">india</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;India&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hindi</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">india</span><span class="p">[</span><span class="s2">&quot;local_names&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">name</span><span class="p">[</span><span class="s2">&quot;language_code&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;hi&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">hindi</span><span class="p">[</span><span class="s2">&quot;text&quot;</span><span class="p">],</span> <span class="n">hindi</span><span class="p">[</span><span class="s2">&quot;script_code&quot;</span><span class="p">],</span> <span class="n">hindi</span><span class="p">[</span><span class="s2">&quot;romanized_short_name&quot;</span><span class="p">])</span>
-<span class="go">(&#39;भारत&#39;, &#39;Deva&#39;, &#39;Bhārat&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">hindi</span><span class="p">[</span><span class="s2">&quot;kind&quot;</span><span class="p">],</span> <span class="n">hindi</span><span class="p">[</span><span class="s2">&quot;language_status&quot;</span><span class="p">])</span>
-<span class="go">(&#39;national_official&#39;, &#39;official&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hindi</span><span class="p">[</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;id&quot;</span><span class="p">]</span>
-<span class="go">&#39;ungegn-country-names-2017&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;PDF page 44&#39;</span> <span class="ow">in</span> <span class="n">hindi</span><span class="p">[</span><span class="s2">&quot;source_locator&quot;</span><span class="p">]</span>
-<span class="go">True</span>
+<span class="gp">... </span>    <span class="n">japan</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">japan</span><span class="o">.</span><span class="n">area_km2</span><span class="p">,</span> <span class="n">japan</span><span class="o">.</span><span class="n">land_area_km2</span><span class="p">,</span> <span class="n">japan</span><span class="o">.</span><span class="n">water_area_km2</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">japan</span><span class="o">.</span><span class="n">water_percent</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">japan</span><span class="o">.</span><span class="n">coastline_km</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">japan</span><span class="o">.</span><span class="n">is_coastal</span><span class="p">,</span> <span class="n">japan</span><span class="o">.</span><span class="n">is_landlocked</span><span class="p">)</span>
+<span class="go">377915.0 364485.0 13430.0</span>
+<span class="go">3.55 29751.0</span>
+<span class="go">True False</span>
+</pre></div>
+</div>
+<p>The boolean conveniences remain <code class="docutils literal notranslate"><span class="pre">None</span></code> when coastline data is unavailable.
+They never treat a missing coastline as zero. A coastline value of zero means
+the source describes the profile as landlocked; it is not a measurement of
+international boundaries.</p>
+</section>
+<section id="elevation-and-named-extremes">
+<h2>Elevation and named extremes<a class="headerlink" href="#elevation-and-named-extremes" title="Link to this heading"></a></h2>
+<p>The highest and lowest points are <a class="reference internal" href="api.html#pyworldatlas.ElevationPoint" title="pyworldatlas.ElevationPoint"><code class="xref py py-class docutils literal notranslate"><span class="pre">ElevationPoint</span></code></a>
+objects. Elevations use metres relative to sea level, so a negative lowest
+point is below sea level.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">japan</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">japan</span><span class="o">.</span><span class="n">mean_elevation_m</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">japan</span><span class="o">.</span><span class="n">highest_point</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">japan</span><span class="o">.</span><span class="n">highest_point</span><span class="o">.</span><span class="n">elevation_m</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">japan</span><span class="o">.</span><span class="n">lowest_point</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">japan</span><span class="o">.</span><span class="n">lowest_point</span><span class="o">.</span><span class="n">elevation_m</span><span class="p">)</span>
+<span class="go">438.0</span>
+<span class="go">Mount Fuji 3776.0</span>
+<span class="go">Hachiro-gata -4.0</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">source_label</span></code> preserves the compact source wording. <code class="docutils literal notranslate"><span class="pre">is_approximate</span></code> is
+true only when the source explicitly marked its measurement as approximate.
+This release does not publish a separate “major mountains” inventory: a named
+highest point is not automatically labelled as a mountain.</p>
+</section>
+<section id="rivers-and-lakes">
+<h2>Rivers and lakes<a class="headerlink" href="#rivers-and-lakes" title="Link to this heading"></a></h2>
+<p>Rivers and lakes are immutable typed records. Search helpers make shared
+features easy to discover:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">([</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_river</span><span class="p">(</span><span class="s2">&quot;Amazon&quot;</span><span class="p">)])</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">([</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_lake</span><span class="p">(</span><span class="s2">&quot;Geneva&quot;</span><span class="p">)])</span>
+<span class="go">[&#39;Brazil&#39;, &#39;Peru&#39;]</span>
+<span class="go">[&#39;France&#39;, &#39;Switzerland&#39;]</span>
+</pre></div>
+</div>
+<p>The feature tuples are <strong>source-listed major features, not exhaustive
+inventories</strong>. An empty tuple means the source did not list a feature for that
+profile. It does not mean that no river or lake exists.</p>
+<p>For a shared river, <code class="docutils literal notranslate"><span class="pre">River.length_km</span></code> is the full source-reported river
+length, not the portion inside one country. Likewise, <code class="docutils literal notranslate"><span class="pre">Lake.area_km2</span></code> is the
+full lake area rather than the area inside one profile. The original compact
+wording remains available in <code class="docutils literal notranslate"><span class="pre">source_label</span></code>.</p>
+</section>
+<section id="climate-profiles">
+<h2>Climate profiles<a class="headerlink" href="#climate-profiles" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">Country.climate</span></code> combines two deliberately separate views:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">summary</span></code> is a short source-provided description.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">koppen_geiger_zones</span></code> contains classes derived from the 1991–2020 global
+Köppen-Geiger raster.</p></li>
+</ul>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">brazil</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">brazil</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">reference_period</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">brazil</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">zone_codes</span><span class="p">[:</span><span class="mi">4</span><span class="p">])</span>
+<span class="gp">... </span>    <span class="n">zone</span> <span class="o">=</span> <span class="n">brazil</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">dominant_zone</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">zone</span><span class="o">.</span><span class="n">code</span><span class="p">,</span> <span class="n">zone</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">zone</span><span class="o">.</span><span class="n">share_percent</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="go">1991-2020</span>
+<span class="go">(&#39;Aw&#39;, &#39;Am&#39;, &#39;Af&#39;, &#39;BSh&#39;)</span>
+<span class="go">Aw Tropical, savannah 46.33</span>
+</pre></div>
+</div>
+<p>Zone shares are latitude-area-weighted estimates from a 0.1-degree raster and
+pinned map-unit polygons. Classes below the documented 0.1% extraction
+threshold are omitted. They are useful for broad educational comparison, not
+site-level climate determination.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">countries_in_climate_zone</span><span class="p">(</span><span class="s2">&quot;Af&quot;</span><span class="p">)))</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">climate_zone_codes</span><span class="p">()[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
+<span class="go">73</span>
+<span class="go">(&#39;ET&#39;, &#39;EF&#39;)</span>
 </pre></div>
 </div>
 </section>
-<section id="discovery-values">
-<h2>Discovery values<a class="headerlink" href="#discovery-values" title="Link to this heading"></a></h2>
-<p>Discovery cards and flashcards expose the same <code class="docutils literal notranslate"><span class="pre">to_dict()</span></code> and <code class="docutils literal notranslate"><span class="pre">to_json()</span></code>
-conveniences:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">card</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">discovery_card</span><span class="p">()</span>
-<span class="gp">... </span>    <span class="n">flashcard</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">flashcards</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="s2">&quot;capitals&quot;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">card</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()[</span><span class="s2">&quot;country&quot;</span><span class="p">][</span><span class="s2">&quot;alpha2&quot;</span><span class="p">]</span>
-<span class="go">&#39;JP&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">flashcard</span><span class="o">.</span><span class="n">to_json</span><span class="p">())[</span><span class="s2">&quot;answer&quot;</span><span class="p">]</span>
-<span class="go">&#39;Kuwait City&#39;</span>
+<section id="physical-filters-and-rankings">
+<h2>Physical filters and rankings<a class="headerlink" href="#physical-filters-and-rankings" title="Link to this heading"></a></h2>
+<p>Physical filters compose with the existing region and metadata filters:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">continent</span><span class="o">=</span><span class="s2">&quot;Europe&quot;</span><span class="p">,</span> <span class="n">coastal</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">koppen_geiger_code</span><span class="o">=</span><span class="s2">&quot;Af&quot;</span><span class="p">)</span>
+<span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">has_rivers</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">has_lakes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="reference-facts-and-ranking-results">
-<h2>Reference facts and ranking results<a class="headerlink" href="#reference-facts-and-ranking-results" title="Link to this heading"></a></h2>
-<p>Typed reference facts, their source metadata, rankings, and capital distances
-serialize recursively:</p>
+<p>Physical ranking metrics include <code class="docutils literal notranslate"><span class="pre">land_area</span></code>, <code class="docutils literal notranslate"><span class="pre">water_area</span></code>,
+<code class="docutils literal notranslate"><span class="pre">water_percent</span></code>, <code class="docutils literal notranslate"><span class="pre">coastline</span></code>, <code class="docutils literal notranslate"><span class="pre">mean_elevation</span></code>, <code class="docutils literal notranslate"><span class="pre">highest_elevation</span></code>,
+<code class="docutils literal notranslate"><span class="pre">lowest_elevation</span></code>, <code class="docutils literal notranslate"><span class="pre">river_count</span></code>, <code class="docutils literal notranslate"><span class="pre">lake_count</span></code>, and
+<code class="docutils literal notranslate"><span class="pre">climate_zone_count</span></code>.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">japan</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()</span>
-<span class="gp">... </span>    <span class="n">ranking</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="s2">&quot;population&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="gp">... </span>    <span class="n">nearby</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">nearest_capitals</span><span class="p">(</span><span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;JP&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">1</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">japan</span><span class="p">[</span><span class="s2">&quot;anthems&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;title&quot;</span><span class="p">]</span>
-<span class="go">&#39;Kimigayo&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">japan</span><span class="p">[</span><span class="s2">&quot;currency&quot;</span><span class="p">][</span><span class="s2">&quot;source&quot;</span><span class="p">][</span><span class="s2">&quot;license_name&quot;</span><span class="p">]</span>
-<span class="go">&#39;Unicode License v3&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">ranking</span><span class="o">.</span><span class="n">to_json</span><span class="p">())[</span><span class="s2">&quot;position&quot;</span><span class="p">]</span>
-<span class="go">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">nearby</span><span class="o">.</span><span class="n">to_json</span><span class="p">())[</span><span class="s2">&quot;capital&quot;</span><span class="p">][</span><span class="s2">&quot;name&quot;</span><span class="p">]</span>
-<span class="go">&#39;Seoul&#39;</span>
+<span class="gp">... </span>    <span class="n">rows</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="s2">&quot;coastline&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">([(</span><span class="n">row</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">value</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">])</span>
+<span class="go">[(&#39;Canada&#39;, 202080.0), (&#39;Indonesia&#39;, 54716.0), (&#39;Greenland&#39;, 44087.0), (&#39;Russia&#39;, 37653.0), (&#39;Philippines&#39;, 36289.0)]</span>
 </pre></div>
 </div>
+<p>Rankings describe the bundled source fields; they do not judge countries.
+Missing values are excluded and ties use the country name for deterministic
+ordering. Feature-count rankings count source-listed records, not every feature
+on the ground.</p>
 </section>
-<section id="border-paths">
-<h2>Border paths<a class="headerlink" href="#border-paths" title="Link to this heading"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">BorderPathResult</span></code> serializes compact country references rather than full
-country profiles. This keeps a path payload small and detached from SQLite:</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">path</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">border_path</span><span class="p">(</span><span class="s2">&quot;Portugal&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span><span class="o">.</span><span class="n">names</span>
-<span class="go">(&#39;Portugal&#39;, &#39;Spain&#39;, &#39;France&#39;, &#39;Germany&#39;, &#39;Poland&#39;, &#39;Russia&#39;, &#39;China&#39;)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span><span class="o">.</span><span class="n">to_dict</span><span class="p">()[</span><span class="s2">&quot;countries&quot;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
-<span class="go">{&#39;name&#39;: &#39;Portugal&#39;, &#39;alpha2&#39;: &#39;PT&#39;, &#39;alpha3&#39;: &#39;PRT&#39;, &#39;numeric&#39;: &#39;620&#39;}</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">to_json</span><span class="p">())[</span><span class="s2">&quot;crossings&quot;</span><span class="p">]</span>
-<span class="go">6</span>
+<section id="learning-prompts">
+<h2>Learning prompts<a class="headerlink" href="#learning-prompts" title="Link to this heading"></a></h2>
+<p>The deterministic flashcard API now supports <code class="docutils literal notranslate"><span class="pre">climate_zones</span></code>,
+<code class="docutils literal notranslate"><span class="pre">coastlines</span></code>, <code class="docutils literal notranslate"><span class="pre">highest_points</span></code>, <code class="docutils literal notranslate"><span class="pre">rivers</span></code>, and <code class="docutils literal notranslate"><span class="pre">lakes</span></code>. These are
+structured prompts and answers that can be used in a notebook, command-line
+lesson, or application without adding game state to the package.</p>
+</section>
+<section id="executable-example">
+<h2>Executable example<a class="headerlink" href="#executable-example" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;Explore physical geography without a network connection.&quot;&quot;&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="linenos"> 7</span>    <span class="n">brazil</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">)</span>
+<span class="linenos"> 8</span>    <span class="nb">print</span><span class="p">(</span>
+<span class="linenos"> 9</span>        <span class="n">brazil</span><span class="o">.</span><span class="n">flag</span><span class="p">,</span>
+<span class="linenos">10</span>        <span class="n">brazil</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<span class="linenos">11</span>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">land_area_km2</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> km² of land&quot;</span><span class="p">,</span>
+<span class="linenos">12</span>        <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">water_area_km2</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> km² of water&quot;</span><span class="p">,</span>
+<span class="linenos">13</span>    <span class="p">)</span>
+<span class="linenos">14</span>    <span class="nb">print</span><span class="p">(</span>
+<span class="linenos">15</span>        <span class="s2">&quot;Highest point:&quot;</span><span class="p">,</span>
+<span class="linenos">16</span>        <span class="n">brazil</span><span class="o">.</span><span class="n">highest_point</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+<span class="linenos">17</span>        <span class="sa">f</span><span class="s2">&quot;(</span><span class="si">{</span><span class="n">brazil</span><span class="o">.</span><span class="n">highest_point</span><span class="o">.</span><span class="n">elevation_m</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> m)&quot;</span><span class="p">,</span>
+<span class="linenos">18</span>    <span class="p">)</span>
+<span class="linenos">19</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Source-listed rivers:&quot;</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">river</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">river</span> <span class="ow">in</span> <span class="n">brazil</span><span class="o">.</span><span class="n">rivers</span><span class="p">))</span>
+<span class="linenos">20</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Climate classes:&quot;</span><span class="p">,</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">brazil</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">zone_codes</span><span class="p">))</span>
+<span class="linenos">21</span>
+<span class="linenos">22</span>    <span class="nb">print</span><span class="p">(</span>
+<span class="linenos">23</span>        <span class="s2">&quot;Amazon profiles:&quot;</span><span class="p">,</span>
+<span class="linenos">24</span>        <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_river</span><span class="p">(</span><span class="s2">&quot;Amazon&quot;</span><span class="p">)),</span>
+<span class="linenos">25</span>    <span class="p">)</span>
+<span class="linenos">26</span>    <span class="nb">print</span><span class="p">(</span>
+<span class="linenos">27</span>        <span class="s2">&quot;Lake Geneva profiles:&quot;</span><span class="p">,</span>
+<span class="linenos">28</span>        <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_lake</span><span class="p">(</span><span class="s2">&quot;Geneva&quot;</span><span class="p">)),</span>
+<span class="linenos">29</span>    <span class="p">)</span>
+<span class="linenos">30</span>
+<span class="linenos">31</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Longest sourced coastlines:&quot;</span><span class="p">)</span>
+<span class="linenos">32</span>    <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="s2">&quot;coastline&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="linenos">33</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">position</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">value</span><span class="si">:</span><span class="s2">,.0f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">row</span><span class="o">.</span><span class="n">unit</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -459,8 +540,8 @@ country profiles. This keeps a path payload small and detached from SQLite:</p>
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="searching.html" class="btn btn-neutral float-left" title="Lookup, search, and filtering" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="data_sources.html" class="btn btn-neutral float-right" title="Data sources and freshness" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="country_profile.html" class="btn btn-neutral float-left" title="Country profiles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="reference_facts.html" class="btn btn-neutral float-right" title="Country reference facts" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

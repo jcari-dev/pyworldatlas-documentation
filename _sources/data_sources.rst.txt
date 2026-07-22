@@ -78,7 +78,8 @@ Natural Earth
 **Purpose**
    Independent land-border topology derived from shared segments in the 1:50m
    Admin 0 map-unit polygons. Country polygons and land boundary lines are also
-   retained with the source capture for review.
+   retained with the source capture for review. The map-unit polygons support
+   build-time aggregation of Köppen-Geiger raster cells into country profiles.
 
 **Official location**
    https://www.naturalearthdata.com/downloads/50m-cultural-vectors/
@@ -95,7 +96,8 @@ Natural Earth
    Natural Earth is generalized cartographic data. Very small territories and
    enclaves may not retain a shared segment at 1:50m, and its map units express
    a documented map convention. It is used as a cross-check, not as an
-   unreviewed authority.
+   unreviewed authority. No Natural Earth polygon is exposed as public boundary
+   geometry in 0.7.
 
 Reviewed border decisions
 -------------------------
@@ -151,12 +153,14 @@ IANA Language Subtag Registry
    IANA and IETF state that applicable rights in their protocol registry data
    are dedicated under CC0 1.0. See https://www.iana.org/help/licensing-terms.
 
-CIA World Factbook country-name profiles
-----------------------------------------
+CIA World Factbook structured country profiles
+------------------------------------------------
 
 **Purpose**
-   Base English formal-name layer, national-anthem titles, and English demonym
-   noun/adjective forms.
+   Base English formal-name layer, national-anthem titles, English demonym
+   noun/adjective forms, total/land/water area, coastline, mean elevation,
+   named highest and lowest points, source-listed major rivers and lakes, and
+   short climate descriptions.
 
 **Locations**
    https://www.cia.gov/the-world-factbook/ and
@@ -165,9 +169,9 @@ CIA World Factbook country-name profiles
 **Source revision**
    ``factbook.json`` commit
    ``8662a8b17a784841ab4528631b04090eb2f183eb``. The standard-library
-   extractor retains only structured country-name, national-anthem-title, and
-   nationality fields. It excludes lyrics, audio, contributor credits,
-   adoption histories, and profile narrative text.
+   extractor retains only the documented identity, reference, and structured
+   physical-geography fields. It excludes lyrics, audio, contributor credits,
+   adoption histories, political narrative, and general profile narrative.
 
 **Terms**
    Public domain under the CIA site policy and the structured repository's
@@ -177,7 +181,44 @@ CIA World Factbook country-name profiles
    240 profiles: 195 distinct long forms and 45 cases where the source supplies
    the short form as the formal identity. AX, BQ, GF, GP, MQ, RE, UM, and YT
    remain outside the formal-name source intersection. The same capture yields
-   234 anthem-title profiles and 227 English demonym profiles.
+   234 anthem-title profiles and 227 English demonym profiles. Physical coverage
+   is 238 total-area, land-area, and coastline profiles; 233 numeric water-area
+   profiles; 240 highest-point, lowest-point, and climate-summary profiles; 166
+   mean-elevation profiles; 188 river records across 80 profiles; and 187 lake
+   records across 69 profiles.
+
+Köppen-Geiger climate classification maps
+------------------------------------------
+
+**Purpose**
+   Broad physical-climate classification for country and area profiles.
+
+**Official publication and data**
+   https://doi.org/10.1038/s41597-023-02549-6 and
+   https://doi.org/10.6084/m9.figshare.21937571.v1
+
+**Current snapshot**
+   The 0.1-degree 1991–2020 historical raster and its 30-class legend from
+   Beck et al. dataset version 1. The source archive, compact inputs, extractor,
+   and generated country-zone snapshot all have pinned checksums.
+
+**Terms**
+   The Figshare data release is dedicated under CC0 1.0. The accompanying
+   Scientific Data article documents the method and validation.
+
+**Derivation**
+   The development extractor samples raster cell centres against pinned Natural
+   Earth 1:50m map-unit polygons, weights represented cells by latitude, groups
+   them by country profile, and omits classes below 0.1% of represented area.
+   It publishes rounded class shares, the 1991–2020 reference period, source
+   resolution, threshold, and provenance. The runtime does not load the raster
+   or polygon files.
+
+**Current coverage and limits**
+   241 / 248 profiles. BV, GI, MH, MV, TK, TV, and UM have no represented raster
+   cells after the pinned geometry/intersection rules. Class shares are
+   generalized, area-weighted estimates suitable for broad education; they are
+   not a local forecast or property-boundary result.
 
 Wikidata national-motto statements
 ----------------------------------
@@ -280,7 +321,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.6.0 release
+Source priority in the 0.7.0 release
 ------------------------------------
 
 .. list-table::
@@ -306,8 +347,20 @@ Source priority in the 0.6.0 release
      - GeoNames
      - None
    * - Total area
-     - GeoNames milestone fallback
-     - World Bank planned later
+     - CIA World Factbook structured area field
+     - GeoNames for profiles outside the source intersection
+   * - Land/water area, coastline, elevation extremes, mean elevation
+     - CIA World Factbook structured physical fields
+     - None
+   * - Source-listed major rivers and lakes
+     - CIA World Factbook structured physical-feature fields
+     - None; missing lists remain empty rather than inferred
+   * - Plain-language climate summary
+     - CIA World Factbook climate field
+     - None
+   * - Köppen-Geiger climate classes and shares
+     - Beck et al. 1991–2020 raster aggregated with Natural Earth map units
+     - None
    * - Local-language display name
      - Unicode CLDR 48.2
      - None; all 248 records are covered
@@ -339,10 +392,12 @@ Inspect sources in Python
    >>> with Atlas() as atlas:
    ...     sources = atlas.country("Japan").sources
    >>> [source.id for source in sources]
-   ['cia-world-factbook-2025', 'geonames', 'geonames-timezones-2026-07-22', 'natural-earth', 'reviewed-borders', 'un-m49', 'ungegn-country-names-2017', 'unicode-cldr-48.2-reference']
+   ['cia-world-factbook-2025', 'geonames', 'geonames-timezones-2026-07-22', 'koppen-geiger-1991-2020', 'natural-earth', 'reviewed-borders', 'un-m49', 'ungegn-country-names-2017', 'unicode-cldr-48.2-reference']
 
-``Country.sources`` is a profile-level summary. Fact-bearing 0.6 models also
+``Country.sources`` is a profile-level summary. Fact-bearing models also
 expose their direct ``source``. Use
 ``country.local_name(language_code).source`` and ``source_locator`` for the
 exact local-identity record provenance and inspect ``kind`` before describing a
-value as a national official name.
+value as a national official name. Physical records expose their direct source
+through ``country.physical.source``, ``country.climate.summary_source``, and
+``country.climate.classification_source``.

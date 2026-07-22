@@ -76,6 +76,21 @@ alias. ``Atlas.nearest_capitals`` returns
 These methods describe bundled values and geographic relationships; they do not
 score or judge countries.
 
+Physical-geography provenance
+-----------------------------
+
+``Country.physical`` contains the source-reported coastline, elevation points,
+mean elevation, source-listed rivers and lakes, and its climate profile.
+``Country.geography.area`` contains total, land, and water area plus the
+directly calculated water percentage.
+
+``ClimateProfile.summary_source`` and ``classification_source`` keep the short
+climate summary separate from the derived Köppen-Geiger classes. Class shares
+come from the documented raster/polygon extraction and are not site-level
+climate claims. ``River`` and ``Lake`` records preserve a ``source_label``;
+their length or area describes the whole source feature, including a shared
+feature, rather than the portion within one country.
+
 Distance input contract
 -----------------------
 
@@ -134,6 +149,16 @@ Profile field notes
      - Source display format and optional validation expression
    * - ``Country.anthem`` / ``motto`` / ``demonym``
      - First optional typed record from the corresponding source-aware tuple
+   * - ``Country.land_area_km2`` / ``water_area_km2``
+     - Source area components; ``None`` when the component was not supplied
+   * - ``Country.coastline_km`` / ``mean_elevation_m``
+     - Source-reported physical measurements
+   * - ``Country.highest_point`` / ``lowest_point``
+     - Optional named :class:`~pyworldatlas.ElevationPoint` values
+   * - ``Country.rivers`` / ``lakes``
+     - Source-listed major features, not exhaustive inventories
+   * - ``Country.climate``
+     - Plain-language summary plus represented Köppen-Geiger classes
    * - ``Coordinate.latitude`` / ``longitude``
      - Signed WGS84 decimal degrees with constructor validation
    * - ``Capital`` / ``City`` population
@@ -193,6 +218,24 @@ Geographic models
    :members:
 
 .. autoclass:: pyworldatlas.Area
+   :members:
+
+.. autoclass:: pyworldatlas.ElevationPoint
+   :members:
+
+.. autoclass:: pyworldatlas.River
+   :members:
+
+.. autoclass:: pyworldatlas.Lake
+   :members:
+
+.. autoclass:: pyworldatlas.ClimateZone
+   :members:
+
+.. autoclass:: pyworldatlas.ClimateProfile
+   :members:
+
+.. autoclass:: pyworldatlas.PhysicalGeography
    :members:
 
 .. autoclass:: pyworldatlas.Geography

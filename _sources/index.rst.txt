@@ -2,13 +2,13 @@ PyWorldAtlas
 ============
 
 PyWorldAtlas is a compact, source-aware world atlas for Python. It puts country
-profiles, capitals, cities, coordinates, distances, reviewed land neighbors,
-rankings, and learning tools into one bundled SQLite database that works fully
-offline.
+profiles, capitals, cities, physical geography, climate classes, coordinates,
+distances, reviewed land neighbors, rankings, and learning tools into one
+bundled SQLite database that works fully offline.
 
 No API key. No runtime download. No third-party runtime dependency.
 
-**Documented version:** 0.6.0 | **Dataset:** 2026.07.22.6 |
+**Documented version:** 0.7.0 | **Dataset:** 2026.07.22.7 |
 **Python:** 3.10–3.14 | **Profiles:** 248
 
 Start with something interesting
@@ -20,13 +20,13 @@ Start with something interesting
    >>> with Atlas() as atlas:
    ...     brazil = atlas.country("Brazil")
    ...     print(brazil.flag, brazil.name_in("pt"), "—", brazil.capital.name)
-   ...     print(brazil.anthem.title)
-   ...     print(brazil.motto.text, "—", brazil.motto.english_text)
-   ...     print([item.capital.name for item in atlas.nearest_capitals("Tokyo", country="JP", limit=3)])
+   ...     print(brazil.highest_point.name, f"{brazil.highest_point.elevation_m:,.0f} m")
+   ...     print(", ".join(river.name for river in brazil.rivers[:3]))
+   ...     print(brazil.climate.dominant_zone.code, brazil.climate.dominant_zone.name)
    🇧🇷 Brasil — Brasília
-   Hino Nacional Brasileiro
-   Ordem e Progresso — Order and Progress
-   ['Seoul', 'Pyongyang', 'Beijing']
+   Pico da Neblina 2,994 m
+   Amazon, Río de la Plata/Paraná, Tocantins
+   Aw Tropical, savannah
 
 The installed wheel contains ordinary Python source and one read-only database.
 Constructing :class:`~pyworldatlas.Atlas` never contacts a server and does not
@@ -35,6 +35,8 @@ load every country into memory.
 Try these next
 --------------
 
+- :doc:`physical_geography` — coastlines, elevation, rivers, lakes, climate,
+  and physical rankings.
 - :doc:`explore` — country postcards, rankings, nearby capitals, filters, and
   a repeatable quiz.
 - :doc:`quickstart` — lookup, collections, names, coordinates, and borders in
@@ -47,7 +49,7 @@ Try these next
 What is bundled
 ---------------
 
-.. list-table:: Dataset 2026.07.22.6
+.. list-table:: Dataset 2026.07.22.7
    :header-rows: 1
    :widths: 62 38
 
@@ -75,6 +77,20 @@ What is bundled
      - 722 records across 245 profiles
    * - Reviewed land-border relationships
      - 319
+   * - Total-area profiles
+     - 248 / 248
+   * - Land area and coastline
+     - 238 / 248 each
+   * - Highest and lowest points
+     - 240 / 248 each
+   * - Source-listed river records
+     - 188 across 80 profiles
+   * - Source-listed lake records
+     - 187 across 69 profiles
+   * - Plain-language climate summaries
+     - 240 / 248
+   * - Köppen-Geiger climate profiles
+     - 241 / 248
 
 Designed for exploration
 ------------------------
@@ -82,8 +98,9 @@ Designed for exploration
 PyWorldAtlas supports exact lookup and ranked search, immutable typed models,
 Unicode local names and flag emoji, WGS84 coordinates, distance/bearing/midpoint
 calculations, deterministic samples and flashcards, land-border paths, profile
-filters, rankings, and nearest-capital queries. Public results serialize to
-JSON-compatible dictionaries without losing their source context.
+filters, physical-feature searches, rankings, and nearest-capital queries.
+Public results serialize to JSON-compatible dictionaries without losing their
+source context.
 
 Educational scope
 -----------------
@@ -120,6 +137,7 @@ The current source checkout can be installed with ``python -m pip install -e .``
    :caption: Explore the atlas
 
    country_profile
+   physical_geography
    reference_facts
    rankings
    local_names

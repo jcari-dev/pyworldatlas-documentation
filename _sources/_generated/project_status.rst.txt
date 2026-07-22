@@ -3,9 +3,9 @@ Project status
 
 .. THIS FILE IS GENERATED. DO NOT EDIT DIRECTLY.
 
-Library version: 0.6.0
-Dataset version: 2026.07.22.6
-Schema version: 6
+Library version: 0.7.0
+Dataset version: 2026.07.22.7
+Schema version: 7
 
 Countries and areas: 248 (UN M49 scope)
 Capitals: 241 / 248
@@ -18,4 +18,7 @@ Profile fields: 248 population / 247 currency / 245 language-code records
 Reference facts: 234 anthem titles / 32 reviewed mottos / 227 English demonym profiles
 Practical profiles: 246 timezone profiles / 176 postal formats / 245 currency symbols
 Reviewed land borders: 319 / borderless entities: 85
+Physical profiles: 240 source profiles / 238 coastlines / 240 elevation-extreme pairs
+Named physical features: 188 rivers across 80 profiles / 187 lakes across 69 profiles
+Climate: 240 summaries / 241 Köppen-Geiger profiles
 Last validation: PASS

@@ -5,14 +5,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pyworldatlas.atlas &mdash; PyWorldAtlas 0.6.0</title>
+  <title>pyworldatlas.atlas &mdash; PyWorldAtlas 0.7.0</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=8fa8b3e9"></script>
+      <script src="../../_static/documentation_options.js?v=fe7df9b0"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -43,6 +43,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../explore.html">Explore the atlas in five minutes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../explore.html#make-a-country-postcard">Make a country postcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../explore.html#follow-a-feature-across-profiles">Follow a feature across profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../explore.html#rank-the-bundled-snapshots">Rank the bundled snapshots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../explore.html#find-the-nearest-capitals">Find the nearest capitals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../explore.html#build-a-small-collection">Build a small collection</a></li>
@@ -57,6 +58,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#read-profile-metadata">Read profile metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#add-reference-facts">Add reference facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#explore-physical-geography">Explore physical geography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#read-the-three-english-name-fields">Read the three English name fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#meet-countries-in-their-own-languages">Meet countries in their own languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
@@ -97,10 +99,22 @@
 <li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#profile-example">Profile example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#current-field-coverage">Current field coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#convenience-and-discovery-views">Convenience and discovery views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#physical-geography">Physical geography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#names-and-aliases">Names and aliases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#capital-and-cities">Capital and cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#sources">Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../physical_geography.html">Physical geography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#a-country-in-four-lines">A country in four lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#area-and-coastline">Area and coastline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#elevation-and-named-extremes">Elevation and named extremes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#rivers-and-lakes">Rivers and lakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#climate-profiles">Climate profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#physical-filters-and-rankings">Physical filters and rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#learning-prompts">Learning prompts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#executable-example">Executable example</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../reference_facts.html">Country reference facts</a><ul>
@@ -200,13 +214,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#unicode-cldr-48-2">Unicode CLDR 48.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#cia-world-factbook-country-name-profiles">CIA World Factbook country-name profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-6-0-release">Source priority in the 0.6.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-7-0-release">Source priority in the 0.7.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -234,6 +249,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#country-identity-provenance">Country identity provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#reference-fact-provenance">Reference-fact provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#discovery-calculations">Discovery calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#physical-geography-provenance">Physical-geography provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#distance-input-contract">Distance input contract</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#profile-field-notes">Profile field notes</a></li>
@@ -259,6 +275,12 @@
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#geographic-models">Geographic models</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Coordinate"><code class="docutils literal notranslate"><span class="pre">Coordinate</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Area"><code class="docutils literal notranslate"><span class="pre">Area</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.ElevationPoint"><code class="docutils literal notranslate"><span class="pre">ElevationPoint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.River"><code class="docutils literal notranslate"><span class="pre">River</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Lake"><code class="docutils literal notranslate"><span class="pre">Lake</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.ClimateZone"><code class="docutils literal notranslate"><span class="pre">ClimateZone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.ClimateProfile"><code class="docutils literal notranslate"><span class="pre">ClimateProfile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.PhysicalGeography"><code class="docutils literal notranslate"><span class="pre">PhysicalGeography</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Geography"><code class="docutils literal notranslate"><span class="pre">Geography</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Capital"><code class="docutils literal notranslate"><span class="pre">Capital</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.City"><code class="docutils literal notranslate"><span class="pre">City</span></code></a></li>
@@ -291,14 +313,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.6.0 — 2026-07-22</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.5.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.7.0 — 2026-07-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.6.0 — 2026-07-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.5.0 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.3.1 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id4">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id5">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id4">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id5">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id6">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id6">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id7">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -345,10 +368,12 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">AmbiguousPlaceError</span><span class="p">,</span> <span class="n">AtlasClosedError</span><span class="p">,</span> <span class="n">CapitalNotFoundError</span><span class="p">,</span>
                          <span class="n">CountryNotFoundError</span><span class="p">,</span> <span class="n">DatasetVersionError</span><span class="p">,</span> <span class="n">PlaceNotFoundError</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">Area</span><span class="p">,</span> <span class="n">BorderPathResult</span><span class="p">,</span> <span class="n">Capital</span><span class="p">,</span> <span class="n">CapitalDistance</span><span class="p">,</span> <span class="n">City</span><span class="p">,</span>
-                     <span class="n">Coordinate</span><span class="p">,</span> <span class="n">Country</span><span class="p">,</span> <span class="n">CountryCodes</span><span class="p">,</span> <span class="n">CountryMatch</span><span class="p">,</span>
-                     <span class="n">CountryRanking</span><span class="p">,</span> <span class="n">Currency</span><span class="p">,</span> <span class="n">DatasetInfo</span><span class="p">,</span> <span class="n">Demonym</span><span class="p">,</span> <span class="n">Flashcard</span><span class="p">,</span>
-                     <span class="n">Geography</span><span class="p">,</span> <span class="n">Language</span><span class="p">,</span> <span class="n">LocalizedName</span><span class="p">,</span> <span class="n">NationalAnthem</span><span class="p">,</span>
-                     <span class="n">NationalMotto</span><span class="p">,</span> <span class="n">PostalCodeFormat</span><span class="p">,</span> <span class="n">SourceReference</span><span class="p">,</span> <span class="n">Timezone</span><span class="p">)</span>
+                     <span class="n">ClimateProfile</span><span class="p">,</span> <span class="n">ClimateZone</span><span class="p">,</span> <span class="n">Coordinate</span><span class="p">,</span> <span class="n">Country</span><span class="p">,</span>
+                     <span class="n">CountryCodes</span><span class="p">,</span> <span class="n">CountryMatch</span><span class="p">,</span> <span class="n">CountryRanking</span><span class="p">,</span> <span class="n">Currency</span><span class="p">,</span>
+                     <span class="n">DatasetInfo</span><span class="p">,</span> <span class="n">Demonym</span><span class="p">,</span> <span class="n">ElevationPoint</span><span class="p">,</span> <span class="n">Flashcard</span><span class="p">,</span> <span class="n">Geography</span><span class="p">,</span>
+                     <span class="n">Lake</span><span class="p">,</span> <span class="n">Language</span><span class="p">,</span> <span class="n">LocalizedName</span><span class="p">,</span> <span class="n">NationalAnthem</span><span class="p">,</span>
+                     <span class="n">NationalMotto</span><span class="p">,</span> <span class="n">PhysicalGeography</span><span class="p">,</span> <span class="n">PostalCodeFormat</span><span class="p">,</span> <span class="n">River</span><span class="p">,</span>
+                     <span class="n">SourceReference</span><span class="p">,</span> <span class="n">Timezone</span><span class="p">)</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_flag</span><span class="p">(</span><span class="n">alpha2</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -379,17 +404,22 @@
     <span class="s2">&quot;border_counts&quot;</span><span class="p">,</span>
     <span class="s2">&quot;calling_codes&quot;</span><span class="p">,</span>
     <span class="s2">&quot;capitals&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;climate_zones&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;coastlines&quot;</span><span class="p">,</span>
     <span class="s2">&quot;continents&quot;</span><span class="p">,</span>
     <span class="s2">&quot;countries_from_capitals&quot;</span><span class="p">,</span>
     <span class="s2">&quot;currencies&quot;</span><span class="p">,</span>
     <span class="s2">&quot;flags&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;highest_points&quot;</span><span class="p">,</span>
     <span class="s2">&quot;language_codes&quot;</span><span class="p">,</span>
     <span class="s2">&quot;local_names&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;lakes&quot;</span><span class="p">,</span>
     <span class="s2">&quot;m49_codes&quot;</span><span class="p">,</span>
     <span class="s2">&quot;neighbors&quot;</span><span class="p">,</span>
     <span class="s2">&quot;population_density&quot;</span><span class="p">,</span>
     <span class="s2">&quot;populations&quot;</span><span class="p">,</span>
     <span class="s2">&quot;regions&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;rivers&quot;</span><span class="p">,</span>
     <span class="s2">&quot;top_level_domains&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 
@@ -485,8 +515,17 @@
         <span class="n">language_code</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">script_code</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
         <span class="n">timezone_id</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">coastal</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">koppen_geiger_code</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">has_rivers</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">has_lakes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Country</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
-<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return countries alphabetically with optional exact profile filters.&quot;&quot;&quot;</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return countries alphabetically with optional exact profile filters.</span>
+
+<span class="sd">        Physical-data filters only include profiles covered by the relevant</span>
+<span class="sd">        source layer. For example, ``coastal=False`` means a sourced coastline</span>
+<span class="sd">        of zero kilometres; it does not treat missing coastline data as zero.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
         <span class="n">clauses</span><span class="p">,</span> <span class="n">params</span> <span class="o">=</span> <span class="p">[],</span> <span class="p">[]</span>
         <span class="k">if</span> <span class="n">continent</span><span class="p">:</span>
@@ -514,6 +553,29 @@
                 <span class="s2">&quot;id IN (SELECT country_id FROM country_timezone WHERE lower(timezone_id)=lower(?))&quot;</span>
             <span class="p">)</span>
             <span class="n">params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">timezone_id</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">coastal</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">coastal</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+                <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;coastal must be bool or None&quot;</span><span class="p">)</span>
+            <span class="n">comparison</span> <span class="o">=</span> <span class="s2">&quot;&gt; 0&quot;</span> <span class="k">if</span> <span class="n">coastal</span> <span class="k">else</span> <span class="s2">&quot;= 0&quot;</span>
+            <span class="n">clauses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="s2">&quot;id IN (SELECT country_id FROM country_physical &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;WHERE coastline_km </span><span class="si">{</span><span class="n">comparison</span><span class="si">}</span><span class="s2">)&quot;</span>
+            <span class="p">)</span>
+        <span class="k">if</span> <span class="n">koppen_geiger_code</span><span class="p">:</span>
+            <span class="n">clauses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="s2">&quot;id IN (SELECT country_id FROM country_climate_zone &quot;</span>
+                <span class="s2">&quot;WHERE upper(code)=upper(?))&quot;</span>
+            <span class="p">)</span>
+            <span class="n">params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">koppen_geiger_code</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">requested</span><span class="p">,</span> <span class="n">table</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="p">(</span>
+            <span class="p">(</span><span class="n">has_rivers</span><span class="p">,</span> <span class="s2">&quot;country_river&quot;</span><span class="p">,</span> <span class="s2">&quot;has_rivers&quot;</span><span class="p">),</span>
+            <span class="p">(</span><span class="n">has_lakes</span><span class="p">,</span> <span class="s2">&quot;country_lake&quot;</span><span class="p">,</span> <span class="s2">&quot;has_lakes&quot;</span><span class="p">),</span>
+        <span class="p">):</span>
+            <span class="k">if</span> <span class="n">requested</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">requested</span><span class="p">,</span> <span class="nb">bool</span><span class="p">):</span>
+                    <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> must be bool or None&quot;</span><span class="p">)</span>
+                <span class="n">operator</span> <span class="o">=</span> <span class="s2">&quot;IN&quot;</span> <span class="k">if</span> <span class="n">requested</span> <span class="k">else</span> <span class="s2">&quot;NOT IN&quot;</span>
+                <span class="n">clauses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;id </span><span class="si">{</span><span class="n">operator</span><span class="si">}</span><span class="s2"> (SELECT country_id FROM </span><span class="si">{</span><span class="n">table</span><span class="si">}</span><span class="s2">)&quot;</span><span class="p">)</span>
         <span class="n">where</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot; WHERE </span><span class="si">{</span><span class="s1">&#39; AND &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">clauses</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">clauses</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
         <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SELECT id FROM country</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2"> ORDER BY name&quot;</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_country</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">)</span></div>
@@ -532,11 +594,23 @@
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">CountryRanking</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Rank countries by a documented sourced or directly derived metric.</span>
 
-<span class="sd">        Supported metrics are ``&quot;population&quot;``, ``&quot;area&quot;``,</span>
-<span class="sd">        ``&quot;population_density&quot;``, ``&quot;border_count&quot;``, and</span>
-<span class="sd">        ``&quot;major_city_count&quot;``. Missing values are excluded.</span>
+<span class="sd">        Supported physical metrics include ``&quot;land_area&quot;``, ``&quot;water_area&quot;``,</span>
+<span class="sd">        ``&quot;water_percent&quot;``, ``&quot;coastline&quot;`, ``&quot;mean_elevation&quot;``,</span>
+<span class="sd">        ``&quot;highest_elevation&quot;``, ``&quot;lowest_elevation&quot;`, ``&quot;river_count&quot;``,</span>
+<span class="sd">        ``&quot;lake_count&quot;``, and ``&quot;climate_zone_count&quot;``. Existing population,</span>
+<span class="sd">        total area, density, border, and city metrics remain available. Missing</span>
+<span class="sd">        values are excluded.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">aliases</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;area_km2&quot;</span><span class="p">:</span> <span class="s2">&quot;area&quot;</span><span class="p">,</span> <span class="s2">&quot;density&quot;</span><span class="p">:</span> <span class="s2">&quot;population_density&quot;</span><span class="p">}</span>
+        <span class="n">aliases</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;area_km2&quot;</span><span class="p">:</span> <span class="s2">&quot;area&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;density&quot;</span><span class="p">:</span> <span class="s2">&quot;population_density&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;land_area_km2&quot;</span><span class="p">:</span> <span class="s2">&quot;land_area&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;water_area_km2&quot;</span><span class="p">:</span> <span class="s2">&quot;water_area&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;coastline_km&quot;</span><span class="p">:</span> <span class="s2">&quot;coastline&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;mean_elevation_m&quot;</span><span class="p">:</span> <span class="s2">&quot;mean_elevation&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;highest_point&quot;</span><span class="p">:</span> <span class="s2">&quot;highest_elevation&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;lowest_point&quot;</span><span class="p">:</span> <span class="s2">&quot;lowest_elevation&quot;</span><span class="p">,</span>
+        <span class="p">}</span>
         <span class="n">normalized_metric</span> <span class="o">=</span> <span class="n">aliases</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">metric</span><span class="o">.</span><span class="n">casefold</span><span class="p">(),</span> <span class="n">metric</span><span class="o">.</span><span class="n">casefold</span><span class="p">())</span>
         <span class="n">units</span> <span class="o">=</span> <span class="p">{</span>
             <span class="s2">&quot;population&quot;</span><span class="p">:</span> <span class="s2">&quot;people&quot;</span><span class="p">,</span>
@@ -544,11 +618,21 @@
             <span class="s2">&quot;population_density&quot;</span><span class="p">:</span> <span class="s2">&quot;people/km²&quot;</span><span class="p">,</span>
             <span class="s2">&quot;border_count&quot;</span><span class="p">:</span> <span class="s2">&quot;countries&quot;</span><span class="p">,</span>
             <span class="s2">&quot;major_city_count&quot;</span><span class="p">:</span> <span class="s2">&quot;places&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;land_area&quot;</span><span class="p">:</span> <span class="s2">&quot;km²&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;water_area&quot;</span><span class="p">:</span> <span class="s2">&quot;km²&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;water_percent&quot;</span><span class="p">:</span> <span class="s2">&quot;%&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;coastline&quot;</span><span class="p">:</span> <span class="s2">&quot;km&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;mean_elevation&quot;</span><span class="p">:</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;highest_elevation&quot;</span><span class="p">:</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;lowest_elevation&quot;</span><span class="p">:</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;river_count&quot;</span><span class="p">:</span> <span class="s2">&quot;rivers&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;lake_count&quot;</span><span class="p">:</span> <span class="s2">&quot;lakes&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;climate_zone_count&quot;</span><span class="p">:</span> <span class="s2">&quot;classes&quot;</span><span class="p">,</span>
         <span class="p">}</span>
         <span class="k">if</span> <span class="n">normalized_metric</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">units</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
-                <span class="s2">&quot;metric must be &#39;population&#39;, &#39;area&#39;, &#39;population_density&#39;, &quot;</span>
-                <span class="s2">&quot;&#39;border_count&#39;, or &#39;major_city_count&#39;&quot;</span>
+                <span class="s2">&quot;metric must be a documented population, area, border, city, &quot;</span>
+                <span class="s2">&quot;coastline, elevation, physical-feature, or climate-zone metric&quot;</span>
             <span class="p">)</span>
         <span class="k">if</span> <span class="n">limit</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span>
             <span class="nb">isinstance</span><span class="p">(</span><span class="n">limit</span><span class="p">,</span> <span class="nb">bool</span><span class="p">)</span> <span class="ow">or</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">limit</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span> <span class="ow">or</span> <span class="n">limit</span> <span class="o">&lt;=</span> <span class="mi">0</span>
@@ -565,8 +649,34 @@
                 <span class="n">value</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">population_density</span>
             <span class="k">elif</span> <span class="n">normalized_metric</span> <span class="o">==</span> <span class="s2">&quot;border_count&quot;</span><span class="p">:</span>
                 <span class="n">value</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">alpha2</span><span class="p">))</span>
-            <span class="k">else</span><span class="p">:</span>
+            <span class="k">elif</span> <span class="n">normalized_metric</span> <span class="o">==</span> <span class="s2">&quot;major_city_count&quot;</span><span class="p">:</span>
                 <span class="n">value</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">major_city_count</span>
+            <span class="k">elif</span> <span class="n">normalized_metric</span> <span class="o">==</span> <span class="s2">&quot;land_area&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">land_area_km2</span>
+            <span class="k">elif</span> <span class="n">normalized_metric</span> <span class="o">==</span> <span class="s2">&quot;water_area&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">water_area_km2</span>
+            <span class="k">elif</span> <span class="n">normalized_metric</span> <span class="o">==</span> <span class="s2">&quot;water_percent&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">water_percent</span>
+            <span class="k">elif</span> <span class="n">normalized_metric</span> <span class="o">==</span> <span class="s2">&quot;coastline&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">coastline_km</span>
+            <span class="k">elif</span> <span class="n">normalized_metric</span> <span class="o">==</span> <span class="s2">&quot;mean_elevation&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">mean_elevation_m</span>
+            <span class="k">elif</span> <span class="n">normalized_metric</span> <span class="o">==</span> <span class="s2">&quot;highest_elevation&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="n">country</span><span class="o">.</span><span class="n">highest_point</span><span class="o">.</span><span class="n">elevation_m</span> <span class="k">if</span> <span class="n">country</span><span class="o">.</span><span class="n">highest_point</span> <span class="k">else</span> <span class="kc">None</span>
+                <span class="p">)</span>
+            <span class="k">elif</span> <span class="n">normalized_metric</span> <span class="o">==</span> <span class="s2">&quot;lowest_elevation&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">lowest_point</span><span class="o">.</span><span class="n">elevation_m</span> <span class="k">if</span> <span class="n">country</span><span class="o">.</span><span class="n">lowest_point</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="k">elif</span> <span class="n">normalized_metric</span> <span class="o">==</span> <span class="s2">&quot;river_count&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">rivers</span><span class="p">)</span> <span class="k">if</span> <span class="n">country</span><span class="o">.</span><span class="n">rivers</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="k">elif</span> <span class="n">normalized_metric</span> <span class="o">==</span> <span class="s2">&quot;lake_count&quot;</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">lakes</span><span class="p">)</span> <span class="k">if</span> <span class="n">country</span><span class="o">.</span><span class="n">lakes</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">value</span> <span class="o">=</span> <span class="p">(</span>
+                    <span class="nb">len</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">koppen_geiger_zones</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">country</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">koppen_geiger_zones</span>
+                    <span class="k">else</span> <span class="kc">None</span>
+                <span class="p">)</span>
             <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                 <span class="n">ranked</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">country</span><span class="p">,</span> <span class="n">value</span><span class="p">))</span>
         <span class="n">ranked</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span>
@@ -588,6 +698,83 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">rank</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">metric</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">:</span> <span class="nb">object</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">CountryRanking</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Alias for :meth:`rank_countries` suited to exploratory sessions.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">rank_countries</span><span class="p">(</span><span class="n">metric</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Atlas.climate_zone_codes">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.climate_zone_codes">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">climate_zone_codes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return every represented Köppen-Geiger code in source legend order.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+            <span class="s2">&quot;SELECT DISTINCT code FROM country_climate_zone&quot;</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="c1"># SQLite row order is not a scientific legend. The explicit class</span>
+        <span class="c1"># sequence makes the public result stable across database rebuilds.</span>
+        <span class="n">order</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="s2">&quot;Af&quot;</span><span class="p">,</span> <span class="s2">&quot;Am&quot;</span><span class="p">,</span> <span class="s2">&quot;Aw&quot;</span><span class="p">,</span> <span class="s2">&quot;BWh&quot;</span><span class="p">,</span> <span class="s2">&quot;BWk&quot;</span><span class="p">,</span> <span class="s2">&quot;BSh&quot;</span><span class="p">,</span> <span class="s2">&quot;BSk&quot;</span><span class="p">,</span> <span class="s2">&quot;Csa&quot;</span><span class="p">,</span> <span class="s2">&quot;Csb&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Csc&quot;</span><span class="p">,</span> <span class="s2">&quot;Cwa&quot;</span><span class="p">,</span> <span class="s2">&quot;Cwb&quot;</span><span class="p">,</span> <span class="s2">&quot;Cwc&quot;</span><span class="p">,</span> <span class="s2">&quot;Cfa&quot;</span><span class="p">,</span> <span class="s2">&quot;Cfb&quot;</span><span class="p">,</span> <span class="s2">&quot;Cfc&quot;</span><span class="p">,</span> <span class="s2">&quot;Dsa&quot;</span><span class="p">,</span> <span class="s2">&quot;Dsb&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Dsc&quot;</span><span class="p">,</span> <span class="s2">&quot;Dsd&quot;</span><span class="p">,</span> <span class="s2">&quot;Dwa&quot;</span><span class="p">,</span> <span class="s2">&quot;Dwb&quot;</span><span class="p">,</span> <span class="s2">&quot;Dwc&quot;</span><span class="p">,</span> <span class="s2">&quot;Dwd&quot;</span><span class="p">,</span> <span class="s2">&quot;Dfa&quot;</span><span class="p">,</span> <span class="s2">&quot;Dfb&quot;</span><span class="p">,</span> <span class="s2">&quot;Dfc&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Dfd&quot;</span><span class="p">,</span> <span class="s2">&quot;ET&quot;</span><span class="p">,</span> <span class="s2">&quot;EF&quot;</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">present</span> <span class="o">=</span> <span class="p">{</span><span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">}</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">code</span> <span class="k">for</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">order</span> <span class="k">if</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">present</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Atlas.countries_in_climate_zone">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.countries_in_climate_zone">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">countries_in_climate_zone</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">code</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Country</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return profiles containing the exact Köppen-Geiger class ``code``.&quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">code</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span>
+            <span class="n">item</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">climate_zone_codes</span><span class="p">()</span>
+        <span class="p">}:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Unknown or unrepresented Köppen-Geiger code </span><span class="si">{</span><span class="n">code</span><span class="si">!r}</span><span class="s2">&quot;</span>
+            <span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">koppen_geiger_code</span><span class="o">=</span><span class="n">code</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Atlas.countries_with_river">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.countries_with_river">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">countries_with_river</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Country</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return profiles with source-listed major rivers.</span>
+
+<span class="sd">        When ``name`` is supplied, it is matched case-insensitively against the</span>
+<span class="sd">        concise feature name and retained source label. Results are alphabetical.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">has_rivers</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;%</span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span><span class="si">}</span><span class="s2">%&quot;</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;SELECT DISTINCT c.id FROM country c</span>
+<span class="sd">               JOIN country_river r ON r.country_id=c.id</span>
+<span class="sd">               WHERE lower(r.name) LIKE ? OR lower(r.source_label) LIKE ?</span>
+<span class="sd">               ORDER BY c.name&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">query</span><span class="p">),</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_country</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Atlas.countries_with_lake">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.countries_with_lake">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">countries_with_lake</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Country</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return profiles with source-listed major lakes.</span>
+
+<span class="sd">        When ``name`` is supplied, it is matched case-insensitively against the</span>
+<span class="sd">        concise feature name and retained source label. Results are alphabetical.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">name</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">has_lakes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">query</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;%</span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span><span class="si">}</span><span class="s2">%&quot;</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;SELECT DISTINCT c.id FROM country c</span>
+<span class="sd">               JOIN country_lake l ON l.country_id=c.id</span>
+<span class="sd">               WHERE lower(l.name) LIKE ? OR lower(l.source_label) LIKE ?</span>
+<span class="sd">               ORDER BY c.name&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="n">query</span><span class="p">),</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_country</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="Atlas.countries_with_local_names">
@@ -841,9 +1028,11 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return deterministic, immutable geography flashcards.</span>
 
 <span class="sd">        Supported topics are ``alpha_2_codes``, ``alpha_3_codes``, ``areas``,</span>
-<span class="sd">        ``border_counts``, ``calling_codes``, ``capitals``, ``continents``,</span>
+<span class="sd">        ``border_counts``, ``calling_codes``, ``capitals``, ``climate_zones``,</span>
+<span class="sd">        ``coastlines``, ``continents``,</span>
 <span class="sd">        ``countries_from_capitals``, ``currencies``, ``flags``,</span>
-<span class="sd">        ``language_codes``, ``local_names``, ``m49_codes``, ``neighbors``,</span>
+<span class="sd">        ``highest_points``, ``language_codes``, ``lakes``, ``local_names``,</span>
+<span class="sd">        ``m49_codes``, ``neighbors``, ``rivers``,</span>
 <span class="sd">        ``population_density``, ``populations``, ``regions``, and</span>
 <span class="sd">        ``top_level_domains``. Countries missing the answer required by a topic</span>
 <span class="sd">        are excluded before sampling. An impossible count raises</span>
@@ -876,16 +1065,24 @@
             <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">area_km2</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;calling_codes&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">calling_codes</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;climate_zones&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">dominant_zone</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;coastlines&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">coastline_km</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;continents&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">continent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;currencies&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">currency</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;flags&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">flag_emoji</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;highest_points&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">highest_point</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;language_codes&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">language_codes</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;local_names&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">local_names</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;lakes&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">lakes</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;m49_codes&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">numeric</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;neighbors&quot;</span><span class="p">:</span>
@@ -897,6 +1094,8 @@
             <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">population</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;regions&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">region</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;rivers&quot;</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">rivers</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;top_level_domains&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">top_level_domain</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="kc">True</span>
@@ -938,6 +1137,34 @@
             <span class="n">prompt</span><span class="p">,</span> <span class="n">answer</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Which continent contains </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">?&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">.</span><span class="n">continent</span>
         <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;regions&quot;</span><span class="p">:</span>
             <span class="n">prompt</span><span class="p">,</span> <span class="n">answer</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Which UN region contains </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">?&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">.</span><span class="n">region</span>
+        <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;climate_zones&quot;</span><span class="p">:</span>
+            <span class="n">zone</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">climate</span><span class="o">.</span><span class="n">dominant_zone</span>
+            <span class="n">prompt</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;Which Köppen-Geiger class has the largest represented share &quot;</span>
+                <span class="sa">f</span><span class="s2">&quot;of </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">?&quot;</span>
+            <span class="p">)</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">zone</span><span class="o">.</span><span class="n">code</span><span class="si">}</span><span class="s2"> — </span><span class="si">{</span><span class="n">zone</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;coastlines&quot;</span><span class="p">:</span>
+            <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;What coastline length is listed for </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">?&quot;</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">coastline_km</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> km&quot;</span>
+        <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;highest_points&quot;</span><span class="p">:</span>
+            <span class="n">point</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">highest_point</span>
+            <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;What is the highest point listed for </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">?&quot;</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">point</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">point</span><span class="o">.</span><span class="n">elevation_m</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> m)&quot;</span>
+        <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;rivers&quot;</span><span class="p">:</span>
+            <span class="n">river</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">rivers</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Name a source-listed major river associated with </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">river</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">river</span><span class="o">.</span><span class="n">length_km</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> km)&quot;</span>
+                <span class="k">if</span> <span class="n">river</span><span class="o">.</span><span class="n">length_km</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">river</span><span class="o">.</span><span class="n">name</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;lakes&quot;</span><span class="p">:</span>
+            <span class="n">lake</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">lakes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Name a source-listed major lake associated with </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">.&quot;</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">lake</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">lake</span><span class="o">.</span><span class="n">area_km2</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> km²)&quot;</span>
+                <span class="k">if</span> <span class="n">lake</span><span class="o">.</span><span class="n">area_km2</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">lake</span><span class="o">.</span><span class="n">name</span>
+            <span class="p">)</span>
         <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;local_names&quot;</span><span class="p">:</span>
             <span class="n">local_name</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
                 <span class="p">(</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">country</span><span class="o">.</span><span class="n">local_names</span> <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">language_code</span> <span class="o">!=</span> <span class="s2">&quot;en&quot;</span><span class="p">),</span>
@@ -1096,7 +1323,100 @@
         <span class="p">)</span>
         <span class="n">source_by_id</span> <span class="o">=</span> <span class="p">{</span><span class="n">source</span><span class="o">.</span><span class="n">id</span><span class="p">:</span> <span class="n">source</span> <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">}</span>
         <span class="n">local_names</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_load_local_names</span><span class="p">()</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">country_id</span><span class="p">,</span> <span class="p">())</span>
-        <span class="n">geography</span> <span class="o">=</span> <span class="n">Geography</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;continent&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;subregion&quot;</span><span class="p">],</span> <span class="n">Area</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;total_area_km2&quot;</span><span class="p">]))</span>
+        <span class="n">physical_row</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+            <span class="s2">&quot;SELECT * FROM country_physical WHERE country_id=?&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">country_id</span><span class="p">,)</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">fetchone</span><span class="p">()</span>
+        <span class="n">river_rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+            <span class="s2">&quot;SELECT * FROM country_river WHERE country_id=? ORDER BY length_km DESC, name&quot;</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">country_id</span><span class="p">,),</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">lake_rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+            <span class="s2">&quot;SELECT * FROM country_lake WHERE country_id=? ORDER BY area_km2 DESC, name&quot;</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">country_id</span><span class="p">,),</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">climate_rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+            <span class="s2">&quot;SELECT * FROM country_climate_zone WHERE country_id=? ORDER BY position&quot;</span><span class="p">,</span>
+            <span class="p">(</span><span class="n">country_id</span><span class="p">,),</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="n">zones</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+            <span class="n">ClimateZone</span><span class="p">(</span>
+                <span class="n">item</span><span class="p">[</span><span class="s2">&quot;code&quot;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;climate_group&quot;</span><span class="p">],</span>
+                <span class="n">item</span><span class="p">[</span><span class="s2">&quot;share_percent&quot;</span><span class="p">],</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">climate_rows</span>
+        <span class="p">)</span>
+        <span class="n">climate</span> <span class="o">=</span> <span class="n">ClimateProfile</span><span class="p">(</span>
+            <span class="n">summary</span><span class="o">=</span><span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;climate_summary&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">physical_row</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">koppen_geiger_zones</span><span class="o">=</span><span class="n">zones</span><span class="p">,</span>
+            <span class="n">reference_period</span><span class="o">=</span><span class="n">climate_rows</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;reference_period&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">climate_rows</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">resolution_degrees</span><span class="o">=</span><span class="n">climate_rows</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;resolution_degrees&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">climate_rows</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">minimum_share_percent</span><span class="o">=</span><span class="p">(</span>
+                <span class="n">climate_rows</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="s2">&quot;minimum_share_percent&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">climate_rows</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="p">),</span>
+            <span class="n">summary_source</span><span class="o">=</span><span class="n">source_by_id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cia-world-factbook-2025&quot;</span><span class="p">),</span>
+            <span class="n">classification_source</span><span class="o">=</span><span class="n">source_by_id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;koppen-geiger-1991-2020&quot;</span><span class="p">),</span>
+        <span class="p">)</span>
+        <span class="n">highest_point</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">ElevationPoint</span><span class="p">(</span>
+                <span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;highest_point_name&quot;</span><span class="p">],</span>
+                <span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;highest_point_elevation_m&quot;</span><span class="p">],</span>
+                <span class="nb">bool</span><span class="p">(</span><span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;highest_point_is_approximate&quot;</span><span class="p">]),</span>
+                <span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;highest_point_source_label&quot;</span><span class="p">],</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">physical_row</span> <span class="ow">and</span> <span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;highest_point_name&quot;</span><span class="p">]</span>
+            <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="n">lowest_point</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">ElevationPoint</span><span class="p">(</span>
+                <span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;lowest_point_name&quot;</span><span class="p">],</span>
+                <span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;lowest_point_elevation_m&quot;</span><span class="p">],</span>
+                <span class="nb">bool</span><span class="p">(</span><span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;lowest_point_is_approximate&quot;</span><span class="p">]),</span>
+                <span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;lowest_point_source_label&quot;</span><span class="p">],</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">physical_row</span> <span class="ow">and</span> <span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;lowest_point_name&quot;</span><span class="p">]</span>
+            <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="n">physical</span> <span class="o">=</span> <span class="n">PhysicalGeography</span><span class="p">(</span>
+            <span class="n">coastline_km</span><span class="o">=</span><span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;coastline_km&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">physical_row</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">mean_elevation_m</span><span class="o">=</span><span class="p">(</span>
+                <span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;mean_elevation_m&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">physical_row</span> <span class="k">else</span> <span class="kc">None</span>
+            <span class="p">),</span>
+            <span class="n">highest_point</span><span class="o">=</span><span class="n">highest_point</span><span class="p">,</span>
+            <span class="n">lowest_point</span><span class="o">=</span><span class="n">lowest_point</span><span class="p">,</span>
+            <span class="n">rivers</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span>
+                <span class="n">River</span><span class="p">(</span><span class="n">item</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;length_km&quot;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;source_label&quot;</span><span class="p">])</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">river_rows</span>
+            <span class="p">),</span>
+            <span class="n">lakes</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span>
+                <span class="n">Lake</span><span class="p">(</span>
+                    <span class="n">item</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;area_km2&quot;</span><span class="p">],</span> <span class="n">item</span><span class="p">[</span><span class="s2">&quot;water_type&quot;</span><span class="p">],</span>
+                    <span class="n">item</span><span class="p">[</span><span class="s2">&quot;source_label&quot;</span><span class="p">],</span>
+                <span class="p">)</span>
+                <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">lake_rows</span>
+            <span class="p">),</span>
+            <span class="n">climate</span><span class="o">=</span><span class="n">climate</span><span class="p">,</span>
+            <span class="n">source</span><span class="o">=</span><span class="n">source_by_id</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;cia-world-factbook-2025&quot;</span><span class="p">),</span>
+            <span class="n">source_locator</span><span class="o">=</span><span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;source_locator&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">physical_row</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">land_area</span> <span class="o">=</span> <span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;land_area_km2&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">physical_row</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">water_area</span> <span class="o">=</span> <span class="n">physical_row</span><span class="p">[</span><span class="s2">&quot;water_area_km2&quot;</span><span class="p">]</span> <span class="k">if</span> <span class="n">physical_row</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">total_area</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;total_area_km2&quot;</span><span class="p">]</span>
+        <span class="n">water_percent</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="n">water_area</span> <span class="o">/</span> <span class="n">total_area</span> <span class="o">*</span> <span class="mi">100</span>
+            <span class="k">if</span> <span class="n">water_area</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="n">total_area</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+            <span class="ow">and</span> <span class="n">total_area</span> <span class="o">&gt;</span> <span class="mi">0</span>
+            <span class="ow">and</span> <span class="n">water_area</span> <span class="o">&lt;=</span> <span class="n">total_area</span>
+            <span class="k">else</span> <span class="kc">None</span>
+        <span class="p">)</span>
+        <span class="n">geography</span> <span class="o">=</span> <span class="n">Geography</span><span class="p">(</span>
+            <span class="n">continent</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;continent&quot;</span><span class="p">],</span>
+            <span class="n">region</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;region&quot;</span><span class="p">],</span>
+            <span class="n">subregion</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;subregion&quot;</span><span class="p">],</span>
+            <span class="n">area</span><span class="o">=</span><span class="n">Area</span><span class="p">(</span><span class="n">total_area</span><span class="p">,</span> <span class="n">land_area</span><span class="p">,</span> <span class="n">water_area</span><span class="p">,</span> <span class="n">water_percent</span><span class="p">),</span>
+            <span class="n">landlocked</span><span class="o">=</span><span class="n">physical</span><span class="o">.</span><span class="n">is_landlocked</span><span class="p">,</span>
+            <span class="n">physical</span><span class="o">=</span><span class="n">physical</span><span class="p">,</span>
+        <span class="p">)</span>
         <span class="n">currency</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">Currency</span><span class="p">(</span>
                 <span class="n">row</span><span class="p">[</span><span class="s2">&quot;currency_code&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;currency_name&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;currency_symbol&quot;</span><span class="p">],</span>

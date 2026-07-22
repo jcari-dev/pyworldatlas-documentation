@@ -47,6 +47,12 @@ The current build checks:
 - Canonical undirected border edges with valid country endpoints and no self-edges.
 - Exact accounting for every difference between the two pinned border sources.
 - Symmetric neighbor behavior and shortest-path consistency across the graph.
+- Exact pinned checksums and expected coverage for the structured physical
+  source layer and derived Köppen-Geiger country snapshot.
+- Non-negative land/water/coastline measurements, valid elevation points,
+  unique physical-feature records, and internally consistent water percentages.
+- Known Köppen-Geiger codes, shares from 0 through 100, deterministic descending
+  share order, the exact seven-profile gap set, and the documented 0.1% threshold.
 
 Coverage
 --------
@@ -127,6 +133,36 @@ Coverage
    * - Countries and areas with no accepted land border
      - 85
      - 248-entity package scope
+   * - Total-area profiles
+     - 248
+     - Factbook values with GeoNames fallback for source gaps
+   * - Land-area profiles
+     - 238
+     - Structured source intersection
+   * - Numeric water-area profiles
+     - 233
+     - Structured source intersection
+   * - Coastline profiles
+     - 238
+     - Source-reported length, including explicit zero
+   * - Highest and lowest points
+     - 240 each
+     - Named source point and elevation
+   * - Mean-elevation profiles
+     - 166
+     - Source value when present
+   * - Source-listed river records
+     - 188 across 80 profiles
+     - Major features listed by the source
+   * - Source-listed lake records
+     - 187 across 69 profiles
+     - Major features listed by the source
+   * - Plain-language climate summaries
+     - 240
+     - Compact source descriptions
+   * - Köppen-Geiger climate profiles
+     - 241
+     - 1991–2020 raster classes above the 0.1% threshold
 
 Missing data is a valid value
 -----------------------------
@@ -144,8 +180,8 @@ Interpretation cautions
 -----------------------
 
 - Population fields are source snapshots rather than a synchronized census.
-- The GeoNames area value is a milestone fallback, not the final area-priority
-  implementation.
+- Total area uses the structured Factbook value when available and the captured
+  GeoNames value as an explicit fallback for profiles outside that intersection.
 - Release 0.1.0 selects one GeoNames primary capital per country; nuanced
   multi-capital roles arrive later.
 - Seven areas have no usable primary-capital record in the current source
@@ -162,7 +198,16 @@ Interpretation cautions
   legal determinations of official-language status.
 - Border relationships are topological claims, not boundary geometry. Border
   length, boundary geometry, point-in-country, and map rendering remain outside
-  this release and the planned 0.7 physical-geography milestone.
+  this release.
+- River and lake tuples are source-listed major features, not exhaustive
+  inventories. Empty tuples do not assert that a feature is absent.
+- A river length or lake area describes the complete source feature, including
+  a shared feature, not its portion inside one country profile.
+- Köppen-Geiger shares are generalized raster/polygon estimates for broad
+  education. They are not local forecasts, legal boundaries, or site-level
+  classifications; classes below 0.1% are omitted.
+- Highest and lowest points preserve the source label and measurement. They do
+  not create a separate “major mountains” classification.
 - Names and classifications follow documented source conventions.
 - Terms such as *country* and *area* are practical dataset labels.
 

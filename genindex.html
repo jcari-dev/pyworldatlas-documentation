@@ -5,14 +5,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; PyWorldAtlas 0.6.0</title>
+  <title>Index &mdash; PyWorldAtlas 0.7.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=8fa8b3e9"></script>
+      <script src="_static/documentation_options.js?v=fe7df9b0"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -43,6 +43,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="explore.html">Explore the atlas in five minutes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#make-a-country-postcard">Make a country postcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#follow-a-feature-across-profiles">Follow a feature across profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#rank-the-bundled-snapshots">Rank the bundled snapshots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#find-the-nearest-capitals">Find the nearest capitals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#build-a-small-collection">Build a small collection</a></li>
@@ -57,6 +58,7 @@
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-profile-metadata">Read profile metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#add-reference-facts">Add reference facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#explore-physical-geography">Explore physical geography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-the-three-english-name-fields">Read the three English name fields</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#meet-countries-in-their-own-languages">Meet countries in their own languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
@@ -97,10 +99,22 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#profile-example">Profile example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#current-field-coverage">Current field coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#convenience-and-discovery-views">Convenience and discovery views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="country_profile.html#physical-geography">Physical geography</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#names-and-aliases">Names and aliases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#capital-and-cities">Capital and cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#sources">Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="physical_geography.html">Physical geography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#a-country-in-four-lines">A country in four lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#area-and-coastline">Area and coastline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#elevation-and-named-extremes">Elevation and named extremes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#rivers-and-lakes">Rivers and lakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#climate-profiles">Climate profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#physical-filters-and-rankings">Physical filters and rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#learning-prompts">Learning prompts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical_geography.html#executable-example">Executable example</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="reference_facts.html">Country reference facts</a><ul>
@@ -200,13 +214,14 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#unicode-cldr-48-2">Unicode CLDR 48.2</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-country-name-profiles">CIA World Factbook country-name profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-6-0-release">Source priority in the 0.6.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-7-0-release">Source priority in the 0.7.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -234,6 +249,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#country-identity-provenance">Country identity provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#reference-fact-provenance">Reference-fact provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#discovery-calculations">Discovery calculations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#physical-geography-provenance">Physical-geography provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#distance-input-contract">Distance input contract</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-field-notes">Profile field notes</a></li>
@@ -259,6 +275,12 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#geographic-models">Geographic models</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Coordinate"><code class="docutils literal notranslate"><span class="pre">Coordinate</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Area"><code class="docutils literal notranslate"><span class="pre">Area</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.ElevationPoint"><code class="docutils literal notranslate"><span class="pre">ElevationPoint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.River"><code class="docutils literal notranslate"><span class="pre">River</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Lake"><code class="docutils literal notranslate"><span class="pre">Lake</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.ClimateZone"><code class="docutils literal notranslate"><span class="pre">ClimateZone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.ClimateProfile"><code class="docutils literal notranslate"><span class="pre">ClimateProfile</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PhysicalGeography"><code class="docutils literal notranslate"><span class="pre">PhysicalGeography</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Geography"><code class="docutils literal notranslate"><span class="pre">Geography</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Capital"><code class="docutils literal notranslate"><span class="pre">Capital</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.City"><code class="docutils literal notranslate"><span class="pre">City</span></code></a></li>
@@ -291,14 +313,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.6.0 — 2026-07-22</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.5.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.7.0 — 2026-07-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.6.0 — 2026-07-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.5.0 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.3.1 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -334,6 +357,7 @@
  | <a href="#B"><strong>B</strong></a>
  | <a href="#C"><strong>C</strong></a>
  | <a href="#D"><strong>D</strong></a>
+ | <a href="#E"><strong>E</strong></a>
  | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
  | <a href="#H"><strong>H</strong></a>
@@ -346,6 +370,8 @@
  | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  | <a href="#T"><strong>T</strong></a>
+ | <a href="#W"><strong>W</strong></a>
+ | <a href="#Z"><strong>Z</strong></a>
  
 </div>
 <h2 id="A">A</h2>
@@ -413,7 +439,17 @@
 </li>
       <li><a href="api.html#pyworldatlas.Atlas.city">city() (pyworldatlas.Atlas method)</a>
 </li>
+      <li><a href="api.html#pyworldatlas.Country.climate">climate (pyworldatlas.Country property)</a>
+</li>
+      <li><a href="api.html#pyworldatlas.Atlas.climate_zone_codes">climate_zone_codes() (pyworldatlas.Atlas method)</a>
+</li>
+      <li><a href="api.html#pyworldatlas.ClimateProfile">ClimateProfile (class in pyworldatlas)</a>
+</li>
+      <li><a href="api.html#pyworldatlas.ClimateZone">ClimateZone (class in pyworldatlas)</a>
+</li>
       <li><a href="api.html#pyworldatlas.Atlas.close">close() (pyworldatlas.Atlas method)</a>
+</li>
+      <li><a href="api.html#pyworldatlas.Country.coastline_km">coastline_km (pyworldatlas.Country property)</a>
 </li>
       <li><a href="api.html#pyworldatlas.Country.continent">continent (pyworldatlas.Country property)</a>
 </li>
@@ -423,15 +459,21 @@
 </li>
       <li><a href="api.html#pyworldatlas.Atlas.countries">countries() (pyworldatlas.Atlas method)</a>
 </li>
-      <li><a href="api.html#pyworldatlas.Atlas.countries_reachable_by_land">countries_reachable_by_land() (pyworldatlas.Atlas method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.Atlas.countries_in_climate_zone">countries_in_climate_zone() (pyworldatlas.Atlas method)</a>
+</li>
+      <li><a href="api.html#pyworldatlas.Atlas.countries_reachable_by_land">countries_reachable_by_land() (pyworldatlas.Atlas method)</a>
+</li>
       <li><a href="api.html#pyworldatlas.Atlas.countries_with_formal_names">countries_with_formal_names() (pyworldatlas.Atlas method)</a>
+</li>
+      <li><a href="api.html#pyworldatlas.Atlas.countries_with_lake">countries_with_lake() (pyworldatlas.Atlas method)</a>
 </li>
       <li><a href="api.html#pyworldatlas.Atlas.countries_with_local_names">countries_with_local_names() (pyworldatlas.Atlas method)</a>
 </li>
       <li><a href="api.html#pyworldatlas.Atlas.countries_with_no_land_borders">countries_with_no_land_borders() (pyworldatlas.Atlas method)</a>
+</li>
+      <li><a href="api.html#pyworldatlas.Atlas.countries_with_river">countries_with_river() (pyworldatlas.Atlas method)</a>
 </li>
       <li><a href="api.html#pyworldatlas.Country">Country (class in pyworldatlas)</a>
 </li>
@@ -485,6 +527,16 @@
 </li>
       <li><a href="api.html#pyworldatlas.Coordinate.distance_to">distance_to() (pyworldatlas.Coordinate method)</a>
 </li>
+      <li><a href="api.html#pyworldatlas.ClimateProfile.dominant_zone">dominant_zone (pyworldatlas.ClimateProfile property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="E">E</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.ElevationPoint">ElevationPoint (class in pyworldatlas)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -525,12 +577,28 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#pyworldatlas.Atlas.has_land_route">has_land_route() (pyworldatlas.Atlas method)</a>
 </li>
+      <li><a href="api.html#pyworldatlas.Country.highest_point">highest_point (pyworldatlas.Country property)</a>
+</li>
   </ul></td>
 </tr></table>
 
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.Country.is_coastal">is_coastal (pyworldatlas.Country property)</a>
+
+      <ul>
+        <li><a href="api.html#pyworldatlas.PhysicalGeography.is_coastal">(pyworldatlas.PhysicalGeography property)</a>
+</li>
+      </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.Country.is_landlocked">is_landlocked (pyworldatlas.Country property)</a>
+
+      <ul>
+        <li><a href="api.html#pyworldatlas.PhysicalGeography.is_landlocked">(pyworldatlas.PhysicalGeography property)</a>
+</li>
+      </ul></li>
       <li><a href="api.html#pyworldatlas.LocalizedName.is_national_official">is_national_official (pyworldatlas.LocalizedName property)</a>
 </li>
   </ul></td>
@@ -539,17 +607,25 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Language">Language (class in pyworldatlas)</a>
+      <li><a href="api.html#pyworldatlas.Lake">Lake (class in pyworldatlas)</a>
 </li>
-      <li><a href="api.html#pyworldatlas.Country.language_codes">language_codes (pyworldatlas.Country property)</a>
+      <li><a href="api.html#pyworldatlas.Country.lakes">lakes (pyworldatlas.Country property)</a>
+</li>
+      <li><a href="api.html#pyworldatlas.Country.land_area_km2">land_area_km2 (pyworldatlas.Country property)</a>
+</li>
+      <li><a href="api.html#pyworldatlas.Language">Language (class in pyworldatlas)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.Country.language_codes">language_codes (pyworldatlas.Country property)</a>
+</li>
       <li><a href="api.html#pyworldatlas.Country.local_name">local_name() (pyworldatlas.Country method)</a>
 </li>
       <li><a href="api.html#pyworldatlas.Country.local_name_languages">local_name_languages (pyworldatlas.Country property)</a>
 </li>
       <li><a href="api.html#pyworldatlas.LocalizedName">LocalizedName (class in pyworldatlas)</a>
+</li>
+      <li><a href="api.html#pyworldatlas.Country.lowest_point">lowest_point (pyworldatlas.Country property)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -563,6 +639,8 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.Country.mean_elevation_m">mean_elevation_m (pyworldatlas.Country property)</a>
+</li>
       <li><a href="api.html#pyworldatlas.Coordinate.midpoint_to">midpoint_to() (pyworldatlas.Coordinate method)</a>
 </li>
       <li><a href="api.html#pyworldatlas.Country.motto">motto (pyworldatlas.Country property)</a>
@@ -605,10 +683,14 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.PlaceNotFoundError">PlaceNotFoundError</a>
+      <li><a href="api.html#pyworldatlas.Country.physical">physical (pyworldatlas.Country property)</a>
+</li>
+      <li><a href="api.html#pyworldatlas.PhysicalGeography">PhysicalGeography (class in pyworldatlas)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.PlaceNotFoundError">PlaceNotFoundError</a>
+</li>
       <li><a href="api.html#pyworldatlas.Country.population_density">population_density (pyworldatlas.Country property)</a>
 </li>
       <li><a href="api.html#pyworldatlas.PostalCodeFormat">PostalCodeFormat (class in pyworldatlas)</a>
@@ -625,9 +707,13 @@
 </li>
       <li><a href="api.html#pyworldatlas.Country.reference">reference() (pyworldatlas.Country method)</a>
 </li>
+      <li><a href="api.html#pyworldatlas.Country.region">region (pyworldatlas.Country property)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Country.region">region (pyworldatlas.Country property)</a>
+      <li><a href="api.html#pyworldatlas.River">River (class in pyworldatlas)</a>
+</li>
+      <li><a href="api.html#pyworldatlas.Country.rivers">rivers (pyworldatlas.Country property)</a>
 </li>
       <li><a href="api.html#pyworldatlas.Country.romanized_name_in">romanized_name_in() (pyworldatlas.Country method)</a>
 </li>
@@ -695,6 +781,26 @@
         <li><a href="api.html#pyworldatlas.Flashcard.to_json">(pyworldatlas.Flashcard method)</a>
 </li>
       </ul></li>
+  </ul></td>
+</tr></table>
+
+<h2 id="W">W</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.Country.water_area_km2">water_area_km2 (pyworldatlas.Country property)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.Country.water_percent">water_percent (pyworldatlas.Country property)</a>
+</li>
+  </ul></td>
+</tr></table>
+
+<h2 id="Z">Z</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.ClimateProfile.zone_codes">zone_codes (pyworldatlas.ClimateProfile property)</a>
+</li>
   </ul></td>
 </tr></table>
 

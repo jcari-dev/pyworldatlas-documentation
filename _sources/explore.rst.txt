@@ -8,8 +8,8 @@ database: no API key, network request, or third-party runtime package is used.
 Make a country postcard
 -----------------------
 
-Country profiles combine names, reference facts, practical metadata, and exact
-source references.
+Country profiles combine names, reference facts, physical geography, practical
+metadata, and exact source references.
 
 .. doctest::
 
@@ -24,6 +24,22 @@ source references.
    Ordem e Progresso — Order and Progress
    >>> print(brazil.currency.name, brazil.currency.symbol)
    Brazilian Real R$
+   >>> print(brazil.highest_point.name, f"{brazil.highest_point.elevation_m:,.0f} m")
+   Pico da Neblina 2,994 m
+   >>> print(brazil.climate.dominant_zone.code, brazil.climate.dominant_zone.name)
+   Aw Tropical, savannah
+
+Follow a feature across profiles
+--------------------------------
+
+Source-listed rivers and lakes can connect more than one country profile:
+
+.. doctest::
+
+   >>> [country.name for country in atlas.countries_with_river("Amazon")]
+   ['Brazil', 'Peru']
+   >>> [country.name for country in atlas.countries_with_lake("Geneva")]
+   ['France', 'Switzerland']
 
 Rank the bundled snapshots
 --------------------------
@@ -38,6 +54,8 @@ calculations. Missing values are excluded.
    ['China', 'India', 'United States', 'Indonesia', 'Pakistan']
    >>> [(result.position, result.unit) for result in largest[:2]]
    [(1, 'people'), (2, 'people')]
+   >>> [result.country.name for result in atlas.rank("coastline", limit=3)]
+   ['Canada', 'Indonesia', 'Greenland']
 
 Find the nearest capitals
 -------------------------
@@ -56,7 +74,8 @@ Build a small collection
 ------------------------
 
 Filters can be combined to select profiles by geography, currency, language
-metadata, script, or timezone.
+metadata, script, timezone, coast, physical-feature coverage, or represented
+climate class.
 
 .. doctest::
 
@@ -66,6 +85,8 @@ metadata, script, or timezone.
    ['Dominican Republic']
    >>> atlas.countries(language_code="ja")[0].languages[0].name
    'Japanese'
+   >>> len(atlas.countries(continent="Europe", coastal=False))
+   14
 
 Create a repeatable geography quiz
 ----------------------------------
@@ -75,9 +96,9 @@ plans, examples, and tests.
 
 .. doctest::
 
-   >>> card = atlas.flashcards(topic="capitals", count=1, seed="Friday")[0]
+   >>> card = atlas.flashcards(topic="highest_points", count=1, seed="Friday")[0]
    >>> (card.prompt, card.answer)
-   ('What is the capital of Austria?', 'Vienna')
+   ('What is the highest point listed for Austria?', 'Grossglockner (3798 m)')
    >>> atlas.close()
 
 Runnable tour
@@ -89,5 +110,5 @@ The repository includes the complete script used for the introductory tour:
    :language: python
    :linenos:
 
-Continue with :doc:`quickstart`, explore :doc:`reference_facts`, or jump to
+Continue with :doc:`quickstart`, explore :doc:`physical_geography`, or jump to
 :doc:`rankings` for the complete method contracts.

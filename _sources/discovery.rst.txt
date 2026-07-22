@@ -39,7 +39,7 @@ Convenience properties keep common profile work explicit:
    >>> japan.major_city_count == len(japan.major_cities)
    True
    >>> round(japan.population_density, 2)
-   334.88
+   334.81
 
 ``population_density`` is calculated from the captured population and area
 values. It is not a separate official statistic and returns ``None`` when the
@@ -71,6 +71,12 @@ and static-site generation:
    'Japanese (singular and plural)'
    >>> card.timezone_ids
    ('Asia/Tokyo',)
+   >>> card.coastline_km
+   29751.0
+   >>> (card.highest_point.name, card.highest_point.elevation_m)
+   ('Mount Fuji', 3776.0)
+   >>> card.climate_zone_codes
+   ('Cfa', 'Dfb', 'Dfa', 'Af', 'Dfc')
    >>> card.to_dict()["country"]["numeric"]
    '392'
 
@@ -149,6 +155,14 @@ Supported topics
      - Number of accepted land-border relationships
    * - ``populations`` / ``areas`` / ``population_density``
      - Captured snapshot value or transparent calculated ratio
+   * - ``coastlines``
+     - Source-reported coastline length
+   * - ``highest_points``
+     - Named highest point and elevation
+   * - ``climate_zones``
+     - Largest represented Köppen-Geiger class
+   * - ``rivers`` / ``lakes``
+     - One source-listed major feature from the profile
 
 Countries missing the answer required by a topic are removed before sampling.
 If the requested count is impossible, the method raises ``ValueError`` rather
@@ -156,6 +170,11 @@ than returning an incomplete lesson. Local-name flashcards cover all 248
 country and area records using their selected local identity. Neighbor cards exclude
 borderless entities, while border-count cards include them with an answer of
 ``0``.
+
+Physical flashcards retain the limits of the underlying data. River and lake
+answers come from source-listed major features rather than exhaustive
+inventories. Climate answers use the largest represented class after the
+documented extraction threshold; they are not a site-level forecast.
 
 .. doctest::
 
@@ -172,7 +191,8 @@ sampling and flashcards rearrange existing values. Population and area answers
 remain snapshots, observed timezones remain limited to bundled places, and
 language answers are source codes, while local-name cards use the selected CLDR
 or UNGEGN identity record. Border flashcards are derived from the reviewed graph;
-they introduce no additional adjacency claims.
+they introduce no additional adjacency claims. Physical prompts reuse the
+sourced or directly derived fields described in :doc:`physical_geography`.
 
 Executable example
 ------------------

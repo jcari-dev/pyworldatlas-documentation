@@ -60,7 +60,7 @@ Library, schema, and data versions change independently:
 
    >>> info = atlas.dataset_info()
    >>> (info.library_version, info.schema_version, info.dataset_version)
-   ('0.6.0', 6, '2026.07.22.6')
+   ('0.7.0', 7, '2026.07.22.7')
    >>> atlas.close()
 
 Read profile metadata
@@ -97,6 +97,36 @@ Optional facts remain typed and source-aware:
    Japanese
    Japanese Yen ¥
    ('Asia/Tokyo',)
+
+Explore physical geography
+--------------------------
+
+Physical fields are typed, optional, and available without a network call:
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     japan = atlas.country("Japan")
+   ...     print(japan.highest_point.name, japan.highest_point.elevation_m)
+   ...     print(japan.lowest_point.name, japan.lowest_point.elevation_m)
+   ...     print(japan.coastline_km, japan.climate.dominant_zone.code)
+   Mount Fuji 3776.0
+   Hachiro-gata -4.0
+   29751.0 Cfa
+
+Discover a shared river or lake across profiles:
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     print([country.name for country in atlas.countries_with_river("Amazon")])
+   ...     print([country.name for country in atlas.countries_with_lake("Geneva")])
+   ['Brazil', 'Peru']
+   ['France', 'Switzerland']
+
+See :doc:`physical_geography` for field meaning, climate methodology, coverage,
+rankings, and the difference between source-listed features and exhaustive
+inventories.
 
 Read the three English name fields
 ----------------------------------
@@ -148,7 +178,7 @@ Country samples and flashcards use a stable seed-based ordering:
    ...     print([country.alpha2 for country in atlas.sample_countries(count=3, seed=42)])
    ...     card = atlas.flashcards(topic="capitals", count=1, seed=42)[0]
    ...     print(card.prompt, card.answer)
-   🇯🇵 334.88
+   🇯🇵 334.81
    ['KW', 'BS', 'BI']
    What is the capital of Kuwait? Kuwait City
 
