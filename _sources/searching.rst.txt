@@ -5,8 +5,8 @@ Exact lookup
 ------------
 
 :meth:`Atlas.country <pyworldatlas.Atlas.country>` accepts common names,
-aliases, ISO alpha-2 and alpha-3 identifiers, and M49 numeric codes. Lookup is
-case- and accent-insensitive.
+aliases, sourced English formal names, ISO alpha-2 and alpha-3 identifiers, and
+M49 numeric codes. Lookup is case- and accent-insensitive.
 
 .. doctest::
 
@@ -16,6 +16,8 @@ case- and accent-insensitive.
    'United States'
    >>> atlas.country("VAT").name
    'Vatican City'
+   >>> atlas.country("Republic of Türkiye").alpha2
+   'TR'
 
 Safe lookup
 -----------
@@ -35,7 +37,7 @@ Ranked search
 
    >>> matches = atlas.search_countries("united")
    >>> len(matches)
-   6
+   7
    >>> {"GB", "US"}.issubset({match.country.alpha2 for match in matches})
    True
 

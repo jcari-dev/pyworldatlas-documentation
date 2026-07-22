@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Country profiles &mdash; PyWorldAtlas 0.3.1</title>
+  <title>Country profiles &mdash; PyWorldAtlas 0.5.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=4621528c"></script>
+      <script src="_static/documentation_options.js?v=1dd76d02"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -50,6 +50,16 @@
 <li class="toctree-l2"><a class="reference internal" href="why.html#what-it-is-not">What it is not</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="educational_principles.html">Educational purpose and editorial policy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#editorial-commitments">Editorial commitments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#how-sources-are-selected">How sources are selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#names-areas-and-borders">Names, areas, and borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#publication-boundaries">Publication boundaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#using-the-package-in-education">Using the package in education</a></li>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#community-and-corrections">Community and corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#version-0-5-0">Version 0.5.0</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#published-package">Published package</a></li>
@@ -64,6 +74,8 @@
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#use-it-like-a-python-collection">Use it like a Python collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-profile-metadata">Read profile metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-the-three-english-name-fields">Read the three English name fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#meet-countries-in-their-own-languages">Meet countries in their own languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#measure-city-to-city-distance">Measure city-to-city distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#explore-land-connections">Explore land connections</a></li>
@@ -96,9 +108,17 @@
 <li class="toctree-l2"><a class="reference internal" href="discovery.html#executable-example">Executable example</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="local_names.html">Official local names</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="local_names.html#source-policy">Source policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="local_names.html#coverage-boundary">Coverage boundary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="local_names.html">Local names and writing systems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="local_names.html#coverage-at-a-glance">Coverage at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_names.html#understand-the-english-fields">Understand the English fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_names.html#start-with-one-country">Start with one country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_names.html#explore-writing-systems">Explore writing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_names.html#inspect-the-evidence-level">Inspect the evidence level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_names.html#romanization-is-source-data">Romanization is source data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_names.html#discover-coverage">Discover coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_names.html#how-the-language-is-selected">How the language is selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_names.html#source-and-review-rules">Source and review rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="local_names.html#try-the-example">Try the example</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="capitals_cities.html">Capitals and major cities</a><ul>
@@ -140,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#dictionary-output">Dictionary output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#json-output">JSON output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#local-name-provenance">Local-name provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#discovery-values">Discovery values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#border-paths">Border paths</a></li>
 </ul>
@@ -148,17 +169,23 @@
 <p class="caption" role="heading"><span class="caption-text">Data and trust</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data sources and freshness</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#field-specific-source-policy">Field-specific source policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-m49">United Nations M49</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#geonames">GeoNames</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#natural-earth">Natural Earth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#unicode-cldr-48-2">Unicode CLDR 48.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-country-name-profiles">CIA World Factbook country-name profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-1-checkout">Source priority in the 0.3.1 checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-5-0-release">Source priority in the 0.5.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="data_quality.html">Data quality and limitations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#educational-and-editorial-quality">Educational and editorial quality</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#validation-layers">Validation layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#coverage">Coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#missing-data-is-a-valid-value">Missing data is a valid value</a></li>
@@ -176,6 +203,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-conventions">Profile conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#country-identity-provenance">Country identity provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#distance-input-contract">Distance input contract</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-field-notes">Profile field notes</a></li>
@@ -186,7 +214,6 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#country-models">Country models</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Country"><code class="docutils literal notranslate"><span class="pre">Country</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryCodes"><code class="docutils literal notranslate"><span class="pre">CountryCodes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryStatus"><code class="docutils literal notranslate"><span class="pre">CountryStatus</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.LocalizedName"><code class="docutils literal notranslate"><span class="pre">LocalizedName</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Currency"><code class="docutils literal notranslate"><span class="pre">Currency</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Language"><code class="docutils literal notranslate"><span class="pre">Language</span></code></a></li>
@@ -227,11 +254,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.1 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.5.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -274,6 +303,10 @@ dictionary keys.</p>
 <span class="go">Country(name=&#39;Japan&#39;, alpha2=&#39;JP&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">japan</span><span class="o">.</span><span class="n">official_name</span>
 <span class="go">&#39;Japan&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">japan</span><span class="o">.</span><span class="n">formal_name</span>
+<span class="go">&#39;Japan&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">japan</span><span class="o">.</span><span class="n">has_distinct_formal_name</span>
+<span class="go">False</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">japan</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">alpha2</span>
 <span class="go">&#39;JP&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">japan</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">alpha3</span>
@@ -312,7 +345,7 @@ dictionary keys.</p>
 <section id="current-field-coverage">
 <h2>Current field coverage<a class="headerlink" href="#current-field-coverage" title="Link to this heading"></a></h2>
 <table class="docutils align-default" id="id1">
-<caption><span class="caption-text">Version 0.2.1 profile availability</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<caption><span class="caption-text">Current profile availability</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 44.0%" />
 <col style="width: 18.0%" />
@@ -353,9 +386,17 @@ dictionary keys.</p>
 <td><p>241 / 248</p></td>
 <td><p>WGS84 location of the selected primary capital</p></td>
 </tr>
-<tr class="row-odd"><td><p>Official local names</p></td>
-<td><p>2 / 248</p></td>
-<td><p>Five reviewed records for Brazil and Switzerland</p></td>
+<tr class="row-odd"><td><p>Selected local identity</p></td>
+<td><p>248 / 248</p></td>
+<td><p>One sourced local name per record across 80 languages and 21 scripts</p></td>
+</tr>
+<tr class="row-even"><td><p>English formal name</p></td>
+<td><p>240 / 248</p></td>
+<td><p>195 distinct long forms and 45 source-equal short/formal forms</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reviewed national official forms</p></td>
+<td><p>10 / 248</p></td>
+<td><p>UNGEGN short/formal evidence for the selected language</p></td>
 </tr>
 </tbody>
 </table>
@@ -372,10 +413,18 @@ creates a compact serializable teaching view; see <a class="reference internal" 
 </section>
 <section id="names-and-aliases">
 <h2>Names and aliases<a class="headerlink" href="#names-and-aliases" title="Link to this heading"></a></h2>
-<p><code class="docutils literal notranslate"><span class="pre">country.names</span></code> contains sourced name records with a kind and preferred
-marker. <code class="docutils literal notranslate"><span class="pre">country.aliases</span></code> is the convenient tuple used for familiar alternate
-queries. Common display names may differ from formal UN M49 names while the
-formal source value remains available.</p>
+<p><code class="docutils literal notranslate"><span class="pre">country.name</span></code> is the familiar English display name, <code class="docutils literal notranslate"><span class="pre">official_name</span></code> is the
+canonical English UN M49 identity, and <code class="docutils literal notranslate"><span class="pre">formal_name</span></code> is the sourced English
+long form. The last field is <code class="docutils literal notranslate"><span class="pre">None</span></code> for eight areas outside the source
+intersection. <a class="reference internal" href="api.html#pyworldatlas.Atlas.countries_with_formal_names" title="pyworldatlas.Atlas.countries_with_formal_names"><code class="xref py py-meth docutils literal notranslate"><span class="pre">countries_with_formal_names()</span></code></a> discovers
+the 240 covered profiles.</p>
+<p><code class="docutils literal notranslate"><span class="pre">country.names</span></code> contains sourced English lookup names with a kind and
+preferred marker. <code class="docutils literal notranslate"><span class="pre">country.aliases</span></code> is the convenient tuple used for familiar
+alternate queries. <code class="docutils literal notranslate"><span class="pre">country.local_names</span></code> is separate: it contains one sourced
+local identity record with language, script, evidence kind, and an exact source
+locator. Reviewed UNGEGN records additionally carry local formal names and
+source-provided romanization. See <a class="reference internal" href="local_names.html"><span class="doc">Local names and writing systems</span></a> for the complete contract
+and multilingual examples.</p>
 </section>
 <section id="capital-and-cities">
 <h2>Capital and cities<a class="headerlink" href="#capital-and-cities" title="Link to this heading"></a></h2>
@@ -393,9 +442,11 @@ formal source value remains available.</p>
 <section id="sources">
 <h2>Sources<a class="headerlink" href="#sources" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">country.sources</span></code> lists the source snapshots that contributed somewhere in
-the profile. It does not currently map each returned value to one source. Core
-profiles reference UN M49 and GeoNames; the reviewed local-name records carry a
-separate UNGEGN source reference on each record.</p>
+the profile. Field-level provenance is stored by the generated dataset, while
+the public profile exposes a source summary. Core profiles reference UN M49 and
+GeoNames; English formal names add Factbook, UN Protocol, or Wikidata where
+used. Each local identity carries its own CLDR or UNGEGN source reference and
+exact locator.</p>
 </section>
 <section id="immutability">
 <h2>Immutability<a class="headerlink" href="#immutability" title="Link to this heading"></a></h2>
@@ -406,9 +457,9 @@ from silently changing a shared geographic record. Use <a class="reference inter
 <p>Population is a source snapshot rather than a live estimate. Language values
 are source codes, and <code class="docutils literal notranslate"><span class="pre">observed_timezones</span></code> contains zones seen on bundled
 capital/major-city records rather than claiming exhaustive legal coverage.
-The current sources do not classify political entity type, so every
-<code class="docutils literal notranslate"><span class="pre">Country.status</span></code> is <code class="docutils literal notranslate"><span class="pre">CountryStatus.OTHER</span></code>. Government, leaders,
-historical statistics, and culture remain later work.</p>
+The public model does not expose an entity-recognition or legal-status
+classification. The words <em>country</em> and <em>area</em> follow the documented source
+scope.</p>
 </div>
 </section>
 </section>

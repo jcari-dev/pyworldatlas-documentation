@@ -5,14 +5,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pyworldatlas.atlas &mdash; PyWorldAtlas 0.3.1</title>
+  <title>pyworldatlas.atlas &mdash; PyWorldAtlas 0.5.0</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=4621528c"></script>
+      <script src="../../_static/documentation_options.js?v=1dd76d02"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -47,6 +47,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../../why.html#what-it-is-not">What it is not</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../educational_principles.html">Educational purpose and editorial policy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#editorial-commitments">Editorial commitments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#how-sources-are-selected">How sources are selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#names-areas-and-borders">Names, areas, and borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#publication-boundaries">Publication boundaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#using-the-package-in-education">Using the package in education</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#community-and-corrections">Community and corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#version-0-5-0">Version 0.5.0</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#published-package">Published package</a></li>
@@ -61,6 +71,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#use-it-like-a-python-collection">Use it like a Python collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#read-profile-metadata">Read profile metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#read-the-three-english-name-fields">Read the three English name fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#meet-countries-in-their-own-languages">Meet countries in their own languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#measure-city-to-city-distance">Measure city-to-city distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#explore-land-connections">Explore land connections</a></li>
@@ -93,9 +105,17 @@
 <li class="toctree-l2"><a class="reference internal" href="../../discovery.html#executable-example">Executable example</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../local_names.html">Official local names</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#source-policy">Source policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#coverage-boundary">Coverage boundary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../local_names.html">Local names and writing systems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#coverage-at-a-glance">Coverage at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#understand-the-english-fields">Understand the English fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#start-with-one-country">Start with one country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#explore-writing-systems">Explore writing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#inspect-the-evidence-level">Inspect the evidence level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#romanization-is-source-data">Romanization is source data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#discover-coverage">Discover coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#how-the-language-is-selected">How the language is selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#source-and-review-rules">Source and review rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#try-the-example">Try the example</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../capitals_cities.html">Capitals and major cities</a><ul>
@@ -137,6 +157,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../serialization.html">Serialization</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../serialization.html#dictionary-output">Dictionary output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../serialization.html#json-output">JSON output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../serialization.html#local-name-provenance">Local-name provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../serialization.html#discovery-values">Discovery values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../serialization.html#border-paths">Border paths</a></li>
 </ul>
@@ -145,17 +166,23 @@
 <p class="caption" role="heading"><span class="caption-text">Data and trust</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../data_sources.html">Data sources and freshness</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#field-specific-source-policy">Field-specific source policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#united-nations-m49">United Nations M49</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#geonames">GeoNames</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#natural-earth">Natural Earth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#unicode-cldr-48-2">Unicode CLDR 48.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#cia-world-factbook-country-name-profiles">CIA World Factbook country-name profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-3-1-checkout">Source priority in the 0.3.1 checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-5-0-release">Source priority in the 0.5.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../data_quality.html">Data quality and limitations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#educational-and-editorial-quality">Educational and editorial quality</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#validation-layers">Validation layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#coverage">Coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#missing-data-is-a-valid-value">Missing data is a valid value</a></li>
@@ -173,6 +200,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">API reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#profile-conventions">Profile conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#country-identity-provenance">Country identity provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#distance-input-contract">Distance input contract</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#profile-field-notes">Profile field notes</a></li>
@@ -183,7 +211,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#country-models">Country models</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Country"><code class="docutils literal notranslate"><span class="pre">Country</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryCodes"><code class="docutils literal notranslate"><span class="pre">CountryCodes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryStatus"><code class="docutils literal notranslate"><span class="pre">CountryStatus</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.LocalizedName"><code class="docutils literal notranslate"><span class="pre">LocalizedName</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Currency"><code class="docutils literal notranslate"><span class="pre">Currency</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Language"><code class="docutils literal notranslate"><span class="pre">Language</span></code></a></li>
@@ -224,11 +251,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.3.1 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.5.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id4">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id4">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id5">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -275,7 +304,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">AmbiguousPlaceError</span><span class="p">,</span> <span class="n">AtlasClosedError</span><span class="p">,</span> <span class="n">CapitalNotFoundError</span><span class="p">,</span>
                          <span class="n">CountryNotFoundError</span><span class="p">,</span> <span class="n">DatasetVersionError</span><span class="p">,</span> <span class="n">PlaceNotFoundError</span><span class="p">)</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">.models</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">Area</span><span class="p">,</span> <span class="n">BorderPathResult</span><span class="p">,</span> <span class="n">Capital</span><span class="p">,</span> <span class="n">City</span><span class="p">,</span> <span class="n">Coordinate</span><span class="p">,</span> <span class="n">Country</span><span class="p">,</span>
-                     <span class="n">CountryCodes</span><span class="p">,</span> <span class="n">CountryMatch</span><span class="p">,</span> <span class="n">CountryStatus</span><span class="p">,</span> <span class="n">Currency</span><span class="p">,</span>
+                     <span class="n">CountryCodes</span><span class="p">,</span> <span class="n">CountryMatch</span><span class="p">,</span> <span class="n">Currency</span><span class="p">,</span>
                      <span class="n">DatasetInfo</span><span class="p">,</span> <span class="n">Flashcard</span><span class="p">,</span> <span class="n">Geography</span><span class="p">,</span> <span class="n">Language</span><span class="p">,</span> <span class="n">LocalizedName</span><span class="p">,</span>
                      <span class="n">SourceReference</span><span class="p">)</span>
 
@@ -417,6 +446,71 @@
             <span class="n">params</span><span class="o">.</span><span class="n">extend</span><span class="p">((</span><span class="n">region</span><span class="p">,</span> <span class="n">region</span><span class="p">))</span>
         <span class="n">where</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot; WHERE </span><span class="si">{</span><span class="s1">&#39; AND &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">clauses</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">clauses</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
         <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;SELECT id FROM country</span><span class="si">{</span><span class="n">where</span><span class="si">}</span><span class="s2"> ORDER BY name&quot;</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_country</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Atlas.countries_with_local_names">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.countries_with_local_names">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">countries_with_local_names</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">language_code</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">script_code</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="n">name_kind</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Country</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return countries with sourced local-language name records.</span>
+
+<span class="sd">        Results are alphabetical. ``language_code`` and ``script_code`` are</span>
+<span class="sd">        optional, case-insensitive exact filters such as ``&quot;es&quot;``, ``&quot;hi&quot;``,</span>
+<span class="sd">        ``&quot;Deva&quot;``, or ``&quot;Jpan&quot;``. Every UN M49 record has one selected local</span>
+<span class="sd">        identity. Inspect ``LocalizedName.kind`` to distinguish reviewed</span>
+<span class="sd">        national official forms from CLDR locale display names, or pass</span>
+<span class="sd">        ``name_kind=&quot;national_official&quot;`` or ``&quot;locale_display&quot;`` directly.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
+        <span class="n">clauses</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">params</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">language_code</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">clauses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;lower(n.language_code) = lower(?)&quot;</span><span class="p">)</span>
+            <span class="n">params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">language_code</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">script_code</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">clauses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;lower(n.script_code) = lower(?)&quot;</span><span class="p">)</span>
+            <span class="n">params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">script_code</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">name_kind</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">normalized_kind</span> <span class="o">=</span> <span class="n">name_kind</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span>
+            <span class="k">if</span> <span class="n">normalized_kind</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;national_official&quot;</span><span class="p">,</span> <span class="s2">&quot;locale_display&quot;</span><span class="p">}:</span>
+                <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span>
+                    <span class="s2">&quot;name_kind must be &#39;national_official&#39; or &#39;locale_display&#39;&quot;</span>
+                <span class="p">)</span>
+            <span class="n">clauses</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">&quot;n.name_kind = ?&quot;</span><span class="p">)</span>
+            <span class="n">params</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">normalized_kind</span><span class="p">)</span>
+        <span class="n">where</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot; WHERE </span><span class="si">{</span><span class="s1">&#39; AND &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">clauses</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">clauses</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;&quot;&quot;SELECT DISTINCT c.id</span>
+<span class="s2">                FROM country c JOIN country_local_name n ON n.country_id = c.id</span>
+<span class="s2">                </span><span class="si">{</span><span class="n">where</span><span class="si">}</span>
+<span class="s2">                ORDER BY c.name&quot;&quot;&quot;</span><span class="p">,</span>
+            <span class="n">params</span><span class="p">,</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_country</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="Atlas.countries_with_formal_names">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.countries_with_formal_names">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">countries_with_formal_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Country</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return countries and areas with a sourced English formal name.</span>
+
+<span class="sd">        Results are alphabetical. Some countries use the same sourced text for</span>
+<span class="sd">        their short and formal forms; check ``Country.has_distinct_formal_name``</span>
+<span class="sd">        when an application needs only distinct long forms.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_db</span><span class="o">.</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+<span class="w">            </span><span class="sd">&quot;&quot;&quot;SELECT DISTINCT c.id</span>
+<span class="sd">               FROM country c JOIN country_name n ON n.country_id = c.id</span>
+<span class="sd">               WHERE n.kind = &#39;formal&#39;</span>
+<span class="sd">               ORDER BY c.name&quot;&quot;&quot;</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_load_country</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">)</span></div>
 
 
@@ -616,8 +710,9 @@
 
 <span class="sd">        Population, area, and density answers describe the captured source</span>
 <span class="sd">        snapshot. Neighbor and border-count answers are derived from the</span>
-<span class="sd">        reviewed land-border graph. Flashcards are structured values, not an</span>
-<span class="sd">        interactive game.</span>
+<span class="sd">        reviewed land-border graph. Local-name cards use the selected CLDR or</span>
+<span class="sd">        UNGEGN identity record for every country and area.</span>
+<span class="sd">        Flashcards are structured values, not an interactive game.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_FLASHCARD_TOPICS</span><span class="p">:</span>
             <span class="n">allowed</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_FLASHCARD_TOPICS</span><span class="p">)</span>
@@ -703,7 +798,10 @@
         <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;regions&quot;</span><span class="p">:</span>
             <span class="n">prompt</span><span class="p">,</span> <span class="n">answer</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Which UN region contains </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">?&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">.</span><span class="n">region</span>
         <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;local_names&quot;</span><span class="p">:</span>
-            <span class="n">local_name</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">local_names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">local_name</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span>
+                <span class="p">(</span><span class="n">name</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">country</span><span class="o">.</span><span class="n">local_names</span> <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">language_code</span> <span class="o">!=</span> <span class="s2">&quot;en&quot;</span><span class="p">),</span>
+                <span class="n">country</span><span class="o">.</span><span class="n">local_names</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+            <span class="p">)</span>
             <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;What is a locally official short name for </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> in </span><span class="si">{</span><span class="n">local_name</span><span class="o">.</span><span class="n">language_name</span><span class="si">}</span><span class="s2">?&quot;</span>
             <span class="n">answer</span> <span class="o">=</span> <span class="n">local_name</span><span class="o">.</span><span class="n">short_name</span>
         <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;areas&quot;</span><span class="p">:</span>
@@ -820,7 +918,8 @@
         <span class="n">languages</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">Language</span><span class="p">(</span><span class="n">code</span><span class="p">)</span> <span class="k">for</span> <span class="n">code</span> <span class="ow">in</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;language_codes&quot;</span><span class="p">]))</span>
         <span class="n">calling_codes</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;calling_codes&quot;</span><span class="p">]))</span>
         <span class="n">observed_timezones</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">sorted</span><span class="p">({</span><span class="n">city</span><span class="o">.</span><span class="n">timezone_id</span> <span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">cities</span> <span class="k">if</span> <span class="n">city</span><span class="o">.</span><span class="n">timezone_id</span><span class="p">}))</span>
-        <span class="k">return</span> <span class="n">Country</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;official_name&quot;</span><span class="p">],</span> <span class="n">names</span><span class="p">,</span> <span class="n">aliases</span><span class="p">,</span> <span class="n">CountryCodes</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;alpha2&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;alpha3&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;numeric_code&quot;</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;geonames_id&quot;</span><span class="p">]),</span> <span class="n">_flag</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;alpha2&quot;</span><span class="p">]),</span> <span class="n">CountryStatus</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;status&quot;</span><span class="p">]),</span> <span class="n">geography</span><span class="p">,</span> <span class="n">capitals</span><span class="p">,</span> <span class="n">cities</span><span class="p">,</span> <span class="n">sources</span><span class="p">,</span> <span class="n">local_names</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;population&quot;</span><span class="p">],</span> <span class="n">currency</span><span class="p">,</span> <span class="n">languages</span><span class="p">,</span> <span class="n">calling_codes</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;top_level_domain&quot;</span><span class="p">],</span> <span class="n">observed_timezones</span><span class="p">)</span>
+        <span class="n">formal_name</span> <span class="o">=</span> <span class="nb">next</span><span class="p">((</span><span class="n">name</span><span class="o">.</span><span class="n">text</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">names</span> <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="s2">&quot;formal&quot;</span><span class="p">),</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">Country</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;official_name&quot;</span><span class="p">],</span> <span class="n">names</span><span class="p">,</span> <span class="n">aliases</span><span class="p">,</span> <span class="n">CountryCodes</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;alpha2&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;alpha3&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;numeric_code&quot;</span><span class="p">],</span> <span class="kc">None</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;geonames_id&quot;</span><span class="p">]),</span> <span class="n">_flag</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;alpha2&quot;</span><span class="p">]),</span> <span class="n">geography</span><span class="p">,</span> <span class="n">capitals</span><span class="p">,</span> <span class="n">cities</span><span class="p">,</span> <span class="n">sources</span><span class="p">,</span> <span class="n">local_names</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;population&quot;</span><span class="p">],</span> <span class="n">currency</span><span class="p">,</span> <span class="n">languages</span><span class="p">,</span> <span class="n">calling_codes</span><span class="p">,</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;top_level_domain&quot;</span><span class="p">],</span> <span class="n">observed_timezones</span><span class="p">,</span> <span class="n">formal_name</span><span class="p">)</span>
 
     <span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">_load_local_names</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">LocalizedName</span><span class="p">,</span> <span class="o">...</span><span class="p">]]:</span>
@@ -833,12 +932,23 @@
         <span class="n">grouped</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="n">LocalizedName</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
             <span class="n">source</span> <span class="o">=</span> <span class="n">SourceReference</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;source_id&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;source_name&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;homepage&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;retrieved_at&quot;</span><span class="p">])</span>
-            <span class="n">grouped</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;country_id&quot;</span><span class="p">]),</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">LocalizedName</span><span class="p">(</span>
-                <span class="n">row</span><span class="p">[</span><span class="s2">&quot;short_name&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;language_code&quot;</span><span class="p">],</span> <span class="s2">&quot;local_official&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span>
-                <span class="n">row</span><span class="p">[</span><span class="s2">&quot;language_name&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;script_code&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;official_name&quot;</span><span class="p">],</span>
-                <span class="n">row</span><span class="p">[</span><span class="s2">&quot;romanized_short_name&quot;</span><span class="p">],</span> <span class="n">row</span><span class="p">[</span><span class="s2">&quot;romanized_official_name&quot;</span><span class="p">],</span>
-                <span class="nb">bool</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;is_official_language&quot;</span><span class="p">]),</span> <span class="n">source</span><span class="p">,</span>
-            <span class="p">))</span>
+            <span class="n">grouped</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;country_id&quot;</span><span class="p">]),</span> <span class="p">[])</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="n">LocalizedName</span><span class="p">(</span>
+                    <span class="n">text</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;short_name&quot;</span><span class="p">],</span>
+                    <span class="n">language_code</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;language_code&quot;</span><span class="p">],</span>
+                    <span class="n">kind</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;name_kind&quot;</span><span class="p">],</span>
+                    <span class="n">preferred</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+                    <span class="n">language_name</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;language_name&quot;</span><span class="p">],</span>
+                    <span class="n">script_code</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;script_code&quot;</span><span class="p">],</span>
+                    <span class="n">official_name</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;official_name&quot;</span><span class="p">],</span>
+                    <span class="n">romanized_short_name</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;romanized_short_name&quot;</span><span class="p">],</span>
+                    <span class="n">romanized_official_name</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;romanized_official_name&quot;</span><span class="p">],</span>
+                    <span class="n">is_official_language</span><span class="o">=</span><span class="nb">bool</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;is_official_language&quot;</span><span class="p">]),</span>
+                    <span class="n">source</span><span class="o">=</span><span class="n">source</span><span class="p">,</span>
+                    <span class="n">source_locator</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;source_locator&quot;</span><span class="p">],</span>
+                    <span class="n">language_status</span><span class="o">=</span><span class="n">row</span><span class="p">[</span><span class="s2">&quot;language_status&quot;</span><span class="p">],</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
         <span class="k">return</span> <span class="p">{</span><span class="n">country_id</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">names</span><span class="p">)</span> <span class="k">for</span> <span class="n">country_id</span><span class="p">,</span> <span class="n">names</span> <span class="ow">in</span> <span class="n">grouped</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Country</span><span class="p">:</span>

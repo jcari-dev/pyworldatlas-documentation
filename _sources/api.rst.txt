@@ -10,10 +10,49 @@ Profile conventions
 - Public records are frozen dataclasses.
 - Optional scalar fields use ``None`` when the captured source has no value.
 - Repeated fields use tuples and are empty when no values are bundled.
-- ``Country.status`` is ``CountryStatus.OTHER`` for the current dataset because
-  political entity type has not yet been sourced.
+- The public model does not expose an entity-recognition or legal-status
+  classification. The words *country* and *area* follow the documented source
+  scope.
 - ``Country.sources`` identifies sources used somewhere in the profile; it is
   not a field-by-field provenance map.
+
+The public model focuses on stable geographic reference fields rather than
+current affairs, opinion, or speculative narrative. See
+:doc:`educational_principles` for the source and editorial review required for
+a new field family.
+
+Country identity provenance
+---------------------------
+
+English identity has three deliberately separate fields:
+
+- ``Country.name`` is the familiar English display and lookup name.
+- ``Country.official_name`` is the canonical English UN M49 identity.
+- ``Country.formal_name`` is the sourced English long/formal identity for 240
+  profiles. ``None`` means the profile is outside the captured source scope.
+- ``Country.has_distinct_formal_name`` tests whether the sourced formal form
+  differs from ``name``.
+- ``Atlas.countries_with_formal_names`` returns all covered profiles.
+
+English formal names are indexed for lookup and carry a Factbook, UN Protocol,
+or Wikidata source in ``Country.sources``. The local-identity API is separate:
+
+- ``Country.local_names`` contains one immutable sourced local identity.
+- ``Country.local_name(language_code)`` returns the complete record or ``None``.
+- ``name_in`` and ``official_name_in`` project its short and formal forms.
+- ``romanized_name_in`` and ``romanized_official_name_in`` return only
+  romanization printed by the source.
+- ``local_name_languages`` lists the covered language codes for one country.
+- ``Atlas.countries_with_local_names`` exposes complete local-name coverage and
+  supports exact language, script, and evidence-kind filters.
+
+Each ``LocalizedName`` carries ``kind`` and ``language_status`` plus its
+``SourceReference`` and exact ``source_locator``. ``locale_display`` records
+come from CLDR; ``national_official`` records are reviewed against UNGEGN. A
+missing ``LocalizedName.formal_name`` means the national formal form is not in
+the reviewed local layer. It says nothing about the English
+``Country.formal_name`` field. No translation or romanization is generated at runtime. See
+:doc:`local_names` for examples and evidence rules.
 
 Distance input contract
 -----------------------
@@ -57,6 +96,8 @@ Profile field notes
      - Population divided by sourced total area; ``None`` when unavailable
    * - ``Country.flag`` / ``Country.flag_emoji``
      - Regional-indicator Unicode sequence derived from the alpha-2 code
+   * - ``Country.formal_name``
+     - Sourced English long/formal identity; may equal ``name`` or be ``None``
    * - ``Currency.code`` / ``Currency.name``
      - Source currency identifier and name; the whole value may be ``None``
    * - ``Language.code``
@@ -83,9 +124,6 @@ Country models
    :members:
 
 .. autoclass:: pyworldatlas.CountryCodes
-   :members:
-
-.. autoclass:: pyworldatlas.CountryStatus
    :members:
 
 .. autoclass:: pyworldatlas.LocalizedName

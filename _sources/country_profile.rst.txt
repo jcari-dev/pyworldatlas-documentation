@@ -17,6 +17,10 @@ Profile example
    Country(name='Japan', alpha2='JP')
    >>> japan.official_name
    'Japan'
+   >>> japan.formal_name
+   'Japan'
+   >>> japan.has_distinct_formal_name
+   False
    >>> japan.codes.alpha2
    'JP'
    >>> japan.codes.alpha3
@@ -53,7 +57,7 @@ Profile example
 Current field coverage
 ----------------------
 
-.. list-table:: Version 0.2.1 profile availability
+.. list-table:: Current profile availability
    :header-rows: 1
    :widths: 44 18 38
 
@@ -81,9 +85,15 @@ Current field coverage
    * - Primary-capital coordinates
      - 241 / 248
      - WGS84 location of the selected primary capital
-   * - Official local names
-     - 2 / 248
-     - Five reviewed records for Brazil and Switzerland
+   * - Selected local identity
+     - 248 / 248
+     - One sourced local name per record across 80 languages and 21 scripts
+   * - English formal name
+     - 240 / 248
+     - 195 distinct long forms and 45 source-equal short/formal forms
+   * - Reviewed national official forms
+     - 10 / 248
+     - UNGEGN short/formal evidence for the selected language
 
 Availability is field-specific. Code should handle optional scalar fields and
 empty collection fields even when a familiar country currently has values.
@@ -100,10 +110,19 @@ creates a compact serializable teaching view; see :doc:`discovery`.
 Names and aliases
 -----------------
 
-``country.names`` contains sourced name records with a kind and preferred
-marker. ``country.aliases`` is the convenient tuple used for familiar alternate
-queries. Common display names may differ from formal UN M49 names while the
-formal source value remains available.
+``country.name`` is the familiar English display name, ``official_name`` is the
+canonical English UN M49 identity, and ``formal_name`` is the sourced English
+long form. The last field is ``None`` for eight areas outside the source
+intersection. :meth:`~pyworldatlas.Atlas.countries_with_formal_names` discovers
+the 240 covered profiles.
+
+``country.names`` contains sourced English lookup names with a kind and
+preferred marker. ``country.aliases`` is the convenient tuple used for familiar
+alternate queries. ``country.local_names`` is separate: it contains one sourced
+local identity record with language, script, evidence kind, and an exact source
+locator. Reviewed UNGEGN records additionally carry local formal names and
+source-provided romanization. See :doc:`local_names` for the complete contract
+and multilingual examples.
 
 Capital and cities
 ------------------
@@ -123,9 +142,11 @@ Sources
 -------
 
 ``country.sources`` lists the source snapshots that contributed somewhere in
-the profile. It does not currently map each returned value to one source. Core
-profiles reference UN M49 and GeoNames; the reviewed local-name records carry a
-separate UNGEGN source reference on each record.
+the profile. Field-level provenance is stored by the generated dataset, while
+the public profile exposes a source summary. Core profiles reference UN M49 and
+GeoNames; English formal names add Factbook, UN Protocol, or Wikidata where
+used. Each local identity carries its own CLDR or UNGEGN source reference and
+exact locator.
 
 Immutability
 ------------
@@ -139,6 +160,6 @@ from silently changing a shared geographic record. Use :meth:`Country.to_dict
    Population is a source snapshot rather than a live estimate. Language values
    are source codes, and ``observed_timezones`` contains zones seen on bundled
    capital/major-city records rather than claiming exhaustive legal coverage.
-   The current sources do not classify political entity type, so every
-   ``Country.status`` is ``CountryStatus.OTHER``. Government, leaders,
-   historical statistics, and culture remain later work.
+   The public model does not expose an entity-recognition or legal-status
+   classification. The words *country* and *area* follow the documented source
+   scope.

@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Official local names &mdash; PyWorldAtlas 0.3.1</title>
+  <title>Local names and writing systems &mdash; PyWorldAtlas 0.5.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=4621528c"></script>
+      <script src="_static/documentation_options.js?v=1dd76d02"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -50,6 +50,16 @@
 <li class="toctree-l2"><a class="reference internal" href="why.html#what-it-is-not">What it is not</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="educational_principles.html">Educational purpose and editorial policy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#editorial-commitments">Editorial commitments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#how-sources-are-selected">How sources are selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#names-areas-and-borders">Names, areas, and borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#publication-boundaries">Publication boundaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#using-the-package-in-education">Using the package in education</a></li>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#community-and-corrections">Community and corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="educational_principles.html#version-0-5-0">Version 0.5.0</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#published-package">Published package</a></li>
@@ -64,6 +74,8 @@
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#use-it-like-a-python-collection">Use it like a Python collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-profile-metadata">Read profile metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#read-the-three-english-name-fields">Read the three English name fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quickstart.html#meet-countries-in-their-own-languages">Meet countries in their own languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#measure-city-to-city-distance">Measure city-to-city distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="quickstart.html#explore-land-connections">Explore land connections</a></li>
@@ -96,9 +108,17 @@
 <li class="toctree-l2"><a class="reference internal" href="discovery.html#executable-example">Executable example</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Official local names</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#source-policy">Source policy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#coverage-boundary">Coverage boundary</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Local names and writing systems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#coverage-at-a-glance">Coverage at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understand-the-english-fields">Understand the English fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#start-with-one-country">Start with one country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#explore-writing-systems">Explore writing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inspect-the-evidence-level">Inspect the evidence level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#romanization-is-source-data">Romanization is source data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#discover-coverage">Discover coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#how-the-language-is-selected">How the language is selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-and-review-rules">Source and review rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#try-the-example">Try the example</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="capitals_cities.html">Capitals and major cities</a><ul>
@@ -140,6 +160,7 @@
 <li class="toctree-l1"><a class="reference internal" href="serialization.html">Serialization</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#dictionary-output">Dictionary output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#json-output">JSON output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#local-name-provenance">Local-name provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#discovery-values">Discovery values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#border-paths">Border paths</a></li>
 </ul>
@@ -148,17 +169,23 @@
 <p class="caption" role="heading"><span class="caption-text">Data and trust</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="data_sources.html">Data sources and freshness</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#field-specific-source-policy">Field-specific source policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-m49">United Nations M49</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#geonames">GeoNames</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#natural-earth">Natural Earth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#unicode-cldr-48-2">Unicode CLDR 48.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-country-name-profiles">CIA World Factbook country-name profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-1-checkout">Source priority in the 0.3.1 checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-5-0-release">Source priority in the 0.5.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="data_quality.html">Data quality and limitations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data_quality.html#educational-and-editorial-quality">Educational and editorial quality</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#validation-layers">Validation layers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#coverage">Coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_quality.html#missing-data-is-a-valid-value">Missing data is a valid value</a></li>
@@ -176,6 +203,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="api.html">API reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-conventions">Profile conventions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#country-identity-provenance">Country identity provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#distance-input-contract">Distance input contract</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-field-notes">Profile field notes</a></li>
@@ -186,7 +214,6 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#country-models">Country models</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Country"><code class="docutils literal notranslate"><span class="pre">Country</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryCodes"><code class="docutils literal notranslate"><span class="pre">CountryCodes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryStatus"><code class="docutils literal notranslate"><span class="pre">CountryStatus</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.LocalizedName"><code class="docutils literal notranslate"><span class="pre">LocalizedName</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Currency"><code class="docutils literal notranslate"><span class="pre">Currency</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Language"><code class="docutils literal notranslate"><span class="pre">Language</span></code></a></li>
@@ -227,11 +254,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.1 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.5.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -250,7 +279,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Official local names</li>
+      <li class="breadcrumb-item active">Local names and writing systems</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/local_names.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -260,48 +289,285 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="official-local-names">
-<h1>Official local names<a class="headerlink" href="#official-local-names" title="Link to this heading"></a></h1>
-<p>Version 0.2.1 includes reviewed official short and formal country names for
-Brazil and Switzerland. These records are bundled in SQLite, remain available
-after an <a class="reference internal" href="api.html#pyworldatlas.Atlas" title="pyworldatlas.Atlas"><code class="xref py py-class docutils literal notranslate"><span class="pre">Atlas</span></code></a> closes, and require no network access.</p>
-<p>Countries without bundled records return an empty tuple, and the convenience
-methods return <code class="docutils literal notranslate"><span class="pre">None</span></code>. No English fallback is supplied. Romanized forms are
-returned only when the source provides them.</p>
+  <section id="local-names-and-writing-systems">
+<h1>Local names and writing systems<a class="headerlink" href="#local-names-and-writing-systems" title="Link to this heading"></a></h1>
+<p>PyWorldAtlas can show every bundled country or area in English and in one
+selected local language. Names remain ordinary Unicode strings, so Arabic,
+Chinese, Devanagari, Japanese, Cyrillic, and Latin text work offline without a
+translation service.</p>
+<section id="coverage-at-a-glance">
+<h2>Coverage at a glance<a class="headerlink" href="#coverage-at-a-glance" title="Link to this heading"></a></h2>
+<p>The 0.5.0 dataset separates four claims that are easy to confuse:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Layer</p></th>
+<th class="head"><p>Coverage</p></th>
+<th class="head"><p>Source</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>English identity</p></td>
+<td><p>248 / 248 countries and areas</p></td>
+<td><p>United Nations M49</p></td>
+</tr>
+<tr class="row-odd"><td><p>English formal name</p></td>
+<td><p>240 / 248 profiles</p></td>
+<td><p>World Factbook base, five UN Protocol excerpts, three Wikidata statements</p></td>
+</tr>
+<tr class="row-even"><td><p>Selected local display name</p></td>
+<td><p>248 / 248 countries and areas</p></td>
+<td><p>Unicode CLDR 48.2, with 10 reviewed UNGEGN replacements</p></td>
+</tr>
+<tr class="row-odd"><td><p>Reviewed national official short and formal name</p></td>
+<td><p>10 / 248 records in the current development batch</p></td>
+<td><p>UNGEGN <code class="docutils literal notranslate"><span class="pre">E/CONF.105/13/CRP.13</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<p>The local display-name layer is complete. The narrower national-official local
+layer remains a reviewed workstream and is never silently filled with a
+convenient translation. English formal names are a separate 240-profile layer.</p>
+</section>
+<section id="understand-the-english-fields">
+<h2>Understand the English fields<a class="headerlink" href="#understand-the-english-fields" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">name</span></code>, <code class="docutils literal notranslate"><span class="pre">official_name</span></code>, and <code class="docutils literal notranslate"><span class="pre">formal_name</span></code> are related but not
+interchangeable:</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span> <span class="o">=</span> <span class="n">Atlas</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">brazil</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">brazil</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
-<span class="go">&#39;Brasil&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">brazil</span><span class="o">.</span><span class="n">official_name_in</span><span class="p">(</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span>
-<span class="go">&#39;República Federativa do Brasil&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">brazil</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">&quot;en&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turkey</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;TR&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turkey</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Turkey&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turkey</span><span class="o">.</span><span class="n">official_name</span>
+<span class="go">&#39;Türkiye&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turkey</span><span class="o">.</span><span class="n">formal_name</span>
+<span class="go">&#39;Republic of Türkiye&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">turkey</span><span class="o">.</span><span class="n">has_distinct_formal_name</span>
 <span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">brazil</span><span class="o">.</span><span class="n">romanized_name_in</span><span class="p">(</span><span class="s2">&quot;pt&quot;</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
-<span class="go">True</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">swiss</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="n">name</span><span class="o">.</span><span class="n">language_code</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">short_name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">swiss</span><span class="o">.</span><span class="n">local_names</span><span class="p">]</span>
-<span class="go">[(&#39;de&#39;, &#39;Schweiz&#39;), (&#39;fr&#39;, &#39;Suisse&#39;), (&#39;it&#39;, &#39;Svizzera&#39;), (&#39;rm&#39;, &#39;Svizra&#39;)]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">swiss</span><span class="o">.</span><span class="n">official_name_in</span><span class="p">(</span><span class="s2">&quot;rm&quot;</span><span class="p">)</span>
-<span class="go">&#39;Confederaziun svizra&#39;</span>
 </pre></div>
 </div>
-<p>Each record in <code class="docutils literal notranslate"><span class="pre">country.local_names</span></code> includes a language code and display
-name, ISO 15924 script code, short and formal forms, explicit romanization
-fields, an official-language flag, and a <a class="reference internal" href="api.html#pyworldatlas.SourceReference" title="pyworldatlas.SourceReference"><code class="xref py py-class docutils literal notranslate"><span class="pre">SourceReference</span></code></a>.</p>
-<section id="source-policy">
-<h2>Source policy<a class="headerlink" href="#source-policy" title="Link to this heading"></a></h2>
-<p>The pilot is a reviewed transcription of the UNGEGN Working Group on Country
-Names document <code class="docutils literal notranslate"><span class="pre">E/CONF.105/13/CRP.13</span></code> dated 17 July 2017. The exact PDF is
-captured with a SHA-256 manifest, and every reviewed row carries an entry and
-page locator.</p>
+<p><code class="docutils literal notranslate"><span class="pre">name</span></code> is the familiar English atlas label. <code class="docutils literal notranslate"><span class="pre">official_name</span></code> retains the
+canonical English UN M49 identity. <code class="docutils literal notranslate"><span class="pre">formal_name</span></code> is the sourced English long
+form. Japan demonstrates that a sourced formal identity may equal the short
+form:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">japan</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;JP&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">japan</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">japan</span><span class="o">.</span><span class="n">official_name</span><span class="p">,</span> <span class="n">japan</span><span class="o">.</span><span class="n">formal_name</span><span class="p">)</span>
+<span class="go">(&#39;Japan&#39;, &#39;Japan&#39;, &#39;Japan&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">japan</span><span class="o">.</span><span class="n">has_distinct_formal_name</span>
+<span class="go">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_formal_names</span><span class="p">())</span>
+<span class="go">240</span>
+</pre></div>
+</div>
+<p>Eight areas outside the captured English formal-name source intersection return
+<code class="docutils literal notranslate"><span class="pre">None</span></code>. A false <code class="docutils literal notranslate"><span class="pre">has_distinct_formal_name</span></code> therefore does not by itself mean
+that a profile is covered; inspect <code class="docutils literal notranslate"><span class="pre">formal_name</span></code> when the distinction matters.</p>
 </section>
-<section id="coverage-boundary">
-<h2>Coverage boundary<a class="headerlink" href="#coverage-boundary" title="Link to this heading"></a></h2>
-<p>Coverage is currently limited to two countries and five records. An empty result
-means that this dataset does not yet contain a reviewed record for the requested
-country and language; it does not mean that no local name exists.</p>
+<section id="start-with-one-country">
+<h2>Start with one country<a class="headerlink" href="#start-with-one-country" title="Link to this heading"></a></h2>
+<p>The English name is the normal <a class="reference internal" href="api.html#pyworldatlas.Country" title="pyworldatlas.Country"><code class="xref py py-class docutils literal notranslate"><span class="pre">Country</span></code></a> identity. Use
+<a class="reference internal" href="api.html#pyworldatlas.Country.name_in" title="pyworldatlas.Country.name_in"><code class="xref py py-meth docutils literal notranslate"><span class="pre">name_in()</span></code></a> for the selected local-language record:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">saudi</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Saudi Arabia&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">saudi</span><span class="o">.</span><span class="n">name</span>
+<span class="go">&#39;Saudi Arabia&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">saudi</span><span class="o">.</span><span class="n">local_name_languages</span>
+<span class="go">(&#39;ar&#39;,)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">saudi</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">&quot;ar&quot;</span><span class="p">)</span>
+<span class="go">&#39;المملكة العربية السعودية&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">saudi</span><span class="o">.</span><span class="n">local_name</span><span class="p">(</span><span class="s2">&quot;AR&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">script_code</span>
+<span class="go">&#39;Arab&#39;</span>
+</pre></div>
+</div>
+<p>Language matching is case-insensitive and exact. The method does not translate
+at runtime and does not substitute a different language when the requested code
+is absent.</p>
+</section>
+<section id="explore-writing-systems">
+<h2>Explore writing systems<a class="headerlink" href="#explore-writing-systems" title="Link to this heading"></a></h2>
+<p>The same API returns text in many scripts:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;United Arab Emirates&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">&quot;ar&quot;</span><span class="p">)</span>
+<span class="go">&#39;الإمارات العربية المتحدة&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;China&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">&quot;zh&quot;</span><span class="p">)</span>
+<span class="go">&#39;中国&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;India&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+<span class="go">&#39;भारत&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">&quot;ja&quot;</span><span class="p">)</span>
+<span class="go">&#39;日本&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="inspect-the-evidence-level">
+<h2>Inspect the evidence level<a class="headerlink" href="#inspect-the-evidence-level" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="api.html#pyworldatlas.Country.local_name" title="pyworldatlas.Country.local_name"><code class="xref py py-meth docutils literal notranslate"><span class="pre">local_name()</span></code></a> returns an immutable
+<a class="reference internal" href="api.html#pyworldatlas.LocalizedName" title="pyworldatlas.LocalizedName"><code class="xref py py-class docutils literal notranslate"><span class="pre">LocalizedName</span></code></a>. Its <code class="docutils literal notranslate"><span class="pre">kind</span></code> explains what the source
+actually supports.</p>
+<dl class="simple">
+<dt><code class="docutils literal notranslate"><span class="pre">locale_display</span></code></dt><dd><p>A Unicode CLDR territory display name in a selected official or de-facto
+official language. It is suitable for labels, interfaces, search, lessons,
+and maps. It is not presented as a diplomatic formal name.</p>
+</dd>
+<dt><code class="docutils literal notranslate"><span class="pre">national_official</span></code></dt><dd><p>A visually reviewed UNGEGN national official short name with its formal form
+and source-provided romanization when available.</p>
+</dd>
+</dl>
+<p>For example, Andorra has complete local display coverage but its formal Catalan
+name is not in the reviewed UNGEGN layer:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">andorra</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Andorra&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">local_name</span><span class="p">(</span><span class="s2">&quot;ca&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">andorra</span><span class="o">.</span><span class="n">short_name</span><span class="p">,</span> <span class="n">andorra</span><span class="o">.</span><span class="n">kind</span><span class="p">,</span> <span class="n">andorra</span><span class="o">.</span><span class="n">language_status</span><span class="p">)</span>
+<span class="go">(&#39;Andorra&#39;, &#39;locale_display&#39;, &#39;official&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">andorra</span><span class="o">.</span><span class="n">formal_name</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">andorra</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">id</span>
+<span class="go">&#39;unicode-cldr-48.2&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">&quot;common/main/ca.xml&quot;</span> <span class="ow">in</span> <span class="n">andorra</span><span class="o">.</span><span class="n">source_locator</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>The Dominican Republic already has a reviewed national official record:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">dominican</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;DO&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">local_name</span><span class="p">(</span><span class="s2">&quot;es&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">dominican</span><span class="o">.</span><span class="n">short_name</span><span class="p">,</span> <span class="n">dominican</span><span class="o">.</span><span class="n">formal_name</span><span class="p">)</span>
+<span class="go">(&#39;República Dominicana&#39;, &#39;República Dominicana&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dominican</span><span class="o">.</span><span class="n">kind</span>
+<span class="go">&#39;national_official&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dominican</span><span class="o">.</span><span class="n">is_national_official</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">dominican</span><span class="o">.</span><span class="n">source</span><span class="o">.</span><span class="n">id</span>
+<span class="go">&#39;ungegn-country-names-2017&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s1">&#39;PDF page 30&#39;</span> <span class="ow">in</span> <span class="n">dominican</span><span class="o">.</span><span class="n">source_locator</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</section>
+<section id="romanization-is-source-data">
+<h2>Romanization is source data<a class="headerlink" href="#romanization-is-source-data" title="Link to this heading"></a></h2>
+<p>Romanization is present only when UNGEGN prints it. PyWorldAtlas never creates
+one at runtime:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">china</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;China&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">china</span><span class="o">.</span><span class="n">romanized_name_in</span><span class="p">(</span><span class="s2">&quot;zh&quot;</span><span class="p">)</span>
+<span class="go">&#39;Zhongguo&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">china</span><span class="o">.</span><span class="n">romanized_official_name_in</span><span class="p">(</span><span class="s2">&quot;zh&quot;</span><span class="p">)</span>
+<span class="go">&#39;Zhonghua Renmin Gongheguo&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">india</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;India&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">india</span><span class="o">.</span><span class="n">romanized_name_in</span><span class="p">(</span><span class="s2">&quot;hi&quot;</span><span class="p">)</span>
+<span class="go">&#39;Bhārat&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">andorra</span><span class="o">.</span><span class="n">romanized_short_name</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</section>
+<section id="discover-coverage">
+<h2>Discover coverage<a class="headerlink" href="#discover-coverage" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="api.html#pyworldatlas.Atlas.countries_with_local_names" title="pyworldatlas.Atlas.countries_with_local_names"><code class="xref py py-meth docutils literal notranslate"><span class="pre">countries_with_local_names()</span></code></a> can filter the complete
+identity layer by BCP 47 language code or ISO 15924 script code:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_local_names</span><span class="p">())</span>
+<span class="go">248</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_local_names</span><span class="p">(</span><span class="n">name_kind</span><span class="o">=</span><span class="s2">&quot;national_official&quot;</span><span class="p">))</span>
+<span class="go">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_local_names</span><span class="p">(</span><span class="n">name_kind</span><span class="o">=</span><span class="s2">&quot;locale_display&quot;</span><span class="p">))</span>
+<span class="go">238</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_local_names</span><span class="p">(</span><span class="n">language_code</span><span class="o">=</span><span class="s2">&quot;es&quot;</span><span class="p">))</span>
+<span class="go">20</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_local_names</span><span class="p">(</span><span class="n">script_code</span><span class="o">=</span><span class="s2">&quot;Jpan&quot;</span><span class="p">)]</span>
+<span class="go">[&#39;Japan&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">len</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_local_names</span><span class="p">(</span><span class="n">script_code</span><span class="o">=</span><span class="s2">&quot;Arab&quot;</span><span class="p">))</span>
+<span class="go">25</span>
+</pre></div>
+</div>
+<p>Results are alphabetical. Each country or area currently contributes exactly
+one selected local identity, matching the deliberately small identity contract.</p>
+</section>
+<section id="how-the-language-is-selected">
+<h2>How the language is selected<a class="headerlink" href="#how-the-language-is-selected" title="Link to this heading"></a></h2>
+<p>The CLDR extractor uses a deterministic rule:</p>
+<ol class="arabic simple">
+<li><p>Prefer a language marked <code class="docutils literal notranslate"><span class="pre">official</span></code>.</p></li>
+<li><p>Then consider <code class="docutils literal notranslate"><span class="pre">de_facto_official</span></code> and <code class="docutils literal notranslate"><span class="pre">official_regional</span></code>.</p></li>
+<li><p>Within the same status, prefer the language with the highest recorded
+population percentage.</p></li>
+<li><p>If that locale does not contain the territory name, try the next eligible
+language.</p></li>
+</ol>
+<p>Four remote or uninhabited areas do not have an applicable official-language
+selection in CLDR. Their useful administrative display name remains available,
+but <code class="docutils literal notranslate"><span class="pre">is_official_language</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> and <code class="docutils literal notranslate"><span class="pre">language_status</span></code> explains why:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">antarctica</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Antarctica&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">local_names</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">antarctica</span><span class="o">.</span><span class="n">short_name</span><span class="p">,</span> <span class="n">antarctica</span><span class="o">.</span><span class="n">is_official_language</span><span class="p">)</span>
+<span class="go">(&#39;Antarctica&#39;, False)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">antarctica</span><span class="o">.</span><span class="n">language_status</span>
+<span class="go">&#39;not_applicable&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="source-and-review-rules">
+<h2>Source and review rules<a class="headerlink" href="#source-and-review-rules" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Preserve source Unicode in NFC form.</p></li>
+<li><p>Record the exact CLDR locale/XPath or UNGEGN PDF entry and page.</p></li>
+<li><p>Keep display names and national official names as different evidence levels.</p></li>
+<li><p>Keep formal names and romanizations missing until the authoritative source
+supplies them.</p></li>
+<li><p>Never infer a broader legal classification from a localized display label.</p></li>
+</ul>
+<p>The English <code class="docutils literal notranslate"><span class="pre">Country.formal_name</span></code> layer follows its own source policy. Do not
+use it as a substitute for <code class="docutils literal notranslate"><span class="pre">official_name_in(language_code)</span></code>; the latter is a
+local-language field with a stricter national-official evidence kind.</p>
+<p>See <a class="reference internal" href="data_sources.html"><span class="doc">Data sources and freshness</span></a> for licensing, versioning, and source roles. The full
+contract and later anthem, motto, and reference-date boundaries are recorded in
+<code class="docutils literal notranslate"><span class="pre">COUNTRY_IDENTITY_DATA_SPEC.md</span></code> at the repository root.</p>
+</section>
+<section id="try-the-example">
+<h2>Try the example<a class="headerlink" href="#try-the-example" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;Explore English formal names, local identities, and writing systems.&quot;&quot;&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="p">,</span> <span class="s2">&quot;reconfigure&quot;</span><span class="p">):</span>
+<span class="linenos"> 9</span>    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">reconfigure</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="linenos">13</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Three English name fields&quot;</span><span class="p">)</span>
+<span class="linenos">14</span>    <span class="n">turkey</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;TR&quot;</span><span class="p">)</span>
+<span class="linenos">15</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Display:&quot;</span><span class="p">,</span> <span class="n">turkey</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="linenos">16</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Canonical:&quot;</span><span class="p">,</span> <span class="n">turkey</span><span class="o">.</span><span class="n">official_name</span><span class="p">)</span>
+<span class="linenos">17</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Formal:&quot;</span><span class="p">,</span> <span class="n">turkey</span><span class="o">.</span><span class="n">formal_name</span><span class="p">)</span>
+<span class="linenos">18</span>    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_formal_names</span><span class="p">()),</span> <span class="s2">&quot;formal-name profiles&quot;</span><span class="p">)</span>
+<span class="linenos">19</span>
+<span class="linenos">20</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">A reviewed national official name&quot;</span><span class="p">)</span>
+<span class="linenos">21</span>    <span class="n">dominican</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;DO&quot;</span><span class="p">)</span>
+<span class="linenos">22</span>    <span class="nb">print</span><span class="p">(</span><span class="n">dominican</span><span class="o">.</span><span class="n">flag</span><span class="p">,</span> <span class="n">dominican</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="s2">&quot;-&gt;&quot;</span><span class="p">,</span> <span class="n">dominican</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">&quot;es&quot;</span><span class="p">))</span>
+<span class="linenos">23</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Formal:&quot;</span><span class="p">,</span> <span class="n">dominican</span><span class="o">.</span><span class="n">official_name_in</span><span class="p">(</span><span class="s2">&quot;es&quot;</span><span class="p">))</span>
+<span class="linenos">24</span>
+<span class="linenos">25</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Across writing systems&quot;</span><span class="p">)</span>
+<span class="linenos">26</span>    <span class="k">for</span> <span class="n">code</span><span class="p">,</span> <span class="n">language</span> <span class="ow">in</span> <span class="p">(</span>
+<span class="linenos">27</span>        <span class="p">(</span><span class="s2">&quot;AE&quot;</span><span class="p">,</span> <span class="s2">&quot;ar&quot;</span><span class="p">),</span>
+<span class="linenos">28</span>        <span class="p">(</span><span class="s2">&quot;CN&quot;</span><span class="p">,</span> <span class="s2">&quot;zh&quot;</span><span class="p">),</span>
+<span class="linenos">29</span>        <span class="p">(</span><span class="s2">&quot;IN&quot;</span><span class="p">,</span> <span class="s2">&quot;hi&quot;</span><span class="p">),</span>
+<span class="linenos">30</span>        <span class="p">(</span><span class="s2">&quot;JP&quot;</span><span class="p">,</span> <span class="s2">&quot;ja&quot;</span><span class="p">),</span>
+<span class="linenos">31</span>    <span class="p">):</span>
+<span class="linenos">32</span>        <span class="n">country</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="n">code</span><span class="p">)</span>
+<span class="linenos">33</span>        <span class="n">name</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">local_name</span><span class="p">(</span><span class="n">language</span><span class="p">)</span>
+<span class="linenos">34</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">flag</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">short_name</span><span class="si">}</span><span class="s2"> [</span><span class="si">{</span><span class="n">name</span><span class="o">.</span><span class="n">script_code</span><span class="si">}</span><span class="s2">]&quot;</span><span class="p">)</span>
+<span class="linenos">35</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Evidence:&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">kind</span><span class="p">)</span>
+<span class="linenos">36</span>        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">formal_name</span><span class="p">:</span>
+<span class="linenos">37</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Formal:&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">formal_name</span><span class="p">)</span>
+<span class="linenos">38</span>        <span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">romanized_short_name</span><span class="p">:</span>
+<span class="linenos">39</span>            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;  Romanized:&quot;</span><span class="p">,</span> <span class="n">name</span><span class="o">.</span><span class="n">romanized_short_name</span><span class="p">)</span>
+<span class="linenos">40</span>
+<span class="linenos">41</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Complete local identity coverage&quot;</span><span class="p">)</span>
+<span class="linenos">42</span>    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">countries_with_local_names</span><span class="p">()),</span> <span class="s2">&quot;countries and areas&quot;</span><span class="p">)</span>
+<span class="linenos">43</span>
+<span class="linenos">44</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Display name versus formal official name&quot;</span><span class="p">)</span>
+<span class="linenos">45</span>    <span class="n">andorra</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;AD&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">local_name</span><span class="p">(</span><span class="s2">&quot;ca&quot;</span><span class="p">)</span>
+<span class="linenos">46</span>    <span class="nb">print</span><span class="p">(</span><span class="n">andorra</span><span class="o">.</span><span class="n">short_name</span><span class="p">,</span> <span class="n">andorra</span><span class="o">.</span><span class="n">kind</span><span class="p">)</span>
+<span class="linenos">47</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Formal name reviewed:&quot;</span><span class="p">,</span> <span class="n">andorra</span><span class="o">.</span><span class="n">formal_name</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
 </section>
 </section>
 

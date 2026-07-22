@@ -61,6 +61,8 @@ and static-site generation:
    'Tokyo'
    >>> card.flag_emoji
    '🇯🇵'
+   >>> card.formal_name
+   'Japan'
    >>> card.language_codes
    ('ja',)
    >>> card.to_dict()["country"]["numeric"]
@@ -134,7 +136,7 @@ Supported topics
    * - ``continents`` / ``regions``
      - Bundled geographic classification
    * - ``local_names``
-     - Reviewed locally official short name
+     - Selected sourced local-language name
    * - ``neighbors``
      - Alphabetized names from the reviewed land-border graph
    * - ``border_counts``
@@ -144,15 +146,15 @@ Supported topics
 
 Countries missing the answer required by a topic are removed before sampling.
 If the requested count is impossible, the method raises ``ValueError`` rather
-than returning an incomplete lesson. Local-name flashcards currently draw only
-from the reviewed Brazil and Switzerland pilot. Neighbor cards exclude
+than returning an incomplete lesson. Local-name flashcards cover all 248
+country and area records using their selected local identity. Neighbor cards exclude
 borderless entities, while border-count cards include them with an answer of
 ``0``.
 
 .. doctest::
 
    >>> atlas.flashcards(topic="local_names", count=2, seed=42)[0].answer
-   'Schweiz'
+   'الكويت'
    >>> atlas.close()
 
 Data and interpretation
@@ -162,8 +164,8 @@ Discovery features introduce no unsourced country values. Flags come from
 alpha-2 codes; density is a documented ratio; cards copy profile fields; and
 sampling and flashcards rearrange existing values. Population and area answers
 remain snapshots, observed timezones remain limited to bundled places, and
-language answers are source codes unless a reviewed local-name record supplies
-a language display name. Border flashcards are derived from the reviewed graph;
+language answers are source codes, while local-name cards use the selected CLDR
+or UNGEGN identity record. Border flashcards are derived from the reviewed graph;
 they introduce no additional adjacency claims.
 
 Executable example
