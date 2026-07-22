@@ -74,6 +74,27 @@ conveniences:
    >>> json.loads(flashcard.to_json())["answer"]
    'Kuwait City'
 
+Reference facts and ranking results
+-----------------------------------
+
+Typed reference facts, their source metadata, rankings, and capital distances
+serialize recursively:
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     japan = atlas.country("Japan").to_dict()
+   ...     ranking = atlas.rank("population", limit=1)[0]
+   ...     nearby = atlas.nearest_capitals("Tokyo", country="JP", limit=1)[0]
+   >>> japan["anthems"][0]["title"]
+   'Kimigayo'
+   >>> japan["currency"]["source"]["license_name"]
+   'Unicode License v3'
+   >>> json.loads(ranking.to_json())["position"]
+   1
+   >>> json.loads(nearby.to_json())["capital"]["name"]
+   'Seoul'
+
 Border paths
 ------------
 

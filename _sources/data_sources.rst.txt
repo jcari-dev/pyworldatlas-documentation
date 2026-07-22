@@ -48,15 +48,16 @@ GeoNames
 **Purpose**
    Capitals, populated places, WGS84 coordinates, city population snapshots,
    country population snapshots, currency metadata, language codes, calling
-   codes, internet domains, elevation where present, timezone identifiers,
-   GeoNames IDs, and an area fallback for this milestone.
+   codes, internet domains, postal-code formats, elevation where present,
+   timezone identifiers, GeoNames IDs, and an area fallback for this milestone.
 
 **Official location**
    https://download.geonames.org/export/dump/
 
 **Current snapshot**
    ``countryInfo.txt`` and ``cities15000.zip`` captured 2026-07-20 with SHA-256
-   manifests.
+   manifests. The complete ``timeZones.txt`` table was captured 2026-07-22 in
+   a separate manifest.
 
 **License**
    Creative Commons Attribution 4.0. See the repository's
@@ -68,7 +69,8 @@ GeoNames
 
 **Current coverage**
    241 usable primary capitals and 6,265 populated places: records at or above
-   100,000 population, plus retained capitals.
+   100,000 population, plus retained capitals. The timezone table covers 246
+   profiles with 417 records; 176 profiles have postal-code formats.
 
 Natural Earth
 -------------
@@ -109,7 +111,8 @@ Unicode CLDR 48.2
 
 **Purpose**
    One localized territory display name and a deterministic language selection
-   for every country or area.
+   for every country or area, plus English currency/language labels, common
+   currency symbols, currency minor-unit digits, and likely language scripts.
 
 **Official location**
    https://unicode.org/Public/cldr/48.2/
@@ -117,7 +120,9 @@ Unicode CLDR 48.2
 **Current snapshot**
    A compact 248-row extraction from ``cldr-common-48.2.zip``. The source
    archive URL and checksum, Unicode License v3, extractor, selected locale,
-   and exact XPath locator are retained.
+   and exact XPath locator are retained. A second deterministic compact
+   extraction contains only the currency and language metadata used by the
+   current profiles.
 
 **Current coverage**
    248 / 248 local identity names across 80 languages and 21 scripts. Of these,
@@ -128,11 +133,30 @@ Unicode CLDR 48.2
 CLDR territory names are interface/display labels. They are not automatically
 treated as diplomatic formal names.
 
+IANA Language Subtag Registry
+-----------------------------
+
+**Purpose**
+   English description fallback for language codes used by the captured
+   GeoNames metadata but not labelled by CLDR.
+
+**Official location**
+   https://www.iana.org/assignments/language-subtag-registry/
+
+**Current snapshot**
+   Registry file dated 2026-06-14 and captured 2026-07-22 with an exact
+   checksum. No registry value is treated as an official-language claim.
+
+**Terms**
+   IANA and IETF state that applicable rights in their protocol registry data
+   are dedicated under CC0 1.0. See https://www.iana.org/help/licensing-terms.
+
 CIA World Factbook country-name profiles
 ----------------------------------------
 
 **Purpose**
-   Base English formal-name layer.
+   Base English formal-name layer, national-anthem titles, and English demonym
+   noun/adjective forms.
 
 **Locations**
    https://www.cia.gov/the-world-factbook/ and
@@ -141,7 +165,9 @@ CIA World Factbook country-name profiles
 **Source revision**
    ``factbook.json`` commit
    ``8662a8b17a784841ab4528631b04090eb2f183eb``. The standard-library
-   extractor retains only the structured ``Government > Country name`` fields.
+   extractor retains only structured country-name, national-anthem-title, and
+   nationality fields. It excludes lyrics, audio, contributor credits,
+   adoption histories, and profile narrative text.
 
 **Terms**
    Public domain under the CIA site policy and the structured repository's
@@ -150,7 +176,33 @@ CIA World Factbook country-name profiles
 **Current coverage**
    240 profiles: 195 distinct long forms and 45 cases where the source supplies
    the short form as the formal identity. AX, BQ, GF, GP, MQ, RE, UM, and YT
-   remain outside the captured source intersection.
+   remain outside the formal-name source intersection. The same capture yields
+   234 anthem-title profiles and 227 English demonym profiles.
+
+Wikidata national-motto statements
+----------------------------------
+
+**Purpose**
+   A conservative reviewed layer of source-listed national motto text and
+   selected labels.
+
+**Official locations**
+   https://query.wikidata.org/sparql and
+   https://www.wikidata.org/wiki/Wikidata:Licensing
+
+**Current snapshot**
+   A 2026-07-22 SPARQL response containing item-valued national-motto
+   statements, statement ranks, and multilingual labels. The exact query,
+   response checksum, and statement IDs are retained.
+
+**Terms**
+   Wikidata structured data is released under Creative Commons CC0 1.0.
+
+**Review boundary**
+   Every captured statement has an explicit include or exclude decision in
+   ``build_data/reviewed/national_motto_decisions.csv``. Thirty-two profiles
+   are included. The runtime does not infer constitutional, statutory,
+   traditional, or current legal status, and it does not ingest tourism slogans.
 
 United Nations Protocol and Liaison Service
 -------------------------------------------
@@ -228,7 +280,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.5.0 release
+Source priority in the 0.6.0 release
 ------------------------------------
 
 .. list-table::
@@ -262,6 +314,18 @@ Source priority in the 0.5.0 release
    * - National official short/formal name
      - UNGEGN country-names list
      - CLDR display name remains available but is not promoted to a formal name
+   * - Anthem title and English demonym
+     - CIA World Factbook structured fields
+     - None
+   * - Reviewed source-listed motto
+     - Wikidata item-valued statements
+     - Explicit include/exclude review; no inferred legal status
+   * - Currency and language labels
+     - Unicode CLDR 48.2
+     - IANA description fallback for missing language labels
+   * - Country timezone and postal format
+     - GeoNames
+     - None
    * - Land-border relationships
      - GeoNames and Natural Earth agreement
      - Explicit reviewed decision for each source difference
@@ -275,9 +339,10 @@ Inspect sources in Python
    >>> with Atlas() as atlas:
    ...     sources = atlas.country("Japan").sources
    >>> [source.id for source in sources]
-   ['cia-world-factbook-2025', 'geonames', 'natural-earth', 'reviewed-borders', 'un-m49', 'ungegn-country-names-2017']
+   ['cia-world-factbook-2025', 'geonames', 'geonames-timezones-2026-07-22', 'natural-earth', 'reviewed-borders', 'un-m49', 'ungegn-country-names-2017', 'unicode-cldr-48.2-reference']
 
-``Country.sources`` is a profile-level summary. Use
+``Country.sources`` is a profile-level summary. Fact-bearing 0.6 models also
+expose their direct ``source``. Use
 ``country.local_name(language_code).source`` and ``source_locator`` for the
 exact local-identity record provenance and inspect ``kind`` before describing a
 value as a national official name.

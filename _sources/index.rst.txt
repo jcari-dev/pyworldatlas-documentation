@@ -1,128 +1,118 @@
 PyWorldAtlas
 ============
 
-PyWorldAtlas is a compact, source-aware world atlas for Python. It provides
-typed country, capital, and city records from one bundled SQLite database and
-works without an API key, runtime download, or third-party dependency.
+PyWorldAtlas is a compact, source-aware world atlas for Python. It puts country
+profiles, capitals, cities, coordinates, distances, reviewed land neighbors,
+rankings, and learning tools into one bundled SQLite database that works fully
+offline.
 
-It is a purely educational package for offline access to factual geographic
-data. It does not provide political commentary or opinion. See
-:doc:`educational_principles` for the formal policy.
+No API key. No runtime download. No third-party runtime dependency.
 
-**Documented version:** 0.5.0 | **Dataset:** 2026.07.21.5 | **Python:** 3.10–3.14 |
-**Runtime dependencies:** 0
+**Documented version:** 0.6.0 | **Dataset:** 2026.07.22.6 |
+**Python:** 3.10–3.14 | **Profiles:** 248
 
-.. note::
-
-   The 0.5.0 release contains 248 countries and areas, 241 capital records,
-   6,265 populated-place records, and 319 reviewed land-border relationships.
-   Local identity names cover all 248 records across 80 languages and 21
-   scripts. Ten selected records currently include reviewed UNGEGN national
-   short and formal names. A separate sourced English formal-name layer covers
-   240 profiles.
-
-Installation
-------------
-
-Install the current source checkout from the repository root:
-
-.. code-block:: console
-
-   python -m pip install -e .
-
-Quick example
--------------
+Start with something interesting
+--------------------------------
 
 .. doctest::
 
    >>> from pyworldatlas import Atlas
-   >>> atlas = Atlas()
-   >>> japan = atlas.country("Japan")
-   >>> japan.capital.name
-   'Tokyo'
-   >>> japan.capital.coordinates.as_tuple()
-   (35.6895, 139.69171)
-   >>> atlas.close()
+   >>> with Atlas() as atlas:
+   ...     brazil = atlas.country("Brazil")
+   ...     print(brazil.flag, brazil.name_in("pt"), "—", brazil.capital.name)
+   ...     print(brazil.anthem.title)
+   ...     print(brazil.motto.text, "—", brazil.motto.english_text)
+   ...     print([item.capital.name for item in atlas.nearest_capitals("Tokyo", country="JP", limit=3)])
+   🇧🇷 Brasil — Brasília
+   Hino Nacional Brasileiro
+   Ordem e Progresso — Order and Progress
+   ['Seoul', 'Pyongyang', 'Beijing']
 
-The installed wheel contains ordinary Python source and one read-only SQLite
-database. Constructing :class:`~pyworldatlas.Atlas` never contacts a server and
-does not load the complete dataset into memory.
+The installed wheel contains ordinary Python source and one read-only database.
+Constructing :class:`~pyworldatlas.Atlas` never contacts a server and does not
+load every country into memory.
 
-Documentation
--------------
+Try these next
+--------------
 
-- Follow the :doc:`quickstart` for a guided first session.
-- Read :doc:`educational_principles` for the project's purpose and publication
-  boundaries.
-- Explore immediate neighbors and shortest land routes in :doc:`borders`.
-- Read :doc:`country_profile` for the complete current data model.
-- Build lessons with :doc:`discovery` cards, stable samples, and flashcards.
-- Explore complete :doc:`local_names` coverage and its evidence levels.
-- See :doc:`data_sources` and :doc:`data_quality` for provenance and limitations.
-- Consult the :doc:`api` for the generated public reference.
+- :doc:`explore` — country postcards, rankings, nearby capitals, filters, and
+  a repeatable quiz.
+- :doc:`quickstart` — lookup, collections, names, coordinates, and borders in
+  one guided session.
+- :doc:`reference_facts` — anthem titles, reviewed mottos, demonyms, currencies,
+  languages, timezones, postal formats, and provenance.
+- :doc:`rankings` — exact filters, supported metrics, typed results, and distance
+  semantics.
 
-What works in this checkout
----------------------------
+What is bundled
+---------------
 
-- Exact lookup by common name, alias, ISO alpha-2, ISO alpha-3, and M49 code.
-- Accent- and case-insensitive country search.
-- Immutable typed country, capital, city, coordinate, and source objects.
-- Country collection behavior: indexing, membership, length, and iteration.
-- UN region and subregion filters.
-- Primary capitals with WGS84 coordinates, population, timezone, and GeoNames ID.
-- Populated places at or above 100,000 population, plus retained capitals.
-- Explicit ``None`` for areas without a usable primary-capital record.
-- JSON-compatible serialization and explicit source references.
-- One sourced local-language identity for every country and area, plus reviewed
-  national official short/formal names, romanization, and exact source locators
-  where UNGEGN evidence is complete.
-- Sourced English formal names for 240 profiles, exact long-name lookup, and
-  explicit ``None`` values outside the captured source intersection.
-- Rich profile fields including population snapshot, currency, calling codes,
-  language codes, internet domain, observed timezones, and capital coordinates.
-- Exact city lookup plus latitude/longitude distance, bearing, and midpoint calculations.
-- Flag emoji, calculated density, compact discovery cards, deterministic country
-  sampling, and structured geography flashcards.
-- Reviewed land neighbors, shared neighbors, shortest border paths, crossing
-  counts, reachability, connected components, borderless-entity discovery, and
-  graph flashcards.
-
-Current coverage
-----------------
-
-.. list-table:: Bundled dataset
+.. list-table:: Dataset 2026.07.22.6
    :header-rows: 1
+   :widths: 62 38
 
    * - Records
-     - Count
+     - Coverage
    * - Countries and areas
      - 248
    * - Primary capitals
      - 241 / 248
-   * - Capital coordinates
-     - 241 / 241
    * - Populated places
-     - 6,265, including retained capitals
+     - 6,265
    * - Selected local-language identities
      - 248 / 248
    * - Sourced English formal names
      - 240 / 248
-   * - Reviewed national official short/formal names
-     - 10 / 248
-   * - Reviewed land borders
-     - 319 undirected relationships
-   * - Countries and areas without an accepted land border
-     - 85
+   * - Anthem titles
+     - 234 / 248
+   * - Reviewed source-listed mottos
+     - 32 / 248
+   * - English demonym profiles
+     - 227 / 248
+   * - Country timezone profiles
+     - 246 / 248, 417 records
+   * - Country-language metadata
+     - 722 records across 245 profiles
+   * - Reviewed land-border relationships
+     - 319
+
+Designed for exploration
+------------------------
+
+PyWorldAtlas supports exact lookup and ranked search, immutable typed models,
+Unicode local names and flag emoji, WGS84 coordinates, distance/bearing/midpoint
+calculations, deterministic samples and flashcards, land-border paths, profile
+filters, rankings, and nearest-capital queries. Public results serialize to
+JSON-compatible dictionaries without losing their source context.
+
+Educational scope
+-----------------
+
+PyWorldAtlas provides offline factual geography for education and reference.
+It does not provide political commentary or opinion. Values follow documented
+source conventions, missing data remains explicit, and every field family has
+a defined source role and publication boundary. Read :doc:`educational_principles`
+for the formal policy and :doc:`data_sources` for exact provenance.
+
+Install
+-------
+
+.. code-block:: console
+
+   python -m pip install --upgrade pyworldatlas
+
+The current source checkout can be installed with ``python -m pip install -e .``.
 
 .. toctree::
    :hidden:
    :maxdepth: 2
    :caption: Start here
 
-   why
-   educational_principles
-   installation
+   explore
    quickstart
+   why
+   installation
+   educational_principles
 
 .. toctree::
    :hidden:
@@ -130,11 +120,13 @@ Current coverage
    :caption: Explore the atlas
 
    country_profile
-   discovery
+   reference_facts
+   rankings
    local_names
    capitals_cities
    coordinates_distances
    borders
+   discovery
    searching
    serialization
 

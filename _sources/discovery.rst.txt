@@ -65,6 +65,12 @@ and static-site generation:
    'Japan'
    >>> card.language_codes
    ('ja',)
+   >>> card.anthem_title
+   'Kimigayo'
+   >>> card.demonym
+   'Japanese (singular and plural)'
+   >>> card.timezone_ids
+   ('Asia/Tokyo',)
    >>> card.to_dict()["country"]["numeric"]
    '392'
 

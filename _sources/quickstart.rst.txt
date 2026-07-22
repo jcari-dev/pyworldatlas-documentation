@@ -60,7 +60,7 @@ Library, schema, and data versions change independently:
 
    >>> info = atlas.dataset_info()
    >>> (info.library_version, info.schema_version, info.dataset_version)
-   ('0.5.0', 5, '2026.07.21.5')
+   ('0.6.0', 6, '2026.07.22.6')
    >>> atlas.close()
 
 Read profile metadata
@@ -79,6 +79,24 @@ provide a value:
    126529100
    JPY
    ['ja']
+
+Add reference facts
+-------------------
+
+Optional facts remain typed and source-aware:
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     japan = atlas.country("Japan")
+   ...     print(japan.anthem.title, "—", japan.anthem.english_title)
+   ...     print(japan.demonym.adjective)
+   ...     print(japan.currency.name, japan.currency.symbol)
+   ...     print(japan.timezone_ids)
+   Kimigayo — His Majesty’s Reign
+   Japanese
+   Japanese Yen ¥
+   ('Asia/Tokyo',)
 
 Read the three English name fields
 ----------------------------------
@@ -133,6 +151,17 @@ Country samples and flashcards use a stable seed-based ordering:
    🇯🇵 334.88
    ['KW', 'BS', 'BI']
    What is the capital of Kuwait? Kuwait City
+
+Rank profiles and discover nearby capitals
+------------------------------------------
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     print([row.country.alpha2 for row in atlas.rank("population", limit=3)])
+   ...     print([row.capital.name for row in atlas.nearest_capitals("Tokyo", country="JP", limit=3)])
+   ['CN', 'IN', 'US']
+   ['Seoul', 'Pyongyang', 'Beijing']
 
 Measure city-to-city distance
 -----------------------------

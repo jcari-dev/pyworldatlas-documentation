@@ -54,4 +54,12 @@ Filtering
    28
    >>> {"CU", "DO"}.issubset({country.alpha2 for country in caribbean})
    True
+   >>> [country.name for country in atlas.countries(currency_code="JPY")]
+   ['Japan']
+   >>> [country.name for country in atlas.countries(timezone_id="Asia/Tokyo")]
+   ['Japan']
    >>> atlas.close()
+
+``currency_code``, ``language_code``, ``script_code``, and ``timezone_id`` are
+case-insensitive exact filters. Multiple filters are combined. See
+:doc:`rankings` for the full discovery API and interpretation notes.

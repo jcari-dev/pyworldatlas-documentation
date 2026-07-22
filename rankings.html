@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; PyWorldAtlas 0.6.0</title>
+  <title>Filters, rankings, and nearby capitals &mdash; PyWorldAtlas 0.6.0</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
@@ -16,8 +17,10 @@
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="#" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Local names and writing systems" href="local_names.html" />
+    <link rel="prev" title="Country reference facts" href="reference_facts.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -92,7 +95,7 @@
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Explore the atlas</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="country_profile.html">Country profiles</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#profile-example">Profile example</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#current-field-coverage">Current field coverage</a></li>
@@ -112,10 +115,10 @@
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#source-inspection">Source inspection</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="rankings.html">Filters, rankings, and nearby capitals</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="rankings.html#profile-filters">Profile filters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rankings.html#country-rankings">Country rankings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="rankings.html#nearest-capitals">Nearest capitals</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Filters, rankings, and nearby capitals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#profile-filters">Profile filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#country-rankings">Country rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#nearest-capitals">Nearest capitals</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="local_names.html">Local names and writing systems</a><ul>
@@ -317,8 +320,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Index</li>
+      <li class="breadcrumb-item active">Filters, rankings, and nearby capitals</li>
       <li class="wy-breadcrumbs-aside">
+            <a href="_sources/rankings.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -326,383 +330,117 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-
-<h1 id="index">Index</h1>
-
-<div class="genindex-jumpbox">
- <a href="#A"><strong>A</strong></a>
- | <a href="#B"><strong>B</strong></a>
- | <a href="#C"><strong>C</strong></a>
- | <a href="#D"><strong>D</strong></a>
- | <a href="#F"><strong>F</strong></a>
- | <a href="#G"><strong>G</strong></a>
- | <a href="#H"><strong>H</strong></a>
- | <a href="#I"><strong>I</strong></a>
- | <a href="#L"><strong>L</strong></a>
- | <a href="#M"><strong>M</strong></a>
- | <a href="#N"><strong>N</strong></a>
- | <a href="#O"><strong>O</strong></a>
- | <a href="#P"><strong>P</strong></a>
- | <a href="#R"><strong>R</strong></a>
- | <a href="#S"><strong>S</strong></a>
- | <a href="#T"><strong>T</strong></a>
- 
+  <section id="filters-rankings-and-nearby-capitals">
+<h1>Filters, rankings, and nearby capitals<a class="headerlink" href="#filters-rankings-and-nearby-capitals" title="Link to this heading"></a></h1>
+<p>Version 0.6 adds small, composable discovery methods. They return immutable
+models and never contact a remote service.</p>
+<section id="profile-filters">
+<h2>Profile filters<a class="headerlink" href="#profile-filters" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="api.html#pyworldatlas.Atlas.countries" title="pyworldatlas.Atlas.countries"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Atlas.countries</span></code></a> supports exact,
+case-insensitive profile filters:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">continent</span><span class="o">=</span><span class="s2">&quot;Europe&quot;</span><span class="p">)</span>
+<span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">region</span><span class="o">=</span><span class="s2">&quot;Caribbean&quot;</span><span class="p">)</span>
+<span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">currency_code</span><span class="o">=</span><span class="s2">&quot;EUR&quot;</span><span class="p">)</span>
+<span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">language_code</span><span class="o">=</span><span class="s2">&quot;es&quot;</span><span class="p">)</span>
+<span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">script_code</span><span class="o">=</span><span class="s2">&quot;Arab&quot;</span><span class="p">)</span>
+<span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">timezone_id</span><span class="o">=</span><span class="s2">&quot;Asia/Tokyo&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
-<h2 id="A">A</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Country.alpha2">alpha2 (pyworldatlas.Country property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.BorderPathResult.alpha2_codes">alpha2_codes (pyworldatlas.BorderPathResult property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.alpha3">alpha3 (pyworldatlas.Country property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.AmbiguousCountryError">AmbiguousCountryError</a>
-</li>
-      <li><a href="api.html#pyworldatlas.AmbiguousPlaceError">AmbiguousPlaceError</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.anthem">anthem (pyworldatlas.Country property)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Area">Area (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.area_km2">area_km2 (pyworldatlas.Country property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Coordinate.as_tuple">as_tuple() (pyworldatlas.Coordinate method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas">Atlas (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.AtlasClosedError">AtlasClosedError</a>
-</li>
-      <li><a href="api.html#pyworldatlas.AtlasError">AtlasError</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="B">B</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Coordinate.bearing_to">bearing_to() (pyworldatlas.Coordinate method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.border_crossings">border_crossings() (pyworldatlas.Atlas method)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Atlas.border_path">border_path() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.BorderPathResult">BorderPathResult (class in pyworldatlas)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="C">C</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Capital">Capital (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.capital">capital (pyworldatlas.Country property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.capital_coordinates">capital_coordinates (pyworldatlas.Country property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.CapitalDistance">CapitalDistance (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.CapitalNotFoundError">CapitalNotFoundError</a>
-</li>
-      <li><a href="api.html#pyworldatlas.City">City (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.city">city() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.close">close() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.continent">continent (pyworldatlas.Country property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Coordinate">Coordinate (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.coordinates">coordinates() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.countries">countries() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.countries_reachable_by_land">countries_reachable_by_land() (pyworldatlas.Atlas method)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Atlas.countries_with_formal_names">countries_with_formal_names() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.countries_with_local_names">countries_with_local_names() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.countries_with_no_land_borders">countries_with_no_land_borders() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country">Country (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.country">country() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.CountryCodes">CountryCodes (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.CountryDiscoveryCard">CountryDiscoveryCard (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.CountryMatch">CountryMatch (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.CountryNotFoundError">CountryNotFoundError</a>
-</li>
-      <li><a href="api.html#pyworldatlas.CountryRanking">CountryRanking (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.CountryReference">CountryReference (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Currency">Currency (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.currency_code">currency_code (pyworldatlas.Country property)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="D">D</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Atlas.dataset_info">dataset_info() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.DatasetError">DatasetError</a>
-</li>
-      <li><a href="api.html#pyworldatlas.DatasetInfo">DatasetInfo (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.DatasetIntegrityError">DatasetIntegrityError</a>
-</li>
-      <li><a href="api.html#pyworldatlas.DatasetNotFoundError">DatasetNotFoundError</a>
-</li>
-      <li><a href="api.html#pyworldatlas.DatasetVersionError">DatasetVersionError</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Demonym">Demonym (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.demonym">demonym (pyworldatlas.Country property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.BorderPathResult.destination">destination (pyworldatlas.BorderPathResult property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.discovery_card">discovery_card() (pyworldatlas.Country method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.distance_between">distance_between() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Coordinate.distance_to">distance_to() (pyworldatlas.Coordinate method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="F">F</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Country.flag_emoji">flag_emoji (pyworldatlas.Country property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Flashcard">Flashcard (class in pyworldatlas)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Atlas.flashcards">flashcards() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.LocalizedName.formal_name">formal_name (pyworldatlas.LocalizedName property)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="G">G</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Geography">Geography (class in pyworldatlas)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Atlas.get">get() (pyworldatlas.Atlas method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="H">H</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Country.has_distinct_formal_name">has_distinct_formal_name (pyworldatlas.Country property)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Atlas.has_land_route">has_land_route() (pyworldatlas.Atlas method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="I">I</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.LocalizedName.is_national_official">is_national_official (pyworldatlas.LocalizedName property)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="L">L</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Language">Language (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.language_codes">language_codes (pyworldatlas.Country property)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Country.local_name">local_name() (pyworldatlas.Country method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.local_name_languages">local_name_languages (pyworldatlas.Country property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.LocalizedName">LocalizedName (class in pyworldatlas)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="M">M</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Atlas.major_cities">major_cities() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.major_city_count">major_city_count (pyworldatlas.Country property)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Coordinate.midpoint_to">midpoint_to() (pyworldatlas.Coordinate method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.motto">motto (pyworldatlas.Country property)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="N">N</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Country.name_in">name_in() (pyworldatlas.Country method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.BorderPathResult.names">names (pyworldatlas.BorderPathResult property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.NationalAnthem">NationalAnthem (class in pyworldatlas)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.NationalMotto">NationalMotto (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.nearest_capitals">nearest_capitals() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.neighbors">neighbors() (pyworldatlas.Atlas method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="O">O</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Country.official_name_in">official_name_in() (pyworldatlas.Country method)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.BorderPathResult.origin">origin (pyworldatlas.BorderPathResult property)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="P">P</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.PlaceNotFoundError">PlaceNotFoundError</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Country.population_density">population_density (pyworldatlas.Country property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.PostalCodeFormat">PostalCodeFormat (class in pyworldatlas)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="R">R</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Atlas.rank">rank() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.rank_countries">rank_countries() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.reference">reference() (pyworldatlas.Country method)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Country.region">region (pyworldatlas.Country property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.romanized_name_in">romanized_name_in() (pyworldatlas.Country method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.romanized_official_name_in">romanized_official_name_in() (pyworldatlas.Country method)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="S">S</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Atlas.sample_countries">sample_countries() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.search_countries">search_countries() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Atlas.shared_neighbors">shared_neighbors() (pyworldatlas.Atlas method)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Atlas.shares_border">shares_border() (pyworldatlas.Atlas method)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.LocalizedName.short_name">short_name (pyworldatlas.LocalizedName property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.SourceReference">SourceReference (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.subregion">subregion (pyworldatlas.Country property)</a>
-</li>
-  </ul></td>
-</tr></table>
-
-<h2 id="T">T</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.Timezone">Timezone (class in pyworldatlas)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.Country.timezone_ids">timezone_ids (pyworldatlas.Country property)</a>
-</li>
-      <li><a href="api.html#pyworldatlas.BorderPathResult.to_dict">to_dict() (pyworldatlas.BorderPathResult method)</a>
-
-      <ul>
-        <li><a href="api.html#pyworldatlas.CapitalDistance.to_dict">(pyworldatlas.CapitalDistance method)</a>
-</li>
-        <li><a href="api.html#pyworldatlas.Country.to_dict">(pyworldatlas.Country method)</a>
-</li>
-        <li><a href="api.html#pyworldatlas.CountryDiscoveryCard.to_dict">(pyworldatlas.CountryDiscoveryCard method)</a>
-</li>
-        <li><a href="api.html#pyworldatlas.CountryRanking.to_dict">(pyworldatlas.CountryRanking method)</a>
-</li>
-        <li><a href="api.html#pyworldatlas.Flashcard.to_dict">(pyworldatlas.Flashcard method)</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="api.html#pyworldatlas.BorderPathResult.to_json">to_json() (pyworldatlas.BorderPathResult method)</a>
-
-      <ul>
-        <li><a href="api.html#pyworldatlas.CapitalDistance.to_json">(pyworldatlas.CapitalDistance method)</a>
-</li>
-        <li><a href="api.html#pyworldatlas.Country.to_json">(pyworldatlas.Country method)</a>
-</li>
-        <li><a href="api.html#pyworldatlas.CountryDiscoveryCard.to_json">(pyworldatlas.CountryDiscoveryCard method)</a>
-</li>
-        <li><a href="api.html#pyworldatlas.CountryRanking.to_json">(pyworldatlas.CountryRanking method)</a>
-</li>
-        <li><a href="api.html#pyworldatlas.Flashcard.to_json">(pyworldatlas.Flashcard method)</a>
-</li>
-      </ul></li>
-  </ul></td>
-</tr></table>
-
+<p>Multiple arguments are combined with <code class="docutils literal notranslate"><span class="pre">AND</span></code>. Language values describe the
+captured GeoNames country metadata; they are not promoted to legal-language
+claims.</p>
+</section>
+<section id="country-rankings">
+<h2>Country rankings<a class="headerlink" href="#country-rankings" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="api.html#pyworldatlas.Atlas.rank_countries" title="pyworldatlas.Atlas.rank_countries"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Atlas.rank_countries</span></code></a> and its short
+alias <a class="reference internal" href="api.html#pyworldatlas.Atlas.rank" title="pyworldatlas.Atlas.rank"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Atlas.rank</span></code></a> support these metrics:</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Ranking metrics</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Metric</p></th>
+<th class="head"><p>Value</p></th>
+<th class="head"><p>Unit</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">population</span></code></p></td>
+<td><p>Captured country population snapshot</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">people</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">area</span></code> / <code class="docutils literal notranslate"><span class="pre">area_km2</span></code></p></td>
+<td><p>Captured total area</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">km²</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">population_density</span></code> / <code class="docutils literal notranslate"><span class="pre">density</span></code></p></td>
+<td><p>Population divided by total area</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">people/km²</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">border_count</span></code></p></td>
+<td><p>Accepted reviewed land-border relationships</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">countries</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">major_city_count</span></code></p></td>
+<td><p>Bundled populated-place records</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">places</span></code></p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span> <span class="o">=</span> <span class="n">Atlas</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="s2">&quot;area&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="n">row</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">row</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">results</span><span class="p">]</span>
+<span class="go">[(1, &#39;Russia&#39;, &#39;km²&#39;), (2, &#39;Antarctica&#39;, &#39;km²&#39;), (3, &#39;Canada&#39;, &#39;km²&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">smallest</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="s2">&quot;density&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">descending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">smallest</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">value</span> <span class="o">&lt;=</span> <span class="n">smallest</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">value</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Rankings are descriptions of bundled values, not judgments about countries or
+people. Equal values use country name as a stable tie-breaker, and missing
+values are excluded.</p>
+</section>
+<section id="nearest-capitals">
+<h2>Nearest capitals<a class="headerlink" href="#nearest-capitals" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="api.html#pyworldatlas.Atlas.nearest_capitals" title="pyworldatlas.Atlas.nearest_capitals"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Atlas.nearest_capitals</span></code></a> accepts an
+exact city name, a country, a capital or city object, a
+<a class="reference internal" href="api.html#pyworldatlas.Coordinate" title="pyworldatlas.Coordinate"><code class="xref py py-class docutils literal notranslate"><span class="pre">Coordinate</span></code></a>, or a <code class="docutils literal notranslate"><span class="pre">(latitude,</span> <span class="pre">longitude)</span></code> tuple.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">origin</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Dominican Republic&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nearest</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">nearest_capitals</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[(</span><span class="n">item</span><span class="o">.</span><span class="n">capital</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">item</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">alpha2</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">nearest</span><span class="p">]</span>
+<span class="go">[(&#39;Port-au-Prince&#39;, &#39;HT&#39;), (&#39;Cockburn Town&#39;, &#39;TC&#39;), (&#39;San Juan&#39;, &#39;PR&#39;)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">nearest</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">unit</span>
+<span class="go">&#39;km&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Distances are spherical great-circle results, not road, air-route, or travel
+distances. <code class="docutils literal notranslate"><span class="pre">include_origin=False</span></code> excludes a capital at the origin itself.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="sd">&quot;&quot;&quot;Filter profiles, rank sourced values, and find nearby capitals.&quot;&quot;&quot;</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="linenos"> 7</span>    <span class="n">yen_profiles</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">countries</span><span class="p">(</span><span class="n">currency_code</span><span class="o">=</span><span class="s2">&quot;JPY&quot;</span><span class="p">)</span>
+<span class="linenos"> 8</span>    <span class="nb">print</span><span class="p">([</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">yen_profiles</span><span class="p">])</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span>    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">rank_countries</span><span class="p">(</span><span class="s2">&quot;area&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">5</span><span class="p">):</span>
+<span class="linenos">11</span>        <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">position</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>    <span class="k">for</span> <span class="n">result</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">nearest_capitals</span><span class="p">((</span><span class="mf">18.4861</span><span class="p">,</span> <span class="o">-</span><span class="mf">69.9312</span><span class="p">),</span> <span class="n">limit</span><span class="o">=</span><span class="mi">4</span><span class="p">):</span>
+<span class="linenos">14</span>        <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">result</span><span class="o">.</span><span class="n">capital</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">distance</span><span class="p">),</span> <span class="n">result</span><span class="o">.</span><span class="n">unit</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="reference_facts.html" class="btn btn-neutral float-left" title="Country reference facts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="local_names.html" class="btn btn-neutral float-right" title="Local names and writing systems" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

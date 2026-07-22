@@ -43,16 +43,22 @@ Profile example
    126529100
    >>> round(japan.population_density, 2)
    334.88
-   >>> (japan.currency.code, japan.currency.name)
-   ('JPY', 'Yen')
+   >>> (japan.currency.code, japan.currency.name, japan.currency.symbol)
+   ('JPY', 'Japanese Yen', '¥')
    >>> japan.calling_codes
    ('+81',)
    >>> japan.top_level_domain
    '.jp'
-   >>> [language.code for language in japan.languages]
-   ['ja']
+   >>> [(language.code, language.name, language.script_code) for language in japan.languages]
+   [('ja', 'Japanese', 'Jpan')]
    >>> japan.observed_timezones
    ('Asia/Tokyo',)
+   >>> japan.timezone_ids
+   ('Asia/Tokyo',)
+   >>> japan.anthem.title
+   'Kimigayo'
+   >>> japan.demonym.adjective
+   'Japanese'
 
 Current field coverage
 ----------------------
@@ -94,6 +100,21 @@ Current field coverage
    * - Reviewed national official forms
      - 10 / 248
      - UNGEGN short/formal evidence for the selected language
+   * - Anthem titles
+     - 234 / 248
+     - Structured source title and optional English title
+   * - Reviewed mottos
+     - 32 / 248
+     - Conservative reviewed source-listed layer
+   * - English demonyms
+     - 227 / 248
+     - Source-preserved noun and adjective
+   * - Country timezone profiles
+     - 246 / 248
+     - Complete captured GeoNames timezone table
+   * - Postal-code formats
+     - 176 / 248
+     - Display pattern and optional regular expression
 
 Availability is field-specific. Code should handle optional scalar fields and
 empty collection fields even when a familiar country currently has values.
@@ -101,11 +122,15 @@ empty collection fields even when a familiar country currently has values.
 Convenience and discovery views
 -------------------------------
 
-``language_codes``, ``currency_code``, and ``major_city_count`` provide common
+``language_codes``, ``currency_code``, ``timezone_ids``, and
+``major_city_count`` provide common
 read-only projections without changing the underlying typed values.
 ``population_density`` is calculated from the captured population and area
 snapshots. :meth:`Country.discovery_card <pyworldatlas.Country.discovery_card>`
 creates a compact serializable teaching view; see :doc:`discovery`.
+``anthem``, ``motto``, and ``demonym`` return the first optional typed record;
+their complete tuples remain available as ``anthems``, ``mottos``, and
+``demonyms``. See :doc:`reference_facts`.
 
 Names and aliases
 -----------------
@@ -142,11 +167,11 @@ Sources
 -------
 
 ``country.sources`` lists the source snapshots that contributed somewhere in
-the profile. Field-level provenance is stored by the generated dataset, while
-the public profile exposes a source summary. Core profiles reference UN M49 and
-GeoNames; English formal names add Factbook, UN Protocol, or Wikidata where
-used. Each local identity carries its own CLDR or UNGEGN source reference and
-exact locator.
+the profile. Fact-bearing 0.6 models also carry their own ``SourceReference``;
+anthem, motto, and demonym records retain exact locators. Core profiles
+reference UN M49 and GeoNames; English formal names add Factbook, UN Protocol,
+or Wikidata where used. Each local identity carries its own CLDR or UNGEGN
+source reference and exact locator.
 
 Immutability
 ------------
@@ -158,8 +183,9 @@ from silently changing a shared geographic record. Use :meth:`Country.to_dict
 .. note::
 
    Population is a source snapshot rather than a live estimate. Language values
-   are source codes, and ``observed_timezones`` contains zones seen on bundled
-   capital/major-city records rather than claiming exhaustive legal coverage.
+   are source metadata rather than legal-language claims. ``observed_timezones``
+   contains zones seen on bundled places, while ``timezones`` is the captured
+   country-level timezone table.
    The public model does not expose an entity-recognition or legal-status
    classification. The words *country* and *area* follow the documented source
    scope.

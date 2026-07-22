@@ -35,6 +35,14 @@ The current build checks:
 - Exactly 240 sourced English formal names, validated source records, exact
   override locators, normalized Unicode, and the expected eight-code gap set.
 - Non-negative population snapshots and validated profile collection types.
+- Exact pinned checksums and expected coverage for anthem, demonym, currency,
+  language, timezone, and motto source layers.
+- A decision for every captured national-motto statement, with no unreviewed
+  statement entering the runtime database.
+- Resolved English labels for every captured country-language code and exact
+  accounting for the two profiles outside the timezone-table intersection.
+- Typed ranking results, deterministic ordering, documented units, and known
+  nearest-capital fixtures.
 - Coordinate constructor bounds and known-route geodesic reference checks.
 - Canonical undirected border edges with valid country endpoints and no self-edges.
 - Exact accounting for every difference between the two pinned border sources.
@@ -95,6 +103,24 @@ Coverage
    * - Profiles with observed timezones
      - 242
      - Zones found on bundled places
+   * - Country timezone profiles
+     - 246
+     - 417 records from the complete captured timezone table
+   * - Postal-code formats
+     - 176
+     - Source display formats; regular expressions when provided
+   * - Anthem titles
+     - 234
+     - Structured title fields only
+   * - Reviewed source-listed mottos
+     - 32
+     - Included statements after exact decision review
+   * - English demonym profiles
+     - 227
+     - Structured noun/adjective fields
+   * - Country-language metadata
+     - 722 records across 245 profiles
+     - English name and likely script when available
    * - Reviewed land-border relationships
      - 319
      - 315 cross-source agreements plus 4 reviewed inclusions
@@ -128,8 +154,15 @@ Interpretation cautions
   This is a source-scope decision.
 - The public model does not expose an entity-recognition or legal-status
   classification.
+- Anthem records contain titles only. Lyrics, audio, contributor credits, and
+  adoption histories are not bundled.
+- Motto coverage is intentionally partial. A missing motto means no statement
+  entered the reviewed layer; it is not a claim that no motto exists.
+- Language metadata records associations captured by GeoNames. They are not
+  legal determinations of official-language status.
 - Border relationships are topological claims, not boundary geometry. Border
-  length, point-in-country, and map rendering remain outside this release.
+  length, boundary geometry, point-in-country, and map rendering remain outside
+  this release and the planned 0.7 physical-geography milestone.
 - Names and classifications follow documented source conventions.
 - Terms such as *country* and *area* are practical dataset labels.
 

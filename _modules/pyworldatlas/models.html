@@ -5,14 +5,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pyworldatlas.models &mdash; PyWorldAtlas 0.5.0</title>
+  <title>pyworldatlas.models &mdash; PyWorldAtlas 0.6.0</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=1dd76d02"></script>
+      <script src="../../_static/documentation_options.js?v=8fa8b3e9"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -41,20 +41,35 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Start here</span></p>
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../explore.html">Explore the atlas in five minutes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../explore.html#make-a-country-postcard">Make a country postcard</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../explore.html#rank-the-bundled-snapshots">Rank the bundled snapshots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../explore.html#find-the-nearest-capitals">Find the nearest capitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../explore.html#build-a-small-collection">Build a small collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../explore.html#create-a-repeatable-geography-quiz">Create a repeatable geography quiz</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../explore.html#runnable-tour">Runnable tour</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">60-second quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#create-the-atlas">Create the atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#look-up-countries-naturally">Look up countries naturally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#use-it-like-a-python-collection">Use it like a Python collection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#read-profile-metadata">Read profile metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#add-reference-facts">Add reference facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#read-the-three-english-name-fields">Read the three English name fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#meet-countries-in-their-own-languages">Meet countries in their own languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#rank-profiles-and-discover-nearby-capitals">Rank profiles and discover nearby capitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#measure-city-to-city-distance">Measure city-to-city distance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#explore-land-connections">Explore land connections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#executable-example">Executable example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../why.html">Why PyWorldAtlas?</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../why.html#the-product-promise">The product promise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../why.html#who-is-it-for">Who is it for?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../why.html#what-it-is-not">What it is not</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../../educational_principles.html">Educational purpose and editorial policy</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#editorial-commitments">Editorial commitments</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#how-sources-are-selected">How sources are selected</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#names-areas-and-borders">Names, areas, and borders</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#publication-boundaries">Publication boundaries</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#using-the-package-in-education">Using the package in education</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#community-and-corrections">Community and corrections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#version-0-5-0">Version 0.5.0</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a><ul>
@@ -65,18 +80,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#verify-the-installation">Verify the installation</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">60-second quickstart</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#create-the-atlas">Create the atlas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#look-up-countries-naturally">Look up countries naturally</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#use-it-like-a-python-collection">Use it like a Python collection</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#inspect-the-dataset-version">Inspect the dataset version</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#read-profile-metadata">Read profile metadata</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#read-the-three-english-name-fields">Read the three English name fields</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#meet-countries-in-their-own-languages">Meet countries in their own languages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#build-reproducible-learning-material">Build reproducible learning material</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#measure-city-to-city-distance">Measure city-to-city distance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#explore-land-connections">Explore land connections</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#executable-example">Executable example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../educational_principles.html">Educational purpose and editorial policy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#editorial-commitments">Editorial commitments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#how-sources-are-selected">How sources are selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#names-areas-and-borders">Names, areas, and borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#publication-boundaries">Publication boundaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#using-the-package-in-education">Using the package in education</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#community-and-corrections">Community and corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#version-0-5-0">Version 0.5.0</a></li>
 </ul>
 </li>
 </ul>
@@ -92,17 +103,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#immutability">Immutability</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../discovery.html">Country discovery and learning tools</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#flag-emoji">Flag emoji</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#derived-profile-facts">Derived profile facts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#discovery-cards">Discovery cards</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#reproducible-country-samples">Reproducible country samples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#structured-flashcards">Structured flashcards</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../discovery.html#supported-topics">Supported topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_facts.html">Country reference facts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_facts.html#anthem-titles">Anthem titles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_facts.html#reviewed-mottos">Reviewed mottos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_facts.html#demonyms">Demonyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_facts.html#practical-metadata">Practical metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_facts.html#coverage">Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_facts.html#source-inspection">Source inspection</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#data-and-interpretation">Data and interpretation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#executable-example">Executable example</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../rankings.html">Filters, rankings, and nearby capitals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rankings.html#profile-filters">Profile filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rankings.html#country-rankings">Country rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rankings.html#nearest-capitals">Nearest capitals</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../local_names.html">Local names and writing systems</a><ul>
@@ -147,6 +160,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../../borders.html#executable-example">Executable example</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../discovery.html">Country discovery and learning tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#flag-emoji">Flag emoji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#derived-profile-facts">Derived profile facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#discovery-cards">Discovery cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#reproducible-country-samples">Reproducible country samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#structured-flashcards">Structured flashcards</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../discovery.html#supported-topics">Supported topics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#data-and-interpretation">Data and interpretation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#executable-example">Executable example</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../searching.html">Lookup, search, and filtering</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../searching.html#exact-lookup">Exact lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../searching.html#safe-lookup">Safe lookup</a></li>
@@ -159,6 +185,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../serialization.html#json-output">JSON output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../serialization.html#local-name-provenance">Local-name provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../serialization.html#discovery-values">Discovery values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../serialization.html#reference-facts-and-ranking-results">Reference facts and ranking results</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../serialization.html#border-paths">Border paths</a></li>
 </ul>
 </li>
@@ -172,12 +199,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#natural-earth">Natural Earth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#unicode-cldr-48-2">Unicode CLDR 48.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#cia-world-factbook-country-name-profiles">CIA World Factbook country-name profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-5-0-release">Source priority in the 0.5.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-6-0-release">Source priority in the 0.6.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -192,7 +221,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../_generated/project_status.html">Project status</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap and visible progress</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../roadmap.html#release-boundary">Release boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../roadmap.html#version-0-6-boundary">Version 0.6 boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../roadmap.html#version-0-7-boundary">Version 0.7 boundary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../roadmap.html#explicitly-deferred">Explicitly deferred</a></li>
 </ul>
 </li>
 </ul>
@@ -201,6 +232,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">API reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#profile-conventions">Profile conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#country-identity-provenance">Country identity provenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#reference-fact-provenance">Reference-fact provenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#discovery-calculations">Discovery calculations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#distance-input-contract">Distance input contract</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#profile-field-notes">Profile field notes</a></li>
@@ -214,6 +247,11 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.LocalizedName"><code class="docutils literal notranslate"><span class="pre">LocalizedName</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Currency"><code class="docutils literal notranslate"><span class="pre">Currency</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Language"><code class="docutils literal notranslate"><span class="pre">Language</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Timezone"><code class="docutils literal notranslate"><span class="pre">Timezone</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.PostalCodeFormat"><code class="docutils literal notranslate"><span class="pre">PostalCodeFormat</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.NationalAnthem"><code class="docutils literal notranslate"><span class="pre">NationalAnthem</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.NationalMotto"><code class="docutils literal notranslate"><span class="pre">NationalMotto</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Demonym"><code class="docutils literal notranslate"><span class="pre">Demonym</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryReference"><code class="docutils literal notranslate"><span class="pre">CountryReference</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryDiscoveryCard"><code class="docutils literal notranslate"><span class="pre">CountryDiscoveryCard</span></code></a></li>
 </ul>
@@ -228,6 +266,8 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#results-and-metadata">Results and metadata</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.BorderPathResult"><code class="docutils literal notranslate"><span class="pre">BorderPathResult</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryRanking"><code class="docutils literal notranslate"><span class="pre">CountryRanking</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CapitalDistance"><code class="docutils literal notranslate"><span class="pre">CapitalDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.DatasetInfo"><code class="docutils literal notranslate"><span class="pre">DatasetInfo</span></code></a></li>
@@ -251,13 +291,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.5.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.6.0 — 2026-07-22</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.5.0 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.3.1 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id4">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id4">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id5">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id5">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id6">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -542,7 +583,11 @@
     <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">homepage</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">retrieved_at</span><span class="p">:</span> <span class="nb">str</span></div>
+    <span class="n">retrieved_at</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">license_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">license_url</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">notes</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 
@@ -553,7 +598,10 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;A country&#39;s currency as identified by the captured source snapshot.&quot;&quot;&quot;</span>
 
     <span class="n">code</span><span class="p">:</span> <span class="nb">str</span>
-    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">symbol</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">minor_unit_digits</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">SourceReference</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
 
 
 
@@ -561,9 +609,85 @@
 <a class="viewcode-back" href="../../api.html#pyworldatlas.Language">[docs]</a>
 <span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="k">class</span><span class="w"> </span><span class="nc">Language</span><span class="p">:</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot;A language code associated with a country in the captured source.&quot;&quot;&quot;</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A language associated with a country in the captured sources.&quot;&quot;&quot;</span>
 
-    <span class="n">code</span><span class="p">:</span> <span class="nb">str</span></div>
+    <span class="n">code</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">primary_code</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">script_code</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">SourceReference</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="Timezone">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Timezone">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Timezone</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A country timezone and its captured January, July, and raw offsets.&quot;&quot;&quot;</span>
+
+    <span class="nb">id</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">january_utc_offset_hours</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">july_utc_offset_hours</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">raw_utc_offset_hours</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">SourceReference</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="PostalCodeFormat">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.PostalCodeFormat">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">PostalCodeFormat</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A source-provided postal-code display format and validation expression.&quot;&quot;&quot;</span>
+
+    <span class="nb">format</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">regex</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">SourceReference</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="NationalAnthem">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.NationalAnthem">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">NationalAnthem</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A national-anthem title without lyrics, audio, or contributor data.&quot;&quot;&quot;</span>
+
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">english_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">SourceReference</span>
+    <span class="n">source_locator</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+
+<div class="viewcode-block" id="NationalMotto">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.NationalMotto">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">NationalMotto</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A reviewed source-listed national motto and selected language label.</span>
+
+<span class="sd">    The record does not infer a legal status. ``english_text`` is the captured</span>
+<span class="sd">    English label when the source supplies one; it may preserve the original</span>
+<span class="sd">    phrase instead of translating it.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">text</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">language_code</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">english_text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">SourceReference</span>
+    <span class="n">source_locator</span><span class="p">:</span> <span class="nb">str</span></div>
+
+
+
+<div class="viewcode-block" id="Demonym">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Demonym">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Demonym</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Source-preserved noun and adjective forms for a country or area.&quot;&quot;&quot;</span>
+
+    <span class="n">noun</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">adjective</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">language_code</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">source</span><span class="p">:</span> <span class="n">SourceReference</span>
+    <span class="n">source_locator</span><span class="p">:</span> <span class="nb">str</span></div>
 
 
 
@@ -590,6 +714,61 @@
     <span class="n">alpha2</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">alpha3</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
     <span class="n">numeric</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span></div>
+
+
+
+<div class="viewcode-block" id="CountryRanking">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.CountryRanking">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CountryRanking</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;One deterministic position in a country ranking.&quot;&quot;&quot;</span>
+
+    <span class="n">position</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">country</span><span class="p">:</span> <span class="n">CountryReference</span>
+    <span class="n">metric</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">value</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="nb">float</span>
+    <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span>
+
+<div class="viewcode-block" id="CountryRanking.to_dict">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.CountryRanking.to_dict">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return JSON-compatible primitives for this ranking row.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_jsonable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CountryRanking.to_json">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.CountryRanking.to_json">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Serialize this ranking row as JSON.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">)</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="CapitalDistance">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.CapitalDistance">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CapitalDistance</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A capital ordered by great-circle distance from an origin.&quot;&quot;&quot;</span>
+
+    <span class="n">country</span><span class="p">:</span> <span class="n">CountryReference</span>
+    <span class="n">capital</span><span class="p">:</span> <span class="n">Capital</span>
+    <span class="n">distance</span><span class="p">:</span> <span class="nb">float</span>
+    <span class="n">unit</span><span class="p">:</span> <span class="nb">str</span>
+
+<div class="viewcode-block" id="CapitalDistance.to_dict">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.CapitalDistance.to_dict">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return JSON-compatible primitives for this distance result.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">_jsonable</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CapitalDistance.to_json">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.CapitalDistance.to_json">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">indent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Serialize this distance result as JSON.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span> <span class="n">ensure_ascii</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="n">indent</span><span class="p">)</span></div>
+</div>
 
 
 
@@ -712,6 +891,10 @@
     <span class="n">local_names</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">LocalizedName</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
     <span class="n">major_city_count</span><span class="p">:</span> <span class="nb">int</span>
     <span class="n">source_ids</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+    <span class="n">anthem_title</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">motto_text</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">demonym</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">timezone_ids</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
 
 <div class="viewcode-block" id="CountryDiscoveryCard.to_dict">
 <a class="viewcode-back" href="../../api.html#pyworldatlas.CountryDiscoveryCard.to_dict">[docs]</a>
@@ -758,6 +941,11 @@
     <span class="n">top_level_domain</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">observed_timezones</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
     <span class="n">formal_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">anthems</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">NationalAnthem</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">mottos</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">NationalMotto</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">demonyms</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Demonym</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">timezones</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">Timezone</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span> <span class="o">=</span> <span class="p">()</span>
+    <span class="n">postal_code</span><span class="p">:</span> <span class="n">PostalCodeFormat</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">alpha2</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -830,6 +1018,29 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">currency_code</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the captured currency code, or ``None`` when unavailable.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">currency</span><span class="o">.</span><span class="n">code</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">currency</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">anthem</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NationalAnthem</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the first sourced anthem-title record, when available.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">anthems</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">anthems</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">motto</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">NationalMotto</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the first reviewed source-listed motto, when available.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">mottos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">mottos</span> <span class="k">else</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">demonym</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Demonym</span> <span class="o">|</span> <span class="kc">None</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the English demonym record, when available.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">next</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">record</span> <span class="k">for</span> <span class="n">record</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">demonyms</span> <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">language_code</span> <span class="o">==</span> <span class="s2">&quot;en&quot;</span><span class="p">),</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">demonyms</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">demonyms</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+        <span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">timezone_ids</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return all captured country timezone identifiers.&quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">timezone</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">timezone</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">timezones</span><span class="p">)</span>
 
     <span class="nd">@property</span>
     <span class="k">def</span><span class="w"> </span><span class="nf">major_city_count</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
@@ -939,6 +1150,10 @@
             <span class="n">local_names</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">local_names</span><span class="p">,</span>
             <span class="n">major_city_count</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">major_city_count</span><span class="p">,</span>
             <span class="n">source_ids</span><span class="o">=</span><span class="nb">tuple</span><span class="p">(</span><span class="n">source</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sources</span><span class="p">),</span>
+            <span class="n">anthem_title</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">anthem</span><span class="o">.</span><span class="n">title</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">anthem</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">motto_text</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">motto</span><span class="o">.</span><span class="n">text</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">motto</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">demonym</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">demonym</span><span class="o">.</span><span class="n">noun</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">demonym</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">timezone_ids</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timezone_ids</span><span class="p">,</span>
         <span class="p">)</span></div>
 
 

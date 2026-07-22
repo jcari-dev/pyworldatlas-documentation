@@ -1,6 +1,23 @@
 Changelog
 =========
 
+0.6.0 — 2026-07-22
+------------------
+
+- Added 234 source-provided anthem-title profiles, 32 explicitly reviewed
+  source-listed mottos, and 227 English demonym profiles.
+- Enriched currency and language models with CLDR metadata and source
+  references.
+- Added 417 country-level timezone records across 246 profiles and 176
+  postal-code formats.
+- Added exact currency, language, script, and timezone filters.
+- Added typed rankings and nearest-capital discovery.
+- Expanded discovery cards, serialization, provenance, coverage validation,
+  runnable examples, and the generated API reference.
+- Reworked the documentation opening around useful, fun, executable examples.
+- Kept lyrics, audio, anthem credits/dates, reference dates, boundary geometry,
+  GeoJSON, bounding boxes, centroids, and point-in-country outside this release.
+
 0.5.0 — 2026-07-21
 ------------------
 

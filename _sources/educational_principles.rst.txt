@@ -6,9 +6,12 @@ factual geographic data. It is intended for learners, teachers, developers,
 researchers, and anyone who needs a compact geographic reference without a
 network connection.
 
-The project does not provide political commentary, promote a viewpoint, rank
-people or places, or decide geographic disagreements. Its role is limited to
-presenting clearly defined data from documented sources.
+The project does not provide political commentary, promote a viewpoint, make
+qualitative judgments about people or places, or decide geographic
+disagreements. Its role is limited to presenting clearly defined data from
+documented sources. Numeric ranking utilities only sort explicitly labelled
+facts or transparent calculations; they are not measures of human or cultural
+worth.
 
 Editorial commitments
 ---------------------
@@ -69,7 +72,9 @@ Publication boundaries
 The package focuses on stable geographic reference fields: identifiers, names,
 languages, writing systems, capitals, populated places, coordinates,
 distances, regions, currencies, calling codes, internet domains, and reviewed
-geographic relationships.
+geographic relationships. Source-aware anthem titles, mottos, demonyms,
+timezones, and postal formats may be included when their exact field boundary
+and coverage are documented.
 
 Current affairs, political opinion, disputed interpretation, comparisons of
 human worth, and speculative narrative are outside the dataset. Future fields

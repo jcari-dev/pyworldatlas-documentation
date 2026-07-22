@@ -54,6 +54,28 @@ the reviewed local layer. It says nothing about the English
 ``Country.formal_name`` field. No translation or romanization is generated at runtime. See
 :doc:`local_names` for examples and evidence rules.
 
+Reference-fact provenance
+-------------------------
+
+``Country.anthem``, ``motto``, and ``demonym`` are optional convenience views
+over the corresponding tuples. Anthem, motto, and demonym records carry their
+own ``SourceReference`` and exact source locator. Currency, language, timezone,
+and postal objects also expose their contributing source when present.
+
+Anthems contain titles only. Mottos are a conservative reviewed source-listed
+layer and do not claim a particular legal status. See :doc:`reference_facts`
+for coverage and interpretation rules.
+
+Discovery calculations
+----------------------
+
+``Atlas.rank_countries`` returns :class:`~pyworldatlas.CountryRanking` rows for
+documented sourced or directly derived metrics. ``Atlas.rank`` is its compact
+alias. ``Atlas.nearest_capitals`` returns
+:class:`~pyworldatlas.CapitalDistance` rows ordered by great-circle distance.
+These methods describe bundled values and geographic relationships; they do not
+score or judge countries.
+
 Distance input contract
 -----------------------
 
@@ -99,11 +121,19 @@ Profile field notes
    * - ``Country.formal_name``
      - Sourced English long/formal identity; may equal ``name`` or be ``None``
    * - ``Currency.code`` / ``Currency.name``
-     - Source currency identifier and name; the whole value may be ``None``
-   * - ``Language.code``
-     - Source language code; no display-name expansion is implied
+     - Source currency identifier and CLDR English name; the whole value may be ``None``
+   * - ``Currency.symbol`` / ``minor_unit_digits``
+     - CLDR display symbol and standard fractional-digit count when available
+   * - ``Language.code`` / ``name`` / ``script_code``
+     - Source language code plus captured English name and likely script
    * - ``Country.observed_timezones``
      - Timezone IDs observed on bundled capital and city records
+   * - ``Country.timezones``
+     - Captured country-level timezone records and seasonal/raw UTC offsets
+   * - ``Country.postal_code``
+     - Source display format and optional validation expression
+   * - ``Country.anthem`` / ``motto`` / ``demonym``
+     - First optional typed record from the corresponding source-aware tuple
    * - ``Coordinate.latitude`` / ``longitude``
      - Signed WGS84 decimal degrees with constructor validation
    * - ``Capital`` / ``City`` population
@@ -135,6 +165,21 @@ Country models
 .. autoclass:: pyworldatlas.Language
    :members:
 
+.. autoclass:: pyworldatlas.Timezone
+   :members:
+
+.. autoclass:: pyworldatlas.PostalCodeFormat
+   :members:
+
+.. autoclass:: pyworldatlas.NationalAnthem
+   :members:
+
+.. autoclass:: pyworldatlas.NationalMotto
+   :members:
+
+.. autoclass:: pyworldatlas.Demonym
+   :members:
+
 .. autoclass:: pyworldatlas.CountryReference
    :members:
 
@@ -163,6 +208,12 @@ Results and metadata
 --------------------
 
 .. autoclass:: pyworldatlas.BorderPathResult
+   :members:
+
+.. autoclass:: pyworldatlas.CountryRanking
+   :members:
+
+.. autoclass:: pyworldatlas.CapitalDistance
    :members:
 
 .. autoclass:: pyworldatlas.CountryMatch
