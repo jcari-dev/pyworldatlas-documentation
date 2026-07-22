@@ -116,8 +116,10 @@ from already attributed profile fields; they add no external country facts.
 The sampling algorithm ranks M49 identifiers with SHA-256 and never calls a
 remote service. Flashcard wording is package code; answers retain the
 provenance, coverage, and freshness limits of their underlying profile fields.
+Neighbor and border-count flashcards are calculated from the reviewed graph and
+introduce no additional border claims.
 
-Source priority in the 0.3.0 checkout
+Source priority in the 0.3.1 checkout
 -------------------------------------
 
 .. list-table::

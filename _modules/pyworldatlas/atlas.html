@@ -5,14 +5,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>pyworldatlas.atlas &mdash; PyWorldAtlas 0.3.0</title>
+  <title>pyworldatlas.atlas &mdash; PyWorldAtlas 0.3.1</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
 
   
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=e259d695"></script>
+      <script src="../../_static/documentation_options.js?v=4621528c"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/js/theme.js"></script>
@@ -115,10 +115,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../borders.html">Land borders and paths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#api-at-a-glance">API at a glance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../borders.html#neighbors">Neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../borders.html#shared-neighbors">Shared neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../borders.html#shortest-land-paths">Shortest land paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#land-connectivity">Land connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../borders.html#connected-land-regions">Connected land regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#border-flashcards">Border flashcards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#where-each-value-comes-from">Where each value comes from</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../borders.html#data-policy">Data policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../borders.html#executable-example">Executable example</a></li>
 </ul>
@@ -134,6 +138,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../serialization.html#dictionary-output">Dictionary output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../serialization.html#json-output">JSON output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../serialization.html#discovery-values">Discovery values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../serialization.html#border-paths">Border paths</a></li>
 </ul>
 </li>
 </ul>
@@ -146,7 +151,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-3-0-checkout">Source priority in the 0.3.0 checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-3-1-checkout">Source priority in the 0.3.1 checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -169,6 +174,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../api.html">API reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#profile-conventions">Profile conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#distance-input-contract">Distance input contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#profile-field-notes">Profile field notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../api.html#atlas">Atlas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Atlas"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code></a></li>
@@ -218,10 +224,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id4">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -298,6 +305,7 @@
     <span class="s2">&quot;alpha_2_codes&quot;</span><span class="p">,</span>
     <span class="s2">&quot;alpha_3_codes&quot;</span><span class="p">,</span>
     <span class="s2">&quot;areas&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;border_counts&quot;</span><span class="p">,</span>
     <span class="s2">&quot;calling_codes&quot;</span><span class="p">,</span>
     <span class="s2">&quot;capitals&quot;</span><span class="p">,</span>
     <span class="s2">&quot;continents&quot;</span><span class="p">,</span>
@@ -307,6 +315,7 @@
     <span class="s2">&quot;language_codes&quot;</span><span class="p">,</span>
     <span class="s2">&quot;local_names&quot;</span><span class="p">,</span>
     <span class="s2">&quot;m49_codes&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;neighbors&quot;</span><span class="p">,</span>
     <span class="s2">&quot;population_density&quot;</span><span class="p">,</span>
     <span class="s2">&quot;populations&quot;</span><span class="p">,</span>
     <span class="s2">&quot;regions&quot;</span><span class="p">,</span>
@@ -434,10 +443,10 @@
 
     <span class="k">def</span><span class="w"> </span><span class="nf">_border_country_id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">query</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Resolve a public country query for an internal graph operation.&quot;&quot;&quot;</span>
-        <span class="n">country</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
-        <span class="n">country_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_country_id</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">alpha2</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">country_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># pragma: no cover - guarded by the loaded profile</span>
-            <span class="k">raise</span> <span class="n">CountryNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No unambiguous country matches </span><span class="si">{</span><span class="n">query</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">country_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_country_id</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">country_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>  <span class="c1"># raises the public error with ranked suggestions</span>
+            <span class="k">raise</span> <span class="n">CountryNotFoundError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No unambiguous country matches </span><span class="si">{</span><span class="n">query</span><span class="si">!r}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># pragma: no cover</span>
         <span class="k">return</span> <span class="n">country_id</span>
 
 <div class="viewcode-block" id="Atlas.neighbors">
@@ -509,6 +518,20 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return the fewest land-border crossings, or ``None`` if unreachable.&quot;&quot;&quot;</span>
         <span class="n">path</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">border_path</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">destination</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">path</span><span class="o">.</span><span class="n">crossings</span> <span class="k">if</span> <span class="n">path</span> <span class="k">else</span> <span class="kc">None</span></div>
+
+
+<div class="viewcode-block" id="Atlas.has_land_route">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.has_land_route">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">has_land_route</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">origin</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">destination</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return whether ``origin`` and ``destination`` are land-connected.</span>
+
+<span class="sd">        This is derived at query time from the reviewed border graph; it does</span>
+<span class="sd">        not use road, rail, ferry, maritime, or travel-access data. Identical</span>
+<span class="sd">        endpoints return ``True`` because their shortest graph path has zero</span>
+<span class="sd">        border crossings. Unknown country queries raise</span>
+<span class="sd">        :class:`~pyworldatlas.CountryNotFoundError`.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">border_path</span><span class="p">(</span><span class="n">origin</span><span class="p">,</span> <span class="n">destination</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span></div>
 
 
 <div class="viewcode-block" id="Atlas.countries_reachable_by_land">
@@ -583,16 +606,18 @@
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return deterministic, immutable geography flashcards.</span>
 
 <span class="sd">        Supported topics are ``alpha_2_codes``, ``alpha_3_codes``, ``areas``,</span>
-<span class="sd">        ``calling_codes``, ``capitals``, ``continents``,</span>
+<span class="sd">        ``border_counts``, ``calling_codes``, ``capitals``, ``continents``,</span>
 <span class="sd">        ``countries_from_capitals``, ``currencies``, ``flags``,</span>
-<span class="sd">        ``language_codes``, ``local_names``, ``m49_codes``,</span>
+<span class="sd">        ``language_codes``, ``local_names``, ``m49_codes``, ``neighbors``,</span>
 <span class="sd">        ``population_density``, ``populations``, ``regions``, and</span>
 <span class="sd">        ``top_level_domains``. Countries missing the answer required by a topic</span>
 <span class="sd">        are excluded before sampling. An impossible count raises</span>
 <span class="sd">        :class:`ValueError` rather than silently returning fewer cards.</span>
 
 <span class="sd">        Population, area, and density answers describe the captured source</span>
-<span class="sd">        snapshot. Flashcards are structured values, not an interactive game.</span>
+<span class="sd">        snapshot. Neighbor and border-count answers are derived from the</span>
+<span class="sd">        reviewed land-border graph. Flashcards are structured values, not an</span>
+<span class="sd">        interactive game.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">_FLASHCARD_TOPICS</span><span class="p">:</span>
             <span class="n">allowed</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">_FLASHCARD_TOPICS</span><span class="p">)</span>
@@ -606,8 +631,7 @@
         <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_flashcard</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">topic</span><span class="p">)</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">selected</span><span class="p">)</span></div>
 
 
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_has_flashcard_answer</span><span class="p">(</span><span class="n">country</span><span class="p">:</span> <span class="n">Country</span><span class="p">,</span> <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_has_flashcard_answer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">country</span><span class="p">:</span> <span class="n">Country</span><span class="p">,</span> <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">&quot;capitals&quot;</span><span class="p">,</span> <span class="s2">&quot;countries_from_capitals&quot;</span><span class="p">}:</span>
             <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">capital</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;alpha_3_codes&quot;</span><span class="p">:</span>
@@ -628,6 +652,9 @@
             <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">local_names</span><span class="p">)</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;m49_codes&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">numeric</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+        <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;neighbors&quot;</span><span class="p">:</span>
+            <span class="n">country_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_country_id</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">alpha2</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">country_id</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">bool</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_border_adjacency</span><span class="p">()[</span><span class="n">country_id</span><span class="p">])</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;population_density&quot;</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">population_density</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;populations&quot;</span><span class="p">:</span>
@@ -638,8 +665,7 @@
             <span class="k">return</span> <span class="n">country</span><span class="o">.</span><span class="n">top_level_domain</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
         <span class="k">return</span> <span class="kc">True</span>
 
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span><span class="w"> </span><span class="nf">_flashcard</span><span class="p">(</span><span class="n">country</span><span class="p">:</span> <span class="n">Country</span><span class="p">,</span> <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Flashcard</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">_flashcard</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">country</span><span class="p">:</span> <span class="n">Country</span><span class="p">,</span> <span class="n">topic</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Flashcard</span><span class="p">:</span>
         <span class="n">reference</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">reference</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;capitals&quot;</span><span class="p">:</span>
             <span class="n">prompt</span><span class="p">,</span> <span class="n">answer</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;What is the capital of </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">?&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">.</span><span class="n">capital</span><span class="o">.</span><span class="n">name</span>
@@ -656,6 +682,12 @@
             <span class="n">prompt</span><span class="p">,</span> <span class="n">answer</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;What is the alpha-3 code for </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">?&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">.</span><span class="n">alpha3</span>
         <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;m49_codes&quot;</span><span class="p">:</span>
             <span class="n">prompt</span><span class="p">,</span> <span class="n">answer</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;What is the M49 code for </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">?&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">.</span><span class="n">codes</span><span class="o">.</span><span class="n">numeric</span>
+        <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;border_counts&quot;</span><span class="p">:</span>
+            <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;How many reviewed land neighbors does </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> have?&quot;</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">alpha2</span><span class="p">)))</span>
+        <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;neighbors&quot;</span><span class="p">:</span>
+            <span class="n">prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Which countries or areas share a reviewed land border with </span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">?&quot;</span>
+            <span class="n">answer</span> <span class="o">=</span> <span class="s2">&quot;, &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">neighbor</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">neighbor</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">neighbors</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">alpha2</span><span class="p">))</span>
         <span class="k">elif</span> <span class="n">topic</span> <span class="o">==</span> <span class="s2">&quot;currencies&quot;</span><span class="p">:</span>
             <span class="n">label</span> <span class="o">=</span> <span class="n">country</span><span class="o">.</span><span class="n">currency</span><span class="o">.</span><span class="n">name</span> <span class="ow">or</span> <span class="n">country</span><span class="o">.</span><span class="n">currency</span><span class="o">.</span><span class="n">code</span>
             <span class="n">answer</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">label</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="n">country</span><span class="o">.</span><span class="n">currency</span><span class="o">.</span><span class="n">code</span><span class="si">}</span><span class="s2">)&quot;</span> <span class="k">if</span> <span class="n">label</span> <span class="o">!=</span> <span class="n">country</span><span class="o">.</span><span class="n">currency</span><span class="o">.</span><span class="n">code</span> <span class="k">else</span> <span class="n">label</span>

@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PyWorldAtlas &mdash; PyWorldAtlas 0.3.0</title>
+  <title>PyWorldAtlas &mdash; PyWorldAtlas 0.3.1</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=e259d695"></script>
+      <script src="_static/documentation_options.js?v=4621528c"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -117,10 +117,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="borders.html">Land borders and paths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#api-at-a-glance">API at a glance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#neighbors">Neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#shared-neighbors">Shared neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#shortest-land-paths">Shortest land paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#land-connectivity">Land connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#connected-land-regions">Connected land regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#border-flashcards">Border flashcards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#where-each-value-comes-from">Where each value comes from</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#data-policy">Data policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#executable-example">Executable example</a></li>
 </ul>
@@ -136,6 +140,7 @@
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#dictionary-output">Dictionary output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#json-output">JSON output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#discovery-values">Discovery values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#border-paths">Border paths</a></li>
 </ul>
 </li>
 </ul>
@@ -148,7 +153,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-0-checkout">Source priority in the 0.3.0 checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-1-checkout">Source priority in the 0.3.1 checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -171,6 +176,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">API reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-conventions">Profile conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#distance-input-contract">Distance input contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-field-notes">Profile field notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#atlas">Atlas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Atlas"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code></a></li>
@@ -220,10 +226,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -257,11 +264,11 @@
 <p>PyWorldAtlas is a compact, source-aware world atlas for Python. It provides
 typed country, capital, and city records from one bundled SQLite database and
 works without an API key, runtime download, or third-party dependency.</p>
-<p><strong>Documented version:</strong> 0.3.0 | <strong>Dataset:</strong> 2026.07.21.1 | <strong>Python:</strong> 3.10–3.14 |
+<p><strong>Documented version:</strong> 0.3.1 | <strong>Dataset:</strong> 2026.07.21.1 | <strong>Python:</strong> 3.10–3.14 |
 <strong>Runtime dependencies:</strong> 0</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The 0.3.0 checkout contains 248 countries and areas, 241 capital records,
+<p>The 0.3.1 checkout contains 248 countries and areas, 241 capital records,
 6,265 populated-place records, and 319 reviewed land-border relationships.
 Official local names currently have pilot coverage for Brazil and Switzerland.</p>
 </div>
@@ -319,7 +326,8 @@ language codes, internet domain, observed timezones, and capital coordinates.</p
 <li><p>Flag emoji, calculated density, compact discovery cards, deterministic country
 sampling, and structured geography flashcards.</p></li>
 <li><p>Reviewed land neighbors, shared neighbors, shortest border paths, crossing
-counts, connected components, and borderless-entity discovery.</p></li>
+counts, reachability, connected components, borderless-entity discovery, and
+graph flashcards.</p></li>
 </ul>
 </section>
 <section id="current-coverage">

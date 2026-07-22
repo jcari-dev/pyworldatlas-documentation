@@ -23,6 +23,25 @@ Distance input contract
 ``Country`` objects. String inputs are exact bundled city names. A ``Country``
 input uses its primary-capital coordinates.
 
+Border API provenance
+---------------------
+
+The border API separates stored relationships from runtime calculations:
+
+- ``neighbors`` and ``shares_border`` read accepted edges from the generated
+  SQLite graph.
+- ``shared_neighbors`` intersects two stored neighbor sets.
+- ``border_path`` performs deterministic breadth-first search.
+- ``border_crossings`` reads the crossing count from that shortest path.
+- ``has_land_route`` tests reachability in the graph.
+- ``countries_reachable_by_land`` traverses a connected component.
+- ``BorderPathResult.names`` and ``alpha2_codes`` are derived from its immutable
+  ``CountryReference`` values.
+
+These methods do not use boundary geometry, maritime relationships, transport
+networks, or current border-access rules. The accepted-edge policy and source
+exceptions are documented in :doc:`borders` and :doc:`data_sources`.
+
 Profile field notes
 -------------------
 

@@ -135,13 +135,19 @@ Supported topics
      - Bundled geographic classification
    * - ``local_names``
      - Reviewed locally official short name
+   * - ``neighbors``
+     - Alphabetized names from the reviewed land-border graph
+   * - ``border_counts``
+     - Number of accepted land-border relationships
    * - ``populations`` / ``areas`` / ``population_density``
      - Captured snapshot value or transparent calculated ratio
 
 Countries missing the answer required by a topic are removed before sampling.
 If the requested count is impossible, the method raises ``ValueError`` rather
 than returning an incomplete lesson. Local-name flashcards currently draw only
-from the reviewed Brazil and Switzerland pilot.
+from the reviewed Brazil and Switzerland pilot. Neighbor cards exclude
+borderless entities, while border-count cards include them with an answer of
+``0``.
 
 .. doctest::
 
@@ -157,7 +163,8 @@ alpha-2 codes; density is a documented ratio; cards copy profile fields; and
 sampling and flashcards rearrange existing values. Population and area answers
 remain snapshots, observed timezones remain limited to bundled places, and
 language answers are source codes unless a reviewed local-name record supplies
-a language display name.
+a language display name. Border flashcards are derived from the reviewed graph;
+they introduce no additional adjacency claims.
 
 Executable example
 ------------------

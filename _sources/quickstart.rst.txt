@@ -60,7 +60,7 @@ Library, schema, and data versions change independently:
 
    >>> info = atlas.dataset_info()
    >>> (info.library_version, info.schema_version, info.dataset_version)
-   ('0.3.0', 3, '2026.07.21.1')
+   ('0.3.1', 3, '2026.07.21.1')
    >>> atlas.close()
 
 Read profile metadata
@@ -121,8 +121,12 @@ Explore land connections
    ...     print([country.name for country in atlas.neighbors("Brazil")])
    ...     path = atlas.border_path("Portugal", "China")
    ...     print(path.crossings)
+   ...     print(path.alpha2_codes)
+   ...     print(atlas.has_land_route("Japan", "China"))
    ['Argentina', 'Bolivia', 'Colombia', 'French Guiana', 'Guyana', 'Paraguay', 'Peru', 'Suriname', 'Uruguay', 'Venezuela']
    6
+   ('PT', 'ES', 'FR', 'DE', 'PL', 'RU', 'CN')
+   False
 
 Executable example
 ------------------

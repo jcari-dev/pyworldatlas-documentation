@@ -1,6 +1,17 @@
 Changelog
 =========
 
+0.3.1 — 2026-07-21
+------------------
+
+- Added :meth:`~pyworldatlas.Atlas.has_land_route` for explicit land-graph
+  reachability checks.
+- Added ``names`` and ``alpha2_codes`` conveniences to
+  :class:`~pyworldatlas.BorderPathResult`.
+- Added deterministic ``neighbors`` and ``border_counts`` flashcard topics.
+- Expanded the border, discovery, API, serialization, and source guides with
+  provenance, return-value, connectivity, and edge-case explanations.
+
 0.3.0 — 2026-07-21
 ------------------
 

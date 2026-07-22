@@ -47,3 +47,20 @@ conveniences:
    'JP'
    >>> json.loads(flashcard.to_json())["answer"]
    'Kuwait City'
+
+Border paths
+------------
+
+``BorderPathResult`` serializes compact country references rather than full
+country profiles. This keeps a path payload small and detached from SQLite:
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     path = atlas.border_path("Portugal", "China")
+   >>> path.names
+   ('Portugal', 'Spain', 'France', 'Germany', 'Poland', 'Russia', 'China')
+   >>> path.to_dict()["countries"][0]
+   {'name': 'Portugal', 'alpha2': 'PT', 'alpha3': 'PRT', 'numeric': '620'}
+   >>> json.loads(path.to_json())["crossings"]
+   6

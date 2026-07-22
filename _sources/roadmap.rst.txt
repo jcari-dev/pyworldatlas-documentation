@@ -23,6 +23,10 @@ documentation update.
    * - 0.3.0
      - Complete
      - 319 reviewed land borders, neighbors, shared neighbors, paths, connected components
+     - Published
+   * - 0.3.1
+     - Complete
+     - Reachability, path conveniences, graph flashcards, expanded API guidance
      - Release candidate
    * - 0.4.0
      - Planned
@@ -65,7 +69,9 @@ midpoint calculations. It also retains the verified Brazil/Switzerland UNGEGN
 local-name pilot and adds flag emoji, calculated density, discovery cards,
 stable sampling, and structured flashcards.
 
-Version 0.3.0 adds a reviewed land-border graph, neighbor and shared-neighbor
+Version 0.3.0 added a reviewed land-border graph, neighbor and shared-neighbor
 queries, deterministic shortest paths, crossing counts, connected land regions,
-and borderless-entity discovery. Boundary geometry, border lengths,
-point-in-country lookup, and GeoJSON remain reserved for 0.4.0.
+and borderless-entity discovery. Version 0.3.1 adds explicit reachability,
+path-name and alpha-2-code conveniences, graph-derived flashcards, and expanded
+API provenance guidance. Boundary geometry, border lengths, point-in-country
+lookup, and GeoJSON remain reserved for 0.4.0.

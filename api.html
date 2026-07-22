@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API reference &mdash; PyWorldAtlas 0.3.0</title>
+  <title>API reference &mdash; PyWorldAtlas 0.3.1</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=e259d695"></script>
+      <script src="_static/documentation_options.js?v=4621528c"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -118,10 +118,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="borders.html">Land borders and paths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#api-at-a-glance">API at a glance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#neighbors">Neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#shared-neighbors">Shared neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#shortest-land-paths">Shortest land paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#land-connectivity">Land connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#connected-land-regions">Connected land regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#border-flashcards">Border flashcards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#where-each-value-comes-from">Where each value comes from</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#data-policy">Data policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#executable-example">Executable example</a></li>
 </ul>
@@ -137,6 +141,7 @@
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#dictionary-output">Dictionary output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#json-output">JSON output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#discovery-values">Discovery values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#border-paths">Border paths</a></li>
 </ul>
 </li>
 </ul>
@@ -149,7 +154,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-0-checkout">Source priority in the 0.3.0 checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-1-checkout">Source priority in the 0.3.1 checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -172,6 +177,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#profile-conventions">Profile conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#distance-input-contract">Distance input contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#profile-field-notes">Profile field notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#atlas">Atlas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.Atlas"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code></a></li>
@@ -221,10 +227,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -275,6 +282,24 @@ not a field-by-field provenance map.</p></li>
 <code class="docutils literal notranslate"><span class="pre">(latitude,</span> <span class="pre">longitude)</span></code> tuples, <code class="docutils literal notranslate"><span class="pre">City</span></code> objects, <code class="docutils literal notranslate"><span class="pre">Capital</span></code> objects, and
 <code class="docutils literal notranslate"><span class="pre">Country</span></code> objects. String inputs are exact bundled city names. A <code class="docutils literal notranslate"><span class="pre">Country</span></code>
 input uses its primary-capital coordinates.</p>
+</section>
+<section id="border-api-provenance">
+<h2>Border API provenance<a class="headerlink" href="#border-api-provenance" title="Link to this heading"></a></h2>
+<p>The border API separates stored relationships from runtime calculations:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">neighbors</span></code> and <code class="docutils literal notranslate"><span class="pre">shares_border</span></code> read accepted edges from the generated
+SQLite graph.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">shared_neighbors</span></code> intersects two stored neighbor sets.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border_path</span></code> performs deterministic breadth-first search.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">border_crossings</span></code> reads the crossing count from that shortest path.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">has_land_route</span></code> tests reachability in the graph.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">countries_reachable_by_land</span></code> traverses a connected component.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BorderPathResult.names</span></code> and <code class="docutils literal notranslate"><span class="pre">alpha2_codes</span></code> are derived from its immutable
+<code class="docutils literal notranslate"><span class="pre">CountryReference</span></code> values.</p></li>
+</ul>
+<p>These methods do not use boundary geometry, maritime relationships, transport
+networks, or current border-access rules. The accepted-edge policy and source
+exceptions are documented in <a class="reference internal" href="borders.html"><span class="doc">Land borders and paths</span></a> and <a class="reference internal" href="data_sources.html"><span class="doc">Data sources and freshness</span></a>.</p>
 </section>
 <section id="profile-field-notes">
 <h2>Profile field notes<a class="headerlink" href="#profile-field-notes" title="Link to this heading"></a></h2>
@@ -391,6 +416,17 @@ through accepted land-border relationships; it is not an error.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.has_land_route">
+<span class="sig-name descname"><span class="pre">has_land_route</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">destination</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.has_land_route"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.has_land_route" title="Link to this definition"></a></dt>
+<dd><p>Return whether <code class="docutils literal notranslate"><span class="pre">origin</span></code> and <code class="docutils literal notranslate"><span class="pre">destination</span></code> are land-connected.</p>
+<p>This is derived at query time from the reviewed border graph; it does
+not use road, rail, ferry, maritime, or travel-access data. Identical
+endpoints return <code class="docutils literal notranslate"><span class="pre">True</span></code> because their shortest graph path has zero
+border crossings. Unknown country queries raise
+<a class="reference internal" href="#pyworldatlas.CountryNotFoundError" title="pyworldatlas.CountryNotFoundError"><code class="xref py py-class docutils literal notranslate"><span class="pre">CountryNotFoundError</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyworldatlas.Atlas.countries_reachable_by_land">
 <span class="sig-name descname"><span class="pre">countries_reachable_by_land</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pyworldatlas.Country" title="pyworldatlas.models.Country"><span class="pre">Country</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.countries_reachable_by_land"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.countries_reachable_by_land" title="Link to this definition"></a></dt>
 <dd><p>Return every other entity in <code class="docutils literal notranslate"><span class="pre">country</span></code>’s land-connected component.</p>
@@ -422,15 +458,17 @@ same ordered result across supported Python versions.</p>
 <span class="sig-name descname"><span class="pre">flashcards</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">continent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">region</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pyworldatlas.Flashcard" title="pyworldatlas.models.Flashcard"><span class="pre">Flashcard</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.flashcards"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.flashcards" title="Link to this definition"></a></dt>
 <dd><p>Return deterministic, immutable geography flashcards.</p>
 <p>Supported topics are <code class="docutils literal notranslate"><span class="pre">alpha_2_codes</span></code>, <code class="docutils literal notranslate"><span class="pre">alpha_3_codes</span></code>, <code class="docutils literal notranslate"><span class="pre">areas</span></code>,
-<code class="docutils literal notranslate"><span class="pre">calling_codes</span></code>, <code class="docutils literal notranslate"><span class="pre">capitals</span></code>, <code class="docutils literal notranslate"><span class="pre">continents</span></code>,
+<code class="docutils literal notranslate"><span class="pre">border_counts</span></code>, <code class="docutils literal notranslate"><span class="pre">calling_codes</span></code>, <code class="docutils literal notranslate"><span class="pre">capitals</span></code>, <code class="docutils literal notranslate"><span class="pre">continents</span></code>,
 <code class="docutils literal notranslate"><span class="pre">countries_from_capitals</span></code>, <code class="docutils literal notranslate"><span class="pre">currencies</span></code>, <code class="docutils literal notranslate"><span class="pre">flags</span></code>,
-<code class="docutils literal notranslate"><span class="pre">language_codes</span></code>, <code class="docutils literal notranslate"><span class="pre">local_names</span></code>, <code class="docutils literal notranslate"><span class="pre">m49_codes</span></code>,
+<code class="docutils literal notranslate"><span class="pre">language_codes</span></code>, <code class="docutils literal notranslate"><span class="pre">local_names</span></code>, <code class="docutils literal notranslate"><span class="pre">m49_codes</span></code>, <code class="docutils literal notranslate"><span class="pre">neighbors</span></code>,
 <code class="docutils literal notranslate"><span class="pre">population_density</span></code>, <code class="docutils literal notranslate"><span class="pre">populations</span></code>, <code class="docutils literal notranslate"><span class="pre">regions</span></code>, and
 <code class="docutils literal notranslate"><span class="pre">top_level_domains</span></code>. Countries missing the answer required by a topic
 are excluded before sampling. An impossible count raises
 <code class="xref py py-class docutils literal notranslate"><span class="pre">ValueError</span></code> rather than silently returning fewer cards.</p>
 <p>Population, area, and density answers describe the captured source
-snapshot. Flashcards are structured values, not an interactive game.</p>
+snapshot. Neighbor and border-count answers are derived from the
+reviewed land-border graph. Flashcards are structured values, not an
+interactive game.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -752,6 +790,18 @@ closes.</p>
 <dt class="sig sig-object py" id="pyworldatlas.BorderPathResult.destination">
 <em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">destination</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.CountryReference" title="pyworldatlas.models.CountryReference"><span class="pre">CountryReference</span></a></em><a class="headerlink" href="#pyworldatlas.BorderPathResult.destination" title="Link to this definition"></a></dt>
 <dd><p>Return the last country in the path.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyworldatlas.BorderPathResult.names">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">names</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pyworldatlas.BorderPathResult.names" title="Link to this definition"></a></dt>
+<dd><p>Return country display names in path order.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyworldatlas.BorderPathResult.alpha2_codes">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">alpha2_codes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pyworldatlas.BorderPathResult.alpha2_codes" title="Link to this definition"></a></dt>
+<dd><p>Return alpha-2 country codes in path order.</p>
 </dd></dl>
 
 <dl class="py method">

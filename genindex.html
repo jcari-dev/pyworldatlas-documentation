@@ -5,14 +5,14 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Index &mdash; PyWorldAtlas 0.3.0</title>
+  <title>Index &mdash; PyWorldAtlas 0.3.1</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=e259d695"></script>
+      <script src="_static/documentation_options.js?v=4621528c"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -115,10 +115,14 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="borders.html">Land borders and paths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#api-at-a-glance">API at a glance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#neighbors">Neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#shared-neighbors">Shared neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#shortest-land-paths">Shortest land paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#land-connectivity">Land connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#connected-land-regions">Connected land regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#border-flashcards">Border flashcards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="borders.html#where-each-value-comes-from">Where each value comes from</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#data-policy">Data policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="borders.html#executable-example">Executable example</a></li>
 </ul>
@@ -134,6 +138,7 @@
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#dictionary-output">Dictionary output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#json-output">JSON output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#discovery-values">Discovery values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#border-paths">Border paths</a></li>
 </ul>
 </li>
 </ul>
@@ -146,7 +151,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-0-checkout">Source priority in the 0.3.0 checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-1-checkout">Source priority in the 0.3.1 checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -169,6 +174,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">API reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-conventions">Profile conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#distance-input-contract">Distance input contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-field-notes">Profile field notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#atlas">Atlas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Atlas"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code></a></li>
@@ -218,10 +224,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -259,6 +266,7 @@
  | <a href="#D"><strong>D</strong></a>
  | <a href="#F"><strong>F</strong></a>
  | <a href="#G"><strong>G</strong></a>
+ | <a href="#H"><strong>H</strong></a>
  | <a href="#L"><strong>L</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
@@ -274,16 +282,18 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="api.html#pyworldatlas.Country.alpha2">alpha2 (pyworldatlas.Country property)</a>
 </li>
+      <li><a href="api.html#pyworldatlas.BorderPathResult.alpha2_codes">alpha2_codes (pyworldatlas.BorderPathResult property)</a>
+</li>
       <li><a href="api.html#pyworldatlas.Country.alpha3">alpha3 (pyworldatlas.Country property)</a>
 </li>
       <li><a href="api.html#pyworldatlas.AmbiguousCountryError">AmbiguousCountryError</a>
 </li>
       <li><a href="api.html#pyworldatlas.AmbiguousPlaceError">AmbiguousPlaceError</a>
 </li>
-      <li><a href="api.html#pyworldatlas.Area">Area (class in pyworldatlas)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.Area">Area (class in pyworldatlas)</a>
+</li>
       <li><a href="api.html#pyworldatlas.Country.area_km2">area_km2 (pyworldatlas.Country property)</a>
 </li>
       <li><a href="api.html#pyworldatlas.Coordinate.as_tuple">as_tuple() (pyworldatlas.Coordinate method)</a>
@@ -421,6 +431,14 @@
   </ul></td>
 </tr></table>
 
+<h2 id="H">H</h2>
+<table style="width: 100%" class="indextable genindextable"><tr>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.Atlas.has_land_route">has_land_route() (pyworldatlas.Atlas method)</a>
+</li>
+  </ul></td>
+</tr></table>
+
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
@@ -456,6 +474,8 @@
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="api.html#pyworldatlas.BorderPathResult.names">names (pyworldatlas.BorderPathResult property)</a>
+</li>
       <li><a href="api.html#pyworldatlas.Atlas.neighbors">neighbors() (pyworldatlas.Atlas method)</a>
 </li>
   </ul></td>

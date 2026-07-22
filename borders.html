@@ -6,14 +6,14 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Land borders and paths &mdash; PyWorldAtlas 0.3.0</title>
+  <title>Land borders and paths &mdash; PyWorldAtlas 0.3.1</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=e259d695"></script>
+      <script src="_static/documentation_options.js?v=4621528c"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/js/theme.js"></script>
@@ -118,10 +118,14 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Land borders and paths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#api-at-a-glance">API at a glance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#neighbors">Neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#shared-neighbors">Shared neighbors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#shortest-land-paths">Shortest land paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#land-connectivity">Land connectivity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#connected-land-regions">Connected land regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#border-flashcards">Border flashcards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#where-each-value-comes-from">Where each value comes from</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#data-policy">Data policy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#executable-example">Executable example</a></li>
 </ul>
@@ -137,6 +141,7 @@
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#dictionary-output">Dictionary output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#json-output">JSON output</a></li>
 <li class="toctree-l2"><a class="reference internal" href="serialization.html#discovery-values">Discovery values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="serialization.html#border-paths">Border paths</a></li>
 </ul>
 </li>
 </ul>
@@ -149,7 +154,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-0-checkout">Source priority in the 0.3.0 checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-3-1-checkout">Source priority in the 0.3.1 checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -172,6 +177,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">API reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-conventions">Profile conventions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#distance-input-contract">Distance input contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-field-notes">Profile field notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#atlas">Atlas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Atlas"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code></a></li>
@@ -221,10 +227,11 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.3.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.3.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.2.1 — 2026-07-21</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.1.0 — 2026-07-20</a></li>
 </ul>
 </li>
 </ul>
@@ -259,6 +266,56 @@
 relationships. It supports immediate neighbors, shared neighbors, shortest
 paths, connected land regions, and countries or areas with no accepted land
 border. Every operation works from the bundled SQLite database.</p>
+<section id="api-at-a-glance">
+<h2>API at a glance<a class="headerlink" href="#api-at-a-glance" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34.0%" />
+<col style="width: 28.0%" />
+<col style="width: 38.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Call</p></th>
+<th class="head"><p>Returns</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">neighbors(country)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tuple[Country,</span> <span class="pre">...]</span></code></p></td>
+<td><p>Immediate reviewed land neighbors</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">shares_border(first,</span> <span class="pre">second)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Whether one accepted edge joins the entities</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">shared_neighbors(first,</span> <span class="pre">second)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tuple[Country,</span> <span class="pre">...]</span></code></p></td>
+<td><p>Intersection of both neighbor sets</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">border_path(origin,</span> <span class="pre">destination)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">BorderPathResult</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
+<td><p>Deterministic shortest graph path</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">border_crossings(origin,</span> <span class="pre">destination)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span></code></p></td>
+<td><p>Minimum number of accepted edges crossed</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">has_land_route(origin,</span> <span class="pre">destination)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bool</span></code></p></td>
+<td><p>Whether both entities share a graph component</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">countries_reachable_by_land(country)</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tuple[Country,</span> <span class="pre">...]</span></code></p></td>
+<td><p>Other entities in the same component</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">countries_with_no_land_borders()</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">tuple[Country,</span> <span class="pre">...]</span></code></p></td>
+<td><p>Entities with no accepted edge</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 <section id="neighbors">
 <h2>Neighbors<a class="headerlink" href="#neighbors" title="Link to this heading"></a></h2>
 <p>Country lookup follows the same name-and-code rules as the rest of the API.
@@ -302,6 +359,13 @@ order makes equal-length choices deterministic.</p>
 <span class="go">Portugal -&gt; Spain -&gt; France -&gt; Germany -&gt; Poland -&gt; Russia -&gt; China</span>
 </pre></div>
 </div>
+<p>Convenience properties avoid repeatedly unpacking the country references:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">path</span><span class="o">.</span><span class="n">names</span>
+<span class="go">(&#39;Portugal&#39;, &#39;Spain&#39;, &#39;France&#39;, &#39;Germany&#39;, &#39;Poland&#39;, &#39;Russia&#39;, &#39;China&#39;)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">path</span><span class="o">.</span><span class="n">alpha2_codes</span>
+<span class="go">(&#39;PT&#39;, &#39;ES&#39;, &#39;FR&#39;, &#39;DE&#39;, &#39;PL&#39;, &#39;RU&#39;, &#39;CN&#39;)</span>
+</pre></div>
+</div>
 <p>The result is detached from the database and serializable. If no land route
 exists, <code class="docutils literal notranslate"><span class="pre">border_path</span></code> and <code class="docutils literal notranslate"><span class="pre">border_crossings</span></code> return <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
@@ -309,6 +373,22 @@ exists, <code class="docutils literal notranslate"><span class="pre">border_path
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">border_crossings</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">))</span>
 <span class="go">None</span>
 <span class="go">None</span>
+</pre></div>
+</div>
+</section>
+<section id="land-connectivity">
+<h2>Land connectivity<a class="headerlink" href="#land-connectivity" title="Link to this heading"></a></h2>
+<p><a class="reference internal" href="api.html#pyworldatlas.Atlas.has_land_route" title="pyworldatlas.Atlas.has_land_route"><code class="xref py py-meth docutils literal notranslate"><span class="pre">has_land_route()</span></code></a> is a reachability test over the same
+reviewed graph. It does not describe roads, border controls, ferries, visas, or
+whether travel is possible. Identical endpoints return <code class="docutils literal notranslate"><span class="pre">True</span></code> because the
+shortest graph path contains zero crossings.</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">has_land_route</span><span class="p">(</span><span class="s2">&quot;Portugal&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">has_land_route</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">has_land_route</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span> <span class="s2">&quot;Japan&quot;</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="go">False</span>
+<span class="go">True</span>
 </pre></div>
 </div>
 </section>
@@ -320,6 +400,37 @@ other borderless entity returns an empty tuple.</p>
 <p><code class="docutils literal notranslate"><span class="pre">countries_with_no_land_borders()</span></code> returns all 85 entities that have no edge
 in the reviewed graph. This classification follows the package entity scope and
 border policy; it is not a general definition of an island country.</p>
+</section>
+<section id="border-flashcards">
+<h2>Border flashcards<a class="headerlink" href="#border-flashcards" title="Link to this heading"></a></h2>
+<p>The deterministic flashcard API supports two graph topics:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">neighbor_card</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">flashcards</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="s2">&quot;neighbors&quot;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="n">count_card</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">flashcards</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="s2">&quot;border_counts&quot;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">neighbor_card</span><span class="o">.</span><span class="n">prompt</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">neighbor_card</span><span class="o">.</span><span class="n">answer</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">count_card</span><span class="o">.</span><span class="n">prompt</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">count_card</span><span class="o">.</span><span class="n">answer</span><span class="p">)</span>
+<span class="go">Which countries or areas share a reviewed land border with Kuwait?</span>
+<span class="go">Iraq, Saudi Arabia</span>
+<span class="go">How many reviewed land neighbors does Kuwait have?</span>
+<span class="go">2</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">neighbors</span></code> cards exclude entities with no accepted land neighbor because
+they would have no answer. <code class="docutils literal notranslate"><span class="pre">border_counts</span></code> cards include them and use <code class="docutils literal notranslate"><span class="pre">0</span></code>.
+Both topics inherit the stable seed-based sampling contract.</p>
+</section>
+<section id="where-each-value-comes-from">
+<h2>Where each value comes from<a class="headerlink" href="#where-each-value-comes-from" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">neighbors</span></code> and <code class="docutils literal notranslate"><span class="pre">shares_border</span></code> read the accepted relationships stored in
+the generated SQLite database. <code class="docutils literal notranslate"><span class="pre">shared_neighbors</span></code> is a set intersection;
+<code class="docutils literal notranslate"><span class="pre">border_path</span></code> is breadth-first search; <code class="docutils literal notranslate"><span class="pre">border_crossings</span></code> is the path edge
+count; <code class="docutils literal notranslate"><span class="pre">has_land_route</span></code> is graph reachability; and connected-component and
+flashcard results are calculated from the same graph at runtime.</p>
+<p>Country names and codes placed in results come from the ordinary country
+profiles. They are not copied from Natural Earth labels. Source records and the
+review policy are described below and in <a class="reference internal" href="data_sources.html"><span class="doc">Data sources and freshness</span></a>.</p>
 </section>
 <section id="data-policy">
 <h2>Data policy<a class="headerlink" href="#data-policy" title="Link to this heading"></a></h2>
@@ -346,10 +457,16 @@ route planning are outside this release.</p>
 <span class="linenos"> 9</span>
 <span class="linenos">10</span>    <span class="n">path</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">border_path</span><span class="p">(</span><span class="s2">&quot;Portugal&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">)</span>
 <span class="linenos">11</span>    <span class="k">if</span> <span class="n">path</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-<span class="linenos">12</span>        <span class="n">route</span> <span class="o">=</span> <span class="s2">&quot; -&gt; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">country</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">country</span> <span class="ow">in</span> <span class="n">path</span><span class="o">.</span><span class="n">countries</span><span class="p">)</span>
+<span class="linenos">12</span>        <span class="n">route</span> <span class="o">=</span> <span class="s2">&quot; -&gt; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">names</span><span class="p">)</span>
 <span class="linenos">13</span>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">path</span><span class="o">.</span><span class="n">crossings</span><span class="si">}</span><span class="s2"> crossings: </span><span class="si">{</span><span class="n">route</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="linenos">14</span>
-<span class="linenos">15</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Japan to China by land:&quot;</span><span class="p">,</span> <span class="n">atlas</span><span class="o">.</span><span class="n">border_path</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">))</span>
+<span class="linenos">14</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Codes:&quot;</span><span class="p">,</span> <span class="s2">&quot; -&gt; &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">path</span><span class="o">.</span><span class="n">alpha2_codes</span><span class="p">))</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Japan to China by land:&quot;</span><span class="p">,</span> <span class="n">atlas</span><span class="o">.</span><span class="n">border_path</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">))</span>
+<span class="linenos">17</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Portugal and China are land-connected:&quot;</span><span class="p">,</span> <span class="n">atlas</span><span class="o">.</span><span class="n">has_land_route</span><span class="p">(</span><span class="s2">&quot;Portugal&quot;</span><span class="p">,</span> <span class="s2">&quot;China&quot;</span><span class="p">))</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span>    <span class="n">card</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">flashcards</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="s2">&quot;neighbors&quot;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="linenos">20</span>    <span class="nb">print</span><span class="p">(</span><span class="n">card</span><span class="o">.</span><span class="n">prompt</span><span class="p">)</span>
+<span class="linenos">21</span>    <span class="nb">print</span><span class="p">(</span><span class="n">card</span><span class="o">.</span><span class="n">answer</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

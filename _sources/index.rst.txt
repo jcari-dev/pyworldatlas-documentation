@@ -5,12 +5,12 @@ PyWorldAtlas is a compact, source-aware world atlas for Python. It provides
 typed country, capital, and city records from one bundled SQLite database and
 works without an API key, runtime download, or third-party dependency.
 
-**Documented version:** 0.3.0 | **Dataset:** 2026.07.21.1 | **Python:** 3.10–3.14 |
+**Documented version:** 0.3.1 | **Dataset:** 2026.07.21.1 | **Python:** 3.10–3.14 |
 **Runtime dependencies:** 0
 
 .. note::
 
-   The 0.3.0 checkout contains 248 countries and areas, 241 capital records,
+   The 0.3.1 checkout contains 248 countries and areas, 241 capital records,
    6,265 populated-place records, and 319 reviewed land-border relationships.
    Official local names currently have pilot coverage for Brazil and Switzerland.
 
@@ -71,7 +71,8 @@ What works in this checkout
 - Flag emoji, calculated density, compact discovery cards, deterministic country
   sampling, and structured geography flashcards.
 - Reviewed land neighbors, shared neighbors, shortest border paths, crossing
-  counts, connected components, and borderless-entity discovery.
+  counts, reachability, connected components, borderless-entity discovery, and
+  graph flashcards.
 
 Current coverage
 ----------------
