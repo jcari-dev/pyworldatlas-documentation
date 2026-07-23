@@ -22,12 +22,37 @@
   const libraryVersion = root.querySelector('[data-role="library-version"]');
   const datasetVersion = root.querySelector('[data-role="dataset-version"]');
   const editorHint = root.querySelector('[data-role="editor-hint"]');
+  const filename = root.querySelector('[data-role="filename"]');
 
   const presets = [
     {
+      category: "Meet the world",
+      id: "world-snapshot",
+      label: "World snapshot",
+      description: "Summarize the complete bundled atlas",
+      code: `from collections import Counter
+from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    info = atlas.dataset_info()
+    continents = Counter(
+        country.continent or "Other"
+        for country in atlas
+    )
+
+    print("PYWORLDATLAS — WORLD SNAPSHOT")
+    print(f"Dataset:         {info.dataset_version}")
+    print(f"Profiles:        {len(atlas):,}")
+    print(f"Populated places:{sum(c.major_city_count for c in atlas):>7,}")
+    print("\\nProfiles by continent:")
+    for continent, count in sorted(continents.items()):
+        print(f"  {continent:<12} {count:>3}")`,
+    },
+    {
+      category: "Meet the world",
       id: "postcard",
-      label: "Country postcard",
-      description: "Names, culture, and physical geography",
+      label: "Country dossier",
+      description: "A rich, readable profile in one query",
       code: `from pyworldatlas import Atlas
 
 with Atlas() as atlas:
@@ -42,9 +67,60 @@ with Atlas() as atlas:
     print(f"Major rivers:  {', '.join(river.name for river in country.rivers[:3])}")`,
     },
     {
+      category: "Meet the world",
+      id: "compare",
+      label: "Compare countries",
+      description: "Build a compact comparison table",
+      code: `from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    countries = [
+        atlas.country(name)
+        for name in ("Brazil", "Japan", "Switzerland", "Dominican Republic")
+    ]
+
+    print(f"{'COUNTRY':<22} {'CAPITAL':<17} {'AREA KM²':>12} {'COAST KM':>10}  CLIMATE")
+    print("─" * 83)
+    for country in countries:
+        climate = country.climate.dominant_zone
+        coast = country.coastline_km
+        print(
+            f"{country.flag} {country.name:<19} "
+            f"{country.capital.name:<17} "
+            f"{country.area_km2:>12,.0f} "
+            f"{coast if coast is not None else 0:>10,.0f}  "
+            f"{climate.code if climate else '—'}"
+        )`,
+    },
+    {
+      category: "Meet the world",
+      id: "names",
+      label: "Names and scripts",
+      description: "Original writing systems with provenance",
+      code: `from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    for query, language in [
+        ("Dominican Republic", "es"),
+        ("China", "zh"),
+        ("India", "hi"),
+        ("Japan", "ja"),
+    ]:
+        country = atlas.country(query)
+        local = country.local_name(language)
+        print(f"{country.flag} {country.name}")
+        print(f"  Local:     {local.short_name}")
+        print(f"  Formal:    {local.formal_name or 'not supplied by this source'}")
+        print(f"  Romanized: {local.romanized_short_name or 'not supplied by this source'}")
+        print(f"  Script:    {local.script_code}")
+        print(f"  Source:    {local.source.name}")
+        print()`,
+    },
+    {
+      category: "Measure and connect",
       id: "distance",
-      label: "Distance lab",
-      description: "Coordinates and nearest capitals",
+      label: "Distance toolkit",
+      description: "Distance, bearing, and midpoint",
       code: `from pyworldatlas import Atlas
 
 with Atlas() as atlas:
@@ -53,14 +129,33 @@ with Atlas() as atlas:
 
     print(f"Tokyo → Paris: {tokyo.distance_to(paris):,.0f} km")
     print(f"Initial bearing: {tokyo.bearing_to(paris):.1f}°")
-    print("\\nNearest capitals to Tokyo:")
-    for place in atlas.nearest_capitals("Tokyo", country="JP", limit=5):
-        print(f"  {place.capital.name:<14} {place.distance:>7,.0f} km  ({place.country.name})")`,
+    midpoint = tokyo.midpoint_to(paris)
+    print(f"Great-circle midpoint: {midpoint.latitude:.3f}, {midpoint.longitude:.3f}")
+    print(f"Same distance in miles: {tokyo.distance_to(paris, unit='mi'):,.0f} mi")`,
     },
     {
+      category: "Measure and connect",
+      id: "capital-radar",
+      label: "Capital radar",
+      description: "Find the nearest national capitals",
+      code: `from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    origin = atlas.city("Santo Domingo", country="DO")
+    nearby = atlas.nearest_capitals(origin, limit=8)
+
+    print(f"NEAREST CAPITALS TO {origin.name.upper()}")
+    for number, place in enumerate(nearby, 1):
+        print(
+            f"{number:>2}. {place.capital.name:<18} "
+            f"{place.distance:>8,.0f} km  {place.country.name}"
+        )`,
+    },
+    {
+      category: "Measure and connect",
       id: "land-path",
-      label: "Land-path explorer",
-      description: "Traverse the reviewed border graph",
+      label: "Land-route explorer",
+      description: "Traverse reviewed border relationships",
       code: `from pyworldatlas import Atlas
 
 with Atlas() as atlas:
@@ -73,48 +168,119 @@ with Atlas() as atlas:
     print(", ".join(country.name for country in france))`,
     },
     {
-      id: "rankings",
-      label: "Rank and filter",
-      description: "Compare complete sourced layers",
+      category: "Measure and connect",
+      id: "shared-waters",
+      label: "Shared waters",
+      description: "Follow rivers and lakes across profiles",
       code: `from pyworldatlas import Atlas
 
 with Atlas() as atlas:
-    print("Longest sourced coastlines:")
-    for row in atlas.rank("coastline", limit=5):
-        print(f"  {row.position}. {row.country.name:<18} {row.value:>10,.0f} {row.unit}")
+    amazon = atlas.countries_with_river("Amazon")
+    geneva = atlas.countries_with_lake("Geneva")
 
-    landlocked = atlas.countries(continent="Europe", coastal=False)
-    print(f"\\nEuropean profiles with a sourced coastline of zero: {len(landlocked)}")
-    print(", ".join(country.name for country in landlocked))
+    print("Countries linked to the source-listed Amazon:")
+    print("  " + " → ".join(country.name for country in amazon))
+    print("\\nCountries linked to source-listed Lake Geneva:")
+    print("  " + " ↔ ".join(country.name for country in geneva))
+
+    brazil = atlas.country("Brazil")
+    print("\\nBrazil's source-listed major rivers:")
+    for river in brazil.rivers:
+        length = f"{river.length_km:,.0f} km" if river.length_km else "length not listed"
+        print(f"  {river.name:<28} {length}")`,
+    },
+    {
+      category: "Analyze the atlas",
+      id: "rankings",
+      label: "Leaderboard",
+      description: "Compare several sourced metrics",
+      code: `from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    for metric, title in [
+        ("area", "Largest area"),
+        ("population", "Largest population snapshot"),
+        ("coastline", "Longest sourced coastline"),
+        ("highest_elevation", "Highest national point"),
+    ]:
+        print(f"\\n{title.upper()}")
+        for row in atlas.rank(metric, limit=3):
+            print(
+                f"  {row.position}. {row.country.name:<20} "
+                f"{row.value:>13,.0f} {row.unit}"
+            )`,
+    },
+    {
+      category: "Analyze the atlas",
+      id: "climate",
+      label: "Climate breakdown",
+      description: "Inspect represented Köppen–Geiger classes",
+      code: `from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    country = atlas.country("Japan")
+    print(f"{country.flag} {country.name.upper()} — CLIMATE PROFILE")
+    print(country.climate.summary)
+    print(f"Reference period: {country.climate.reference_period}\\n")
+
+    for zone in country.climate.koppen_geiger_zones:
+        bar = "█" * max(1, round(zone.share_percent / 4))
+        print(f"{zone.code:<3} {zone.share_percent:>5.1f}% {bar}  {zone.name}")
 
     cfb = atlas.countries(koppen_geiger_code="Cfb")
-    print(f"\\nProfiles representing Köppen–Geiger Cfb: {len(cfb)}")`,
+    print(f"\\nCfb is represented in {len(cfb)} country and area profiles.")`,
     },
     {
-      id: "names",
-      label: "Names and sources",
-      description: "Original scripts with provenance",
+      category: "Analyze the atlas",
+      id: "cities",
+      label: "City explorer",
+      description: "Inspect populated places and coordinates",
       code: `from pyworldatlas import Atlas
 
 with Atlas() as atlas:
-    for query, language in [
-        ("Dominican Republic", "es"),
-        ("China", "zh"),
-        ("Japan", "ja"),
-    ]:
-        country = atlas.country(query)
-        local = country.local_name(language)
-        print(f"{country.flag} {country.name}")
-        print(f"  Local:     {local.short_name}")
-        print(f"  Formal:    {local.formal_name or 'not supplied by this source'}")
-        print(f"  Romanized: {local.romanized_short_name or 'not supplied by this source'}")
-        print(f"  Source:    {local.source.name}")
-        print()`,
+    country = atlas.country("Japan")
+    cities = atlas.major_cities(country.alpha2, limit=8)
+
+    print(f"MAJOR POPULATED PLACES — {country.name.upper()}")
+    for city in cities:
+        population = f"{city.population:,}" if city.population else "not listed"
+        lat, lon = city.coordinates.as_tuple()
+        print(
+            f"{city.name:<18} pop. {population:>12}  "
+            f"({lat:>7.3f}, {lon:>8.3f})"
+        )
+
+    tokyo, osaka = cities[0], atlas.city("Osaka", country="JP")
+    print(f"\\n{tokyo.name} → {osaka.name}: {tokyo.coordinates.distance_to(osaka.coordinates):,.0f} km")`,
     },
     {
+      category: "Analyze the atlas",
+      id: "search-filter",
+      label: "Search and filter",
+      description: "Combine discovery tools like a database",
+      code: `from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    print("SEARCH RESULTS FOR 'GUINEA'")
+    for match in atlas.search_countries("guinea"):
+        print(
+            f"  {match.country.alpha2}  {match.country.name:<24} "
+            f"score {match.score}"
+        )
+
+    selection = atlas.countries(
+        continent="Americas",
+        language_code="es",
+        coastal=True,
+    )
+    print("\\nSPANISH-LANGUAGE + AMERICAS + COASTAL")
+    print(", ".join(country.name for country in selection))`,
+    },
+    {
+      category: "Learn and build",
       id: "quiz",
-      label: "Repeatable quiz",
-      description: "Learning prompts from real profiles",
+      label: "Quiz studio",
+      description: "Create a repeatable lesson set",
       code: `from pyworldatlas import Atlas
 
 with Atlas() as atlas:
@@ -127,6 +293,28 @@ with Atlas() as atlas:
         print(f"{number}. {card.prompt}")
         print(f"   Answer: {card.answer}\\n")`,
     },
+    {
+      category: "Learn and build",
+      id: "json-export",
+      label: "JSON export",
+      description: "Create a portable Unicode profile",
+      code: `import json
+from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    card = atlas.country("Japan").discovery_card().to_dict()
+    portable = {
+        "country": card["country"],
+        "flag": card["flag_emoji"],
+        "capital": card["capital"],
+        "local_names": card["local_names"],
+        "highest_point": card["highest_point"],
+        "climate_classes": card["climate_zone_codes"],
+        "source_ids": card["source_ids"],
+    }
+
+print(json.dumps(portable, ensure_ascii=False, indent=2))`,
+    },
   ];
 
   let worker = null;
@@ -134,7 +322,10 @@ with Atlas() as atlas:
   let running = false;
   let activeRun = 0;
   let watchdog = null;
-  let selectedPreset = presets[0];
+  let selectedPreset = presets.find((preset) => {
+    const parameters = new URLSearchParams(window.location.hash.slice(1));
+    return preset.id === parameters.get("recipe");
+  }) || presets[0];
 
   function setStatus(state, message) {
     statusElement.dataset.state = state;
@@ -232,7 +423,7 @@ with Atlas() as atlas:
       setStatus("ready", `Ready · ${message.details.profiles} profiles`);
       editorHint.textContent = "Your Python session persists between runs.";
       setControls();
-      clearOutput("Ready. Choose an example, edit it if you like, then run Python.");
+      clearOutput("Ready. A complete recipe is already loaded—press Run Python.");
       return;
     }
 
@@ -298,29 +489,49 @@ with Atlas() as atlas:
     createWorker("");
   }
 
-  function selectPreset(preset) {
+  function selectPreset(preset, updateHash = true) {
     selectedPreset = preset;
     editor.value = preset.code;
+    filename.textContent = `${preset.id.replaceAll("-", "_")}.py`;
     for (const button of presetsElement.querySelectorAll("button")) {
       button.setAttribute("aria-pressed", String(button.dataset.preset === preset.id));
+    }
+    if (updateHash) {
+      window.history.replaceState(null, "", `#recipe=${encodeURIComponent(preset.id)}`);
     }
   }
 
   function renderPresets() {
-    for (const preset of presets) {
-      const button = document.createElement("button");
-      button.type = "button";
-      button.className = "atlas-preset";
-      button.dataset.preset = preset.id;
-      button.setAttribute("aria-pressed", "false");
+    const categories = [...new Set(presets.map((preset) => preset.category))];
+    for (const category of categories) {
+      const group = document.createElement("section");
+      group.className = "atlas-preset-group";
 
-      const title = document.createElement("strong");
-      title.textContent = preset.label;
-      const description = document.createElement("span");
-      description.textContent = preset.description;
-      button.append(title, description);
-      button.addEventListener("click", () => selectPreset(preset));
-      presetsElement.append(button);
+      const heading = document.createElement("p");
+      heading.className = "atlas-preset-group-label";
+      heading.textContent = category;
+
+      const grid = document.createElement("div");
+      grid.className = "atlas-preset-grid";
+
+      for (const preset of presets.filter((item) => item.category === category)) {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "atlas-preset";
+        button.dataset.preset = preset.id;
+        button.setAttribute("aria-pressed", "false");
+
+        const title = document.createElement("strong");
+        title.textContent = preset.label;
+        const description = document.createElement("span");
+        description.textContent = preset.description;
+        button.append(title, description);
+        button.addEventListener("click", () => selectPreset(preset));
+        grid.append(button);
+      }
+
+      group.append(heading, grid);
+      presetsElement.append(group);
     }
   }
 
@@ -356,7 +567,15 @@ with Atlas() as atlas:
     }
   });
 
+  window.addEventListener("hashchange", () => {
+    const parameters = new URLSearchParams(window.location.hash.slice(1));
+    const requested = presets.find((preset) => preset.id === parameters.get("recipe"));
+    if (requested) {
+      selectPreset(requested, false);
+    }
+  });
+
   renderPresets();
-  selectPreset(selectedPreset);
+  selectPreset(selectedPreset, false);
   createWorker();
 })();

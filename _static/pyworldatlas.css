@@ -403,8 +403,26 @@
 }
 
 .atlas-preset-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.68rem;
+}
+
+.atlas-preset-group {
+  margin: 0;
+}
+
+.atlas-playground .atlas-preset-group-label {
+  margin: 0 0 0.28rem;
+  color: #6b7d87;
+  font-size: 0.67rem;
+  font-weight: 700;
+  letter-spacing: 0.035em;
+}
+
+.atlas-preset-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 0.48rem;
 }
 
@@ -622,6 +640,39 @@
   color: #6c552e;
 }
 
+.rst-content .atlas-recipe-launch {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.15rem 0 1rem;
+  padding: 0.42rem 0.72rem;
+  background: var(--atlas-blue-soft);
+  border: 1px solid #c9e0eb;
+  border-radius: 6px;
+  color: #286b8b;
+  font-size: 0.82rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.rst-content .atlas-recipe-launch:hover,
+.rst-content .atlas-recipe-launch:focus-visible {
+  background: #e3f1f7;
+  border-color: #8bb9cc;
+}
+
+.rst-content .atlas-recipe-launch-primary {
+  padding: 0.55rem 0.85rem;
+  background: var(--atlas-teal);
+  border-color: var(--atlas-teal);
+  color: #fff;
+}
+
+.rst-content .atlas-recipe-launch-primary:hover,
+.rst-content .atlas-recipe-launch-primary:focus-visible {
+  background: #286f69;
+  border-color: #286f69;
+}
+
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -637,7 +688,7 @@
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .atlas-preset-list {
+  .atlas-preset-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -683,7 +734,12 @@
     padding-left: 0.85rem;
   }
 
-  .atlas-preset-list {
+  .atlas-preset-section {
+    max-height: 30rem;
+    overflow-y: auto;
+  }
+
+  .atlas-preset-grid {
     grid-template-columns: 1fr;
   }
 

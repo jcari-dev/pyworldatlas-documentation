@@ -12,7 +12,7 @@ keeps that session alive while you explore.
        <div>
          <p class="atlas-playground-eyebrow">Python in your browser</p>
          <h2>Explore the atlas</h2>
-         <p>Choose a guided example or write your own query. Press <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Enter</kbd> to run it.</p>
+         <p>Choose one of fourteen complete recipes or write your own query. Press <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Enter</kbd> to run it.</p>
        </div>
        <div class="atlas-runtime-status" data-role="status" data-state="loading" aria-live="polite">
          <span class="atlas-status-dot" aria-hidden="true"></span>
@@ -24,17 +24,18 @@ keeps that session alive while you explore.
        <span>Python <strong data-role="python-version">starting</strong></span>
        <span>PyWorldAtlas <strong data-role="library-version">0.7.0</strong></span>
        <span>Dataset <strong data-role="dataset-version">bundled</strong></span>
+       <span>Recipes <strong>14 ready</strong></span>
      </div>
 
      <div class="atlas-preset-section">
-       <p class="atlas-control-label">Guided examples</p>
+       <p class="atlas-control-label">Ready-to-run recipe library</p>
        <div class="atlas-preset-list" data-role="presets"></div>
      </div>
 
      <div class="atlas-playground-workspace">
        <section class="atlas-code-panel" aria-label="Python editor">
          <div class="atlas-panel-toolbar">
-           <span><span class="atlas-language-dot" aria-hidden="true"></span> playground.py</span>
+           <span><span class="atlas-language-dot" aria-hidden="true"></span> <span data-role="filename">world_snapshot.py</span></span>
            <div class="atlas-toolbar-actions">
              <button type="button" class="atlas-button atlas-button-quiet" data-action="copy">Copy</button>
              <button type="button" class="atlas-button atlas-button-quiet" data-action="reset">Reset Python</button>
@@ -84,18 +85,22 @@ not receive its contents. Each run has a 20-second safety limit, and interactive
 Things worth trying
 -------------------
 
-The guided examples deliberately cover different parts of the public API:
+The fourteen guided programs cover four different ways to use the package:
 
-* build a compact country postcard with a local name, flag, capital, motto,
-  climate, and highest point;
-* measure the great-circle distance between capitals and find nearby capitals;
-* discover a reviewed overland route between two countries;
-* rank profiles by coastline and filter by region or climate;
-* inspect names in original writing systems and the source records behind them;
-* generate a repeatable geography quiz from the bundled data.
+* **Meet the world:** summarize the atlas, build a rich country dossier,
+  compare profiles, and cross original writing systems.
+* **Measure and connect:** calculate distance, bearing, and midpoint; locate
+  nearby capitals; follow a land-border path; and connect profiles through
+  source-listed rivers and lakes.
+* **Analyze the atlas:** build multi-metric leaderboards, visualize represented
+  climate shares, inspect populated places, and combine search with filters.
+* **Learn and build:** generate repeatable quiz material and export portable,
+  Unicode-preserving JSON.
 
 Change a country name, adjust a ranking, or combine two examples. The Python
 session persists until you select **Reset Python** or close the page.
+The :doc:`recipes` page presents the strongest programs as normal copy-ready
+Python alongside direct links back to the matching interactive recipe.
 
 Use the package locally
 -----------------------

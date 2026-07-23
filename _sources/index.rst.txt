@@ -140,8 +140,10 @@ See what you can build
 Try these next
 --------------
 
-- :doc:`playground` — run the published package in your browser through six
-  guided, editable examples.
+- :doc:`playground` — run the published package in your browser through
+  fourteen guided, editable recipes.
+- :doc:`recipes` — copy complete Python programs for profiles, comparisons,
+  distances, climate, search, teaching, and JSON export.
 - :doc:`physical_geography` — coastlines, elevation, rivers, lakes, climate,
   and physical rankings.
 - :doc:`explore` — country postcards, rankings, nearby capitals, filters, and
@@ -234,6 +236,7 @@ The current source checkout can be installed with ``python -m pip install -e .``
 
    explore
    playground
+   recipes
    quickstart
    why
    installation
