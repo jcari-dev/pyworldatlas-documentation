@@ -19,6 +19,15 @@ PyWorldAtlas
 **Documented version:** 0.7.0 | **Dataset:** 2026.07.22.7 |
 **Python:** 3.10–3.14 | **Profiles:** 248
 
+.. raw:: html
+
+   <nav class="atlas-project-links" aria-label="PyWorldAtlas links">
+     <a class="atlas-project-link atlas-project-link-primary" href="playground.html">Open playground</a>
+     <a class="atlas-project-link" href="api.html">API reference</a>
+     <a class="atlas-project-link" href="https://github.com/jcari-dev/pyworldatlas">GitHub</a>
+     <a class="atlas-project-link" href="https://pypi.org/project/pyworldatlas/">PyPI</a>
+   </nav>
+
 .. container:: atlas-stat-grid
 
    .. container:: atlas-stat
@@ -131,6 +140,8 @@ See what you can build
 Try these next
 --------------
 
+- :doc:`playground` — run the published package in your browser through six
+  guided, editable examples.
 - :doc:`physical_geography` — coastlines, elevation, rivers, lakes, climate,
   and physical rankings.
 - :doc:`explore` — country postcards, rankings, nearby capitals, filters, and
@@ -222,6 +233,7 @@ The current source checkout can be installed with ``python -m pip install -e .``
    :caption: Start here
 
    explore
+   playground
    quickstart
    why
    installation
