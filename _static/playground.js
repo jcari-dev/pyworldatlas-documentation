@@ -322,6 +322,7 @@ print(json.dumps(portable, ensure_ascii=False, indent=2))`,
   let running = false;
   let activeRun = 0;
   let watchdog = null;
+  let startupWatchdog = null;
   let selectedPreset = presets.find((preset) => {
     const parameters = new URLSearchParams(window.location.hash.slice(1));
     return preset.id === parameters.get("recipe");
@@ -381,7 +382,9 @@ print(json.dumps(portable, ensure_ascii=False, indent=2))`,
     ready = false;
     running = false;
     window.clearTimeout(watchdog);
+    window.clearTimeout(startupWatchdog);
     watchdog = null;
+    startupWatchdog = null;
     setStatus("loading", "Preparing Python…");
     setControls();
     editorHint.textContent = "The first load downloads the browser Python runtime.";
@@ -392,6 +395,8 @@ print(json.dumps(portable, ensure_ascii=False, indent=2))`,
     worker = new Worker(workerUrl(), { type: "module", name: "pyworldatlas-playground" });
     worker.addEventListener("message", handleWorkerMessage);
     worker.addEventListener("error", (event) => {
+      window.clearTimeout(startupWatchdog);
+      startupWatchdog = null;
       ready = false;
       running = false;
       setStatus("error", "Python could not start");
@@ -402,6 +407,18 @@ print(json.dumps(portable, ensure_ascii=False, indent=2))`,
       );
     });
     worker.postMessage({ type: "initialize", requirement });
+    startupWatchdog = window.setTimeout(() => {
+      worker.terminate();
+      ready = false;
+      running = false;
+      setStatus("error", "Python startup timed out");
+      setControls();
+      clearOutput();
+      appendOutput(
+        "Python did not finish loading within 30 seconds. Check your connection, then select Reset Python to try again.",
+        "stderr",
+      );
+    }, 30000);
   }
 
   function handleWorkerMessage(event) {
@@ -416,6 +433,8 @@ print(json.dumps(portable, ensure_ascii=False, indent=2))`,
     }
 
     if (message.type === "ready") {
+      window.clearTimeout(startupWatchdog);
+      startupWatchdog = null;
       ready = true;
       pythonVersion.textContent = message.details.python;
       libraryVersion.textContent = message.details.library;
@@ -448,6 +467,8 @@ print(json.dumps(portable, ensure_ascii=False, indent=2))`,
     }
 
     if (message.type === "fatal-error") {
+      window.clearTimeout(startupWatchdog);
+      startupWatchdog = null;
       ready = false;
       running = false;
       setStatus("error", "Python could not start");
