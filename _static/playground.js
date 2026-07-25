@@ -415,10 +415,10 @@ print(json.dumps(portable, ensure_ascii=False, indent=2))`,
       setControls();
       clearOutput();
       appendOutput(
-        "Python did not finish loading within 30 seconds. Check your connection, then select Reset Python to try again.",
+        "Python did not finish loading within 45 seconds. Check your connection, then select Reset Python to try again.",
         "stderr",
       );
-    }, 30000);
+    }, 45000);
   }
 
   function handleWorkerMessage(event) {

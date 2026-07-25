@@ -75,7 +75,8 @@ WebAssembly, while a module Web Worker keeps execution away from the page's
 interface. After startup, country queries read the same bundled SQLite database
 used by a normal installation.
 
-The first visit downloads the Python runtime from jsDelivr and the wheel from
+The first visit downloads the Python runtime from a pinned public CDN, with a
+second provider available if the first cannot be reached, and the wheel from
 PyPI. Code entered in the editor is evaluated on your device; this project does
 not receive its contents. Each run has a 20-second safety limit, and interactive
 ``input()`` calls are not supported.

@@ -1,6 +1,19 @@
-import { loadPyodide } from "https://cdn.jsdelivr.net/pyodide/v314.0.2/full/pyodide.mjs";
-
-const PYODIDE_INDEX = "https://cdn.jsdelivr.net/pyodide/v314.0.2/full/";
+const PYODIDE_VERSION = "314.0.3";
+const PYODIDE_FULL_CDN = `https://cdn.jsdelivr.net/pyodide/v${PYODIDE_VERSION}/full/`;
+const PYODIDE_PROVIDERS = Object.freeze([
+  {
+    label: "unpkg",
+    moduleBase: `https://unpkg.com/pyodide@${PYODIDE_VERSION}/`,
+    indexURL: `https://unpkg.com/pyodide@${PYODIDE_VERSION}/`,
+    packageBaseUrl: PYODIDE_FULL_CDN,
+  },
+  {
+    label: "jsDelivr",
+    moduleBase: PYODIDE_FULL_CDN,
+    indexURL: PYODIDE_FULL_CDN,
+    packageBaseUrl: PYODIDE_FULL_CDN,
+  },
+]);
 
 let pyodide = null;
 let readyPromise = null;
@@ -9,13 +22,50 @@ function post(type, detail = {}) {
   self.postMessage({ type, ...detail });
 }
 
-async function initialize(requirement) {
-  post("status", { message: "Loading Python runtime…" });
-  pyodide = await loadPyodide({
-    indexURL: PYODIDE_INDEX,
-    stdout: () => {},
-    stderr: () => {},
+function describeError(error) {
+  return error instanceof Error ? error.message : String(error);
+}
+
+function withTimeout(task, milliseconds, label) {
+  let timer = null;
+  const timeout = new Promise((resolve, reject) => {
+    timer = self.setTimeout(() => {
+      reject(new Error(`${label} did not respond within ${milliseconds / 1000} seconds`));
+    }, milliseconds);
   });
+
+  return Promise.race([task, timeout]).finally(() => self.clearTimeout(timer));
+}
+
+async function loadBrowserPython() {
+  const failures = [];
+
+  for (const provider of PYODIDE_PROVIDERS) {
+    post("status", { message: `Connecting to Python runtime via ${provider.label}…` });
+    try {
+      const module = await withTimeout(
+        import(`${provider.moduleBase}pyodide.mjs`),
+        7000,
+        provider.label,
+      );
+      post("status", { message: `Loading Python runtime via ${provider.label}…` });
+      return await module.loadPyodide({
+        indexURL: provider.indexURL,
+        packageBaseUrl: provider.packageBaseUrl,
+        stdout: () => {},
+        stderr: () => {},
+      });
+    } catch (error) {
+      failures.push(`${provider.label}: ${describeError(error)}`);
+    }
+  }
+
+  throw new Error(`No Python runtime provider was available. ${failures.join(" | ")}`);
+}
+
+async function initialize(requirement) {
+  post("status", { message: "Starting the browser Python worker…" });
+  pyodide = await loadBrowserPython();
 
   post("status", { message: "Installing PyWorldAtlas from PyPI…" });
   await pyodide.loadPackage("micropip");
@@ -92,7 +142,7 @@ self.addEventListener("message", (event) => {
   if (message.type === "initialize" && !readyPromise) {
     readyPromise = initialize(message.requirement).catch((error) => {
       post("fatal-error", {
-        message: error instanceof Error ? error.message : String(error),
+        message: describeError(error),
       });
       throw error;
     });

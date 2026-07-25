@@ -17,7 +17,7 @@
       <script src="_static/documentation_options.js?v=fe7df9b0"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script defer="defer" src="_static/playground.js?v=86a2dcc7"></script>
+      <script defer="defer" src="_static/playground.js?v=719b3af8"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -452,7 +452,8 @@ JavaScript imitation or a remote demonstration API. <a class="reference external
 WebAssembly, while a module Web Worker keeps execution away from the page’s
 interface. After startup, country queries read the same bundled SQLite database
 used by a normal installation.</p>
-<p>The first visit downloads the Python runtime from jsDelivr and the wheel from
+<p>The first visit downloads the Python runtime from a pinned public CDN, with a
+second provider available if the first cannot be reached, and the wheel from
 PyPI. Code entered in the editor is evaluated on your device; this project does
 not receive its contents. Each run has a 20-second safety limit, and interactive
 <code class="docutils literal notranslate"><span class="pre">input()</span></code> calls are not supported.</p>
