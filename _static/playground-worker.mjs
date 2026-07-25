@@ -63,6 +63,25 @@ async function loadBrowserPython() {
   throw new Error(`No Python runtime provider was available. ${failures.join(" | ")}`);
 }
 
+async function configureBrowserDatabase() {
+  await pyodide.runPythonAsync(`
+import sys
+
+if sys.platform == "emscripten":
+    import pyworldatlas.database as _atlas_database
+
+    _atlas_sqlite_connect = _atlas_database.sqlite3.connect
+
+    def _atlas_browser_connect(database, *args, **kwargs):
+        if isinstance(database, str) and database.startswith("file:") and kwargs.get("uri"):
+            database = database[5:].split("?", 1)[0]
+            kwargs["uri"] = False
+        return _atlas_sqlite_connect(database, *args, **kwargs)
+
+    _atlas_database.sqlite3.connect = _atlas_browser_connect
+`);
+}
+
 async function initialize(requirement) {
   post("status", { message: "Starting the browser Python worker…" });
   pyodide = await loadBrowserPython();
@@ -79,6 +98,9 @@ await micropip.install(_playground_requirement, deps=False)
     pyodide.globals.delete("_playground_requirement");
   }
 
+  post("status", { message: "Preparing browser-safe dataset access…" });
+  await configureBrowserDatabase();
+
   post("status", { message: "Opening the bundled atlas…" });
   const details = await pyodide.runPythonAsync(`
 import json
@@ -88,12 +110,13 @@ from pyworldatlas import Atlas
 
 with Atlas() as _atlas:
     _info = _atlas.dataset_info()
-    json.dumps({
+    _details = {
         "python": platform.python_version(),
         "library": pyworldatlas.__version__,
         "dataset": _info.dataset_version,
         "profiles": len(_atlas),
-    })
+    }
+json.dumps(_details)
 `);
 
   post("ready", { details: JSON.parse(details) });
