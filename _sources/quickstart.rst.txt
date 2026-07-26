@@ -1,297 +1,98 @@
-60-second quickstart
-====================
+Quickstart
+==========
 
-Open one atlas, look up a country, and combine profile facts with geographic
-tools. Every example below runs from the installed package without an API key.
+Install PyWorldAtlas, open one atlas, and ask useful geography questions. The
+package works from its bundled database, so these examples need no API key or
+runtime network connection.
 
-.. container:: atlas-card-grid
+Install
+-------
 
-   .. container:: atlas-card atlas-card-blue
+.. code-block:: console
 
-      .. rubric:: Look up
+   python -m pip install --upgrade pyworldatlas
 
-      Resolve a familiar name, alias, alpha-2, alpha-3, or M49 code to one
-      immutable profile.
+Meet a country
+--------------
 
-   .. container:: atlas-card atlas-card-teal
-
-      .. rubric:: Explore
-
-      Read names, capitals, cities, reference facts, physical geography, and
-      source metadata offline.
-
-   .. container:: atlas-card atlas-card-gold
-
-      .. rubric:: Connect
-
-      Search, rank, measure, follow reviewed land paths, create quizzes, and
-      serialize results.
-
-Create the atlas
-----------------
-
-Use a context manager when practical so the read-only SQLite connection closes
-promptly:
+Use :class:`~pyworldatlas.Atlas` as a context manager and look up a country by
+name or standard code:
 
 .. doctest::
 
    >>> from pyworldatlas import Atlas
    >>> with Atlas() as atlas:
-   ...     country = atlas.country("Japan")
-   ...     print(country.name)
-   ...     print(country.capital.name)
-   Japan
-   Tokyo
+   ...     brazil = atlas.country("BR")
+   ...     print(brazil.flag, brazil.name_in("pt"), "—", brazil.capital.name)
+   ...     print(brazil.highest_point.name, f"{brazil.highest_point.elevation_m:,.0f} m")
+   ...     print(", ".join(river.name for river in brazil.rivers[:3]))
+   🇧🇷 Brasil — Brasília
+   Pico da Neblina 2,994 m
+   Amazon, Río de la Plata/Paraná, Tocantins
 
-Print a friendly profile
-------------------------
-
-``summary()`` is the quickest way to meet a country. It combines useful
-available facts, skips missing values, and keeps every typed attribute ready
-for follow-up questions:
+``country`` returns an immutable, typed profile. Facts stay available as
+attributes, while :meth:`~pyworldatlas.Country.summary` provides a readable
+introduction for a terminal, notebook, or lesson:
 
 .. code-block:: python
 
    with Atlas() as atlas:
-       print(atlas.country("Brazil").summary())
+       print(atlas.country("Dominican Republic").summary())
 
-Use the output for terminals, notebooks, and lessons. Use ``to_dict()`` or
-individual attributes when a program needs structured values.
+Look up, search, and collect
+----------------------------
 
-Look up countries naturally
----------------------------
-
-The same country can be resolved by familiar names and standard codes:
+Names, aliases, alpha-2, alpha-3, and M49 codes resolve to the same profile.
+The atlas also behaves like a normal Python collection:
 
 .. doctest::
 
-   >>> atlas = Atlas()
-   >>> atlas.country("Japan") == atlas.country("JP")
+   >>> with Atlas() as atlas:
+   ...     print(atlas.country("Japan") == atlas.country("JPN"))
+   ...     print(atlas["DO"].capital.name)
+   ...     print([match.country.name for match in atlas.search_countries("guinea")[:3]])
+   ...     print(len(atlas.countries(continent="Europe")))
    True
-   >>> atlas.country("JPN") == atlas.country("392")
-   True
-   >>> atlas.country("Holy See").name
-   'Vatican City'
-
-Use it like a Python collection
--------------------------------
-
-.. doctest::
-
-   >>> atlas["DO"].name
-   'Dominican Republic'
-   >>> "France" in atlas
-   True
-   >>> "Atlantis" in atlas
-   False
-   >>> len(atlas)
-   248
-   >>> europe = atlas.countries(continent="Europe")
-   >>> len(europe)
+   Santo Domingo
+   ['Guinea', 'Guinea-Bissau', 'Equatorial Guinea']
    51
-   >>> {"FR", "DE", "VA"}.issubset({country.alpha2 for country in europe})
-   True
 
-Inspect the dataset version
----------------------------
+Combine facts with geography
+----------------------------
 
-Library, schema, and data versions change independently:
-
-.. doctest::
-
-   >>> info = atlas.dataset_info()
-   >>> (info.library_version, info.schema_version, info.dataset_version)
-   ('0.8.1', 7, '2026.07.22.7')
-   >>> atlas.close()
-
-Read profile metadata
----------------------
-
-Profile fields are typed and may be absent when the captured sources do not
-provide a value:
+The same API connects country profiles, cities, coordinates, distances,
+rankings, and reviewed land neighbors:
 
 .. doctest::
 
    >>> with Atlas() as atlas:
    ...     japan = atlas.country("Japan")
-   ...     print(japan.population)
-   ...     print(japan.currency.code if japan.currency else None)
-   ...     print([language.code for language in japan.languages])
-   126529100
-   JPY
-   ['ja']
-
-Add reference facts
--------------------
-
-Optional facts remain typed and source-aware:
-
-.. doctest::
-
-   >>> with Atlas() as atlas:
-   ...     japan = atlas.country("Japan")
-   ...     print(japan.anthem.title, "—", japan.anthem.english_title)
-   ...     print(japan.demonym.adjective)
-   ...     print(japan.currency.name, japan.currency.symbol)
-   ...     print(japan.timezone_ids)
-   Kimigayo — His Majesty’s Reign
-   Japanese
-   Japanese Yen ¥
-   ('Asia/Tokyo',)
-
-Explore physical geography
---------------------------
-
-Physical fields are typed, optional, and available without a network call:
-
-.. doctest::
-
-   >>> with Atlas() as atlas:
-   ...     japan = atlas.country("Japan")
-   ...     print(japan.highest_point.name, japan.highest_point.elevation_m)
-   ...     print(japan.lowest_point.name, japan.lowest_point.elevation_m)
-   ...     print(japan.coastline_km, japan.climate.dominant_zone.code)
-   Mount Fuji 3776.0
-   Hachiro-gata -4.0
-   29751.0 Cfa
-
-Discover a shared river or lake across profiles:
-
-.. doctest::
-
-   >>> with Atlas() as atlas:
-   ...     print([country.name for country in atlas.countries_with_river("Amazon")])
-   ...     print([country.name for country in atlas.countries_with_lake("Geneva")])
-   ['Brazil', 'Peru']
-   ['France', 'Switzerland']
-
-See :doc:`physical_geography` for field meaning, climate methodology, coverage,
-rankings, and the difference between source-listed features and exhaustive
-inventories.
-
-Read the three English name fields
-----------------------------------
-
-.. doctest::
-
-   >>> with Atlas() as atlas:
-   ...     turkey = atlas.country("TR")
-   ...     print(turkey.name)
-   ...     print(turkey.official_name)
-   ...     print(turkey.formal_name)
-   Turkey
-   Türkiye
-   Republic of Türkiye
-
-``name`` is the familiar atlas label, ``official_name`` is the canonical UN
-M49 identity, and ``formal_name`` is the sourced English long form. The formal
-layer covers 240 profiles and remains ``None`` outside its source scope.
-
-Meet countries in their own languages
--------------------------------------
-
-Sourced local identities preserve their original writing systems:
-
-.. doctest::
-
-   >>> with Atlas() as atlas:
-   ...     dominican = atlas.country("DO")
-   ...     china = atlas.country("CN")
-   ...     print(dominican.flag, dominican.name_in("es"))
-   ...     print(china.name_in("zh"), china.romanized_name_in("zh"))
-   🇩🇴 República Dominicana
-   中国 Zhongguo
-
-Every country or area has one selected local identity. A different requested
-language returns ``None`` rather than a generated translation. See
-:doc:`local_names` for evidence kinds, scripts, romanization, and coverage.
-
-Build reproducible learning material
-------------------------------------
-
-Country samples, flashcards, and multiple-choice questions use a stable
-seed-based ordering:
-
-.. doctest::
-
-   >>> with Atlas() as atlas:
-   ...     japan = atlas.country("Japan")
-   ...     print(japan.flag_emoji, round(japan.population_density, 2))
-   ...     print([country.alpha2 for country in atlas.sample_countries(count=3, seed=42)])
-   ...     card = atlas.flashcards(topic="capitals", count=1, seed=42)[0]
-   ...     print(card.prompt, card.answer)
-   🇯🇵 334.81
-   ['KW', 'BS', 'BI']
-   What is the capital of Kuwait? Kuwait City
-
-   >>> with Atlas() as atlas:
-   ...     question = atlas.quiz(topic="capitals", count=1, seed=42)[0]
-   ...     print(question.answer in question.choices)
-   ...     print(question.is_correct(question.answer_number))
-   True
-   True
-
-Rank profiles and discover nearby capitals
-------------------------------------------
-
-.. doctest::
-
-   >>> with Atlas() as atlas:
-   ...     print([row.country.alpha2 for row in atlas.rank("population", limit=3)])
-   ...     print([row.capital.name for row in atlas.nearest_capitals("Tokyo", country="JP", limit=3)])
-   ['CN', 'IN', 'US']
-   ['Seoul', 'Pyongyang', 'Beijing']
-
-Search and explore populated places
-------------------------------------
-
-Use exact :meth:`~pyworldatlas.Atlas.city` lookups when you know a name, or
-partial :meth:`~pyworldatlas.Atlas.search_cities` when you are exploring:
-
-.. doctest::
-
-   >>> with Atlas() as atlas:
-   ...     print([city.label for city in atlas.search_cities("santo", country="DO", limit=3)])
-   ['Santo Domingo (DO)', 'Santo Domingo Oeste (DO)', 'Santo Domingo Este (DO)']
-
-Measure city-to-city distance
------------------------------
-
-String inputs to :meth:`~pyworldatlas.Atlas.distance_between` are exact bundled
-city names. Country arguments disambiguate cities with shared names.
-
-.. doctest::
-
-   >>> with Atlas() as atlas:
-   ...     tokyo = atlas.coordinates("Tokyo", country="JP")
-   ...     paris = atlas.coordinates("Paris", country="FR")
-   ...     print(tokyo.format())
-   ...     print(tokyo.compass_direction_to(paris))
-   ...     distance = tokyo.distance_to(paris)
-   35.6895° N, 139.6917° E
-   NNW
-   >>> round(distance)
+   ...     print(japan.anthem.title)
+   ...     print(japan.climate.dominant_zone.code)
+   ...     print(round(atlas.distance_between("Tokyo", "Paris", first_country="JP", second_country="FR")))
+   ...     print([country.alpha2 for country in atlas.neighbors("Brazil")[:4]])
+   Kimigayo
+   Cfa
    9713
+   ['AR', 'BO', 'CO', 'GF']
 
-Explore land connections
-------------------------
+What to remember
+----------------
 
-.. doctest::
+- Use ``with Atlas() as atlas`` so the read-only database closes promptly.
+- Missing scalar facts are ``None`` and missing collections are empty. The
+  package does not invent values to fill source gaps.
+- Results are typed Python objects. Use ``to_dict()`` when you need portable,
+  JSON-compatible data.
+- :meth:`~pyworldatlas.Atlas.dataset_info` reports the installed library,
+  schema, and dataset versions.
 
-   >>> with Atlas() as atlas:
-   ...     print([country.name for country in atlas.neighbors("Brazil")])
-   ...     path = atlas.border_path("Portugal", "China")
-   ...     print(path.crossings)
-   ...     print(path.alpha2_codes)
-   ...     print(atlas.has_land_route("Japan", "China"))
-   ['Argentina', 'Bolivia', 'Colombia', 'French Guiana', 'Guyana', 'Paraguay', 'Peru', 'Suriname', 'Uruguay', 'Venezuela']
-   6
-   ('PT', 'ES', 'FR', 'DE', 'PL', 'RU', 'CN')
-   False
+Where to go next
+----------------
 
-Executable example
-------------------
-
-.. literalinclude:: ../../examples/quick_start.py
-   :language: python
-   :linenos:
+- Run fourteen editable programs in the :doc:`playground`.
+- Copy complete projects from :doc:`recipes`.
+- Try classroom activities in :doc:`learning`.
+- Open :doc:`country_profile`, :doc:`physical_geography`, or
+  :doc:`coordinates_distances` for focused guides.
+- Use the :doc:`api` for every public class, property, and method.

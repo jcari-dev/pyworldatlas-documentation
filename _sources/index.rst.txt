@@ -133,30 +133,31 @@ See what you can build
       multiple-choice questions, and Unicode-preserving JSON with
       :doc:`learning`, :doc:`discovery`, and :doc:`serialization`.
 
-.. tip::
+Choose your next step
+---------------------
 
-   Start with :doc:`learning` for friendly classroom activities or
-   :doc:`explore` for a five-minute tour made from executable examples.
+.. container:: atlas-card-grid
 
-Try these next
---------------
+   .. container:: atlas-card atlas-card-blue
 
-- :doc:`learning` — build country introductions, writing-system galleries,
-  coordinate labs, city activities, and repeatable quizzes.
-- :doc:`playground` — run the published package in your browser through
-  fourteen guided, editable recipes.
-- :doc:`recipes` — copy complete Python programs for profiles, comparisons,
-  distances, climate, search, teaching, and JSON export.
-- :doc:`physical_geography` — coastlines, elevation, rivers, lakes, climate,
-  and physical rankings.
-- :doc:`explore` — country postcards, rankings, nearby capitals, filters, and
-  a repeatable quiz.
-- :doc:`quickstart` — lookup, collections, names, coordinates, and borders in
-  one guided session.
-- :doc:`reference_facts` — anthem titles, reviewed mottos, demonyms, currencies,
-  languages, timezones, postal formats, and provenance.
-- :doc:`rankings` — exact filters, supported metrics, typed results, and distance
-  semantics.
+      .. rubric:: New to PyWorldAtlas?
+
+      Follow the concise :doc:`quickstart` to install the package, open an
+      atlas, and make your first useful queries.
+
+   .. container:: atlas-card atlas-card-teal
+
+      .. rubric:: Want to try it first?
+
+      Open the :doc:`playground` and run the package in your browser with no
+      local setup.
+
+   .. container:: atlas-card atlas-card-gold
+
+      .. rubric:: Ready to build?
+
+      Copy a complete program from :doc:`recipes` or browse the focused guides
+      under **Explore the atlas**.
 
 What is bundled
 ---------------
@@ -237,14 +238,17 @@ The current source checkout can be installed with ``python -m pip install -e .``
    :maxdepth: 2
    :caption: Start here
 
-   learning
-   explore
-   playground
-   recipes
    quickstart
-   why
+   playground
    installation
-   educational_principles
+
+.. toctree::
+   :hidden:
+   :maxdepth: 2
+   :caption: Examples and learning
+
+   learning
+   recipes
 
 .. toctree::
    :hidden:
@@ -268,6 +272,8 @@ The current source checkout can be installed with ``python -m pip install -e .``
    :maxdepth: 2
    :caption: Data and trust
 
+   why
+   educational_principles
    data_sources
    data_quality
    _generated/project_status

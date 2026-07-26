@@ -113,5 +113,5 @@ normal Python environment:
 
    python -m pip install --upgrade pyworldatlas
 
-Then continue with the :doc:`explore` tour or the complete :doc:`api`
-reference. Local installations need no network connection at runtime.
+Then continue with the :doc:`quickstart` or the complete :doc:`api` reference.
+Local installations need no network connection at runtime.
