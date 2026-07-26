@@ -1,5 +1,5 @@
-Python recipe gallery
-=====================
+Example programs
+================
 
 These programs are complete, editable starting points rather than isolated
 one-line calls. Copy one into a Python file or open its matching recipe in the

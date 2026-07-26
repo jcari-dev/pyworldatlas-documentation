@@ -1,5 +1,5 @@
-Country discovery and learning tools
-====================================
+Discovery tools
+===============
 
 PyWorldAtlas can turn its sourced country profiles into readable summaries,
 reproducible samples, compact discovery cards, flashcards, and multiple-choice

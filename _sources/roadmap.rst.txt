@@ -1,5 +1,5 @@
-Roadmap and visible progress
-============================
+Roadmap
+-------
 
 PyWorldAtlas grows through small, installable releases with explicit data,
 documentation, and compatibility boundaries. Planned work is not part of the

@@ -1,5 +1,5 @@
-Filters, rankings, and nearby capitals
-======================================
+Rankings and nearby capitals
+============================
 
 PyWorldAtlas provides small, composable discovery methods. They return immutable
 models and never contact a remote service.
