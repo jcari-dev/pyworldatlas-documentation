@@ -269,9 +269,9 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Roadmap and visible progress</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#what-0-6-established">What 0.6 established</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#what-0-7-established">What 0.7 established</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#explicitly-deferred">Explicitly deferred</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#what-0-8-should-improve">What 0.8 should improve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deferred-work">Deferred work</a></li>
 </ul>
 </li>
 </ul>
@@ -385,24 +385,24 @@
              
   <section id="roadmap-and-visible-progress">
 <h1>Roadmap and visible progress<a class="headerlink" href="#roadmap-and-visible-progress" title="Link to this heading"></a></h1>
-<p>Each release has a defined feature boundary, source review, test gate, and
-documentation update. A planned feature is not part of the public contract
-until its release is built and published.</p>
+<p>PyWorldAtlas grows through small, installable releases with explicit data,
+documentation, and compatibility boundaries. Planned work is not part of the
+public API until it is implemented, tested, documented, and published.</p>
 <div class="atlas-card-grid docutils container">
 <div class="atlas-card atlas-card-blue docutils container">
 <p class="rubric">Current release</p>
-<p><strong>0.7.0</strong> is published with physical profiles, source-listed features,
-climate classes, rankings, and learning tools.</p>
+<p><strong>0.7.0</strong> completes the first rich offline profile with physical
+geography, climate classes, rankings, and learning tools.</p>
 </div>
 <div class="atlas-card atlas-card-teal docutils container">
 <p class="rubric">Next milestone</p>
-<p><strong>0.8.0</strong> is a planning boundary for geometry and spatial queries. Its
-source, model, and license review must finish before it becomes public.</p>
+<p><strong>0.8.0</strong> focuses on education and usability: simpler exploration,
+friendlier output, classroom activities, and beginner-focused examples.</p>
 </div>
 <div class="atlas-card atlas-card-gold docutils container">
 <p class="rubric">Stable destination</p>
-<p><strong>1.0.0</strong> represents a stable offline atlas contract after the remaining
-data and API hardening milestones.</p>
+<p><strong>1.0.0</strong> represents a dependable offline atlas contract after API,
+packaging, typing, and documentation hardening.</p>
 </div>
 </div>
 <table class="docutils align-default" id="id1">
@@ -433,65 +433,72 @@ data and API hardening milestones.</p>
 </tr>
 <tr class="row-even"><td><p>0.3.1</p></td>
 <td><p>Complete</p></td>
-<td><p>Reviewed borders, neighbors, shortest land paths, learning utilities</p></td>
+<td><p>Reviewed neighbors, shortest land paths, and border learning tools</p></td>
 <td><p>Published</p></td>
 </tr>
 <tr class="row-odd"><td><p>0.5.0</p></td>
 <td><p>Complete</p></td>
-<td><p>Complete selected local identities, English formal names, editorial policy</p></td>
+<td><p>Local identities, English formal names, and editorial policy</p></td>
 <td><p>Published</p></td>
 </tr>
 <tr class="row-even"><td><p>0.6.0</p></td>
 <td><p>Complete</p></td>
-<td><p>Anthem titles, reviewed mottos, demonyms, richer currency/language/timezone/postal metadata, filters, rankings, nearest capitals</p></td>
+<td><p>Reference facts, practical metadata, filters, and rankings</p></td>
 <td><p>Published</p></td>
 </tr>
 <tr class="row-odd"><td><p>0.7.0</p></td>
 <td><p>Complete</p></td>
-<td><p>Physical geography: land/water area, coastline, elevation extremes, source-listed rivers/lakes, Köppen-Geiger climate, physical rankings and flashcards</p></td>
+<td><p>Physical geography, climate classes, feature search, and learning prompts</p></td>
 <td><p>Published</p></td>
 </tr>
-<tr class="row-even"><td><p>Later release</p></td>
-<td><p>Deferred</p></td>
-<td><p>Boundary geometry, GeoJSON, bounding boxes, centroids, point-in-country</p></td>
+<tr class="row-even"><td><p>0.8.0</p></td>
+<td><p>Planned</p></td>
+<td><p>Education, city discovery, readable summaries, and usability polish</p></td>
 <td><p>—</p></td>
 </tr>
-<tr class="row-odd"><td><p>1.0.0</p></td>
+<tr class="row-odd"><td><p>0.9.0</p></td>
+<td><p>Planned</p></td>
+<td><p>API, typing, performance, packaging, and documentation hardening</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-even"><td><p>1.0.0</p></td>
 <td><p>Planned</p></td>
 <td><p>Stable offline atlas contract</p></td>
 <td><p>—</p></td>
 </tr>
 </tbody>
 </table>
-<section id="what-0-6-established">
-<h2>What 0.6 established<a class="headerlink" href="#what-0-6-established" title="Link to this heading"></a></h2>
-<p>The 0.6 release intentionally includes anthem titles without lyrics, audio,
-credits, or adoption dates. Mottos use a conservative reviewed source-listed
-layer and do not infer legal status. Demonyms preserve structured English source
-forms. Currency, language, timezone, and postal objects gain practical labels
-and provenance. Filters, rankings, and nearest-capital results make those facts
-easy to explore.</p>
-</section>
 <section id="what-0-7-established">
 <h2>What 0.7 established<a class="headerlink" href="#what-0-7-established" title="Link to this heading"></a></h2>
-<p>The 0.7 release is about physical geography, not polygons. It adds sourced land
-and water area, coastline, highest and lowest points, mean elevation,
-source-listed major rivers and lakes, plain-language climate summaries, and
-represented Köppen-Geiger classes. It also adds exact physical filters,
-feature-discovery helpers, rankings, discovery-card fields, and deterministic
-learning prompts.</p>
-<p>A separate major-mountain inventory was not added: the reviewed source can
-identify a profile’s highest point, but that does not make every point a
-mountain or provide an honest global “major” threshold.</p>
+<p>The current release combines country identity, practical reference facts,
+physical geography, source-listed rivers and lakes, broad climate classes,
+coordinates, land-border topology, rankings, and repeatable learning prompts.
+It keeps source gaps explicit and does not present derived rankings as judgments
+about countries or people.</p>
 </section>
-<section id="explicitly-deferred">
-<h2>Explicitly deferred<a class="headerlink" href="#explicitly-deferred" title="Link to this heading"></a></h2>
-<p>Boundary geometry, GeoJSON export, bounding boxes, centroids, and
-point-in-country lookup are not part of 0.6 or 0.7 and remain candidates for
-0.8 after their own modeling and licensing review. Reference dates and anthem
-contributors/adoption histories are also outside the current source contract.
-This keeps each release useful without mixing distinct licensing, modeling, and
-interpretation problems.</p>
+<section id="what-0-8-should-improve">
+<h2>What 0.8 should improve<a class="headerlink" href="#what-0-8-should-improve" title="Link to this heading"></a></h2>
+<p>The next milestone should make the existing atlas easier and more enjoyable to
+use, especially for learners and teachers. The leading candidates are:</p>
+<ul class="simple">
+<li><p>simple city search and nearby-city discovery;</p></li>
+<li><p>readable country summaries for terminals, notebooks, and lessons;</p></li>
+<li><p>friendly coordinate helpers for common geography activities;</p></li>
+<li><p>deterministic multiple-choice questions built from sourced facts;</p></li>
+<li><p>beginner-focused examples, classroom recipes, and playground improvements;</p></li>
+<li><p>API naming, error-message, typing, accessibility, and browser-runtime polish.</p></li>
+</ul>
+<p>This list is a planning boundary, not a published contract. Each item must have
+clear behavior, tests, documentation, and a useful example before release.</p>
+</section>
+<section id="deferred-work">
+<h2>Deferred work<a class="headerlink" href="#deferred-work" title="Link to this heading"></a></h2>
+<p>Boundary geometry, GeoJSON export, bounding boxes, polygon centroids, and
+point-in-country lookup are not scheduled for 0.8. They add meaningful package
+size, licensing, modeling, and boundary-interpretation work and may be better
+suited to an optional post-1.0 extension.</p>
+<p>Anthem lyrics, audio, contributor histories, and adoption dates remain outside
+the current source contract.</p>
 </section>
 </section>
 

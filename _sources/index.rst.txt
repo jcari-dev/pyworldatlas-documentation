@@ -3,7 +3,7 @@ PyWorldAtlas
 
 .. container:: atlas-hero
 
-   :atlas-kicker:`Offline · source-aware · dependency-free`
+   :atlas-kicker:`Offline · source-aware · made for learning`
 
    .. container:: atlas-hero-title
 
@@ -14,7 +14,8 @@ PyWorldAtlas
       Explore country profiles, names and writing systems, capitals, cities,
       physical geography, climate classes, coordinates, distances, reviewed
       land neighbors, rankings, and learning tools from one bundled database.
-      No API key and no runtime download.
+      Built for developers, classrooms, and curious learners. No API key and
+      no runtime download.
 
 **Documented version:** 0.7.0 | **Dataset:** 2026.07.22.7 |
 **Python:** 3.10–3.14 | **Profiles:** 248
@@ -126,7 +127,7 @@ See what you can build
 
    .. container:: atlas-card atlas-card-blue
 
-      .. rubric:: Teach, quiz, or publish
+      .. rubric:: Teach and learn
 
       Create stable samples, deterministic flashcards, compact discovery cards,
       and Unicode-preserving JSON with :doc:`discovery` and

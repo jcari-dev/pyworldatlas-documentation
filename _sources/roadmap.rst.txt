@@ -1,9 +1,9 @@
 Roadmap and visible progress
 ============================
 
-Each release has a defined feature boundary, source review, test gate, and
-documentation update. A planned feature is not part of the public contract
-until its release is built and published.
+PyWorldAtlas grows through small, installable releases with explicit data,
+documentation, and compatibility boundaries. Planned work is not part of the
+public API until it is implemented, tested, documented, and published.
 
 .. container:: atlas-card-grid
 
@@ -11,22 +11,22 @@ until its release is built and published.
 
       .. rubric:: Current release
 
-      **0.7.0** is published with physical profiles, source-listed features,
-      climate classes, rankings, and learning tools.
+      **0.7.0** completes the first rich offline profile with physical
+      geography, climate classes, rankings, and learning tools.
 
    .. container:: atlas-card atlas-card-teal
 
       .. rubric:: Next milestone
 
-      **0.8.0** is a planning boundary for geometry and spatial queries. Its
-      source, model, and license review must finish before it becomes public.
+      **0.8.0** focuses on education and usability: simpler exploration,
+      friendlier output, classroom activities, and beginner-focused examples.
 
    .. container:: atlas-card atlas-card-gold
 
       .. rubric:: Stable destination
 
-      **1.0.0** represents a stable offline atlas contract after the remaining
-      data and API hardening milestones.
+      **1.0.0** represents a dependable offline atlas contract after API,
+      packaging, typing, and documentation hardening.
 
 .. list-table:: Release train
    :header-rows: 1
@@ -46,59 +46,65 @@ until its release is built and published.
      - Published
    * - 0.3.1
      - Complete
-     - Reviewed borders, neighbors, shortest land paths, learning utilities
+     - Reviewed neighbors, shortest land paths, and border learning tools
      - Published
    * - 0.5.0
      - Complete
-     - Complete selected local identities, English formal names, editorial policy
+     - Local identities, English formal names, and editorial policy
      - Published
    * - 0.6.0
      - Complete
-     - Anthem titles, reviewed mottos, demonyms, richer currency/language/timezone/postal metadata, filters, rankings, nearest capitals
+     - Reference facts, practical metadata, filters, and rankings
      - Published
    * - 0.7.0
      - Complete
-     - Physical geography: land/water area, coastline, elevation extremes, source-listed rivers/lakes, Köppen-Geiger climate, physical rankings and flashcards
+     - Physical geography, climate classes, feature search, and learning prompts
      - Published
-   * - Later release
-     - Deferred
-     - Boundary geometry, GeoJSON, bounding boxes, centroids, point-in-country
+   * - 0.8.0
+     - Planned
+     - Education, city discovery, readable summaries, and usability polish
+     - —
+   * - 0.9.0
+     - Planned
+     - API, typing, performance, packaging, and documentation hardening
      - —
    * - 1.0.0
      - Planned
      - Stable offline atlas contract
      - —
 
-What 0.6 established
---------------------
-
-The 0.6 release intentionally includes anthem titles without lyrics, audio,
-credits, or adoption dates. Mottos use a conservative reviewed source-listed
-layer and do not infer legal status. Demonyms preserve structured English source
-forms. Currency, language, timezone, and postal objects gain practical labels
-and provenance. Filters, rankings, and nearest-capital results make those facts
-easy to explore.
-
 What 0.7 established
 --------------------
 
-The 0.7 release is about physical geography, not polygons. It adds sourced land
-and water area, coastline, highest and lowest points, mean elevation,
-source-listed major rivers and lakes, plain-language climate summaries, and
-represented Köppen-Geiger classes. It also adds exact physical filters,
-feature-discovery helpers, rankings, discovery-card fields, and deterministic
-learning prompts.
+The current release combines country identity, practical reference facts,
+physical geography, source-listed rivers and lakes, broad climate classes,
+coordinates, land-border topology, rankings, and repeatable learning prompts.
+It keeps source gaps explicit and does not present derived rankings as judgments
+about countries or people.
 
-A separate major-mountain inventory was not added: the reviewed source can
-identify a profile's highest point, but that does not make every point a
-mountain or provide an honest global “major” threshold.
+What 0.8 should improve
+-----------------------
 
-Explicitly deferred
--------------------
+The next milestone should make the existing atlas easier and more enjoyable to
+use, especially for learners and teachers. The leading candidates are:
 
-Boundary geometry, GeoJSON export, bounding boxes, centroids, and
-point-in-country lookup are not part of 0.6 or 0.7 and remain candidates for
-0.8 after their own modeling and licensing review. Reference dates and anthem
-contributors/adoption histories are also outside the current source contract.
-This keeps each release useful without mixing distinct licensing, modeling, and
-interpretation problems.
+- simple city search and nearby-city discovery;
+- readable country summaries for terminals, notebooks, and lessons;
+- friendly coordinate helpers for common geography activities;
+- deterministic multiple-choice questions built from sourced facts;
+- beginner-focused examples, classroom recipes, and playground improvements;
+- API naming, error-message, typing, accessibility, and browser-runtime polish.
+
+This list is a planning boundary, not a published contract. Each item must have
+clear behavior, tests, documentation, and a useful example before release.
+
+Deferred work
+-------------
+
+Boundary geometry, GeoJSON export, bounding boxes, polygon centroids, and
+point-in-country lookup are not scheduled for 0.8. They add meaningful package
+size, licensing, modeling, and boundary-interpretation work and may be better
+suited to an optional post-1.0 extension.
+
+Anthem lyrics, audio, contributor histories, and adoption dates remain outside
+the current source contract.
