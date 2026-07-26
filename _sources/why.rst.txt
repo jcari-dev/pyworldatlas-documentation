@@ -33,9 +33,10 @@ Traceable to sources
    exposed on profiles and local-name records.
 
 Useful for learning
-   Flag emoji, compact discovery cards, reproducible samples, and structured
-   flashcards turn the same attributed profiles into reusable lesson material
-   without adding a game framework or hidden data source.
+   Readable country summaries, flag emoji, multilingual names, friendly
+   coordinate labels, city discovery, reproducible samples, flashcards, and
+   multiple-choice questions turn the same attributed profiles into reusable
+   lesson material without adding a game framework or hidden data source.
 
 Who is it for?
 --------------

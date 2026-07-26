@@ -69,12 +69,22 @@ for coverage and interpretation rules.
 Discovery calculations
 ----------------------
 
+``Country.summary`` returns display-ready multiline text and deliberately
+omits unavailable values. It is a presentation helper; use ``Country``
+attributes, ``to_dict``, or ``discovery_card`` when a stable structured shape
+matters.
+
 ``Atlas.rank_countries`` returns :class:`~pyworldatlas.CountryRanking` rows for
 documented sourced or directly derived metrics. ``Atlas.rank`` is its compact
 alias. ``Atlas.nearest_capitals`` returns
 :class:`~pyworldatlas.CapitalDistance` rows ordered by great-circle distance.
 These methods describe bundled values and geographic relationships; they do not
 score or judge countries.
+
+``Atlas.learning_topics`` lists the topics shared by ``flashcards`` and
+``quiz``. ``Atlas.quiz`` adds deterministic distractors and answer positions
+and returns :class:`~pyworldatlas.QuizQuestion` objects. These helpers do not
+store learner answers, scores, or sessions.
 
 Physical-geography provenance
 -----------------------------
@@ -98,6 +108,21 @@ Distance input contract
 ``(latitude, longitude)`` tuples, ``City`` objects, ``Capital`` objects, and
 ``Country`` objects. String inputs are exact bundled city names. A ``Country``
 input uses its primary-capital coordinates.
+
+``Coordinate.format`` and ``Coordinate.dms`` provide display text without
+changing the signed decimal-degree values. ``compass_direction_to`` converts
+the initial bearing to a 4-, 8-, or 16-point compass label. It is an orientation
+aid, not a route instruction.
+
+City discovery
+--------------
+
+``Atlas.city`` performs an exact city lookup and raises a clear exception for
+missing or ambiguous names. ``Atlas.search_cities`` performs accent-tolerant
+partial matching and returns an empty tuple when there are no matches.
+``Atlas.nearest_cities`` returns :class:`~pyworldatlas.CityDistance` rows
+ordered by great-circle distance. Optional country arguments narrow either the
+origin lookup or the returned places.
 
 Border API provenance
 ---------------------
@@ -259,10 +284,16 @@ Results and metadata
 .. autoclass:: pyworldatlas.CapitalDistance
    :members:
 
+.. autoclass:: pyworldatlas.CityDistance
+   :members:
+
 .. autoclass:: pyworldatlas.CountryMatch
    :members:
 
 .. autoclass:: pyworldatlas.Flashcard
+   :members:
+
+.. autoclass:: pyworldatlas.QuizQuestion
    :members:
 
 .. autoclass:: pyworldatlas.DatasetInfo

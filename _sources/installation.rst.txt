@@ -8,7 +8,7 @@ pipeline and documentation.
 Requirements
 ------------
 
-- Python 3.10 or newer for the 0.x release series.
+- Python 3.10 through 3.14 for the 0.8 release.
 - No third-party runtime packages.
 - No API key or network access after installation.
 
@@ -48,7 +48,7 @@ Test the exact release artifact without consulting a package index:
 
 .. code-block:: console
 
-   python -m pip install --no-index --no-deps dist/pyworldatlas-0.7.0-py3-none-any.whl
+   python -m pip install --no-index --no-deps dist/pyworldatlas-0.8.0-py3-none-any.whl
 
 Verify the installation
 -----------------------
@@ -57,7 +57,7 @@ Verify the installation
 
    >>> import pyworldatlas
    >>> pyworldatlas.__version__
-   '0.7.0'
+   '0.8.0'
    >>> from pyworldatlas import Atlas
    >>> with Atlas() as atlas:
    ...     print(atlas.country("DO").capital.name)

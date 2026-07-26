@@ -4,8 +4,30 @@ Changelog
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
 
-0.7.0 — 2026-07-22
-------------------
+0.8.0
+-----
+
+- Added :meth:`~pyworldatlas.Country.summary` for readable multilingual
+  country introductions assembled from existing sourced profile fields.
+- Added deterministic multiple-choice questions through
+  :meth:`~pyworldatlas.Atlas.quiz` and the immutable, serializable
+  :class:`~pyworldatlas.QuizQuestion` model.
+- Added :meth:`~pyworldatlas.Atlas.learning_topics` so lessons and applications
+  can discover the topics shared by flashcards and quizzes.
+- Added partial :meth:`~pyworldatlas.Atlas.search_cities` lookup and
+  :meth:`~pyworldatlas.Atlas.nearest_cities` proximity discovery with typed
+  :class:`~pyworldatlas.CityDistance` results.
+- Added readable decimal degrees, degrees/minutes/seconds, hemisphere labels,
+  and compass directions to :class:`~pyworldatlas.Coordinate`.
+- Added compact human-readable city labels.
+- Expanded beginner examples, classroom recipes, the browser playground, API
+  documentation, and public docstrings around the education and usability
+  workflows.
+- Reorganized the documentation as a coherent learning path while preserving
+  source, missingness, and geographic-interpretation guidance.
+
+0.7.0
+-----
 
 - Added sourced total, land, and water area; coastline; mean elevation; and
   named highest and lowest points.
@@ -25,8 +47,8 @@ changes. The newest published release appears first.
   point-in-country lookup, and a separate major-mountain inventory outside this
   release.
 
-0.6.0 — 2026-07-22
-------------------
+0.6.0
+-----
 
 - Added 234 source-provided anthem-title profiles, 32 explicitly reviewed
   source-listed mottos, and 227 English demonym profiles.
@@ -42,8 +64,8 @@ changes. The newest published release appears first.
 - Kept lyrics, audio, anthem credits/dates, reference dates, boundary geometry,
   GeoJSON, bounding boxes, centroids, and point-in-country outside this release.
 
-0.5.0 — 2026-07-21
-------------------
+0.5.0
+-----
 
 - Added one sourced local-language identity for all 248 countries and areas,
   spanning 80 languages and 21 writing systems.
@@ -78,8 +100,8 @@ changes. The newest published release appears first.
 - Included the completed country-identity milestone in 0.5.0 rather than moving
   or reusing a public version tag.
 
-0.3.1 — 2026-07-21
-------------------
+0.3.1
+-----
 
 - Added :meth:`~pyworldatlas.Atlas.has_land_route` for explicit land-graph
   reachability checks.
@@ -89,8 +111,8 @@ changes. The newest published release appears first.
 - Expanded the border, discovery, API, serialization, and source guides with
   provenance, return-value, connectivity, and edge-case explanations.
 
-0.3.0 — 2026-07-21
-------------------
+0.3.0
+-----
 
 - Added 319 reviewed, undirected land-border relationships.
 - Added neighbor lookup, shared neighbors, deterministic shortest border paths,
@@ -103,8 +125,8 @@ changes. The newest published release appears first.
 - Consolidated validation into focused executable examples and automated
   runtime, graph, and pipeline tests.
 
-0.2.1 — 2026-07-21
-------------------
+0.2.1
+-----
 
 - First production candidate for the complete 0.2 country-profile, coordinate,
   and discovery feature set.
@@ -129,8 +151,8 @@ changes. The newest published release appears first.
 - Upgraded the generated dataset to schema 2 while retaining the 0.1.0 country,
   capital, city, lookup, and collection behaviors.
 
-0.1.0 — 2026-07-20
-------------------
+0.1.0
+-----
 
 - Rebuilt the project from scratch around a standard-library runtime and one
   generated SQLite database.

@@ -50,26 +50,36 @@ profile into an unstructured dictionary.
 
    with Atlas() as atlas:
        country = atlas.country("Brazil")
-
-       print(country.flag, country.name_in("pt"), "/", country.name)
-       print("Capital:", country.capital.name)
-       print("Formal name:", country.formal_name)
-       print("Anthem:", country.anthem.title)
-       print("Motto:", country.motto.text)
-       print(
-           "Highest point:",
-           country.highest_point.name,
-           f"({country.highest_point.elevation_m:,.0f} m)",
-       )
-       print(
-           "Climate:",
-           country.climate.dominant_zone.code,
-           country.climate.dominant_zone.name,
-       )
+       print(country.summary())
 
 .. raw:: html
 
    <p><a class="atlas-recipe-launch" href="playground.html#recipe=postcard">Load Country dossier in the playground →</a></p>
+
+Cross four writing systems
+--------------------------
+
+Local names preserve Unicode text and expose the script recorded with each
+selected identity.
+
+.. code-block:: python
+
+   from pyworldatlas import Atlas
+
+   with Atlas() as atlas:
+       for country_name, language_code in (
+           ("Dominican Republic", "es"),
+           ("China", "zh"),
+           ("India", "hi"),
+           ("Japan", "ja"),
+       ):
+           country = atlas.country(country_name)
+           local = country.local_name(language_code)
+           print(country.flag, local.short_name, f"[{local.script_code}]")
+
+.. raw:: html
+
+   <p><a class="atlas-recipe-launch" href="playground.html#recipe=names">Load Names and scripts in the playground →</a></p>
 
 Create a comparison table
 -------------------------
@@ -119,7 +129,10 @@ spherical midpoint without an additional geospatial dependency.
        paris = atlas.coordinates("Paris", country="FR")
        midpoint = tokyo.midpoint_to(paris)
 
+       print("Tokyo:", tokyo.format())
+       print("DMS:", tokyo.dms())
        print(f"Distance: {tokyo.distance_to(paris):,.0f} km")
+       print("Initial direction:", tokyo.compass_direction_to(paris))
        print(f"Bearing: {tokyo.bearing_to(paris):.1f}°")
        print(
            "Midpoint:",
@@ -129,6 +142,32 @@ spherical midpoint without an additional geospatial dependency.
 .. raw:: html
 
    <p><a class="atlas-recipe-launch" href="playground.html#recipe=distance">Load Distance toolkit in the playground →</a></p>
+
+Search and explore nearby cities
+--------------------------------
+
+Combine partial city-name search with nearby-place discovery.
+
+.. code-block:: python
+
+   from pyworldatlas import Atlas
+
+   with Atlas() as atlas:
+       matches = atlas.search_cities("santo", country="DO", limit=3)
+       print("Search results:", ", ".join(city.label for city in matches))
+
+       nearby = atlas.nearest_cities(
+           "Santo Domingo",
+           origin_country="DO",
+           within_country="DO",
+           limit=5,
+       )
+       for result in nearby:
+           print(f"{result.city.name:<24} {result.distance:>6.1f} km")
+
+.. raw:: html
+
+   <p><a class="atlas-recipe-launch" href="playground.html#recipe=cities">Load City explorer in the playground →</a></p>
 
 Trace geographic relationships
 ------------------------------
@@ -225,23 +264,26 @@ methods for comparisons.
 Create a repeatable lesson
 --------------------------
 
-Stable seeds make generated cards reproducible across machines when the
-dataset version is the same.
+Stable seeds make questions, choices, and answer positions reproducible across
+machines when the dataset version is the same.
 
 .. code-block:: python
 
    from pyworldatlas import Atlas
 
    with Atlas() as atlas:
-       cards = atlas.flashcards(
-           topic="highest_points",
+       questions = atlas.quiz(
+           topic="local_names",
            count=5,
+           choices=4,
            seed="classroom-demo",
        )
 
-   for number, card in enumerate(cards, 1):
-       print(f"{number}. {card.prompt}")
-       print(f"   Answer: {card.answer}")
+   for number, question in enumerate(questions, 1):
+       print(f"{number}. {question.prompt}")
+       for choice_number, choice in enumerate(question.choices, 1):
+           print(f"   {choice_number}. {choice}")
+       print(f"   Answer: {question.answer_number}\n")
 
 .. raw:: html
 

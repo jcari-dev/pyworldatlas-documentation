@@ -146,6 +146,18 @@ empty collection fields even when a familiar country currently has values.
 Convenience and discovery views
 -------------------------------
 
+For a quick human-readable introduction, ``country.summary()`` combines the
+most useful available fields and skips missing ones:
+
+.. code-block:: python
+
+   with Atlas() as atlas:
+       print(atlas.country("Brazil").summary())
+
+Pass ``local_language="pt"`` to request a particular bundled local identity.
+The result is display text; structured programs should continue to use typed
+attributes or :meth:`Country.to_dict <pyworldatlas.Country.to_dict>`.
+
 ``language_codes``, ``currency_code``, ``timezone_ids``, and
 ``major_city_count`` provide common
 read-only projections without changing the underlying typed values.

@@ -11,38 +11,38 @@ public API until it is implemented, tested, documented, and published.
 
       .. rubric:: Current release
 
-      **0.7.0** completes the first rich offline profile with physical
-      geography, climate classes, rankings, and learning tools.
+      **0.8.0** makes the rich offline atlas easier to explore, explain, and
+      use in lessons without changing the reviewed dataset.
 
    .. container:: atlas-card atlas-card-teal
 
       .. rubric:: Next milestone
 
-      **0.8.0** focuses on education and usability: simpler exploration,
-      friendlier output, classroom activities, and beginner-focused examples.
+      **0.9.0** focuses on API consistency, typing, performance, packaging,
+      compatibility, and documentation completeness.
 
    .. container:: atlas-card atlas-card-gold
 
       .. rubric:: Stable destination
 
-      **1.0.0** represents a dependable offline atlas contract after API,
-      packaging, typing, and documentation hardening.
+      **1.0.0** represents a dependable offline atlas contract with clear
+      upgrades and reproducible releases.
 
 .. list-table:: Release train
    :header-rows: 1
-   :widths: 14 20 50 16
+   :widths: 14 14 54 18
 
    * - Version
      - Status
-     - Visible improvement
-     - Release state
+     - Main boundary
+     - Publication
    * - 0.1.0
      - Complete
-     - 248-profile core, lookup, capitals, cities, generated database
+     - Rebuilt runtime, generated database, countries, capitals, and cities
      - Published
    * - 0.2.1
      - Complete
-     - Rich profiles, coordinates, distances, flags, discovery, flashcards
+     - Rich profiles, coordinates, distances, and initial discovery tools
      - Published
    * - 0.3.1
      - Complete
@@ -61,9 +61,9 @@ public API until it is implemented, tested, documented, and published.
      - Physical geography, climate classes, feature search, and learning prompts
      - Published
    * - 0.8.0
-     - Planned
-     - Education, city discovery, readable summaries, and usability polish
-     - —
+     - Complete
+     - Summaries, city discovery, coordinate helpers, quizzes, and documentation UX
+     - Published
    * - 0.9.0
      - Planned
      - API, typing, performance, packaging, and documentation hardening
@@ -73,38 +73,30 @@ public API until it is implemented, tested, documented, and published.
      - Stable offline atlas contract
      - —
 
-What 0.7 established
+What 0.8 established
 --------------------
 
-The current release combines country identity, practical reference facts,
-physical geography, source-listed rivers and lakes, broad climate classes,
-coordinates, land-border topology, rankings, and repeatable learning prompts.
-It keeps source gaps explicit and does not present derived rankings as judgments
-about countries or people.
+The education-and-usability release adds a presentation layer without hiding
+the typed data underneath it:
 
-What 0.8 should improve
------------------------
+- :meth:`~pyworldatlas.Country.summary` assembles readable country introductions;
+- :meth:`~pyworldatlas.Atlas.search_cities` and
+  :meth:`~pyworldatlas.Atlas.nearest_cities` make place discovery approachable;
+- :class:`~pyworldatlas.Coordinate` formats decimal and DMS labels and names
+  initial compass directions;
+- :meth:`~pyworldatlas.Atlas.learning_topics` exposes the complete learning menu;
+- :meth:`~pyworldatlas.Atlas.quiz` creates repeatable multiple-choice material.
 
-The next milestone should make the existing atlas easier and more enjoyable to
-use, especially for learners and teachers. The leading candidates are:
-
-- simple city search and nearby-city discovery;
-- readable country summaries for terminals, notebooks, and lessons;
-- friendly coordinate helpers for common geography activities;
-- deterministic multiple-choice questions built from sourced facts;
-- beginner-focused examples, classroom recipes, and playground improvements;
-- API naming, error-message, typing, accessibility, and browser-runtime polish.
-
-This list is a planning boundary, not a published contract. Each item must have
-clear behavior, tests, documentation, and a useful example before release.
+All five capabilities use existing reviewed facts or transparent calculations.
+They add no learner tracking, scoring service, live API, or new source layer.
 
 Deferred work
 -------------
 
 Boundary geometry, GeoJSON export, bounding boxes, polygon centroids, and
-point-in-country lookup are not scheduled for 0.8. They add meaningful package
-size, licensing, modeling, and boundary-interpretation work and may be better
-suited to an optional post-1.0 extension.
+point-in-country lookup remain outside the current plan. They add meaningful
+package size, licensing, modeling, and boundary-interpretation work and may be
+better suited to an optional post-1.0 extension.
 
 Anthem lyrics, audio, contributor histories, and adoption dates remain outside
 the current source contract.

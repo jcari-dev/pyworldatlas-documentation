@@ -1,7 +1,7 @@
 Land borders and paths
 ======================
 
-PyWorldAtlas 0.3.0 includes a reviewed, undirected graph of 319 land-border
+PyWorldAtlas includes a reviewed, undirected graph of 319 land-border
 relationships. It supports immediate neighbors, shared neighbors, shortest
 paths, connected land regions, and countries or areas with no accepted land
 border. Every operation works from the bundled SQLite database.

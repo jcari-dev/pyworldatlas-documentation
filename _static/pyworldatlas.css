@@ -197,8 +197,15 @@
 .rst-content div[class^="highlight"],
 .rst-content div.highlight {
   border: 1px solid #e0e8ed;
+  border-left: 3px solid #79abc3;
   border-radius: 7px;
-  box-shadow: 0 2px 7px rgba(38, 68, 85, 0.035);
+  box-shadow: 0 3px 10px rgba(38, 68, 85, 0.05);
+  overflow: hidden;
+}
+
+.rst-content .atlas-example-label + div[class^="highlight"],
+.rst-content .atlas-example-label + div.highlight {
+  border-left-color: #72aa9e;
 }
 
 .rst-content table.docutils {

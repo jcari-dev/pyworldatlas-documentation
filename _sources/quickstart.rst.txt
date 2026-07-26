@@ -24,7 +24,7 @@ tools. Every example below runs from the installed package without an API key.
 
       .. rubric:: Connect
 
-      Filter, rank, measure, follow reviewed land paths, create flashcards, and
+      Search, rank, measure, follow reviewed land paths, create quizzes, and
       serialize results.
 
 Create the atlas
@@ -42,6 +42,21 @@ promptly:
    ...     print(country.capital.name)
    Japan
    Tokyo
+
+Print a friendly profile
+------------------------
+
+``summary()`` is the quickest way to meet a country. It combines useful
+available facts, skips missing values, and keeps every typed attribute ready
+for follow-up questions:
+
+.. code-block:: python
+
+   with Atlas() as atlas:
+       print(atlas.country("Brazil").summary())
+
+Use the output for terminals, notebooks, and lessons. Use ``to_dict()`` or
+individual attributes when a program needs structured values.
 
 Look up countries naturally
 ---------------------------
@@ -86,7 +101,7 @@ Library, schema, and data versions change independently:
 
    >>> info = atlas.dataset_info()
    >>> (info.library_version, info.schema_version, info.dataset_version)
-   ('0.7.0', 7, '2026.07.22.7')
+   ('0.8.0', 7, '2026.07.22.7')
    >>> atlas.close()
 
 Read profile metadata
@@ -194,7 +209,8 @@ language returns ``None`` rather than a generated translation. See
 Build reproducible learning material
 ------------------------------------
 
-Country samples and flashcards use a stable seed-based ordering:
+Country samples, flashcards, and multiple-choice questions use a stable
+seed-based ordering:
 
 .. doctest::
 
@@ -208,6 +224,13 @@ Country samples and flashcards use a stable seed-based ordering:
    ['KW', 'BS', 'BI']
    What is the capital of Kuwait? Kuwait City
 
+   >>> with Atlas() as atlas:
+   ...     question = atlas.quiz(topic="capitals", count=1, seed=42)[0]
+   ...     print(question.answer in question.choices)
+   ...     print(question.is_correct(question.answer_number))
+   True
+   True
+
 Rank profiles and discover nearby capitals
 ------------------------------------------
 
@@ -219,6 +242,18 @@ Rank profiles and discover nearby capitals
    ['CN', 'IN', 'US']
    ['Seoul', 'Pyongyang', 'Beijing']
 
+Search and explore populated places
+------------------------------------
+
+Use exact :meth:`~pyworldatlas.Atlas.city` lookups when you know a name, or
+partial :meth:`~pyworldatlas.Atlas.search_cities` when you are exploring:
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     print([city.label for city in atlas.search_cities("santo", country="DO", limit=3)])
+   ['Santo Domingo (DO)', 'Santo Domingo Oeste (DO)', 'Santo Domingo Este (DO)']
+
 Measure city-to-city distance
 -----------------------------
 
@@ -228,9 +263,13 @@ city names. Country arguments disambiguate cities with shared names.
 .. doctest::
 
    >>> with Atlas() as atlas:
-   ...     distance = atlas.distance_between(
-   ...         "Tokyo", "Paris", first_country="JP", second_country="FR"
-   ...     )
+   ...     tokyo = atlas.coordinates("Tokyo", country="JP")
+   ...     paris = atlas.coordinates("Paris", country="FR")
+   ...     print(tokyo.format())
+   ...     print(tokyo.compass_direction_to(paris))
+   ...     distance = tokyo.distance_to(paris)
+   35.6895° N, 139.6917° E
+   NNW
    >>> round(distance)
    9713
 

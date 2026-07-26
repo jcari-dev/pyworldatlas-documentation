@@ -61,24 +61,27 @@ romanization, source, and exact locator when a country is serialized:
 Discovery values
 ----------------
 
-Discovery cards and flashcards expose the same ``to_dict()`` and ``to_json()``
-conveniences:
+Discovery cards, flashcards, and quiz questions expose the same ``to_dict()``
+and ``to_json()`` conveniences:
 
 .. doctest::
 
    >>> with Atlas() as atlas:
    ...     card = atlas.country("Japan").discovery_card()
    ...     flashcard = atlas.flashcards(topic="capitals", count=1, seed=42)[0]
+   ...     question = atlas.quiz(topic="local_names", count=1, seed=42)[0]
    >>> card.to_dict()["country"]["alpha2"]
    'JP'
    >>> json.loads(flashcard.to_json())["answer"]
    'Kuwait City'
+   >>> question.answer in json.loads(question.to_json())["choices"]
+   True
 
 Reference facts and ranking results
 -----------------------------------
 
-Typed reference facts, their source metadata, rankings, and capital distances
-serialize recursively:
+Typed reference facts, their source metadata, rankings, capital distances, and
+nearby-city results serialize recursively:
 
 .. doctest::
 
@@ -86,6 +89,9 @@ serialize recursively:
    ...     japan = atlas.country("Japan").to_dict()
    ...     ranking = atlas.rank("population", limit=1)[0]
    ...     nearby = atlas.nearest_capitals("Tokyo", country="JP", limit=1)[0]
+   ...     nearby_city = atlas.nearest_cities(
+   ...         "Santo Domingo", origin_country="DO", within_country="DO", limit=1
+   ...     )[0]
    >>> japan["anthems"][0]["title"]
    'Kimigayo'
    >>> japan["currency"]["source"]["license_name"]
@@ -94,6 +100,8 @@ serialize recursively:
    1
    >>> json.loads(nearby.to_json())["capital"]["name"]
    'Seoul'
+   >>> json.loads(nearby_city.to_json())["city"]["name"]
+   'Santo Domingo Este'
 
 Border paths
 ------------

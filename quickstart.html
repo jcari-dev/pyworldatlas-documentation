@@ -6,18 +6,18 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>60-second quickstart &mdash; PyWorldAtlas 0.7.0</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+  <title>60-second quickstart &mdash; PyWorldAtlas 0.8.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=f6f5ea8a" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=21a4203e" />
 
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=fe7df9b0"></script>
+      <script src="_static/documentation_options.js?v=486e5634"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script defer="defer" src="_static/playground.js?v=719b3af8"></script>
+      <script defer="defer" src="_static/playground.js?v=01b1df8d"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -46,12 +46,22 @@
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
               <p class="caption" role="heading"><span class="caption-text">Start here</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="learning.html">Learning with PyWorldAtlas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#a-country-in-one-friendly-call">A country in one friendly call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#a-gallery-of-writing-systems">A gallery of writing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#turn-coordinates-into-a-compass-activity">Turn coordinates into a compass activity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#explore-nearby-cities">Explore nearby cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#build-a-repeatable-multiple-choice-lesson">Build a repeatable multiple-choice lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#where-to-go-next">Where to go next</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="explore.html">Explore the atlas in five minutes</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#make-a-country-postcard">Make a country postcard</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#cross-writing-systems">Cross writing systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#follow-a-feature-across-profiles">Follow a feature across profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#rank-the-bundled-snapshots">Rank the bundled snapshots</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#find-the-nearest-capitals">Find the nearest capitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="explore.html#search-nearby-cities">Search nearby cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#measure-and-orient">Measure and orient</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#follow-a-land-path">Follow a land path</a></li>
 <li class="toctree-l2"><a class="reference internal" href="explore.html#build-a-small-collection">Build a small collection</a></li>
@@ -69,8 +79,10 @@
 <li class="toctree-l1"><a class="reference internal" href="recipes.html">Python recipe gallery</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="recipes.html#build-a-world-snapshot">Build a world snapshot</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recipes.html#print-a-country-dossier">Print a country dossier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recipes.html#cross-four-writing-systems">Cross four writing systems</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recipes.html#create-a-comparison-table">Create a comparison table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recipes.html#build-a-distance-toolkit">Build a distance toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recipes.html#search-and-explore-nearby-cities">Search and explore nearby cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recipes.html#trace-geographic-relationships">Trace geographic relationships</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recipes.html#explore-a-climate-profile">Explore a climate profile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="recipes.html#compose-search-filters-and-rankings">Compose search, filters, and rankings</a></li>
@@ -81,6 +93,7 @@
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">60-second quickstart</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#create-the-atlas">Create the atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#print-a-friendly-profile">Print a friendly profile</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#look-up-countries-naturally">Look up countries naturally</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#use-it-like-a-python-collection">Use it like a Python collection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#inspect-the-dataset-version">Inspect the dataset version</a></li>
@@ -91,6 +104,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#meet-countries-in-their-own-languages">Meet countries in their own languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#build-reproducible-learning-material">Build reproducible learning material</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#rank-profiles-and-discover-nearby-capitals">Rank profiles and discover nearby capitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#search-and-explore-populated-places">Search and explore populated places</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#measure-city-to-city-distance">Measure city-to-city distance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#explore-land-connections">Explore land connections</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#executable-example">Executable example</a></li>
@@ -179,6 +193,8 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="capitals_cities.html#major-cities">Major cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capitals_cities.html#search-city-names">Search city names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="capitals_cities.html#find-nearby-cities">Find nearby cities</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="coordinates_distances.html">Coordinates and distances</a><ul>
@@ -186,6 +202,7 @@
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#distance-between-places">Distance between places</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#country-and-model-inputs">Country and model inputs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#raw-latitude-and-longitude">Raw latitude and longitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#friendly-coordinate-labels">Friendly coordinate labels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#country-coordinates">Country coordinates</a></li>
 </ul>
 </li>
@@ -203,11 +220,13 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="discovery.html">Country discovery and learning tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html#readable-country-summaries">Readable country summaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discovery.html#flag-emoji">Flag emoji</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discovery.html#derived-profile-facts">Derived profile facts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discovery.html#discovery-cards">Discovery cards</a></li>
 <li class="toctree-l2"><a class="reference internal" href="discovery.html#reproducible-country-samples">Reproducible country samples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="discovery.html#structured-flashcards">Structured flashcards</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html#structured-flashcards">Structured flashcards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="discovery.html#multiple-choice-questions">Multiple-choice questions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="discovery.html#supported-topics">Supported topics</a></li>
 </ul>
 </li>
@@ -219,6 +238,7 @@
 <li class="toctree-l2"><a class="reference internal" href="searching.html#exact-lookup">Exact lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#safe-lookup">Safe lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#ranked-search">Ranked search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html#city-name-search">City-name search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#filtering">Filtering</a></li>
 </ul>
 </li>
@@ -249,7 +269,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-7-0-release">Source priority in the 0.7.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-8-0-release">Source priority in the 0.8.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -269,8 +289,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap and visible progress</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="roadmap.html#what-0-7-established">What 0.7 established</a></li>
-<li class="toctree-l2"><a class="reference internal" href="roadmap.html#what-0-8-should-improve">What 0.8 should improve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#what-0-8-established">What 0.8 established</a></li>
 <li class="toctree-l2"><a class="reference internal" href="roadmap.html#deferred-work">Deferred work</a></li>
 </ul>
 </li>
@@ -284,6 +303,7 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#discovery-calculations">Discovery calculations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#physical-geography-provenance">Physical-geography provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#distance-input-contract">Distance input contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#city-discovery">City discovery</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#border-api-provenance">Border API provenance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#profile-field-notes">Profile field notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#atlas">Atlas</a><ul>
@@ -323,8 +343,10 @@
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.BorderPathResult"><code class="docutils literal notranslate"><span class="pre">BorderPathResult</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryRanking"><code class="docutils literal notranslate"><span class="pre">CountryRanking</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CapitalDistance"><code class="docutils literal notranslate"><span class="pre">CapitalDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CityDistance"><code class="docutils literal notranslate"><span class="pre">CityDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.QuizQuestion"><code class="docutils literal notranslate"><span class="pre">QuizQuestion</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.DatasetInfo"><code class="docutils literal notranslate"><span class="pre">DatasetInfo</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.SourceReference"><code class="docutils literal notranslate"><span class="pre">SourceReference</span></code></a></li>
 </ul>
@@ -346,15 +368,16 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.7.0 — 2026-07-22</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.6.0 — 2026-07-22</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.5.0 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.3.1 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.3.0 — 2026-07-21</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.2.1 — 2026-07-21</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.1.0 — 2026-07-20</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -400,7 +423,7 @@ source metadata offline.</p>
 </div>
 <div class="atlas-card atlas-card-gold docutils container">
 <p class="rubric">Connect</p>
-<p>Filter, rank, measure, follow reviewed land paths, create flashcards, and
+<p>Search, rank, measure, follow reviewed land paths, create quizzes, and
 serialize results.</p>
 </div>
 </div>
@@ -417,6 +440,18 @@ promptly:</p>
 <span class="go">Tokyo</span>
 </pre></div>
 </div>
+</section>
+<section id="print-a-friendly-profile">
+<h2>Print a friendly profile<a class="headerlink" href="#print-a-friendly-profile" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">summary()</span></code> is the quickest way to meet a country. It combines useful
+available facts, skips missing values, and keeps every typed attribute ready
+for follow-up questions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Brazil&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">summary</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Use the output for terminals, notebooks, and lessons. Use <code class="docutils literal notranslate"><span class="pre">to_dict()</span></code> or
+individual attributes when a program needs structured values.</p>
 </section>
 <section id="look-up-countries-naturally">
 <h2>Look up countries naturally<a class="headerlink" href="#look-up-countries-naturally" title="Link to this heading"></a></h2>
@@ -454,7 +489,7 @@ promptly:</p>
 <p>Library, schema, and data versions change independently:</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">info</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">dataset_info</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">info</span><span class="o">.</span><span class="n">library_version</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">schema_version</span><span class="p">,</span> <span class="n">info</span><span class="o">.</span><span class="n">dataset_version</span><span class="p">)</span>
-<span class="go">(&#39;0.7.0&#39;, 7, &#39;2026.07.22.7&#39;)</span>
+<span class="go">(&#39;0.8.0&#39;, 7, &#39;2026.07.22.7&#39;)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">atlas</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -549,7 +584,8 @@ language returns <code class="docutils literal notranslate"><span class="pre">No
 </section>
 <section id="build-reproducible-learning-material">
 <h2>Build reproducible learning material<a class="headerlink" href="#build-reproducible-learning-material" title="Link to this heading"></a></h2>
-<p>Country samples and flashcards use a stable seed-based ordering:</p>
+<p>Country samples, flashcards, and multiple-choice questions use a stable
+seed-based ordering:</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">japan</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;Japan&quot;</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">japan</span><span class="o">.</span><span class="n">flag_emoji</span><span class="p">,</span> <span class="nb">round</span><span class="p">(</span><span class="n">japan</span><span class="o">.</span><span class="n">population_density</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -559,6 +595,13 @@ language returns <code class="docutils literal notranslate"><span class="pre">No
 <span class="go">🇯🇵 334.81</span>
 <span class="go">[&#39;KW&#39;, &#39;BS&#39;, &#39;BI&#39;]</span>
 <span class="go">What is the capital of Kuwait? Kuwait City</span>
+
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">question</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">quiz</span><span class="p">(</span><span class="n">topic</span><span class="o">=</span><span class="s2">&quot;capitals&quot;</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="n">answer</span> <span class="ow">in</span> <span class="n">question</span><span class="o">.</span><span class="n">choices</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="n">is_correct</span><span class="p">(</span><span class="n">question</span><span class="o">.</span><span class="n">answer_number</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="go">True</span>
 </pre></div>
 </div>
 </section>
@@ -572,14 +615,28 @@ language returns <code class="docutils literal notranslate"><span class="pre">No
 </pre></div>
 </div>
 </section>
+<section id="search-and-explore-populated-places">
+<h2>Search and explore populated places<a class="headerlink" href="#search-and-explore-populated-places" title="Link to this heading"></a></h2>
+<p>Use exact <a class="reference internal" href="api.html#pyworldatlas.Atlas.city" title="pyworldatlas.Atlas.city"><code class="xref py py-meth docutils literal notranslate"><span class="pre">city()</span></code></a> lookups when you know a name, or
+partial <a class="reference internal" href="api.html#pyworldatlas.Atlas.search_cities" title="pyworldatlas.Atlas.search_cities"><code class="xref py py-meth docutils literal notranslate"><span class="pre">search_cities()</span></code></a> when you are exploring:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">([</span><span class="n">city</span><span class="o">.</span><span class="n">label</span> <span class="k">for</span> <span class="n">city</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">search_cities</span><span class="p">(</span><span class="s2">&quot;santo&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;DO&quot;</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)])</span>
+<span class="go">[&#39;Santo Domingo (DO)&#39;, &#39;Santo Domingo Oeste (DO)&#39;, &#39;Santo Domingo Este (DO)&#39;]</span>
+</pre></div>
+</div>
+</section>
 <section id="measure-city-to-city-distance">
 <h2>Measure city-to-city distance<a class="headerlink" href="#measure-city-to-city-distance" title="Link to this heading"></a></h2>
 <p>String inputs to <a class="reference internal" href="api.html#pyworldatlas.Atlas.distance_between" title="pyworldatlas.Atlas.distance_between"><code class="xref py py-meth docutils literal notranslate"><span class="pre">distance_between()</span></code></a> are exact bundled
 city names. Country arguments disambiguate cities with shared names.</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
-<span class="gp">... </span>    <span class="n">distance</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">distance_between</span><span class="p">(</span>
-<span class="gp">... </span>        <span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="n">first_country</span><span class="o">=</span><span class="s2">&quot;JP&quot;</span><span class="p">,</span> <span class="n">second_country</span><span class="o">=</span><span class="s2">&quot;FR&quot;</span>
-<span class="gp">... </span>    <span class="p">)</span>
+<span class="gp">... </span>    <span class="n">tokyo</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">coordinates</span><span class="p">(</span><span class="s2">&quot;Tokyo&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;JP&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="n">paris</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">coordinates</span><span class="p">(</span><span class="s2">&quot;Paris&quot;</span><span class="p">,</span> <span class="n">country</span><span class="o">=</span><span class="s2">&quot;FR&quot;</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">tokyo</span><span class="o">.</span><span class="n">format</span><span class="p">())</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">tokyo</span><span class="o">.</span><span class="n">compass_direction_to</span><span class="p">(</span><span class="n">paris</span><span class="p">))</span>
+<span class="gp">... </span>    <span class="n">distance</span> <span class="o">=</span> <span class="n">tokyo</span><span class="o">.</span><span class="n">distance_to</span><span class="p">(</span><span class="n">paris</span><span class="p">)</span>
+<span class="go">35.6895° N, 139.6917° E</span>
+<span class="go">NNW</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">round</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
 <span class="go">9713</span>
 </pre></div>

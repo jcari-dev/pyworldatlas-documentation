@@ -57,14 +57,7 @@ with Atlas() as atlas:
 
 with Atlas() as atlas:
     country = atlas.country("Brazil")
-    print(f"{country.flag}  {country.name_in('pt')} / {country.name}")
-    print(f"Capital:       {country.capital.name}")
-    print(f"Formal name:   {country.formal_name}")
-    print(f"Anthem:        {country.anthem.title}")
-    print(f"Motto:         {country.motto.text}")
-    print(f"Highest point: {country.highest_point.name} ({country.highest_point.elevation_m:,.0f} m)")
-    print(f"Climate:       {country.climate.dominant_zone.code} — {country.climate.dominant_zone.name}")
-    print(f"Major rivers:  {', '.join(river.name for river in country.rivers[:3])}")`,
+    print(country.summary())`,
     },
     {
       category: "Meet the world",
@@ -127,10 +120,13 @@ with Atlas() as atlas:
     tokyo = atlas.coordinates("Tokyo", country="JP")
     paris = atlas.coordinates("Paris", country="FR")
 
+    print(f"Tokyo: {tokyo.format()}")
+    print(f"       {tokyo.dms()}")
     print(f"Tokyo → Paris: {tokyo.distance_to(paris):,.0f} km")
+    print(f"Initial direction: {tokyo.compass_direction_to(paris)}")
     print(f"Initial bearing: {tokyo.bearing_to(paris):.1f}°")
     midpoint = tokyo.midpoint_to(paris)
-    print(f"Great-circle midpoint: {midpoint.latitude:.3f}, {midpoint.longitude:.3f}")
+    print(f"Great-circle midpoint: {midpoint.format(precision=3)}")
     print(f"Same distance in miles: {tokyo.distance_to(paris, unit='mi'):,.0f} mi")`,
     },
     {
@@ -234,24 +230,25 @@ with Atlas() as atlas:
       category: "Analyze the atlas",
       id: "cities",
       label: "City explorer",
-      description: "Inspect populated places and coordinates",
+      description: "Search names and discover nearby places",
       code: `from pyworldatlas import Atlas
 
 with Atlas() as atlas:
-    country = atlas.country("Japan")
-    cities = atlas.major_cities(country.alpha2, limit=8)
+    matches = atlas.search_cities("santo", country="DO", limit=3)
 
-    print(f"MAJOR POPULATED PLACES — {country.name.upper()}")
-    for city in cities:
-        population = f"{city.population:,}" if city.population else "not listed"
-        lat, lon = city.coordinates.as_tuple()
-        print(
-            f"{city.name:<18} pop. {population:>12}  "
-            f"({lat:>7.3f}, {lon:>8.3f})"
-        )
+    print("CITY SEARCH")
+    for city in matches:
+        print(f"  {city.label:<30} {city.coordinates.format()}")
 
-    tokyo, osaka = cities[0], atlas.city("Osaka", country="JP")
-    print(f"\\n{tokyo.name} → {osaka.name}: {tokyo.coordinates.distance_to(osaka.coordinates):,.0f} km")`,
+    nearby = atlas.nearest_cities(
+        "Santo Domingo",
+        origin_country="DO",
+        within_country="DO",
+        limit=5,
+    )
+    print("\\nNEAR SANTO DOMINGO")
+    for result in nearby:
+        print(f"  {result.city.name:<25} {result.distance:>6.1f} km")`,
     },
     {
       category: "Analyze the atlas",
@@ -280,18 +277,21 @@ with Atlas() as atlas:
       category: "Learn and build",
       id: "quiz",
       label: "Quiz studio",
-      description: "Create a repeatable lesson set",
+      description: "Build a colorful multiple-choice lesson",
       code: `from pyworldatlas import Atlas
 
 with Atlas() as atlas:
-    cards = atlas.flashcards(
-        topic="highest_points",
+    questions = atlas.quiz(
+        topic="local_names",
         count=5,
+        choices=4,
         seed="classroom-demo",
     )
-    for number, card in enumerate(cards, 1):
-        print(f"{number}. {card.prompt}")
-        print(f"   Answer: {card.answer}\\n")`,
+    for number, question in enumerate(questions, 1):
+        print(f"{number}. {question.prompt}")
+        for choice_number, choice in enumerate(question.choices, 1):
+            print(f"   {choice_number}. {choice}")
+        print(f"   Answer: {question.answer_number}\\n")`,
     },
     {
       category: "Learn and build",

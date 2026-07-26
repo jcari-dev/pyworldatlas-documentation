@@ -6,6 +6,11 @@ pipeline downloads raw snapshots, records checksums, normalizes independent
 records, validates them, and generates the SQLite database. The installed
 runtime never contacts these services.
 
+The 0.8 usability release reuses dataset ``2026.07.22.7``. Its readable
+summaries, city discovery, coordinate labels, and learning questions derive
+only from existing bundled records and documented calculations; no additional
+external source was introduced for those helpers.
+
 Field-specific source policy
 ----------------------------
 
@@ -321,7 +326,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.7.0 release
+Source priority in the 0.8.0 release
 ------------------------------------
 
 .. list-table::

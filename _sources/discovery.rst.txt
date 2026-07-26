@@ -1,9 +1,27 @@
 Country discovery and learning tools
 ====================================
 
-PyWorldAtlas can turn its sourced country profiles into reproducible samples,
-compact discovery cards, and structured flashcards. These tools are offline,
-dependency-free, and deterministic. They do not maintain scores or user state.
+PyWorldAtlas can turn its sourced country profiles into readable summaries,
+reproducible samples, compact discovery cards, flashcards, and multiple-choice
+questions. These tools are offline, dependency-free, and deterministic. They
+do not maintain scores or user state.
+
+Readable country summaries
+--------------------------
+
+:meth:`~pyworldatlas.Country.summary` assembles a friendly introduction while
+keeping the typed profile available underneath it:
+
+.. code-block:: python
+
+   from pyworldatlas import Atlas
+
+   with Atlas() as atlas:
+       print(atlas.country("Brazil").summary())
+
+Unavailable values are omitted. Pass ``local_language="ja"`` or another
+covered code to request a particular local identity. The result is display
+text; use ``Country.to_dict()`` for stable field names.
 
 Flag emoji
 ----------
@@ -132,10 +150,32 @@ objects:
    >>> cards[0].to_dict()["country"]["numeric"]
    '414'
 
+Multiple-choice questions
+-------------------------
+
+:meth:`~pyworldatlas.Atlas.quiz` uses the same topics and stable sampling while
+adding deterministic distractors and answer positions:
+
+.. doctest::
+
+   >>> questions = atlas.quiz(topic="capitals", count=2, seed="classroom")
+   >>> len(questions[0].choices)
+   4
+   >>> questions[0].answer in questions[0].choices
+   True
+   >>> questions[0].is_correct(questions[0].answer_number)
+   True
+   >>> questions == atlas.quiz(topic="capitals", count=2, seed="classroom")
+   True
+
+Use :meth:`~pyworldatlas.Atlas.learning_topics` to populate a topic menu.
+``choices`` may be 2 through 6; filters that leave too few distinct answers
+raise ``ValueError`` instead of manufacturing or repeating choices.
+
 Supported topics
 ~~~~~~~~~~~~~~~~
 
-.. list-table:: Flashcard topics
+.. list-table:: Flashcard and quiz topics
    :header-rows: 1
    :widths: 30 70
 
@@ -199,7 +239,7 @@ Data and interpretation
 
 Discovery features introduce no unsourced country values. Flags come from
 alpha-2 codes; density is a documented ratio; cards copy profile fields; and
-sampling and flashcards rearrange existing values. Population and area answers
+sampling, flashcards, and quizzes rearrange existing values. Population and area answers
 remain snapshots, observed timezones remain limited to bundled places, and
 language answers are source codes, while local-name cards use the selected CLDR
 or UNGEGN identity record. Border flashcards are derived from the reviewed graph;
@@ -212,3 +252,5 @@ Executable example
 .. literalinclude:: ../../examples/discovery.py
    :language: python
    :linenos:
+
+For a complete 0.8 classroom tour, continue to :doc:`learning`.

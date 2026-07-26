@@ -90,6 +90,12 @@ and coverage notes for fields that can vary between institutions. Teaching
 source literacy is encouraged: a sourced value can be useful without being the
 only convention in use.
 
+Learning helpers are intentionally small and inspectable. Seeded samples,
+flashcards, and multiple-choice questions are deterministic for a fixed dataset
+version. They do not create accounts, retain learner answers, calculate grades,
+or send activity outside the local Python process. Teachers remain in control
+of interpretation, pacing, and assessment.
+
 Community and corrections
 -------------------------
 

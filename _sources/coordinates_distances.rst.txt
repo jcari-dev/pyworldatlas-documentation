@@ -2,8 +2,8 @@ Coordinates and distances
 =========================
 
 PyWorldAtlas stores signed WGS84 latitude and longitude on every bundled
-capital and populated-place record. Version 0.2.1 adds exact lookup within the
-6,265 bundled place records and dependency-free great-circle calculations.
+capital and populated-place record. Exact lookup, friendly display helpers, and
+dependency-free great-circle calculations all work offline.
 
 Look up coordinates
 -------------------
@@ -80,6 +80,8 @@ tuples to the atlas helper:
    343.6
    >>> round(london.bearing_to(paris_center), 1)
    148.1
+   >>> london.compass_direction_to(paris_center)
+   'SSE'
    >>> midpoint = london.midpoint_to(paris_center)
    >>> (round(midpoint.latitude, 4), round(midpoint.longitude, 4))
    (50.1886, 1.1466)
@@ -94,6 +96,26 @@ Invalid coordinates and unsupported units raise :class:`ValueError`.
 Initial bearing is undefined for coincident or antipodal coordinates, and a
 unique spherical midpoint is undefined for antipodal coordinates; those cases
 also raise :class:`ValueError`.
+
+Friendly coordinate labels
+--------------------------
+
+Decimal degrees are compact; degrees/minutes/seconds are useful for teaching
+how a coordinate is composed:
+
+.. doctest::
+
+   >>> tokyo_coordinates = Coordinate(35.6895, 139.6917)
+   >>> tokyo_coordinates.hemispheres
+   ('N', 'E')
+   >>> tokyo_coordinates.format()
+   '35.6895° N, 139.6917° E'
+   >>> tokyo_coordinates.dms()
+   '35° 41′ 22.2″ N, 139° 41′ 30.1″ E'
+
+``compass_direction_to`` converts the initial bearing to a 4-, 8-, or 16-point
+compass label. It describes the beginning of the same great-circle path and is
+not a navigation instruction.
 
 Country coordinates
 -------------------

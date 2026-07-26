@@ -9,7 +9,7 @@ translation service.
 Coverage at a glance
 --------------------
 
-The 0.5.0 dataset separates four claims that are easy to confuse:
+The current dataset separates four claims that are easy to confuse:
 
 .. list-table::
    :header-rows: 1

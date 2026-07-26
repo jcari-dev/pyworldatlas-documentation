@@ -14,10 +14,10 @@ PyWorldAtlas
       Explore country profiles, names and writing systems, capitals, cities,
       physical geography, climate classes, coordinates, distances, reviewed
       land neighbors, rankings, and learning tools from one bundled database.
-      Built for developers, classrooms, and curious learners. No API key and
+      Built for classrooms, curious learners, and developers. No API key and
       no runtime download.
 
-**Documented version:** 0.7.0 | **Dataset:** 2026.07.22.7 |
+**Documented version:** 0.8.0 | **Dataset:** 2026.07.22.7 |
 **Python:** 3.10–3.14 | **Profiles:** 248
 
 .. raw:: html
@@ -130,17 +130,19 @@ See what you can build
       .. rubric:: Teach and learn
 
       Create stable samples, deterministic flashcards, compact discovery cards,
-      and Unicode-preserving JSON with :doc:`discovery` and
-      :doc:`serialization`.
+      multiple-choice questions, and Unicode-preserving JSON with
+      :doc:`learning`, :doc:`discovery`, and :doc:`serialization`.
 
 .. tip::
 
-   Start with :doc:`explore` for a five-minute tour made entirely from
-   executable examples.
+   Start with :doc:`learning` for friendly classroom activities or
+   :doc:`explore` for a five-minute tour made from executable examples.
 
 Try these next
 --------------
 
+- :doc:`learning` — build country introductions, writing-system galleries,
+  coordinate labs, city activities, and repeatable quizzes.
 - :doc:`playground` — run the published package in your browser through
   fourteen guided, editable recipes.
 - :doc:`recipes` — copy complete Python programs for profiles, comparisons,
@@ -235,6 +237,7 @@ The current source checkout can be installed with ``python -m pip install -e .``
    :maxdepth: 2
    :caption: Start here
 
+   learning
    explore
    playground
    recipes

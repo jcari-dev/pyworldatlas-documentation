@@ -44,6 +44,21 @@ Ranked search
    >>> {"GB", "US"}.issubset({match.country.alpha2 for match in matches})
    True
 
+City-name search
+----------------
+
+:meth:`~pyworldatlas.Atlas.search_cities` performs ranked partial-name lookup
+over the 6,265 bundled populated places. Add a country when a lesson or
+application has a known scope:
+
+.. doctest::
+
+   >>> [city.label for city in atlas.search_cities("santo", country="DO", limit=3)]
+   ['Santo Domingo (DO)', 'Santo Domingo Oeste (DO)', 'Santo Domingo Este (DO)']
+
+The method returns city objects rather than search-wrapper records. Exact names
+rank first, population breaks ties, and no match returns an empty tuple.
+
 Filtering
 ---------
 

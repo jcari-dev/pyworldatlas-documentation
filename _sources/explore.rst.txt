@@ -40,11 +40,19 @@ metadata, and exact source references.
    |flag-br| **Brazil** · local display name **Brasil** · capital
    **Brasília**
 
+Start with one readable overview, then reach into the typed profile for any
+fact you want to compare or cite:
+
 .. doctest::
 
    >>> from pyworldatlas import Atlas
    >>> atlas = Atlas()
    >>> brazil = atlas.country("Brazil")
+   >>> brazil.summary().splitlines()[:3]
+   ['🇧🇷 Brazil · Brasil', 'Formal name: Federative Republic of Brazil', 'Capital: Brasília']
+
+.. doctest::
+
    >>> print(brazil.flag, brazil.name_in("pt"), "—", brazil.capital.name)
    🇧🇷 Brasil — Brasília
    >>> print(brazil.anthem.title)
@@ -115,6 +123,25 @@ The result uses the same dependency-free great-circle calculation as
    >>> [(item.capital.name, round(item.distance)) for item in nearby]
    [('Seoul', 1153), ('Pyongyang', 1285), ('Beijing', 2093)]
 
+Search nearby cities
+--------------------
+
+Partial search and nearest-place discovery make the bundled city table easy to
+browse without knowing every exact spelling first.
+
+.. doctest::
+
+   >>> [city.label for city in atlas.search_cities("santo", country="DO", limit=3)]
+   ['Santo Domingo (DO)', 'Santo Domingo Oeste (DO)', 'Santo Domingo Este (DO)']
+   >>> nearby = atlas.nearest_cities(
+   ...     "Santo Domingo",
+   ...     origin_country="DO",
+   ...     within_country="DO",
+   ...     limit=3,
+   ... )
+   >>> [(result.city.name, round(result.distance)) for result in nearby]
+   [('Santo Domingo Este', 5), ('Bella Vista', 6), ('Santo Domingo Oeste', 12)]
+
 Measure and orient
 ------------------
 
@@ -129,6 +156,10 @@ as well as named bundled places.
    9713
    >>> round(tokyo.bearing_to(paris), 1)
    333.5
+   >>> tokyo.format()
+   '35.6895° N, 139.6917° E'
+   >>> tokyo.compass_direction_to(paris)
+   'NNW'
 
 Follow a land path
 ------------------
@@ -165,14 +196,18 @@ climate class.
 Create a repeatable geography quiz
 ----------------------------------
 
-Samples and flashcards use stable seeds, which makes them suitable for lesson
-plans, examples, and tests.
+Samples, flashcards, and multiple-choice questions use stable seeds, which
+makes them suitable for lesson plans, examples, and tests.
 
 .. doctest::
 
-   >>> card = atlas.flashcards(topic="highest_points", count=1, seed="Friday")[0]
-   >>> (card.prompt, card.answer)
-   ('What is the highest point listed for Austria?', 'Grossglockner (3798 m)')
+   >>> question = atlas.quiz(topic="highest_points", count=1, seed="Friday")[0]
+   >>> question.prompt
+   'What is the highest point listed for Austria?'
+   >>> question.answer_number
+   4
+   >>> question.answer
+   'Grossglockner (3798 m)'
 
 Carry the data elsewhere
 ------------------------
@@ -200,5 +235,5 @@ The repository includes the complete script used for the introductory tour:
    :language: python
    :linenos:
 
-Continue with :doc:`quickstart`, explore :doc:`physical_geography`, or jump to
-:doc:`rankings` for the complete method contracts.
+Continue with :doc:`learning`, explore :doc:`physical_geography`, or jump to
+:doc:`api` for the complete method and return-type contracts.

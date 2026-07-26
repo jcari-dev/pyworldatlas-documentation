@@ -5,6 +5,12 @@ Quality means more than having a value: each field needs a defined source,
 validation rule, coverage boundary, and honest missing-data behavior. This page
 documents those guarantees and their limits.
 
+Version 0.8 adds presentation, city-discovery, coordinate-display, and learning
+helpers over the existing reviewed dataset. It introduces no new source layer
+and does not fill missing country facts. Summaries omit unavailable values;
+quiz choices are generated only from answers already present in covered
+profiles.
+
 Educational and editorial quality
 ---------------------------------
 

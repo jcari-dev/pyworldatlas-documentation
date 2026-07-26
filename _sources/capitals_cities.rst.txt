@@ -61,3 +61,43 @@ population, then name. The current snapshot contains 6,265 records.
 
 Population values describe the captured source snapshot. They are not live
 estimates and should not be interpreted as a synchronized census series.
+
+Search city names
+-----------------
+
+Use :meth:`~pyworldatlas.Atlas.search_cities` when only part of a place name is
+known. Exact names rank first, then prefix and substring matches; population
+breaks ties.
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     matches = atlas.search_cities("santo", country="DO", limit=3)
+   ...     print([city.label for city in matches])
+   ['Santo Domingo (DO)', 'Santo Domingo Oeste (DO)', 'Santo Domingo Este (DO)']
+
+Search returns an empty tuple when no bundled place matches. Use
+:meth:`~pyworldatlas.Atlas.city` when one exact result is required; that method
+raises a clear missing or ambiguous-place exception instead.
+
+Find nearby cities
+------------------
+
+:meth:`~pyworldatlas.Atlas.nearest_cities` accepts the same origin types as the
+distance API. ``within_country`` can turn it into a local exploration activity:
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     nearby = atlas.nearest_cities(
+   ...         "Santo Domingo",
+   ...         origin_country="DO",
+   ...         within_country="DO",
+   ...         limit=3,
+   ...     )
+   ...     print([(item.city.name, round(item.distance)) for item in nearby])
+   [('Santo Domingo Este', 5), ('Bella Vista', 6), ('Santo Domingo Oeste', 12)]
+
+Each :class:`~pyworldatlas.CityDistance` contains a compact country reference,
+the city record, distance, and unit. Values are great-circle measurements, not
+road or travel distances.

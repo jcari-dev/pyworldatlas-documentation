@@ -1,9 +1,9 @@
 Country reference facts
 =======================
 
-Version 0.6 adds typed, source-aware facts that make a country profile useful
-as a small offline reference. Each optional fact is absent when it is outside
-the captured source scope; the package does not fill gaps with guesses.
+Typed, source-aware facts make each country profile useful as a small offline
+reference. An optional fact is absent when it is outside the captured source
+scope; the package does not fill gaps with guesses.
 
 Anthem titles
 -------------
