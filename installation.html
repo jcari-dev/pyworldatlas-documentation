@@ -5,16 +5,17 @@
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Installation &mdash; PyWorldAtlas 0.8.0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Installation | PyWorldAtlas</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
       <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=21a4203e" />
 
   
+    <link rel="shortcut icon" href="_static/globe.svg"/>
+    <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/installation.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=486e5634"></script>
+      <script src="_static/documentation_options.js?v=ec16d22d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=01b1df8d"></script>
@@ -22,7 +23,19 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Educational purpose and editorial policy" href="educational_principles.html" />
-    <link rel="prev" title="Why PyWorldAtlas?" href="why.html" /> 
+    <link rel="prev" title="Why PyWorldAtlas?" href="why.html" />
+   
+  <meta name="description" content="Installation in PyWorldAtlas, the offline Python package for country profiles, physical geography, cities, distances, and classroom learning." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PyWorldAtlas" />
+  <meta property="og:title" content="Installation | PyWorldAtlas" />
+  <meta property="og:description" content="Installation in PyWorldAtlas, the offline Python package for country profiles, physical geography, cities, distances, and classroom learning." />
+  <meta property="og:url" content="https://jcari-dev.github.io/pyworldatlas-documentation/installation.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Installation | PyWorldAtlas" />
+  <meta name="twitter:description" content="Installation in PyWorldAtlas, the offline Python package for country profiles, physical geography, cities, distances, and classroom learning." />
+
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -368,16 +381,17 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -444,7 +458,7 @@ no Sphinx dependency.</p>
 <section id="install-the-built-wheel-offline">
 <h2>Install the built wheel offline<a class="headerlink" href="#install-the-built-wheel-offline" title="Link to this heading"></a></h2>
 <p>Test the exact release artifact without consulting a package index:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install --no-index --no-deps dist/pyworldatlas-0.8.0-py3-none-any.whl</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install --no-index --no-deps dist/pyworldatlas-0.8.1-py3-none-any.whl</span>
 </pre></div>
 </div>
 </section>
@@ -452,7 +466,7 @@ no Sphinx dependency.</p>
 <h2>Verify the installation<a class="headerlink" href="#verify-the-installation" title="Link to this heading"></a></h2>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pyworldatlas</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pyworldatlas</span><span class="o">.</span><span class="n">__version__</span>
-<span class="go">&#39;0.8.0&#39;</span>
+<span class="go">&#39;0.8.1&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;DO&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capital</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>

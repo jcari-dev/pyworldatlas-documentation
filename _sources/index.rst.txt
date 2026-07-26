@@ -17,7 +17,7 @@ PyWorldAtlas
       Built for classrooms, curious learners, and developers. No API key and
       no runtime download.
 
-**Documented version:** 0.8.0 | **Dataset:** 2026.07.22.7 |
+**Documented version:** 0.8.1 | **Dataset:** 2026.07.22.7 |
 **Python:** 3.10–3.14 | **Profiles:** 248
 
 .. raw:: html

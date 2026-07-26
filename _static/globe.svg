@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="World globe">
+  <circle cx="32" cy="32" r="30" fill="#4b9bd5"/>
+  <path fill="#5baa62" d="M12 12c7-7 18-11 28-8l-2 7-8 2-3 7-8 2-5 8-8-2c0-6 2-11 6-16Zm14 25 8-6 10 2 3 8-5 4-2 11c-4 2-8 3-12 2l-2-9-6-5 6-7Zm22-23c5 5 9 12 11 19l-7-2-5-7-5-3 1-6 5-1Z"/>
+  <circle cx="32" cy="32" r="29" fill="none" stroke="#287aa3" stroke-width="2"/>
+</svg>

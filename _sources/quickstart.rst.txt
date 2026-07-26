@@ -101,7 +101,7 @@ Library, schema, and data versions change independently:
 
    >>> info = atlas.dataset_info()
    >>> (info.library_version, info.schema_version, info.dataset_version)
-   ('0.8.0', 7, '2026.07.22.7')
+   ('0.8.1', 7, '2026.07.22.7')
    >>> atlas.close()
 
 Read profile metadata

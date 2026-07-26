@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jcari-dev.github.io/pyworldatlas-documentation/sitemap.xml
