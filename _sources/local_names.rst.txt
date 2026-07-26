@@ -241,7 +241,7 @@ local-language field with a stricter national-official evidence kind.
 
 See :doc:`data_sources` for licensing, versioning, and source roles. The full
 contract and later anthem, motto, and reference-date boundaries are recorded in
-``COUNTRY_IDENTITY_DATA_SPEC.md`` at the repository root.
+``docs/project/COUNTRY_IDENTITY_DATA_SPEC.md`` in the source repository.
 
 Try the example
 ---------------

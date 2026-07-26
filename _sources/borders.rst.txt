@@ -190,7 +190,7 @@ This graph is an attributed source convention for educational topology. Other
 institutions may use different conventions. Exceptional decisions remain
 inspectable, and no broader interpretation should be drawn from the technical
 mappings. See :doc:`educational_principles` and the root
-``BOUNDARIES_AND_DISPUTES.md`` policy.
+``docs/project/BOUNDARIES_AND_DISPUTES.md`` policy.
 
 The build fails if the sources develop an unreviewed difference, if an endpoint
 is missing from the 248-entity scope, or if a duplicate, self-edge, or
