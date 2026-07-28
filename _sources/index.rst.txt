@@ -3,27 +3,37 @@ PyWorldAtlas
 
 .. container:: atlas-hero
 
-   :atlas-kicker:`Offline · source-aware · made for learning`
+   .. container:: atlas-hero-text
 
-   .. container:: atlas-hero-title
+      :atlas-kicker:`Offline · source-aware · made for learning`
 
-      Geography data that feels like ordinary Python.
+      .. container:: atlas-hero-title
 
-   .. container:: atlas-hero-copy
+         Geography data that feels like ordinary Python.
 
-      Explore country profiles, names and writing systems, capitals, cities,
-      physical geography, climate classes, coordinates, distances, reviewed
-      land neighbors, rankings, and learning tools from one bundled database.
-      Built for classrooms, curious learners, and developers. No API key and
-      no runtime download.
+      .. container:: atlas-hero-copy
 
-**Documented version:** 0.8.1 | **Dataset:** 2026.07.22.7 |
+         Explore country profiles, names and writing systems, capitals, cities,
+         physical geography, climate classes, optional interactive 3D maps,
+         coordinates, distances, reviewed land neighbors, rankings, and learning
+         tools from one bundled database.
+         Built for classrooms, curious learners, and developers. No API key and
+         no runtime download.
+
+   .. container:: atlas-hero-map
+
+      .. image:: /_static/iceland-standard-map.svg
+         :alt: PyWorldAtlas Standard 3D elevation map of Iceland
+         :target: maps.html
+
+**Documented version:** 0.9.0 | **Dataset:** 2026.07.22.7 |
 **Python:** 3.10–3.14 | **Profiles:** 248
 
 .. raw:: html
 
    <nav class="atlas-project-links" aria-label="PyWorldAtlas links">
      <a class="atlas-project-link atlas-project-link-primary" href="playground.html">Open playground</a>
+     <a class="atlas-project-link" href="maps.html">3D maps</a>
      <a class="atlas-project-link" href="api.html">API reference</a>
      <a class="atlas-project-link" href="https://github.com/jcari-dev/pyworldatlas">GitHub</a>
      <a class="atlas-project-link" href="https://pypi.org/project/pyworldatlas/">PyPI</a>
@@ -48,6 +58,32 @@ PyWorldAtlas
       **0**
 
       runtime dependencies
+
+Open the terrain
+----------------
+
+.. container:: atlas-map-showcase
+
+   .. image:: /_static/iceland-standard-map.svg
+      :alt: PyWorldAtlas Standard 3D elevation map of Iceland
+      :target: maps.html
+
+   .. container:: atlas-map-showcase-copy
+
+      **Iceland in the Standard map edition.** This is real package output,
+      shown at an angled elevation view with the coastline, Reykjavík, a river
+      overlay, and source notes. Select the image for the complete map guide.
+
+.. code-block:: python
+
+   from pyworldatlas import Atlas
+
+   with Atlas() as atlas:
+       atlas.map("Iceland").show()
+
+The map opens as a rotatable local browser view. Switch between Elevation and
+Climate, zoom into the surface, or export a standalone HTML file. Install it
+with ``python -m pip install "pyworldatlas[maps]"``.
 
 A small taste of the atlas
 --------------------------
@@ -102,6 +138,13 @@ See what you can build
       Read coastlines, area components, elevation extremes, source-listed
       rivers and lakes, and represented Köppen-Geiger classes. Visit
       :doc:`physical_geography`.
+
+   .. container:: atlas-card atlas-card-blue
+
+      .. rubric:: Open the terrain
+
+      Launch an offline, rotatable country surface with elevation, climate,
+      rivers, and the capital in one call. See :doc:`maps`.
 
    .. container:: atlas-card atlas-card-gold
 
@@ -204,6 +247,8 @@ What is bundled
      - 240 / 248
    * - Köppen-Geiger climate profiles
      - 241 / 248
+   * - Overview and Standard 3D maps
+     - 248 / 248 each
 
 Designed for exploration
 ------------------------
@@ -211,7 +256,8 @@ Designed for exploration
 PyWorldAtlas supports exact lookup and ranked search, immutable typed models,
 Unicode local names and flag emoji, WGS84 coordinates, distance/bearing/midpoint
 calculations, deterministic samples and flashcards, land-border paths, profile
-filters, physical-feature searches, rankings, and nearest-capital queries.
+filters, physical-feature searches, rankings, nearest-capital queries, and
+optional offline 3D maps.
 Public results serialize to JSON-compatible dictionaries without losing their
 source context.
 
@@ -256,6 +302,7 @@ The current source checkout can be installed with ``python -m pip install -e .``
    :caption: Explore the atlas
 
    country_profile
+   maps
    physical_geography
    reference_facts
    rankings

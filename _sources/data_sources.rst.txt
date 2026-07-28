@@ -6,10 +6,10 @@ pipeline downloads raw snapshots, records checksums, normalizes independent
 records, validates them, and generates the SQLite database. The installed
 runtime never contacts these services.
 
-The 0.8 usability release reuses dataset ``2026.07.22.7``. Its readable
-summaries, city discovery, coordinate labels, and learning questions derive
-only from existing bundled records and documented calculations; no additional
-external source was introduced for those helpers.
+The 0.9 core reuses dataset ``2026.07.22.7``. Optional map editions add
+separately installed, integrity-checked visualization records derived from
+pinned elevation, climate, outline, and river snapshots. Neither the core nor
+the installed map viewer contacts a source service at runtime.
 
 Field-specific source policy
 ----------------------------
@@ -85,13 +85,17 @@ Natural Earth
    Admin 0 map-unit polygons. Country polygons and land boundary lines are also
    retained with the source capture for review. The map-unit polygons support
    build-time aggregation of Köppen-Geiger raster cells into country profiles.
+   Optional maps use pinned 1:10m map units and river centerlines; Overview
+   uses the smaller 1:50m river layer.
 
 **Official location**
    https://www.naturalearthdata.com/downloads/50m-cultural-vectors/
 
 **Current snapshot**
    Boundary lines version 5.1.0 and country/map-unit archives version 5.1.1,
-   captured 2026-07-21 with SHA-256 checksums.
+   captured 2026-07-21 with SHA-256 checksums. The 1:10m map-unit and river
+   archives used by optional maps were captured 2026-07-28; the 1:50m river
+   archive was captured 2026-07-21.
 
 **Terms**
    Natural Earth data is in the public domain. The official terms permit
@@ -101,8 +105,8 @@ Natural Earth
    Natural Earth is generalized cartographic data. Very small territories and
    enclaves may not retain a shared segment at 1:50m, and its map units express
    a documented map convention. It is used as a cross-check, not as an
-   unreviewed authority. No Natural Earth polygon is exposed as public boundary
-   geometry in 0.7.
+   unreviewed authority. Map geometry is simplified into private display
+   records and is not exposed as GeoJSON or public boundary coordinates.
 
 Reviewed border decisions
 -------------------------
@@ -225,6 +229,27 @@ Köppen-Geiger climate classification maps
    generalized, area-weighted estimates suitable for broad education; they are
    not a local forecast or property-boundary result.
 
+NOAA NCEI ETOPO 2022
+--------------------
+
+**Purpose**
+   Elevation surfaces for the optional Overview and Standard 3D map editions.
+
+**Official dataset and access service**
+   https://doi.org/10.25921/fd45-gt74 and the NOAA PIFSC ERDDAP dataset
+   ``ETOPO_2022_v1_60s``.
+
+**Current snapshot**
+   The global 60 arc-second ice-surface elevation model, sampled every five
+   source cells and captured 2026-07-28 as NetCDF classic with a SHA-256
+   manifest. Standard retains 5 arc-minute sampling; Overview uses 20
+   arc-minutes.
+
+**Terms and limits**
+   CC0 1.0. Heights use the EGM2008 vertical reference in metres, positive
+   upward. These are generalized educational relief surfaces, not navigation,
+   engineering, hazard, property, or site-level elevation data.
+
 Wikidata national-motto statements
 ----------------------------------
 
@@ -326,7 +351,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.8.0 release
+Source priority in the 0.9.0 release
 ------------------------------------
 
 .. list-table::
@@ -387,6 +412,12 @@ Source priority in the 0.8.0 release
    * - Land-border relationships
      - GeoNames and Natural Earth agreement
      - Explicit reviewed decision for each source difference
+   * - Optional map elevation
+     - NOAA NCEI ETOPO 2022
+     - None
+   * - Optional map display outlines and rivers
+     - Natural Earth
+     - Overview uses the smaller 1:50m river layer
 
 Inspect sources in Python
 -------------------------

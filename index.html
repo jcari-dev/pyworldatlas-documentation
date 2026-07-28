@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>PyWorldAtlas | Offline World Geography for Python</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=21a4203e" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=8425b3a0" />
 
   
     <link rel="shortcut icon" href="_static/globe.svg"/>
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=ec16d22d"></script>
+      <script src="_static/documentation_options.js?v=39bb1c6d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=01b1df8d"></script>
@@ -24,28 +24,28 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Quickstart" href="quickstart.html" />
    
-  <meta name="description" content="Explore 248 country profiles, cities, physical geography, distances, borders, and learning tools offline with the PyWorldAtlas Python package." />
+  <meta name="description" content="Explore 248 country profiles, optional 3D maps, physical geography, cities, distances, and learning tools offline with PyWorldAtlas." />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="PyWorldAtlas" />
   <meta property="og:title" content="PyWorldAtlas | Offline World Geography for Python" />
-  <meta property="og:description" content="Explore 248 country profiles, cities, physical geography, distances, borders, and learning tools offline with the PyWorldAtlas Python package." />
+  <meta property="og:description" content="Explore 248 country profiles, optional 3D maps, physical geography, cities, distances, and learning tools offline with PyWorldAtlas." />
   <meta property="og:url" content="https://jcari-dev.github.io/pyworldatlas-documentation/" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="PyWorldAtlas | Offline World Geography for Python" />
-  <meta name="twitter:description" content="Explore 248 country profiles, cities, physical geography, distances, borders, and learning tools offline with the PyWorldAtlas Python package." />
+  <meta name="twitter:description" content="Explore 248 country profiles, optional 3D maps, physical geography, cities, distances, and learning tools offline with PyWorldAtlas." />
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "SoftwareSourceCode",
     "name": "PyWorldAtlas",
-    "description": "Explore 248 country profiles, cities, physical geography, distances, borders, and learning tools offline with the PyWorldAtlas Python package.",
+    "description": "Explore 248 country profiles, optional 3D maps, physical geography, cities, distances, and learning tools offline with PyWorldAtlas.",
     "url": "https://jcari-dev.github.io/pyworldatlas-documentation/",
     "codeRepository": "https://github.com/jcari-dev/pyworldatlas",
     "downloadUrl": "https://pypi.org/project/pyworldatlas/",
     "programmingLanguage": "Python",
     "runtimePlatform": "Python 3.10 through 3.14",
-    "version": "0.8.1",
+    "version": "0.9.0",
     "license": "https://opensource.org/license/mit/"
   }
   </script>
@@ -91,6 +91,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#published-package">Published package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#optional-3d-maps">Optional 3D maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#install-a-source-checkout">Install a source checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#install-the-built-wheel-offline">Install the built wheel offline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#verify-the-installation">Verify the installation</a></li>
@@ -135,6 +136,14 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#capital-and-cities">Capital and cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#sources">Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maps.html">Interactive 3D maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#choose-a-map-edition">Choose a map edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#open-your-first-map">Open your first map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#data-meaning-and-limits">Data meaning and limits</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="physical_geography.html">Physical geography</a><ul>
@@ -269,12 +278,13 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#noaa-ncei-etopo-2022">NOAA NCEI ETOPO 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-8-0-release">Source priority in the 0.8.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-9-0-release">Source priority in the 0.9.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -294,7 +304,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html#what-0-8-established">What 0.8 established</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html#what-0-9-adds">What 0.9 adds</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html#deferred-work">Deferred work</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference</span></p>
@@ -366,22 +376,30 @@
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PlaceNotFoundError"><code class="docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AmbiguousPlaceError"><code class="docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CapitalNotFoundError"><code class="docutils literal notranslate"><span class="pre">CapitalNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.MapSupportNotInstalledError"><code class="docutils literal notranslate"><span class="pre">MapSupportNotInstalledError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#optional-maps">Optional maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.CountryMap"><code class="docutils literal notranslate"><span class="pre">CountryMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.available_map_qualities"><code class="docutils literal notranslate"><span class="pre">available_map_qualities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.MapDataError"><code class="docutils literal notranslate"><span class="pre">MapDataError</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -413,22 +431,30 @@
   <section id="pyworldatlas">
 <h1>PyWorldAtlas<a class="headerlink" href="#pyworldatlas" title="Link to this heading"></a></h1>
 <div class="atlas-hero docutils container">
+<div class="atlas-hero-text docutils container">
 <p><span class="atlas-kicker">Offline · source-aware · made for learning</span></p>
 <div class="atlas-hero-title docutils container">
 <p>Geography data that feels like ordinary Python.</p>
 </div>
 <div class="atlas-hero-copy docutils container">
 <p>Explore country profiles, names and writing systems, capitals, cities,
-physical geography, climate classes, coordinates, distances, reviewed
-land neighbors, rankings, and learning tools from one bundled database.
+physical geography, climate classes, optional interactive 3D maps,
+coordinates, distances, reviewed land neighbors, rankings, and learning
+tools from one bundled database.
 Built for classrooms, curious learners, and developers. No API key and
 no runtime download.</p>
 </div>
 </div>
-<p><strong>Documented version:</strong> 0.8.1 | <strong>Dataset:</strong> 2026.07.22.7 |
+<div class="atlas-hero-map docutils container">
+<a class="reference external image-reference" href="maps.html"><img alt="PyWorldAtlas Standard 3D elevation map of Iceland" src="_images/iceland-standard-map.svg" />
+</a>
+</div>
+</div>
+<p><strong>Documented version:</strong> 0.9.0 | <strong>Dataset:</strong> 2026.07.22.7 |
 <strong>Python:</strong> 3.10–3.14 | <strong>Profiles:</strong> 248</p>
 <nav class="atlas-project-links" aria-label="PyWorldAtlas links">
   <a class="atlas-project-link atlas-project-link-primary" href="playground.html">Open playground</a>
+  <a class="atlas-project-link" href="maps.html">3D maps</a>
   <a class="atlas-project-link" href="api.html">API reference</a>
   <a class="atlas-project-link" href="https://github.com/jcari-dev/pyworldatlas">GitHub</a>
   <a class="atlas-project-link" href="https://pypi.org/project/pyworldatlas/">PyPI</a>
@@ -446,6 +472,27 @@ no runtime download.</p>
 <p>runtime dependencies</p>
 </div>
 </div>
+<section id="open-the-terrain">
+<h2>Open the terrain<a class="headerlink" href="#open-the-terrain" title="Link to this heading"></a></h2>
+<div class="atlas-map-showcase docutils container">
+<a class="reference external image-reference" href="maps.html"><img alt="PyWorldAtlas Standard 3D elevation map of Iceland" src="_images/iceland-standard-map.svg" />
+</a>
+<div class="atlas-map-showcase-copy docutils container">
+<p><strong>Iceland in the Standard map edition.</strong> This is real package output,
+shown at an angled elevation view with the coastline, Reykjavík, a river
+overlay, and source notes. Select the image for the complete map guide.</p>
+</div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+
+<span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+    <span class="n">atlas</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Iceland&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The map opens as a rotatable local browser view. Switch between Elevation and
+Climate, zoom into the surface, or export a standalone HTML file. Install it
+with <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">-m</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">&quot;pyworldatlas[maps]&quot;</span></code>.</p>
+</section>
 <section id="a-small-taste-of-the-atlas">
 <h2>A small taste of the atlas<a class="headerlink" href="#a-small-taste-of-the-atlas" title="Link to this heading"></a></h2>
 <div class="atlas-flag-row docutils container">
@@ -489,6 +536,11 @@ profile. Start with <a class="reference internal" href="country_profile.html"><s
 <p>Read coastlines, area components, elevation extremes, source-listed
 rivers and lakes, and represented Köppen-Geiger classes. Visit
 <a class="reference internal" href="physical_geography.html"><span class="doc">Physical geography</span></a>.</p>
+</div>
+<div class="atlas-card atlas-card-blue docutils container">
+<p class="rubric">Open the terrain</p>
+<p>Launch an offline, rotatable country surface with elevation, climate,
+rivers, and the capital in one call. See <a class="reference internal" href="maps.html"><span class="doc">Interactive 3D maps</span></a>.</p>
 </div>
 <div class="atlas-card atlas-card-gold docutils container">
 <p class="rubric">Measure between places</p>
@@ -602,6 +654,9 @@ under <strong>Explore the atlas</strong>.</p>
 <tr class="row-odd"><td><p>Köppen-Geiger climate profiles</p></td>
 <td><p>241 / 248</p></td>
 </tr>
+<tr class="row-even"><td><p>Overview and Standard 3D maps</p></td>
+<td><p>248 / 248 each</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -610,7 +665,8 @@ under <strong>Explore the atlas</strong>.</p>
 <p>PyWorldAtlas supports exact lookup and ranked search, immutable typed models,
 Unicode local names and flag emoji, WGS84 coordinates, distance/bearing/midpoint
 calculations, deterministic samples and flashcards, land-border paths, profile
-filters, physical-feature searches, rankings, and nearest-capital queries.
+filters, physical-feature searches, rankings, nearest-capital queries, and
+optional offline 3D maps.
 Public results serialize to JSON-compatible dictionaries without losing their
 source context.</p>
 </section>

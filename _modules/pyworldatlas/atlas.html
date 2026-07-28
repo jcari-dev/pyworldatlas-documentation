@@ -7,14 +7,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>pyworldatlas.atlas | PyWorldAtlas</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../../_static/pyworldatlas.css?v=21a4203e" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pyworldatlas.css?v=8425b3a0" />
 
   
     <link rel="shortcut icon" href="../../_static/globe.svg"/>
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/_modules/pyworldatlas/atlas.html" />
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=ec16d22d"></script>
+      <script src="../../_static/documentation_options.js?v=39bb1c6d"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="../../_static/playground.js?v=01b1df8d"></script>
@@ -74,6 +74,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#published-package">Published package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#optional-3d-maps">Optional 3D maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#install-a-source-checkout">Install a source checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#install-the-built-wheel-offline">Install the built wheel offline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../installation.html#verify-the-installation">Verify the installation</a></li>
@@ -118,6 +119,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#capital-and-cities">Capital and cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#sources">Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../maps.html">Interactive 3D maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maps.html#choose-a-map-edition">Choose a map edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maps.html#open-your-first-map">Open your first map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maps.html#data-meaning-and-limits">Data meaning and limits</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../physical_geography.html">Physical geography</a><ul>
@@ -252,12 +261,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#noaa-ncei-etopo-2022">NOAA NCEI ETOPO 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-8-0-release">Source priority in the 0.8.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-9-0-release">Source priority in the 0.9.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -277,7 +287,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html#what-0-8-established">What 0.8 established</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html#what-0-9-adds">What 0.9 adds</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../roadmap.html#deferred-work">Deferred work</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference</span></p>
@@ -349,22 +359,30 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.PlaceNotFoundError"><code class="docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.AmbiguousPlaceError"><code class="docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CapitalNotFoundError"><code class="docutils literal notranslate"><span class="pre">CapitalNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.MapSupportNotInstalledError"><code class="docutils literal notranslate"><span class="pre">MapSupportNotInstalledError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#optional-maps">Optional maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas_mapview.CountryMap"><code class="docutils literal notranslate"><span class="pre">CountryMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas_mapview.available_map_qualities"><code class="docutils literal notranslate"><span class="pre">available_map_qualities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas_mapview.MapDataError"><code class="docutils literal notranslate"><span class="pre">MapDataError</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id4">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id5">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id4">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id5">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id6">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id6">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id7">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id8">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id7">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id8">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id9">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id9">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id10">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -403,7 +421,7 @@
 <span class="kn">from</span><span class="w"> </span><span class="nn">hashlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">sha256</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Iterator</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span><span class="p">,</span> <span class="n">Iterator</span>
 
 <span class="kn">from</span><span class="w"> </span><span class="nn">._normalization</span><span class="w"> </span><span class="kn">import</span> <span class="n">normalize_name</span>
 <span class="kn">from</span><span class="w"> </span><span class="nn">._version</span><span class="w"> </span><span class="kn">import</span> <span class="n">SCHEMA_VERSION</span><span class="p">,</span> <span class="n">__version__</span>
@@ -417,6 +435,9 @@
                      <span class="n">Lake</span><span class="p">,</span> <span class="n">Language</span><span class="p">,</span> <span class="n">LocalizedName</span><span class="p">,</span> <span class="n">NationalAnthem</span><span class="p">,</span>
                      <span class="n">NationalMotto</span><span class="p">,</span> <span class="n">PhysicalGeography</span><span class="p">,</span> <span class="n">PostalCodeFormat</span><span class="p">,</span> <span class="n">QuizQuestion</span><span class="p">,</span> <span class="n">River</span><span class="p">,</span>
                      <span class="n">SourceReference</span><span class="p">,</span> <span class="n">Timezone</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas_mapview</span><span class="w"> </span><span class="kn">import</span> <span class="n">CountryMap</span>
 
 
 <span class="k">def</span><span class="w"> </span><span class="nf">_flag</span><span class="p">(</span><span class="n">alpha2</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -558,6 +579,51 @@
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="n">query</span><span class="p">)</span>
         <span class="k">except</span> <span class="n">CountryNotFoundError</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">default</span></div>
+
+
+<div class="viewcode-block" id="Atlas.map">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.Atlas.map">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">map</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">country</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Country</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">quality</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;auto&quot;</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;CountryMap&quot;</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Return an interactive offline 3D map for a country profile.</span>
+
+<span class="sd">        ``country`` accepts the same names and codes as :meth:`country`, or an</span>
+<span class="sd">        already loaded :class:`Country`. ``quality=&quot;auto&quot;`` prefers Standard</span>
+<span class="sd">        map data when installed and otherwise uses Overview data.</span>
+
+<span class="sd">        The returned map opens in the default browser when its ``show()``</span>
+<span class="sd">        method is called. Install ``pyworldatlas[maps]`` for Standard maps or</span>
+<span class="sd">        ``pyworldatlas[maps-overview]`` for the smaller Overview edition.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_ensure_open</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="n">profile</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="n">country</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="n">Country</span><span class="p">):</span>
+            <span class="n">profile</span> <span class="o">=</span> <span class="n">country</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;country must be a country name, code, or Country&quot;</span><span class="p">)</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas_mapview</span><span class="w"> </span><span class="kn">import</span> <span class="n">CountryMap</span>
+        <span class="k">except</span> <span class="ne">ModuleNotFoundError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MapSupportNotInstalledError</span>
+
+            <span class="k">if</span> <span class="n">error</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s2">&quot;pyworldatlas_mapview&quot;</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">MapSupportNotInstalledError</span><span class="p">(</span>
+                    <span class="s1">&#39;Map support is not installed. Run: pip install &quot;pyworldatlas[maps]&quot;&#39;</span>
+                <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+            <span class="k">raise</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">CountryMap</span><span class="o">.</span><span class="n">from_country</span><span class="p">(</span><span class="n">profile</span><span class="p">,</span> <span class="n">quality</span><span class="o">=</span><span class="n">quality</span><span class="p">)</span>
+            <span class="n">result</span><span class="o">.</span><span class="n">quality</span>
+            <span class="k">return</span> <span class="n">result</span>
+        <span class="k">except</span> <span class="ne">RuntimeError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="kn">from</span><span class="w"> </span><span class="nn">.exceptions</span><span class="w"> </span><span class="kn">import</span> <span class="n">MapSupportNotInstalledError</span>
+
+            <span class="k">raise</span> <span class="n">MapSupportNotInstalledError</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">error</span><span class="p">))</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span></div>
 
 
 <div class="viewcode-block" id="Atlas.search_countries">

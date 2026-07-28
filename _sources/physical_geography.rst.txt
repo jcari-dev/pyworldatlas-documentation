@@ -193,6 +193,9 @@ lesson, or application without adding game state to the package.
 Executable example
 ------------------
 
+Want to rotate the terrain itself? The optional :doc:`maps` guide shows how
+to open elevation, climate, rivers, and the capital in one interactive view.
+
 .. literalinclude:: ../../examples/physical_geography.py
    :language: python
    :linenos:

@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Data quality and limitations | PyWorldAtlas</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=21a4203e" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=8425b3a0" />
 
   
     <link rel="shortcut icon" href="_static/globe.svg"/>
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/data_quality.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=ec16d22d"></script>
+      <script src="_static/documentation_options.js?v=39bb1c6d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=01b1df8d"></script>
@@ -77,6 +77,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#published-package">Published package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#optional-3d-maps">Optional 3D maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#install-a-source-checkout">Install a source checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#install-the-built-wheel-offline">Install the built wheel offline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#verify-the-installation">Verify the installation</a></li>
@@ -121,6 +122,14 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#capital-and-cities">Capital and cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#sources">Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maps.html">Interactive 3D maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#choose-a-map-edition">Choose a map edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#open-your-first-map">Open your first map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#data-meaning-and-limits">Data meaning and limits</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="physical_geography.html">Physical geography</a><ul>
@@ -255,12 +264,13 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#noaa-ncei-etopo-2022">NOAA NCEI ETOPO 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-8-0-release">Source priority in the 0.8.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-9-0-release">Source priority in the 0.9.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -280,7 +290,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html#what-0-8-established">What 0.8 established</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html#what-0-9-adds">What 0.9 adds</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html#deferred-work">Deferred work</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference</span></p>
@@ -352,22 +362,30 @@
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PlaceNotFoundError"><code class="docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AmbiguousPlaceError"><code class="docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CapitalNotFoundError"><code class="docutils literal notranslate"><span class="pre">CapitalNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.MapSupportNotInstalledError"><code class="docutils literal notranslate"><span class="pre">MapSupportNotInstalledError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#optional-maps">Optional maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.CountryMap"><code class="docutils literal notranslate"><span class="pre">CountryMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.available_map_qualities"><code class="docutils literal notranslate"><span class="pre">available_map_qualities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.MapDataError"><code class="docutils literal notranslate"><span class="pre">MapDataError</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -401,11 +419,11 @@
 <p>Quality means more than having a value: each field needs a defined source,
 validation rule, coverage boundary, and honest missing-data behavior. This page
 documents those guarantees and their limits.</p>
-<p>Version 0.8 adds presentation, city-discovery, coordinate-display, and learning
-helpers over the existing reviewed dataset. It introduces no new source layer
-and does not fill missing country facts. Summaries omit unavailable values;
-quiz choices are generated only from answers already present in covered
-profiles.</p>
+<p>Version 0.9 keeps the reviewed core dataset and adds separately installed map
+editions. Each edition contains one integrity-hashed visualization record for
+every profile. Maps combine only pinned elevation, climate, outline, and river
+sources with existing capital coordinates; they do not fill missing country
+facts.</p>
 <section id="educational-and-editorial-quality">
 <h2>Educational and editorial quality<a class="headerlink" href="#educational-and-editorial-quality" title="Link to this heading"></a></h2>
 <p>PyWorldAtlas provides offline factual geography for education and reference.
@@ -455,6 +473,9 @@ source layer and derived Köppen-Geiger country snapshot.</p></li>
 unique physical-feature records, and internally consistent water percentages.</p></li>
 <li><p>Known Köppen-Geiger codes, shares from 0 through 100, deterministic descending
 share order, the exact seven-profile gap set, and the documented 0.1% threshold.</p></li>
+<li><p>Exact 248-profile coverage in both map editions, per-record hashes, readable
+compressed payloads, valid grid dimensions, non-empty display masks, offline
+HTML rendering, and functional elevation and climate controls.</p></li>
 </ul>
 </section>
 <section id="coverage">
@@ -605,6 +626,14 @@ share order, the exact seven-profile gap set, and the documented 0.1% threshold.
 <td><p>241</p></td>
 <td><p>1991–2020 raster classes above the 0.1% threshold</p></td>
 </tr>
+<tr class="row-odd"><td><p>Overview 3D map profiles</p></td>
+<td><p>248</p></td>
+<td><p>20 arc-minute elevation sampling</p></td>
+</tr>
+<tr class="row-even"><td><p>Standard 3D map profiles</p></td>
+<td><p>248</p></td>
+<td><p>5 arc-minute elevation sampling</p></td>
+</tr>
 </tbody>
 </table>
 </section>
@@ -639,8 +668,9 @@ entered the reviewed layer; it is not a claim that no motto exists.</p></li>
 <li><p>Language metadata records associations captured by GeoNames. They are not
 legal determinations of official-language status.</p></li>
 <li><p>Border relationships are topological claims, not boundary geometry. Border
-length, boundary geometry, point-in-country, and map rendering remain outside
-this release.</p></li>
+length, public boundary geometry, GeoJSON, and point-in-country lookup remain
+outside this release. Optional maps use generalized outlines only as a
+private display layer.</p></li>
 <li><p>River and lake tuples are source-listed major features, not exhaustive
 inventories. Empty tuples do not assert that a feature is absent.</p></li>
 <li><p>A river length or lake area describes the complete source feature, including
@@ -648,6 +678,9 @@ a shared feature, not its portion inside one country profile.</p></li>
 <li><p>Köppen-Geiger shares are generalized raster/polygon estimates for broad
 education. They are not local forecasts, legal boundaries, or site-level
 classifications; classes below 0.1% are omitted.</p></li>
+<li><p>Optional 3D maps are generalized educational visualizations. Small islands,
+coastlines, rivers, and climate transitions may be simplified or displaced;
+the maps are not suitable for navigation or local decisions.</p></li>
 <li><p>Highest and lowest points preserve the source label and measurement. They do
 not create a separate “major mountains” classification.</p></li>
 <li><p>Names and classifications follow documented source conventions.</p></li>

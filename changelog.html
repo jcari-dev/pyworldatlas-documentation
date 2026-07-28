@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Changelog | PyWorldAtlas</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=21a4203e" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=8425b3a0" />
 
   
     <link rel="shortcut icon" href="_static/globe.svg"/>
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/changelog.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=ec16d22d"></script>
+      <script src="_static/documentation_options.js?v=39bb1c6d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=01b1df8d"></script>
@@ -76,6 +76,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#published-package">Published package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#optional-3d-maps">Optional 3D maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#install-a-source-checkout">Install a source checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#install-the-built-wheel-offline">Install the built wheel offline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#verify-the-installation">Verify the installation</a></li>
@@ -120,6 +121,14 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#capital-and-cities">Capital and cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#sources">Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maps.html">Interactive 3D maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#choose-a-map-edition">Choose a map edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#open-your-first-map">Open your first map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#data-meaning-and-limits">Data meaning and limits</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="physical_geography.html">Physical geography</a><ul>
@@ -254,12 +263,13 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#noaa-ncei-etopo-2022">NOAA NCEI ETOPO 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-8-0-release">Source priority in the 0.8.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-9-0-release">Source priority in the 0.9.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -279,7 +289,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html#what-0-8-established">What 0.8 established</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html#what-0-9-adds">What 0.9 adds</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html#deferred-work">Deferred work</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference</span></p>
@@ -351,22 +361,30 @@
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PlaceNotFoundError"><code class="docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AmbiguousPlaceError"><code class="docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CapitalNotFoundError"><code class="docutils literal notranslate"><span class="pre">CapitalNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.MapSupportNotInstalledError"><code class="docutils literal notranslate"><span class="pre">MapSupportNotInstalledError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#optional-maps">Optional maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.CountryMap"><code class="docutils literal notranslate"><span class="pre">CountryMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.available_map_qualities"><code class="docutils literal notranslate"><span class="pre">available_map_qualities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.MapDataError"><code class="docutils literal notranslate"><span class="pre">MapDataError</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -400,7 +418,28 @@
 <p>This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.</p>
 <section id="id1">
-<h2>0.8.1<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<h2>0.9.0<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Added optional offline 3D country maps through
+<a class="reference internal" href="api.html#pyworldatlas.Atlas.map" title="pyworldatlas.Atlas.map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map()</span></code></a> and
+<a class="reference internal" href="api.html#pyworldatlas_mapview.CountryMap.show" title="pyworldatlas_mapview.CountryMap.show"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyworldatlas_mapview.CountryMap.show()</span></code></a>.</p></li>
+<li><p>Added Overview and Standard global editions covering all 248 profiles with
+20 and 5 arc-minute elevation sampling.</p></li>
+<li><p>Added elevation and Köppen-Geiger climate surface modes, generalized
+outlines, source-provided river centerlines, and primary-capital markers.</p></li>
+<li><p>Added standalone offline HTML export and direct Plotly figure access.</p></li>
+<li><p>Kept the core wheel dependency-free through separate viewer and map-data
+distributions.</p></li>
+<li><p>Added deterministic builders, integrity checks, complete map coverage tests,
+clean multi-wheel installation, and coordinated release automation.</p></li>
+<li><p>Added complete map installation, source, resolution, and interpretation
+guidance.</p></li>
+<li><p>Added a real Standard-edition Iceland render to the shared README and
+documentation front page, linked directly to this map guide.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>0.8.1<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added concise browser-tab titles, a globe favicon, canonical page metadata,
 social preview metadata, a generated sitemap, and crawler guidance for the
@@ -409,8 +448,8 @@ public documentation site.</p></li>
 links portable across both renderers.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h2>0.8.0<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<section id="id3">
+<h2>0.8.0<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added <a class="reference internal" href="api.html#pyworldatlas.Country.summary" title="pyworldatlas.Country.summary"><code class="xref py py-meth docutils literal notranslate"><span class="pre">summary()</span></code></a> for readable multilingual
 country introductions assembled from existing sourced profile fields.</p></li>
@@ -432,8 +471,8 @@ workflows.</p></li>
 source, missingness, and geographic-interpretation guidance.</p></li>
 </ul>
 </section>
-<section id="id3">
-<h2>0.7.0<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="id4">
+<h2>0.7.0<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added sourced total, land, and water area; coastline; mean elevation; and
 named highest and lowest points.</p></li>
@@ -454,8 +493,8 @@ point-in-country lookup, and a separate major-mountain inventory outside this
 release.</p></li>
 </ul>
 </section>
-<section id="id4">
-<h2>0.6.0<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<section id="id5">
+<h2>0.6.0<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added 234 source-provided anthem-title profiles, 32 explicitly reviewed
 source-listed mottos, and 227 English demonym profiles.</p></li>
@@ -472,8 +511,8 @@ runnable examples, and the generated API reference.</p></li>
 GeoJSON, bounding boxes, centroids, and point-in-country outside this release.</p></li>
 </ul>
 </section>
-<section id="id5">
-<h2>0.5.0<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<section id="id6">
+<h2>0.5.0<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added one sourced local-language identity for all 248 countries and areas,
 spanning 80 languages and 21 writing systems.</p></li>
@@ -510,8 +549,8 @@ the country-identity candidate reached <code class="docutils literal notranslate
 or reusing a public version tag.</p></li>
 </ul>
 </section>
-<section id="id6">
-<h2>0.3.1<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<section id="id7">
+<h2>0.3.1<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added <a class="reference internal" href="api.html#pyworldatlas.Atlas.has_land_route" title="pyworldatlas.Atlas.has_land_route"><code class="xref py py-meth docutils literal notranslate"><span class="pre">has_land_route()</span></code></a> for explicit land-graph
 reachability checks.</p></li>
@@ -522,8 +561,8 @@ reachability checks.</p></li>
 provenance, return-value, connectivity, and edge-case explanations.</p></li>
 </ul>
 </section>
-<section id="id7">
-<h2>0.3.0<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<section id="id8">
+<h2>0.3.0<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added 319 reviewed, undirected land-border relationships.</p></li>
 <li><p>Added neighbor lookup, shared neighbors, deterministic shortest border paths,
@@ -537,8 +576,8 @@ border API, source policy, and limitations.</p></li>
 runtime, graph, and pipeline tests.</p></li>
 </ul>
 </section>
-<section id="id8">
-<h2>0.2.1<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<section id="id9">
+<h2>0.2.1<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>First production candidate for the complete 0.2 country-profile, coordinate,
 and discovery feature set.</p></li>
@@ -565,8 +604,8 @@ and snapshot population/area facts.</p></li>
 capital, city, lookup, and collection behaviors.</p></li>
 </ul>
 </section>
-<section id="id9">
-<h2>0.1.0<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<section id="id10">
+<h2>0.1.0<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Rebuilt the project from scratch around a standard-library runtime and one
 generated SQLite database.</p></li>

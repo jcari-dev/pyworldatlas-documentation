@@ -72,3 +72,18 @@ make common presentation and classroom tasks shorter:
 
 No dataset migration is required. Reproducible quizzes depend on both the seed
 and bundled dataset version, just like samples and flashcards.
+
+Moving from 0.8 to 0.9
+----------------------
+
+The core API remains additive and dependency-free. Interactive maps are
+installed only when requested:
+
+.. code-block:: console
+
+   python -m pip install --upgrade "pyworldatlas[maps]"
+
+Existing code continues to use the same bundled country database. Map support
+adds :meth:`~pyworldatlas.Atlas.map`; it does not change country models or
+expose public boundary geometry. See :doc:`maps` for the smaller Overview
+edition and the complete viewer API.

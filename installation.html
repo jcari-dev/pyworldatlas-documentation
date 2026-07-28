@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Installation | PyWorldAtlas</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=21a4203e" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=8425b3a0" />
 
   
     <link rel="shortcut icon" href="_static/globe.svg"/>
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/installation.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=ec16d22d"></script>
+      <script src="_static/documentation_options.js?v=39bb1c6d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=01b1df8d"></script>
@@ -77,6 +77,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#published-package">Published package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-3d-maps">Optional 3D maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-a-source-checkout">Install a source checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#install-the-built-wheel-offline">Install the built wheel offline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#verify-the-installation">Verify the installation</a></li>
@@ -121,6 +122,14 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#capital-and-cities">Capital and cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#sources">Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maps.html">Interactive 3D maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#choose-a-map-edition">Choose a map edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#open-your-first-map">Open your first map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#data-meaning-and-limits">Data meaning and limits</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="physical_geography.html">Physical geography</a><ul>
@@ -255,12 +264,13 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#noaa-ncei-etopo-2022">NOAA NCEI ETOPO 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-8-0-release">Source priority in the 0.8.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-9-0-release">Source priority in the 0.9.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -280,7 +290,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html#what-0-8-established">What 0.8 established</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html#what-0-9-adds">What 0.9 adds</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html#deferred-work">Deferred work</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference</span></p>
@@ -352,22 +362,30 @@
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PlaceNotFoundError"><code class="docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AmbiguousPlaceError"><code class="docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CapitalNotFoundError"><code class="docutils literal notranslate"><span class="pre">CapitalNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.MapSupportNotInstalledError"><code class="docutils literal notranslate"><span class="pre">MapSupportNotInstalledError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#optional-maps">Optional maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.CountryMap"><code class="docutils literal notranslate"><span class="pre">CountryMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.available_map_qualities"><code class="docutils literal notranslate"><span class="pre">available_map_qualities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.MapDataError"><code class="docutils literal notranslate"><span class="pre">MapDataError</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -398,14 +416,14 @@
              
   <section id="installation">
 <h1>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h1>
-<p>PyWorldAtlas has no third-party runtime dependencies. Install the published
-wheel for ordinary use or an editable checkout when contributing to the data
-pipeline and documentation.</p>
+<p>The core PyWorldAtlas package has no third-party runtime dependencies. Install
+the published wheel for ordinary use, add an optional map edition for offline
+3D terrain, or use an editable checkout when contributing.</p>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading"></a></h2>
 <ul class="simple">
-<li><p>Python 3.10 through 3.14 for the 0.8 release.</p></li>
-<li><p>No third-party runtime packages.</p></li>
+<li><p>Python 3.10 through 3.14 for the 0.9 release.</p></li>
+<li><p>No third-party runtime packages for the core atlas.</p></li>
 <li><p>No API key or network access after installation.</p></li>
 </ul>
 </section>
@@ -416,11 +434,24 @@ pipeline and documentation.</p>
 </pre></div>
 </div>
 </section>
+<section id="optional-3d-maps">
+<h2>Optional 3D maps<a class="headerlink" href="#optional-3d-maps" title="Link to this heading"></a></h2>
+<p>Install the recommended Standard global map edition:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install --upgrade &quot;pyworldatlas[maps]&quot;</span>
+</pre></div>
+</div>
+<p>For the smallest download, install Overview instead:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install --upgrade &quot;pyworldatlas[maps-overview]&quot;</span>
+</pre></div>
+</div>
+<p>Both editions work offline after installation and cover all 248 atlas
+profiles. See <a class="reference internal" href="maps.html"><span class="doc">Interactive 3D maps</span></a> for the exact sizes, resolution, API, and data limits.</p>
+</section>
 <section id="install-a-source-checkout">
 <h2>Install a source checkout<a class="headerlink" href="#install-a-source-checkout" title="Link to this heading"></a></h2>
 <p>Create or activate a virtual environment, open a terminal in the repository
 root, and install the runtime and builder projects:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install -e . -e pipeline</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install -e . -e pipeline -e packages/mapview -e packages/mapdata-overview -e packages/mapdata-standard</span>
 </pre></div>
 </div>
 <p>Documentation dependencies are optional:</p>
@@ -434,7 +465,7 @@ no Sphinx dependency.</p>
 <section id="install-the-built-wheel-offline">
 <h2>Install the built wheel offline<a class="headerlink" href="#install-the-built-wheel-offline" title="Link to this heading"></a></h2>
 <p>Test the exact release artifact without consulting a package index:</p>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install --no-index --no-deps dist/pyworldatlas-0.8.1-py3-none-any.whl</span>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install --no-index --no-deps dist/pyworldatlas-0.9.0-py3-none-any.whl</span>
 </pre></div>
 </div>
 </section>
@@ -442,7 +473,7 @@ no Sphinx dependency.</p>
 <h2>Verify the installation<a class="headerlink" href="#verify-the-installation" title="Link to this heading"></a></h2>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span><span class="w"> </span><span class="nn">pyworldatlas</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">pyworldatlas</span><span class="o">.</span><span class="n">__version__</span>
-<span class="go">&#39;0.8.1&#39;</span>
+<span class="go">&#39;0.9.0&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">&quot;DO&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">capital</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>

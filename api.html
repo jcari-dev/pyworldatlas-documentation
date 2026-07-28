@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>API reference | PyWorldAtlas</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=21a4203e" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=8425b3a0" />
 
   
     <link rel="shortcut icon" href="_static/globe.svg"/>
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/api.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=ec16d22d"></script>
+      <script src="_static/documentation_options.js?v=39bb1c6d"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=01b1df8d"></script>
@@ -77,6 +77,7 @@
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#requirements">Requirements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#published-package">Published package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#optional-3d-maps">Optional 3D maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#install-a-source-checkout">Install a source checkout</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#install-the-built-wheel-offline">Install the built wheel offline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="installation.html#verify-the-installation">Verify the installation</a></li>
@@ -121,6 +122,14 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#capital-and-cities">Capital and cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#sources">Sources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="maps.html">Interactive 3D maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#choose-a-map-edition">Choose a map edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#open-your-first-map">Open your first map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#data-meaning-and-limits">Data meaning and limits</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="physical_geography.html">Physical geography</a><ul>
@@ -255,12 +264,13 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#noaa-ncei-etopo-2022">NOAA NCEI ETOPO 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-8-0-release">Source priority in the 0.8.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-9-0-release">Source priority in the 0.9.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -280,7 +290,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html#what-0-8-established">What 0.8 established</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html#what-0-9-adds">What 0.9 adds</a></li>
 <li class="toctree-l1"><a class="reference internal" href="roadmap.html#deferred-work">Deferred work</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference</span></p>
@@ -352,22 +362,30 @@
 <li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.PlaceNotFoundError"><code class="docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.AmbiguousPlaceError"><code class="docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.CapitalNotFoundError"><code class="docutils literal notranslate"><span class="pre">CapitalNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.MapSupportNotInstalledError"><code class="docutils literal notranslate"><span class="pre">MapSupportNotInstalledError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#optional-maps">Optional maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pyworldatlas_mapview.CountryMap"><code class="docutils literal notranslate"><span class="pre">CountryMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyworldatlas_mapview.available_map_qualities"><code class="docutils literal notranslate"><span class="pre">available_map_qualities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyworldatlas_mapview.MapDataError"><code class="docutils literal notranslate"><span class="pre">MapDataError</span></code></a></li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -632,6 +650,18 @@ accent-tolerant. A missing or non-unique query raises
 <dd><p>Return a matching country, or <code class="docutils literal notranslate"><span class="pre">default</span></code> instead of raising.</p>
 <p>Use <a class="reference internal" href="#pyworldatlas.Atlas.country" title="pyworldatlas.Atlas.country"><code class="xref py py-meth docutils literal notranslate"><span class="pre">country()</span></code></a> when a missing profile should be treated as an
 error. <code class="docutils literal notranslate"><span class="pre">default</span></code> is returned for both missing and non-unique queries.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.map">
+<span class="sig-name descname"><span class="pre">map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Country" title="pyworldatlas.Country"><span class="pre">Country</span></a></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">quality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyworldatlas_mapview.CountryMap" title="pyworldatlas_mapview.CountryMap"><span class="pre">CountryMap</span></a></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.map"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.map" title="Link to this definition"></a></dt>
+<dd><p>Return an interactive offline 3D map for a country profile.</p>
+<p><code class="docutils literal notranslate"><span class="pre">country</span></code> accepts the same names and codes as <a class="reference internal" href="#pyworldatlas.Atlas.country" title="pyworldatlas.Atlas.country"><code class="xref py py-meth docutils literal notranslate"><span class="pre">country()</span></code></a>, or an
+already loaded <a class="reference internal" href="#pyworldatlas.Country" title="pyworldatlas.Country"><code class="xref py py-class docutils literal notranslate"><span class="pre">Country</span></code></a>. <code class="docutils literal notranslate"><span class="pre">quality=&quot;auto&quot;</span></code> prefers Standard
+map data when installed and otherwise uses Overview data.</p>
+<p>The returned map opens in the default browser when its <code class="docutils literal notranslate"><span class="pre">show()</span></code>
+method is called. Install <code class="docutils literal notranslate"><span class="pre">pyworldatlas[maps]</span></code> for Standard maps or
+<code class="docutils literal notranslate"><span class="pre">pyworldatlas[maps-overview]</span></code> for the smaller Overview edition.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1747,6 +1777,83 @@ choice numbers return <code class="docutils literal notranslate"><span class="pr
 <dt class="sig sig-object py" id="pyworldatlas.CapitalNotFoundError">
 <em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyworldatlas.</span></span><span class="sig-name descname"><span class="pre">CapitalNotFoundError</span></span><a class="reference internal" href="_modules/pyworldatlas/exceptions.html#CapitalNotFoundError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.CapitalNotFoundError" title="Link to this definition"></a></dt>
 <dd><p>Raised when a capital query has no match.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pyworldatlas.MapSupportNotInstalledError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyworldatlas.</span></span><span class="sig-name descname"><span class="pre">MapSupportNotInstalledError</span></span><a class="reference internal" href="_modules/pyworldatlas/exceptions.html#MapSupportNotInstalledError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.MapSupportNotInstalledError" title="Link to this definition"></a></dt>
+<dd><p>Raised when an optional map viewer or map-data pack is unavailable.</p>
+</dd></dl>
+
+</section>
+<section id="optional-maps">
+<h2>Optional maps<a class="headerlink" href="#optional-maps" title="Link to this heading"></a></h2>
+<p>These objects are installed by <code class="docutils literal notranslate"><span class="pre">pyworldatlas[maps]</span></code> or
+<code class="docutils literal notranslate"><span class="pre">pyworldatlas[maps-overview]</span></code>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyworldatlas_mapview.CountryMap">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyworldatlas_mapview.</span></span><span class="sig-name descname"><span class="pre">CountryMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flag</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capital_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capital_latitude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">capital_longitude</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">requested_quality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/pyworldatlas_mapview/viewer.html#CountryMap"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas_mapview.CountryMap" title="Link to this definition"></a></dt>
+<dd><p>A lazily loaded interactive 3D country map.</p>
+<p>Use <a class="reference internal" href="#pyworldatlas_mapview.CountryMap.show" title="pyworldatlas_mapview.CountryMap.show"><code class="xref py py-meth docutils literal notranslate"><span class="pre">show()</span></code></a> to open a standalone offline browser view. Use
+<a class="reference internal" href="#pyworldatlas_mapview.CountryMap.figure" title="pyworldatlas_mapview.CountryMap.figure"><code class="xref py py-meth docutils literal notranslate"><span class="pre">figure()</span></code></a> when direct Plotly customization or notebook display is
+preferred.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas_mapview.CountryMap.from_country">
+<em class="property"><span class="k"><span class="pre">classmethod</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_country</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">quality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'auto'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyworldatlas_mapview.CountryMap" title="pyworldatlas_mapview.viewer.CountryMap"><span class="pre">CountryMap</span></a></span></span><a class="reference internal" href="_modules/pyworldatlas_mapview/viewer.html#CountryMap.from_country"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas_mapview.CountryMap.from_country" title="Link to this definition"></a></dt>
+<dd><p>Create a map request from a PyWorldAtlas country profile.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyworldatlas_mapview.CountryMap.quality">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">quality</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pyworldatlas_mapview.CountryMap.quality" title="Link to this definition"></a></dt>
+<dd><p>Return the installed map quality this request will use.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyworldatlas_mapview.CountryMap.resolution_arc_minutes">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">resolution_arc_minutes</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pyworldatlas_mapview.CountryMap.resolution_arc_minutes" title="Link to this definition"></a></dt>
+<dd><p>Return the nominal elevation sampling interval in arc-minutes.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas_mapview.CountryMap.figure">
+<span class="sig-name descname"><span class="pre">figure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">object</span></span></span><a class="reference internal" href="_modules/pyworldatlas_mapview/viewer.html#CountryMap.figure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas_mapview.CountryMap.figure" title="Link to this definition"></a></dt>
+<dd><p>Return a ready-to-display <code class="docutils literal notranslate"><span class="pre">plotly.graph_objects.Figure</span></code>.</p>
+<p>The figure contains elevation and climate surface controls, a country
+outline, source-provided river centerlines, and the primary capital
+when coordinates are available.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas_mapview.CountryMap.to_html">
+<span class="sig-name descname"><span class="pre">to_html</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/pyworldatlas_mapview/viewer.html#CountryMap.to_html"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas_mapview.CountryMap.to_html" title="Link to this definition"></a></dt>
+<dd><p>Return a complete standalone HTML document with Plotly embedded.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas_mapview.CountryMap.write_html">
+<span class="sig-name descname"><span class="pre">write_html</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">Path</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Path</span></span></span><a class="reference internal" href="_modules/pyworldatlas_mapview/viewer.html#CountryMap.write_html"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas_mapview.CountryMap.write_html" title="Link to this definition"></a></dt>
+<dd><p>Write a standalone offline HTML map and return its resolved path.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas_mapview.CountryMap.show">
+<span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Path</span></span></span><a class="reference internal" href="_modules/pyworldatlas_mapview/viewer.html#CountryMap.show"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas_mapview.CountryMap.show" title="Link to this definition"></a></dt>
+<dd><p>Open the interactive map in the default browser and return its path.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pyworldatlas_mapview.available_map_qualities">
+<span class="sig-prename descclassname"><span class="pre">pyworldatlas_mapview.</span></span><span class="sig-name descname"><span class="pre">available_map_qualities</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas_mapview/viewer.html#available_map_qualities"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas_mapview.available_map_qualities" title="Link to this definition"></a></dt>
+<dd><p>Return installed map qualities from least to most detailed.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="pyworldatlas_mapview.MapDataError">
+<em class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyworldatlas_mapview.</span></span><span class="sig-name descname"><span class="pre">MapDataError</span></span><a class="reference internal" href="_modules/pyworldatlas_mapview/viewer.html#MapDataError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas_mapview.MapDataError" title="Link to this definition"></a></dt>
+<dd><p>Raised when map data is missing, incompatible, or damaged.</p>
 </dd></dl>
 
 </section>

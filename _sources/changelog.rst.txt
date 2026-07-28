@@ -4,6 +4,26 @@ Changelog
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
 
+0.9.0
+-----
+
+- Added optional offline 3D country maps through
+  :meth:`~pyworldatlas.Atlas.map` and
+  :meth:`pyworldatlas_mapview.CountryMap.show`.
+- Added Overview and Standard global editions covering all 248 profiles with
+  20 and 5 arc-minute elevation sampling.
+- Added elevation and Köppen-Geiger climate surface modes, generalized
+  outlines, source-provided river centerlines, and primary-capital markers.
+- Added standalone offline HTML export and direct Plotly figure access.
+- Kept the core wheel dependency-free through separate viewer and map-data
+  distributions.
+- Added deterministic builders, integrity checks, complete map coverage tests,
+  clean multi-wheel installation, and coordinated release automation.
+- Added complete map installation, source, resolution, and interpretation
+  guidance.
+- Added a real Standard-edition Iceland render to the shared README and
+  documentation front page, linked directly to this map guide.
+
 0.8.1
 -----
 

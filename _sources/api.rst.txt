@@ -316,3 +316,17 @@ Exceptions
 .. autoexception:: pyworldatlas.PlaceNotFoundError
 .. autoexception:: pyworldatlas.AmbiguousPlaceError
 .. autoexception:: pyworldatlas.CapitalNotFoundError
+.. autoexception:: pyworldatlas.MapSupportNotInstalledError
+
+Optional maps
+-------------
+
+These objects are installed by ``pyworldatlas[maps]`` or
+``pyworldatlas[maps-overview]``.
+
+.. autoclass:: pyworldatlas_mapview.CountryMap
+   :members:
+
+.. autofunction:: pyworldatlas_mapview.available_map_qualities
+
+.. autoexception:: pyworldatlas_mapview.MapDataError

@@ -5,11 +5,11 @@ Quality means more than having a value: each field needs a defined source,
 validation rule, coverage boundary, and honest missing-data behavior. This page
 documents those guarantees and their limits.
 
-Version 0.8 adds presentation, city-discovery, coordinate-display, and learning
-helpers over the existing reviewed dataset. It introduces no new source layer
-and does not fill missing country facts. Summaries omit unavailable values;
-quiz choices are generated only from answers already present in covered
-profiles.
+Version 0.9 keeps the reviewed core dataset and adds separately installed map
+editions. Each edition contains one integrity-hashed visualization record for
+every profile. Maps combine only pinned elevation, climate, outline, and river
+sources with existing capital coordinates; they do not fill missing country
+facts.
 
 Educational and editorial quality
 ---------------------------------
@@ -63,6 +63,9 @@ The current build checks:
   unique physical-feature records, and internally consistent water percentages.
 - Known Köppen-Geiger codes, shares from 0 through 100, deterministic descending
   share order, the exact seven-profile gap set, and the documented 0.1% threshold.
+- Exact 248-profile coverage in both map editions, per-record hashes, readable
+  compressed payloads, valid grid dimensions, non-empty display masks, offline
+  HTML rendering, and functional elevation and climate controls.
 
 Coverage
 --------
@@ -173,6 +176,12 @@ Coverage
    * - Köppen-Geiger climate profiles
      - 241
      - 1991–2020 raster classes above the 0.1% threshold
+   * - Overview 3D map profiles
+     - 248
+     - 20 arc-minute elevation sampling
+   * - Standard 3D map profiles
+     - 248
+     - 5 arc-minute elevation sampling
 
 Missing data is a valid value
 -----------------------------
@@ -207,8 +216,9 @@ Interpretation cautions
 - Language metadata records associations captured by GeoNames. They are not
   legal determinations of official-language status.
 - Border relationships are topological claims, not boundary geometry. Border
-  length, boundary geometry, point-in-country, and map rendering remain outside
-  this release.
+  length, public boundary geometry, GeoJSON, and point-in-country lookup remain
+  outside this release. Optional maps use generalized outlines only as a
+  private display layer.
 - River and lake tuples are source-listed major features, not exhaustive
   inventories. Empty tuples do not assert that a feature is absent.
 - A river length or lake area describes the complete source feature, including
@@ -216,6 +226,9 @@ Interpretation cautions
 - Köppen-Geiger shares are generalized raster/polygon estimates for broad
   education. They are not local forecasts, legal boundaries, or site-level
   classifications; classes below 0.1% are omitted.
+- Optional 3D maps are generalized educational visualizations. Small islands,
+  coastlines, rivers, and climate transitions may be simplified or displaced;
+  the maps are not suitable for navigation or local decisions.
 - Highest and lowest points preserve the source label and measurement. They do
   not create a separate “major mountains” classification.
 - Names and classifications follow documented source conventions.
