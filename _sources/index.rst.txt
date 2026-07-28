@@ -26,7 +26,7 @@ PyWorldAtlas
          :alt: PyWorldAtlas Standard 3D elevation map of Iceland
          :target: maps.html
 
-**Documented version:** 0.9.0 | **Dataset:** 2026.07.22.7 |
+**Documented version:** 0.9.1 | **Dataset:** 2026.07.22.7 |
 **Python:** 3.10–3.14 | **Profiles:** 248
 
 .. raw:: html
