@@ -8,7 +8,7 @@ fully offline: ``show()`` writes a local HTML document and opens that file.
 
 .. container:: atlas-map-showcase
 
-   .. image:: /_static/iceland-standard-map.svg
+   .. image:: /_static/iceland-standard-map.jpg
       :alt: PyWorldAtlas Standard 3D elevation map of Iceland
 
    .. container:: atlas-map-showcase-copy

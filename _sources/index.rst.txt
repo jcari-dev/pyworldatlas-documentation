@@ -22,7 +22,7 @@ PyWorldAtlas
 
    .. container:: atlas-hero-map
 
-      .. image:: /_static/iceland-standard-map.svg
+      .. image:: /_static/iceland-standard-map.jpg
          :alt: PyWorldAtlas Standard 3D elevation map of Iceland
          :target: maps.html
 
@@ -64,7 +64,7 @@ Open the terrain
 
 .. container:: atlas-map-showcase
 
-   .. image:: /_static/iceland-standard-map.svg
+   .. image:: /_static/iceland-standard-map.jpg
       :alt: PyWorldAtlas Standard 3D elevation map of Iceland
       :target: maps.html
 
