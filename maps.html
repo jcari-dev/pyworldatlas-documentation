@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Interactive 3D maps | PyWorldAtlas</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=b46754d3" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=c74efe29" />
 
   
     <link rel="shortcut icon" href="_static/globe.svg"/>
@@ -289,9 +289,11 @@
 <li class="toctree-l2"><a class="reference internal" href="_generated/project_status.html#build-identity">Build identity</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html#what-0-9-adds">What 0.9 adds</a></li>
-<li class="toctree-l1"><a class="reference internal" href="roadmap.html#deferred-work">Deferred work</a></li>
+<li class="toctree-l1"><a class="reference internal" href="roadmap.html">Roadmap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#what-0-9-adds">What 0.9 adds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="roadmap.html#deferred-work">Deferred work</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul>
@@ -422,6 +424,19 @@
 The viewer runs in the default browser because WebGL provides smooth,
 cross-platform 3D interaction. After installation, the map data and viewer are
 fully offline: <code class="docutils literal notranslate"><span class="pre">show()</span></code> writes a local HTML document and opens that file.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><strong>Experimental feature.</strong> Interactive 3D maps are under active development.
+River overlays and country geometry may be incomplete, generalized, or
+misplaced. Countries and areas containing islands, distant territories, or
+separated land areas may render unexpectedly. These maps must not be used
+for navigation, legal boundary interpretation, or authoritative geographic
+analysis. This feature may change substantially or be removed before
+version 1.0.</p>
+<p><strong>TL;DR:</strong> The maps are fun, but right now this feature is a bug-shaped
+headache. It may settle down before 1.0, or it may be politely shown the
+door.</p>
+</div>
 <div class="atlas-map-showcase docutils container">
 <img alt="PyWorldAtlas Standard 3D elevation map of Iceland" src="_images/iceland-standard-map.png" />
 <div class="atlas-map-showcase-copy docutils container">

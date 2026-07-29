@@ -1,5 +1,5 @@
 Roadmap
--------
+*******
 
 PyWorldAtlas grows through small, installable releases with explicit data,
 documentation, and compatibility boundaries. Planned work is not part of the
@@ -71,7 +71,7 @@ public API until it is implemented, tested, documented, and published.
    * - 0.9.2
      - Complete
      - Terrain-height controls, selectable labels, and sharper map presentation
-     - Prepared for release
+     - Published
    * - 1.0.0
      - Planned
      - Stable offline atlas contract

@@ -1,0 +1,10 @@
+# Local files that do not belong in the generated documentation repository.
+/.doctrees/
+/.venv*/
+/.idea/
+/.vscode/
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+desktop.ini

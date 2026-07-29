@@ -28,8 +28,12 @@ Flag emoji
 
 .. container:: atlas-flag-row
 
-   |flag-jp| Japan · |flag-br| Brazil · |flag-ch| Switzerland ·
-   |flag-cn| China · |flag-fr| France · |flag-ae| United Arab Emirates
+   - |flag-jp| Japan
+   - |flag-br| Brazil
+   - |flag-ch| Switzerland
+   - |flag-cn| China
+   - |flag-fr| France
+   - |flag-ae| United Arab Emirates
 
 ``Country.flag`` and ``Country.flag_emoji`` expose the same regional-indicator
 Unicode sequence derived from the profile's alpha-2 code:

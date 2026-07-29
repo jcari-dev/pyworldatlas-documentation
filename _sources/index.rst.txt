@@ -91,8 +91,12 @@ A small taste of the atlas
 
 .. container:: atlas-flag-row
 
-   |flag-br| Brazil · |flag-jp| Japan · |flag-ch| Switzerland ·
-   |flag-cn| China · |flag-fr| France · |flag-ae| United Arab Emirates
+   - |flag-br| Brazil
+   - |flag-jp| Japan
+   - |flag-ch| Switzerland
+   - |flag-cn| China
+   - |flag-fr| France
+   - |flag-ae| United Arab Emirates
 
 Flag values are Unicode regional-indicator emoji derived from each alpha-2
 code. The row above uses local documentation artwork for consistent display;

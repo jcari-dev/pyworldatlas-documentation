@@ -214,6 +214,36 @@
   line-height: 2.15;
 }
 
+.rst-content .atlas-flag-row > ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 1.05rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rst-content .atlas-flag-row li,
+.rst-content .atlas-flag-row li > p {
+  margin: 0;
+}
+
+.rst-content .atlas-flag-row li {
+  list-style: none;
+}
+
+.rst-content .atlas-flag-row li::marker {
+  content: "";
+}
+
+.rst-content .atlas-flag-row li > p {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.34rem;
+  line-height: 1.45;
+}
+
 .atlas-flag {
   display: inline-block;
   margin: 0 0.12rem 0 0.35rem;
@@ -227,9 +257,15 @@
   display: inline-block;
   width: 1.45em;
   height: 1.45em;
-  margin: 0 0.14rem 0 0.35rem;
+  margin: 0 0.14rem 0 0.2rem;
   object-fit: contain;
-  vertical-align: -0.32em;
+  vertical-align: -0.22em;
+}
+
+.rst-content .atlas-flag-row .atlas-flag-image {
+  flex: 0 0 auto;
+  margin: 0;
+  vertical-align: middle;
 }
 
 .atlas-example-label {

@@ -6,6 +6,20 @@ The viewer runs in the default browser because WebGL provides smooth,
 cross-platform 3D interaction. After installation, the map data and viewer are
 fully offline: ``show()`` writes a local HTML document and opens that file.
 
+.. warning::
+
+   **Experimental feature.** Interactive 3D maps are under active development.
+   River overlays and country geometry may be incomplete, generalized, or
+   misplaced. Countries and areas containing islands, distant territories, or
+   separated land areas may render unexpectedly. These maps must not be used
+   for navigation, legal boundary interpretation, or authoritative geographic
+   analysis. This feature may change substantially or be removed before
+   version 1.0.
+
+   **TL;DR:** The maps are fun, but right now this feature is a bug-shaped
+   headache. It may settle down before 1.0, or it may be politely shown the
+   door.
+
 .. container:: atlas-map-showcase
 
    .. image:: /_static/iceland-standard-map.png
