@@ -70,9 +70,10 @@ Open the terrain
 
    .. container:: atlas-map-showcase-copy
 
-      **Iceland in the Standard map edition.** This is real package output,
-      shown at an angled elevation view with the coastline, Reykjavík, a river
-      overlay, and source notes. Select the image for the complete map guide.
+      **Iceland in the Standard map edition.** This browser capture comes from
+      the package itself, with the coastline, Reykjavík, a river overlay,
+      elevation scale, viewer controls, and source notes. Select it for the
+      complete map guide.
 
 .. code-block:: python
 

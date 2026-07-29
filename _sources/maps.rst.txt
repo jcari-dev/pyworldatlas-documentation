@@ -13,8 +13,9 @@ fully offline: ``show()`` writes a local HTML document and opens that file.
 
    .. container:: atlas-map-showcase-copy
 
-      **A real Standard-edition render of Iceland.** Rotate and zoom the live
-      view, then switch from elevation to climate without contacting a server.
+      **A real Standard-edition browser render of Iceland.** Rotate and zoom
+      the live view, then switch from elevation to climate without contacting
+      a server.
 
 Choose a map edition
 --------------------

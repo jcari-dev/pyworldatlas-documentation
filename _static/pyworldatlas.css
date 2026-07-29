@@ -73,10 +73,8 @@
 .rst-content .atlas-hero-map img {
   display: block;
   width: 100%;
-  height: 17.5rem;
+  height: auto;
   margin: 0;
-  object-fit: cover;
-  object-position: center;
   border: 1px solid #d7e3e8;
   border-radius: 8px;
   box-shadow: 0 5px 16px rgba(35, 70, 88, 0.12);
@@ -144,8 +142,12 @@
 }
 
 .atlas-map-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(13rem, 0.75fr);
+  align-items: center;
+  gap: 0.85rem;
   margin: 1rem 0 1.55rem;
-  padding: 0.65rem;
+  padding: 0.75rem;
   background: linear-gradient(135deg, #f4f9fb, #f8fbfa);
   border: 1px solid #d5e3e9;
   border-radius: 10px;
@@ -155,13 +157,14 @@
 .rst-content .atlas-map-showcase img {
   display: block;
   width: 100%;
+  height: auto;
   margin: 0;
   border: 1px solid #e0e8ec;
   border-radius: 7px;
 }
 
 .atlas-map-showcase-copy {
-  padding: 0.75rem 0.7rem 0.2rem;
+  padding: 0.35rem 0.45rem;
   color: var(--atlas-muted);
   line-height: 1.55;
 }
@@ -743,6 +746,10 @@
 
   .rst-content .atlas-hero-map img {
     height: auto;
+  }
+
+  .atlas-map-showcase {
+    grid-template-columns: 1fr;
   }
 
   .atlas-stat-grid,
