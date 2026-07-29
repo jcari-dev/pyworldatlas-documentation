@@ -11,8 +11,8 @@ public API until it is implemented, tested, documented, and published.
 
       .. rubric:: Current release
 
-      **0.9.2** adds polished terrain-height and label controls to the optional
-      3D maps while keeping the core dependency-free.
+      **0.9.3** sharpens installation guidance, API readability, and the shared
+      project presentation without changing the dataset or public API.
 
    .. container:: atlas-card atlas-card-teal
 
@@ -71,6 +71,10 @@ public API until it is implemented, tested, documented, and published.
    * - 0.9.2
      - Complete
      - Terrain-height controls, selectable labels, and sharper map presentation
+     - Published
+   * - 0.9.3
+     - Complete
+     - Installation, API-reference, Explore, and project-page polish
      - Published
    * - 1.0.0
      - Planned

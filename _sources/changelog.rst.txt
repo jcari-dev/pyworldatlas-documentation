@@ -4,6 +4,18 @@ Changelog
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
 
+0.9.3
+-----
+
+- Reorganized the API reference around common tasks and gave every generated
+  class, method, and property a consistent, readable layout.
+- Clarified first-time installation, optional map editions, and the separate
+  command for upgrading an existing installation.
+- Refreshed the Explore section and polished the shared GitHub and PyPI project
+  page without changing the public API or dataset.
+- Kept documentation deployment aligned with PyPI so the browser playground
+  never advertises an unpublished package version.
+
 0.9.2
 -----
 

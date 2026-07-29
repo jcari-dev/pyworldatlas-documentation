@@ -104,10 +104,10 @@ record, proposed value, dependable source, source date, and reason for the
 change. Respect is required throughout the project. Hateful, harassing,
 threatening, demeaning, or discriminatory content is not accepted.
 
-Version 0.5.0
--------------
+Policy enforcement
+------------------
 
-Version 0.5.0 establishes and audits this educational scope. It adds no
-political commentary or opinion dataset. The release gate checks public fields,
-source roles, documentation, examples, contribution guidance, correction
-procedures, and release contents against this policy.
+The release gate checks public fields, source roles, documentation, examples,
+contribution guidance, correction procedures, and release contents against
+this policy. New data cannot be published without a documented educational
+purpose, source role, and review boundary.

@@ -10,7 +10,7 @@ Install
 
 .. code-block:: console
 
-   python -m pip install --upgrade pyworldatlas
+   python -m pip install pyworldatlas
 
 Meet a country
 --------------

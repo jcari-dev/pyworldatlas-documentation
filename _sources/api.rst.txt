@@ -1,207 +1,93 @@
 API reference
 =============
 
-The supported classes and exceptions are exported from ``pyworldatlas``.
-Database and normalization helpers are private implementation details.
+Use this page to check an exact class, property, method, return type, or
+exception. If you are learning the package, begin with the :doc:`quickstart`
+or a focused guide under **Explore the atlas**, then return here for details.
 
-Profile conventions
--------------------
-
-- Public records are frozen dataclasses.
-- Optional scalar fields use ``None`` when the captured source has no value.
-- Repeated fields use tuples and are empty when no values are bundled.
-- The public model does not expose an entity-recognition or legal-status
-  classification. The words *country* and *area* follow the documented source
-  scope.
-- ``Country.sources`` identifies sources used somewhere in the profile; it is
-  not a field-by-field provenance map.
-
-The public model focuses on stable geographic reference fields rather than
-current affairs, opinion, or speculative narrative. See
-:doc:`educational_principles` for the source and editorial review required for
-a new field family.
-
-Country identity provenance
----------------------------
-
-English identity has three deliberately separate fields:
-
-- ``Country.name`` is the familiar English display and lookup name.
-- ``Country.official_name`` is the canonical English UN M49 identity.
-- ``Country.formal_name`` is the sourced English long/formal identity for 240
-  profiles. ``None`` means the profile is outside the captured source scope.
-- ``Country.has_distinct_formal_name`` tests whether the sourced formal form
-  differs from ``name``.
-- ``Atlas.countries_with_formal_names`` returns all covered profiles.
-
-English formal names are indexed for lookup and carry a Factbook, UN Protocol,
-or Wikidata source in ``Country.sources``. The local-identity API is separate:
-
-- ``Country.local_names`` contains one immutable sourced local identity.
-- ``Country.local_name(language_code)`` returns the complete record or ``None``.
-- ``name_in`` and ``official_name_in`` project its short and formal forms.
-- ``romanized_name_in`` and ``romanized_official_name_in`` return only
-  romanization printed by the source.
-- ``local_name_languages`` lists the covered language codes for one country.
-- ``Atlas.countries_with_local_names`` exposes complete local-name coverage and
-  supports exact language, script, and evidence-kind filters.
-
-Each ``LocalizedName`` carries ``kind`` and ``language_status`` plus its
-``SourceReference`` and exact ``source_locator``. ``locale_display`` records
-come from CLDR; ``national_official`` records are reviewed against UNGEGN. A
-missing ``LocalizedName.formal_name`` means the national formal form is not in
-the reviewed local layer. It says nothing about the English
-``Country.formal_name`` field. No translation or romanization is generated at runtime. See
-:doc:`local_names` for examples and evidence rules.
-
-Reference-fact provenance
--------------------------
-
-``Country.anthem``, ``motto``, and ``demonym`` are optional convenience views
-over the corresponding tuples. Anthem, motto, and demonym records carry their
-own ``SourceReference`` and exact source locator. Currency, language, timezone,
-and postal objects also expose their contributing source when present.
-
-Anthems contain titles only. Mottos are a conservative reviewed source-listed
-layer and do not claim a particular legal status. See :doc:`reference_facts`
-for coverage and interpretation rules.
-
-Discovery calculations
-----------------------
-
-``Country.summary`` returns display-ready multiline text and deliberately
-omits unavailable values. It is a presentation helper; use ``Country``
-attributes, ``to_dict``, or ``discovery_card`` when a stable structured shape
-matters.
-
-``Atlas.rank_countries`` returns :class:`~pyworldatlas.CountryRanking` rows for
-documented sourced or directly derived metrics. ``Atlas.rank`` is its compact
-alias. ``Atlas.nearest_capitals`` returns
-:class:`~pyworldatlas.CapitalDistance` rows ordered by great-circle distance.
-These methods describe bundled values and geographic relationships; they do not
-score or judge countries.
-
-``Atlas.learning_topics`` lists the topics shared by ``flashcards`` and
-``quiz``. ``Atlas.quiz`` adds deterministic distractors and answer positions
-and returns :class:`~pyworldatlas.QuizQuestion` objects. These helpers do not
-store learner answers, scores, or sessions.
-
-Physical-geography provenance
------------------------------
-
-``Country.physical`` contains the source-reported coastline, elevation points,
-mean elevation, source-listed rivers and lakes, and its climate profile.
-``Country.geography.area`` contains total, land, and water area plus the
-directly calculated water percentage.
-
-``ClimateProfile.summary_source`` and ``classification_source`` keep the short
-climate summary separate from the derived Köppen-Geiger classes. Class shares
-come from the documented raster/polygon extraction and are not site-level
-climate claims. ``River`` and ``Lake`` records preserve a ``source_label``;
-their length or area describes the whole source feature, including a shared
-feature, rather than the portion within one country.
-
-Distance input contract
------------------------
-
-``Atlas.distance_between`` accepts ``Coordinate`` objects, two-item
-``(latitude, longitude)`` tuples, ``City`` objects, ``Capital`` objects, and
-``Country`` objects. String inputs are exact bundled city names. A ``Country``
-input uses its primary-capital coordinates.
-
-``Coordinate.format`` and ``Coordinate.dms`` provide display text without
-changing the signed decimal-degree values. ``compass_direction_to`` converts
-the initial bearing to a 4-, 8-, or 16-point compass label. It is an orientation
-aid, not a route instruction.
-
-City discovery
---------------
-
-``Atlas.city`` performs an exact city lookup and raises a clear exception for
-missing or ambiguous names. ``Atlas.search_cities`` performs accent-tolerant
-partial matching and returns an empty tuple when there are no matches.
-``Atlas.nearest_cities`` returns :class:`~pyworldatlas.CityDistance` rows
-ordered by great-circle distance. Optional country arguments narrow either the
-origin lookup or the returned places.
-
-Border API provenance
+Find the right object
 ---------------------
 
-The border API separates stored relationships from runtime calculations:
-
-- ``neighbors`` and ``shares_border`` read accepted edges from the generated
-  SQLite graph.
-- ``shared_neighbors`` intersects two stored neighbor sets.
-- ``border_path`` performs deterministic breadth-first search.
-- ``border_crossings`` reads the crossing count from that shortest path.
-- ``has_land_route`` tests reachability in the graph.
-- ``countries_reachable_by_land`` traverses a connected component.
-- ``BorderPathResult.names`` and ``alpha2_codes`` are derived from its immutable
-  ``CountryReference`` values.
-
-These methods do not use boundary geometry, maritime relationships, transport
-networks, or current border-access rules. The accepted-edge policy and source
-exceptions are documented in :doc:`borders` and :doc:`data_sources`.
-
-Profile field notes
--------------------
-
-.. list-table:: Selected public values
+.. list-table:: Public API map
    :header-rows: 1
-   :widths: 28 72
+   :widths: 24 36 40
 
-   * - Value
-     - Meaning
-   * - ``Country.population``
-     - Country population value from the captured GeoNames snapshot
-   * - ``Country.population_density``
-     - Population divided by sourced total area; ``None`` when unavailable
-   * - ``Country.flag`` / ``Country.flag_emoji``
-     - Regional-indicator Unicode sequence derived from the alpha-2 code
-   * - ``Country.formal_name``
-     - Sourced English long/formal identity; may equal ``name`` or be ``None``
-   * - ``Currency.code`` / ``Currency.name``
-     - Source currency identifier and CLDR English name; the whole value may be ``None``
-   * - ``Currency.symbol`` / ``minor_unit_digits``
-     - CLDR display symbol and standard fractional-digit count when available
-   * - ``Language.code`` / ``name`` / ``script_code``
-     - Source language code plus captured English name and likely script
-   * - ``Country.observed_timezones``
-     - Timezone IDs observed on bundled capital and city records
-   * - ``Country.timezones``
-     - Captured country-level timezone records and seasonal/raw UTC offsets
-   * - ``Country.postal_code``
-     - Source display format and optional validation expression
-   * - ``Country.anthem`` / ``motto`` / ``demonym``
-     - First optional typed record from the corresponding source-aware tuple
-   * - ``Country.land_area_km2`` / ``water_area_km2``
-     - Source area components; ``None`` when the component was not supplied
-   * - ``Country.coastline_km`` / ``mean_elevation_m``
-     - Source-reported physical measurements
-   * - ``Country.highest_point`` / ``lowest_point``
-     - Optional named :class:`~pyworldatlas.ElevationPoint` values
-   * - ``Country.rivers`` / ``lakes``
-     - Source-listed major features, not exhaustive inventories
-   * - ``Country.climate``
-     - Plain-language summary plus represented Köppen-Geiger classes
-   * - ``Coordinate.latitude`` / ``longitude``
-     - Signed WGS84 decimal degrees with constructor validation
-   * - ``Capital`` / ``City`` population
-     - Captured place population value, not a live estimate
+   * - Start with
+     - Use it for
+     - Common results
+   * - :ref:`Atlas <api-atlas>`
+     - Opening the database and running lookups, searches, calculations, and
+       learning helpers
+     - ``Country``, ``City``, rankings, distances, paths, and tuples of results
+   * - :ref:`Country <api-country-models>`
+     - Reading one country or area profile
+     - Names, codes, capital, reference facts, physical geography, and sources
+   * - :ref:`Coordinate and place models <api-geographic-models>`
+     - Working with locations and physical features
+     - ``Coordinate``, ``Capital``, ``City``, ``River``, ``Lake``, and climate
+       records
+   * - :ref:`Result models <api-results>`
+     - Inspecting structured calculations and learning material
+     - Rankings, distances, border paths, flashcards, quizzes, and metadata
+   * - :ref:`Exceptions <api-exceptions>`
+     - Handling missing, ambiguous, closed, or incompatible data
+     - Specific subclasses of ``AtlasError``
+   * - :ref:`Optional maps <api-maps>`
+     - Opening or exporting an installed 3D map edition
+     - ``CountryMap`` and map-data errors
+
+How to read an entry
+--------------------
+
+Each blue heading is a public Python signature. A **property** is read as an
+attribute, such as ``country.flag``. A **method** is called, such as
+``country.name_in("ja")``. Text after the colon is the return type; ``| None``
+means the value may be unavailable in the bundled source layer.
+
+Public records are frozen dataclasses. Repeated values are tuples, and a
+missing collection is empty. Use :meth:`~pyworldatlas.Country.to_dict` or the
+corresponding model's ``to_dict()`` method when you need JSON-compatible data.
+
+.. note::
+
+   :class:`~pyworldatlas.Atlas` owns the read-only database connection. Use it
+   as a context manager. Models already returned by the atlas remain usable
+   after the context closes.
+
+.. _api-atlas:
 
 Atlas
 -----
+
+The main entry point. ``Atlas`` handles country and city lookup, filtering,
+distance calculations, border paths, rankings, learning helpers, dataset
+metadata, and optional maps.
 
 .. autoclass:: pyworldatlas.Atlas
    :members:
    :special-members: __getitem__, __contains__, __len__, __iter__, __enter__, __exit__
    :exclude-members: __weakref__
 
+.. _api-country-models:
+
 Country models
 --------------
 
+Country profile
+~~~~~~~~~~~~~~~
+
+``Country`` is the complete immutable profile returned by
+:meth:`~pyworldatlas.Atlas.country`. Its convenience properties expose common
+facts directly while preserving the typed records underneath them.
+
 .. autoclass:: pyworldatlas.Country
    :members:
+
+Names, codes, and administrative metadata
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+These records describe identity, language, currency, timezone, and postal
+fields contained within a country profile.
 
 .. autoclass:: pyworldatlas.CountryCodes
    :members:
@@ -221,6 +107,12 @@ Country models
 .. autoclass:: pyworldatlas.PostalCodeFormat
    :members:
 
+Reference facts
+~~~~~~~~~~~~~~~
+
+Anthems contain titles only. Motto and demonym records are optional and retain
+their own source reference when available.
+
 .. autoclass:: pyworldatlas.NationalAnthem
    :members:
 
@@ -230,20 +122,34 @@ Country models
 .. autoclass:: pyworldatlas.Demonym
    :members:
 
+Compact country views
+~~~~~~~~~~~~~~~~~~~~~
+
+These smaller records are returned by border paths and discovery helpers when
+a complete country profile would be unnecessary.
+
 .. autoclass:: pyworldatlas.CountryReference
    :members:
 
 .. autoclass:: pyworldatlas.CountryDiscoveryCard
    :members:
 
+.. _api-geographic-models:
+
 Geographic models
 -----------------
+
+Coordinates and area
+~~~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pyworldatlas.Coordinate
    :members:
 
 .. autoclass:: pyworldatlas.Area
    :members:
+
+Physical geography
+~~~~~~~~~~~~~~~~~~
 
 .. autoclass:: pyworldatlas.ElevationPoint
    :members:
@@ -266,14 +172,25 @@ Geographic models
 .. autoclass:: pyworldatlas.Geography
    :members:
 
+Places
+~~~~~~
+
+``Capital`` and ``City`` include validated coordinates and captured population
+values. Place populations are snapshot values, not live estimates.
+
 .. autoclass:: pyworldatlas.Capital
    :members:
 
 .. autoclass:: pyworldatlas.City
    :members:
 
+.. _api-results:
+
 Results and metadata
 --------------------
+
+Calculations and learning helpers return typed records rather than loosely
+structured dictionaries. Their ``to_dict()`` methods provide portable output.
 
 .. autoclass:: pyworldatlas.BorderPathResult
    :members:
@@ -302,8 +219,13 @@ Results and metadata
 .. autoclass:: pyworldatlas.SourceReference
    :members:
 
+.. _api-exceptions:
+
 Exceptions
 ----------
+
+Catch a specific exception when the distinction matters, or catch
+``AtlasError`` for package-level lookup, dataset, and lifecycle failures.
 
 .. autoexception:: pyworldatlas.AtlasError
 .. autoexception:: pyworldatlas.AtlasClosedError
@@ -318,11 +240,14 @@ Exceptions
 .. autoexception:: pyworldatlas.CapitalNotFoundError
 .. autoexception:: pyworldatlas.MapSupportNotInstalledError
 
+.. _api-maps:
+
 Optional maps
 -------------
 
 These objects are installed by ``pyworldatlas[maps]`` or
-``pyworldatlas[maps-overview]``.
+``pyworldatlas[maps-overview]``. See :doc:`maps` before depending on the
+experimental map API.
 
 .. autoclass:: pyworldatlas_mapview.CountryMap
    :members:
@@ -330,3 +255,78 @@ These objects are installed by ``pyworldatlas[maps]`` or
 .. autofunction:: pyworldatlas_mapview.available_map_qualities
 
 .. autoexception:: pyworldatlas_mapview.MapDataError
+
+Data contracts and provenance
+-----------------------------
+
+Country identity
+~~~~~~~~~~~~~~~~
+
+``Country.name`` is the familiar English display and lookup name.
+``Country.official_name`` is the canonical English UN M49 identity, while
+``Country.formal_name`` is the sourced English long or formal identity when
+that source layer covers the profile.
+
+``Country.local_names`` contains the selected sourced local identity.
+``name_in()``, ``official_name_in()``, and the romanization helpers project
+values from that record; they do not translate or romanize text at runtime.
+Each ``LocalizedName`` retains its language, script, evidence kind, source, and
+source locator. See :doc:`local_names` for the complete evidence rules.
+
+Reference and discovery facts
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Anthem, motto, demonym, currency, language, timezone, and postal records expose
+their contributing source when one is bundled. ``Country.sources`` lists
+sources used somewhere in the profile; it is not a field-by-field provenance
+map. See :doc:`reference_facts` for coverage and interpretation rules.
+
+``Country.summary()`` is presentation-ready text that omits unavailable facts.
+Use model attributes, ``to_dict()``, or ``discovery_card()`` when a stable
+structured shape matters. Rankings describe sourced or directly calculated
+values; they do not score or judge countries. Quiz and flashcard helpers are
+deterministic and do not store learner answers or sessions.
+
+Physical geography
+~~~~~~~~~~~~~~~~~~
+
+``Country.physical`` contains coastline, elevation points, mean elevation,
+source-listed rivers and lakes, and climate. ``Country.geography.area`` contains
+total, land, and water area plus the directly calculated water percentage.
+
+Köppen-Geiger shares describe the portion represented by the documented
+raster and polygon extraction. They are not site-level climate claims. River
+lengths and lake areas describe the complete source feature, including shared
+features, rather than only the portion within one profile. See
+:doc:`physical_geography` and :doc:`data_quality` for limits.
+
+Coordinates, cities, and distance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+``Atlas.distance_between()`` accepts coordinates, two-item latitude/longitude
+tuples, cities, capitals, countries, and exact bundled city names. A country
+uses its primary-capital coordinates. Distances are great-circle surface
+measurements; compass labels are orientation aids, not route instructions.
+
+``Atlas.city()`` performs exact lookup and reports ambiguous names.
+``search_cities()`` performs accent-tolerant partial matching, while
+``nearest_cities()`` orders results by great-circle distance. Optional country
+arguments narrow the lookup or returned places.
+
+Land borders
+~~~~~~~~~~~~
+
+Neighbor and path methods use the reviewed, undirected border graph. Shortest
+paths are deterministic breadth-first searches over stored relationships. They
+do not use boundary geometry, maritime relationships, transport networks, or
+current crossing rules. See :doc:`borders` for the accepted-edge policy and
+interpretation limits.
+
+Publication scope
+~~~~~~~~~~~~~~~~~
+
+The public model focuses on stable geographic reference data rather than
+current affairs, opinion, or speculative narrative. Missing scalar values are
+``None`` and are never invented to fill a source gap. See
+:doc:`educational_principles` and :doc:`data_sources` for the publication and
+source policies.

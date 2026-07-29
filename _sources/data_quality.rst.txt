@@ -5,8 +5,7 @@ Quality means more than having a value: each field needs a defined source,
 validation rule, coverage boundary, and honest missing-data behavior. This page
 documents those guarantees and their limits.
 
-Version 0.9 keeps the reviewed core dataset and adds separately installed map
-editions. Each edition contains one integrity-hashed visualization record for
+Optional map editions contain one integrity-hashed visualization record for
 every profile. Maps combine only pinned elevation, climate, outline, and river
 sources with existing capital coordinates; they do not fill missing country
 facts.

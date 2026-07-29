@@ -1,7 +1,7 @@
 Learning activities
 ===================
 
-PyWorldAtlas 0.8 turns the reviewed offline atlas into a small geography lab.
+PyWorldAtlas turns the reviewed offline atlas into a small geography lab.
 Every activity below is deterministic, works without an API key, and keeps the
 underlying country, city, coordinate, and source objects available for deeper
 exploration.

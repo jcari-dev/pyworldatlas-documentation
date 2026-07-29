@@ -307,6 +307,90 @@
   background: #fafcfd;
 }
 
+/* Keep generated Python reference entries readable at a glance. */
+.rst-content dl.py {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100%;
+}
+
+.rst-content dl.py.class,
+.rst-content dl.py.exception,
+.rst-content dl.py.function {
+  margin: 1.15rem 0 2rem;
+  overflow: hidden;
+  background: #fbfcfd;
+  border: 1px solid #d8e4ea;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(38, 68, 85, 0.045);
+}
+
+.rst-content dl.py > dt.sig {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  overflow-x: auto;
+  padding: 0.62rem 0.78rem;
+  background: #f0f5f7;
+  border-left: 3px solid #8aafc0;
+  color: #304f60;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.rst-content dl.py.class > dt.sig,
+.rst-content dl.py.exception > dt.sig,
+.rst-content dl.py.function > dt.sig {
+  background: #eaf4f8;
+  border-left-color: #4c91b2;
+  color: #234b60;
+}
+
+.rst-content dl.py > dd {
+  margin: 0;
+  padding: 0.82rem 0.92rem 0.2rem;
+}
+
+.rst-content dl.py.class > dd > dl.py {
+  display: block;
+  width: 100%;
+  margin: 0.72rem 0 0.9rem;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e0e8ed;
+  border-radius: 6px;
+}
+
+.rst-content dl.py.class > dd > dl.py > dd {
+  padding: 0.68rem 0.82rem 0.08rem;
+}
+
+.rst-content dl.py .sig-name,
+.rst-content dl.py .sig-prename {
+  color: #214d64;
+  font-weight: 700;
+}
+
+.rst-content dl.py .property {
+  color: #55717f;
+}
+
+.rst-content dl.py .viewcode-link {
+  margin-left: 0.55rem;
+  color: #317f78;
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.rst-content dl.py dd > p:last-child,
+.rst-content dl.py dd > ul:last-child,
+.rst-content dl.py dd > table:last-child {
+  margin-bottom: 0.72rem;
+}
+
 .rst-content .admonition.tip {
   background: #f1f8f5;
 }

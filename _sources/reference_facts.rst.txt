@@ -75,13 +75,13 @@ unlabelled strings.
 
 ``Country.observed_timezones`` remains available for compatibility and lists
 zones observed on bundled cities. ``Country.timezones`` is the country-level
-timezone table added in 0.6, with January, July, and raw UTC offsets from the
-captured GeoNames file.
+timezone table, with January, July, and raw UTC offsets from the captured
+GeoNames file.
 
 Coverage
 --------
 
-.. list-table:: Version 0.6 reference coverage
+.. list-table:: Bundled reference coverage
    :header-rows: 1
    :widths: 45 20 35
 

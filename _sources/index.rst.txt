@@ -26,7 +26,7 @@ PyWorldAtlas
          :alt: PyWorldAtlas Standard 3D elevation map of Iceland
          :target: maps.html
 
-**Documented version:** 0.9.2 | **Dataset:** 2026.07.22.7 |
+**Documented version:** 0.9.3 | **Dataset:** 2026.07.22.7 |
 **Python:** 3.10–3.14 | **Profiles:** 248
 
 .. raw:: html
@@ -83,7 +83,7 @@ Open the terrain
        atlas.map("Iceland").show()
 
 The map opens as a rotatable local browser view. Switch between Elevation and
-Climate, zoom into the surface, or export a standalone HTML file. Install it
+Climate, zoom into the surface, or export a standalone HTML file. Add maps
 with ``python -m pip install "pyworldatlas[maps]"``.
 
 A small taste of the atlas
@@ -123,8 +123,10 @@ The installed wheel contains ordinary Python source and one read-only database.
 Constructing :class:`~pyworldatlas.Atlas` never contacts a server and does not
 load every country into memory.
 
-See what you can build
-----------------------
+.. _explore-the-atlas:
+
+Explore the atlas
+-----------------
 
 .. container:: atlas-card-grid
 
@@ -159,6 +161,13 @@ See what you can build
       from cities, capitals, countries, or coordinates. Try
       :doc:`coordinates_distances`.
 
+   .. container:: atlas-card atlas-card-blue
+
+      .. rubric:: Explore cities
+
+      Search 6,265 populated places, resolve ambiguous names, inspect
+      coordinates, and find nearby cities in :doc:`capitals_cities`.
+
    .. container:: atlas-card atlas-card-teal
 
       .. rubric:: Follow land connections
@@ -180,6 +189,14 @@ See what you can build
       Create stable samples, deterministic flashcards, compact discovery cards,
       multiple-choice questions, and Unicode-preserving JSON with
       :doc:`learning`, :doc:`discovery`, and :doc:`serialization`.
+
+   .. container:: atlas-card atlas-card-teal
+
+      .. rubric:: Search and reuse data
+
+      Combine ranked text search with exact profile filters, then export typed
+      results as portable dictionaries or JSON. See :doc:`searching` and
+      :doc:`serialization`.
 
 Choose your next step
 ---------------------
@@ -205,7 +222,7 @@ Choose your next step
       .. rubric:: Ready to build?
 
       Copy a complete program from :doc:`recipes` or browse the focused guides
-      under **Explore the atlas**.
+      in the **Explore the atlas** section of the navigation.
 
 What is bundled
 ---------------
@@ -280,7 +297,7 @@ Install
 
 .. code-block:: console
 
-   python -m pip install --upgrade pyworldatlas
+   python -m pip install pyworldatlas
 
 The current source checkout can be installed with ``python -m pip install -e .``.
 

@@ -257,4 +257,4 @@ Executable example
    :language: python
    :linenos:
 
-For a complete 0.8 classroom tour, continue to :doc:`learning`.
+For a complete classroom tour, continue to :doc:`learning`.

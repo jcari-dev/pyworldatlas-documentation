@@ -56,7 +56,7 @@ edition when interactive maps are wanted:
 
 .. code-block:: console
 
-   python -m pip install --upgrade "pyworldatlas[maps]"
+   python -m pip install "pyworldatlas[maps]"
 
 Overview and Standard cover the same 248 profiles and expose the same API.
 Standard simply samples the pinned elevation surface more densely and uses a
@@ -144,12 +144,6 @@ supports visualization only: 0.9 does not expose boundary coordinates,
 GeoJSON, point-in-country tests, or legal boundary claims through the public
 API. Small islands and narrow coastlines can be visibly generalized at the
 selected elevation resolution.
-
-The pinned 1:10m source labels one downstream Icelandic river segment as the
-``Drau`` even though its geometry and dissolve identifier continue the
-Þjórsá. The Standard map builder applies a narrow, reviewed correction to
-``Þjórsá``, verified against the `Icelandic Institute of Natural History
-<https://www.ni.is/en/geology/water/rivers>`_.
 
 See :doc:`data_sources`, :doc:`data_quality`, and :doc:`educational_principles`
 for the complete source, editorial, and interpretation policies.
