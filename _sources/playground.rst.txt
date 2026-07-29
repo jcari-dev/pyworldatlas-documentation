@@ -7,7 +7,7 @@ keeps that session alive while you explore.
 
 .. raw:: html
 
-   <div id="atlas-playground" class="atlas-playground" data-package="pyworldatlas==0.9.1">
+   <div id="atlas-playground" class="atlas-playground" data-package="pyworldatlas==0.9.2">
      <div class="atlas-playground-header">
        <div>
          <p class="atlas-playground-eyebrow">Python in your browser</p>
@@ -22,7 +22,7 @@ keeps that session alive while you explore.
 
      <div class="atlas-runtime-facts" aria-label="Playground runtime">
        <span>Python <strong data-role="python-version">starting</strong></span>
-       <span>PyWorldAtlas <strong data-role="library-version">0.9.1</strong></span>
+       <span>PyWorldAtlas <strong data-role="library-version">0.9.2</strong></span>
        <span>Dataset <strong data-role="dataset-version">bundled</strong></span>
        <span>Recipes <strong>14 ready</strong></span>
      </div>
@@ -69,7 +69,7 @@ keeps that session alive while you explore.
 What is running?
 ----------------
 
-This is the real ``pyworldatlas==0.9.1`` wheel published on PyPI, not a
+This is the real ``pyworldatlas==0.9.2`` wheel published on PyPI, not a
 JavaScript imitation or a remote demonstration API. `Pyodide`_ runs CPython in
 WebAssembly, while a module Web Worker keeps execution away from the page's
 interface. After startup, country queries read the same bundled SQLite database

@@ -4,6 +4,16 @@ Changelog
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
 
+0.9.2
+-----
+
+- Added terrain-height controls and selectable capital and river labels to the
+  interactive 3D map viewer.
+- Strengthened capital markers and labels for clear presentation at varied
+  camera angles.
+- Corrected the downstream Þjórsá label in the Standard Iceland map using a
+  reviewed national source.
+
 0.9.1
 -----
 

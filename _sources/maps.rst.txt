@@ -8,14 +8,14 @@ fully offline: ``show()`` writes a local HTML document and opens that file.
 
 .. container:: atlas-map-showcase
 
-   .. image:: /_static/iceland-standard-map.jpg
+   .. image:: /_static/iceland-standard-map.png
       :alt: PyWorldAtlas Standard 3D elevation map of Iceland
 
    .. container:: atlas-map-showcase-copy
 
       **A real Standard-edition browser render of Iceland.** Rotate and zoom
-      the live view, then switch from elevation to climate without contacting
-      a server.
+      the live view, adjust terrain height, control river and capital labels,
+      or switch from elevation to climate without contacting a server.
 
 Choose a map edition
 --------------------
@@ -61,10 +61,11 @@ Open your first map
 That one call opens a standalone browser view containing:
 
 - rotatable and zoomable 3D elevation;
+- five terrain-height settings from ``0.5×`` through ``3×``;
 - an elevation or Köppen-Geiger climate surface switch;
 - generalized country outlines;
-- source-provided river centerlines;
-- the primary capital when coordinates are available; and
+- source-provided river centerlines with hover details and optional names;
+- a high-contrast primary-capital marker with a selectable label; and
 - visible resolution, source, and navigation-use notes.
 
 ``show()`` returns the generated :class:`~pathlib.Path`, so applications can
@@ -129,6 +130,12 @@ supports visualization only: 0.9 does not expose boundary coordinates,
 GeoJSON, point-in-country tests, or legal boundary claims through the public
 API. Small islands and narrow coastlines can be visibly generalized at the
 selected elevation resolution.
+
+The pinned 1:10m source labels one downstream Icelandic river segment as the
+``Drau`` even though its geometry and dissolve identifier continue the
+Þjórsá. The Standard map builder applies a narrow, reviewed correction to
+``Þjórsá``, verified against the `Icelandic Institute of Natural History
+<https://www.ni.is/en/geology/water/rivers>`_.
 
 See :doc:`data_sources`, :doc:`data_quality`, and :doc:`educational_principles`
 for the complete source, editorial, and interpretation policies.

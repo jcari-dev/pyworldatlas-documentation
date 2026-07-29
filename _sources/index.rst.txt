@@ -22,11 +22,11 @@ PyWorldAtlas
 
    .. container:: atlas-hero-map
 
-      .. image:: /_static/iceland-standard-map.jpg
+      .. image:: /_static/iceland-standard-map.png
          :alt: PyWorldAtlas Standard 3D elevation map of Iceland
          :target: maps.html
 
-**Documented version:** 0.9.1 | **Dataset:** 2026.07.22.7 |
+**Documented version:** 0.9.2 | **Dataset:** 2026.07.22.7 |
 **Python:** 3.10–3.14 | **Profiles:** 248
 
 .. raw:: html
@@ -64,7 +64,7 @@ Open the terrain
 
 .. container:: atlas-map-showcase
 
-   .. image:: /_static/iceland-standard-map.jpg
+   .. image:: /_static/iceland-standard-map.png
       :alt: PyWorldAtlas Standard 3D elevation map of Iceland
       :target: maps.html
 
@@ -72,8 +72,8 @@ Open the terrain
 
       **Iceland in the Standard map edition.** This browser capture comes from
       the package itself, with the coastline, Reykjavík, a river overlay,
-      elevation scale, viewer controls, and source notes. Select it for the
-      complete map guide.
+      elevation scale, terrain-height and label controls, and source notes.
+      Select it for the complete map guide.
 
 .. code-block:: python
 

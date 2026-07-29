@@ -11,8 +11,8 @@ public API until it is implemented, tested, documented, and published.
 
       .. rubric:: Current release
 
-      **0.9.1** adds optional offline 3D elevation and climate maps for every
-      atlas profile while keeping the core dependency-free.
+      **0.9.2** adds polished terrain-height and label controls to the optional
+      3D maps while keeping the core dependency-free.
 
    .. container:: atlas-card atlas-card-teal
 
@@ -67,6 +67,10 @@ public API until it is implemented, tested, documented, and published.
    * - 0.9.1
      - Complete
      - Optional 3D elevation and climate maps, river overlays, and HTML export
+     - Published
+   * - 0.9.2
+     - Complete
+     - Terrain-height controls, selectable labels, and sharper map presentation
      - Prepared for release
    * - 1.0.0
      - Planned

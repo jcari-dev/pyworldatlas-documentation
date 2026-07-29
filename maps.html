@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/maps.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=9dc39874"></script>
+      <script src="_static/documentation_options.js?v=aa3b121e"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=01b1df8d"></script>
@@ -270,7 +270,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-9-1-release">Source priority in the 0.9.1 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-9-2-release">Source priority in the 0.9.2 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -374,19 +374,20 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -422,11 +423,11 @@ The viewer runs in the default browser because WebGL provides smooth,
 cross-platform 3D interaction. After installation, the map data and viewer are
 fully offline: <code class="docutils literal notranslate"><span class="pre">show()</span></code> writes a local HTML document and opens that file.</p>
 <div class="atlas-map-showcase docutils container">
-<img alt="PyWorldAtlas Standard 3D elevation map of Iceland" src="_images/iceland-standard-map.jpg" />
+<img alt="PyWorldAtlas Standard 3D elevation map of Iceland" src="_images/iceland-standard-map.png" />
 <div class="atlas-map-showcase-copy docutils container">
 <p><strong>A real Standard-edition browser render of Iceland.</strong> Rotate and zoom
-the live view, then switch from elevation to climate without contacting
-a server.</p>
+the live view, adjust terrain height, control river and capital labels,
+or switch from elevation to climate without contacting a server.</p>
 </div>
 </div>
 <section id="choose-a-map-edition">
@@ -479,10 +480,11 @@ more detailed river layer. Detailed and Ultra editions are not part of 0.9.</p>
 <p>That one call opens a standalone browser view containing:</p>
 <ul class="simple">
 <li><p>rotatable and zoomable 3D elevation;</p></li>
+<li><p>five terrain-height settings from <code class="docutils literal notranslate"><span class="pre">0.5×</span></code> through <code class="docutils literal notranslate"><span class="pre">3×</span></code>;</p></li>
 <li><p>an elevation or Köppen-Geiger climate surface switch;</p></li>
 <li><p>generalized country outlines;</p></li>
-<li><p>source-provided river centerlines;</p></li>
-<li><p>the primary capital when coordinates are available; and</p></li>
+<li><p>source-provided river centerlines with hover details and optional names;</p></li>
+<li><p>a high-contrast primary-capital marker with a selectable label; and</p></li>
 <li><p>visible resolution, source, and navigation-use notes.</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">show()</span></code> returns the generated <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>, so applications can
@@ -537,6 +539,10 @@ supports visualization only: 0.9 does not expose boundary coordinates,
 GeoJSON, point-in-country tests, or legal boundary claims through the public
 API. Small islands and narrow coastlines can be visibly generalized at the
 selected elevation resolution.</p>
+<p>The pinned 1:10m source labels one downstream Icelandic river segment as the
+<code class="docutils literal notranslate"><span class="pre">Drau</span></code> even though its geometry and dissolve identifier continue the
+Þjórsá. The Standard map builder applies a narrow, reviewed correction to
+<code class="docutils literal notranslate"><span class="pre">Þjórsá</span></code>, verified against the <a class="reference external" href="https://www.ni.is/en/geology/water/rivers">Icelandic Institute of Natural History</a>.</p>
 <p>See <a class="reference internal" href="data_sources.html"><span class="doc">Data sources and freshness</span></a>, <a class="reference internal" href="data_quality.html"><span class="doc">Data quality and limitations</span></a>, and <a class="reference internal" href="educational_principles.html"><span class="doc">Educational purpose and editorial policy</span></a>
 for the complete source, editorial, and interpretation policies.</p>
 </section>

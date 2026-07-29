@@ -14,7 +14,7 @@
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/_modules/pyworldatlas_mapview/viewer.html" />
       <script src="../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../_static/documentation_options.js?v=9dc39874"></script>
+      <script src="../../_static/documentation_options.js?v=aa3b121e"></script>
       <script src="../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="../../_static/playground.js?v=01b1df8d"></script>
@@ -267,7 +267,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-9-1-release">Source priority in the 0.9.1 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-9-2-release">Source priority in the 0.9.2 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -371,19 +371,20 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id4">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id5">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id6">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id7">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id4">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id5">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id6">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id7">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id8">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id8">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id9">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id10">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id9">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id10">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id11">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id11">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id12">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -436,6 +437,14 @@
     <span class="s2">&quot;overview&quot;</span><span class="p">:</span> <span class="s2">&quot;pyworldatlas_mapdata_overview&quot;</span><span class="p">,</span>
     <span class="s2">&quot;standard&quot;</span><span class="p">:</span> <span class="s2">&quot;pyworldatlas_mapdata_standard&quot;</span><span class="p">,</span>
 <span class="p">}</span>
+
+<span class="n">_TERRAIN_HEIGHTS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s2">&quot;0.5×&quot;</span><span class="p">,</span> <span class="mf">0.08</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;1×&quot;</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;1.5×&quot;</span><span class="p">,</span> <span class="mf">0.24</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;2×&quot;</span><span class="p">,</span> <span class="mf">0.32</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">&quot;3×&quot;</span><span class="p">,</span> <span class="mf">0.48</span><span class="p">),</span>
+<span class="p">)</span>
 
 <span class="n">_ELEVATION_SCALE</span> <span class="o">=</span> <span class="p">(</span>
     <span class="p">(</span><span class="mf">0.00</span><span class="p">,</span> <span class="s2">&quot;#16796f&quot;</span><span class="p">),</span>
@@ -665,9 +674,10 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">figure</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">object</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;Return a ready-to-display ``plotly.graph_objects.Figure``.</span>
 
-<span class="sd">        The figure contains elevation and climate surface controls, a country</span>
-<span class="sd">        outline, source-provided river centerlines, and the primary capital</span>
-<span class="sd">        when coordinates are available.</span>
+<span class="sd">        The figure contains elevation and climate surface controls, terrain</span>
+<span class="sd">        height choices, optional river and capital labels, a country outline,</span>
+<span class="sd">        source-provided river centerlines, and the primary capital when</span>
+<span class="sd">        coordinates are available.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
 
@@ -717,6 +727,7 @@
             <span class="p">),</span>
         <span class="p">]</span>
         <span class="n">river_parts</span> <span class="o">=</span> <span class="p">[</span><span class="n">river</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">river</span> <span class="ow">in</span> <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;rivers&quot;</span><span class="p">]]</span>
+        <span class="n">river_annotations</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">if</span> <span class="n">river_parts</span><span class="p">:</span>
             <span class="n">river_x</span><span class="p">,</span> <span class="n">river_y</span><span class="p">,</span> <span class="n">river_z</span> <span class="o">=</span> <span class="n">_flatten_lines</span><span class="p">(</span>
                 <span class="n">river_parts</span><span class="p">,</span> <span class="n">longitudes</span><span class="p">,</span> <span class="n">latitudes</span><span class="p">,</span> <span class="n">elevation</span><span class="p">,</span> <span class="mi">55</span>
@@ -738,37 +749,219 @@
                     <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
                 <span class="p">)</span>
             <span class="p">)</span>
+            <span class="n">longest_river_parts</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">for</span> <span class="n">river</span> <span class="ow">in</span> <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;rivers&quot;</span><span class="p">]:</span>
+                <span class="n">name</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">river</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">])</span>
+                <span class="n">points</span> <span class="o">=</span> <span class="n">river</span><span class="p">[</span><span class="s2">&quot;points&quot;</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">points</span><span class="p">:</span>
+                    <span class="k">continue</span>
+                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">longest_river_parts</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="p">[])):</span>
+                    <span class="n">longest_river_parts</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">points</span>
+            <span class="k">for</span> <span class="n">name</span><span class="p">,</span> <span class="n">points</span> <span class="ow">in</span> <span class="n">longest_river_parts</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                <span class="n">longitude</span><span class="p">,</span> <span class="n">latitude</span> <span class="o">=</span> <span class="n">points</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span><span class="p">]</span>
+                <span class="n">river_annotations</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">longitude</span><span class="p">,</span>
+                        <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="n">latitude</span><span class="p">,</span>
+                        <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="n">_nearest_elevation</span><span class="p">(</span>
+                            <span class="n">longitude</span><span class="p">,</span>
+                            <span class="n">latitude</span><span class="p">,</span>
+                            <span class="n">longitudes</span><span class="p">,</span>
+                            <span class="n">latitudes</span><span class="p">,</span>
+                            <span class="n">elevation</span><span class="p">,</span>
+                        <span class="p">)</span>
+                        <span class="o">+</span> <span class="mi">110</span><span class="p">,</span>
+                        <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">&lt;/b&gt;&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;showarrow&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                        <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+                        <span class="s2">&quot;bgcolor&quot;</span><span class="p">:</span> <span class="s2">&quot;rgba(255, 255, 255, 0.88)&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;bordercolor&quot;</span><span class="p">:</span> <span class="s2">&quot;#168aad&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;borderpad&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+                        <span class="s2">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#075985&quot;</span><span class="p">,</span> <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">},</span>
+                    <span class="p">}</span>
+                <span class="p">)</span>
+        <span class="n">capital_annotation</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">capital_latitude</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">capital_longitude</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">capital_longitude</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">capital_longitude</span>
             <span class="k">while</span> <span class="n">capital_longitude</span> <span class="o">&lt;</span> <span class="n">longitudes</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
                 <span class="n">capital_longitude</span> <span class="o">+=</span> <span class="mf">360.0</span>
             <span class="k">while</span> <span class="n">capital_longitude</span> <span class="o">&gt;</span> <span class="n">longitudes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
                 <span class="n">capital_longitude</span> <span class="o">-=</span> <span class="mf">360.0</span>
+            <span class="n">capital_elevation</span> <span class="o">=</span> <span class="n">_nearest_elevation</span><span class="p">(</span>
+                <span class="n">capital_longitude</span><span class="p">,</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">capital_latitude</span><span class="p">,</span>
+                <span class="n">longitudes</span><span class="p">,</span>
+                <span class="n">latitudes</span><span class="p">,</span>
+                <span class="n">elevation</span><span class="p">,</span>
+            <span class="p">)</span>
             <span class="n">traces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
                 <span class="n">go</span><span class="o">.</span><span class="n">Scatter3d</span><span class="p">(</span>
                     <span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="n">capital_longitude</span><span class="p">],</span>
                     <span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">capital_latitude</span><span class="p">],</span>
-                    <span class="n">z</span><span class="o">=</span><span class="p">[</span>
-                        <span class="n">_nearest_elevation</span><span class="p">(</span>
-                            <span class="n">capital_longitude</span><span class="p">,</span>
-                            <span class="bp">self</span><span class="o">.</span><span class="n">capital_latitude</span><span class="p">,</span>
-                            <span class="n">longitudes</span><span class="p">,</span>
-                            <span class="n">latitudes</span><span class="p">,</span>
-                            <span class="n">elevation</span><span class="p">,</span>
-                        <span class="p">)</span>
-                        <span class="o">+</span> <span class="mi">120</span>
-                    <span class="p">],</span>
-                    <span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">capital_name</span><span class="p">],</span>
-                    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers+text&quot;</span><span class="p">,</span>
-                    <span class="n">textposition</span><span class="o">=</span><span class="s2">&quot;top center&quot;</span><span class="p">,</span>
-                    <span class="n">marker</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#d1495b&quot;</span><span class="p">,</span> <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;diamond&quot;</span><span class="p">},</span>
-                    <span class="n">hovertemplate</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">capital_name</span><span class="si">}</span><span class="s2">&lt;extra&gt;Capital&lt;/extra&gt;&quot;</span><span class="p">,</span>
+                    <span class="n">z</span><span class="o">=</span><span class="p">[</span><span class="n">capital_elevation</span> <span class="o">+</span> <span class="mi">125</span><span class="p">],</span>
+                    <span class="n">mode</span><span class="o">=</span><span class="s2">&quot;markers&quot;</span><span class="p">,</span>
+                    <span class="n">marker</span><span class="o">=</span><span class="p">{</span>
+                        <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#ff3b68&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+                        <span class="s2">&quot;symbol&quot;</span><span class="p">:</span> <span class="s2">&quot;diamond&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;line&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#ffffff&quot;</span><span class="p">,</span> <span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">},</span>
+                    <span class="p">},</span>
+                    <span class="n">hovertemplate</span><span class="o">=</span><span class="p">(</span>
+                        <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">capital_name</span><span class="si">}</span><span class="s2">&lt;/b&gt;&lt;br&gt;Capital of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">country_name</span><span class="si">}</span><span class="s2">&quot;</span>
+                        <span class="s2">&quot;&lt;extra&gt;&lt;/extra&gt;&quot;</span>
+                    <span class="p">),</span>
                     <span class="n">name</span><span class="o">=</span><span class="s2">&quot;Capital&quot;</span><span class="p">,</span>
                     <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
                 <span class="p">)</span>
             <span class="p">)</span>
+            <span class="n">capital_annotation</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="n">capital_longitude</span><span class="p">,</span>
+                <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="bp">self</span><span class="o">.</span><span class="n">capital_latitude</span><span class="p">,</span>
+                <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="n">capital_elevation</span> <span class="o">+</span> <span class="mi">125</span><span class="p">,</span>
+                <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;&lt;b&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">capital_name</span><span class="si">}</span><span class="s2">&lt;/b&gt;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;showarrow&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;arrowhead&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+                <span class="s2">&quot;arrowcolor&quot;</span><span class="p">:</span> <span class="s2">&quot;#b42346&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ax&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;ay&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mi">34</span><span class="p">,</span>
+                <span class="s2">&quot;visible&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;bgcolor&quot;</span><span class="p">:</span> <span class="s2">&quot;rgba(255, 255, 255, 0.94)&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;bordercolor&quot;</span><span class="p">:</span> <span class="s2">&quot;#ff3b68&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;borderpad&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                <span class="s2">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#7f1734&quot;</span><span class="p">,</span> <span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">13</span><span class="p">},</span>
+            <span class="p">}</span>
         <span class="n">present</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;climateLegend&quot;</span><span class="p">])</span>
+        <span class="n">map_annotations</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="p">([</span><span class="n">capital_annotation</span><span class="p">]</span> <span class="k">if</span> <span class="n">capital_annotation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[])</span>
+            <span class="o">+</span> <span class="n">river_annotations</span>
+        <span class="p">)</span>
+        <span class="n">capital_annotation_index</span> <span class="o">=</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">capital_annotation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="n">river_annotation_indexes</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span>
+            <span class="nb">range</span><span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">capital_annotation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">map_annotations</span><span class="p">))</span>
+        <span class="p">)</span>
+
+        <span class="k">def</span><span class="w"> </span><span class="nf">label_visibility</span><span class="p">(</span>
+            <span class="o">*</span><span class="p">,</span> <span class="n">capital</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span> <span class="n">rivers</span><span class="p">:</span> <span class="nb">bool</span>
+        <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]:</span>
+            <span class="n">visibility</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">bool</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+            <span class="k">if</span> <span class="n">capital_annotation_index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">visibility</span><span class="p">[</span>
+                    <span class="sa">f</span><span class="s2">&quot;scene.annotations[</span><span class="si">{</span><span class="n">capital_annotation_index</span><span class="si">}</span><span class="s2">].visible&quot;</span>
+                <span class="p">]</span> <span class="o">=</span> <span class="n">capital</span>
+            <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">river_annotation_indexes</span><span class="p">:</span>
+                <span class="n">visibility</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;scene.annotations[</span><span class="si">{</span><span class="n">index</span><span class="si">}</span><span class="s2">].visible&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">rivers</span>
+            <span class="k">return</span> <span class="n">visibility</span>
+
+        <span class="n">label_buttons</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">capital_annotation_index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">label_buttons</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Capital only&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;relayout&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">label_visibility</span><span class="p">(</span><span class="n">capital</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rivers</span><span class="o">=</span><span class="kc">False</span><span class="p">)],</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;All names&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;relayout&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">label_visibility</span><span class="p">(</span><span class="n">capital</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">rivers</span><span class="o">=</span><span class="kc">True</span><span class="p">)],</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;River names&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;relayout&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">label_visibility</span><span class="p">(</span><span class="n">capital</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rivers</span><span class="o">=</span><span class="kc">True</span><span class="p">)],</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Hide names&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;relayout&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">label_visibility</span><span class="p">(</span><span class="n">capital</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rivers</span><span class="o">=</span><span class="kc">False</span><span class="p">)],</span>
+                    <span class="p">},</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
+        <span class="k">elif</span> <span class="n">river_annotation_indexes</span><span class="p">:</span>
+            <span class="n">label_buttons</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Hide names&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;relayout&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">label_visibility</span><span class="p">(</span><span class="n">capital</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rivers</span><span class="o">=</span><span class="kc">False</span><span class="p">)],</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;River names&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;relayout&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">label_visibility</span><span class="p">(</span><span class="n">capital</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">rivers</span><span class="o">=</span><span class="kc">True</span><span class="p">)],</span>
+                    <span class="p">},</span>
+                <span class="p">]</span>
+            <span class="p">)</span>
         <span class="n">figure</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">traces</span><span class="p">)</span>
+        <span class="n">update_menus</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">object</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;buttons&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>
+                <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">0.99</span><span class="p">,</span>
+                <span class="s2">&quot;showactive&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="s2">&quot;buttons&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Elevation&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;restyle&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span>
+                                <span class="s2">&quot;surfacecolor&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">elevation</span><span class="p">],</span>
+                                <span class="s2">&quot;colorscale&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">_ELEVATION_SCALE</span><span class="p">)],</span>
+                                <span class="s2">&quot;cmin&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">minimum</span><span class="p">],</span>
+                                <span class="s2">&quot;cmax&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">maximum</span><span class="p">],</span>
+                                <span class="s2">&quot;colorbar&quot;</span><span class="p">:</span> <span class="p">[</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Elevation (m)&quot;</span><span class="p">},</span>
+                                        <span class="s2">&quot;thickness&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                                        <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">0.68</span><span class="p">,</span>
+                                    <span class="p">}</span>
+                                <span class="p">],</span>
+                            <span class="p">},</span>
+                            <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="p">],</span>
+                    <span class="p">},</span>
+                    <span class="p">{</span>
+                        <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Climate&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;restyle&quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span>
+                            <span class="p">{</span>
+                                <span class="s2">&quot;surfacecolor&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">climate</span><span class="p">],</span>
+                                <span class="s2">&quot;colorscale&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">_climate_scale</span><span class="p">()],</span>
+                                <span class="s2">&quot;cmin&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">],</span>
+                                <span class="s2">&quot;cmax&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">30.5</span><span class="p">],</span>
+                                <span class="s2">&quot;colorbar&quot;</span><span class="p">:</span> <span class="p">[</span>
+                                    <span class="p">{</span>
+                                        <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Climate&quot;</span><span class="p">},</span>
+                                        <span class="s2">&quot;tickvals&quot;</span><span class="p">:</span> <span class="n">present</span><span class="p">,</span>
+                                        <span class="s2">&quot;ticktext&quot;</span><span class="p">:</span> <span class="p">[</span>
+                                            <span class="n">payload</span><span class="p">[</span><span class="s2">&quot;climateLegend&quot;</span><span class="p">][</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">)][</span><span class="s2">&quot;code&quot;</span><span class="p">]</span>
+                                            <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">present</span>
+                                        <span class="p">],</span>
+                                        <span class="s2">&quot;thickness&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                                        <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">0.68</span><span class="p">,</span>
+                                    <span class="p">}</span>
+                                <span class="p">],</span>
+                            <span class="p">},</span>
+                            <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
+                        <span class="p">],</span>
+                    <span class="p">},</span>
+                <span class="p">],</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+        <span class="k">if</span> <span class="n">label_buttons</span><span class="p">:</span>
+            <span class="n">update_menus</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;dropdown&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;down&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>
+                    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">0.89</span><span class="p">,</span>
+                    <span class="s2">&quot;showactive&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                    <span class="s2">&quot;active&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;buttons&quot;</span><span class="p">:</span> <span class="n">label_buttons</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
         <span class="n">figure</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
             <span class="n">title</span><span class="o">=</span><span class="p">{</span>
                 <span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">country_name</span><span class="si">}</span><span class="s2"> · </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">quality</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> 3D map&quot;</span><span class="p">,</span>
@@ -776,12 +969,13 @@
                 <span class="s2">&quot;xanchor&quot;</span><span class="p">:</span> <span class="s2">&quot;left&quot;</span><span class="p">,</span>
             <span class="p">},</span>
             <span class="n">template</span><span class="o">=</span><span class="s2">&quot;plotly_white&quot;</span><span class="p">,</span>
-            <span class="n">margin</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;l&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="mi">88</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">58</span><span class="p">},</span>
-            <span class="n">legend</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">1.02</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mf">0.72</span><span class="p">},</span>
+            <span class="n">margin</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;l&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span> <span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="mi">122</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">:</span> <span class="mi">66</span><span class="p">},</span>
+            <span class="n">legend</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;orientation&quot;</span><span class="p">:</span> <span class="s2">&quot;h&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">1.08</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mf">0.76</span><span class="p">},</span>
             <span class="n">uirevision</span><span class="o">=</span><span class="sa">f</span><span class="s2">&quot;pyworldatlas-</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha2</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">quality</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">,</span>
             <span class="n">scene</span><span class="o">=</span><span class="p">{</span>
                 <span class="s2">&quot;aspectmode&quot;</span><span class="p">:</span> <span class="s2">&quot;manual&quot;</span><span class="p">,</span>
                 <span class="s2">&quot;aspectratio&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">0.92</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="mf">0.16</span><span class="p">},</span>
+                <span class="s2">&quot;annotations&quot;</span><span class="p">:</span> <span class="n">map_annotations</span><span class="p">,</span>
                 <span class="s2">&quot;camera&quot;</span><span class="p">:</span> <span class="p">{</span>
                     <span class="s2">&quot;eye&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mf">0.35</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="o">-</span><span class="mf">0.55</span><span class="p">,</span> <span class="s2">&quot;z&quot;</span><span class="p">:</span> <span class="mf">0.68</span><span class="p">},</span>
                     <span class="s2">&quot;projection&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;orthographic&quot;</span><span class="p">},</span>
@@ -790,50 +984,25 @@
                 <span class="s2">&quot;yaxis&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Latitude&quot;</span><span class="p">,</span> <span class="s2">&quot;showbackground&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
                 <span class="s2">&quot;zaxis&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;showticklabels&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;showbackground&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">},</span>
             <span class="p">},</span>
-            <span class="n">updatemenus</span><span class="o">=</span><span class="p">[</span>
+            <span class="n">updatemenus</span><span class="o">=</span><span class="n">update_menus</span><span class="p">,</span>
+            <span class="n">sliders</span><span class="o">=</span><span class="p">[</span>
                 <span class="p">{</span>
-                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;buttons&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;direction&quot;</span><span class="p">:</span> <span class="s2">&quot;right&quot;</span><span class="p">,</span>
-                    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mf">0.03</span><span class="p">,</span>
-                    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">1.02</span><span class="p">,</span>
-                    <span class="s2">&quot;showactive&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                    <span class="s2">&quot;buttons&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;active&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                    <span class="s2">&quot;x&quot;</span><span class="p">:</span> <span class="mf">0.35</span><span class="p">,</span>
+                    <span class="s2">&quot;y&quot;</span><span class="p">:</span> <span class="mf">1.08</span><span class="p">,</span>
+                    <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">0.3</span><span class="p">,</span>
+                    <span class="s2">&quot;currentvalue&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;prefix&quot;</span><span class="p">:</span> <span class="s2">&quot;Terrain height: &quot;</span><span class="p">,</span>
+                        <span class="s2">&quot;font&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;size&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s2">&quot;color&quot;</span><span class="p">:</span> <span class="s2">&quot;#334e68&quot;</span><span class="p">},</span>
+                    <span class="p">},</span>
+                    <span class="s2">&quot;pad&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;t&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">},</span>
+                    <span class="s2">&quot;steps&quot;</span><span class="p">:</span> <span class="p">[</span>
                         <span class="p">{</span>
-                            <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Elevation&quot;</span><span class="p">,</span>
-                            <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;restyle&quot;</span><span class="p">,</span>
-                            <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span>
-                                <span class="p">{</span>
-                                    <span class="s2">&quot;surfacecolor&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">elevation</span><span class="p">],</span>
-                                    <span class="s2">&quot;colorscale&quot;</span><span class="p">:</span> <span class="p">[</span><span class="nb">list</span><span class="p">(</span><span class="n">_ELEVATION_SCALE</span><span class="p">)],</span>
-                                    <span class="s2">&quot;cmin&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">minimum</span><span class="p">],</span>
-                                    <span class="s2">&quot;cmax&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">maximum</span><span class="p">],</span>
-                                    <span class="s2">&quot;colorbar&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Elevation (m)&quot;</span><span class="p">},</span> <span class="s2">&quot;thickness&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">0.68</span><span class="p">}],</span>
-                                <span class="p">},</span>
-                                <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                            <span class="p">],</span>
-                        <span class="p">},</span>
-                        <span class="p">{</span>
-                            <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="s2">&quot;Climate&quot;</span><span class="p">,</span>
-                            <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;restyle&quot;</span><span class="p">,</span>
-                            <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[</span>
-                                <span class="p">{</span>
-                                    <span class="s2">&quot;surfacecolor&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">climate</span><span class="p">],</span>
-                                    <span class="s2">&quot;colorscale&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">_climate_scale</span><span class="p">()],</span>
-                                    <span class="s2">&quot;cmin&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">],</span>
-                                    <span class="s2">&quot;cmax&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mf">30.5</span><span class="p">],</span>
-                                    <span class="s2">&quot;colorbar&quot;</span><span class="p">:</span> <span class="p">[</span>
-                                        <span class="p">{</span>
-                                            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;text&quot;</span><span class="p">:</span> <span class="s2">&quot;Climate&quot;</span><span class="p">},</span>
-                                            <span class="s2">&quot;tickvals&quot;</span><span class="p">:</span> <span class="n">present</span><span class="p">,</span>
-                                            <span class="s2">&quot;ticktext&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">payload</span><span class="p">[</span><span class="s2">&quot;climateLegend&quot;</span><span class="p">][</span><span class="nb">str</span><span class="p">(</span><span class="n">index</span><span class="p">)][</span><span class="s2">&quot;code&quot;</span><span class="p">]</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">present</span><span class="p">],</span>
-                                            <span class="s2">&quot;thickness&quot;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
-                                            <span class="s2">&quot;len&quot;</span><span class="p">:</span> <span class="mf">0.68</span><span class="p">,</span>
-                                        <span class="p">}</span>
-                                    <span class="p">],</span>
-                                <span class="p">},</span>
-                                <span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                            <span class="p">],</span>
-                        <span class="p">},</span>
+                            <span class="s2">&quot;label&quot;</span><span class="p">:</span> <span class="n">label</span><span class="p">,</span>
+                            <span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;relayout&quot;</span><span class="p">,</span>
+                            <span class="s2">&quot;args&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;scene.aspectratio.z&quot;</span><span class="p">:</span> <span class="n">height</span><span class="p">}],</span>
+                        <span class="p">}</span>
+                        <span class="k">for</span> <span class="n">label</span><span class="p">,</span> <span class="n">height</span> <span class="ow">in</span> <span class="n">_TERRAIN_HEIGHTS</span>
                     <span class="p">],</span>
                 <span class="p">}</span>
             <span class="p">],</span>
