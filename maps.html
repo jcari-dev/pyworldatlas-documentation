@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/maps.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=0e439607"></script>
+      <script src="_static/documentation_options.js?v=c5ca06ca"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=01b1df8d"></script>
@@ -129,6 +129,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#open-your-first-map">Open your first map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#select-a-quality-explicitly">Select a quality explicitly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#create-a-documentation-gif">Create a documentation GIF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#data-meaning-and-limits">Data meaning and limits</a></li>
 </ul>
 </li>
@@ -270,7 +271,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-9-3-release">Source priority in the 0.9.3 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-9-4-release">Source priority in the 0.9.4 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -362,21 +363,22 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -425,11 +427,11 @@ headache. It may settle down before 1.0, or it may be politely shown the
 door.</p>
 </div>
 <div class="atlas-map-showcase docutils container">
-<img alt="PyWorldAtlas Standard 3D elevation map of Iceland" src="_images/iceland-standard-map.png" />
+<img alt="Animated PyWorldAtlas Standard 3D elevation map of Iceland" src="_images/iceland-rotation.gif" />
 <div class="atlas-map-showcase-copy docutils container">
-<p><strong>A real Standard-edition browser render of Iceland.</strong> Rotate and zoom
-the live view, adjust terrain height, control river and capital labels,
-or switch from elevation to climate without contacting a server.</p>
+<p><strong>A complete turn from the real Standard-edition map of Iceland.</strong> Rotate
+and zoom the live view, adjust terrain height, control river and capital
+labels, or switch from elevation to climate without contacting a server.</p>
 </div>
 </div>
 <section id="choose-a-map-edition">
@@ -476,21 +478,36 @@ more detailed river layer. Detailed and Ultra editions are not part of 0.9.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
 
 <span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
-    <span class="n">atlas</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Iceland&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+    <span class="n">atlas</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Iceland&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">auto_rotate</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>That one call opens a standalone browser view containing:</p>
 <ul class="simple">
 <li><p>rotatable and zoomable 3D elevation;</p></li>
 <li><p>five terrain-height settings from <code class="docutils literal notranslate"><span class="pre">0.5×</span></code> through <code class="docutils literal notranslate"><span class="pre">3×</span></code>;</p></li>
+<li><p>play and pause controls with an adjustable <code class="docutils literal notranslate"><span class="pre">0.25×</span></code> to <code class="docutils literal notranslate"><span class="pre">3×</span></code> rotation speed;</p></li>
 <li><p>an elevation or Köppen-Geiger climate surface switch;</p></li>
 <li><p>generalized country outlines;</p></li>
 <li><p>source-provided river centerlines with hover details and optional names;</p></li>
-<li><p>a high-contrast primary-capital marker with a selectable label; and</p></li>
+<li><p>a high-contrast primary-capital marker with a selectable label;</p></li>
+<li><p>high-resolution PNG export of the current camera view; and</p></li>
 <li><p>visible resolution, source, and navigation-use notes.</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">show()</span></code> returns the generated <code class="xref py py-class docutils literal notranslate"><span class="pre">Path</span></code>, so applications can
 log or reuse the exact local document.</p>
+<p>Rotation is off by default, keeping ordinary map use still and predictable.
+Pass <code class="docutils literal notranslate"><span class="pre">auto_rotate=True</span></code> for presentations or demonstrations, and choose a
+starting speed when wanted:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+    <span class="n">atlas</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Iceland&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span>
+        <span class="n">auto_rotate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">rotation_speed</span><span class="o">=</span><span class="mf">1.25</span><span class="p">,</span>
+    <span class="p">)</span>
+</pre></div>
+</div>
+<p>The browser controls can pause or change that speed at any time. Moving the
+camera manually pauses automatic rotation, and browsers configured to reduce
+motion do not start it automatically.</p>
 </section>
 <section id="select-a-quality-explicitly">
 <h2>Select a quality explicitly<a class="headerlink" href="#select-a-quality-explicitly" title="Link to this heading"></a></h2>
@@ -522,11 +539,33 @@ with normal Plotly methods:</p>
 </div>
 <p>Write a permanent, self-contained HTML document without opening it:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
-    <span class="n">atlas</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&quot;switzerland-map.html&quot;</span><span class="p">)</span>
+    <span class="n">atlas</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">&quot;Switzerland&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span>
+        <span class="s2">&quot;switzerland-map.html&quot;</span><span class="p">,</span>
+        <span class="n">auto_rotate</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="n">rotation_speed</span><span class="o">=</span><span class="mf">0.75</span><span class="p">,</span>
+    <span class="p">)</span>
 </pre></div>
 </div>
 <p>The exported document embeds the renderer and selected country data. It does
-not depend on a CDN or a running Python process.</p>
+not depend on a CDN or a running Python process. Select <strong>Download PNG</strong> in the
+viewer to save a crisp 3200 × 1800 image of the current camera angle. The
+camera icon in Plotly’s toolbar uses the same high-resolution settings.</p>
+</section>
+<section id="create-a-documentation-gif">
+<h2>Create a documentation GIF<a class="headerlink" href="#create-a-documentation-gif" title="Link to this heading"></a></h2>
+<p>The repository includes a maintainer utility that renders one seamless turn
+from the real Plotly figure. GIF dependencies stay outside the published
+runtime packages:</p>
+<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">python -m pip install Pillow kaleido</span>
+<span class="go">python tools/create_map_gif.py Iceland --quality standard --seconds 6 --fps 10 --output docs/source/_static/iceland-rotation.gif</span>
+</pre></div>
+</div>
+<p>The default 960 × 600 render uses 128 colors to keep project-page downloads
+reasonable. It uses a presentation-friendly perspective camera by default;
+pass <code class="docutils literal notranslate"><span class="pre">--projection</span> <span class="pre">orthographic</span></code> to match the viewer’s initial projection.
+<code class="docutils literal notranslate"><span class="pre">--width</span></code>, <code class="docutils literal notranslate"><span class="pre">--height</span></code>, <code class="docutils literal notranslate"><span class="pre">--scale</span></code>, <code class="docutils literal notranslate"><span class="pre">--zoom</span></code>, and <code class="docutils literal notranslate"><span class="pre">--colors</span></code> are
+available when a different balance of sharpness and file size is needed.
+Kaleido requires a supported local browser for static rendering.</p>
 </section>
 <section id="data-meaning-and-limits">
 <h2>Data meaning and limits<a class="headerlink" href="#data-meaning-and-limits" title="Link to this heading"></a></h2>

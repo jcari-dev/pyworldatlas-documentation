@@ -11,8 +11,8 @@ public API until it is implemented, tested, documented, and published.
 
       .. rubric:: Current release
 
-      **0.9.3** sharpens installation guidance, API readability, and the shared
-      project presentation without changing the dataset or public API.
+      **0.9.4** adds accessible automatic rotation, adjustable motion, crisp
+      image export, and a repeatable documentation-animation workflow.
 
    .. container:: atlas-card atlas-card-teal
 
@@ -76,6 +76,10 @@ public API until it is implemented, tested, documented, and published.
      - Complete
      - Installation, API-reference, Explore, and project-page polish
      - Published
+   * - 0.9.4
+     - Complete
+     - Map rotation, speed controls, PNG export, and documentation animation
+     - Release candidate
    * - 1.0.0
      - Planned
      - Stable offline atlas contract
@@ -92,7 +96,9 @@ sources:
 - :meth:`~pyworldatlas_mapview.CountryMap.figure` supports notebooks and
   direct Plotly customization;
 - :meth:`~pyworldatlas_mapview.CountryMap.write_html` creates a standalone
-  offline document; and
+  offline document with configurable initial rotation;
+- standalone viewers provide rotation-speed and high-resolution PNG controls;
+  and
 - Overview and Standard editions offer the same 248-profile API at different
   elevation sampling intervals.
 

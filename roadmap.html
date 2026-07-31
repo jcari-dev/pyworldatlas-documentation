@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/roadmap.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=0e439607"></script>
+      <script src="_static/documentation_options.js?v=c5ca06ca"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=01b1df8d"></script>
@@ -129,6 +129,7 @@
 <li class="toctree-l2"><a class="reference internal" href="maps.html#open-your-first-map">Open your first map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#create-a-documentation-gif">Create a documentation GIF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#data-meaning-and-limits">Data meaning and limits</a></li>
 </ul>
 </li>
@@ -270,7 +271,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-9-3-release">Source priority in the 0.9.3 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-9-4-release">Source priority in the 0.9.4 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -362,21 +363,22 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -413,8 +415,8 @@ public API until it is implemented, tested, documented, and published.</p>
 <div class="atlas-card-grid docutils container">
 <div class="atlas-card atlas-card-blue docutils container">
 <p class="rubric">Current release</p>
-<p><strong>0.9.3</strong> sharpens installation guidance, API readability, and the shared
-project presentation without changing the dataset or public API.</p>
+<p><strong>0.9.4</strong> adds accessible automatic rotation, adjustable motion, crisp
+image export, and a repeatable documentation-animation workflow.</p>
 </div>
 <div class="atlas-card atlas-card-teal docutils container">
 <p class="rubric">Next milestone</p>
@@ -493,7 +495,12 @@ upgrades and reproducible releases.</p>
 <td><p>Installation, API-reference, Explore, and project-page polish</p></td>
 <td><p>Published</p></td>
 </tr>
-<tr class="row-even"><td><p>1.0.0</p></td>
+<tr class="row-even"><td><p>0.9.4</p></td>
+<td><p>Complete</p></td>
+<td><p>Map rotation, speed controls, PNG export, and documentation animation</p></td>
+<td><p>Release candidate</p></td>
+</tr>
+<tr class="row-odd"><td><p>1.0.0</p></td>
 <td><p>Planned</p></td>
 <td><p>Stable offline atlas contract</p></td>
 <td><p>—</p></td>
@@ -510,7 +517,9 @@ sources:</p>
 <li><p><a class="reference internal" href="api.html#pyworldatlas_mapview.CountryMap.figure" title="pyworldatlas_mapview.CountryMap.figure"><code class="xref py py-meth docutils literal notranslate"><span class="pre">figure()</span></code></a> supports notebooks and
 direct Plotly customization;</p></li>
 <li><p><a class="reference internal" href="api.html#pyworldatlas_mapview.CountryMap.write_html" title="pyworldatlas_mapview.CountryMap.write_html"><code class="xref py py-meth docutils literal notranslate"><span class="pre">write_html()</span></code></a> creates a standalone
-offline document; and</p></li>
+offline document with configurable initial rotation;</p></li>
+<li><p>standalone viewers provide rotation-speed and high-resolution PNG controls;
+and</p></li>
 <li><p>Overview and Standard editions offer the same 248-profile API at different
 elevation sampling intervals.</p></li>
 </ul>

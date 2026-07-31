@@ -26,7 +26,7 @@ PyWorldAtlas
          :alt: PyWorldAtlas Standard 3D elevation map of Iceland
          :target: maps.html
 
-**Documented version:** 0.9.3 | **Dataset:** 2026.07.22.7 |
+**Documented version:** 0.9.4 | **Dataset:** 2026.07.22.7 |
 **Python:** 3.10–3.14 | **Profiles:** 248
 
 .. raw:: html
@@ -64,27 +64,28 @@ Open the terrain
 
 .. container:: atlas-map-showcase
 
-   .. image:: /_static/iceland-standard-map.png
-      :alt: PyWorldAtlas Standard 3D elevation map of Iceland
+   .. image:: /_static/iceland-rotation.gif
+      :alt: Animated PyWorldAtlas Standard 3D elevation map of Iceland
       :target: maps.html
 
    .. container:: atlas-map-showcase-copy
 
-      **Iceland in the Standard map edition.** This browser capture comes from
-      the package itself, with the coastline, Reykjavík, a river overlay,
-      elevation scale, terrain-height and label controls, and source notes.
-      Select it for the complete map guide.
+      **Iceland in the Standard map edition.** This complete turn is rendered
+      from the package's real Plotly figure, with the coastline, Reykjavík, a
+      river overlay, elevation scale, terrain-height and label controls, and
+      source notes. Select it for the complete map guide.
 
 .. code-block:: python
 
    from pyworldatlas import Atlas
 
    with Atlas() as atlas:
-       atlas.map("Iceland").show()
+       atlas.map("Iceland").show(auto_rotate=True)
 
-The map opens as a rotatable local browser view. Switch between Elevation and
-Climate, zoom into the surface, or export a standalone HTML file. Add maps
-with ``python -m pip install "pyworldatlas[maps]"``.
+The map opens as a rotatable local browser view. Play or pause automatic
+rotation, change its speed, switch between Elevation and Climate, or download a
+high-resolution PNG. Add maps with
+``python -m pip install "pyworldatlas[maps]"``.
 
 A small taste of the atlas
 --------------------------
