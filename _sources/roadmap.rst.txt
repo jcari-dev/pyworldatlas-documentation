@@ -11,8 +11,8 @@ public API until it is implemented, tested, documented, and published.
 
       .. rubric:: Current release
 
-      **0.9.4** adds accessible automatic rotation, adjustable motion, crisp
-      image export, and a repeatable documentation-animation workflow.
+      **0.9.5** tightens installed-package behavior, terminal usability,
+      lookup errors, documentation accuracy, and release checks.
 
    .. container:: atlas-card atlas-card-teal
 
@@ -79,6 +79,10 @@ public API until it is implemented, tested, documented, and published.
    * - 0.9.4
      - Complete
      - Map rotation, speed controls, PNG export, and documentation animation
+     - Published
+   * - 0.9.5
+     - Complete
+     - Installed command, lookup clarity, clean-wheel checks, and documentation audit
      - Release candidate
    * - 1.0.0
      - Planned

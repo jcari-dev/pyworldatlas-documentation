@@ -4,6 +4,18 @@ Changelog
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
 
+0.9.5
+-----
+
+- Added an installed ``pyworldatlas`` command with version, country lookup,
+  search, dataset metadata, JSON output, and concise error messages.
+- Distinguished missing country queries from genuinely ambiguous exact names,
+  and added regression coverage for both outcomes.
+- Strengthened clean-wheel checks so the console command and module command
+  are exercised from the built artifact before release.
+- Reviewed the public documentation, examples, docstrings, package metadata,
+  repository guidance, and release instructions for accuracy and readability.
+
 0.9.4
 -----
 

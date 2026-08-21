@@ -12,6 +12,21 @@ Install
 
    python -m pip install pyworldatlas
 
+Check the installation
+----------------------
+
+The installed command offers quick lookups without writing a Python file:
+
+.. code-block:: console
+
+   pyworldatlas --version
+   pyworldatlas country Japan
+   pyworldatlas search guinea
+
+Use ``pyworldatlas --help`` to see its three focused commands. The command and
+the Python API read the same bundled database and work offline after
+installation.
+
 Meet a country
 --------------
 

@@ -81,7 +81,7 @@ Test the exact release artifact without consulting a package index:
 
 .. code-block:: console
 
-   python -m pip install --no-index --no-deps dist/pyworldatlas-0.9.4-py3-none-any.whl
+   python -m pip install --no-index --no-deps dist/pyworldatlas-0.9.5-py3-none-any.whl
 
 Verify the installation
 -----------------------
@@ -90,8 +90,18 @@ Verify the installation
 
    >>> import pyworldatlas
    >>> pyworldatlas.__version__
-   '0.9.4'
+   '0.9.5'
    >>> from pyworldatlas import Atlas
    >>> with Atlas() as atlas:
    ...     print(atlas.country("DO").capital.name)
    Santo Domingo
+
+The installed terminal command provides a second quick check:
+
+.. code-block:: console
+
+   pyworldatlas --version
+   pyworldatlas country DO
+
+``python -m pyworldatlas`` is equivalent and remains available when a tool
+does not place console scripts on the command search path.

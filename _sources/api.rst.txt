@@ -5,6 +5,9 @@ Use this page to check an exact class, property, method, return type, or
 exception. If you are learning the package, begin with the :doc:`quickstart`
 or a focused guide under **Explore the atlas**, then return here for details.
 
+The small installed ``pyworldatlas`` command is documented in the
+:doc:`quickstart`. This page covers the complete Python API.
+
 Find the right object
 ---------------------
 
