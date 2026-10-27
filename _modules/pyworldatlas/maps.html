@@ -1,0 +1,704 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>pyworldatlas.maps | PyWorldAtlas</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=d75fae25" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pyworldatlas.css?v=fbbe6ba3" />
+
+  
+    <link rel="shortcut icon" href="../../_static/globe.svg"/>
+    <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/_modules/pyworldatlas/maps.html" />
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=82662543"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script defer="defer" src="../../_static/playground.js?v=bdb8a868"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+   
+  <meta name="description" content="pyworldatlas.maps in PyWorldAtlas, the offline Python package for country profiles, physical geography, cities, distances, and classroom learning." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PyWorldAtlas" />
+  <meta property="og:title" content="pyworldatlas.maps | PyWorldAtlas" />
+  <meta property="og:description" content="pyworldatlas.maps in PyWorldAtlas, the offline Python package for country profiles, physical geography, cities, distances, and classroom learning." />
+  <meta property="og:url" content="https://jcari-dev.github.io/pyworldatlas-documentation/_modules/pyworldatlas/maps.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="pyworldatlas.maps | PyWorldAtlas" />
+  <meta name="twitter:description" content="pyworldatlas.maps in PyWorldAtlas, the offline Python package for country profiles, physical geography, cities, distances, and classroom learning." />
+
+</head>
+
+<body class="wy-body-for-nav">
+   
+  <a class="atlas-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            PyWorldAtlas
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Start here</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#install">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#check-the-installation">Check the installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#meet-a-country">Meet a country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#look-up-search-and-collect">Look up, search, and collect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#combine-facts-with-geography">Combine facts with geography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#what-to-remember">What to remember</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../quickstart.html#where-to-go-next">Where to go next</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../playground.html">Playground</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../playground.html#what-is-running">What is running?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../playground.html#things-worth-trying">Things worth trying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../playground.html#use-the-package-locally">Use the package locally</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#install-from-pypi">Install from PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#optional-3d-maps">Optional 3D maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#install-a-source-checkout">Install a source checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#install-the-built-wheel-offline">Install the built wheel offline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../installation.html#verify-the-installation">Verify the installation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples and learning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../learning.html">Learning activities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../learning.html#a-country-in-one-friendly-call">A country in one friendly call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning.html#a-gallery-of-writing-systems">A gallery of writing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning.html#turn-coordinates-into-a-compass-activity">Turn coordinates into a compass activity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning.html#explore-nearby-cities">Explore nearby cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning.html#build-a-repeatable-multiple-choice-lesson">Build a repeatable multiple-choice lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning.html#where-to-go-next">Where to go next</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes.html">Example programs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../recipes.html#build-a-world-snapshot">Build a world snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipes.html#print-a-country-dossier">Print a country dossier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipes.html#cross-four-writing-systems">Cross four writing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipes.html#create-a-comparison-table">Create a comparison table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipes.html#build-a-distance-toolkit">Build a distance toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipes.html#search-and-explore-nearby-cities">Search and explore nearby cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipes.html#trace-geographic-relationships">Trace geographic relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipes.html#explore-a-climate-profile">Explore a climate profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipes.html#compose-search-filters-and-rankings">Compose search, filters, and rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipes.html#create-a-repeatable-lesson">Create a repeatable lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipes.html#export-a-portable-unicode-profile">Export a portable Unicode profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../recipes.html#continue-exploring">Continue exploring</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Explore the atlas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../country_profile.html">Country profiles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#profile-example">Profile example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#current-field-coverage">Current field coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#convenience-and-discovery-views">Convenience and discovery views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#physical-geography">Physical geography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#names-and-aliases">Names and aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#capital-and-cities">Capital and cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#sources">Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../maps.html">Interactive 3D maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../maps.html#install-a-map-pack">Install a map pack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maps.html#open-your-first-map">Open your first map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maps.html#create-a-documentation-gif">Create a documentation GIF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../maps.html#data-meaning-and-limits">Data meaning and limits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../physical_geography.html">Physical geography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#a-country-in-four-lines">A country in four lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#area-and-coastline">Area and coastline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#elevation-and-named-extremes">Elevation and named extremes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#rivers-and-lakes">Rivers and lakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#climate-profiles">Climate profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#physical-filters-and-rankings">Physical filters and rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#learning-prompts">Learning prompts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../physical_geography.html#executable-example">Executable example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../reference_facts.html">Country reference facts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_facts.html#anthem-titles">Anthem titles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_facts.html#reviewed-mottos">Reviewed mottos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_facts.html#demonyms">Demonyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_facts.html#practical-metadata">Practical metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_facts.html#coverage">Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference_facts.html#source-inspection">Source inspection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../rankings.html">Rankings and nearby capitals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../rankings.html#profile-filters">Profile filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rankings.html#country-rankings">Country rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../rankings.html#nearest-capitals">Nearest capitals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../local_names.html">Local names and writing systems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#coverage-at-a-glance">Coverage at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#understand-the-english-fields">Understand the English fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#start-with-one-country">Start with one country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#explore-writing-systems">Explore writing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#inspect-the-evidence-level">Inspect the evidence level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#romanization-is-source-data">Romanization is source data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#discover-coverage">Discover coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#how-the-language-is-selected">How the language is selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#source-and-review-rules">Source and review rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../local_names.html#try-the-example">Try the example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../capitals_cities.html">Capitals and major cities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../capitals_cities.html#capital-records">Capital records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../capitals_cities.html#missing-capitals">Missing capitals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../capitals_cities.html#major-cities">Major cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../capitals_cities.html#search-city-names">Search city names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../capitals_cities.html#find-nearby-cities">Find nearby cities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../coordinates_distances.html">Coordinates and distances</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../coordinates_distances.html#look-up-coordinates">Look up coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../coordinates_distances.html#distance-between-places">Distance between places</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../coordinates_distances.html#country-and-model-inputs">Country and model inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../coordinates_distances.html#raw-latitude-and-longitude">Raw latitude and longitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../coordinates_distances.html#friendly-coordinate-labels">Friendly coordinate labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../coordinates_distances.html#country-coordinates">Country coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../borders.html">Land borders and paths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#api-at-a-glance">API at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#neighbors">Neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#shared-neighbors">Shared neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#shortest-land-paths">Shortest land paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#land-connectivity">Land connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#connected-land-regions">Connected land regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#border-flashcards">Border flashcards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#where-each-value-comes-from">Where each value comes from</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#data-policy">Data policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../borders.html#executable-example">Executable example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../discovery.html">Discovery tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#readable-country-summaries">Readable country summaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#flag-emoji">Flag emoji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#derived-profile-facts">Derived profile facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#discovery-cards">Discovery cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#reproducible-country-samples">Reproducible country samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#structured-flashcards">Structured flashcards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#multiple-choice-questions">Multiple-choice questions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../discovery.html#supported-topics">Supported topics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#data-and-interpretation">Data and interpretation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../discovery.html#executable-example">Executable example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../searching.html">Lookup and search</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../searching.html#exact-lookup">Exact lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching.html#safe-lookup">Safe lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching.html#ranked-search">Ranked search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching.html#city-name-search">City-name search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../searching.html#filtering">Filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../serialization.html">Serialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../serialization.html#dictionary-output">Dictionary output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../serialization.html#json-output">JSON output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../serialization.html#local-name-provenance">Local-name provenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../serialization.html#discovery-values">Discovery values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../serialization.html#reference-facts-and-ranking-results">Reference facts and ranking results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../serialization.html#border-paths">Border paths</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and trust</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../why.html">Why PyWorldAtlas?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../why.html#the-product-promise">The product promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../why.html#who-is-it-for">Who is it for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../why.html#what-it-is-not">What it is not</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../educational_principles.html">Educational purpose and editorial policy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#editorial-commitments">Editorial commitments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#how-sources-are-selected">How sources are selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#names-areas-and-borders">Names, areas, and borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#publication-boundaries">Publication boundaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#using-the-package-in-education">Using the package in education</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#community-and-corrections">Community and corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../educational_principles.html#policy-enforcement">Policy enforcement</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_sources.html">Data sources and freshness</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#field-specific-source-policy">Field-specific source policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#united-nations-m49">United Nations M49</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#geonames">GeoNames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#natural-earth">Natural Earth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#unicode-cldr-48-2">Unicode CLDR 48.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#noaa-ncei-etopo-2022">NOAA NCEI ETOPO 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#derived-discovery-values">Derived discovery values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#source-priority-in-the-0-10-0-release">Source priority in the 0.10.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../data_quality.html">Data quality and limitations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#educational-and-editorial-quality">Educational and editorial quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#validation-layers">Validation layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#coverage">Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#missing-data-is-a-valid-value">Missing data is a valid value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#interpretation-cautions">Interpretation cautions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../data_quality.html#run-the-validation-suite">Run the validation suite</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../_generated/project_status.html">Project status</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../_generated/project_status.html#coverage-at-a-glance">Coverage at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../_generated/project_status.html#detailed-coverage">Detailed coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../_generated/project_status.html#build-identity">Build identity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../roadmap.html">Roadmap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../roadmap.html#what-0-9-adds">What 0.9 adds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../roadmap.html#deferred-work">Deferred work</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../api.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#find-the-right-object">Find the right object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#how-to-read-an-entry">How to read an entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#atlas">Atlas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Atlas"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#country-models">Country models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#country-profile">Country profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#names-codes-and-administrative-metadata">Names, codes, and administrative metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#reference-facts">Reference facts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#compact-country-views">Compact country views</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#geographic-models">Geographic models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#coordinates-and-area">Coordinates and area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#physical-geography">Physical geography</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#places">Places</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#results-and-metadata">Results and metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.BorderPathResult"><code class="docutils literal notranslate"><span class="pre">BorderPathResult</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryRanking"><code class="docutils literal notranslate"><span class="pre">CountryRanking</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CapitalDistance"><code class="docutils literal notranslate"><span class="pre">CapitalDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CityDistance"><code class="docutils literal notranslate"><span class="pre">CityDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.QuizQuestion"><code class="docutils literal notranslate"><span class="pre">QuizQuestion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.DatasetInfo"><code class="docutils literal notranslate"><span class="pre">DatasetInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.SourceReference"><code class="docutils literal notranslate"><span class="pre">SourceReference</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#exceptions">Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.AtlasError"><code class="docutils literal notranslate"><span class="pre">AtlasError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.AtlasClosedError"><code class="docutils literal notranslate"><span class="pre">AtlasClosedError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.DatasetError"><code class="docutils literal notranslate"><span class="pre">DatasetError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.DatasetNotFoundError"><code class="docutils literal notranslate"><span class="pre">DatasetNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.DatasetVersionError"><code class="docutils literal notranslate"><span class="pre">DatasetVersionError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.DatasetIntegrityError"><code class="docutils literal notranslate"><span class="pre">DatasetIntegrityError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CountryNotFoundError"><code class="docutils literal notranslate"><span class="pre">CountryNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.AmbiguousCountryError"><code class="docutils literal notranslate"><span class="pre">AmbiguousCountryError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.PlaceNotFoundError"><code class="docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.AmbiguousPlaceError"><code class="docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.CapitalNotFoundError"><code class="docutils literal notranslate"><span class="pre">CapitalNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.MapSupportNotInstalledError"><code class="docutils literal notranslate"><span class="pre">MapSupportNotInstalledError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#optional-maps">Optional maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.maps.CountryMap"><code class="docutils literal notranslate"><span class="pre">CountryMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.maps.available_map_qualities"><code class="docutils literal notranslate"><span class="pre">available_map_qualities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.maps.MapDataError"><code class="docutils literal notranslate"><span class="pre">MapDataError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#module-pyworldatlas.packs">Data packs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.packs.get"><code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.packs.add"><code class="docutils literal notranslate"><span class="pre">add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.packs.installed"><code class="docutils literal notranslate"><span class="pre">installed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.packs.available"><code class="docutils literal notranslate"><span class="pre">available()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.packs.remove"><code class="docutils literal notranslate"><span class="pre">remove()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.packs.pack_path"><code class="docutils literal notranslate"><span class="pre">pack_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.packs.data_dir"><code class="docutils literal notranslate"><span class="pre">data_dir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.packs.default_data_dir"><code class="docutils literal notranslate"><span class="pre">default_data_dir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.packs.PackInfo"><code class="docutils literal notranslate"><span class="pre">PackInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.packs.InstalledPack"><code class="docutils literal notranslate"><span class="pre">InstalledPack</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#pyworldatlas.packs.PackError"><code class="docutils literal notranslate"><span class="pre">PackError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../api.html#data-contracts-and-provenance">Data contracts and provenance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#country-identity">Country identity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#reference-and-discovery-facts">Reference and discovery facts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#id1">Physical geography</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#coordinates-cities-and-distance">Coordinates, cities, and distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#land-borders">Land borders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api.html#publication-scope">Publication scope</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id1">0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id2">0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id3">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id4">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id5">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id6">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id7">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id8">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id9">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id10">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id11">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id12">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#reserved-tag-not-published-to-pypi">0.4.0 (reserved tag, not published to PyPI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id13">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id14">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id15">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#unpublished-candidate">0.2.0 (unpublished candidate)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../changelog.html#id16">0.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">PyWorldAtlas</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">pyworldatlas.maps</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  <span id="main-content" tabindex="-1"></span>
+  
+           <div itemprop="articleBody">
+             
+  <h1>Source code for pyworldatlas.maps</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""Interactive offline 3D country maps drawn from installed map packs.</span>
+
+<span class="sd">Maps need a map pack, installed once with ``pyworldatlas get maps`` (Standard,</span>
+<span class="sd">5 arc-minute terrain) or ``pyworldatlas get maps-lite`` (Overview, 20</span>
+<span class="sd">arc-minute terrain). Building a map uses only the Python standard library; the</span>
+<span class="sd">pack ships the plotly.js browser renderer, so no Python plotting package is</span>
+<span class="sd">required and a displayed map never contacts a CDN.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">webbrowser</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">packs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._html</span><span class="w"> </span><span class="kn">import</span> <span class="n">document</span><span class="p">,</span> <span class="n">rotation_options</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._scene</span><span class="w"> </span><span class="kn">import</span> <span class="n">MapDataError</span><span class="p">,</span> <span class="n">build_figure</span><span class="p">,</span> <span class="n">describe</span><span class="p">,</span> <span class="n">load_payload</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"QUALITY_PACKS"</span><span class="p">,</span> <span class="s2">"CountryMap"</span><span class="p">,</span> <span class="s2">"MapDataError"</span><span class="p">,</span> <span class="s2">"available_map_qualities"</span><span class="p">]</span>
+
+<span class="n">QUALITY_PACKS</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"overview"</span><span class="p">:</span> <span class="s2">"maps-lite"</span><span class="p">,</span> <span class="s2">"standard"</span><span class="p">:</span> <span class="s2">"maps"</span><span class="p">}</span>
+<span class="sd">"""The data pack that provides each map quality."""</span>
+
+
+<div class="viewcode-block" id="available_map_qualities">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.maps.available_map_qualities">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">available_map_qualities</span><span class="p">(</span><span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Return installed map qualities from least to most detailed."""</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span>
+        <span class="n">quality</span>
+        <span class="k">for</span> <span class="n">quality</span><span class="p">,</span> <span class="n">pack</span> <span class="ow">in</span> <span class="n">QUALITY_PACKS</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+        <span class="k">if</span> <span class="n">packs</span><span class="o">.</span><span class="n">pack_path</span><span class="p">(</span><span class="n">pack</span><span class="p">,</span> <span class="n">data_dir</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
+    <span class="p">)</span></div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_select_quality</span><span class="p">(</span><span class="n">requested</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">requested</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="s2">"auto"</span><span class="p">,</span> <span class="o">*</span><span class="n">QUALITY_PACKS</span><span class="p">}:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"quality must be 'auto', 'overview', or 'standard'"</span><span class="p">)</span>
+    <span class="n">available</span> <span class="o">=</span> <span class="n">available_map_qualities</span><span class="p">(</span><span class="n">data_dir</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">requested</span> <span class="o">==</span> <span class="s2">"auto"</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s2">"standard"</span> <span class="ow">in</span> <span class="n">available</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">"standard"</span>
+        <span class="k">if</span> <span class="s2">"overview"</span> <span class="ow">in</span> <span class="n">available</span><span class="p">:</span>
+            <span class="k">return</span> <span class="s2">"overview"</span>
+    <span class="k">elif</span> <span class="n">requested</span> <span class="ow">in</span> <span class="n">available</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">requested</span>
+    <span class="n">pack</span> <span class="o">=</span> <span class="n">QUALITY_PACKS</span><span class="p">[</span><span class="s2">"standard"</span> <span class="k">if</span> <span class="n">requested</span> <span class="o">==</span> <span class="s2">"auto"</span> <span class="k">else</span> <span class="n">requested</span><span class="p">]</span>
+    <span class="k">raise</span> <span class="n">MapDataError</span><span class="p">(</span>
+        <span class="sa">f</span><span class="s2">"The </span><span class="si">{</span><span class="s1">'standard'</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="n">requested</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">'auto'</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="n">requested</span><span class="si">}</span><span class="s2"> map data is not "</span>
+        <span class="sa">f</span><span class="s2">"installed. Run: pyworldatlas get </span><span class="si">{</span><span class="n">pack</span><span class="si">}</span><span class="s2">"</span>
+    <span class="p">)</span>
+
+
+<div class="viewcode-block" id="CountryMap">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.maps.CountryMap">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">CountryMap</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A lazily loaded interactive 3D country map.</span>
+
+<span class="sd">    Use :meth:`show` to open a standalone offline browser view, :meth:`write_html`</span>
+<span class="sd">    to save one, or :meth:`to_dict` for the plain plotly.js figure data.</span>
+<span class="sd">    """</span>
+
+    <span class="n">alpha2</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">country_name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">flag</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">capital_name</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">capital_latitude</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">capital_longitude</span><span class="p">:</span> <span class="nb">float</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="n">requested_quality</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"auto"</span>
+    <span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span>
+
+<div class="viewcode-block" id="CountryMap.from_country">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.maps.CountryMap.from_country">[docs]</a>
+    <span class="nd">@classmethod</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">from_country</span><span class="p">(</span>
+        <span class="bp">cls</span><span class="p">,</span>
+        <span class="n">country</span><span class="p">:</span> <span class="nb">object</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">quality</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">"auto"</span><span class="p">,</span>
+        <span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">CountryMap</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Create a map request from a PyWorldAtlas country profile."""</span>
+        <span class="n">capital</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="s2">"capital"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="n">coordinates</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">capital</span><span class="p">,</span> <span class="s2">"coordinates"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="k">if</span> <span class="n">capital</span> <span class="k">else</span> <span class="kc">None</span>
+        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span>
+            <span class="n">alpha2</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="s2">"alpha2"</span><span class="p">)),</span>  <span class="c1"># noqa: B009</span>
+            <span class="n">country_name</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="nb">getattr</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">)),</span>  <span class="c1"># noqa: B009</span>
+            <span class="n">flag</span><span class="o">=</span><span class="nb">getattr</span><span class="p">(</span><span class="n">country</span><span class="p">,</span> <span class="s2">"flag"</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span>
+            <span class="n">capital_name</span><span class="o">=</span><span class="nb">getattr</span><span class="p">(</span><span class="n">capital</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="k">if</span> <span class="n">capital</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">capital_latitude</span><span class="o">=</span><span class="nb">getattr</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="s2">"latitude"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="k">if</span> <span class="n">coordinates</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">capital_longitude</span><span class="o">=</span><span class="nb">getattr</span><span class="p">(</span><span class="n">coordinates</span><span class="p">,</span> <span class="s2">"longitude"</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="k">if</span> <span class="n">coordinates</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
+            <span class="n">requested_quality</span><span class="o">=</span><span class="n">quality</span><span class="p">,</span>
+            <span class="n">data_dir</span><span class="o">=</span><span class="kc">None</span> <span class="k">if</span> <span class="n">data_dir</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">else</span> <span class="nb">str</span><span class="p">(</span><span class="n">data_dir</span><span class="p">),</span>
+        <span class="p">)</span></div>
+
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">quality</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return the installed map quality this request will use."""</span>
+        <span class="k">return</span> <span class="n">_select_quality</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">requested_quality</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_dir</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_pack</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+        <span class="n">quality</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">quality</span>
+        <span class="n">folder</span> <span class="o">=</span> <span class="n">packs</span><span class="o">.</span><span class="n">pack_path</span><span class="p">(</span><span class="n">QUALITY_PACKS</span><span class="p">[</span><span class="n">quality</span><span class="p">],</span> <span class="bp">self</span><span class="o">.</span><span class="n">data_dir</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">folder</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># removed after quality was checked</span>
+            <span class="k">raise</span> <span class="n">MapDataError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The </span><span class="si">{</span><span class="n">quality</span><span class="si">}</span><span class="s2"> map pack is no longer installed"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">folder</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_payload</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Path</span><span class="p">,</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+        <span class="n">quality</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">quality</span>
+        <span class="n">folder</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_pack</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">quality</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">load_payload</span><span class="p">(</span><span class="n">folder</span> <span class="o">/</span> <span class="s2">"maps.sqlite3"</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">alpha2</span><span class="p">,</span> <span class="n">quality</span><span class="p">)</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">resolution_arc_minutes</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return the nominal elevation sampling interval in arc-minutes."""</span>
+        <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_payload</span><span class="p">()[</span><span class="mi">2</span><span class="p">][</span><span class="s2">"resolutionArcMinutes"</span><span class="p">])</span>
+
+<div class="viewcode-block" id="CountryMap.to_dict">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.maps.CountryMap.to_dict">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_dict</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Return the figure as plain plotly.js ``data`` and ``layout`` dictionaries.</span>
+
+<span class="sd">        The figure contains elevation and climate surface controls, terrain</span>
+<span class="sd">        height choices, optional river and capital labels, a country outline,</span>
+<span class="sd">        source-provided river centerlines, and the primary capital when</span>
+<span class="sd">        coordinates are available.</span>
+<span class="sd">        """</span>
+        <span class="n">quality</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">payload</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_payload</span><span class="p">()</span>
+        <span class="n">template</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span>
+            <span class="p">(</span><span class="n">folder</span> <span class="o">/</span> <span class="s2">"plotly-template-white.json"</span><span class="p">)</span><span class="o">.</span><span class="n">read_text</span><span class="p">(</span><span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="n">build_figure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">quality</span><span class="p">,</span> <span class="n">template</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CountryMap.figure">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.maps.CountryMap.figure">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">figure</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Any</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return a ``plotly.graph_objects.Figure`` for notebooks and customization.</span>
+
+<span class="sd">        This is the only map feature that needs the separate ``plotly`` package</span>
+<span class="sd">        (``pip install plotly``). Every other method works without it.</span>
+<span class="sd">        """</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="kn">import</span><span class="w"> </span><span class="nn">plotly.graph_objects</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">go</span>
+        <span class="k">except</span> <span class="ne">ModuleNotFoundError</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">MapDataError</span><span class="p">(</span>
+                <span class="s2">"figure() needs the optional plotly package (pip install plotly). "</span>
+                <span class="s2">"show(), write_html(), and to_dict() work without it."</span>
+            <span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+        <span class="k">return</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">())</span></div>
+
+
+<div class="viewcode-block" id="CountryMap.to_html">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.maps.CountryMap.to_html">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_html</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">auto_rotate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">rotation_speed</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return a complete standalone HTML page with plotly.js embedded.</span>
+
+<span class="sd">        The page fills the browser window and offers a control panel to color</span>
+<span class="sd">        the terrain by elevation or climate, change terrain height, show or hide</span>
+<span class="sd">        the capital, rivers, and river names, rotate the view, reset the camera,</span>
+<span class="sd">        and download a high-resolution PNG. The map can be turned, tilted, and</span>
+<span class="sd">        zoomed from the keyboard, carries a plain-language description for screen</span>
+<span class="sd">        readers, and announces each change. On narrow screens the panel becomes</span>
+<span class="sd">        a collapsible bottom sheet, and it follows the reader's light or dark</span>
+<span class="sd">        color scheme. Set ``auto_rotate=True`` to begin rotating when the page</span>
+<span class="sd">        opens. ``rotation_speed`` accepts values from ``0.25`` through ``3``;</span>
+<span class="sd">        ``1`` completes a turn in about twenty seconds.</span>
+<span class="sd">        """</span>
+        <span class="n">rotation_options</span><span class="p">(</span><span class="n">auto_rotate</span><span class="p">,</span> <span class="n">rotation_speed</span><span class="p">)</span>
+        <span class="n">quality</span><span class="p">,</span> <span class="n">folder</span><span class="p">,</span> <span class="n">payload</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_payload</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">document</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(),</span>
+            <span class="n">renderer</span><span class="o">=</span><span class="n">folder</span> <span class="o">/</span> <span class="s2">"plotly.min.js"</span><span class="p">,</span>
+            <span class="n">country</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">country_name</span><span class="p">,</span>
+            <span class="n">code</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha2</span><span class="p">,</span>
+            <span class="n">subtitle</span><span class="o">=</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">quality</span><span class="o">.</span><span class="n">title</span><span class="p">()</span><span class="si">}</span><span class="s2"> 3D map · "</span>
+                <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">payload</span><span class="p">[</span><span class="s1">'resolutionArcMinutes'</span><span class="p">]</span><span class="si">}</span><span class="s2"> arc-minute terrain"</span>
+            <span class="p">),</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">describe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">payload</span><span class="p">,</span> <span class="n">quality</span><span class="p">),</span>
+            <span class="n">auto_rotate</span><span class="o">=</span><span class="n">auto_rotate</span><span class="p">,</span>
+            <span class="n">rotation_speed</span><span class="o">=</span><span class="n">rotation_speed</span><span class="p">,</span>
+            <span class="n">png_filename</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha2</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="n">quality</span><span class="si">}</span><span class="s2">-3d-map"</span><span class="p">,</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="CountryMap.write_html">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.maps.CountryMap.write_html">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_html</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">auto_rotate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">rotation_speed</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Write a standalone offline HTML map and return its resolved path.</span>
+
+<span class="sd">        ``auto_rotate`` and ``rotation_speed`` select the document's initial</span>
+<span class="sd">        motion state. The reader can still pause or adjust rotation in the</span>
+<span class="sd">        exported viewer.</span>
+<span class="sd">        """</span>
+        <span class="n">html</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_html</span><span class="p">(</span><span class="n">auto_rotate</span><span class="o">=</span><span class="n">auto_rotate</span><span class="p">,</span> <span class="n">rotation_speed</span><span class="o">=</span><span class="n">rotation_speed</span><span class="p">)</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+        <span class="n">target</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">target</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="n">html</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">target</span></div>
+
+
+<div class="viewcode-block" id="CountryMap.show">
+<a class="viewcode-back" href="../../api.html#pyworldatlas.maps.CountryMap.show">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="o">*</span><span class="p">,</span>
+        <span class="n">auto_rotate</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="n">rotation_speed</span><span class="p">:</span> <span class="nb">float</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Open the interactive map in the default browser and return its path.</span>
+
+<span class="sd">        Set ``auto_rotate=True`` to start the map in motion. The generated</span>
+<span class="sd">        browser controls can pause rotation, change its speed, and download a</span>
+<span class="sd">        high-resolution PNG of the current view.</span>
+<span class="sd">        """</span>
+        <span class="n">directory</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">())</span> <span class="o">/</span> <span class="s2">"pyworldatlas-maps"</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span>
+            <span class="n">directory</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">alpha2</span><span class="o">.</span><span class="n">casefold</span><span class="p">()</span><span class="si">}</span><span class="s2">-</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">quality</span><span class="si">}</span><span class="s2">.html"</span><span class="p">,</span>
+            <span class="n">auto_rotate</span><span class="o">=</span><span class="n">auto_rotate</span><span class="p">,</span>
+            <span class="n">rotation_speed</span><span class="o">=</span><span class="n">rotation_speed</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">webbrowser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">as_uri</span><span class="p">(),</span> <span class="n">new</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">target</span></div>
+</div>
+
+</pre></div>
+
+           </div>
+          </div>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, PyWorldAtlas maintainers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

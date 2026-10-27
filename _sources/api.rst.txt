@@ -248,16 +248,38 @@ Catch a specific exception when the distinction matters, or catch
 Optional maps
 -------------
 
-These objects are installed by ``pyworldatlas[maps]`` or
-``pyworldatlas[maps-overview]``. See :doc:`maps` before depending on the
+Maps read their data from an installed map pack (``pyworldatlas get maps`` or
+``pyworldatlas get maps-lite``). See :doc:`maps` before depending on the
 experimental map API.
 
-.. autoclass:: pyworldatlas_mapview.CountryMap
+.. autoclass:: pyworldatlas.maps.CountryMap
    :members:
 
-.. autofunction:: pyworldatlas_mapview.available_map_qualities
+.. autofunction:: pyworldatlas.maps.available_map_qualities
 
-.. autoexception:: pyworldatlas_mapview.MapDataError
+.. autoexception:: pyworldatlas.maps.MapDataError
+
+.. _api-packs:
+
+Data packs
+----------
+
+.. automodule:: pyworldatlas.packs
+   :no-members:
+
+.. autofunction:: pyworldatlas.packs.get
+.. autofunction:: pyworldatlas.packs.add
+.. autofunction:: pyworldatlas.packs.installed
+.. autofunction:: pyworldatlas.packs.available
+.. autofunction:: pyworldatlas.packs.remove
+.. autofunction:: pyworldatlas.packs.pack_path
+.. autofunction:: pyworldatlas.packs.data_dir
+.. autofunction:: pyworldatlas.packs.default_data_dir
+.. autoclass:: pyworldatlas.packs.PackInfo
+   :members:
+.. autoclass:: pyworldatlas.packs.InstalledPack
+   :members:
+.. autoexception:: pyworldatlas.packs.PackError
 
 Data contracts and provenance
 -----------------------------

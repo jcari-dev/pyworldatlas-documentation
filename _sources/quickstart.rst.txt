@@ -38,10 +38,10 @@ name or standard code:
    >>> from pyworldatlas import Atlas
    >>> with Atlas() as atlas:
    ...     brazil = atlas.country("BR")
-   ...     print(brazil.flag, brazil.name_in("pt"), "—", brazil.capital.name)
+   ...     print(brazil.flag, brazil.name_in("pt"), "|", brazil.capital.name)
    ...     print(brazil.highest_point.name, f"{brazil.highest_point.elevation_m:,.0f} m")
    ...     print(", ".join(river.name for river in brazil.rivers[:3]))
-   🇧🇷 Brasil — Brasília
+   🇧🇷 Brasil | Brasília
    Pico da Neblina 2,994 m
    Amazon, Río de la Plata/Paraná, Tocantins
 

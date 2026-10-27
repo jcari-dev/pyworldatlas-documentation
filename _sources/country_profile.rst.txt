@@ -158,6 +158,15 @@ Pass ``local_language="pt"`` to request a particular bundled local identity.
 The result is display text; structured programs should continue to use typed
 attributes or :meth:`Country.to_dict <pyworldatlas.Country.to_dict>`.
 
+In Jupyter and other notebooks, a country on the last line of a cell displays
+the same summary as a fact card. The card is an accessible table that follows
+the notebook's light or dark theme:
+
+.. code-block:: python
+
+   atlas = Atlas()
+   atlas.country("Japan")  # shows a fact card in a notebook
+
 ``language_codes``, ``currency_code``, ``timezone_ids``, and
 ``major_city_count`` provide common
 read-only projections without changing the underlying typed values.

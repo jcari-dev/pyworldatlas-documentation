@@ -4,6 +4,35 @@ Changelog
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
 
+0.10.0
+------
+
+A big step toward 1.0. The public API is now guarded by a snapshot test, so
+any change to it is deliberate and listed here.
+
+- **Instant lookups.** Every ``Atlas`` keeps its own caches. Ranking by border
+  count, neighbor quizzes, and nearest-place searches drop from hundreds of
+  milliseconds to a few. Closing one atlas no longer slows the others.
+- **Maps with zero dependencies.** The 3D viewer is part of PyWorldAtlas and
+  needs no Plotly. Map data installs once as a checksummed data pack with
+  ``pyworldatlas get maps`` (or ``maps-lite``), or offline from a file with
+  ``pyworldatlas add``. All 496 maps match the 0.9 output.
+- **A new map page.** The map fills the window beside one control panel (color,
+  terrain height, labels, rotation, reset view, Save PNG), with light and dark
+  themes and a phone layout.
+- **Accessible maps and docs.** Maps work from the keyboard, carry a
+  plain-language description for screen readers, and announce changes. The
+  documentation adds a skip link and WCAG AA colors.
+- **Everyday country names** such as "UK", "Britain", "Burma", "UAE", "DRC",
+  "Netherlands", "The Gambia", and "St. Lucia" now resolve. Dataset
+  ``2026.10.26.1`` adds the reviewed aliases.
+- **For developers:** a typed package (``py.typed``), notebook fact cards,
+  ``Atlas(data_dir=...)``, :mod:`pyworldatlas.packs`, ``CountryMap.to_dict()``,
+  and plain-text ``llms.txt`` documentation indexes.
+- **Packaging:** one PyPI project. The ``pyworldatlas-mapview`` and
+  ``pyworldatlas-mapdata-*`` packages are retired; the ``maps`` extras remain
+  so older install commands still work. See :doc:`migration`.
+
 0.9.5
 -----
 
@@ -65,7 +94,7 @@ changes. The newest published release appears first.
 
 - Added optional offline 3D country maps through
   :meth:`~pyworldatlas.Atlas.map` and
-  :meth:`pyworldatlas_mapview.CountryMap.show`.
+  :meth:`pyworldatlas.maps.CountryMap.show`.
 - Added Overview and Standard global editions covering all 248 profiles with
   20 and 5 arc-minute elevation sampling.
 - Added elevation and Köppen-Geiger climate surface modes, generalized
@@ -177,8 +206,8 @@ changes. The newest published release appears first.
   speculative narrative outside the bundled dataset.
 - Moved national symbols and reference facts to 0.6.0 for their own source review.
 
-0.4.0 — Reserved tag; not published to PyPI
---------------------------------------------
+0.4.0 (reserved tag, not published to PyPI)
+-------------------------------------------
 
 - Preserved the public tag after it was created against the 0.3.1 commit before
   the country-identity candidate reached ``main``.
@@ -218,7 +247,7 @@ changes. The newest published release appears first.
 - Supersedes the unpublished 0.2.0 candidate without changing its public API or
   bundled dataset.
 
-0.2.0 — Unpublished candidate
+0.2.0 (unpublished candidate)
 -----------------------------
 
 - Added rich profile fields for population snapshots, currency, language codes,

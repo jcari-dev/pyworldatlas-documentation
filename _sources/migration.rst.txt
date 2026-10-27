@@ -87,3 +87,22 @@ Existing code continues to use the same bundled country database. Map support
 adds :meth:`~pyworldatlas.Atlas.map`; it does not change country models or
 expose public boundary geometry. See :doc:`maps` for the smaller Overview
 edition and the complete viewer API.
+
+Maps after 0.9
+--------------
+
+Maps no longer need the ``pyworldatlas-mapview`` and ``pyworldatlas-mapdata-*``
+packages or Plotly. The viewer is part of PyWorldAtlas, and map data installs as
+a checksummed data pack:
+
+.. code-block:: console
+
+   python -m pip install --upgrade pyworldatlas
+   pyworldatlas get maps
+
+``atlas.map(...)``, ``show()``, ``write_html()``, and the generated pages are
+unchanged. ``CountryMap`` now lives in ``pyworldatlas.maps``.
+``figure()`` still returns a Plotly figure when the separate ``plotly`` package is
+installed, and the new ``to_dict()`` returns the same figure as plain data. The
+``maps`` and ``maps-overview`` extras still install, so older commands keep
+working, and the old companion packages can be uninstalled.

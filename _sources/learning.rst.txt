@@ -50,10 +50,10 @@ available. It is display text, not a replacement for structured access:
    >>> from pyworldatlas import Atlas
    >>> with Atlas() as atlas:
    ...     brazil = atlas.country("Brazil")
-   ...     print(brazil.flag, brazil.name_in("pt"), "—", brazil.capital.name)
+   ...     print(brazil.flag, brazil.name_in("pt"), "|", brazil.capital.name)
    ...     print(brazil.highest_point.name)
    ...     print(", ".join(river.name for river in brazil.rivers[:3]))
-   🇧🇷 Brasil — Brasília
+   🇧🇷 Brasil | Brasília
    Pico da Neblina
    Amazon, Río de la Plata/Paraná, Tocantins
 

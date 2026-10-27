@@ -1,8 +1,8 @@
 /* A restrained visual layer over the standard Read the Docs theme. */
 :root {
-  --atlas-blue: #287aa3;
+  --atlas-blue: #246f95;
   --atlas-blue-soft: #edf6fb;
-  --atlas-teal: #317f78;
+  --atlas-teal: #2c736d;
   --atlas-teal-soft: #eef8f5;
   --atlas-gold: #9a762f;
   --atlas-gold-soft: #fbf6e9;
@@ -50,7 +50,7 @@
 }
 
 .wy-side-nav-search {
-  background: #317fab;
+  background: #246f95;
 }
 
 .atlas-hero {
@@ -404,7 +404,7 @@
 }
 
 .rst-content .admonition.tip > .admonition-title {
-  background: #478b80;
+  background: #2c736d;
 }
 
 .rst-content .admonition.note {
@@ -565,7 +565,7 @@
   background: #fff;
   border: 1px solid #dce6eb;
   border-radius: 999px;
-  color: #65747d;
+  color: #5c6b75;
   font-size: 0.72rem;
 }
 
@@ -599,7 +599,7 @@
 
 .atlas-playground .atlas-preset-group-label {
   margin: 0 0 0.28rem;
-  color: #6b7d87;
+  color: #5c6b75;
   font-size: 0.67rem;
   font-weight: 700;
   letter-spacing: 0.035em;
@@ -637,7 +637,7 @@
 
 .atlas-preset span {
   overflow: hidden;
-  color: #71808a;
+  color: #5c6b75;
   font-size: 0.68rem;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -965,4 +965,28 @@
   .atlas-runtime-status[data-state="loading"] .atlas-status-dot {
     animation: none;
   }
+}
+
+/* Keyboard users can jump past the navigation straight to the page content. */
+.atlas-skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 1000;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  background: #fff;
+  color: #17293d;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(23, 41, 61, 0.2);
+}
+
+.atlas-skip-link:focus {
+  top: 1rem;
+  outline: 3px solid var(--atlas-blue);
+  outline-offset: 2px;
+}
+
+#main-content:focus {
+  outline: none;
 }

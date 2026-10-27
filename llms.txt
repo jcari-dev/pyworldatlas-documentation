@@ -1,0 +1,46 @@
+# PyWorldAtlas 0.10.0
+
+> PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, physical geography, climate classes, reviewed land borders, distances, rankings, learning tools, and optional 3D maps. It has no core runtime dependencies, needs no API key, and never uses the network at runtime.
+
+Install with `pip install pyworldatlas`. Every value is traced to a pinned source snapshot; missing data is `None`, never guessed. Each link below points to the plain-text source of a documentation page. The complete documentation as one plain-text file is at https://jcari-dev.github.io/pyworldatlas-documentation/llms-full.txt
+
+## Start here
+
+- [Quickstart](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/quickstart.rst.txt): Install PyWorldAtlas, open one atlas, and ask useful geography questions. The package works from its bundled database, so these examples need no API key or runtime network connection.
+- [Playground](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/playground.rst.txt): Run the published package without installing Python. The playground starts a private Python session in your browser, installs PyWorldAtlas from PyPI, and keeps that session alive while you explore.
+- [Installation](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/installation.rst.txt): Install the core package for country and place data, or add one optional map edition for offline 3D terrain. The core package has no third-party runtime dependencies and needs no API key.
+
+## Examples and learning
+
+- [Learning activities](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/learning.rst.txt): PyWorldAtlas turns the reviewed offline atlas into a small geography lab. Every activity below is deterministic, works without an API key, and keeps the underlying country, city, coordinate, and source objects available for deeper exploration.
+- [Example programs](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/recipes.rst.txt): These programs are complete, editable starting points rather than isolated one-line calls. Copy one into a Python file or open its matching recipe in the browser playground. Every example uses the public API and the bundled dataset.
+
+## Explore the atlas
+
+- [Country profiles](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/country_profile.rst.txt): A Country is an immutable, typed view of one country in the bundled dataset. Fields are regular Python attributes rather than nested dictionary keys.
+- [Interactive 3D maps](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/maps.rst.txt): PyWorldAtlas can open a rotatable country terrain map directly from Python. The viewer runs in the default browser because WebGL provides smooth, cross-platform 3D interaction. Maps need no extra Python packages: PyWorldAtlas builds each map with the standard library, and the map pack ships the browser renderer. After the pack is installed everything is offline: show() writes a local HTML document and opens that file.
+- [Physical geography](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/physical_geography.rst.txt): Each covered profile acts as a compact physical-geography reference: land and water area, coastline, elevation, named highest and lowest points, source-listed major rivers and lakes, a plain-language climate summary, and represented Köppen-Geiger climate classes. Everything works offline.
+- [Country reference facts](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/reference_facts.rst.txt): Typed, source-aware facts make each country profile useful as a small offline reference. An optional fact is absent when it is outside the captured source scope; the package does not fill gaps with guesses.
+- [Rankings and nearby capitals](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/rankings.rst.txt): PyWorldAtlas provides small, composable discovery methods. They return immutable models and never contact a remote service.
+- [Local names and writing systems](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/local_names.rst.txt): PyWorldAtlas can show every bundled country or area in English and in one selected local language. Names remain ordinary Unicode strings, so Arabic, Chinese, Devanagari, Japanese, Cyrillic, and Latin text work offline without a translation service.
+- [Capitals and major cities](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/capitals_cities.rst.txt): Explore primary capitals and the bundled populated-place collection as typed, coordinate-bearing records. Lookups remain local and require no mapping service.
+- [Coordinates and distances](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/coordinates_distances.rst.txt): PyWorldAtlas stores signed WGS84 latitude and longitude on every bundled capital and populated-place record. Exact lookup, friendly display helpers, and dependency-free great-circle calculations all work offline.
+- [Land borders and paths](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/borders.rst.txt): PyWorldAtlas includes a reviewed, undirected graph of 319 land-border relationships. It supports immediate neighbors, shared neighbors, shortest paths, connected land regions, and countries or areas with no accepted land border. Every operation works from the bundled SQLite database.
+- [Discovery tools](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/discovery.rst.txt): PyWorldAtlas can turn its sourced country profiles into readable summaries, reproducible samples, compact discovery cards, flashcards, and multiple-choice questions. These tools are offline, dependency-free, and deterministic. They do not maintain scores or user state.
+- [Lookup and search](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/searching.rst.txt): Use exact identifiers when you know the profile, safe lookup when absence is expected, ranked search for human input, and composable filters for discovery.
+- [Serialization](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/serialization.rst.txt): Country models serialize to JSON-compatible primitives without exposing SQLite rows or implementation details.
+
+## Data and trust
+
+- [Why PyWorldAtlas?](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/why.rst.txt): Geographic software often begins with a network request, an API key, or a large scientific stack. PyWorldAtlas takes a different approach: a useful world reference should still work in a classroom with unreliable Wi-Fi, on a small computer, inside a reproducible build, or during a flight.
+- [Educational purpose and editorial policy](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/educational_principles.rst.txt): PyWorldAtlas is a purely educational package that provides offline access to factual geographic data. It is intended for learners, teachers, developers, researchers, and anyone who needs a compact geographic reference without a network connection.
+- [Data sources and freshness](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/data_sources.rst.txt): PyWorldAtlas separates source collection from package use. The development pipeline downloads raw snapshots, records checksums, normalizes independent records, validates them, and generates the SQLite database. The installed runtime never contacts these services.
+- [Data quality and limitations](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/data_quality.rst.txt): Quality means more than having a value: each field needs a defined source, validation rule, coverage boundary, and honest missing-data behavior. This page documents those guarantees and their limits.
+- [Project status](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/_generated/project_status.rst.txt): This page is generated from the validated build report. It is a compact snapshot of the package, dataset, and coverage that ship together.
+- [Roadmap](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/roadmap.rst.txt): PyWorldAtlas grows through small, installable releases with explicit data, documentation, and compatibility boundaries. Planned work is not part of the public API until it is implemented, tested, documented, and published.
+
+## Reference
+
+- [API reference](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/api.rst.txt): Use this page to check an exact class, property, method, return type, or exception. If you are learning the package, begin with the quickstart or a focused guide under Explore the atlas, then return here for details.
+- [Migration from 0.0.x](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/migration.rst.txt): Version 0.1.0 is an intentional clean break. The legacy package returned nested dictionaries assembled around a different database. The rebuild returns immutable typed objects generated from a source-aware pipeline.
+- [Changelog](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/changelog.rst.txt): This record summarizes user-visible package, data, documentation, and release changes. The newest published release appears first.

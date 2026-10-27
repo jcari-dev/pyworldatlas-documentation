@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Learning activities | PyWorldAtlas</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=7f4b92b8" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=fbbe6ba3" />
 
   
     <link rel="shortcut icon" href="_static/globe.svg"/>
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/learning.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=61b282d3"></script>
+      <script src="_static/documentation_options.js?v=82662543"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script defer="defer" src="_static/playground.js?v=01b1df8d"></script>
+      <script defer="defer" src="_static/playground.js?v=bdb8a868"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -38,7 +38,10 @@
 
 </head>
 
-<body class="wy-body-for-nav"> 
+<body class="wy-body-for-nav">
+   
+  <a class="atlas-skip-link" href="#main-content">Skip to main content</a>
+
   <div class="wy-grid-for-nav">
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
@@ -126,7 +129,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="maps.html">Interactive 3D maps</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="maps.html#choose-a-map-edition">Choose a map edition</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#install-a-map-pack">Install a map pack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#open-your-first-map">Open your first map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
@@ -272,7 +275,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-9-5-release">Source priority in the 0.9.5 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-10-0-release">Source priority in the 0.10.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -347,9 +350,23 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#optional-maps">Optional maps</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.CountryMap"><code class="docutils literal notranslate"><span class="pre">CountryMap</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.available_map_qualities"><code class="docutils literal notranslate"><span class="pre">available_map_qualities()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas_mapview.MapDataError"><code class="docutils literal notranslate"><span class="pre">MapDataError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.maps.CountryMap"><code class="docutils literal notranslate"><span class="pre">CountryMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.maps.available_map_qualities"><code class="docutils literal notranslate"><span class="pre">available_map_qualities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.maps.MapDataError"><code class="docutils literal notranslate"><span class="pre">MapDataError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#module-pyworldatlas.packs">Data packs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.packs.get"><code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.packs.add"><code class="docutils literal notranslate"><span class="pre">add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.packs.installed"><code class="docutils literal notranslate"><span class="pre">installed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.packs.available"><code class="docutils literal notranslate"><span class="pre">available()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.packs.remove"><code class="docutils literal notranslate"><span class="pre">remove()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.packs.pack_path"><code class="docutils literal notranslate"><span class="pre">pack_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.packs.data_dir"><code class="docutils literal notranslate"><span class="pre">data_dir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.packs.default_data_dir"><code class="docutils literal notranslate"><span class="pre">default_data_dir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.packs.PackInfo"><code class="docutils literal notranslate"><span class="pre">PackInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.packs.InstalledPack"><code class="docutils literal notranslate"><span class="pre">InstalledPack</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.packs.PackError"><code class="docutils literal notranslate"><span class="pre">PackError</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#data-contracts-and-provenance">Data contracts and provenance</a><ul>
@@ -364,23 +381,24 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.9.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.9.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.5.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 — Reserved tag; not published to PyPI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.2.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 — Unpublished candidate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 (reserved tag, not published to PyPI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 (unpublished candidate)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -407,6 +425,8 @@
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  <span id="main-content" tabindex="-1"></span>
+  
            <div itemprop="articleBody">
              
   <section id="learning-activities">
@@ -447,10 +467,10 @@ available. It is display text, not a replacement for structured access:</p>
 <div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">brazil</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">"Brazil"</span><span class="p">)</span>
-<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">brazil</span><span class="o">.</span><span class="n">flag</span><span class="p">,</span> <span class="n">brazil</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">"pt"</span><span class="p">),</span> <span class="s2">"—"</span><span class="p">,</span> <span class="n">brazil</span><span class="o">.</span><span class="n">capital</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">brazil</span><span class="o">.</span><span class="n">flag</span><span class="p">,</span> <span class="n">brazil</span><span class="o">.</span><span class="n">name_in</span><span class="p">(</span><span class="s2">"pt"</span><span class="p">),</span> <span class="s2">"|"</span><span class="p">,</span> <span class="n">brazil</span><span class="o">.</span><span class="n">capital</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">brazil</span><span class="o">.</span><span class="n">highest_point</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
 <span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">", "</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">river</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">river</span> <span class="ow">in</span> <span class="n">brazil</span><span class="o">.</span><span class="n">rivers</span><span class="p">[:</span><span class="mi">3</span><span class="p">]))</span>
-<span class="go">🇧🇷 Brasil — Brasília</span>
+<span class="go">🇧🇷 Brasil | Brasília</span>
 <span class="go">Pico da Neblina</span>
 <span class="go">Amazon, Río de la Plata/Paraná, Tocantins</span>
 </pre></div>
@@ -564,6 +584,7 @@ choices are not needed.</p>
 
            </div>
           </div>
+
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="installation.html" class="btn btn-neutral float-left" title="Installation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="recipes.html" class="btn btn-neutral float-right" title="Example programs" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>

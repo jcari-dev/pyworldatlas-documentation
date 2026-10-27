@@ -40,7 +40,7 @@ with Atlas() as atlas:
         for country in atlas
     )
 
-    print("PYWORLDATLAS — WORLD SNAPSHOT")
+    print("PYWORLDATLAS: WORLD SNAPSHOT")
     print(f"Dataset:         {info.dataset_version}")
     print(f"Profiles:        {len(atlas):,}")
     print(f"Populated places:{sum(c.major_city_count for c in atlas):>7,}")
@@ -82,7 +82,7 @@ with Atlas() as atlas:
             f"{country.capital.name:<17} "
             f"{country.area_km2:>12,.0f} "
             f"{coast if coast is not None else 0:>10,.0f}  "
-            f"{climate.code if climate else '—'}"
+            f"{climate.code if climate else '-'}"
         )`,
     },
     {
@@ -215,7 +215,7 @@ with Atlas() as atlas:
 
 with Atlas() as atlas:
     country = atlas.country("Japan")
-    print(f"{country.flag} {country.name.upper()} — CLIMATE PROFILE")
+    print(f"{country.flag} {country.name.upper()}: CLIMATE PROFILE")
     print(country.climate.summary)
     print(f"Reference period: {country.climate.reference_period}\\n")
 
@@ -442,7 +442,7 @@ print(json.dumps(portable, ensure_ascii=False, indent=2))`,
       setStatus("ready", `Ready · ${message.details.profiles} profiles`);
       editorHint.textContent = "Your Python session persists between runs.";
       setControls();
-      clearOutput("Ready. A complete recipe is already loaded—press Run Python.");
+      clearOutput("Ready. A complete recipe is already loaded. Press Run Python.");
       return;
     }
 
