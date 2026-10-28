@@ -578,6 +578,122 @@
   padding: 0.8rem 1.3rem 0.95rem;
 }
 
+.atlas-explore {
+  padding: 0.9rem 1.3rem 0.4rem;
+  border-bottom: 1px solid var(--atlas-line);
+}
+
+.atlas-explore-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.atlas-explore-form input {
+  flex: 1;
+  min-width: 0;
+  min-height: 2.4rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #9fb6c2;
+  border-radius: 7px;
+  font: inherit;
+  font-size: 0.95rem;
+}
+
+.atlas-explore-form input:focus-visible {
+  outline: 2px solid #3981a5;
+  outline-offset: 1px;
+}
+
+.atlas-explore-form .atlas-button {
+  min-height: 2.4rem;
+  padding: 0.3rem 1.1rem;
+  font-size: 0.85rem;
+}
+
+.atlas-playground .atlas-explore-status {
+  min-height: 1.2em;
+  margin: 0.45rem 0;
+  color: #4f6370;
+  font-size: 0.8rem;
+}
+
+.rst-content .atlas-playground ol.atlas-explore-results,
+.atlas-explore-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.6rem;
+  margin: 0 0 0.6rem;
+  padding: 0;
+  list-style: none;
+}
+
+.rst-content .atlas-playground ol.atlas-explore-results > li {
+  margin: 0;
+  list-style: none;
+}
+
+.atlas-explore-card {
+  margin: 0;
+  padding: 0.75rem 0.85rem;
+  background: #fff;
+  border: 1px solid #d7e2e8;
+  border-left: 4px solid #3981a5;
+  border-radius: 7px;
+}
+
+.atlas-explore-place {
+  border-left-color: #2c736d;
+}
+
+.atlas-playground .atlas-explore-card h4 {
+  margin: 0;
+  color: #24485a;
+  font-size: 1rem;
+}
+
+.atlas-playground .atlas-explore-subtitle {
+  margin: 0 0 0.45rem;
+  color: #5c6b75;
+  font-size: 0.75rem;
+}
+
+.rst-content .atlas-playground .atlas-explore-card dl,
+.atlas-explore-card dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.15rem 0.6rem;
+  margin: 0 0 0.6rem;
+  font-size: 0.8rem;
+}
+
+.rst-content .atlas-playground .atlas-explore-card dt,
+.atlas-explore-card dt {
+  margin: 0;
+  padding: 0;
+  background: none;
+  border: 0;
+  color: #5c6b75;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.rst-content .atlas-playground .atlas-explore-card dd,
+.atlas-explore-card dd {
+  margin: 0;
+  padding: 0;
+  color: #2f3b45;
+}
+
+.atlas-explore-open {
+  background: var(--atlas-blue-soft);
+  border-color: #8fb6c8;
+  color: #24485a;
+}
+
+.atlas-explore-open:hover:not(:disabled) {
+  background: #dcecf5;
+}
+
 .atlas-playground .atlas-control-label {
   margin: 0 0 0.38rem;
   color: #576a75;

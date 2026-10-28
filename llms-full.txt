@@ -1,4 +1,4 @@
-# PyWorldAtlas 0.11.1 documentation
+# PyWorldAtlas 0.12.0 documentation
 
 PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, a searchable school atlas of 200,000 places (11 million with packs), physical geography, climate classes, reviewed land borders, distances, rankings, learning tools, and optional 3D maps. It has no core runtime dependencies, needs no API key, and never uses the network at runtime.
 
@@ -146,7 +146,7 @@ keeps that session alive while you explore.
 
 What is running?
 
-This is the real pyworldatlas==0.11.1 wheel published on PyPI, not a
+This is the real pyworldatlas==0.12.0 wheel published on PyPI, not a
 JavaScript imitation or a remote demonstration API. Pyodide runs CPython in
 WebAssembly, while a module Web Worker keeps execution away from the page’s
 interface. After startup, country queries read the same bundled SQLite database
@@ -162,7 +162,11 @@ input() calls are not supported.
 
 Things worth trying
 
-The fourteen guided programs cover four different ways to use the package:
+Look up anything answers in plain cards: type a country, city, mountain,
+lake, or landmark. Each card has Open in the editor, which loads the Python
+that produced it, so you can see how it works and change it.
+
+The eighteen guided programs cover five different ways to use the package:
 
 Meet the world: summarize the atlas, build a rich country dossier,
 compare profiles, and cross original writing systems.
@@ -176,6 +180,9 @@ climate shares, inspect populated places, and combine search with filters.
 
 Learn and build: generate repeatable quiz material and export portable,
 Unicode-preserving JSON.
+
+Every place on Earth: search 200,000 places by name, see what is nearby,
+work out sunrise and day length anywhere, and compare travel basics.
 
 Change a country name, adjust a ranking, or combine two examples. The Python
 session persists until you select Reset Python or close the page.
@@ -275,13 +282,13 @@ Install the built wheel offline
 
 Test the exact release artifact without consulting a package index:
 
-python -m pip install --no-index --no-deps dist/pyworldatlas-0.11.1-py3-none-any.whl
+python -m pip install --no-index --no-deps dist/pyworldatlas-0.12.0-py3-none-any.whl
 
 Verify the installation
 
 >>> import pyworldatlas
 >>> pyworldatlas.__version__
-'0.11.1'
+'0.12.0'
 >>> from pyworldatlas import Atlas
 >>> with Atlas() as atlas:
 ...     print(atlas.country("DO").capital.name)
@@ -448,6 +455,35 @@ True
 Discover the complete menu with learning_topics().
 The same topics work with flashcards() when answer
 choices are not needed.
+
+Questions about famous places
+
+place_quiz() asks about the best-known mountains,
+islands, lakes, and waterfalls. "kinds" asks what kind of place something
+is, "higher" which of two mountains is higher, and "closer_to_equator"
+which of two places is closer to the equator. Every answer comes straight from
+the data, and the same seed always gives the same questions.
+
+>>> from pyworldatlas import Atlas
+>>> with Atlas() as atlas:
+...     question = atlas.place_quiz("higher", count=1, seed="lesson-1")[0]
+>>> question.prompt.startswith("Which is higher")
+True
+>>> question.is_correct(question.answer_number)
+True
+
+Dig through the Earth
+
+antipode() finds the point on the exact opposite
+side of the planet, and the places nearest it. Most of the world’s antipodes
+are at sea, which is a fun way to see how much of the Earth is ocean.
+
+>>> with Atlas() as atlas:
+...     madrid = atlas.antipode("Madrid")
+>>> madrid.nearest[0].place.country_code
+'NZ'
+
+pyworldatlas antipode Madrid
 
 Where to go next
 
@@ -1241,6 +1277,165 @@ about 710 MB more
 
 Coordinates are rounded to about 110 m and are not suitable for navigation.
 Place data comes from GeoNames under CC BY 4.0; see Data sources and freshness.
+
+========================================================================
+Airports and World Heritage
+Source: https://jcari-dev.github.io/pyworldatlas-documentation/landmarks.html
+========================================================================
+
+Brazil flag emoji
+
+Japan flag emoji
+
+Switzerland flag emoji
+
+China flag emoji
+
+France flag emoji
+
+United Arab Emirates flag emoji
+
+Airports and World Heritage
+
+The optional landmarks pack (about 150 KB) adds every airport with
+scheduled passenger flights and every site on the UNESCO World Heritage List.
+
+pyworldatlas get landmarks
+
+Airports
+
+Look an airport up by the three-letter IATA code on tickets and bags, or the
+four-letter ICAO code pilots use:
+
+>>> from pyworldatlas import Atlas
+>>> atlas = Atlas()
+>>> heathrow = atlas.airport("LHR")
+>>> str(heathrow), heathrow.icao_code, heathrow.size
+('LHR · London Heathrow Airport (GB)', 'EGLL', 'large')
+>>> [airport.iata_code for airport in atlas.airports("Iceland")][:2]
+['AEY', 'KEF']
+
+airports() lists the largest airports first; narrow
+it with country and size ("large", "medium", or "small").
+Nearby-place searches and maps can use an airport’s coordinates.
+
+World Heritage sites
+
+world_heritage_sites() lists sites in list order,
+with the year each was inscribed and whether it was chosen for cultural or
+natural value, or both. world_heritage_sites_near()
+finds the sites closest to any city, place, or coordinate:
+
+>>> site = atlas.world_heritage_site("Machu Picchu")
+>>> site.name, site.category, site.inscribed
+('Historic Sanctuary of Machu Picchu', 'mixed', 1983)
+>>> nearest = atlas.world_heritage_sites_near("Cusco", limit=2)
+>>> 274 in [item.site.site_id for item in nearest]
+True
+>>> atlas.close()
+
+From the command line:
+
+pyworldatlas airport LHR
+pyworldatlas heritage Cusco
+
+Sources
+
+Airports come from OurAirports (public domain); an airport’s
+country_code is the code OurAirports publishes. World Heritage sites come
+from Wikidata (CC0) and are located by coordinates only. See
+Data sources and freshness. PyWorldAtlas is not affiliated with UNESCO or OurAirports
+and takes no position on any boundary or status. Locations are representative
+points and are not suitable for navigation.
+
+========================================================================
+The world in numbers
+Source: https://jcari-dev.github.io/pyworldatlas-documentation/statistics.html
+========================================================================
+
+Brazil flag emoji
+
+Japan flag emoji
+
+Switzerland flag emoji
+
+China flag emoji
+
+France flag emoji
+
+United Arab Emirates flag emoji
+
+The world in numbers
+
+The optional statistics pack (about 150 KB) adds eleven basic indicators
+for every country from 1960, from the World Bank’s World Development
+Indicators: population, population density, urban population, life
+expectancy, births and deaths, forest and agricultural land, access to
+electricity and drinking water, and internet use.
+
+pyworldatlas get statistics
+
+A country over time
+
+time_series() returns the yearly values, a sentence
+about the change, and a one-line chart you can print anywhere:
+
+>>> from pyworldatlas import Atlas
+>>> atlas = Atlas()
+>>> japan = atlas.time_series("Japan", "life_expectancy")
+>>> japan.summary.startswith("Life expectancy at birth in Japan rose from 67.7 years in 1960")
+True
+>>> len(japan.sparkline(width=20)) <= 20
+True
+
+Use "world" for the World Bank’s world total:
+
+>>> atlas.time_series("world", "population").latest.value > 8_000_000_000
+True
+
+One value
+
+statistic() returns the latest published value, or
+the value for a year. Each value knows its unit and year:
+
+>>> str(atlas.statistic("Brazil", "urban_population", 1960))
+'44.7% of people (1960)'
+
+Sorting
+
+sort_by_statistic() lists countries by one
+indicator. Sorting only orders the published numbers; it does not say which
+is better.
+
+>>> top = atlas.sort_by_statistic("forest_area", limit=3)
+>>> all(item.value > 90 for item in top)
+True
+>>> [indicator.key for indicator in atlas.indicators()][:3]
+['birth_rate', 'death_rate', 'drinking_water']
+>>> atlas.close()
+
+From the command line:
+
+pyworldatlas stat Kenya electricity_access
+
+How the numbers are kept
+
+Values are kept exactly as the World Bank publishes them, with the year
+they describe. Each indicator names its original source, such as the United
+Nations Population Division.
+
+A year with no published value stays empty; nothing is estimated or filled
+in. Small territories the World Bank does not cover have no values.
+
+Countries are matched by their ISO 3166 code. The World Bank’s world total
+is included; its regional and income groupings are not.
+
+Numbers describe places, not people’s worth. See the official statistics
+section of the editorial policy in the repository.
+
+Source: World Bank, World Development Indicators, licensed under
+CC BY 4.0. PyWorldAtlas is
+not affiliated with or endorsed by the World Bank. See Data sources and freshness.
 
 ========================================================================
 Interactive 3D maps
@@ -3689,7 +3884,7 @@ pipeline downloads raw snapshots, records checksums, normalizes independent
 records, validates them, and generates the SQLite database. The installed
 runtime never contacts these services.
 
-The 0.11 core uses dataset 2026.10.27.1. Optional map editions add
+The 0.12 core uses dataset 2026.10.27.1. Optional map editions add
 separately installed, integrity-checked visualization records derived from
 pinned elevation, climate, outline, and river snapshots. Neither the core nor
 the installed map viewer contacts a source service at runtime.
@@ -4004,6 +4199,77 @@ build_data/reviewed/national_motto_decisions.csv. Thirty-two profiles
 are included. The runtime does not infer constitutional, statutory,
 traditional, or current legal status, and it does not ingest tourism slogans.
 
+World Bank World Development Indicators
+
+Purpose
+
+Eleven basic indicators by country and year for the optional statistics
+pack: population, population density, urban population, life expectancy,
+birth and death rates, forest and agricultural land, access to electricity
+and basic drinking water, and internet use.
+
+Official location
+
+https://datacatalog.worldbank.org/ (API: https://api.worldbank.org/v2/)
+
+Current snapshot
+
+API responses retrieved 2026-10-28 (data last updated by the World Bank on
+2026-10-08), with each file’s checksum retained in the manifest.
+
+Terms
+
+Creative Commons Attribution 4.0. Each indicator’s own license field is
+checked to read CC BY 4.0 before it is used.
+
+Review boundary
+
+Values are used as published. The official statistics section of the
+editorial policy sets which indicators are admitted: basic, descriptive
+measures only, with no composite indices or judgement-laden indicators.
+
+OurAirports
+
+Purpose
+
+Airports with scheduled passenger service for the optional landmarks pack.
+
+Official location
+
+https://ourairports.com/data/
+
+Current snapshot
+
+airports.csv retrieved 2026-10-28, with its checksum retained. Only
+airports with scheduled service and an IATA code are kept. Country codes
+are kept as OurAirports publishes them.
+
+Terms
+
+Released to the public domain.
+
+Wikidata World Heritage statements
+
+Purpose
+
+UNESCO World Heritage List numbers, names, locations, years of inscription,
+and selection criteria for the optional landmarks pack.
+
+Official locations
+
+https://query.wikidata.org/sparql and
+https://www.wikidata.org/wiki/Wikidata:Licensing
+
+Current snapshot
+
+A 2026-10-28 SPARQL response; the exact query and response checksum are
+retained. One record is kept per list number. Sites carry coordinates and
+no country field.
+
+Terms
+
+Wikidata structured data is released under Creative Commons CC0 1.0.
+
 Wikidata travel-basics statements
 
 Purpose
@@ -4122,7 +4388,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.11.1 release
+Source priority in the 0.12.0 release
 
 
 
@@ -4697,7 +4963,7 @@ Project status
 This page is generated from the validated build report. It is a compact
 snapshot of the package, dataset, and coverage that ship together.
 
-0.11.1
+0.12.0
 
 library version
 
@@ -4788,19 +5054,18 @@ public API until it is implemented, tested, documented, and published.
 
 Current release
 
-0.11.0 adds every place on Earth: a school atlas of 207,664 places
-in every install, 11 million with packs, one search for everything, and
-places on the 3D maps.
+0.12.0 adds the world in numbers: eleven World Bank indicators
+since 1960, airports and World Heritage sites, place quizzes, and a
+new playground.
 
 Next milestone
 
-0.11.x adds travel basics (plugs, mains supply, driving side) and
-more landmark detail, then 0.12 official statistics.
+0.13 adds generated reference entries for every country, place,
+and landmark, and an offline site export.
 
 On the way to 1.0
 
-0.12 adds official statistics with sources and years, and 0.13
-generated reference entries and an offline site export.
+1.0 comes once the public API has proven stable in real use.
 
 Release train
 
@@ -4934,11 +5199,11 @@ Published
 
 0.12.0
 
-Planned
+Complete
 
-Official statistics pack with sourced, dated indicators
+Statistics and landmarks packs, place quizzes, and the new playground
 
-Not yet
+Published
 
 0.13.0
 
@@ -5535,6 +5800,91 @@ and rivers). Distances are great-circle surface measurements in
 
 
 
+indicators() -> tuple[Indicator, ...][source]
+
+Return every statistic in the statistics pack, such as life_expectancy.
+
+Needs the statistics pack (pyworldatlas get statistics).
+
+
+
+time_series(country: str | Country, indicator: str) -> StatisticSeries[source]
+
+Return the yearly values of an indicator for a country, from 1960.
+
+country is a country name, code, or profile, or "world" for the
+World Bank’s world total. Years without a published value are None.
+Needs the statistics pack (pyworldatlas get statistics).
+
+
+
+statistic(country: str | Country, indicator: str, year: int | None = None) -> StatisticValue | None[source]
+
+Return one published value, the latest unless year is given.
+
+Returns None when the publisher has no value; missing values are
+never estimated. Needs the statistics pack.
+
+
+
+sort_by_statistic(indicator: str, *, year: int | None = None, descending: bool = True, limit: int | None = 10) -> tuple[StatisticValue, ...][source]
+
+List countries sorted by one indicator, for a year or each one’s latest.
+
+Sorting only orders the published numbers; it says nothing about which
+is better. Countries without a value are left out. Needs the
+statistics pack.
+
+
+
+airport(code: str) -> Airport[source]
+
+Return the airport with this IATA ("LHR") or ICAO ("EGLL") code.
+
+Needs the landmarks pack (pyworldatlas get landmarks). Raises
+PlaceNotFoundError for an unknown code.
+
+
+
+airports(country: str | Country | None = None, *, size: str | None = None) -> tuple[Airport, ...][source]
+
+Return airports with scheduled flights, largest first, then by name.
+
+Narrow with country and size ("large", "medium", or
+"small"). Needs the landmarks pack (pyworldatlas get landmarks).
+
+
+
+world_heritage_sites(*, category: str | None = None) -> tuple[WorldHeritageSite, ...][source]
+
+Return UNESCO World Heritage sites in list order.
+
+Narrow with category ("cultural", "natural", or "mixed").
+Use world_heritage_sites_near() to find the sites around a place.
+Needs the landmarks pack (pyworldatlas get landmarks).
+
+
+
+world_heritage_sites_near(origin: str | Country | Capital | City | Place | Coordinate | tuple[float, float], *, limit: int = 10, category: str | None = None, unit: str = 'km') -> tuple[SiteDistance, ...][source]
+
+Return the World Heritage sites nearest to a place, nearest first.
+
+origin is a city or place name, a country (its capital), a model
+with coordinates, or a (latitude, longitude) tuple. unit is
+"km" or "mi". Needs the landmarks pack.
+
+
+
+world_heritage_site(query: str | int) -> WorldHeritageSite[source]
+
+Return one World Heritage site by list number or name.
+
+Names match without regard to case or accents: an exact name first,
+then the one site whose name contains the query. Raises
+PlaceNotFoundError or AmbiguousPlaceError.
+
+
+
 sun(where: str | Country | Capital | City | Place | Coordinate | tuple[float, float], on: date | None = None) -> SunTimes[source]
 
 Return sunrise, sunset, day length, and the noon sun height for a place.
@@ -5544,6 +5894,36 @@ coordinates, or a (latitude, longitude) tuple. on defaults to
 today. Times are in UTC and agree with almanac times to about a minute
 between latitudes 72° north and south. Compare atlas.sun("Oslo",
 date(2026, 6, 21)) with December to see why seasons happen.
+
+
+
+PLACE_QUIZ_TOPICS = ('closer_to_equator', 'higher', 'kinds')
+
+Topics accepted by place_quiz().
+
+
+
+place_quiz(topic: str, *, count: int = 5, seed: int | str = 0) -> tuple[PlaceQuestion, ...][source]
+
+Return multiple-choice questions about famous natural places.
+
+Topics are "kinds" (what kind of place is it?), "higher" (which
+of two mountains is higher?), and "closer_to_equator" (which of two
+places is closer to the equator?). Questions come from the best-known
+mountains, islands, lakes, rivers, and seas in the school atlas, and the
+same seed always gives the same questions.
+
+
+
+antipode(where: str | Country | Capital | City | Place | Coordinate | tuple[float, float], *, limit: int = 3) -> Antipode[source]
+
+Return the point on the opposite side of the Earth, and the places nearest it.
+
+Dig straight down through the centre of the Earth and you come out at
+the antipode: the latitude flips north and south, and the longitude
+moves halfway around the world. where is a city or place name, a
+country (its capital), a model with coordinates, or a (latitude,
+longitude) tuple. Most antipodes are at sea.
 
 
 
@@ -6524,6 +6904,261 @@ __init__(country: CountryReference, city: City, distance: float, unit: str) -> N
 
 
 
+class pyworldatlas.Airport[source]
+
+An airport with scheduled passenger flights, from OurAirports.
+
+iata_code is the three-letter code on tickets and bags ("LHR");
+icao_code the four-letter code pilots use ("EGLL"). size is
+"large", "medium", or "small". country_code is the
+two-letter code as published by OurAirports.
+
+
+
+property label: str
+
+Return a compact label such as "LHR · London Heathrow Airport (GB)".
+
+
+
+__init__(iata_code: str, icao_code: str | None, name: str, municipality: str | None, country_code: str, coordinates: Coordinate, elevation_m: int | None, size: str) -> None
+
+
+
+
+
+class pyworldatlas.WorldHeritageSite[source]
+
+A site on the UNESCO World Heritage List, from Wikidata.
+
+site_id is the list number. category is "cultural",
+"natural", or "mixed" from the site’s selection criteria.
+coordinates marks one representative point and inscribed the year
+the site was added, when known. Find sites by name, number, category, or
+distance from any place.
+
+
+
+property label: str
+
+Return a compact label such as "Taj Mahal, cultural".
+
+
+
+__init__(site_id: int, name: str, coordinates: Coordinate | None, inscribed: int | None, category: str | None) -> None
+
+
+
+
+
+class pyworldatlas.SiteDistance[source]
+
+A World Heritage site and its great-circle distance from an origin.
+
+
+
+to_dict() -> dict[str, Any][source]
+
+Return JSON-compatible primitives for this nearby-site result.
+
+
+
+to_json(indent: int | None = None) -> str[source]
+
+Serialize this nearby-site result without escaping Unicode text.
+
+
+
+__init__(site: WorldHeritageSite, distance: float, unit: str) -> None
+
+
+
+
+
+class pyworldatlas.Antipode[source]
+
+The point on the exact opposite side of the Earth from an origin.
+
+nearest lists the known places closest to the antipode, nearest first;
+most antipodes are at sea, so the nearest place can be far away.
+
+
+
+property summary: str
+
+Return a plain-language description of the antipode.
+
+
+
+to_dict() -> dict[str, Any][source]
+
+Return JSON-compatible primitives for this antipode.
+
+
+
+to_json(indent: int | None = None) -> str[source]
+
+Serialize this antipode as JSON.
+
+
+
+__init__(origin: Coordinate, antipode: Coordinate, nearest: tuple[PlaceDistance, ...]) -> None
+
+
+
+
+
+class pyworldatlas.PlaceQuestion[source]
+
+A deterministic multiple-choice question about famous places.
+
+places holds the places the question is about, so a learner can look
+up more after answering. Choices are in display order and answer is
+always one of them.
+
+
+
+property answer_number: int
+
+Return the correct choice number, counting from one.
+
+
+
+is_correct(response: str | int) -> bool[source]
+
+Check a displayed answer (case-insensitive) or a one-based choice number.
+
+
+
+to_dict() -> dict[str, Any][source]
+
+Return JSON-compatible primitives for this question.
+
+
+
+to_json(indent: int | None = None) -> str[source]
+
+Serialize this question as JSON without escaping Unicode text.
+
+
+
+__init__(topic: str, prompt: str, choices: tuple[str, ...], answer: str, places: tuple[Place, ...]) -> None
+
+
+
+
+
+class pyworldatlas.Indicator[source]
+
+One statistic, such as life expectancy, with its unit and source.
+
+key is the short name used by the atlas ("life_expectancy") and
+code the World Bank indicator code ("SP.DYN.LE00.IN").
+
+
+
+format(value: float) -> str[source]
+
+Return a value with its unit, such as "84.7 years".
+
+
+
+__init__(key: str, name: str, unit: str, code: str, source: str, decimals: int = 1) -> None
+
+
+
+
+
+class pyworldatlas.StatisticSeries[source]
+
+Yearly values of one indicator for one country, or "world".
+
+values runs from first_year one year at a time; a year the
+publisher has no value for is None and is never filled in.
+
+
+
+property last_year: int
+
+Return the last year in the series.
+
+
+
+property points: tuple[tuple[int, float], ...]
+
+Return (year, value) pairs for every year with a value.
+
+
+
+value(year: int) -> float | None[source]
+
+Return the value for year, or None when there is none.
+
+
+
+property latest: StatisticValue | None
+
+Return the most recent published value.
+
+
+
+sparkline(width: int = 30) -> str[source]
+
+Return a one-line text chart, such as "▁▂▃▄▅▆▇█".
+
+The series is shown in at most width steps, each the average of
+its years; years with no value show as a space.
+
+
+
+property summary: str
+
+Return a plain-language sentence about the first and latest values.
+
+
+
+to_dict() -> dict[str, Any][source]
+
+Return JSON-compatible primitives for this series.
+
+
+
+to_json(indent: int | None = None) -> str[source]
+
+Serialize this series as JSON.
+
+
+
+__init__(indicator: Indicator, area: str, area_name: str, first_year: int, values: tuple[float | None, ...]) -> None
+
+
+
+
+
+class pyworldatlas.StatisticValue[source]
+
+One published value: an indicator for a country (or the world) in a year.
+
+
+
+to_dict() -> dict[str, Any][source]
+
+Return JSON-compatible primitives for this value.
+
+
+
+to_json(indent: int | None = None) -> str[source]
+
+Serialize this value as JSON.
+
+
+
+__init__(indicator: Indicator, area: str, year: int, value: float) -> None
+
+
+
+
+
 class pyworldatlas.SunTimes[source]
 
 Sunrise, sunset, and daylight for one place on one date, in UTC.
@@ -7395,6 +8030,28 @@ Changelog
 
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
+
+0.12.0
+
+The world in numbers, landmarks, and a new playground.
+
+Statistics pack: eleven basic World Bank indicators for every country
+since 1960, such as population, life expectancy, forest area, and access to
+electricity. Time series, one-line charts, plain-language summaries, and
+sorting without judgement. See The world in numbers.
+
+Landmarks pack: airports with scheduled flights and UNESCO World
+Heritage sites, found by code, name, category, or distance. See
+Airports and World Heritage.
+
+New playground: look up any country or place and open the Python behind
+each answer; four new recipes. See Playground.
+
+Learning: place quizzes (kinds of places, which is higher, which is
+closer to the equator) and antipodes (“dig through the Earth”).
+
+Runs on small computers: every place pack now unpacks in under 300 MB of
+memory, and import pyworldatlas is faster.
 
 0.11.1
 

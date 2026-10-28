@@ -84,7 +84,7 @@ Test the exact release artifact without consulting a package index:
 
 .. code-block:: console
 
-   python -m pip install --no-index --no-deps dist/pyworldatlas-0.11.1-py3-none-any.whl
+   python -m pip install --no-index --no-deps dist/pyworldatlas-0.12.0-py3-none-any.whl
 
 Verify the installation
 -----------------------
@@ -93,7 +93,7 @@ Verify the installation
 
    >>> import pyworldatlas
    >>> pyworldatlas.__version__
-   '0.11.1'
+   '0.12.0'
    >>> from pyworldatlas import Atlas
    >>> with Atlas() as atlas:
    ...     print(atlas.country("DO").capital.name)

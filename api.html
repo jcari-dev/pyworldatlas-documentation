@@ -8,17 +8,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>API reference | PyWorldAtlas</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=fbbe6ba3" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=edc9c83a" />
 
   
     <link rel="shortcut icon" href="_static/globe.svg"/>
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/api.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=57cbeb03"></script>
+      <script src="_static/documentation_options.js?v=61ccb1f1"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script defer="defer" src="_static/playground.js?v=bdb8a868"></script>
+      <script defer="defer" src="_static/playground.js?v=c2e4ffc5"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -96,6 +96,8 @@
 <li class="toctree-l2"><a class="reference internal" href="learning.html#turn-coordinates-into-a-compass-activity">Turn coordinates into a compass activity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="learning.html#explore-nearby-cities">Explore nearby cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="learning.html#build-a-repeatable-multiple-choice-lesson">Build a repeatable multiple-choice lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#questions-about-famous-places">Questions about famous places</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning.html#dig-through-the-earth">Dig through the Earth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="learning.html#where-to-go-next">Where to go next</a></li>
 </ul>
 </li>
@@ -136,6 +138,19 @@
 <li class="toctree-l2"><a class="reference internal" href="places.html#what-is-in-the-school-atlas">What is in the school atlas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="places.html#more-places-with-packs">More places with packs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="places.html#how-it-stays-small-and-fast">How it stays small and fast</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="landmarks.html">Airports and World Heritage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="landmarks.html#airports">Airports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="landmarks.html#world-heritage-sites">World Heritage sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="landmarks.html#sources">Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="statistics.html">The world in numbers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#a-country-over-time">A country over time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#one-value">One value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#sorting">Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#how-the-numbers-are-kept">How the numbers are kept</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="maps.html">Interactive 3D maps</a><ul>
@@ -288,12 +303,15 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#noaa-ncei-etopo-2022">NOAA NCEI ETOPO 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#world-bank-world-development-indicators">World Bank World Development Indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#ourairports">OurAirports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-world-heritage-statements">Wikidata World Heritage statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-travel-basics-statements">Wikidata travel-basics statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-11-1-release">Source priority in the 0.11.1 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-12-0-release">Source priority in the 0.12.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -345,6 +363,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.CountryRanking"><code class="docutils literal notranslate"><span class="pre">CountryRanking</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.CapitalDistance"><code class="docutils literal notranslate"><span class="pre">CapitalDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.CityDistance"><code class="docutils literal notranslate"><span class="pre">CityDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.Airport"><code class="docutils literal notranslate"><span class="pre">Airport</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.WorldHeritageSite"><code class="docutils literal notranslate"><span class="pre">WorldHeritageSite</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.SiteDistance"><code class="docutils literal notranslate"><span class="pre">SiteDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.Antipode"><code class="docutils literal notranslate"><span class="pre">Antipode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.PlaceQuestion"><code class="docutils literal notranslate"><span class="pre">PlaceQuestion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.Indicator"><code class="docutils literal notranslate"><span class="pre">Indicator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.StatisticSeries"><code class="docutils literal notranslate"><span class="pre">StatisticSeries</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.StatisticValue"><code class="docutils literal notranslate"><span class="pre">StatisticValue</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.SunTimes"><code class="docutils literal notranslate"><span class="pre">SunTimes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.PlaceDistance"><code class="docutils literal notranslate"><span class="pre">PlaceDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
@@ -401,26 +427,27 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.11.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.11.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.10.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.12.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.11.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 (reserved tag, not published to PyPI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id17">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id17">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id18">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 (unpublished candidate)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id18">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id19">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -930,6 +957,82 @@ and rivers). Distances are great-circle surface measurements in
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.indicators">
+<span class="sig-name descname"><span class="pre">indicators</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pyworldatlas.Indicator" title="pyworldatlas.models.statistics.Indicator"><span class="pre">Indicator</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.indicators"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.indicators" title="Link to this definition"></a></dt>
+<dd><p>Return every statistic in the statistics pack, such as <code class="docutils literal notranslate"><span class="pre">life_expectancy</span></code>.</p>
+<p>Needs the statistics pack (<code class="docutils literal notranslate"><span class="pre">pyworldatlas</span> <span class="pre">get</span> <span class="pre">statistics</span></code>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.time_series">
+<span class="sig-name descname"><span class="pre">time_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Country" title="pyworldatlas.models.country.Country"><span class="pre">Country</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indicator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyworldatlas.StatisticSeries" title="pyworldatlas.models.statistics.StatisticSeries"><span class="pre">StatisticSeries</span></a></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.time_series"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.time_series" title="Link to this definition"></a></dt>
+<dd><p>Return the yearly values of an indicator for a country, from 1960.</p>
+<p><code class="docutils literal notranslate"><span class="pre">country</span></code> is a country name, code, or profile, or <code class="docutils literal notranslate"><span class="pre">&quot;world&quot;</span></code> for the
+World Bank’s world total. Years without a published value are <code class="docutils literal notranslate"><span class="pre">None</span></code>.
+Needs the statistics pack (<code class="docutils literal notranslate"><span class="pre">pyworldatlas</span> <span class="pre">get</span> <span class="pre">statistics</span></code>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.statistic">
+<span class="sig-name descname"><span class="pre">statistic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Country" title="pyworldatlas.models.country.Country"><span class="pre">Country</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">indicator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyworldatlas.StatisticValue" title="pyworldatlas.models.statistics.StatisticValue"><span class="pre">StatisticValue</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.statistic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.statistic" title="Link to this definition"></a></dt>
+<dd><p>Return one published value, the latest unless <code class="docutils literal notranslate"><span class="pre">year</span></code> is given.</p>
+<p>Returns <code class="docutils literal notranslate"><span class="pre">None</span></code> when the publisher has no value; missing values are
+never estimated. Needs the statistics pack.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.sort_by_statistic">
+<span class="sig-name descname"><span class="pre">sort_by_statistic</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indicator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">descending</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pyworldatlas.StatisticValue" title="pyworldatlas.models.statistics.StatisticValue"><span class="pre">StatisticValue</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.sort_by_statistic"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.sort_by_statistic" title="Link to this definition"></a></dt>
+<dd><p>List countries sorted by one indicator, for a year or each one’s latest.</p>
+<p>Sorting only orders the published numbers; it says nothing about which
+is better. Countries without a value are left out. Needs the
+statistics pack.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.airport">
+<span class="sig-name descname"><span class="pre">airport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyworldatlas.Airport" title="pyworldatlas.models.places.Airport"><span class="pre">Airport</span></a></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.airport"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.airport" title="Link to this definition"></a></dt>
+<dd><p>Return the airport with this IATA (<code class="docutils literal notranslate"><span class="pre">&quot;LHR&quot;</span></code>) or ICAO (<code class="docutils literal notranslate"><span class="pre">&quot;EGLL&quot;</span></code>) code.</p>
+<p>Needs the landmarks pack (<code class="docutils literal notranslate"><span class="pre">pyworldatlas</span> <span class="pre">get</span> <span class="pre">landmarks</span></code>). Raises
+<a class="reference internal" href="#pyworldatlas.PlaceNotFoundError" title="pyworldatlas.PlaceNotFoundError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a> for an unknown code.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.airports">
+<span class="sig-name descname"><span class="pre">airports</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Country" title="pyworldatlas.models.country.Country"><span class="pre">Country</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pyworldatlas.Airport" title="pyworldatlas.models.places.Airport"><span class="pre">Airport</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.airports"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.airports" title="Link to this definition"></a></dt>
+<dd><p>Return airports with scheduled flights, largest first, then by name.</p>
+<p>Narrow with <code class="docutils literal notranslate"><span class="pre">country</span></code> and <code class="docutils literal notranslate"><span class="pre">size</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;large&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;medium&quot;</span></code>, or
+<code class="docutils literal notranslate"><span class="pre">&quot;small&quot;</span></code>). Needs the landmarks pack (<code class="docutils literal notranslate"><span class="pre">pyworldatlas</span> <span class="pre">get</span> <span class="pre">landmarks</span></code>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.world_heritage_sites">
+<span class="sig-name descname"><span class="pre">world_heritage_sites</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pyworldatlas.WorldHeritageSite" title="pyworldatlas.models.places.WorldHeritageSite"><span class="pre">WorldHeritageSite</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.world_heritage_sites"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.world_heritage_sites" title="Link to this definition"></a></dt>
+<dd><p>Return UNESCO World Heritage sites in list order.</p>
+<p>Narrow with <code class="docutils literal notranslate"><span class="pre">category</span></code> (<code class="docutils literal notranslate"><span class="pre">&quot;cultural&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;natural&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;mixed&quot;</span></code>).
+Use <a class="reference internal" href="#pyworldatlas.Atlas.world_heritage_sites_near" title="pyworldatlas.Atlas.world_heritage_sites_near"><code class="xref py py-meth docutils literal notranslate"><span class="pre">world_heritage_sites_near()</span></code></a> to find the sites around a place.
+Needs the landmarks pack (<code class="docutils literal notranslate"><span class="pre">pyworldatlas</span> <span class="pre">get</span> <span class="pre">landmarks</span></code>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.world_heritage_sites_near">
+<span class="sig-name descname"><span class="pre">world_heritage_sites_near</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Country" title="pyworldatlas.models.country.Country"><span class="pre">Country</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Capital" title="pyworldatlas.models.places.Capital"><span class="pre">Capital</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.City" title="pyworldatlas.models.places.City"><span class="pre">City</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Place" title="pyworldatlas.models.places.Place"><span class="pre">Place</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Coordinate" title="pyworldatlas.models.geography.Coordinate"><span class="pre">Coordinate</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'km'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pyworldatlas.SiteDistance" title="pyworldatlas.models.results.SiteDistance"><span class="pre">SiteDistance</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.world_heritage_sites_near"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.world_heritage_sites_near" title="Link to this definition"></a></dt>
+<dd><p>Return the World Heritage sites nearest to a place, nearest first.</p>
+<p><code class="docutils literal notranslate"><span class="pre">origin</span></code> is a city or place name, a country (its capital), a model
+with coordinates, or a <code class="docutils literal notranslate"><span class="pre">(latitude,</span> <span class="pre">longitude)</span></code> tuple. <code class="docutils literal notranslate"><span class="pre">unit</span></code> is
+<code class="docutils literal notranslate"><span class="pre">&quot;km&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;mi&quot;</span></code>. Needs the landmarks pack.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.world_heritage_site">
+<span class="sig-name descname"><span class="pre">world_heritage_site</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyworldatlas.WorldHeritageSite" title="pyworldatlas.models.places.WorldHeritageSite"><span class="pre">WorldHeritageSite</span></a></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.world_heritage_site"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.world_heritage_site" title="Link to this definition"></a></dt>
+<dd><p>Return one World Heritage site by list number or name.</p>
+<p>Names match without regard to case or accents: an exact name first,
+then the one site whose name contains the query. Raises
+<a class="reference internal" href="#pyworldatlas.PlaceNotFoundError" title="pyworldatlas.PlaceNotFoundError"><code class="xref py py-class docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a> or <a class="reference internal" href="#pyworldatlas.AmbiguousPlaceError" title="pyworldatlas.AmbiguousPlaceError"><code class="xref py py-class docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyworldatlas.Atlas.sun">
 <span class="sig-name descname"><span class="pre">sun</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Country" title="pyworldatlas.models.country.Country"><span class="pre">Country</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Capital" title="pyworldatlas.models.places.Capital"><span class="pre">Capital</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.City" title="pyworldatlas.models.places.City"><span class="pre">City</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Place" title="pyworldatlas.models.places.Place"><span class="pre">Place</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Coordinate" title="pyworldatlas.models.geography.Coordinate"><span class="pre">Coordinate</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">on</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">date</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyworldatlas.SunTimes" title="pyworldatlas.models.results.SunTimes"><span class="pre">SunTimes</span></a></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.sun"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.sun" title="Link to this definition"></a></dt>
 <dd><p>Return sunrise, sunset, day length, and the noon sun height for a place.</p>
@@ -938,6 +1041,34 @@ coordinates, or a <code class="docutils literal notranslate"><span class="pre">(
 today. Times are in UTC and agree with almanac times to about a minute
 between latitudes 72° north and south. Compare <code class="docutils literal notranslate"><span class="pre">atlas.sun(&quot;Oslo&quot;,</span>
 <span class="pre">date(2026,</span> <span class="pre">6,</span> <span class="pre">21))</span></code> with December to see why seasons happen.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.PLACE_QUIZ_TOPICS">
+<span class="sig-name descname"><span class="pre">PLACE_QUIZ_TOPICS</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">('closer_to_equator',</span> <span class="pre">'higher',</span> <span class="pre">'kinds')</span></em><a class="headerlink" href="#pyworldatlas.Atlas.PLACE_QUIZ_TOPICS" title="Link to this definition"></a></dt>
+<dd><p>Topics accepted by <a class="reference internal" href="#pyworldatlas.Atlas.place_quiz" title="pyworldatlas.Atlas.place_quiz"><code class="xref py py-meth docutils literal notranslate"><span class="pre">place_quiz()</span></code></a>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.place_quiz">
+<span class="sig-name descname"><span class="pre">place_quiz</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">count</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">seed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pyworldatlas.PlaceQuestion" title="pyworldatlas.models.learning.PlaceQuestion"><span class="pre">PlaceQuestion</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.place_quiz"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.place_quiz" title="Link to this definition"></a></dt>
+<dd><p>Return multiple-choice questions about famous natural places.</p>
+<p>Topics are <code class="docutils literal notranslate"><span class="pre">&quot;kinds&quot;</span></code> (what kind of place is it?), <code class="docutils literal notranslate"><span class="pre">&quot;higher&quot;</span></code> (which
+of two mountains is higher?), and <code class="docutils literal notranslate"><span class="pre">&quot;closer_to_equator&quot;</span></code> (which of two
+places is closer to the equator?). Questions come from the best-known
+mountains, islands, lakes, rivers, and seas in the school atlas, and the
+same <code class="docutils literal notranslate"><span class="pre">seed</span></code> always gives the same questions.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Atlas.antipode">
+<span class="sig-name descname"><span class="pre">antipode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">where</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Country" title="pyworldatlas.models.country.Country"><span class="pre">Country</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Capital" title="pyworldatlas.models.places.Capital"><span class="pre">Capital</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.City" title="pyworldatlas.models.places.City"><span class="pre">City</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Place" title="pyworldatlas.models.places.Place"><span class="pre">Place</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.Coordinate" title="pyworldatlas.models.geography.Coordinate"><span class="pre">Coordinate</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="keyword-only-separator o"><abbr title="Keyword-only parameters separator (PEP 3102)"><span class="pre">*</span></abbr></span></em>, <em class="sig-param"><span class="n"><span class="pre">limit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">3</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#pyworldatlas.Antipode" title="pyworldatlas.models.results.Antipode"><span class="pre">Antipode</span></a></span></span><a class="reference internal" href="_modules/pyworldatlas/atlas.html#Atlas.antipode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Atlas.antipode" title="Link to this definition"></a></dt>
+<dd><p>Return the point on the opposite side of the Earth, and the places nearest it.</p>
+<p>Dig straight down through the centre of the Earth and you come out at
+the antipode: the latitude flips north and south, and the longitude
+moves halfway around the world. <code class="docutils literal notranslate"><span class="pre">where</span></code> is a city or place name, a
+country (its capital), a model with coordinates, or a <code class="docutils literal notranslate"><span class="pre">(latitude,</span>
+<span class="pre">longitude)</span></code> tuple. Most antipodes are at sea.</p>
 </dd></dl>
 
 <dl class="py method">
@@ -1851,6 +1982,246 @@ the unit requested from <a class="reference internal" href="#pyworldatlas.Atlas.
 <dl class="py method">
 <dt class="sig sig-object py" id="pyworldatlas.CityDistance.__init__">
 <span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">country</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyworldatlas.CountryReference" title="pyworldatlas.models.results.CountryReference"><span class="pre">CountryReference</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">city</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyworldatlas.City" title="pyworldatlas.models.places.City"><span class="pre">City</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyworldatlas.CityDistance.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyworldatlas.Airport">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyworldatlas.</span></span><span class="sig-name descname"><span class="pre">Airport</span></span><a class="reference internal" href="_modules/pyworldatlas/models/places.html#Airport"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Airport" title="Link to this definition"></a></dt>
+<dd><p>An airport with scheduled passenger flights, from OurAirports.</p>
+<p><code class="docutils literal notranslate"><span class="pre">iata_code</span></code> is the three-letter code on tickets and bags (<code class="docutils literal notranslate"><span class="pre">&quot;LHR&quot;</span></code>);
+<code class="docutils literal notranslate"><span class="pre">icao_code</span></code> the four-letter code pilots use (<code class="docutils literal notranslate"><span class="pre">&quot;EGLL&quot;</span></code>). <code class="docutils literal notranslate"><span class="pre">size</span></code> is
+<code class="docutils literal notranslate"><span class="pre">&quot;large&quot;</span></code>, <code class="docutils literal notranslate"><span class="pre">&quot;medium&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;small&quot;</span></code>. <code class="docutils literal notranslate"><span class="pre">country_code</span></code> is the
+two-letter code as published by OurAirports.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyworldatlas.Airport.label">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pyworldatlas.Airport.label" title="Link to this definition"></a></dt>
+<dd><p>Return a compact label such as <code class="docutils literal notranslate"><span class="pre">&quot;LHR</span> <span class="pre">·</span> <span class="pre">London</span> <span class="pre">Heathrow</span> <span class="pre">Airport</span> <span class="pre">(GB)&quot;</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Airport.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iata_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">icao_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">municipality</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">country_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyworldatlas.Coordinate" title="pyworldatlas.models.geography.Coordinate"><span class="pre">Coordinate</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">elevation_m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">size</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyworldatlas.Airport.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyworldatlas.WorldHeritageSite">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyworldatlas.</span></span><span class="sig-name descname"><span class="pre">WorldHeritageSite</span></span><a class="reference internal" href="_modules/pyworldatlas/models/places.html#WorldHeritageSite"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.WorldHeritageSite" title="Link to this definition"></a></dt>
+<dd><p>A site on the UNESCO World Heritage List, from Wikidata.</p>
+<p><code class="docutils literal notranslate"><span class="pre">site_id</span></code> is the list number. <code class="docutils literal notranslate"><span class="pre">category</span></code> is <code class="docutils literal notranslate"><span class="pre">&quot;cultural&quot;</span></code>,
+<code class="docutils literal notranslate"><span class="pre">&quot;natural&quot;</span></code>, or <code class="docutils literal notranslate"><span class="pre">&quot;mixed&quot;</span></code> from the site’s selection criteria.
+<code class="docutils literal notranslate"><span class="pre">coordinates</span></code> marks one representative point and <code class="docutils literal notranslate"><span class="pre">inscribed</span></code> the year
+the site was added, when known. Find sites by name, number, category, or
+distance from any place.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyworldatlas.WorldHeritageSite.label">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">label</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pyworldatlas.WorldHeritageSite.label" title="Link to this definition"></a></dt>
+<dd><p>Return a compact label such as <code class="docutils literal notranslate"><span class="pre">&quot;Taj</span> <span class="pre">Mahal,</span> <span class="pre">cultural&quot;</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.WorldHeritageSite.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coordinates</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyworldatlas.Coordinate" title="pyworldatlas.models.geography.Coordinate"><span class="pre">Coordinate</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">inscribed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">category</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyworldatlas.WorldHeritageSite.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyworldatlas.SiteDistance">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyworldatlas.</span></span><span class="sig-name descname"><span class="pre">SiteDistance</span></span><a class="reference internal" href="_modules/pyworldatlas/models/results.html#SiteDistance"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.SiteDistance" title="Link to this definition"></a></dt>
+<dd><p>A World Heritage site and its great-circle distance from an origin.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.SiteDistance.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/results.html#SiteDistance.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.SiteDistance.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Return JSON-compatible primitives for this nearby-site result.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.SiteDistance.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/results.html#SiteDistance.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.SiteDistance.to_json" title="Link to this definition"></a></dt>
+<dd><p>Serialize this nearby-site result without escaping Unicode text.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.SiteDistance.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">site</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyworldatlas.WorldHeritageSite" title="pyworldatlas.models.places.WorldHeritageSite"><span class="pre">WorldHeritageSite</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyworldatlas.SiteDistance.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyworldatlas.Antipode">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyworldatlas.</span></span><span class="sig-name descname"><span class="pre">Antipode</span></span><a class="reference internal" href="_modules/pyworldatlas/models/results.html#Antipode"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Antipode" title="Link to this definition"></a></dt>
+<dd><p>The point on the exact opposite side of the Earth from an origin.</p>
+<p><code class="docutils literal notranslate"><span class="pre">nearest</span></code> lists the known places closest to the antipode, nearest first;
+most antipodes are at sea, so the nearest place can be far away.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyworldatlas.Antipode.summary">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">summary</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pyworldatlas.Antipode.summary" title="Link to this definition"></a></dt>
+<dd><p>Return a plain-language description of the antipode.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Antipode.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/results.html#Antipode.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Antipode.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Return JSON-compatible primitives for this antipode.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Antipode.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/results.html#Antipode.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Antipode.to_json" title="Link to this definition"></a></dt>
+<dd><p>Serialize this antipode as JSON.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Antipode.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">origin</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyworldatlas.Coordinate" title="pyworldatlas.models.geography.Coordinate"><span class="pre">Coordinate</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">antipode</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyworldatlas.Coordinate" title="pyworldatlas.models.geography.Coordinate"><span class="pre">Coordinate</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">nearest</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pyworldatlas.PlaceDistance" title="pyworldatlas.models.results.PlaceDistance"><span class="pre">PlaceDistance</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyworldatlas.Antipode.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyworldatlas.PlaceQuestion">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyworldatlas.</span></span><span class="sig-name descname"><span class="pre">PlaceQuestion</span></span><a class="reference internal" href="_modules/pyworldatlas/models/learning.html#PlaceQuestion"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.PlaceQuestion" title="Link to this definition"></a></dt>
+<dd><p>A deterministic multiple-choice question about famous places.</p>
+<p><code class="docutils literal notranslate"><span class="pre">places</span></code> holds the places the question is about, so a learner can look
+up more after answering. Choices are in display order and <code class="docutils literal notranslate"><span class="pre">answer</span></code> is
+always one of them.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyworldatlas.PlaceQuestion.answer_number">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">answer_number</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pyworldatlas.PlaceQuestion.answer_number" title="Link to this definition"></a></dt>
+<dd><p>Return the correct choice number, counting from one.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.PlaceQuestion.is_correct">
+<span class="sig-name descname"><span class="pre">is_correct</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">response</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/learning.html#PlaceQuestion.is_correct"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.PlaceQuestion.is_correct" title="Link to this definition"></a></dt>
+<dd><p>Check a displayed answer (case-insensitive) or a one-based choice number.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.PlaceQuestion.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/learning.html#PlaceQuestion.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.PlaceQuestion.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Return JSON-compatible primitives for this question.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.PlaceQuestion.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/learning.html#PlaceQuestion.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.PlaceQuestion.to_json" title="Link to this definition"></a></dt>
+<dd><p>Serialize this question as JSON without escaping Unicode text.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.PlaceQuestion.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">topic</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prompt</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">choices</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">answer</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">places</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><a class="reference internal" href="#pyworldatlas.Place" title="pyworldatlas.models.places.Place"><span class="pre">Place</span></a><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyworldatlas.PlaceQuestion.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyworldatlas.Indicator">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyworldatlas.</span></span><span class="sig-name descname"><span class="pre">Indicator</span></span><a class="reference internal" href="_modules/pyworldatlas/models/statistics.html#Indicator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Indicator" title="Link to this definition"></a></dt>
+<dd><p>One statistic, such as life expectancy, with its unit and source.</p>
+<p><code class="docutils literal notranslate"><span class="pre">key</span></code> is the short name used by the atlas (<code class="docutils literal notranslate"><span class="pre">&quot;life_expectancy&quot;</span></code>) and
+<code class="docutils literal notranslate"><span class="pre">code</span></code> the World Bank indicator code (<code class="docutils literal notranslate"><span class="pre">&quot;SP.DYN.LE00.IN&quot;</span></code>).</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Indicator.format">
+<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/statistics.html#Indicator.format"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.Indicator.format" title="Link to this definition"></a></dt>
+<dd><p>Return a value with its unit, such as <code class="docutils literal notranslate"><span class="pre">&quot;84.7</span> <span class="pre">years&quot;</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.Indicator.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unit</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">decimals</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyworldatlas.Indicator.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticSeries">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyworldatlas.</span></span><span class="sig-name descname"><span class="pre">StatisticSeries</span></span><a class="reference internal" href="_modules/pyworldatlas/models/statistics.html#StatisticSeries"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.StatisticSeries" title="Link to this definition"></a></dt>
+<dd><p>Yearly values of one indicator for one country, or <code class="docutils literal notranslate"><span class="pre">&quot;world&quot;</span></code>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">values</span></code> runs from <code class="docutils literal notranslate"><span class="pre">first_year</span></code> one year at a time; a year the
+publisher has no value for is <code class="docutils literal notranslate"><span class="pre">None</span></code> and is never filled in.</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticSeries.last_year">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">last_year</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">int</span></em><a class="headerlink" href="#pyworldatlas.StatisticSeries.last_year" title="Link to this definition"></a></dt>
+<dd><p>Return the last year in the series.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticSeries.points">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">points</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">float</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></em><a class="headerlink" href="#pyworldatlas.StatisticSeries.points" title="Link to this definition"></a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">(year,</span> <span class="pre">value)</span></code> pairs for every year with a value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticSeries.value">
+<span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/statistics.html#StatisticSeries.value"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.StatisticSeries.value" title="Link to this definition"></a></dt>
+<dd><p>Return the value for <code class="docutils literal notranslate"><span class="pre">year</span></code>, or <code class="docutils literal notranslate"><span class="pre">None</span></code> when there is none.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticSeries.latest">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">latest</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><a class="reference internal" href="#pyworldatlas.StatisticValue" title="pyworldatlas.models.statistics.StatisticValue"><span class="pre">StatisticValue</span></a><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></em><a class="headerlink" href="#pyworldatlas.StatisticSeries.latest" title="Link to this definition"></a></dt>
+<dd><p>Return the most recent published value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticSeries.sparkline">
+<span class="sig-name descname"><span class="pre">sparkline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">30</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/statistics.html#StatisticSeries.sparkline"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.StatisticSeries.sparkline" title="Link to this definition"></a></dt>
+<dd><p>Return a one-line text chart, such as <code class="docutils literal notranslate"><span class="pre">&quot;▁▂▃▄▅▆▇█&quot;</span></code>.</p>
+<p>The series is shown in at most <code class="docutils literal notranslate"><span class="pre">width</span></code> steps, each the average of
+its years; years with no value show as a space.</p>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticSeries.summary">
+<em class="property"><span class="k"><span class="pre">property</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">summary</span></span><em class="property"><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="pre">str</span></em><a class="headerlink" href="#pyworldatlas.StatisticSeries.summary" title="Link to this definition"></a></dt>
+<dd><p>Return a plain-language sentence about the first and latest values.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticSeries.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/statistics.html#StatisticSeries.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.StatisticSeries.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Return JSON-compatible primitives for this series.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticSeries.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/statistics.html#StatisticSeries.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.StatisticSeries.to_json" title="Link to this definition"></a></dt>
+<dd><p>Serialize this series as JSON.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticSeries.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indicator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyworldatlas.Indicator" title="pyworldatlas.models.statistics.Indicator"><span class="pre">Indicator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">area_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">first_year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">values</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">float</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="p"><span class="pre">...</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyworldatlas.StatisticSeries.__init__" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticValue">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyworldatlas.</span></span><span class="sig-name descname"><span class="pre">StatisticValue</span></span><a class="reference internal" href="_modules/pyworldatlas/models/statistics.html#StatisticValue"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.StatisticValue" title="Link to this definition"></a></dt>
+<dd><p>One published value: an indicator for a country (or the world) in a year.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticValue.to_dict">
+<span class="sig-name descname"><span class="pre">to_dict</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/statistics.html#StatisticValue.to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.StatisticValue.to_dict" title="Link to this definition"></a></dt>
+<dd><p>Return JSON-compatible primitives for this value.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticValue.to_json">
+<span class="sig-name descname"><span class="pre">to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indent</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/pyworldatlas/models/statistics.html#StatisticValue.to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#pyworldatlas.StatisticValue.to_json" title="Link to this definition"></a></dt>
+<dd><p>Serialize this value as JSON.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyworldatlas.StatisticValue.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">indicator</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#pyworldatlas.Indicator" title="pyworldatlas.models.statistics.Indicator"><span class="pre">Indicator</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">area</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#pyworldatlas.StatisticValue.__init__" title="Link to this definition"></a></dt>
 <dd></dd></dl>
 
 </dd></dl>

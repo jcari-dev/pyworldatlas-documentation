@@ -7,17 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>pyworldatlas.models.places | PyWorldAtlas</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=d75fae25" />
       <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="../../../_static/pyworldatlas.css?v=fbbe6ba3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pyworldatlas.css?v=edc9c83a" />
 
   
     <link rel="shortcut icon" href="../../../_static/globe.svg"/>
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/_modules/pyworldatlas/models/places.html" />
       <script src="../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../../_static/documentation_options.js?v=57cbeb03"></script>
+      <script src="../../../_static/documentation_options.js?v=61ccb1f1"></script>
       <script src="../../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script defer="defer" src="../../../_static/playground.js?v=bdb8a868"></script>
+      <script defer="defer" src="../../../_static/playground.js?v=c2e4ffc5"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -93,6 +93,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../learning.html#turn-coordinates-into-a-compass-activity">Turn coordinates into a compass activity</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning.html#explore-nearby-cities">Explore nearby cities</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning.html#build-a-repeatable-multiple-choice-lesson">Build a repeatable multiple-choice lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning.html#questions-about-famous-places">Questions about famous places</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning.html#dig-through-the-earth">Dig through the Earth</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning.html#where-to-go-next">Where to go next</a></li>
 </ul>
 </li>
@@ -133,6 +135,19 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../places.html#what-is-in-the-school-atlas">What is in the school atlas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../places.html#more-places-with-packs">More places with packs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../places.html#how-it-stays-small-and-fast">How it stays small and fast</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../landmarks.html">Airports and World Heritage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../landmarks.html#airports">Airports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../landmarks.html#world-heritage-sites">World Heritage sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../landmarks.html#sources">Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">The world in numbers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../statistics.html#a-country-over-time">A country over time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../statistics.html#one-value">One value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../statistics.html#sorting">Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../statistics.html#how-the-numbers-are-kept">How the numbers are kept</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../maps.html">Interactive 3D maps</a><ul>
@@ -285,12 +300,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#noaa-ncei-etopo-2022">NOAA NCEI ETOPO 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#world-bank-world-development-indicators">World Bank World Development Indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#ourairports">OurAirports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#wikidata-world-heritage-statements">Wikidata World Heritage statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#wikidata-travel-basics-statements">Wikidata travel-basics statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#source-priority-in-the-0-11-1-release">Source priority in the 0.11.1 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#source-priority-in-the-0-12-0-release">Source priority in the 0.12.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -342,6 +360,14 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CountryRanking"><code class="docutils literal notranslate"><span class="pre">CountryRanking</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CapitalDistance"><code class="docutils literal notranslate"><span class="pre">CapitalDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CityDistance"><code class="docutils literal notranslate"><span class="pre">CityDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.Airport"><code class="docutils literal notranslate"><span class="pre">Airport</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.WorldHeritageSite"><code class="docutils literal notranslate"><span class="pre">WorldHeritageSite</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.SiteDistance"><code class="docutils literal notranslate"><span class="pre">SiteDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.Antipode"><code class="docutils literal notranslate"><span class="pre">Antipode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.PlaceQuestion"><code class="docutils literal notranslate"><span class="pre">PlaceQuestion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.Indicator"><code class="docutils literal notranslate"><span class="pre">Indicator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.StatisticSeries"><code class="docutils literal notranslate"><span class="pre">StatisticSeries</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.StatisticValue"><code class="docutils literal notranslate"><span class="pre">StatisticValue</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.SunTimes"><code class="docutils literal notranslate"><span class="pre">SunTimes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.PlaceDistance"><code class="docutils literal notranslate"><span class="pre">PlaceDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
@@ -398,26 +424,27 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id1">0.11.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id2">0.11.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id3">0.10.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id4">0.9.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id5">0.9.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id6">0.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id7">0.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id8">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id9">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id10">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id11">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id12">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id13">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id14">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id1">0.12.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id2">0.11.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id3">0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id4">0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id5">0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id6">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id7">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id8">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id9">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id10">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id11">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id12">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id13">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id14">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id15">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#reserved-tag-not-published-to-pypi">0.4.0 (reserved tag, not published to PyPI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id15">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id16">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id17">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id16">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id17">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id18">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#unpublished-candidate">0.2.0 (unpublished candidate)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id18">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id19">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -506,6 +533,66 @@
     <span class="k">def</span><span class="w"> </span><span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
 <span class="w">        </span><span class="sd">"""Return a compact place label such as ``"Tokyo (JP)"``."""</span>
         <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">country_code</span><span class="si">}</span><span class="s2">)"</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span></div>
+
+
+
+<div class="viewcode-block" id="Airport">
+<a class="viewcode-back" href="../../../api.html#pyworldatlas.Airport">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Airport</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""An airport with scheduled passenger flights, from OurAirports.</span>
+
+<span class="sd">    ``iata_code`` is the three-letter code on tickets and bags (``"LHR"``);</span>
+<span class="sd">    ``icao_code`` the four-letter code pilots use (``"EGLL"``). ``size`` is</span>
+<span class="sd">    ``"large"``, ``"medium"``, or ``"small"``. ``country_code`` is the</span>
+<span class="sd">    two-letter code as published by OurAirports.</span>
+<span class="sd">    """</span>
+
+    <span class="n">iata_code</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">icao_code</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">municipality</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">country_code</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">coordinates</span><span class="p">:</span> <span class="n">Coordinate</span>
+    <span class="n">elevation_m</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">size</span><span class="p">:</span> <span class="nb">str</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return a compact label such as ``"LHR · London Heathrow Airport (GB)"``."""</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">iata_code</span><span class="si">}</span><span class="s2"> · </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">country_code</span><span class="si">}</span><span class="s2">)"</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span></div>
+
+
+
+<div class="viewcode-block" id="WorldHeritageSite">
+<a class="viewcode-back" href="../../../api.html#pyworldatlas.WorldHeritageSite">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">WorldHeritageSite</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A site on the UNESCO World Heritage List, from Wikidata.</span>
+
+<span class="sd">    ``site_id`` is the list number. ``category`` is ``"cultural"``,</span>
+<span class="sd">    ``"natural"``, or ``"mixed"`` from the site's selection criteria.</span>
+<span class="sd">    ``coordinates`` marks one representative point and ``inscribed`` the year</span>
+<span class="sd">    the site was added, when known. Find sites by name, number, category, or</span>
+<span class="sd">    distance from any place.</span>
+<span class="sd">    """</span>
+
+    <span class="n">site_id</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">name</span><span class="p">:</span> <span class="nb">str</span>
+    <span class="n">coordinates</span><span class="p">:</span> <span class="n">Coordinate</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">inscribed</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span>
+    <span class="n">category</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="kc">None</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">label</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return a compact label such as ``"Taj Mahal, cultural"``."""</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">category</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">category</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span>
 
     <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">label</span></div>

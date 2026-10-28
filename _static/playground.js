@@ -23,6 +23,12 @@
   const datasetVersion = root.querySelector('[data-role="dataset-version"]');
   const editorHint = root.querySelector('[data-role="editor-hint"]');
   const filename = root.querySelector('[data-role="filename"]');
+  const exploreForm = root.querySelector('[data-role="explore-form"]');
+  const exploreQuery = root.querySelector('[data-role="explore-query"]');
+  const exploreButton = root.querySelector('[data-action="explore"]');
+  const exploreStatus = root.querySelector('[data-role="explore-status"]');
+  const exploreResults = root.querySelector('[data-role="explore-results"]');
+  let activeExplore = 0;
 
   const presets = [
     {
@@ -315,6 +321,64 @@ with Atlas() as atlas:
 
 print(json.dumps(portable, ensure_ascii=False, indent=2))`,
     },
+    {
+      category: "Every place on Earth",
+      id: "places",
+      label: "Find any place",
+      description: "Search 200,000 places by name",
+      code: `from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    for name in ("Everest", "Lake Titicaca", "Sahara", "Machu Picchu"):
+        place = atlas.search_places(name, limit=1)[0]
+        print(f"{place}  at  {place.coordinates.format(precision=2)}")
+
+    print("\\nWhat is near the Eiffel Tower?")
+    for nearby in atlas.places_near((48.8584, 2.2945), limit=5):
+        print(f"{nearby.distance:6.2f} km  {nearby.place}")`,
+    },
+    {
+      category: "Every place on Earth",
+      id: "sun",
+      label: "Sun and seasons",
+      description: "Daylight around the world on one day",
+      code: `from datetime import date
+from pyworldatlas import Atlas
+
+day = date(2026, 12, 21)
+with Atlas() as atlas:
+    print(f"Hours of daylight on {day:%d %B %Y}:\\n")
+    for city in ("Oslo", "London", "Cairo", "Nairobi", "Sydney"):
+        sun = atlas.sun(city, day)
+        bar = "#" * round(sun.day_length_hours)
+        print(f"{city:<8} {sun.daylight:>12}  {bar}")`,
+    },
+    {
+      category: "Every place on Earth",
+      id: "travel",
+      label: "Travel basics",
+      description: "Plugs, power, and driving side",
+      code: `from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    for name in ("Japan", "United Kingdom", "Brazil", "India", "Kenya"):
+        country = atlas.country(name)
+        if country.travel:
+            print(f"{country.flag} {country.name:<15} {country.travel.summary}")`,
+    },
+    {
+      category: "Every place on Earth",
+      id: "one-search",
+      label: "One search for everything",
+      description: "Countries and places together",
+      code: `from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    for query in ("Georgia", "Victoria", "Amazon"):
+        print(f"{query}:")
+        for result in atlas.lookup(query, limit=4):
+            print(f"  {result}")`,
+    },
   ];
 
   let worker = null;
@@ -335,6 +399,8 @@ print(json.dumps(portable, ensure_ascii=False, indent=2))`,
 
   function setControls() {
     runButton.disabled = !ready || running;
+    exploreButton.disabled = !ready || running;
+    exploreQuery.disabled = !ready;
     stopButton.disabled = !running;
     resetButton.disabled = running;
     editor.readOnly = running;
@@ -443,6 +509,13 @@ print(json.dumps(portable, ensure_ascii=False, indent=2))`,
       editorHint.textContent = "Your Python session persists between runs.";
       setControls();
       clearOutput("Ready. A complete recipe is already loaded. Press Run Python.");
+      return;
+    }
+
+    if (message.type === "explore-result") {
+      if (message.id === activeExplore) {
+        renderCards(message);
+      }
       return;
     }
 
@@ -555,6 +628,65 @@ print(json.dumps(portable, ensure_ascii=False, indent=2))`,
       presetsElement.append(group);
     }
   }
+
+  function renderCards(message) {
+    exploreResults.replaceChildren();
+    if (message.error) {
+      exploreStatus.textContent = "That search could not run. Try another name.";
+      return;
+    }
+    if (!message.cards.length) {
+      exploreStatus.textContent = `Nothing found for "${exploreQuery.value.trim()}". Check the spelling or try a nearby city.`;
+      return;
+    }
+    const noun = message.cards.length === 1 ? "result" : "results";
+    const time = message.elapsedMs < 1000 ? `${Math.max(1, message.elapsedMs)} ms` : `${(message.elapsedMs / 1000).toFixed(1)} seconds`;
+    exploreStatus.textContent = `${message.cards.length} ${noun} in ${time}.`;
+    for (const card of message.cards) {
+      const item = document.createElement("li");
+      item.className = `atlas-explore-card atlas-explore-${card.kind}`;
+      const heading = document.createElement("h4");
+      heading.textContent = card.title;
+      const subtitle = document.createElement("p");
+      subtitle.className = "atlas-explore-subtitle";
+      subtitle.textContent = card.subtitle;
+      const facts = document.createElement("dl");
+      for (const [label, value] of card.facts) {
+        const term = document.createElement("dt");
+        term.textContent = label;
+        const detail = document.createElement("dd");
+        detail.textContent = value;
+        facts.append(term, detail);
+      }
+      const open = document.createElement("button");
+      open.type = "button";
+      open.className = "atlas-button atlas-explore-open";
+      open.textContent = "Open in the editor";
+      open.setAttribute("aria-label", `Open the Python for ${card.title} in the editor`);
+      open.addEventListener("click", () => {
+        editor.value = card.code;
+        filename.textContent = "my_lookup.py";
+        for (const button of presetsElement.querySelectorAll("button")) {
+          button.setAttribute("aria-pressed", "false");
+        }
+        editor.focus();
+        editorHint.textContent = "The code for this card is in the editor. Press Run Python, then try changing it.";
+      });
+      item.append(heading, subtitle, facts, open);
+      exploreResults.append(item);
+    }
+  }
+
+  exploreForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const query = exploreQuery.value.trim();
+    if (!ready || !query) {
+      return;
+    }
+    activeExplore += 1;
+    exploreStatus.textContent = `Looking up "${query}"…`;
+    worker.postMessage({ type: "explore", id: activeExplore, query });
+  });
 
   runButton.addEventListener("click", runCode);
   stopButton.addEventListener("click", stopRun);

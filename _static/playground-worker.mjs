@@ -122,8 +122,109 @@ json.dumps(_details)
   post("ready", { details: JSON.parse(details) });
 }
 
+const EXPLORE_HELPERS = `
+import json as _json
+from datetime import date as _date
+from pyworldatlas import Atlas as _Atlas, Country as _Country
+
+_explore_atlas = _Atlas()
+
+
+def _explore_sun(where):
+    try:
+        sun = _explore_atlas.sun(where, _date.today())
+    except Exception:
+        return None
+    if sun.sunrise is None:
+        return "Midnight sun today" if sun.day_length_hours >= 24 else "Polar night today"
+    return f"{sun.daylight} of daylight today"
+
+
+def _explore(query):
+    cards = []
+    for item in _explore_atlas.lookup(query, limit=5):
+        facts = []
+        if isinstance(item, _Country):
+            if item.capital:
+                facts.append(["Capital", item.capital.name])
+            if item.continent:
+                facts.append(["Continent", item.continent])
+            if item.population:
+                facts.append(["Population", f"{item.population:,}"])
+            if item.area_km2:
+                facts.append(["Area", f"{item.area_km2:,.0f} km²"])
+            if item.languages:
+                facts.append(["Languages", ", ".join(language.name for language in item.languages[:3])])
+            if item.currency:
+                facts.append(["Currency", item.currency.name or item.currency.code])
+            travel = getattr(item, "travel", None)
+            if travel is not None and travel.summary:
+                facts.append(["Travel", travel.summary])
+            sun = _explore_sun(item)
+            if sun:
+                facts.append(["Sun in the capital", sun])
+            cards.append({
+                "kind": "country", "title": f"{item.flag} {item.name}", "subtitle": "Country or area",
+                "facts": facts,
+                "code": f'from pyworldatlas import Atlas\\n\\nwith Atlas() as atlas:\\n    print(atlas.country("{item.alpha2}").summary())',
+            })
+        else:
+            facts.append(["Kind", item.kind])
+            facts.append(["Location", item.coordinates.format(precision=2)])
+            if item.elevation_m is not None:
+                facts.append(["Height", f"{item.elevation_m:,} m"])
+            if item.population:
+                facts.append(["Population", f"{item.population:,}"])
+            nearby = [
+                f"{result.place.english_name} ({result.distance:,.0f} km)"
+                for result in _explore_atlas.places_near(item, limit=3)
+            ]
+            if nearby:
+                facts.append(["Nearby", ", ".join(nearby)])
+            sun = _explore_sun(item)
+            if sun:
+                facts.append(["Sun", sun])
+            name = item.english_name.replace('"', '\\\\"')
+            cards.append({
+                "kind": "place", "title": item.english_name, "subtitle": item.kind.capitalize(),
+                "facts": facts,
+                "code": (
+                    "from pyworldatlas import Atlas\\n\\nwith Atlas() as atlas:\\n"
+                    f'    place = atlas.search_places("{name}", limit=1)[0]\\n'
+                    "    print(place, place.coordinates.format())\\n"
+                    "    for nearby in atlas.places_near(place, limit=5):\\n"
+                    '        print(f"{nearby.distance:7.1f} km  {nearby.place}")'
+                ),
+            })
+    return _json.dumps(cards, ensure_ascii=False)
+`;
+let warmPromise = null;
+
+// Build the place index once, right after Python is ready, so the first
+// search a learner types is already fast.
+async function warmUp() {
+  await pyodide.runPythonAsync(EXPLORE_HELPERS);
+  await pyodide.runPythonAsync('_explore_atlas.search_places("a", limit=1)');
+}
+
+async function explore(id, query) {
+  await readyPromise;
+  await warmPromise;
+  const started = performance.now();
+  try {
+    pyodide.globals.set("_explore_query", query);
+    const cards = await pyodide.runPythonAsync("_explore(_explore_query)");
+    post("explore-result", { id, cards: JSON.parse(cards), elapsedMs: Math.round(performance.now() - started) });
+  } catch (error) {
+    post("explore-result", { id, cards: [], error: describeError(error) });
+  } finally {
+    pyodide.globals.delete("_explore_query");
+  }
+}
+
 async function runCode(id, code) {
   await readyPromise;
+  await warmPromise;
   const started = performance.now();
 
   pyodide.setStdout({
@@ -169,10 +270,15 @@ self.addEventListener("message", (event) => {
       });
       throw error;
     });
+    warmPromise = readyPromise.then(warmUp).catch(() => undefined);
     return;
   }
 
   if (message.type === "run") {
     void runCode(message.id, message.code);
+  }
+
+  if (message.type === "explore") {
+    void explore(message.id, message.query);
   }
 });

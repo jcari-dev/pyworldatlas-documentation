@@ -11,23 +11,22 @@ public API until it is implemented, tested, documented, and published.
 
       .. rubric:: Current release
 
-      **0.11.0** adds every place on Earth: a school atlas of 207,664 places
-      in every install, 11 million with packs, one search for everything, and
-      places on the 3D maps.
+      **0.12.0** adds the world in numbers: eleven World Bank indicators
+      since 1960, airports and World Heritage sites, place quizzes, and a
+      new playground.
 
    .. container:: atlas-card atlas-card-teal
 
       .. rubric:: Next milestone
 
-      **0.11.x** adds travel basics (plugs, mains supply, driving side) and
-      more landmark detail, then **0.12** official statistics.
+      **0.13** adds generated reference entries for every country, place,
+      and landmark, and an offline site export.
 
    .. container:: atlas-card atlas-card-gold
 
       .. rubric:: On the way to 1.0
 
-      **0.12** adds official statistics with sources and years, and **0.13**
-      generated reference entries and an offline site export.
+      **1.0** comes once the public API has proven stable in real use.
 
 .. list-table:: Release train
    :header-rows: 1
@@ -94,9 +93,9 @@ public API until it is implemented, tested, documented, and published.
      - Every place on Earth, one search for everything, and places on 3D maps
      - Published
    * - 0.12.0
-     - Planned
-     - Official statistics pack with sourced, dated indicators
-     - Not yet
+     - Complete
+     - Statistics and landmarks packs, place quizzes, and the new playground
+     - Published
    * - 0.13.0
      - Planned
      - Generated reference entries and offline site export

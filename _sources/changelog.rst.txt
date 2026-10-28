@@ -4,6 +4,25 @@ Changelog
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
 
+0.12.0
+------
+
+The world in numbers, landmarks, and a new playground.
+
+- **Statistics pack:** eleven basic World Bank indicators for every country
+  since 1960, such as population, life expectancy, forest area, and access to
+  electricity. Time series, one-line charts, plain-language summaries, and
+  sorting without judgement. See :doc:`statistics`.
+- **Landmarks pack:** airports with scheduled flights and UNESCO World
+  Heritage sites, found by code, name, category, or distance. See
+  :doc:`landmarks`.
+- **New playground:** look up any country or place and open the Python behind
+  each answer; four new recipes. See :doc:`playground`.
+- **Learning:** place quizzes (kinds of places, which is higher, which is
+  closer to the equator) and antipodes ("dig through the Earth").
+- **Runs on small computers:** every place pack now unpacks in under 300 MB of
+  memory, and ``import pyworldatlas`` is faster.
+
 0.11.1
 ------
 

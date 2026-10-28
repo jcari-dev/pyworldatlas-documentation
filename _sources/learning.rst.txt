@@ -163,6 +163,43 @@ Discover the complete menu with :meth:`~pyworldatlas.Atlas.learning_topics`.
 The same topics work with :meth:`~pyworldatlas.Atlas.flashcards` when answer
 choices are not needed.
 
+Questions about famous places
+-----------------------------
+
+:meth:`~pyworldatlas.Atlas.place_quiz` asks about the best-known mountains,
+islands, lakes, and waterfalls. ``"kinds"`` asks what kind of place something
+is, ``"higher"`` which of two mountains is higher, and ``"closer_to_equator"``
+which of two places is closer to the equator. Every answer comes straight from
+the data, and the same ``seed`` always gives the same questions.
+
+.. doctest::
+
+   >>> from pyworldatlas import Atlas
+   >>> with Atlas() as atlas:
+   ...     question = atlas.place_quiz("higher", count=1, seed="lesson-1")[0]
+   >>> question.prompt.startswith("Which is higher")
+   True
+   >>> question.is_correct(question.answer_number)
+   True
+
+Dig through the Earth
+---------------------
+
+:meth:`~pyworldatlas.Atlas.antipode` finds the point on the exact opposite
+side of the planet, and the places nearest it. Most of the world's antipodes
+are at sea, which is a fun way to see how much of the Earth is ocean.
+
+.. doctest::
+
+   >>> with Atlas() as atlas:
+   ...     madrid = atlas.antipode("Madrid")
+   >>> madrid.nearest[0].place.country_code
+   'NZ'
+
+.. code-block:: bash
+
+   pyworldatlas antipode Madrid
+
 Where to go next
 ----------------
 

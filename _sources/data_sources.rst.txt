@@ -6,7 +6,7 @@ pipeline downloads raw snapshots, records checksums, normalizes independent
 records, validates them, and generates the SQLite database. The installed
 runtime never contacts these services.
 
-The 0.11 core uses dataset ``2026.10.27.1``. Optional map editions add
+The 0.12 core uses dataset ``2026.10.27.1``. Optional map editions add
 separately installed, integrity-checked visualization records derived from
 pinned elevation, climate, outline, and river snapshots. Neither the core nor
 the installed map viewer contacts a source service at runtime.
@@ -287,6 +287,67 @@ Wikidata national-motto statements
    are included. The runtime does not infer constitutional, statutory,
    traditional, or current legal status, and it does not ingest tourism slogans.
 
+World Bank World Development Indicators
+---------------------------------------
+
+**Purpose**
+   Eleven basic indicators by country and year for the optional statistics
+   pack: population, population density, urban population, life expectancy,
+   birth and death rates, forest and agricultural land, access to electricity
+   and basic drinking water, and internet use.
+
+**Official location**
+   https://datacatalog.worldbank.org/ (API: https://api.worldbank.org/v2/)
+
+**Current snapshot**
+   API responses retrieved 2026-10-28 (data last updated by the World Bank on
+   2026-10-08), with each file's checksum retained in the manifest.
+
+**Terms**
+   Creative Commons Attribution 4.0. Each indicator's own license field is
+   checked to read CC BY 4.0 before it is used.
+
+**Review boundary**
+   Values are used as published. The official statistics section of the
+   editorial policy sets which indicators are admitted: basic, descriptive
+   measures only, with no composite indices or judgement-laden indicators.
+
+OurAirports
+-----------
+
+**Purpose**
+   Airports with scheduled passenger service for the optional landmarks pack.
+
+**Official location**
+   https://ourairports.com/data/
+
+**Current snapshot**
+   ``airports.csv`` retrieved 2026-10-28, with its checksum retained. Only
+   airports with scheduled service and an IATA code are kept. Country codes
+   are kept as OurAirports publishes them.
+
+**Terms**
+   Released to the public domain.
+
+Wikidata World Heritage statements
+----------------------------------
+
+**Purpose**
+   UNESCO World Heritage List numbers, names, locations, years of inscription,
+   and selection criteria for the optional landmarks pack.
+
+**Official locations**
+   https://query.wikidata.org/sparql and
+   https://www.wikidata.org/wiki/Wikidata:Licensing
+
+**Current snapshot**
+   A 2026-10-28 SPARQL response; the exact query and response checksum are
+   retained. One record is kept per list number. Sites carry coordinates and
+   no country field.
+
+**Terms**
+   Wikidata structured data is released under Creative Commons CC0 1.0.
+
 Wikidata travel-basics statements
 ---------------------------------
 
@@ -391,7 +452,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.11.1 release
+Source priority in the 0.12.0 release
 -------------------------------------
 
 .. list-table::
