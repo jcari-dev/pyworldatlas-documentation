@@ -14,7 +14,7 @@
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/_modules/pyworldatlas/maps/_scene.html" />
       <script src="../../../_static/jquery.js?v=5d32c60e"></script>
       <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="../../../_static/documentation_options.js?v=82662543"></script>
+      <script src="../../../_static/documentation_options.js?v=f3b36f1a"></script>
       <script src="../../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="../../../_static/playground.js?v=bdb8a868"></script>
@@ -125,9 +125,20 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../country_profile.html#immutability">Immutability</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="../../../places.html">Every place on Earth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#searching-by-name">Searching by name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#one-search-for-everything">One search for everything</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#the-best-known-places-in-a-country">The best-known places in a country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#what-is-near-here">What is near here?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#what-is-in-the-school-atlas">What is in the school atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#more-places-with-packs">More places with packs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#how-it-stays-small-and-fast">How it stays small and fast</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../../../maps.html">Interactive 3D maps</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../maps.html#install-a-map-pack">Install a map pack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../maps.html#open-your-first-map">Open your first map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../maps.html#places-on-the-map">Places on the map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../maps.html#create-a-documentation-gif">Create a documentation GIF</a></li>
@@ -225,6 +236,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../searching.html#safe-lookup">Safe lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../searching.html#ranked-search">Ranked search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../searching.html#city-name-search">City-name search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../searching.html#countries-and-places-together">Countries and places together</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../searching.html#filtering">Filtering</a></li>
 </ul>
 </li>
@@ -272,7 +284,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#source-priority-in-the-0-10-0-release">Source priority in the 0.10.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#source-priority-in-the-0-11-0-release">Source priority in the 0.11.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -324,6 +336,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CountryRanking"><code class="docutils literal notranslate"><span class="pre">CountryRanking</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CapitalDistance"><code class="docutils literal notranslate"><span class="pre">CapitalDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CityDistance"><code class="docutils literal notranslate"><span class="pre">CityDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.PlaceDistance"><code class="docutils literal notranslate"><span class="pre">PlaceDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.QuizQuestion"><code class="docutils literal notranslate"><span class="pre">QuizQuestion</span></code></a></li>
@@ -378,24 +391,25 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id1">0.10.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id2">0.9.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id3">0.9.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id4">0.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id5">0.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id6">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id7">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id8">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id9">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id10">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id11">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id12">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id1">0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id2">0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id3">0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id4">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id5">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id6">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id7">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id8">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id9">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id10">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id11">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id12">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id13">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#reserved-tag-not-published-to-pypi">0.4.0 (reserved tag, not published to PyPI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id13">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id14">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id15">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id14">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id15">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id16">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#unpublished-candidate">0.2.0 (unpublished candidate)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id16">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id17">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -473,6 +487,15 @@
     <span class="p">(</span><span class="mf">0.76</span><span class="p">,</span> <span class="s2">"#9a7556"</span><span class="p">),</span>
     <span class="p">(</span><span class="mf">0.90</span><span class="p">,</span> <span class="s2">"#74675d"</span><span class="p">),</span>
     <span class="p">(</span><span class="mf">1.00</span><span class="p">,</span> <span class="s2">"#f1f3f4"</span><span class="p">),</span>
+<span class="p">)</span>
+
+<span class="c1"># Place layers: (category, layer name, marker symbol, color). Each layer has its</span>
+<span class="c1"># own shape as well as its own color, so it can be told apart without color.</span>
+<span class="n">PLACE_LAYERS</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="p">(</span><span class="s2">"town"</span><span class="p">,</span> <span class="s2">"Towns"</span><span class="p">,</span> <span class="s2">"circle"</span><span class="p">,</span> <span class="s2">"#ffffff"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"landform"</span><span class="p">,</span> <span class="s2">"Mountains and islands"</span><span class="p">,</span> <span class="s2">"square"</span><span class="p">,</span> <span class="s2">"#c2410c"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"water"</span><span class="p">,</span> <span class="s2">"Lakes and seas"</span><span class="p">,</span> <span class="s2">"diamond"</span><span class="p">,</span> <span class="s2">"#0284c7"</span><span class="p">),</span>
+    <span class="p">(</span><span class="s2">"landmark"</span><span class="p">,</span> <span class="s2">"Landmarks"</span><span class="p">,</span> <span class="s2">"x"</span><span class="p">,</span> <span class="s2">"#7c3aed"</span><span class="p">),</span>
 <span class="p">)</span>
 
 <span class="n">_CLIMATE_COLORS</span> <span class="o">=</span> <span class="p">{</span>
@@ -616,7 +639,7 @@
     <span class="n">quality</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
     <span class="n">template</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
-<span class="w">    </span><span class="sd">"""Return the complete figure: terrain, outline, rivers, capital, and controls."""</span>
+<span class="w">    </span><span class="sd">"""Return the complete figure: terrain, outline, rivers, capital, places, and controls."""</span>
 
     <span class="n">rows</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">"rows"</span><span class="p">]),</span> <span class="nb">int</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">"columns"</span><span class="p">])</span>
     <span class="n">longitudes</span> <span class="o">=</span> <span class="n">_axis</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">"west"</span><span class="p">]),</span> <span class="nb">float</span><span class="p">(</span><span class="n">payload</span><span class="p">[</span><span class="s2">"longitudeStep"</span><span class="p">]),</span> <span class="n">columns</span><span class="p">)</span>
@@ -770,6 +793,44 @@
             <span class="s2">"borderpad"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
             <span class="s2">"font"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"color"</span><span class="p">:</span> <span class="s2">"#7f1734"</span><span class="p">,</span> <span class="s2">"size"</span><span class="p">:</span> <span class="mi">13</span><span class="p">},</span>
         <span class="p">}</span>
+    <span class="k">for</span> <span class="n">category</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">PLACE_LAYERS</span><span class="p">:</span>
+        <span class="n">members</span> <span class="o">=</span> <span class="p">[</span><span class="n">place</span> <span class="k">for</span> <span class="n">place</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">places</span> <span class="k">if</span> <span class="n">place</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">category</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">members</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">xs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ys</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">zs</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">details</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">_name</span><span class="p">,</span> <span class="n">kind</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">latitude</span><span class="p">,</span> <span class="n">longitude</span><span class="p">,</span> <span class="n">height</span> <span class="ow">in</span> <span class="n">members</span><span class="p">:</span>
+            <span class="k">while</span> <span class="n">longitude</span> <span class="o">&lt;</span> <span class="n">longitudes</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+                <span class="n">longitude</span> <span class="o">+=</span> <span class="mf">360.0</span>
+            <span class="k">while</span> <span class="n">longitude</span> <span class="o">&gt;</span> <span class="n">longitudes</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+                <span class="n">longitude</span> <span class="o">-=</span> <span class="mf">360.0</span>
+            <span class="n">xs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">longitude</span><span class="p">)</span>
+            <span class="n">ys</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">latitude</span><span class="p">)</span>
+            <span class="n">zs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_nearest_elevation</span><span class="p">(</span><span class="n">longitude</span><span class="p">,</span> <span class="n">latitude</span><span class="p">,</span> <span class="n">longitudes</span><span class="p">,</span> <span class="n">latitudes</span><span class="p">,</span> <span class="n">elevation</span><span class="p">)</span> <span class="o">+</span> <span class="mi">90</span><span class="p">)</span>
+            <span class="n">details</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">kind</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">height</span><span class="si">:</span><span class="s2">,</span><span class="si">}</span><span class="s2"> m"</span> <span class="k">if</span> <span class="n">height</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="n">kind</span><span class="p">)</span>
+        <span class="n">traces</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="n">_trace</span><span class="p">(</span>
+                <span class="s2">"scatter3d"</span><span class="p">,</span>
+                <span class="n">x</span><span class="o">=</span><span class="n">xs</span><span class="p">,</span>
+                <span class="n">y</span><span class="o">=</span><span class="n">ys</span><span class="p">,</span>
+                <span class="n">z</span><span class="o">=</span><span class="n">zs</span><span class="p">,</span>
+                <span class="n">text</span><span class="o">=</span><span class="p">[</span><span class="n">place</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">place</span> <span class="ow">in</span> <span class="n">members</span><span class="p">],</span>
+                <span class="n">customdata</span><span class="o">=</span><span class="n">details</span><span class="p">,</span>
+                <span class="n">mode</span><span class="o">=</span><span class="s2">"markers"</span><span class="p">,</span>
+                <span class="n">marker</span><span class="o">=</span><span class="p">{</span>
+                    <span class="s2">"color"</span><span class="p">:</span> <span class="n">color</span><span class="p">,</span>
+                    <span class="s2">"size"</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+                    <span class="s2">"symbol"</span><span class="p">:</span> <span class="n">symbol</span><span class="p">,</span>
+                    <span class="s2">"line"</span><span class="p">:</span> <span class="p">{</span><span class="s2">"color"</span><span class="p">:</span> <span class="s2">"#1f2937"</span> <span class="k">if</span> <span class="n">color</span> <span class="o">==</span> <span class="s2">"#ffffff"</span> <span class="k">else</span> <span class="s2">"#ffffff"</span><span class="p">,</span> <span class="s2">"width"</span><span class="p">:</span> <span class="mf">1.5</span><span class="p">},</span>
+                <span class="p">},</span>
+                <span class="n">hovertemplate</span><span class="o">=</span><span class="s2">"&lt;b&gt;%</span><span class="si">{text}</span><span class="s2">&lt;/b&gt;&lt;br&gt;%</span><span class="si">{customdata}</span><span class="s2">&lt;extra&gt;&lt;/extra&gt;"</span><span class="p">,</span>
+                <span class="n">name</span><span class="o">=</span><span class="n">layer</span><span class="p">,</span>
+                <span class="n">meta</span><span class="o">=</span><span class="s2">"places"</span><span class="p">,</span>
+                <span class="n">showlegend</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
     <span class="n">present</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">index</span><span class="p">)</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">payload</span><span class="p">[</span><span class="s2">"climateLegend"</span><span class="p">])</span>
     <span class="n">map_annotations</span> <span class="o">=</span> <span class="p">(</span>
         <span class="p">([</span><span class="n">capital_annotation</span><span class="p">]</span> <span class="k">if</span> <span class="n">capital_annotation</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="p">[])</span>
@@ -1022,6 +1083,11 @@
     <span class="n">sentences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
         <span class="sa">f</span><span class="s2">"Rivers shown: </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">rivers</span><span class="p">)</span><span class="si">}</span><span class="s2">."</span> <span class="k">if</span> <span class="n">rivers</span> <span class="k">else</span> <span class="s2">"No major rivers are shown."</span>
     <span class="p">)</span>
+    <span class="k">for</span> <span class="n">category</span><span class="p">,</span> <span class="n">layer</span><span class="p">,</span> <span class="n">symbol</span><span class="p">,</span> <span class="n">_</span> <span class="ow">in</span> <span class="n">PLACE_LAYERS</span><span class="p">:</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="n">place</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">place</span> <span class="ow">in</span> <span class="n">request</span><span class="o">.</span><span class="n">places</span> <span class="k">if</span> <span class="n">place</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="o">==</span> <span class="n">category</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">names</span><span class="p">:</span>
+            <span class="n">shape</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"circle"</span><span class="p">:</span> <span class="s2">"white circle"</span><span class="p">,</span> <span class="s2">"square"</span><span class="p">:</span> <span class="s2">"orange square"</span><span class="p">,</span> <span class="s2">"diamond"</span><span class="p">:</span> <span class="s2">"blue diamond"</span><span class="p">,</span> <span class="s2">"x"</span><span class="p">:</span> <span class="s2">"purple cross"</span><span class="p">}[</span><span class="n">symbol</span><span class="p">]</span>
+            <span class="n">sentences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">layer</span><span class="si">}</span><span class="s2">, marked with a </span><span class="si">{</span><span class="n">shape</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">names</span><span class="p">)</span><span class="si">}</span><span class="s2">."</span><span class="p">)</span>
     <span class="n">sentences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s2">"Outlines and rivers are simplified. The map is not for navigation."</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">sentences</span>
 </pre></div>

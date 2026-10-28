@@ -1,6 +1,6 @@
-# PyWorldAtlas 0.10.0 documentation
+# PyWorldAtlas 0.11.0 documentation
 
-PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, physical geography, climate classes, reviewed land borders, distances, rankings, learning tools, and optional 3D maps. It has no core runtime dependencies, needs no API key, and never uses the network at runtime.
+PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, a searchable school atlas of 200,000 places (11 million with packs), physical geography, climate classes, reviewed land borders, distances, rankings, learning tools, and optional 3D maps. It has no core runtime dependencies, needs no API key, and never uses the network at runtime.
 
 
 ========================================================================
@@ -146,7 +146,7 @@ keeps that session alive while you explore.
 
 What is running?
 
-This is the real pyworldatlas==0.10.0 wheel published on PyPI, not a
+This is the real pyworldatlas==0.11.0 wheel published on PyPI, not a
 JavaScript imitation or a remote demonstration API. Pyodide runs CPython in
 WebAssembly, while a module Web Worker keeps execution away from the page’s
 interface. After startup, country queries read the same bundled SQLite database
@@ -275,13 +275,13 @@ Install the built wheel offline
 
 Test the exact release artifact without consulting a package index:
 
-python -m pip install --no-index --no-deps dist/pyworldatlas-0.10.0-py3-none-any.whl
+python -m pip install --no-index --no-deps dist/pyworldatlas-0.11.0-py3-none-any.whl
 
 Verify the installation
 
 >>> import pyworldatlas
 >>> pyworldatlas.__version__
-'0.10.0'
+'0.11.0'
 >>> from pyworldatlas import Atlas
 >>> with Atlas() as atlas:
 ...     print(atlas.country("DO").capital.name)
@@ -1047,6 +1047,202 @@ classification. The words country and area follow the documented source
 scope.
 
 ========================================================================
+Every place on Earth
+Source: https://jcari-dev.github.io/pyworldatlas-documentation/places.html
+========================================================================
+
+Brazil flag emoji
+
+Japan flag emoji
+
+Switzerland flag emoji
+
+China flag emoji
+
+France flag emoji
+
+United Arab Emirates flag emoji
+
+Every place on Earth
+
+Find any named place: towns, mountains, volcanoes, lakes, rivers, deserts,
+islands, ruins, castles, and more. Every install includes the school atlas
+of about 200,000 places, chosen by educational value, and two optional packs
+add every other place in the GeoNames gazetteer. All searches run offline.
+
+>>> from pyworldatlas import Atlas
+>>> atlas = Atlas()
+>>> fuji = atlas.place("Mount Fuji")
+>>> fuji.name, fuji.kind, fuji.country_code
+('Fujiyama', 'volcano', 'JP')
+>>> str(atlas.place("Lake Titicaca"))
+'Lake Titicaca, lake (BO)'
+
+Searching by name
+
+search_places() matches local and English names,
+ignores case and accents, and puts the best-known places first. A place can be
+found without its generic first or last word, so "Everest" finds Mount
+Everest before the town of Everest, Kansas.
+
+>>> [str(place) for place in atlas.search_places("Everest", limit=2)]
+['Mount Everest, mountain (NP)', 'Everest, town (US)']
+>>> [str(place) for place in atlas.search_places("Kilimanjaro", limit=2)]
+['Mount Kilimanjaro, mountain (TZ)', 'Kilimanjaro, state or province (TZ)']
+
+place() returns the single best-known place with
+exactly that name. Narrow any search with kind (see
+place_kinds()), category ("water",
+"landform", "town", "landmark", …), or country.
+
+>>> [place.country_code for place in atlas.search_places("Paris", country="France", limit=2)]
+['FR', 'FR']
+>>> atlas.search_places("Fuji", kind="volcano", limit=1)[0].english_name
+'Mount Fuji'
+
+One search for everything
+
+lookup() searches countries and places together, for
+a search box that accepts anything. A country named exactly comes first as its
+full profile, then the best-known places.
+
+>>> [str(item) for item in atlas.lookup("Georgia", limit=2)]
+['Georgia', 'Georgia, state or province (US)']
+>>> atlas.lookup("Georgia")[0].capital.name
+'Tbilisi'
+
+The best-known places in a country
+
+places_in() lists a country’s best-known places,
+narrowed by kind or category when wanted. 3D maps mark these places
+(see Interactive 3D maps).
+
+>>> [place.english_name for place in atlas.places_in("Iceland", kind="volcano", limit=2)]
+['Hekla', 'Laki']
+
+What is near here?
+
+places_near() lists the nearest places to any city,
+place, country, or coordinate. The answer is exact: the search widens until no
+closer place can exist.
+
+>>> nearest = atlas.places_near((48.8584, 2.2945), limit=1)
+>>> str(nearest[0].place)
+'Eiffel Tower, monument (FR)'
+>>> [result.place.category for result in atlas.places_near("Nairobi", category="water", limit=3)]
+['water', 'water', 'water']
+>>> atlas.close()
+
+What is in the school atlas
+
+Places are ranked by educational value using only signals in the data: what a
+place is, how big or high it is, and how widely it is known (named in other
+writing systems and languages, with an English Wikipedia article). The school
+atlas holds:
+
+every country, territory, state, and province, every capital and regional
+seat, the continents, oceans, and seas;
+
+every town of 5,000 people or more, and smaller towns that are widely known;
+
+every peak over 6,000 m, and mountains, volcanoes, lakes, rivers, deserts,
+islands, and forests that are widely known;
+
+ruins, castles, monuments, museums, and other landmarks named across
+cultures.
+
+A short reviewed list keeps famous places whose source entries lack those
+signals, such as the Grand Canyon and the Sahara.
+
+More places with packs
+
+Two optional packs add everything else, so nothing is left out for those who
+want it. Each pack adds to the ones before it.
+
+
+
+
+
+
+
+Pack
+
+Adds
+
+Download
+
+school atlas (built in)
+
+about 200,000 places
+
+included
+
+places-explorer
+
+every town over 1,000 people and every named natural feature, about 3.3 million places
+
+about 23 MB
+
+places-world
+
+every remaining village, stream, hill, and local area, about 7.6 million places
+
+about 44 MB
+
+pyworldatlas get places-explorer places-world
+
+Installed packs are searched automatically. Shops, hotels, farms, roads, and
+similar spots are not included in any edition.
+
+The command line has the same searches:
+
+pyworldatlas find Georgia
+pyworldatlas place "Lake Titicaca"
+pyworldatlas near 27.9881 86.9250 --kind peak
+
+How it stays small and fast
+
+Each place takes 6 to 10 bytes. Places are ordered along a Hilbert curve so
+neighbours sit together, stored column by column as small varint differences,
+and compressed with LZMA or bz2, all with the Python standard library. The
+first search unpacks the data once into a SQLite index in the pack folder;
+later searches take under a millisecond, and nearest-place lookups a few
+milliseconds.
+
+
+
+
+
+
+
+Edition
+
+First search on a laptop (once)
+
+Disk space once unpacked
+
+school atlas
+
+about 2 seconds
+
+about 25 MB
+
+with places-explorer
+
+about 25 seconds more
+
+about 320 MB more
+
+with places-world
+
+about 55 seconds more
+
+about 710 MB more
+
+Coordinates are rounded to about 110 m and are not suitable for navigation.
+Place data comes from GeoNames under CC BY 4.0; see Data sources and freshness.
+
+========================================================================
 Interactive 3D maps
 Source: https://jcari-dev.github.io/pyworldatlas-documentation/maps.html
 ========================================================================
@@ -1158,6 +1354,13 @@ Terrain height from 0.5× through 3×;
 
 Show toggles for the capital name, river lines, and river names;
 
+markers for well-known towns, mountains and islands, lakes and seas, and
+landmarks, each with its own shape and color and its own Show toggle,
+and hover details with the kind of place and its height;
+
+Find a place: type a marked place’s name, with suggestions, to label it
+on the map;
+
 Motion: rotate or pause, with a 0.25× to 3× speed slider;
 
 View: reset the camera, or save a high-resolution PNG;
@@ -1187,6 +1390,24 @@ with Atlas() as atlas:
 The browser controls can pause or change that speed at any time. Moving the
 camera manually pauses automatic rotation, and browsers configured to reduce
 motion do not start it automatically.
+
+Places on the map
+
+Each map marks the best-known places of the country: by default up to eight
+towns, eight mountains and islands, eight lakes and seas, and eight landmarks,
+chosen from the school atlas (see Every place on Earth). Choose how many of each with
+places, or pass places=0 for terrain only:
+
+with Atlas() as atlas:
+    atlas.map("Peru", places=12).show()
+
+The same places are available without a map:
+
+>>> from pyworldatlas import Atlas
+>>> with Atlas() as atlas:
+...     landmarks = atlas.places_in("Peru", category="landmark", limit=3)
+>>> "Machu Picchu" in [place.english_name for place in landmarks]
+True
 
 Select a quality explicitly
 
@@ -3009,6 +3230,14 @@ application has a known scope:
 The method returns city objects rather than search-wrapper records. Exact names
 rank first, population breaks ties, and no match returns an empty tuple.
 
+Countries and places together
+
+lookup() searches countries, cities, regions,
+mountains, lakes, and landmarks in one call; see Every place on Earth.
+
+>>> [str(item) for item in atlas.lookup("Ireland", limit=2)]
+['Ireland', 'Ireland, town (US)']
+
 Filtering
 
 >>> americas = atlas.countries(continent="Americas")
@@ -3447,6 +3676,19 @@ countryInfo.txt and cities15000.zip captured 2026-07-20 with SHA-256
 manifests. The complete timeZones.txt table was captured 2026-07-22 in
 a separate manifest.
 
+Every place on Earth
+
+allCountries.zip (13.5 million places) and alternateNamesV2.zip
+captured 2026-10-27, pinned by SHA-256 in
+build_data/raw/geonames/2026-10-27/manifest.json. They supply the
+school atlas and the place packs: names, English names, kinds,
+coordinates rounded to about 110 m, population, and elevation. Counts of
+names in other languages and writing systems, and the presence of an
+English Wikipedia link, are used only to rank places by how widely they are
+known; no Wikipedia text is used. pipeline/scripts/build_places.py
+documents every rule, and pipeline/config/must_have_places.json lists the
+few reviewed places kept despite missing signals.
+
 License
 
 Creative Commons Attribution 4.0. See the repository’s
@@ -3772,7 +4014,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.10.0 release
+Source priority in the 0.11.0 release
 
 
 
@@ -4341,7 +4583,7 @@ Project status
 This page is generated from the validated build report. It is a compact
 snapshot of the package, dataset, and coverage that ship together.
 
-0.10.0
+0.11.0
 
 library version
 
@@ -4432,13 +4674,14 @@ public API until it is implemented, tested, documented, and published.
 
 Current release
 
-0.10.0 is the stable offline atlas: a tested public API, instant
-lookups, zero-dependency 3D maps from data packs, and accessible pages.
+0.11.0 adds every place on Earth: a school atlas of 207,664 places
+in every install, 11 million with packs, one search for everything, and
+places on the 3D maps.
 
 Next milestone
 
-0.11 adds every place on Earth: places and landmarks packs, travel
-basics, one lookup for every place, and explorable maps.
+0.11.x adds travel basics (plugs, mains supply, driving side) and
+more landmark detail, then 0.12 official statistics.
 
 On the way to 1.0
 
@@ -4569,11 +4812,11 @@ Published
 
 0.11.0
 
-Planned
+Complete
 
-Places and landmarks packs, travel basics, and proximity search
+Every place on Earth, one search for everything, and places on 3D maps
 
-Not yet
+Published
 
 0.12.0
 
@@ -4781,13 +5024,17 @@ error. default is returned for both missing and non-unique queries.
 
 
 
-map(country: str | Country, *, quality: str = 'auto') -> CountryMap[source]
+map(country: str | Country, *, quality: str = 'auto', places: int = 8) -> CountryMap[source]
 
 Return an interactive offline 3D map for a country profile.
 
 country accepts the same names and codes as country(), or an
 already loaded Country. quality="auto" prefers Standard
 map data when installed and otherwise uses Overview data.
+
+The map marks the places best-known towns, mountains and islands,
+lakes and seas, and landmarks of the country, each kind as a layer
+that can be shown or hidden. Pass places=0 for terrain only.
 
 The returned map opens in the default browser when its show()
 method is called. Maps need a map pack, installed once with
@@ -5090,6 +5337,87 @@ String origins are exact city names and can be disambiguated with
 origin_country. within_country limits results to one country or
 area. By default, records at the origin’s exact coordinates are omitted.
 Distances are great-circle surface measurements, not road distances.
+
+
+
+PLACE_PACKS = ('places-explorer', 'places-world')
+
+Data packs that add places to the bundled school atlas, smallest first.
+
+
+
+static place_kinds() -> tuple[str, ...][source]
+
+Return every place kind accepted by place searches, such as "volcano".
+
+
+
+static place_categories() -> tuple[str, ...][source]
+
+Return the general place categories, such as "water" and "landform".
+
+
+
+search_places(query: str, *, kind: str | None = None, category: str | None = None, country: str | None = None, limit: int = 10) -> tuple[Place, ...][source]
+
+Find places on Earth by name, best known first.
+
+Searches the bundled school atlas (about 200,000 places: every country,
+region, town of 5,000 people or more, and well-known mountain, lake, river,
+island, and landmark) plus any installed place packs. Local and English
+names both match, without regard to case or accents: "Lake Titicaca"
+finds "Lago Titicaca". Exact names come first, then names that start
+with the query; better-known places break ties.
+
+Narrow results with kind (see place_kinds()), category
+(see place_categories()), or country.
+
+
+
+place(query: str, *, kind: str | None = None, country: str | None = None) -> Place[source]
+
+Return the best-known place with exactly this name.
+
+atlas.place("Kilimanjaro") is the mountain and atlas.place("Lake
+Victoria") the African lake. Narrow with kind or country to pick
+a less famous namesake. Raises PlaceNotFoundError when no place
+has this exact name.
+
+
+
+places_in(country: str | Country, *, kind: str | None = None, category: str | None = None, limit: int = 20) -> tuple[Place, ...][source]
+
+Return the best-known places in a country from the school atlas.
+
+Towns, mountains, lakes, landmarks, and more, best known first. Narrow
+with kind (see place_kinds()) or category (see
+place_categories()). The capital, whole regions, schools,
+airports, and river points are left out unless asked for by kind.
+
+
+
+lookup(query: str, *, limit: int = 10) -> tuple[Country | Place, ...][source]
+
+Find anything by name: countries, cities, regions, and landmarks.
+
+One search for human-entered text. A country that the query names
+exactly (by name, alias, or code) comes first as a full
+Country profile; then come the best-known places from
+search_places(), where a country-level place is replaced by its
+Country profile. atlas.lookup("Georgia") gives the country
+and then the US state.
+
+
+
+places_near(origin: str | Country | Capital | City | Place | Coordinate | tuple[float, float], *, limit: int = 10, kind: str | None = None, category: str | None = None, unit: str = 'km', include_origin: bool = False, origin_country: str | None = None) -> tuple[PlaceDistance, ...][source]
+
+Return the places nearest to an origin, nearest first.
+
+The origin can be a city name, any place or country model, a
+Coordinate, or a (latitude, longitude) tuple. Filter with
+kind or category (category="water" finds the nearest lakes
+and rivers). Distances are great-circle surface measurements in
+"km", "mi", or "nmi".
 
 
 
@@ -5882,6 +6210,34 @@ __init__(name: str, country_code: str, coordinates: Coordinate, population: int 
 
 
 
+Place is any named place on Earth from the school atlas or an installed
+place pack; see Every place on Earth.
+
+
+
+class pyworldatlas.Place[source]
+
+Any named place on Earth: a town, mountain, lake, ruin, island, and more.
+
+Places come from the GeoNames gazetteer. kind is a plain-English label
+such as "mountain" and category its general group such as
+"landform". english_name equals name unless the place has a
+different English name ("Lago Titicaca" is "Lake Titicaca").
+fame (0 to 255) estimates how widely a place is known and orders
+search results; it is not a measure of importance.
+
+
+
+property label: str
+
+Return a compact label such as "Lake Titicaca, lake (PE)".
+
+
+
+__init__(name: str, english_name: str, kind: str, category: str, country_code: str, coordinates: Coordinate, population: int | None = None, elevation_m: int | None = None, feature_code: str = '', fame: int = 0) -> None
+
+
+
 
 
 Results and metadata
@@ -6014,6 +6370,32 @@ Serialize this nearby-city result without escaping Unicode text.
 
 
 __init__(country: CountryReference, city: City, distance: float, unit: str) -> None
+
+
+
+
+
+class pyworldatlas.PlaceDistance[source]
+
+A nearby place and its great-circle distance from an origin.
+
+unit records the unit requested from pyworldatlas.Atlas.places_near().
+
+
+
+to_dict() -> dict[str, Any][source]
+
+Return JSON-compatible primitives for this nearby-place result.
+
+
+
+to_json(indent: int | None = None) -> str[source]
+
+Serialize this nearby-place result without escaping Unicode text.
+
+
+
+__init__(place: Place, distance: float, unit: str) -> None
 
 
 
@@ -6367,9 +6749,17 @@ to save one, or to_dict() for the plain plotly.js figure data.
 
 
 
-classmethod from_country(country: object, *, quality: str = 'auto', data_dir: str | Path | None = None) -> CountryMap[source]
+places: tuple[tuple[str, str, str, float, float, int | None], ...]
+
+The places to mark, each as name, kind, category, latitude, longitude, and elevation in metres.
+
+
+
+classmethod from_country(country: object, *, quality: str = 'auto', data_dir: str | Path | None = None, places: tuple[Any, ...] = ()) -> CountryMap[source]
 
 Create a map request from a PyWorldAtlas country profile.
+
+places are Place objects to mark on the map.
 
 
 
@@ -6391,8 +6781,8 @@ Return the figure as plain plotly.js data and layout dictionaries.
 
 The figure contains elevation and climate surface controls, terrain
 height choices, optional river and capital labels, a country outline,
-source-provided river centerlines, and the primary capital when
-coordinates are available.
+source-provided river centerlines, the primary capital when
+coordinates are available, and markers for well-known places.
 
 
 
@@ -6411,7 +6801,8 @@ Return a complete standalone HTML page with plotly.js embedded.
 
 The page fills the browser window and offers a control panel to color
 the terrain by elevation or climate, change terrain height, show or hide
-the capital, rivers, and river names, rotate the view, reset the camera,
+the capital, rivers, river names, and each kind of marked place, rotate
+the view, reset the camera,
 and download a high-resolution PNG. The map can be turned, tilted, and
 zoomed from the keyboard, carries a plain-language description for screen
 readers, and announces each change. On narrow screens the panel becomes
@@ -6422,6 +6813,12 @@ opens. rotation_speed accepts values from 0.25 through 3;
 
 
 
+__init__(alpha2: str, country_name: str, flag: str | None = None, capital_name: str | None = None, capital_latitude: float | None = None, capital_longitude: float | None = None, requested_quality: str = 'auto', data_dir: str | None = None, places: tuple[tuple[str, str, str, float, float, int | None], ...] = ()) -> None
+
+
+
+
+
 write_html(path: str | Path, *, auto_rotate: bool = False, rotation_speed: float = 1.0) -> Path[source]
 
 Write a standalone offline HTML map and return its resolved path.
@@ -6429,12 +6826,6 @@ Write a standalone offline HTML map and return its resolved path.
 auto_rotate and rotation_speed select the document’s initial
 motion state. The reader can still pause or adjust rotation in the
 exported viewer.
-
-
-
-__init__(alpha2: str, country_name: str, flag: str | None = None, capital_name: str | None = None, capital_latitude: float | None = None, capital_longitude: float | None = None, requested_quality: str = 'auto', data_dir: str | None = None) -> None
-
-
 
 
 
@@ -6813,6 +7204,35 @@ Changelog
 
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
+
+0.11.0
+
+Every place on Earth.
+
+A school atlas in every install. 207,664 places chosen by educational
+value, in about 2 MB: every country, region, and town of 5,000 people or
+more, and the mountains, volcanoes, lakes, rivers, deserts, islands, and
+landmarks people around the world know. Search by local or English name with
+search_places() and
+place(), and list what is nearby with
+places_near().
+
+11 million places with packs. pyworldatlas get places-explorer
+places-world adds every other place in the GeoNames gazetteer.
+
+One search for everything. lookup() and
+pyworldatlas find return countries first, then cities, regions,
+mountains, lakes, and landmarks.
+
+Places on 3D maps. Maps mark each country’s best-known towns,
+mountains and islands, lakes and seas, and landmarks as layers with their
+own shape, color, and toggle, plus a Find a place box.
+places_in() lists the same places.
+
+New commands: pyworldatlas find, place, and near.
+
+Places are stored in a compact column format (6 to 10 bytes each) with only
+the standard library and unpacked once into a local index on first search.
 
 0.10.0
 

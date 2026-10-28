@@ -86,6 +86,11 @@ That one call opens a full-window map with a single control panel:
 - **Color by** elevation or Köppen-Geiger climate;
 - **Terrain height** from ``0.5×`` through ``3×``;
 - **Show** toggles for the capital name, river lines, and river names;
+- markers for well-known towns, mountains and islands, lakes and seas, and
+  landmarks, each with its own shape and color and its own **Show** toggle,
+  and hover details with the kind of place and its height;
+- **Find a place**: type a marked place's name, with suggestions, to label it
+  on the map;
 - **Motion**: rotate or pause, with a ``0.25×`` to ``3×`` speed slider;
 - **View**: reset the camera, or save a high-resolution PNG;
 - generalized country outlines and source-provided river centerlines with hover
@@ -114,6 +119,29 @@ starting speed when wanted:
 The browser controls can pause or change that speed at any time. Moving the
 camera manually pauses automatic rotation, and browsers configured to reduce
 motion do not start it automatically.
+
+Places on the map
+-----------------
+
+Each map marks the best-known places of the country: by default up to eight
+towns, eight mountains and islands, eight lakes and seas, and eight landmarks,
+chosen from the school atlas (see :doc:`places`). Choose how many of each with
+``places``, or pass ``places=0`` for terrain only:
+
+.. code-block:: python
+
+   with Atlas() as atlas:
+       atlas.map("Peru", places=12).show()
+
+The same places are available without a map:
+
+.. doctest::
+
+   >>> from pyworldatlas import Atlas
+   >>> with Atlas() as atlas:
+   ...     landmarks = atlas.places_in("Peru", category="landmark", limit=3)
+   >>> "Machu Picchu" in [place.english_name for place in landmarks]
+   True
 
 Select a quality explicitly
 ---------------------------

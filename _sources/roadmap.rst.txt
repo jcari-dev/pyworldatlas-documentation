@@ -11,15 +11,16 @@ public API until it is implemented, tested, documented, and published.
 
       .. rubric:: Current release
 
-      **0.10.0** is the stable offline atlas: a tested public API, instant
-      lookups, zero-dependency 3D maps from data packs, and accessible pages.
+      **0.11.0** adds every place on Earth: a school atlas of 207,664 places
+      in every install, 11 million with packs, one search for everything, and
+      places on the 3D maps.
 
    .. container:: atlas-card atlas-card-teal
 
       .. rubric:: Next milestone
 
-      **0.11** adds every place on Earth: places and landmarks packs, travel
-      basics, one lookup for every place, and explorable maps.
+      **0.11.x** adds travel basics (plugs, mains supply, driving side) and
+      more landmark detail, then **0.12** official statistics.
 
    .. container:: atlas-card atlas-card-gold
 
@@ -89,9 +90,9 @@ public API until it is implemented, tested, documented, and published.
      - Stable API, instant lookups, zero-dependency maps, data packs, and accessibility
      - Published
    * - 0.11.0
-     - Planned
-     - Places and landmarks packs, travel basics, and proximity search
-     - Not yet
+     - Complete
+     - Every place on Earth, one search for everything, and places on 3D maps
+     - Published
    * - 0.12.0
      - Planned
      - Official statistics pack with sourced, dated indicators

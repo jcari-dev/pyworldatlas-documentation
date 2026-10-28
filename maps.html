@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/maps.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=82662543"></script>
+      <script src="_static/documentation_options.js?v=f3b36f1a"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=bdb8a868"></script>
@@ -23,7 +23,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Physical geography" href="physical_geography.html" />
-    <link rel="prev" title="Country profiles" href="country_profile.html" />
+    <link rel="prev" title="Every place on Earth" href="places.html" />
    
   <meta name="description" content="Interactive 3D maps in PyWorldAtlas, the offline Python package for country profiles, physical geography, cities, distances, and classroom learning." />
   <meta name="robots" content="index, follow" />
@@ -128,9 +128,20 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="places.html">Every place on Earth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="places.html#searching-by-name">Searching by name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#one-search-for-everything">One search for everything</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#the-best-known-places-in-a-country">The best-known places in a country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#what-is-near-here">What is near here?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#what-is-in-the-school-atlas">What is in the school atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#more-places-with-packs">More places with packs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#how-it-stays-small-and-fast">How it stays small and fast</a></li>
+</ul>
+</li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Interactive 3D maps</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#install-a-map-pack">Install a map pack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#open-your-first-map">Open your first map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#places-on-the-map">Places on the map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#select-a-quality-explicitly">Select a quality explicitly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#create-a-documentation-gif">Create a documentation GIF</a></li>
@@ -228,6 +239,7 @@
 <li class="toctree-l2"><a class="reference internal" href="searching.html#safe-lookup">Safe lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#ranked-search">Ranked search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#city-name-search">City-name search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html#countries-and-places-together">Countries and places together</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#filtering">Filtering</a></li>
 </ul>
 </li>
@@ -275,7 +287,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-10-0-release">Source priority in the 0.10.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-11-0-release">Source priority in the 0.11.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -327,6 +339,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryRanking"><code class="docutils literal notranslate"><span class="pre">CountryRanking</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CapitalDistance"><code class="docutils literal notranslate"><span class="pre">CapitalDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CityDistance"><code class="docutils literal notranslate"><span class="pre">CityDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PlaceDistance"><code class="docutils literal notranslate"><span class="pre">PlaceDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.QuizQuestion"><code class="docutils literal notranslate"><span class="pre">QuizQuestion</span></code></a></li>
@@ -381,24 +394,25 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.10.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.9.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 (reserved tag, not published to PyPI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 (unpublished candidate)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id17">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -516,6 +530,11 @@ and uses a more detailed river layer.</p>
 <li><p><strong>Color by</strong> elevation or Köppen-Geiger climate;</p></li>
 <li><p><strong>Terrain height</strong> from <code class="docutils literal notranslate"><span class="pre">0.5×</span></code> through <code class="docutils literal notranslate"><span class="pre">3×</span></code>;</p></li>
 <li><p><strong>Show</strong> toggles for the capital name, river lines, and river names;</p></li>
+<li><p>markers for well-known towns, mountains and islands, lakes and seas, and
+landmarks, each with its own shape and color and its own <strong>Show</strong> toggle,
+and hover details with the kind of place and its height;</p></li>
+<li><p><strong>Find a place</strong>: type a marked place’s name, with suggestions, to label it
+on the map;</p></li>
 <li><p><strong>Motion</strong>: rotate or pause, with a <code class="docutils literal notranslate"><span class="pre">0.25×</span></code> to <code class="docutils literal notranslate"><span class="pre">3×</span></code> speed slider;</p></li>
 <li><p><strong>View</strong>: reset the camera, or save a high-resolution PNG;</p></li>
 <li><p>generalized country outlines and source-provided river centerlines with hover
@@ -540,6 +559,25 @@ starting speed when wanted:</p>
 <p>The browser controls can pause or change that speed at any time. Moving the
 camera manually pauses automatic rotation, and browsers configured to reduce
 motion do not start it automatically.</p>
+</section>
+<section id="places-on-the-map">
+<h2>Places on the map<a class="headerlink" href="#places-on-the-map" title="Link to this heading"></a></h2>
+<p>Each map marks the best-known places of the country: by default up to eight
+towns, eight mountains and islands, eight lakes and seas, and eight landmarks,
+chosen from the school atlas (see <a class="reference internal" href="places.html"><span class="doc">Every place on Earth</span></a>). Choose how many of each with
+<code class="docutils literal notranslate"><span class="pre">places</span></code>, or pass <code class="docutils literal notranslate"><span class="pre">places=0</span></code> for terrain only:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+    <span class="n">atlas</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="s2">"Peru"</span><span class="p">,</span> <span class="n">places</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>The same places are available without a map:</p>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">pyworldatlas</span><span class="w"> </span><span class="kn">import</span> <span class="n">Atlas</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="n">landmarks</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">places_in</span><span class="p">(</span><span class="s2">"Peru"</span><span class="p">,</span> <span class="n">category</span><span class="o">=</span><span class="s2">"landmark"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="s2">"Machu Picchu"</span> <span class="ow">in</span> <span class="p">[</span><span class="n">place</span><span class="o">.</span><span class="n">english_name</span> <span class="k">for</span> <span class="n">place</span> <span class="ow">in</span> <span class="n">landmarks</span><span class="p">]</span>
+<span class="go">True</span>
+</pre></div>
+</div>
 </section>
 <section id="select-a-quality-explicitly">
 <h2>Select a quality explicitly<a class="headerlink" href="#select-a-quality-explicitly" title="Link to this heading"></a></h2>
@@ -622,7 +660,7 @@ for the complete source, editorial, and interpretation policies.</p>
           </div>
 
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="country_profile.html" class="btn btn-neutral float-left" title="Country profiles" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="places.html" class="btn btn-neutral float-left" title="Every place on Earth" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="physical_geography.html" class="btn btn-neutral float-right" title="Physical geography" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

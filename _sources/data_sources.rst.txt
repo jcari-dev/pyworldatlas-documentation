@@ -64,6 +64,18 @@ GeoNames
    manifests. The complete ``timeZones.txt`` table was captured 2026-07-22 in
    a separate manifest.
 
+**Every place on Earth**
+   ``allCountries.zip`` (13.5 million places) and ``alternateNamesV2.zip``
+   captured 2026-10-27, pinned by SHA-256 in
+   ``build_data/raw/geonames/2026-10-27/manifest.json``. They supply the
+   school atlas and the place packs: names, English names, kinds,
+   coordinates rounded to about 110 m, population, and elevation. Counts of
+   names in other languages and writing systems, and the presence of an
+   English Wikipedia link, are used only to rank places by how widely they are
+   known; no Wikipedia text is used. ``pipeline/scripts/build_places.py``
+   documents every rule, and ``pipeline/config/must_have_places.json`` lists the
+   few reviewed places kept despite missing signals.
+
 **License**
    Creative Commons Attribution 4.0. See the repository's
    ``THIRD_PARTY_NOTICES.md`` for attribution.
@@ -351,7 +363,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.10.0 release
+Source priority in the 0.11.0 release
 -------------------------------------
 
 .. list-table::

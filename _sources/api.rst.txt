@@ -187,6 +187,12 @@ values. Place populations are snapshot values, not live estimates.
 .. autoclass:: pyworldatlas.City
    :members:
 
+``Place`` is any named place on Earth from the school atlas or an installed
+place pack; see :doc:`places`.
+
+.. autoclass:: pyworldatlas.Place
+   :members:
+
 .. _api-results:
 
 Results and metadata
@@ -205,6 +211,9 @@ structured dictionaries. Their ``to_dict()`` methods provide portable output.
    :members:
 
 .. autoclass:: pyworldatlas.CityDistance
+   :members:
+
+.. autoclass:: pyworldatlas.PlaceDistance
    :members:
 
 .. autoclass:: pyworldatlas.CountryMatch

@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/data_sources.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=82662543"></script>
+      <script src="_static/documentation_options.js?v=f3b36f1a"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=bdb8a868"></script>
@@ -128,9 +128,20 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="places.html">Every place on Earth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="places.html#searching-by-name">Searching by name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#one-search-for-everything">One search for everything</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#the-best-known-places-in-a-country">The best-known places in a country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#what-is-near-here">What is near here?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#what-is-in-the-school-atlas">What is in the school atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#more-places-with-packs">More places with packs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#how-it-stays-small-and-fast">How it stays small and fast</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="maps.html">Interactive 3D maps</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#install-a-map-pack">Install a map pack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#open-your-first-map">Open your first map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#places-on-the-map">Places on the map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#create-a-documentation-gif">Create a documentation GIF</a></li>
@@ -228,6 +239,7 @@
 <li class="toctree-l2"><a class="reference internal" href="searching.html#safe-lookup">Safe lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#ranked-search">Ranked search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#city-name-search">City-name search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html#countries-and-places-together">Countries and places together</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#filtering">Filtering</a></li>
 </ul>
 </li>
@@ -275,7 +287,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#source-priority-in-the-0-10-0-release">Source priority in the 0.10.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-priority-in-the-0-11-0-release">Source priority in the 0.11.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -327,6 +339,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryRanking"><code class="docutils literal notranslate"><span class="pre">CountryRanking</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CapitalDistance"><code class="docutils literal notranslate"><span class="pre">CapitalDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CityDistance"><code class="docutils literal notranslate"><span class="pre">CityDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PlaceDistance"><code class="docutils literal notranslate"><span class="pre">PlaceDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.QuizQuestion"><code class="docutils literal notranslate"><span class="pre">QuizQuestion</span></code></a></li>
@@ -381,24 +394,25 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.10.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.9.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 (reserved tag, not published to PyPI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 (unpublished candidate)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id17">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -483,6 +497,17 @@ timezone identifiers, GeoNames IDs, and an area fallback for this milestone.</p>
 <dt><strong>Current snapshot</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">countryInfo.txt</span></code> and <code class="docutils literal notranslate"><span class="pre">cities15000.zip</span></code> captured 2026-07-20 with SHA-256
 manifests. The complete <code class="docutils literal notranslate"><span class="pre">timeZones.txt</span></code> table was captured 2026-07-22 in
 a separate manifest.</p>
+</dd>
+<dt><strong>Every place on Earth</strong></dt><dd><p><code class="docutils literal notranslate"><span class="pre">allCountries.zip</span></code> (13.5 million places) and <code class="docutils literal notranslate"><span class="pre">alternateNamesV2.zip</span></code>
+captured 2026-10-27, pinned by SHA-256 in
+<code class="docutils literal notranslate"><span class="pre">build_data/raw/geonames/2026-10-27/manifest.json</span></code>. They supply the
+school atlas and the place packs: names, English names, kinds,
+coordinates rounded to about 110 m, population, and elevation. Counts of
+names in other languages and writing systems, and the presence of an
+English Wikipedia link, are used only to rank places by how widely they are
+known; no Wikipedia text is used. <code class="docutils literal notranslate"><span class="pre">pipeline/scripts/build_places.py</span></code>
+documents every rule, and <code class="docutils literal notranslate"><span class="pre">pipeline/config/must_have_places.json</span></code> lists the
+few reviewed places kept despite missing signals.</p>
 </dd>
 <dt><strong>License</strong></dt><dd><p>Creative Commons Attribution 4.0. See the repository’s
 <code class="docutils literal notranslate"><span class="pre">THIRD_PARTY_NOTICES.md</span></code> for attribution.</p>
@@ -739,8 +764,8 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.</p>
 </section>
-<section id="source-priority-in-the-0-10-0-release">
-<h2>Source priority in the 0.10.0 release<a class="headerlink" href="#source-priority-in-the-0-10-0-release" title="Link to this heading"></a></h2>
+<section id="source-priority-in-the-0-11-0-release">
+<h2>Source priority in the 0.11.0 release<a class="headerlink" href="#source-priority-in-the-0-11-0-release" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 34.0%" />

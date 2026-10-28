@@ -59,6 +59,17 @@ application has a known scope:
 The method returns city objects rather than search-wrapper records. Exact names
 rank first, population breaks ties, and no match returns an empty tuple.
 
+Countries and places together
+-----------------------------
+
+:meth:`~pyworldatlas.Atlas.lookup` searches countries, cities, regions,
+mountains, lakes, and landmarks in one call; see :doc:`places`.
+
+.. doctest::
+
+   >>> [str(item) for item in atlas.lookup("Ireland", limit=2)]
+   ['Ireland', 'Ireland, town (US)']
+
 Filtering
 ---------
 

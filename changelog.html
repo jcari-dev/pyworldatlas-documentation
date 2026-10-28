@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/changelog.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=82662543"></script>
+      <script src="_static/documentation_options.js?v=f3b36f1a"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=bdb8a868"></script>
@@ -127,9 +127,20 @@
 <li class="toctree-l2"><a class="reference internal" href="country_profile.html#immutability">Immutability</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="places.html">Every place on Earth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="places.html#searching-by-name">Searching by name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#one-search-for-everything">One search for everything</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#the-best-known-places-in-a-country">The best-known places in a country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#what-is-near-here">What is near here?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#what-is-in-the-school-atlas">What is in the school atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#more-places-with-packs">More places with packs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="places.html#how-it-stays-small-and-fast">How it stays small and fast</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="maps.html">Interactive 3D maps</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#install-a-map-pack">Install a map pack</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#open-your-first-map">Open your first map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="maps.html#places-on-the-map">Places on the map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
 <li class="toctree-l2"><a class="reference internal" href="maps.html#create-a-documentation-gif">Create a documentation GIF</a></li>
@@ -227,6 +238,7 @@
 <li class="toctree-l2"><a class="reference internal" href="searching.html#safe-lookup">Safe lookup</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#ranked-search">Ranked search</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#city-name-search">City-name search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="searching.html#countries-and-places-together">Countries and places together</a></li>
 <li class="toctree-l2"><a class="reference internal" href="searching.html#filtering">Filtering</a></li>
 </ul>
 </li>
@@ -274,7 +286,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-10-0-release">Source priority in the 0.10.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-11-0-release">Source priority in the 0.11.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -326,6 +338,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryRanking"><code class="docutils literal notranslate"><span class="pre">CountryRanking</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CapitalDistance"><code class="docutils literal notranslate"><span class="pre">CapitalDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CityDistance"><code class="docutils literal notranslate"><span class="pre">CityDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PlaceDistance"><code class="docutils literal notranslate"><span class="pre">PlaceDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.QuizQuestion"><code class="docutils literal notranslate"><span class="pre">QuizQuestion</span></code></a></li>
@@ -380,24 +393,25 @@
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">0.10.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">0.9.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">0.9.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">0.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">0.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id6">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id7">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id8">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id9">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id10">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id11">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id12">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id8">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id10">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id12">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id13">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#reserved-tag-not-published-to-pypi">0.4.0 (reserved tag, not published to PyPI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id13">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id14">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id15">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id14">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id15">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#unpublished-candidate">0.2.0 (unpublished candidate)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id16">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id17">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -433,7 +447,32 @@
 <p>This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.</p>
 <section id="id1">
-<h2>0.10.0<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<h2>0.11.0<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>Every place on Earth.</p>
+<ul class="simple">
+<li><p><strong>A school atlas in every install.</strong> 207,664 places chosen by educational
+value, in about 2 MB: every country, region, and town of 5,000 people or
+more, and the mountains, volcanoes, lakes, rivers, deserts, islands, and
+landmarks people around the world know. Search by local or English name with
+<a class="reference internal" href="api.html#pyworldatlas.Atlas.search_places" title="pyworldatlas.Atlas.search_places"><code class="xref py py-meth docutils literal notranslate"><span class="pre">search_places()</span></code></a> and
+<a class="reference internal" href="api.html#pyworldatlas.Atlas.place" title="pyworldatlas.Atlas.place"><code class="xref py py-meth docutils literal notranslate"><span class="pre">place()</span></code></a>, and list what is nearby with
+<a class="reference internal" href="api.html#pyworldatlas.Atlas.places_near" title="pyworldatlas.Atlas.places_near"><code class="xref py py-meth docutils literal notranslate"><span class="pre">places_near()</span></code></a>.</p></li>
+<li><p><strong>11 million places with packs.</strong> <code class="docutils literal notranslate"><span class="pre">pyworldatlas</span> <span class="pre">get</span> <span class="pre">places-explorer</span>
+<span class="pre">places-world</span></code> adds every other place in the GeoNames gazetteer.</p></li>
+<li><p><strong>One search for everything.</strong> <a class="reference internal" href="api.html#pyworldatlas.Atlas.lookup" title="pyworldatlas.Atlas.lookup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">lookup()</span></code></a> and
+<code class="docutils literal notranslate"><span class="pre">pyworldatlas</span> <span class="pre">find</span></code> return countries first, then cities, regions,
+mountains, lakes, and landmarks.</p></li>
+<li><p><strong>Places on 3D maps.</strong> Maps mark each country’s best-known towns,
+mountains and islands, lakes and seas, and landmarks as layers with their
+own shape, color, and toggle, plus a <strong>Find a place</strong> box.
+<a class="reference internal" href="api.html#pyworldatlas.Atlas.places_in" title="pyworldatlas.Atlas.places_in"><code class="xref py py-meth docutils literal notranslate"><span class="pre">places_in()</span></code></a> lists the same places.</p></li>
+<li><p><strong>New commands:</strong> <code class="docutils literal notranslate"><span class="pre">pyworldatlas</span> <span class="pre">find</span></code>, <code class="docutils literal notranslate"><span class="pre">place</span></code>, and <code class="docutils literal notranslate"><span class="pre">near</span></code>.</p></li>
+<li><p>Places are stored in a compact column format (6 to 10 bytes each) with only
+the standard library and unpacked once into a local index on first search.</p></li>
+</ul>
+</section>
+<section id="id2">
+<h2>0.10.0<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <p>A big step toward 1.0. The public API is now guarded by a snapshot test, so
 any change to it is deliberate and listed here.</p>
 <ul class="simple">
@@ -461,8 +500,8 @@ and plain-text <code class="docutils literal notranslate"><span class="pre">llms
 so older install commands still work. See <a class="reference internal" href="migration.html"><span class="doc">Migration from 0.0.x</span></a>.</p></li>
 </ul>
 </section>
-<section id="id2">
-<h2>0.9.5<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<section id="id3">
+<h2>0.9.5<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added an installed <code class="docutils literal notranslate"><span class="pre">pyworldatlas</span></code> command with version, country lookup,
 search, dataset metadata, JSON output, and concise error messages.</p></li>
@@ -474,8 +513,8 @@ are exercised from the built artifact before release.</p></li>
 repository guidance, and release instructions for accuracy and readability.</p></li>
 </ul>
 </section>
-<section id="id3">
-<h2>0.9.4<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="id4">
+<h2>0.9.4<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added play, pause, and adjustable-speed rotation controls to standalone 3D
 maps while respecting reduced-motion preferences.</p></li>
@@ -489,8 +528,8 @@ animations from real map figures.</p></li>
 motion, export, accessibility, and documentation media.</p></li>
 </ul>
 </section>
-<section id="id4">
-<h2>0.9.3<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<section id="id5">
+<h2>0.9.3<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Reorganized the API reference around common tasks and gave every generated
 class, method, and property a consistent, readable layout.</p></li>
@@ -502,8 +541,8 @@ page without changing the public API or dataset.</p></li>
 never advertises an unpublished package version.</p></li>
 </ul>
 </section>
-<section id="id5">
-<h2>0.9.2<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<section id="id6">
+<h2>0.9.2<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added terrain-height controls and selectable capital and river labels to the
 interactive 3D map viewer.</p></li>
@@ -513,8 +552,8 @@ camera angles.</p></li>
 reviewed national source.</p></li>
 </ul>
 </section>
-<section id="id6">
-<h2>0.9.1<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<section id="id7">
+<h2>0.9.1<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Published the optional map viewer and both global map editions through
 isolated Trusted Publishing jobs.</p></li>
@@ -522,8 +561,8 @@ isolated Trusted Publishing jobs.</p></li>
 package release configuration.</p></li>
 </ul>
 </section>
-<section id="id7">
-<h2>0.9.0<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<section id="id8">
+<h2>0.9.0<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added optional offline 3D country maps through
 <a class="reference internal" href="api.html#pyworldatlas.Atlas.map" title="pyworldatlas.Atlas.map"><code class="xref py py-meth docutils literal notranslate"><span class="pre">map()</span></code></a> and
@@ -543,8 +582,8 @@ guidance.</p></li>
 documentation front page, linked directly to this map guide.</p></li>
 </ul>
 </section>
-<section id="id8">
-<h2>0.8.1<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<section id="id9">
+<h2>0.8.1<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added concise browser-tab titles, a globe favicon, canonical page metadata,
 social preview metadata, a generated sitemap, and crawler guidance for the
@@ -553,8 +592,8 @@ public documentation site.</p></li>
 links portable across both renderers.</p></li>
 </ul>
 </section>
-<section id="id9">
-<h2>0.8.0<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<section id="id10">
+<h2>0.8.0<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added <a class="reference internal" href="api.html#pyworldatlas.Country.summary" title="pyworldatlas.Country.summary"><code class="xref py py-meth docutils literal notranslate"><span class="pre">summary()</span></code></a> for readable multilingual
 country introductions assembled from existing sourced profile fields.</p></li>
@@ -576,8 +615,8 @@ workflows.</p></li>
 source, missingness, and geographic-interpretation guidance.</p></li>
 </ul>
 </section>
-<section id="id10">
-<h2>0.7.0<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<section id="id11">
+<h2>0.7.0<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added sourced total, land, and water area; coastline; mean elevation; and
 named highest and lowest points.</p></li>
@@ -598,8 +637,8 @@ point-in-country lookup, and a separate major-mountain inventory outside this
 release.</p></li>
 </ul>
 </section>
-<section id="id11">
-<h2>0.6.0<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<section id="id12">
+<h2>0.6.0<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added 234 source-provided anthem-title profiles, 32 explicitly reviewed
 source-listed mottos, and 227 English demonym profiles.</p></li>
@@ -616,8 +655,8 @@ runnable examples, and the generated API reference.</p></li>
 GeoJSON, bounding boxes, centroids, and point-in-country outside this release.</p></li>
 </ul>
 </section>
-<section id="id12">
-<h2>0.5.0<a class="headerlink" href="#id12" title="Link to this heading"></a></h2>
+<section id="id13">
+<h2>0.5.0<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added one sourced local-language identity for all 248 countries and areas,
 spanning 80 languages and 21 writing systems.</p></li>
@@ -654,8 +693,8 @@ the country-identity candidate reached <code class="docutils literal notranslate
 or reusing a public version tag.</p></li>
 </ul>
 </section>
-<section id="id13">
-<h2>0.3.1<a class="headerlink" href="#id13" title="Link to this heading"></a></h2>
+<section id="id14">
+<h2>0.3.1<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added <a class="reference internal" href="api.html#pyworldatlas.Atlas.has_land_route" title="pyworldatlas.Atlas.has_land_route"><code class="xref py py-meth docutils literal notranslate"><span class="pre">has_land_route()</span></code></a> for explicit land-graph
 reachability checks.</p></li>
@@ -666,8 +705,8 @@ reachability checks.</p></li>
 provenance, return-value, connectivity, and edge-case explanations.</p></li>
 </ul>
 </section>
-<section id="id14">
-<h2>0.3.0<a class="headerlink" href="#id14" title="Link to this heading"></a></h2>
+<section id="id15">
+<h2>0.3.0<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Added 319 reviewed, undirected land-border relationships.</p></li>
 <li><p>Added neighbor lookup, shared neighbors, deterministic shortest border paths,
@@ -681,8 +720,8 @@ border API, source policy, and limitations.</p></li>
 runtime, graph, and pipeline tests.</p></li>
 </ul>
 </section>
-<section id="id15">
-<h2>0.2.1<a class="headerlink" href="#id15" title="Link to this heading"></a></h2>
+<section id="id16">
+<h2>0.2.1<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>First production candidate for the complete 0.2 country-profile, coordinate,
 and discovery feature set.</p></li>
@@ -709,8 +748,8 @@ and snapshot population/area facts.</p></li>
 capital, city, lookup, and collection behaviors.</p></li>
 </ul>
 </section>
-<section id="id16">
-<h2>0.1.0<a class="headerlink" href="#id16" title="Link to this heading"></a></h2>
+<section id="id17">
+<h2>0.1.0<a class="headerlink" href="#id17" title="Link to this heading"></a></h2>
 <ul class="simple">
 <li><p>Rebuilt the project from scratch around a standard-library runtime and one
 generated SQLite database.</p></li>

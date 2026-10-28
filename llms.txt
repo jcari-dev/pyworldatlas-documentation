@@ -1,6 +1,6 @@
-# PyWorldAtlas 0.10.0
+# PyWorldAtlas 0.11.0
 
-> PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, physical geography, climate classes, reviewed land borders, distances, rankings, learning tools, and optional 3D maps. It has no core runtime dependencies, needs no API key, and never uses the network at runtime.
+> PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, a searchable school atlas of 200,000 places (11 million with packs), physical geography, climate classes, reviewed land borders, distances, rankings, learning tools, and optional 3D maps. It has no core runtime dependencies, needs no API key, and never uses the network at runtime.
 
 Install with `pip install pyworldatlas`. Every value is traced to a pinned source snapshot; missing data is `None`, never guessed. Each link below points to the plain-text source of a documentation page. The complete documentation as one plain-text file is at https://jcari-dev.github.io/pyworldatlas-documentation/llms-full.txt
 
@@ -18,6 +18,7 @@ Install with `pip install pyworldatlas`. Every value is traced to a pinned sourc
 ## Explore the atlas
 
 - [Country profiles](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/country_profile.rst.txt): A Country is an immutable, typed view of one country in the bundled dataset. Fields are regular Python attributes rather than nested dictionary keys.
+- [Every place on Earth](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/places.rst.txt): Find any named place: towns, mountains, volcanoes, lakes, rivers, deserts, islands, ruins, castles, and more. Every install includes the school atlas of about 200,000 places, chosen by educational value, and two optional packs add every other place in the GeoNames gazetteer. All searches run offline.
 - [Interactive 3D maps](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/maps.rst.txt): PyWorldAtlas can open a rotatable country terrain map directly from Python. The viewer runs in the default browser because WebGL provides smooth, cross-platform 3D interaction. Maps need no extra Python packages: PyWorldAtlas builds each map with the standard library, and the map pack ships the browser renderer. After the pack is installed everything is offline: show() writes a local HTML document and opens that file.
 - [Physical geography](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/physical_geography.rst.txt): Each covered profile acts as a compact physical-geography reference: land and water area, coastline, elevation, named highest and lowest points, source-listed major rivers and lakes, a plain-language climate summary, and represented Köppen-Geiger climate classes. Everything works offline.
 - [Country reference facts](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/reference_facts.rst.txt): Typed, source-aware facts make each country profile useful as a small offline reference. An optional fact is absent when it is outside the captured source scope; the package does not fill gaps with guesses.

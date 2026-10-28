@@ -4,6 +4,31 @@ Changelog
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
 
+0.11.0
+------
+
+Every place on Earth.
+
+- **A school atlas in every install.** 207,664 places chosen by educational
+  value, in about 2 MB: every country, region, and town of 5,000 people or
+  more, and the mountains, volcanoes, lakes, rivers, deserts, islands, and
+  landmarks people around the world know. Search by local or English name with
+  :meth:`~pyworldatlas.Atlas.search_places` and
+  :meth:`~pyworldatlas.Atlas.place`, and list what is nearby with
+  :meth:`~pyworldatlas.Atlas.places_near`.
+- **11 million places with packs.** ``pyworldatlas get places-explorer
+  places-world`` adds every other place in the GeoNames gazetteer.
+- **One search for everything.** :meth:`~pyworldatlas.Atlas.lookup` and
+  ``pyworldatlas find`` return countries first, then cities, regions,
+  mountains, lakes, and landmarks.
+- **Places on 3D maps.** Maps mark each country's best-known towns,
+  mountains and islands, lakes and seas, and landmarks as layers with their
+  own shape, color, and toggle, plus a **Find a place** box.
+  :meth:`~pyworldatlas.Atlas.places_in` lists the same places.
+- **New commands:** ``pyworldatlas find``, ``place``, and ``near``.
+- Places are stored in a compact column format (6 to 10 bytes each) with only
+  the standard library and unpacked once into a local index on first search.
+
 0.10.0
 ------
 
