@@ -53,6 +53,22 @@ English noun and adjective forms are preserved as printed by the source.
    >>> (japan.demonym.noun, japan.demonym.adjective)
    ('Japanese (singular and plural)', 'Japanese')
 
+Travel basics
+-------------
+
+Plug types (IEC letters A to N), the household mains supply, and the side of
+the road people drive on. A value is missing when the source does not agree.
+
+.. doctest::
+
+   >>> japan.travel.summary
+   'Plugs A, B · 100 V, 50/60 Hz · drives on the left'
+   >>> (japan.travel.plug_types, japan.travel.driving_side)
+   (('A', 'B'), 'left')
+
+The ``driving_sides``, ``plug_types``, and ``mains_electricity`` learning
+topics turn these facts into flashcards and quizzes.
+
 Practical metadata
 ------------------
 

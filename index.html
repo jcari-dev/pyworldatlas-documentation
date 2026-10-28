@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=f3b36f1a"></script>
+      <script src="_static/documentation_options.js?v=57cbeb03"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=bdb8a868"></script>
@@ -45,7 +45,7 @@
     "downloadUrl": "https://pypi.org/project/pyworldatlas/",
     "programmingLanguage": "Python",
     "runtimePlatform": "Python 3.10 through 3.14",
-    "version": "0.11.0",
+    "version": "0.11.1",
     "license": "https://opensource.org/license/mit/"
   }
   </script>
@@ -177,6 +177,7 @@
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#anthem-titles">Anthem titles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#reviewed-mottos">Reviewed mottos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#demonyms">Demonyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference_facts.html#travel-basics">Travel basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#practical-metadata">Practical metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#coverage">Coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#source-inspection">Source inspection</a></li>
@@ -218,6 +219,10 @@
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#raw-latitude-and-longitude">Raw latitude and longitude</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#friendly-coordinate-labels">Friendly coordinate labels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#country-coordinates">Country coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sun.html">Sun and seasons</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sun.html#why-seasons-happen">Why seasons happen</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="borders.html">Land borders and paths</a><ul>
@@ -297,11 +302,12 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#noaa-ncei-etopo-2022">NOAA NCEI ETOPO 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-travel-basics-statements">Wikidata travel-basics statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-11-0-release">Source priority in the 0.11.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-11-1-release">Source priority in the 0.11.1 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -353,6 +359,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryRanking"><code class="docutils literal notranslate"><span class="pre">CountryRanking</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CapitalDistance"><code class="docutils literal notranslate"><span class="pre">CapitalDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CityDistance"><code class="docutils literal notranslate"><span class="pre">CityDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.SunTimes"><code class="docutils literal notranslate"><span class="pre">SunTimes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PlaceDistance"><code class="docutils literal notranslate"><span class="pre">PlaceDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
@@ -408,25 +415,26 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.11.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.10.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.11.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 (reserved tag, not published to PyPI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id17">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 (unpublished candidate)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id17">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id18">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -479,7 +487,7 @@ no runtime download.</p>
 </a>
 </div>
 </div>
-<p><strong>Documented version:</strong> 0.11.0 | <strong>Dataset:</strong> 2026.10.26.1 |
+<p><strong>Documented version:</strong> 0.11.1 | <strong>Dataset:</strong> 2026.10.27.1 |
 <strong>Python:</strong> 3.10–3.14 | <strong>Profiles:</strong> 248</p>
 <nav class="atlas-project-links" aria-label="PyWorldAtlas links">
   <a class="atlas-project-link atlas-project-link-primary" href="playground.html">Open playground</a>
@@ -637,7 +645,7 @@ in the <strong>Explore the atlas</strong> section of the navigation.</p>
 <section id="what-is-bundled">
 <h2>What is bundled<a class="headerlink" href="#what-is-bundled" title="Link to this heading"></a></h2>
 <table class="docutils align-default" id="id2">
-<caption><span class="caption-text">Dataset 2026.10.26.1</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
+<caption><span class="caption-text">Dataset 2026.10.27.1</span><a class="headerlink" href="#id2" title="Link to this table"></a></caption>
 <colgroup>
 <col style="width: 62.0%" />
 <col style="width: 38.0%" />
@@ -669,40 +677,43 @@ in the <strong>Explore the atlas</strong> section of the navigation.</p>
 <tr class="row-even"><td><p>Reviewed source-listed mottos</p></td>
 <td><p>32 / 248</p></td>
 </tr>
-<tr class="row-odd"><td><p>English demonym profiles</p></td>
+<tr class="row-odd"><td><p>Travel basics (plugs, mains supply, driving side)</p></td>
+<td><p>245 / 248</p></td>
+</tr>
+<tr class="row-even"><td><p>English demonym profiles</p></td>
 <td><p>227 / 248</p></td>
 </tr>
-<tr class="row-even"><td><p>Country timezone profiles</p></td>
+<tr class="row-odd"><td><p>Country timezone profiles</p></td>
 <td><p>246 / 248, 417 records</p></td>
 </tr>
-<tr class="row-odd"><td><p>Country-language metadata</p></td>
+<tr class="row-even"><td><p>Country-language metadata</p></td>
 <td><p>722 records across 245 profiles</p></td>
 </tr>
-<tr class="row-even"><td><p>Reviewed land-border relationships</p></td>
+<tr class="row-odd"><td><p>Reviewed land-border relationships</p></td>
 <td><p>319</p></td>
 </tr>
-<tr class="row-odd"><td><p>Total-area profiles</p></td>
+<tr class="row-even"><td><p>Total-area profiles</p></td>
 <td><p>248 / 248</p></td>
 </tr>
-<tr class="row-even"><td><p>Land area and coastline</p></td>
+<tr class="row-odd"><td><p>Land area and coastline</p></td>
 <td><p>238 / 248 each</p></td>
 </tr>
-<tr class="row-odd"><td><p>Highest and lowest points</p></td>
+<tr class="row-even"><td><p>Highest and lowest points</p></td>
 <td><p>240 / 248 each</p></td>
 </tr>
-<tr class="row-even"><td><p>Source-listed river records</p></td>
+<tr class="row-odd"><td><p>Source-listed river records</p></td>
 <td><p>188 across 80 profiles</p></td>
 </tr>
-<tr class="row-odd"><td><p>Source-listed lake records</p></td>
+<tr class="row-even"><td><p>Source-listed lake records</p></td>
 <td><p>187 across 69 profiles</p></td>
 </tr>
-<tr class="row-even"><td><p>Plain-language climate summaries</p></td>
+<tr class="row-odd"><td><p>Plain-language climate summaries</p></td>
 <td><p>240 / 248</p></td>
 </tr>
-<tr class="row-odd"><td><p>Köppen-Geiger climate profiles</p></td>
+<tr class="row-even"><td><p>Köppen-Geiger climate profiles</p></td>
 <td><p>241 / 248</p></td>
 </tr>
-<tr class="row-even"><td><p>Overview and Standard 3D maps</p></td>
+<tr class="row-odd"><td><p>Overview and Standard 3D maps</p></td>
 <td><p>248 / 248 each</p></td>
 </tr>
 </tbody>

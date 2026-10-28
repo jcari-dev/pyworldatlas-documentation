@@ -107,6 +107,9 @@ fields contained within a country profile.
 .. autoclass:: pyworldatlas.Timezone
    :members:
 
+.. autoclass:: pyworldatlas.TravelBasics
+   :members:
+
 .. autoclass:: pyworldatlas.PostalCodeFormat
    :members:
 
@@ -211,6 +214,9 @@ structured dictionaries. Their ``to_dict()`` methods provide portable output.
    :members:
 
 .. autoclass:: pyworldatlas.CityDistance
+   :members:
+
+.. autoclass:: pyworldatlas.SunTimes
    :members:
 
 .. autoclass:: pyworldatlas.PlaceDistance

@@ -1,4 +1,4 @@
-# PyWorldAtlas 0.11.0 documentation
+# PyWorldAtlas 0.11.1 documentation
 
 PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, a searchable school atlas of 200,000 places (11 million with packs), physical geography, climate classes, reviewed land borders, distances, rankings, learning tools, and optional 3D maps. It has no core runtime dependencies, needs no API key, and never uses the network at runtime.
 
@@ -146,7 +146,7 @@ keeps that session alive while you explore.
 
 What is running?
 
-This is the real pyworldatlas==0.11.0 wheel published on PyPI, not a
+This is the real pyworldatlas==0.11.1 wheel published on PyPI, not a
 JavaScript imitation or a remote demonstration API. Pyodide runs CPython in
 WebAssembly, while a module Web Worker keeps execution away from the page’s
 interface. After startup, country queries read the same bundled SQLite database
@@ -275,13 +275,13 @@ Install the built wheel offline
 
 Test the exact release artifact without consulting a package index:
 
-python -m pip install --no-index --no-deps dist/pyworldatlas-0.11.0-py3-none-any.whl
+python -m pip install --no-index --no-deps dist/pyworldatlas-0.11.1-py3-none-any.whl
 
 Verify the installation
 
 >>> import pyworldatlas
 >>> pyworldatlas.__version__
-'0.11.0'
+'0.11.1'
 >>> from pyworldatlas import Atlas
 >>> with Atlas() as atlas:
 ...     print(atlas.country("DO").capital.name)
@@ -1762,6 +1762,19 @@ English noun and adjective forms are preserved as printed by the source.
 >>> (japan.demonym.noun, japan.demonym.adjective)
 ('Japanese (singular and plural)', 'Japanese')
 
+Travel basics
+
+Plug types (IEC letters A to N), the household mains supply, and the side of
+the road people drive on. A value is missing when the source does not agree.
+
+>>> japan.travel.summary
+'Plugs A, B · 100 V, 50/60 Hz · drives on the left'
+>>> (japan.travel.plug_types, japan.travel.driving_side)
+(('A', 'B'), 'left')
+
+The driving_sides, plug_types, and mains_electricity learning
+topics turn these facts into flashcards and quizzes.
+
 Practical metadata
 
 Currency, language, timezone, and postal records are typed objects rather than
@@ -2617,6 +2630,69 @@ country.capital_coordinates exposes the primary capital position when one
 is available. Passing a Country to
 atlas.distance_between uses that position. Country inputs therefore produce
 capital-to-capital distances, not centroid distances.
+
+========================================================================
+Sun and seasons
+Source: https://jcari-dev.github.io/pyworldatlas-documentation/sun.html
+========================================================================
+
+Brazil flag emoji
+
+Japan flag emoji
+
+Switzerland flag emoji
+
+China flag emoji
+
+France flag emoji
+
+United Arab Emirates flag emoji
+
+Sun and seasons
+
+sun() works out sunrise, sunset, day length, and how
+high the sun climbs at noon, for any place and any date, with no internet and
+no extra data. It uses the NOAA solar position equations, which agree with
+almanac times to about a minute between latitudes 72° north and south. Times
+are in UTC.
+
+>>> from datetime import date
+>>> from pyworldatlas import Atlas
+>>> atlas = Atlas()
+>>> print(atlas.sun("London", date(2026, 6, 21)).summary)
+On 21 June 2026 the sun rises at 03:43 UTC and sets at 20:21 UTC, giving 16 h 38 min of daylight. At noon it is 62° above the horizon.
+>>> atlas.sun("London", date(2026, 12, 21)).daylight
+'7 h 49 min'
+
+Why seasons happen
+
+The Earth’s axis is tilted, so through the year the sun climbs higher at noon
+in one hemisphere and lower in the other. Compare the same day in Oslo and in
+Cape Town:
+
+>>> for city in ("Oslo", "Cape Town"):
+...     print(city, atlas.sun(city, date(2026, 12, 21)).daylight)
+Oslo 5 h 54 min
+Cape Town 14 h 25 min
+
+Close to the poles the sun can stay up or down all day:
+
+>>> print(atlas.sun("Tromsø", date(2026, 6, 21)).summary)
+On 21 June 2026 the sun does not set: this is the midnight sun.
+>>> atlas.sun("Tromsø", date(2026, 12, 21)).day_length_hours
+0.0
+
+where can be a city or place name ("Mount Everest"), a country (its
+capital), any model with coordinates, or a (latitude, longitude) tuple.
+on defaults to today.
+
+>>> atlas.sun((0, 0), date(2026, 3, 20)).daylight
+'12 h 07 min'
+>>> atlas.close()
+
+From the command line:
+
+pyworldatlas sun Reykjavik --date 2026-06-21
 
 ========================================================================
 Land borders and paths
@@ -3613,7 +3689,7 @@ pipeline downloads raw snapshots, records checksums, normalizes independent
 records, validates them, and generates the SQLite database. The installed
 runtime never contacts these services.
 
-The 0.10 core uses dataset 2026.10.26.1. Optional map editions add
+The 0.11 core uses dataset 2026.10.27.1. Optional map editions add
 separately installed, integrity-checked visualization records derived from
 pinned elevation, climate, outline, and river snapshots. Neither the core nor
 the installed map viewer contacts a source service at runtime.
@@ -3928,6 +4004,38 @@ build_data/reviewed/national_motto_decisions.csv. Thirty-two profiles
 are included. The runtime does not infer constitutional, statutory,
 traditional, or current legal status, and it does not ingest tourism slogans.
 
+Wikidata travel-basics statements
+
+Purpose
+
+Plug types, household mains voltage and frequency, and driving side for
+Country.travel.
+
+Official locations
+
+https://query.wikidata.org/sparql and
+https://www.wikidata.org/wiki/Wikidata:Licensing
+
+Current snapshot
+
+A 2026-10-27 SPARQL response with electrical plug type (P2853), mains
+voltage (P2884) with its frequency qualifier (P2144), and driving side
+(P1622) statements and their ranks. The exact query and response checksum
+are retained.
+
+Terms
+
+Wikidata structured data is released under Creative Commons CC0 1.0.
+
+Review boundary
+
+Preferred-rank statements are used when present. A driving side is kept
+only when the statements agree; otherwise it is missing. Voltages of 300 V
+or more (three-phase or industrial supplies) and plug entries that name a
+family of plugs rather than one type are left out. Plug items are mapped to
+their IEC World Plugs letter in the pipeline. 245 of 248 profiles have at
+least one value.
+
 United Nations Protocol and Liaison Service
 
 Purpose
@@ -4014,7 +4122,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.11.0 release
+Source priority in the 0.11.1 release
 
 
 
@@ -4112,6 +4220,12 @@ Wikidata item-valued statements
 
 Explicit include/exclude review; no inferred legal status
 
+Plug types, mains supply, and driving side
+
+Wikidata statements
+
+Missing when statements disagree; no inferred values
+
 Currency and language labels
 
 Unicode CLDR 48.2
@@ -4148,7 +4262,7 @@ Inspect sources in Python
 >>> with Atlas() as atlas:
 ...     sources = atlas.country("Japan").sources
 >>> [source.id for source in sources]
-['cia-world-factbook-2025', 'geonames', 'geonames-timezones-2026-07-22', 'koppen-geiger-1991-2020', 'natural-earth', 'reviewed-borders', 'un-m49', 'ungegn-country-names-2017', 'unicode-cldr-48.2-reference']
+['cia-world-factbook-2025', 'geonames', 'geonames-timezones-2026-07-22', 'koppen-geiger-1991-2020', 'natural-earth', 'reviewed-borders', 'un-m49', 'ungegn-country-names-2017', 'unicode-cldr-48.2-reference', 'wikidata-travel-basics-2026-10-27']
 
 Country.sources is a profile-level summary. Fact-bearing models also
 expose their direct source. Use
@@ -4583,11 +4697,11 @@ Project status
 This page is generated from the validated build report. It is a compact
 snapshot of the package, dataset, and coverage that ship together.
 
-0.11.0
+0.11.1
 
 library version
 
-2026.10.26.1
+2026.10.27.1
 
 dataset version
 
@@ -4643,7 +4757,7 @@ Physical geography
 
 Build identity
 
-Schema version: 7
+Schema version: 8
 
 This page is regenerated by python maintain.py status and every
 strict documentation build. Edit the report generator or source data,
@@ -5235,9 +5349,9 @@ Return deterministic, immutable geography flashcards.
 Supported topics are alpha_2_codes, alpha_3_codes, areas,
 border_counts, calling_codes, capitals, climate_zones,
 coastlines, continents,
-countries_from_capitals, currencies, flags,
+countries_from_capitals, currencies, driving_sides, flags,
 highest_points, language_codes, lakes, local_names,
-m49_codes, neighbors, rivers,
+m49_codes, mains_electricity, neighbors, plug_types, rivers,
 population_density, populations, regions, and
 top_level_domains. Countries missing the answer required by a topic
 are excluded before sampling. An impossible count raises
@@ -5418,6 +5532,18 @@ Coordinate, or a (latitude, longitude) tuple. Filter with
 kind or category (category="water" finds the nearest lakes
 and rivers). Distances are great-circle surface measurements in
 "km", "mi", or "nmi".
+
+
+
+sun(where: str | Country | Capital | City | Place | Coordinate | tuple[float, float], on: date | None = None) -> SunTimes[source]
+
+Return sunrise, sunset, day length, and the noon sun height for a place.
+
+where is a city or place name, a country (its capital), a model with
+coordinates, or a (latitude, longitude) tuple. on defaults to
+today. Times are in UTC and agree with almanac times to about a minute
+between latitudes 72° north and south. Compare atlas.sun("Oslo",
+date(2026, 6, 21)) with December to see why seasons happen.
 
 
 
@@ -5737,7 +5863,7 @@ effect because the bundled dataset has no historical series.
 
 
 
-__init__(name: str, official_name: str | None, names: tuple[LocalizedName, ...], aliases: tuple[str, ...], codes: CountryCodes, flag: str, geography: Geography, capitals: tuple[Capital, ...], major_cities: tuple[City, ...], sources: tuple[SourceReference, ...], local_names: tuple[LocalizedName, ...] = (), population: int | None = None, currency: Currency | None = None, languages: tuple[Language, ...] = (), calling_codes: tuple[str, ...] = (), top_level_domain: str | None = None, observed_timezones: tuple[str, ...] = (), formal_name: str | None = None, anthems: tuple[NationalAnthem, ...] = (), mottos: tuple[NationalMotto, ...] = (), demonyms: tuple[Demonym, ...] = (), timezones: tuple[Timezone, ...] = (), postal_code: PostalCodeFormat | None = None) -> None
+__init__(name: str, official_name: str | None, names: tuple[LocalizedName, ...], aliases: tuple[str, ...], codes: CountryCodes, flag: str, geography: Geography, capitals: tuple[Capital, ...], major_cities: tuple[City, ...], sources: tuple[SourceReference, ...], local_names: tuple[LocalizedName, ...] = (), population: int | None = None, currency: Currency | None = None, languages: tuple[Language, ...] = (), calling_codes: tuple[str, ...] = (), top_level_domain: str | None = None, observed_timezones: tuple[str, ...] = (), formal_name: str | None = None, anthems: tuple[NationalAnthem, ...] = (), mottos: tuple[NationalMotto, ...] = (), demonyms: tuple[Demonym, ...] = (), timezones: tuple[Timezone, ...] = (), postal_code: PostalCodeFormat | None = None, travel: TravelBasics | None = None) -> None
 
 
 
@@ -5828,6 +5954,29 @@ A country timezone and its captured January, July, and raw offsets.
 
 
 __init__(id: str, january_utc_offset_hours: float, july_utc_offset_hours: float, raw_utc_offset_hours: float, source: SourceReference | None = None) -> None
+
+
+
+
+
+class pyworldatlas.TravelBasics[source]
+
+Everyday facts a visitor needs: plugs, mains electricity, and driving side.
+
+plug_types are IEC World Plugs letters such as "A" or "G".
+voltages_v and frequencies_hz list the household mains supply; a
+country can use more than one. driving_side is "left" or "right",
+or None when the source does not agree on one side.
+
+
+
+property summary: str
+
+Return one readable line, such as "Plugs A, B · 100 V, 50/60 Hz · drives on the left".
+
+
+
+__init__(plug_types: tuple[str, ...], voltages_v: tuple[int, ...], frequencies_hz: tuple[int, ...], driving_side: str | None, source: SourceReference | None = None) -> None
 
 
 
@@ -6370,6 +6519,48 @@ Serialize this nearby-city result without escaping Unicode text.
 
 
 __init__(country: CountryReference, city: City, distance: float, unit: str) -> None
+
+
+
+
+
+class pyworldatlas.SunTimes[source]
+
+Sunrise, sunset, and daylight for one place on one date, in UTC.
+
+sunrise and sunset are None during the midnight sun (day length
+24 hours) and the polar night (day length 0). A UTC time can fall on the
+day before or after date far from Greenwich. noon_sun_height is the
+sun’s angle above the horizon at solar noon, in degrees; it is negative
+when the sun stays below the horizon.
+
+
+
+property daylight: str
+
+Return the day length as text, such as "16 h 38 min".
+
+
+
+property summary: str
+
+Return a plain-language description of the day.
+
+
+
+to_dict() -> dict[str, Any][source]
+
+Return JSON-compatible primitives for these sun times.
+
+
+
+to_json(indent: int | None = None) -> str[source]
+
+Serialize these sun times as JSON.
+
+
+
+__init__(coordinates: Coordinate, date: date, solar_noon: datetime, sunrise: datetime | None, sunset: datetime | None, day_length_hours: float, noon_sun_height: float) -> None
 
 
 
@@ -7204,6 +7395,22 @@ Changelog
 
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
+
+0.11.1
+
+Travel basics and the sun.
+
+Travel basics for 245 countries and areas: Country.travel gives plug
+types (IEC letters A to N), the household mains voltage and frequency, and
+the driving side, from CC0 Wikidata statements. Country summaries show a
+“Travel” line, and three new learning topics (driving_sides,
+plug_types, mains_electricity) feed flashcards and quizzes.
+
+Sun and seasons: sun() and pyworldatlas
+sun give sunrise, sunset, day length, and the noon sun height for any
+place and date, worked out offline. See Sun and seasons.
+
+Dataset 2026.10.27.1, schema 8.
 
 0.11.0
 

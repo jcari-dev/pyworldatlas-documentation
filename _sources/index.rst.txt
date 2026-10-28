@@ -26,7 +26,7 @@ PyWorldAtlas
          :alt: PyWorldAtlas Standard 3D elevation map of Iceland
          :target: maps.html
 
-**Documented version:** 0.11.0 | **Dataset:** 2026.10.26.1 |
+**Documented version:** 0.11.1 | **Dataset:** 2026.10.27.1 |
 **Python:** 3.10–3.14 | **Profiles:** 248
 
 .. raw:: html
@@ -228,7 +228,7 @@ Choose your next step
 What is bundled
 ---------------
 
-.. list-table:: Dataset 2026.10.26.1
+.. list-table:: Dataset 2026.10.27.1
    :header-rows: 1
    :widths: 62 38
 
@@ -248,6 +248,8 @@ What is bundled
      - 234 / 248
    * - Reviewed source-listed mottos
      - 32 / 248
+   * - Travel basics (plugs, mains supply, driving side)
+     - 245 / 248
    * - English demonym profiles
      - 227 / 248
    * - Country timezone profiles
@@ -333,6 +335,7 @@ The current source checkout can be installed with ``python -m pip install -e .``
    local_names
    capitals_cities
    coordinates_distances
+   sun
    borders
    discovery
    searching

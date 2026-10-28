@@ -15,7 +15,7 @@
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/data_sources.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=f3b36f1a"></script>
+      <script src="_static/documentation_options.js?v=57cbeb03"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
       <script defer="defer" src="_static/playground.js?v=bdb8a868"></script>
@@ -163,6 +163,7 @@
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#anthem-titles">Anthem titles</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#reviewed-mottos">Reviewed mottos</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#demonyms">Demonyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reference_facts.html#travel-basics">Travel basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#practical-metadata">Practical metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#coverage">Coverage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="reference_facts.html#source-inspection">Source inspection</a></li>
@@ -204,6 +205,10 @@
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#raw-latitude-and-longitude">Raw latitude and longitude</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#friendly-coordinate-labels">Friendly coordinate labels</a></li>
 <li class="toctree-l2"><a class="reference internal" href="coordinates_distances.html#country-coordinates">Country coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="sun.html">Sun and seasons</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="sun.html#why-seasons-happen">Why seasons happen</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="borders.html">Land borders and paths</a><ul>
@@ -283,11 +288,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#noaa-ncei-etopo-2022">NOAA NCEI ETOPO 2022</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wikidata-travel-basics-statements">Wikidata travel-basics statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#source-priority-in-the-0-11-0-release">Source priority in the 0.11.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#source-priority-in-the-0-11-1-release">Source priority in the 0.11.1 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -339,6 +345,7 @@
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryRanking"><code class="docutils literal notranslate"><span class="pre">CountryRanking</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CapitalDistance"><code class="docutils literal notranslate"><span class="pre">CapitalDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CityDistance"><code class="docutils literal notranslate"><span class="pre">CityDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.SunTimes"><code class="docutils literal notranslate"><span class="pre">SunTimes</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.PlaceDistance"><code class="docutils literal notranslate"><span class="pre">PlaceDistance</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
@@ -394,25 +401,26 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.11.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.10.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.9.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.11.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 (reserved tag, not published to PyPI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id17">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 (unpublished candidate)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id17">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id18">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -449,7 +457,7 @@
 pipeline downloads raw snapshots, records checksums, normalizes independent
 records, validates them, and generates the SQLite database. The installed
 runtime never contacts these services.</p>
-<p>The 0.10 core uses dataset <code class="docutils literal notranslate"><span class="pre">2026.10.26.1</span></code>. Optional map editions add
+<p>The 0.11 core uses dataset <code class="docutils literal notranslate"><span class="pre">2026.10.27.1</span></code>. Optional map editions add
 separately installed, integrity-checked visualization records derived from
 pinned elevation, climate, outline, and river snapshots. Neither the core nor
 the installed map viewer contacts a source service at runtime.</p>
@@ -698,6 +706,31 @@ traditional, or current legal status, and it does not ingest tourism slogans.</p
 </dd>
 </dl>
 </section>
+<section id="wikidata-travel-basics-statements">
+<h2>Wikidata travel-basics statements<a class="headerlink" href="#wikidata-travel-basics-statements" title="Link to this heading"></a></h2>
+<dl class="simple">
+<dt><strong>Purpose</strong></dt><dd><p>Plug types, household mains voltage and frequency, and driving side for
+<code class="docutils literal notranslate"><span class="pre">Country.travel</span></code>.</p>
+</dd>
+<dt><strong>Official locations</strong></dt><dd><p><a class="reference external" href="https://query.wikidata.org/sparql">https://query.wikidata.org/sparql</a> and
+<a class="reference external" href="https://www.wikidata.org/wiki/Wikidata:Licensing">https://www.wikidata.org/wiki/Wikidata:Licensing</a></p>
+</dd>
+<dt><strong>Current snapshot</strong></dt><dd><p>A 2026-10-27 SPARQL response with electrical plug type (P2853), mains
+voltage (P2884) with its frequency qualifier (P2144), and driving side
+(P1622) statements and their ranks. The exact query and response checksum
+are retained.</p>
+</dd>
+<dt><strong>Terms</strong></dt><dd><p>Wikidata structured data is released under Creative Commons CC0 1.0.</p>
+</dd>
+<dt><strong>Review boundary</strong></dt><dd><p>Preferred-rank statements are used when present. A driving side is kept
+only when the statements agree; otherwise it is missing. Voltages of 300 V
+or more (three-phase or industrial supplies) and plug entries that name a
+family of plugs rather than one type are left out. Plug items are mapped to
+their IEC World Plugs letter in the pipeline. 245 of 248 profiles have at
+least one value.</p>
+</dd>
+</dl>
+</section>
 <section id="united-nations-protocol-and-liaison-service">
 <h2>United Nations Protocol and Liaison Service<a class="headerlink" href="#united-nations-protocol-and-liaison-service" title="Link to this heading"></a></h2>
 <dl class="simple">
@@ -764,8 +797,8 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.</p>
 </section>
-<section id="source-priority-in-the-0-11-0-release">
-<h2>Source priority in the 0.11.0 release<a class="headerlink" href="#source-priority-in-the-0-11-0-release" title="Link to this heading"></a></h2>
+<section id="source-priority-in-the-0-11-1-release">
+<h2>Source priority in the 0.11.1 release<a class="headerlink" href="#source-priority-in-the-0-11-1-release" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 34.0%" />
@@ -835,23 +868,27 @@ introduce no additional border claims.</p>
 <td><p>Wikidata item-valued statements</p></td>
 <td><p>Explicit include/exclude review; no inferred legal status</p></td>
 </tr>
-<tr class="row-even"><td><p>Currency and language labels</p></td>
+<tr class="row-even"><td><p>Plug types, mains supply, and driving side</p></td>
+<td><p>Wikidata statements</p></td>
+<td><p>Missing when statements disagree; no inferred values</p></td>
+</tr>
+<tr class="row-odd"><td><p>Currency and language labels</p></td>
 <td><p>Unicode CLDR 48.2</p></td>
 <td><p>IANA description fallback for missing language labels</p></td>
 </tr>
-<tr class="row-odd"><td><p>Country timezone and postal format</p></td>
+<tr class="row-even"><td><p>Country timezone and postal format</p></td>
 <td><p>GeoNames</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-even"><td><p>Land-border relationships</p></td>
+<tr class="row-odd"><td><p>Land-border relationships</p></td>
 <td><p>GeoNames and Natural Earth agreement</p></td>
 <td><p>Explicit reviewed decision for each source difference</p></td>
 </tr>
-<tr class="row-odd"><td><p>Optional map elevation</p></td>
+<tr class="row-even"><td><p>Optional map elevation</p></td>
 <td><p>NOAA NCEI ETOPO 2022</p></td>
 <td><p>None</p></td>
 </tr>
-<tr class="row-even"><td><p>Optional map display outlines and rivers</p></td>
+<tr class="row-odd"><td><p>Optional map display outlines and rivers</p></td>
 <td><p>Natural Earth</p></td>
 <td><p>Overview uses the smaller 1:50m river layer</p></td>
 </tr>
@@ -864,7 +901,7 @@ introduce no additional border claims.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">with</span> <span class="n">Atlas</span><span class="p">()</span> <span class="k">as</span> <span class="n">atlas</span><span class="p">:</span>
 <span class="gp">... </span>    <span class="n">sources</span> <span class="o">=</span> <span class="n">atlas</span><span class="o">.</span><span class="n">country</span><span class="p">(</span><span class="s2">"Japan"</span><span class="p">)</span><span class="o">.</span><span class="n">sources</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">source</span><span class="o">.</span><span class="n">id</span> <span class="k">for</span> <span class="n">source</span> <span class="ow">in</span> <span class="n">sources</span><span class="p">]</span>
-<span class="go">['cia-world-factbook-2025', 'geonames', 'geonames-timezones-2026-07-22', 'koppen-geiger-1991-2020', 'natural-earth', 'reviewed-borders', 'un-m49', 'ungegn-country-names-2017', 'unicode-cldr-48.2-reference']</span>
+<span class="go">['cia-world-factbook-2025', 'geonames', 'geonames-timezones-2026-07-22', 'koppen-geiger-1991-2020', 'natural-earth', 'reviewed-borders', 'un-m49', 'ungegn-country-names-2017', 'unicode-cldr-48.2-reference', 'wikidata-travel-basics-2026-10-27']</span>
 </pre></div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">Country.sources</span></code> is a profile-level summary. Fact-bearing models also
