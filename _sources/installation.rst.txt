@@ -30,6 +30,39 @@ installed version:
 
    python -m pip install --upgrade pyworldatlas
 
+Optional data packs
+-------------------
+
+The core package is complete on its own. Packs add more data, each installed
+once with ``pyworldatlas get NAME`` and checked against a SHA-256 checksum
+pinned in the library. ``pyworldatlas packs`` lists what is installed.
+
+.. list-table::
+   :header-rows: 1
+   :widths: 24 52 24
+
+   * - Pack
+     - Adds
+     - Download
+   * - ``maps``
+     - Standard 3D country maps (5 arc-minute terrain)
+     - about 13 MB
+   * - ``maps-lite``
+     - Overview 3D country maps (20 arc-minute terrain)
+     - about 7 MB
+   * - ``places-explorer``
+     - Every town over 1,000 people and every named natural feature
+     - about 23 MB
+   * - ``places-world``
+     - Every remaining village, stream, hill, and local area
+     - about 44 MB
+   * - ``landmarks``
+     - Airports with scheduled flights and World Heritage sites
+     - about 0.15 MB
+   * - ``statistics``
+     - Eleven World Bank indicators for every country since 1960
+     - about 0.15 MB
+
 Optional 3D maps
 ----------------
 
@@ -84,7 +117,7 @@ Test the exact release artifact without consulting a package index:
 
 .. code-block:: console
 
-   python -m pip install --no-index --no-deps dist/pyworldatlas-0.12.0-py3-none-any.whl
+   python -m pip install --no-index --no-deps dist/pyworldatlas-0.12.1-py3-none-any.whl
 
 Verify the installation
 -----------------------
@@ -93,7 +126,7 @@ Verify the installation
 
    >>> import pyworldatlas
    >>> pyworldatlas.__version__
-   '0.12.0'
+   '0.12.1'
    >>> from pyworldatlas import Atlas
    >>> with Atlas() as atlas:
    ...     print(atlas.country("DO").capital.name)

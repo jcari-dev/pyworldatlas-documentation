@@ -31,8 +31,6 @@ JSON output
    'Japan'
 
 Tuples become JSON arrays and enums become their string values.
-``include_history`` is accepted for compatibility but currently has no effect
-because historical series are not bundled.
 
 English ``formal_name`` is serialized as a string for the 240 covered profiles
 and as JSON ``null`` for the eight profiles outside the source intersection.

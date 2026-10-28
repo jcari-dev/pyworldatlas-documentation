@@ -7,12 +7,12 @@ keeps that session alive while you explore.
 
 .. raw:: html
 
-   <div id="atlas-playground" class="atlas-playground" data-package="pyworldatlas==0.12.0">
+   <div id="atlas-playground" class="atlas-playground" data-package="pyworldatlas==0.12.1">
      <div class="atlas-playground-header">
        <div>
          <p class="atlas-playground-eyebrow">Python in your browser</p>
          <h2>Explore the atlas</h2>
-         <p>Look up any country or place, or choose one of eighteen complete recipes and write your own Python. Press <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Enter</kbd> to run it.</p>
+         <p>Look up any country or place, take a quiz, or choose one of twenty-one complete recipes and write your own Python. Press <kbd>Ctrl</kbd>/<kbd>⌘</kbd> + <kbd>Enter</kbd> to run it.</p>
        </div>
        <div class="atlas-runtime-status" data-role="status" data-state="loading" aria-live="polite">
          <span class="atlas-status-dot" aria-hidden="true"></span>
@@ -22,9 +22,9 @@ keeps that session alive while you explore.
 
      <div class="atlas-runtime-facts" aria-label="Playground runtime">
        <span>Python <strong data-role="python-version">starting</strong></span>
-       <span>PyWorldAtlas <strong data-role="library-version">0.12.0</strong></span>
+       <span>PyWorldAtlas <strong data-role="library-version">0.12.1</strong></span>
        <span>Dataset <strong data-role="dataset-version">bundled</strong></span>
-       <span>Recipes <strong>18 ready</strong></span>
+       <span>Recipes <strong>21 ready</strong></span>
      </div>
 
      <section class="atlas-explore" aria-labelledby="atlas-explore-title">
@@ -34,9 +34,23 @@ keeps that session alive while you explore.
          <input id="atlas-explore-query" data-role="explore-query" type="search" autocomplete="off"
                 placeholder="Try Japan, Everest, or Lake Titicaca" disabled>
          <button type="submit" class="atlas-button atlas-button-run" data-action="explore" disabled>Explore</button>
+         <button type="button" class="atlas-button atlas-explore-surprise" data-action="surprise" disabled>🎲 Surprise me</button>
        </form>
        <p class="atlas-explore-status" data-role="explore-status" aria-live="polite"></p>
        <ol class="atlas-explore-results" data-role="explore-results"></ol>
+     </section>
+
+     <section class="atlas-quiz" aria-labelledby="atlas-quiz-title">
+       <h3 id="atlas-quiz-title" class="atlas-control-label">Quiz me</h3>
+       <p class="atlas-quiz-intro">Five questions about countries, flags, and famous places. Every answer comes from the atlas.</p>
+       <button type="button" class="atlas-button atlas-button-run" data-action="quiz" disabled>Start a quiz</button>
+       <div class="atlas-quiz-card" data-role="quiz-card" hidden>
+         <p class="atlas-quiz-progress" data-role="quiz-progress"></p>
+         <p class="atlas-quiz-prompt" data-role="quiz-prompt" tabindex="-1"></p>
+         <div class="atlas-quiz-choices" data-role="quiz-choices" role="group" aria-label="Answers"></div>
+         <p class="atlas-quiz-feedback" data-role="quiz-feedback" aria-live="polite"></p>
+         <button type="button" class="atlas-button atlas-button-run" data-action="quiz-next" hidden>Next question</button>
+       </div>
      </section>
 
      <div class="atlas-preset-section">
@@ -81,7 +95,7 @@ keeps that session alive while you explore.
 What is running?
 ----------------
 
-This is the real ``pyworldatlas==0.12.0`` wheel published on PyPI, not a
+This is the real ``pyworldatlas==0.12.1`` wheel published on PyPI, not a
 JavaScript imitation or a remote demonstration API. `Pyodide`_ runs CPython in
 WebAssembly, while a module Web Worker keeps execution away from the page's
 interface. After startup, country queries read the same bundled SQLite database
@@ -93,6 +107,9 @@ PyPI. Code entered in the editor is evaluated on your device; this project does
 not receive its contents. Each run has a 20-second safety limit, and interactive
 ``input()`` calls are not supported.
 
+Place, city, and country data come from GeoNames (CC BY 4.0) and Unicode CLDR
+(Unicode License v3), among other credited sources; see :doc:`data_sources`.
+
 .. _Pyodide: https://pyodide.org/
 
 Things worth trying
@@ -100,9 +117,10 @@ Things worth trying
 
 **Look up anything** answers in plain cards: type a country, city, mountain,
 lake, or landmark. Each card has **Open in the editor**, which loads the Python
-that produced it, so you can see how it works and change it.
+that produced it, so you can see how it works and change it. **Surprise me**
+picks a famous place, and **Quiz me** asks five questions with a score.
 
-The eighteen guided programs cover five different ways to use the package:
+The twenty-one guided programs cover six different ways to use the package:
 
 * **Meet the world:** summarize the atlas, build a rich country dossier,
   compare profiles, and cross original writing systems.
@@ -115,6 +133,8 @@ The eighteen guided programs cover five different ways to use the package:
   Unicode-preserving JSON.
 * **Every place on Earth:** search 200,000 places by name, see what is nearby,
   work out sunrise and day length anywhere, and compare travel basics.
+* **Challenges:** find the capital with the shortest December day, the capital
+  closest to the equator, and the two capitals farthest apart.
 
 Change a country name, adjust a ranking, or combine two examples. The Python
 session persists until you select **Reset Python** or close the page.

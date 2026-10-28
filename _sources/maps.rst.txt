@@ -8,6 +8,20 @@ builds each map with the standard library, and the map pack ships the browser
 renderer. After the pack is installed everything is offline: ``show()`` writes a
 local HTML document and opens that file.
 
+.. admonition:: In 30 seconds
+   :class: atlas-quick
+
+   .. code-block:: console
+
+      pyworldatlas get maps
+
+   .. code-block:: python
+
+      from pyworldatlas import Atlas
+
+      with Atlas() as atlas:
+          atlas.map("Iceland").show()
+
 .. warning::
 
    **Experimental feature.** Interactive 3D maps are under active development.

@@ -8,7 +8,7 @@ snapshot of the package, dataset, and coverage that ship together.
 
    .. container:: atlas-stat
 
-      **0.12.0**
+      **0.12.1**
 
       library version
 

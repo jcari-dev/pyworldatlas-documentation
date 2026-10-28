@@ -7,6 +7,17 @@ no extra data. It uses the NOAA solar position equations, which agree with
 almanac times to about a minute between latitudes 72° north and south. Times
 are in UTC.
 
+.. admonition:: In 30 seconds
+   :class: atlas-quick
+
+   .. doctest::
+
+      >>> from datetime import date
+      >>> from pyworldatlas import Atlas
+      >>> with Atlas() as atlas:
+      ...     print(atlas.sun("Oslo", date(2026, 12, 21)).daylight)
+      5 h 54 min
+
 .. doctest::
 
    >>> from datetime import date
@@ -19,6 +30,16 @@ are in UTC.
 
 Why seasons happen
 ------------------
+
+Hours of daylight on 21 December 2026, from north to south:
+
+.. code-block:: text
+
+   Oslo       5 h 54 min  ######
+   London     7 h 49 min  ########
+   Cairo     10 h 12 min  ##########
+   Nairobi   12 h 12 min  ############
+   Sydney    14 h 24 min  ##############
 
 The Earth's axis is tilted, so through the year the sun climbs higher at noon
 in one hemisphere and lower in the other. Compare the same day in Oslo and in

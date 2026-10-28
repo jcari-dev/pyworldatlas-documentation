@@ -4,6 +4,18 @@ Airports and World Heritage
 The optional **landmarks** pack (about 150 KB) adds every airport with
 scheduled passenger flights and every site on the UNESCO World Heritage List.
 
+.. admonition:: In 30 seconds
+   :class: atlas-quick
+
+   .. doctest::
+
+      >>> from pyworldatlas import Atlas
+      >>> with Atlas() as atlas:
+      ...     print(atlas.airport("LHR"))
+      ...     print(atlas.world_heritage_sites_near("Cusco", limit=1)[0].site.name)
+      LHR · London Heathrow Airport (GB)
+      Historic centre of Cusco
+
 .. code-block:: bash
 
    pyworldatlas get landmarks

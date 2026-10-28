@@ -207,6 +207,45 @@ async function warmUp() {
   await pyodide.runPythonAsync('_explore_atlas.search_places("a", limit=1)');
 }
 
+const QUIZ_HELPERS = `
+import random as _random
+from pyworldatlas import Atlas as _QuizAtlas
+
+_quiz_atlas = _QuizAtlas()
+
+
+def _quiz(seed):
+    rng = _random.Random(seed)
+    questions = []
+    for topic in rng.sample(["capitals", "flags", "continents", "driving_sides"], 3):
+        question = _quiz_atlas.quiz(topic=topic, count=1, choices=2 if topic == "driving_sides" else 4, seed=seed)[0]
+        questions.append({"prompt": question.prompt, "choices": list(question.choices), "answer": question.answer})
+    for topic in ("higher", "kinds"):
+        question = _quiz_atlas.place_quiz(topic, count=1, seed=seed)[0]
+        questions.append({"prompt": question.prompt, "choices": list(question.choices), "answer": question.answer})
+    rng.shuffle(questions)
+    return _json.dumps(questions, ensure_ascii=False)
+`;
+let quizReady = false;
+
+async function quiz(id, seed) {
+  await readyPromise;
+  await warmPromise;
+  try {
+    if (!quizReady) {
+      await pyodide.runPythonAsync(QUIZ_HELPERS);
+      quizReady = true;
+    }
+    pyodide.globals.set("_quiz_seed", seed);
+    const questions = await pyodide.runPythonAsync("_quiz(_quiz_seed)");
+    post("quiz-result", { id, questions: JSON.parse(questions) });
+  } catch (error) {
+    post("quiz-result", { id, questions: [], error: describeError(error) });
+  } finally {
+    pyodide.globals.delete("_quiz_seed");
+  }
+}
+
 async function explore(id, query) {
   await readyPromise;
   await warmPromise;
@@ -280,5 +319,9 @@ self.addEventListener("message", (event) => {
 
   if (message.type === "explore") {
     void explore(message.id, message.query);
+  }
+
+  if (message.type === "quiz") {
+    void quiz(message.id, message.seed);
   }
 });

@@ -415,6 +415,105 @@
   max-width: 1120px;
 }
 
+.atlas-hero-search {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0 0.4rem;
+  max-width: 34rem;
+}
+
+.atlas-hero-search input {
+  flex: 1;
+  min-width: 0;
+  min-height: 2.9rem;
+  padding: 0.5rem 0.9rem;
+  border: 2px solid #8fb6c8;
+  border-radius: 9px;
+  font: inherit;
+  font-size: 1.05rem;
+}
+
+.atlas-hero-search input:focus-visible {
+  outline: 3px solid #3981a5;
+  outline-offset: 1px;
+}
+
+.atlas-hero-search button {
+  min-height: 2.9rem;
+  padding: 0.4rem 1.3rem;
+  background: #2f7d6d;
+  border: 0;
+  border-radius: 9px;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.atlas-hero-search button:hover,
+.atlas-hero-search button:focus-visible {
+  background: #276a5c;
+  outline: 3px solid #8fc4dc;
+  outline-offset: 2px;
+}
+
+.rst-content .atlas-hero-try {
+  margin: 0;
+  color: var(--atlas-muted);
+  font-size: 0.85rem;
+}
+
+.atlas-doors {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.8rem;
+  margin: 0.4rem 0 1.6rem;
+}
+
+.rst-content a.atlas-door {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem 1.1rem;
+  background: #fff;
+  border: 1px solid var(--atlas-line);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(38, 68, 85, 0.06);
+  color: var(--atlas-ink);
+  text-decoration: none;
+  transition: border-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
+}
+
+.rst-content a.atlas-door:hover,
+.rst-content a.atlas-door:focus-visible {
+  border-color: #6fa6bf;
+  box-shadow: 0 6px 18px rgba(38, 68, 85, 0.12);
+  outline: none;
+  transform: translateY(-2px);
+}
+
+.atlas-door-icon {
+  font-size: 1.9rem;
+  line-height: 1;
+}
+
+.atlas-door strong {
+  color: #24485a;
+  font-size: 1.05rem;
+}
+
+.atlas-door span:last-child {
+  color: var(--atlas-muted);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rst-content a.atlas-door { transition: none; }
+  .rst-content a.atlas-door:hover { transform: none; }
+}
+
 .atlas-project-links {
   display: flex;
   flex-wrap: wrap;
@@ -682,6 +781,106 @@
   margin: 0;
   padding: 0;
   color: #2f3b45;
+}
+
+.atlas-explore-surprise {
+  background: #fff;
+  border-color: #8fb6c8;
+  color: #24485a;
+  min-height: 2.4rem;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+.atlas-quiz {
+  padding: 0.6rem 1.3rem 1rem;
+  border-bottom: 1px solid var(--atlas-line);
+}
+
+.atlas-playground .atlas-quiz-intro {
+  margin: 0 0 0.6rem;
+  color: #4f6370;
+  font-size: 0.85rem;
+}
+
+.atlas-quiz-card {
+  margin-top: 0.7rem;
+  padding: 0.9rem 1rem;
+  background: #fff;
+  border: 1px solid #d7e2e8;
+  border-left: 4px solid #9a762f;
+  border-radius: 7px;
+}
+
+.atlas-playground .atlas-quiz-progress {
+  margin: 0;
+  color: #5c6b75;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.atlas-playground .atlas-quiz-prompt {
+  margin: 0.3rem 0 0.7rem;
+  color: #24485a;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.atlas-quiz-choices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 0.45rem;
+}
+
+.atlas-quiz-choice {
+  min-height: 2.6rem;
+  padding: 0.45rem 0.7rem;
+  background: var(--atlas-blue-soft);
+  border: 1px solid #8fb6c8;
+  border-radius: 8px;
+  color: #24485a;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.95rem;
+  text-align: left;
+}
+
+.atlas-quiz-choice:hover:not(:disabled),
+.atlas-quiz-choice:focus-visible {
+  background: #dcecf5;
+  outline: 2px solid #3981a5;
+  outline-offset: 1px;
+}
+
+.atlas-quiz-choice:disabled {
+  cursor: default;
+}
+
+.atlas-quiz-choice[data-state="right"] {
+  background: #e3f4ec;
+  border-color: #2f7d6d;
+  color: #1d5b4e;
+  font-weight: 700;
+}
+
+.atlas-quiz-choice[data-state="right"]::before {
+  content: "✓ ";
+}
+
+.atlas-quiz-choice[data-state="wrong"] {
+  background: #fbeaea;
+  border-color: #b33a3a;
+  color: #8a2a2a;
+}
+
+.atlas-quiz-choice[data-state="wrong"]::before {
+  content: "✗ ";
+}
+
+.atlas-playground .atlas-quiz-feedback {
+  min-height: 1.2em;
+  margin: 0.6rem 0 0.4rem;
+  font-weight: 600;
 }
 
 .atlas-explore-open {
@@ -1105,4 +1304,39 @@
 
 #main-content:focus {
   outline: none;
+}
+
+.rst-content .admonition.atlas-quick {
+  background: var(--atlas-teal-soft);
+  border-left: 4px solid var(--atlas-teal);
+  border-radius: 8px;
+}
+
+.rst-content .admonition.atlas-quick > .admonition-title {
+  background: var(--atlas-teal);
+}
+
+.rst-content div.highlight.atlas-copyable {
+  position: relative;
+}
+
+.rst-content .atlas-copy {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  padding: 0.2rem 0.55rem;
+  background: #fff;
+  border: 1px solid #9fb6c2;
+  border-radius: 6px;
+  color: #24485a;
+  cursor: pointer;
+  font: 600 0.72rem/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  opacity: 0.85;
+}
+
+.rst-content .atlas-copy:hover,
+.rst-content .atlas-copy:focus-visible {
+  opacity: 1;
+  outline: 2px solid #3981a5;
+  outline-offset: 1px;
 }

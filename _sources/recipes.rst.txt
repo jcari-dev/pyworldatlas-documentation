@@ -312,7 +312,7 @@ the database and directly JSON serializable.
 Continue exploring
 ------------------
 
-The :doc:`playground` contains fourteen ready-to-run programs, including a
+The :doc:`playground` contains twenty-one ready-to-run programs, including a
 nearest-capital radar, city explorer, multilingual name inspector, and
 multi-metric leaderboard. Consult :doc:`api` when you want the complete method
 and return-type contracts.

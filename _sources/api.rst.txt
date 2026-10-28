@@ -21,23 +21,28 @@ Find the right object
    * - :ref:`Atlas <api-atlas>`
      - Opening the database and running lookups, searches, calculations, and
        learning helpers
-     - ``Country``, ``City``, rankings, distances, paths, and tuples of results
+     - ``Country``, ``Place``, ``City``, rankings, distances, paths, sun times,
+       statistics, and tuples of results
    * - :ref:`Country <api-country-models>`
      - Reading one country or area profile
      - Names, codes, capital, reference facts, physical geography, and sources
    * - :ref:`Coordinate and place models <api-geographic-models>`
-     - Working with locations and physical features
-     - ``Coordinate``, ``Capital``, ``City``, ``River``, ``Lake``, and climate
-       records
+     - Working with locations, places, and physical features
+     - ``Coordinate``, ``Place``, ``Capital``, ``City``, ``Airport``,
+       ``WorldHeritageSite``, ``River``, ``Lake``, and climate records
    * - :ref:`Result models <api-results>`
-     - Inspecting structured calculations and learning material
-     - Rankings, distances, border paths, flashcards, quizzes, and metadata
+     - Inspecting structured calculations, statistics, and learning material
+     - Rankings, distances, border paths, sun times, antipodes, statistic
+       series, flashcards, quizzes, and metadata
    * - :ref:`Exceptions <api-exceptions>`
      - Handling missing, ambiguous, closed, or incompatible data
      - Specific subclasses of ``AtlasError``
    * - :ref:`Optional maps <api-maps>`
      - Opening or exporting an installed 3D map edition
      - ``CountryMap`` and map-data errors
+   * - :ref:`Data packs <api-packs>`
+     - Installing and listing optional packs from Python
+     - ``pyworldatlas.packs`` functions and ``PackNotInstalledError``
 
 How to read an entry
 --------------------
@@ -62,9 +67,10 @@ corresponding model's ``to_dict()`` method when you need JSON-compatible data.
 Atlas
 -----
 
-The main entry point. ``Atlas`` handles country and city lookup, filtering,
-distance calculations, border paths, rankings, learning helpers, dataset
-metadata, and optional maps.
+The main entry point. ``Atlas`` handles country, city, and place lookup;
+nearby-place search; filtering; distances, sun times, and antipodes; border
+paths and rankings; flashcards and quizzes; dataset metadata; and the optional
+maps, landmarks, and statistics packs.
 
 .. autoclass:: pyworldatlas.Atlas
    :members:
@@ -281,6 +287,8 @@ Catch a specific exception when the distinction matters, or catch
 .. autoexception:: pyworldatlas.AmbiguousPlaceError
 .. autoexception:: pyworldatlas.CapitalNotFoundError
 .. autoexception:: pyworldatlas.MapSupportNotInstalledError
+
+.. autoexception:: pyworldatlas.PackNotInstalledError
 
 .. _api-maps:
 

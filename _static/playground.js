@@ -29,6 +29,19 @@
   const exploreStatus = root.querySelector('[data-role="explore-status"]');
   const exploreResults = root.querySelector('[data-role="explore-results"]');
   let activeExplore = 0;
+  const surpriseButton = root.querySelector('[data-action="surprise"]');
+  const quizButton = root.querySelector('[data-action="quiz"]');
+  const quizCard = root.querySelector('[data-role="quiz-card"]');
+  const quizProgress = root.querySelector('[data-role="quiz-progress"]');
+  const quizPrompt = root.querySelector('[data-role="quiz-prompt"]');
+  const quizChoices = root.querySelector('[data-role="quiz-choices"]');
+  const quizFeedback = root.querySelector('[data-role="quiz-feedback"]');
+  const quizNext = root.querySelector('[data-action="quiz-next"]');
+  const surprises = ["Machu Picchu", "Mount Fuji", "Sahara", "Lake Titicaca", "Victoria Falls", "Mount Everest", "Kilimanjaro", "Grand Canyon", "Amazon River", "Iceland", "Lake Baikal", "Mount Etna", "Galapagos Islands", "Easter Island", "Niagara Falls", "Mont Blanc", "Matterhorn", "Petra", "Angkor Wat", "Uluru", "Table Mountain", "Nile River", "Himalayas", "Madagascar", "Mount Kenya", "Gobi Desert", "Lake Como", "Venice", "Ha Long Bay", "Krakatoa", "Aconcagua", "Taj Mahal", "Stonehenge", "Eiffel Tower", "Mount Kinabalu", "Rocky Mountains", "Mauna Kea"];
+  let activeQuiz = 0;
+  let quizQuestions = [];
+  let quizIndex = 0;
+  let quizScore = 0;
 
   const presets = [
     {
@@ -379,6 +392,64 @@ with Atlas() as atlas:
         for result in atlas.lookup(query, limit=4):
             print(f"  {result}")`,
     },
+    {
+      category: "Challenges",
+      id: "shortest-day",
+      label: "Shortest December day",
+      description: "Which capital gets the least daylight?",
+      code: `from datetime import date
+from pyworldatlas import Atlas
+
+day = date(2026, 12, 21)
+with Atlas() as atlas:
+    days = []
+    for country in atlas:
+        if country.capital:
+            sun = atlas.sun(country.capital, day)
+            days.append((sun.day_length_hours, country.capital.name, country.name))
+    days.sort()
+    print("Shortest days on 21 December:")
+    for hours, capital, country in days[:3]:
+        print(f"  {capital} ({country}): {hours:.1f} hours")
+    hours, capital, country = days[-1]
+    print(f"Longest: {capital} ({country}), {hours:.1f} hours")`,
+    },
+    {
+      category: "Challenges",
+      id: "equator",
+      label: "Closest to the equator",
+      description: "Which capitals sit nearest the equator?",
+      code: `from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    capitals = sorted(
+        (abs(country.capital.coordinates.latitude), country.capital.name, country.name)
+        for country in atlas
+        if country.capital
+    )
+    print("Capitals closest to the equator:")
+    for degrees, capital, country in capitals[:5]:
+        print(f"  {capital} ({country}): {degrees:.2f} degrees away")`,
+    },
+    {
+      category: "Challenges",
+      id: "farthest",
+      label: "Farthest apart",
+      description: "Which two capitals are farthest apart?",
+      code: `from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    capitals = [country for country in atlas if country.capital]
+    best = (0.0, None, None)
+    for i, first in enumerate(capitals):
+        for second in capitals[i + 1:]:
+            km = atlas.distance_between(first, second)
+            if km > best[0]:
+                best = (km, first, second)
+    km, first, second = best
+    print(f"{first.capital.name} and {second.capital.name}: {km:,.0f} km apart")
+    print("Half way around the Earth is about 20,000 km.")`,
+    },
   ];
 
   let worker = null;
@@ -400,6 +471,8 @@ with Atlas() as atlas:
   function setControls() {
     runButton.disabled = !ready || running;
     exploreButton.disabled = !ready || running;
+    surpriseButton.disabled = !ready || running;
+    quizButton.disabled = !ready || running;
     exploreQuery.disabled = !ready;
     stopButton.disabled = !running;
     resetButton.disabled = running;
@@ -509,6 +582,20 @@ with Atlas() as atlas:
       editorHint.textContent = "Your Python session persists between runs.";
       setControls();
       clearOutput("Ready. A complete recipe is already loaded. Press Run Python.");
+      // A search started from the home page (playground.html?q=Japan) runs now.
+      const asked = new URLSearchParams(window.location.search).get("q");
+      if (asked && !exploreQuery.value) {
+        exploreQuery.value = asked.slice(0, 80);
+        exploreForm.requestSubmit();
+        exploreForm.scrollIntoView({ block: "start" });
+      }
+      return;
+    }
+
+    if (message.type === "quiz-result") {
+      if (message.id === activeQuiz) {
+        startQuiz(message);
+      }
       return;
     }
 
@@ -676,6 +763,97 @@ with Atlas() as atlas:
       exploreResults.append(item);
     }
   }
+
+  surpriseButton.addEventListener("click", () => {
+    let pick = surprises[Math.floor(Math.random() * surprises.length)];
+    if (pick === exploreQuery.value && surprises.length > 1) {
+      pick = surprises[(surprises.indexOf(pick) + 1) % surprises.length];
+    }
+    exploreQuery.value = pick;
+    exploreForm.requestSubmit();
+  });
+
+  function showQuestion() {
+    const question = quizQuestions[quizIndex];
+    quizProgress.textContent = `Question ${quizIndex + 1} of ${quizQuestions.length} · Score ${quizScore}`;
+    quizPrompt.textContent = question.prompt;
+    quizFeedback.textContent = "";
+    quizNext.hidden = true;
+    quizChoices.replaceChildren();
+    for (const choice of question.choices) {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "atlas-quiz-choice";
+      button.textContent = choice;
+      button.addEventListener("click", () => answerQuestion(button, choice));
+      quizChoices.append(button);
+    }
+    quizPrompt.focus();
+  }
+
+  function answerQuestion(chosen, choice) {
+    const question = quizQuestions[quizIndex];
+    const right = choice === question.answer;
+    if (right) {
+      quizScore += 1;
+    }
+    for (const button of quizChoices.querySelectorAll("button")) {
+      button.disabled = true;
+      if (button.textContent === question.answer) {
+        button.dataset.state = "right";
+      } else if (button === chosen) {
+        button.dataset.state = "wrong";
+      }
+    }
+    quizFeedback.textContent = right ? "Correct!" : `Not quite: the answer is ${question.answer}.`;
+    quizProgress.textContent = `Question ${quizIndex + 1} of ${quizQuestions.length} · Score ${quizScore}`;
+    quizNext.textContent = quizIndex + 1 < quizQuestions.length ? "Next question" : "See your score";
+    quizNext.hidden = false;
+    quizNext.focus();
+  }
+
+  function startQuiz(message) {
+    if (message.error || !message.questions.length) {
+      quizCard.hidden = false;
+      quizPrompt.textContent = "The quiz could not start. Try again.";
+      return;
+    }
+    quizQuestions = message.questions;
+    quizIndex = 0;
+    quizScore = 0;
+    quizCard.hidden = false;
+    showQuestion();
+  }
+
+  quizButton.addEventListener("click", () => {
+    if (!ready) {
+      return;
+    }
+    activeQuiz += 1;
+    quizCard.hidden = false;
+    quizChoices.replaceChildren();
+    quizNext.hidden = true;
+    quizFeedback.textContent = "";
+    quizProgress.textContent = "";
+    quizPrompt.textContent = "Picking five questions…";
+    worker.postMessage({ type: "quiz", id: activeQuiz, seed: `quiz-${Date.now()}` });
+  });
+
+  quizNext.addEventListener("click", () => {
+    quizIndex += 1;
+    if (quizIndex < quizQuestions.length) {
+      showQuestion();
+      return;
+    }
+    const cheer = quizScore === quizQuestions.length ? " Perfect!" : quizScore >= 3 ? " Well done!" : " Try another quiz!";
+    quizProgress.textContent = "";
+    quizPrompt.textContent = `You scored ${quizScore} out of ${quizQuestions.length}.${cheer}`;
+    quizChoices.replaceChildren();
+    quizFeedback.textContent = "";
+    quizNext.hidden = true;
+    quizButton.textContent = "Start another quiz";
+    quizPrompt.focus();
+  });
 
   exploreForm.addEventListener("submit", (event) => {
     event.preventDefault();

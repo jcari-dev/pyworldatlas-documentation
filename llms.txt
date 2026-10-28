@@ -1,6 +1,6 @@
-# PyWorldAtlas 0.12.0
+# PyWorldAtlas 0.12.1
 
-> PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, a searchable school atlas of 200,000 places (11 million with packs), physical geography, climate classes, reviewed land borders, distances, rankings, learning tools, and optional 3D maps. It has no core runtime dependencies, needs no API key, and never uses the network at runtime.
+> PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, a searchable school atlas of 200,000 places (11 million with packs), physical geography, climate classes, reviewed land borders, travel basics, sunrise and day length, distances, quizzes, and optional packs for 3D maps, airports and World Heritage sites, and World Bank statistics since 1960. It has no core runtime dependencies, needs no API key, and never uses the network at runtime. It is built to fit the 512 MB of a Raspberry Pi Zero 2 W.
 
 Install with `pip install pyworldatlas`. Every value is traced to a pinned source snapshot; missing data is `None`, never guessed. Each link below points to the plain-text source of a documentation page. The complete documentation as one plain-text file is at https://jcari-dev.github.io/pyworldatlas-documentation/llms-full.txt
 
@@ -13,6 +13,7 @@ Install with `pip install pyworldatlas`. Every value is traced to a pinned sourc
 ## Examples and learning
 
 - [Learning activities](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/learning.rst.txt): PyWorldAtlas turns the reviewed offline atlas into a small geography lab. Every activity below is deterministic, works without an API key, and keeps the underlying country, city, coordinate, and source objects available for deeper exploration.
+- [Teaching with PyWorldAtlas](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/teaching.rst.txt): A free, offline geography toolkit for the classroom. Every student gets the same answers from the same sourced data, quizzes repeat exactly when you reuse a seed, and nothing needs an account or an internet connection once installed.
 - [Example programs](https://jcari-dev.github.io/pyworldatlas-documentation/_sources/recipes.rst.txt): These programs are complete, editable starting points rather than isolated one-line calls. Copy one into a Python file or open its matching recipe in the browser playground. Every example uses the public API and the bundled dataset.
 
 ## Explore the atlas

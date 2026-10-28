@@ -4,6 +4,31 @@ Changelog
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
 
+0.12.1
+------
+
+A more welcoming atlas, honest licensing, and up-to-date documentation.
+
+- **Welcome:** a "Look up anything" search on the home page, starting points
+  for students, teachers, and developers, and a new :doc:`teaching` guide.
+- **Playground:** Surprise me, a five-question quiz with a score, and three
+  challenge recipes. See :doc:`playground`.
+- **Shorter pages:** a shorter README, "In 30 seconds" examples, real output in
+  guides, and Copy buttons on every code block.
+- **Maps:** place markers rest on the ground; the blue layer is now "Water and
+  ice".
+- **Licensing:** the package metadata reads
+  ``MIT AND CC-BY-4.0 AND Unicode-3.0 AND CC0-1.0``, matching the data it
+  ships. The wheel includes the CC BY 4.0 text and the third-party notices,
+  which list every source with its terms and the changes made.
+- **Removed:** six fields that were always empty (``Area.disputed_km2``,
+  ``Geography.centroid``, ``CountryCodes.wikidata``,
+  ``Capital.largest_city``, ``Capital.alternate_names``,
+  ``City.alternate_names``) and the ``include_history`` argument of
+  ``Country.to_dict`` and ``to_json``, which had no effect.
+- **Documentation:** a refreshed home page, package description, quickstart,
+  installation guide, and API overview.
+
 0.12.0
 ------
 

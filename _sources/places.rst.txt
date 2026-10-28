@@ -6,6 +6,18 @@ islands, ruins, castles, and more. Every install includes the **school atlas**
 of about 200,000 places, chosen by educational value, and two optional packs
 add every other place in the GeoNames gazetteer. All searches run offline.
 
+.. admonition:: In 30 seconds
+   :class: atlas-quick
+
+   .. doctest::
+
+      >>> from pyworldatlas import Atlas
+      >>> with Atlas() as atlas:
+      ...     print(atlas.search_places("Machu Picchu", limit=1)[0])
+      ...     print(atlas.places_near((48.8584, 2.2945), limit=1)[0].place)
+      Machu Picchu, ruins (PE)
+      Eiffel Tower, monument (FR)
+
 .. doctest::
 
    >>> from pyworldatlas import Atlas

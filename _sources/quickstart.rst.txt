@@ -23,9 +23,9 @@ The installed command offers quick lookups without writing a Python file:
    pyworldatlas country Japan
    pyworldatlas search guinea
 
-Use ``pyworldatlas --help`` to see its three focused commands. The command and
-the Python API read the same bundled database and work offline after
-installation.
+Use ``pyworldatlas --help`` to see every command, from ``find`` and ``near`` to
+``sun`` and ``stat``. The command and the Python API read the same bundled
+database and work offline after installation.
 
 Meet a country
 --------------
@@ -53,6 +53,29 @@ introduction for a terminal, notebook, or lesson:
 
    with Atlas() as atlas:
        print(atlas.country("Dominican Republic").summary())
+
+Explore the world in five minutes
+---------------------------------
+
+Every install can search 200,000 places, work out the sun anywhere, and dig
+through the Earth:
+
+.. doctest::
+
+   >>> from datetime import date
+   >>> with Atlas() as atlas:
+   ...     everest = atlas.search_places("Everest", limit=1)[0]
+   ...     print(everest, "|", everest.elevation_m, "m")
+   ...     print(atlas.sun("Oslo", date(2026, 12, 21)).daylight, "of daylight in Oslo at midwinter")
+   ...     print(atlas.antipode("Madrid").nearest[0].place.country_code)
+   Mount Everest, mountain (NP) | 8848 m
+   5 h 54 min of daylight in Oslo at midwinter
+   NZ
+
+Optional packs add more, each with one command: ``pyworldatlas get
+statistics`` for World Bank numbers since 1960 (:doc:`statistics`),
+``pyworldatlas get landmarks`` for airports and World Heritage sites
+(:doc:`landmarks`), and ``pyworldatlas get maps`` for 3D maps (:doc:`maps`).
 
 Look up, search, and collect
 ----------------------------
@@ -105,7 +128,7 @@ What to remember
 Where to go next
 ----------------
 
-- Run fourteen editable programs in the :doc:`playground`.
+- Run twenty-one editable programs in the :doc:`playground`.
 - Copy complete projects from :doc:`recipes`.
 - Try classroom activities in :doc:`learning`.
 - Open :doc:`country_profile`, :doc:`physical_geography`, or

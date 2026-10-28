@@ -1,6 +1,6 @@
-# PyWorldAtlas 0.12.0 documentation
+# PyWorldAtlas 0.12.1 documentation
 
-PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, a searchable school atlas of 200,000 places (11 million with packs), physical geography, climate classes, reviewed land borders, distances, rankings, learning tools, and optional 3D maps. It has no core runtime dependencies, needs no API key, and never uses the network at runtime.
+PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, a searchable school atlas of 200,000 places (11 million with packs), physical geography, climate classes, reviewed land borders, travel basics, sunrise and day length, distances, quizzes, and optional packs for 3D maps, airports and World Heritage sites, and World Bank statistics since 1960. It has no core runtime dependencies, needs no API key, and never uses the network at runtime. It is built to fit the 512 MB of a Raspberry Pi Zero 2 W.
 
 
 ========================================================================
@@ -38,9 +38,9 @@ pyworldatlas --version
 pyworldatlas country Japan
 pyworldatlas search guinea
 
-Use pyworldatlas --help to see its three focused commands. The command and
-the Python API read the same bundled database and work offline after
-installation.
+Use pyworldatlas --help to see every command, from find and near to
+sun and stat. The command and the Python API read the same bundled
+database and work offline after installation.
 
 Meet a country
 
@@ -63,6 +63,26 @@ introduction for a terminal, notebook, or lesson:
 
 with Atlas() as atlas:
     print(atlas.country("Dominican Republic").summary())
+
+Explore the world in five minutes
+
+Every install can search 200,000 places, work out the sun anywhere, and dig
+through the Earth:
+
+>>> from datetime import date
+>>> with Atlas() as atlas:
+...     everest = atlas.search_places("Everest", limit=1)[0]
+...     print(everest, "|", everest.elevation_m, "m")
+...     print(atlas.sun("Oslo", date(2026, 12, 21)).daylight, "of daylight in Oslo at midwinter")
+...     print(atlas.antipode("Madrid").nearest[0].place.country_code)
+Mount Everest, mountain (NP) | 8848 m
+5 h 54 min of daylight in Oslo at midwinter
+NZ
+
+Optional packs add more, each with one command: pyworldatlas get
+statistics for World Bank numbers since 1960 (The world in numbers),
+pyworldatlas get landmarks for airports and World Heritage sites
+(Airports and World Heritage), and pyworldatlas get maps for 3D maps (Interactive 3D maps).
 
 Look up, search, and collect
 
@@ -110,7 +130,7 @@ schema, and dataset versions.
 
 Where to go next
 
-Run fourteen editable programs in the Playground.
+Run twenty-one editable programs in the Playground.
 
 Copy complete projects from Example programs.
 
@@ -146,7 +166,7 @@ keeps that session alive while you explore.
 
 What is running?
 
-This is the real pyworldatlas==0.12.0 wheel published on PyPI, not a
+This is the real pyworldatlas==0.12.1 wheel published on PyPI, not a
 JavaScript imitation or a remote demonstration API. Pyodide runs CPython in
 WebAssembly, while a module Web Worker keeps execution away from the page’s
 interface. After startup, country queries read the same bundled SQLite database
@@ -158,15 +178,19 @@ PyPI. Code entered in the editor is evaluated on your device; this project does
 not receive its contents. Each run has a 20-second safety limit, and interactive
 input() calls are not supported.
 
+Place, city, and country data come from GeoNames (CC BY 4.0) and Unicode CLDR
+(Unicode License v3), among other credited sources; see Data sources and freshness.
+
 
 
 Things worth trying
 
 Look up anything answers in plain cards: type a country, city, mountain,
 lake, or landmark. Each card has Open in the editor, which loads the Python
-that produced it, so you can see how it works and change it.
+that produced it, so you can see how it works and change it. Surprise me
+picks a famous place, and Quiz me asks five questions with a score.
 
-The eighteen guided programs cover five different ways to use the package:
+The twenty-one guided programs cover six different ways to use the package:
 
 Meet the world: summarize the atlas, build a rich country dossier,
 compare profiles, and cross original writing systems.
@@ -183,6 +207,9 @@ Unicode-preserving JSON.
 
 Every place on Earth: search 200,000 places by name, see what is nearby,
 work out sunrise and day length anywhere, and compare travel basics.
+
+Challenges: find the capital with the shortest December day, the capital
+closest to the equator, and the two capitals farthest apart.
 
 Change a country name, adjust a ranking, or combine two examples. The Python
 session persists until you select Reset Python or close the page.
@@ -243,6 +270,60 @@ installed version:
 
 python -m pip install --upgrade pyworldatlas
 
+Optional data packs
+
+The core package is complete on its own. Packs add more data, each installed
+once with pyworldatlas get NAME and checked against a SHA-256 checksum
+pinned in the library. pyworldatlas packs lists what is installed.
+
+
+
+
+
+
+
+Pack
+
+Adds
+
+Download
+
+maps
+
+Standard 3D country maps (5 arc-minute terrain)
+
+about 13 MB
+
+maps-lite
+
+Overview 3D country maps (20 arc-minute terrain)
+
+about 7 MB
+
+places-explorer
+
+Every town over 1,000 people and every named natural feature
+
+about 23 MB
+
+places-world
+
+Every remaining village, stream, hill, and local area
+
+about 44 MB
+
+landmarks
+
+Airports with scheduled flights and World Heritage sites
+
+about 0.15 MB
+
+statistics
+
+Eleven World Bank indicators for every country since 1960
+
+about 0.15 MB
+
 Optional 3D maps
 
 Maps need no extra Python packages, only their data. Install the recommended
@@ -282,13 +363,13 @@ Install the built wheel offline
 
 Test the exact release artifact without consulting a package index:
 
-python -m pip install --no-index --no-deps dist/pyworldatlas-0.12.0-py3-none-any.whl
+python -m pip install --no-index --no-deps dist/pyworldatlas-0.12.1-py3-none-any.whl
 
 Verify the installation
 
 >>> import pyworldatlas
 >>> pyworldatlas.__version__
-'0.12.0'
+'0.12.1'
 >>> from pyworldatlas import Atlas
 >>> with Atlas() as atlas:
 ...     print(atlas.country("DO").capital.name)
@@ -325,6 +406,14 @@ PyWorldAtlas turns the reviewed offline atlas into a small geography lab.
 Every activity below is deterministic, works without an API key, and keeps the
 underlying country, city, coordinate, and source objects available for deeper
 exploration.
+
+In 30 seconds
+
+>>> from pyworldatlas import Atlas
+>>> with Atlas() as atlas:
+...     card = atlas.flashcards(topic="capitals", count=1, seed="class")[0]
+>>> card.prompt, card.answer
+('What is the capital of Benin?', 'Porto-Novo')
 
 Readable
 
@@ -458,6 +547,11 @@ choices are not needed.
 
 Questions about famous places
 
+Which is higher: Mont Blanc or Denali?
+  1. Mont Blanc
+  2. Denali
+Answer: 2 (Denali, 6,194 m)
+
 place_quiz() asks about the best-known mountains,
 islands, lakes, and waterfalls. "kinds" asks what kind of place something
 is, "higher" which of two mountains is higher, and "closer_to_equator"
@@ -496,6 +590,139 @@ Explore names and provenance in Local names and writing systems.
 Follow rivers, lakes, elevation, and climate in Physical geography.
 
 Review every method and result object in API reference.
+
+========================================================================
+Teaching with PyWorldAtlas
+Source: https://jcari-dev.github.io/pyworldatlas-documentation/teaching.html
+========================================================================
+
+Brazil flag emoji
+
+Japan flag emoji
+
+Switzerland flag emoji
+
+China flag emoji
+
+France flag emoji
+
+United Arab Emirates flag emoji
+
+Teaching with PyWorldAtlas
+
+A free, offline geography toolkit for the classroom. Every student gets the
+same answers from the same sourced data, quizzes repeat exactly when you reuse
+a seed, and nothing needs an account or an internet connection once installed.
+
+A lesson in 15 minutes
+
+
+
+
+
+Minutes
+
+Activity
+
+0 to 3
+
+Everyone opens the Playground and types their own country or
+town into Look up anything.
+
+3 to 8
+
+Run the class quiz below and answer together. Every screen shows the
+same questions in the same order.
+
+8 to 12
+
+Press Open in the editor on any card, change one word (a country,
+a city, a date), and run it again. That is programming.
+
+12 to 15
+
+Talk about one surprise: why is the day so short in Oslo in December?
+(See Sun and seasons.)
+
+One quiz for the whole class
+
+A seed is a word or number that picks the questions. The same seed always
+gives the same quiz, so you can print an answer key in advance and every
+student sees exactly what you see.
+
+>>> from pyworldatlas import Atlas
+>>> with Atlas() as atlas:
+...     questions = atlas.quiz(topic="capitals", count=3, seed="class-7b", continent="Europe")
+>>> for number, question in enumerate(questions, 1):
+...     print(f"{number}. {question.prompt}")
+...     for letter, choice in zip("ABCD", question.choices):
+...         print(f"   {letter}) {choice}")
+1. What is the capital of Romania?
+   A) Tórshavn
+   B) Ljubljana
+   C) Bern
+   D) Bucharest
+2. What is the capital of Hungary?
+   A) Saint Peter Port
+   B) Copenhagen
+   C) Budapest
+   D) Monaco
+3. What is the capital of Belgium?
+   A) London
+   B) Brussels
+   C) Vienna
+   D) Warsaw
+>>> print("Answers:", ", ".join(f"{n}{'ABCD'[q.answer_number - 1]}" for n, q in enumerate(questions, 1)))
+Answers: 1D, 2C, 3B
+
+Change seed to make a new quiz, and topic to change the subject:
+learning_topics() lists them all, from capitals and
+flags to rivers, climate, plug types, and driving sides. Narrow a quiz to one
+continent or region with continent or region.
+
+More activities
+
+Which is higher? place_quiz() asks about
+famous mountains, islands, and lakes: “Which is higher: Mont Blanc or
+Denali?” (Learning activities).
+
+Why seasons happen. Compare the length of the same day in Oslo and Cape
+Town, then in June (Sun and seasons).
+
+Dig through the Earth. Find what is on the other side of the planet from
+your town, and notice how often it is ocean (Learning activities).
+
+How has the world changed? Follow electricity, internet use, or life
+expectancy since 1960 in one line (The world in numbers).
+
+Travel basics. Which plug would you pack for Japan? Which side of the
+road do people drive on in Kenya? (Country reference facts).
+
+Explore the terrain. Turn a 3D map of a country and find its highest
+mountain (Interactive 3D maps).
+
+Classrooms without internet
+
+Install PyWorldAtlas once, then everything runs offline. To give a whole room
+the optional packs without downloading them on every computer, download a
+.pack file once, copy it on a USB stick, and install it on each computer:
+
+pyworldatlas add pyworldatlas-statistics.pack
+
+PyWorldAtlas is built for low-cost computers: everything, including the
+largest place pack, fits in the 512 MB of memory of a Raspberry Pi Zero 2 W.
+
+What you can rely on
+
+Every fact comes from a named public source with its date
+(Data sources and freshness); missing values are left missing, never guessed.
+
+Country names and codes follow published international standards, and the
+package takes no position on disputes (Educational purpose and editorial policy).
+
+The documentation, maps, and playground are built to be used with a
+keyboard and screen reader; each 3D map includes a plain-language
+description.
 
 ========================================================================
 Example programs
@@ -745,7 +972,7 @@ print(card.to_json(indent=2))
 
 Continue exploring
 
-The Playground contains fourteen ready-to-run programs, including a
+The Playground contains twenty-one ready-to-run programs, including a
 nearest-capital radar, city explorer, multilingual name inspector, and
 multi-metric leaderboard. Consult API reference when you want the complete method
 and return-type contracts.
@@ -772,6 +999,14 @@ Country profiles
 A Country is an immutable, typed view of one country in
 the bundled dataset. Fields are regular Python attributes rather than nested
 dictionary keys.
+
+In 30 seconds
+
+>>> from pyworldatlas import Atlas
+>>> with Atlas() as atlas:
+...     kenya = atlas.country("Kenya")
+>>> kenya.capital.name, kenya.travel.summary
+('Nairobi', 'Plug G · 240 V, 50 Hz · drives on the left')
 
 Profile example
 
@@ -1106,6 +1341,15 @@ islands, ruins, castles, and more. Every install includes the school atlas
 of about 200,000 places, chosen by educational value, and two optional packs
 add every other place in the GeoNames gazetteer. All searches run offline.
 
+In 30 seconds
+
+>>> from pyworldatlas import Atlas
+>>> with Atlas() as atlas:
+...     print(atlas.search_places("Machu Picchu", limit=1)[0])
+...     print(atlas.places_near((48.8584, 2.2945), limit=1)[0].place)
+Machu Picchu, ruins (PE)
+Eiffel Tower, monument (FR)
+
 >>> from pyworldatlas import Atlas
 >>> atlas = Atlas()
 >>> fuji = atlas.place("Mount Fuji")
@@ -1300,6 +1544,15 @@ Airports and World Heritage
 The optional landmarks pack (about 150 KB) adds every airport with
 scheduled passenger flights and every site on the UNESCO World Heritage List.
 
+In 30 seconds
+
+>>> from pyworldatlas import Atlas
+>>> with Atlas() as atlas:
+...     print(atlas.airport("LHR"))
+...     print(atlas.world_heritage_sites_near("Cusco", limit=1)[0].site.name)
+LHR · London Heathrow Airport (GB)
+Historic centre of Cusco
+
 pyworldatlas get landmarks
 
 Airports
@@ -1373,6 +1626,13 @@ Indicators: population, population density, urban population, life
 expectancy, births and deaths, forest and agricultural land, access to
 electricity and drinking water, and internet use.
 
+In 30 seconds
+
+>>> from pyworldatlas import Atlas
+>>> with Atlas() as atlas:
+...     print(atlas.time_series("Kenya", "electricity_access").summary)
+Access to electricity in Kenya rose from 10.9% of people in 1993 to 77.0% of people in 2024.
+
 pyworldatlas get statistics
 
 A country over time
@@ -1416,7 +1676,13 @@ True
 
 From the command line:
 
-pyworldatlas stat Kenya electricity_access
+$ pyworldatlas stat Kenya electricity_access
+Access to electricity in Kenya rose from 10.9% of people in 1993 to 77.0% of people in 2024.
+1993 ▁▁▂▂▂▃▃▃▃▄▄▅▆▇██ 2024
+
+$ pyworldatlas stat Japan life_expectancy
+Life expectancy at birth in Japan rose from 67.7 years in 1960 to 84.0 years in 2024.
+1960 ▁▂▃▃▃▄▄▅▅▅▆▆▆▇▇▇▇▇████ 2024
 
 How the numbers are kept
 
@@ -1462,6 +1728,15 @@ cross-platform 3D interaction. Maps need no extra Python packages: PyWorldAtlas
 builds each map with the standard library, and the map pack ships the browser
 renderer. After the pack is installed everything is offline: show() writes a
 local HTML document and opens that file.
+
+In 30 seconds
+
+pyworldatlas get maps
+
+from pyworldatlas import Atlas
+
+with Atlas() as atlas:
+    atlas.map("Iceland").show()
 
 Experimental feature. Interactive 3D maps are under active development.
 River overlays and country geometry may be incomplete, generalized, or
@@ -2851,6 +3126,14 @@ no extra data. It uses the NOAA solar position equations, which agree with
 almanac times to about a minute between latitudes 72° north and south. Times
 are in UTC.
 
+In 30 seconds
+
+>>> from datetime import date
+>>> from pyworldatlas import Atlas
+>>> with Atlas() as atlas:
+...     print(atlas.sun("Oslo", date(2026, 12, 21)).daylight)
+5 h 54 min
+
 >>> from datetime import date
 >>> from pyworldatlas import Atlas
 >>> atlas = Atlas()
@@ -2860,6 +3143,14 @@ On 21 June 2026 the sun rises at 03:43 UTC and sets at 20:21 UTC, giving 16 h 38
 '7 h 49 min'
 
 Why seasons happen
+
+Hours of daylight on 21 December 2026, from north to south:
+
+Oslo       5 h 54 min  ######
+London     7 h 49 min  ########
+Cairo     10 h 12 min  ##########
+Nairobi   12 h 12 min  ############
+Sydney    14 h 24 min  ##############
 
 The Earth’s axis is tilted, so through the year the sun climbs higher at noon
 in one hemisphere and lower in the other. Compare the same day in Oslo and in
@@ -3572,8 +3863,6 @@ JSON output
 'Japan'
 
 Tuples become JSON arrays and enums become their string values.
-include_history is accepted for compatibility but currently has no effect
-because historical series are not bundled.
 
 English formal_name is serialized as a string for the 240 covered profiles
 and as JSON null for the eight profiles outside the source intersection.
@@ -4388,7 +4677,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.12.0 release
+Source priority in the 0.12.1 release
 
 
 
@@ -4963,7 +5252,7 @@ Project status
 This page is generated from the validated build report. It is a compact
 snapshot of the package, dataset, and coverage that ship together.
 
-0.12.0
+0.12.1
 
 library version
 
@@ -5294,7 +5583,8 @@ Atlas
 Opening the database and running lookups, searches, calculations, and
 learning helpers
 
-Country, City, rankings, distances, paths, and tuples of results
+Country, Place, City, rankings, distances, paths, sun times,
+statistics, and tuples of results
 
 Country
 
@@ -5304,16 +5594,17 @@ Names, codes, capital, reference facts, physical geography, and sources
 
 Coordinate and place models
 
-Working with locations and physical features
+Working with locations, places, and physical features
 
-Coordinate, Capital, City, River, Lake, and climate
-records
+Coordinate, Place, Capital, City, Airport,
+WorldHeritageSite, River, Lake, and climate records
 
 Result models
 
-Inspecting structured calculations and learning material
+Inspecting structured calculations, statistics, and learning material
 
-Rankings, distances, border paths, flashcards, quizzes, and metadata
+Rankings, distances, border paths, sun times, antipodes, statistic
+series, flashcards, quizzes, and metadata
 
 Exceptions
 
@@ -5326,6 +5617,12 @@ Optional maps
 Opening or exporting an installed 3D map edition
 
 CountryMap and map-data errors
+
+Data packs
+
+Installing and listing optional packs from Python
+
+pyworldatlas.packs functions and PackNotInstalledError
 
 How to read an entry
 
@@ -5346,9 +5643,10 @@ after the context closes.
 
 Atlas
 
-The main entry point. Atlas handles country and city lookup, filtering,
-distance calculations, border paths, rankings, learning helpers, dataset
-metadata, and optional maps.
+The main entry point. Atlas handles country, city, and place lookup;
+nearby-place search; filtering; distances, sun times, and antipodes; border
+paths and rankings; flashcards and quizzes; dataset metadata; and the optional
+maps, landmarks, and statistics packs.
 
 
 
@@ -5910,8 +6208,8 @@ Return multiple-choice questions about famous natural places.
 Topics are "kinds" (what kind of place is it?), "higher" (which
 of two mountains is higher?), and "closer_to_equator" (which of two
 places is closer to the equator?). Questions come from the best-known
-mountains, islands, lakes, rivers, and seas in the school atlas, and the
-same seed always gives the same questions.
+mountains (3,000 m and higher), islands, lakes, rivers, and seas in the
+school atlas, and the same seed always gives the same questions.
 
 
 
@@ -6225,21 +6523,15 @@ to_dict() when field names and machine-readable values matter.
 
 
 
-to_dict(include_history: bool = False) -> dict[str, Any][source]
+to_dict() -> dict[str, Any][source]
 
 Serialize this profile to JSON-compatible primitives.
 
-include_history is reserved for compatibility and currently has no
-effect because the bundled dataset has no historical series.
 
 
-
-to_json(indent: int | None = None, include_history: bool = False) -> str[source]
+to_json(indent: int | None = None) -> str[source]
 
 Serialize this profile as JSON.
-
-include_history is reserved for compatibility and currently has no
-effect because the bundled dataset has no historical series.
 
 
 
@@ -6260,7 +6552,7 @@ Standard identifiers for a country or area.
 
 
 
-__init__(alpha2: str, alpha3: str | None, numeric: str | None, wikidata: str | None = None, geonames: int | None = None) -> None
+__init__(alpha2: str, alpha3: str | None, numeric: str | None, geonames: int | None = None) -> None
 
 
 
@@ -6565,7 +6857,7 @@ source values are available. Missing components remain None.
 
 
 
-__init__(total_km2: float | None = None, land_km2: float | None = None, water_km2: float | None = None, water_percent: float | None = None, disputed_km2: float | None = None) -> None
+__init__(total_km2: float | None = None, land_km2: float | None = None, water_km2: float | None = None, water_percent: float | None = None) -> None
 
 
 
@@ -6696,7 +6988,7 @@ Core geographic classification and physical measurements.
 
 
 
-__init__(continent: str | None, region: str | None, subregion: str | None, area: Area = Area(total_km2=None, land_km2=None, water_km2=None, water_percent=None, disputed_km2=None), centroid: Coordinate | None = None, landlocked: bool | None = None, physical: PhysicalGeography = PhysicalGeography(coastline_km=None, mean_elevation_m=None, highest_point=None, lowest_point=None, rivers=(), lakes=(), climate=ClimateProfile(summary=None, koppen_geiger_zones=(), reference_period=None, resolution_degrees=None, minimum_share_percent=None, summary_source=None, classification_source=None), source=None, source_locator=None)) -> None
+__init__(continent: str | None, region: str | None, subregion: str | None, area: Area = Area(total_km2=None, land_km2=None, water_km2=None, water_percent=None), landlocked: bool | None = None, physical: PhysicalGeography = PhysicalGeography(coastline_km=None, mean_elevation_m=None, highest_point=None, lowest_point=None, rivers=(), lakes=(), climate=ClimateProfile(summary=None, koppen_geiger_zones=(), reference_period=None, resolution_degrees=None, minimum_share_percent=None, summary_source=None, classification_source=None), source=None, source_locator=None)) -> None
 
 
 
@@ -6713,7 +7005,7 @@ A national capital sourced from GeoNames.
 
 
 
-__init__(name: str, country_code: str, coordinates: Coordinate, role: str = 'official', primary: bool = True, largest_city: bool | None = None, population: int | None = None, elevation_m: float | None = None, timezone_id: str | None = None, alternate_names: tuple[str, ...] = (), geonames_id: int | None = None) -> None
+__init__(name: str, country_code: str, coordinates: Coordinate, role: str = 'official', primary: bool = True, population: int | None = None, elevation_m: float | None = None, timezone_id: str | None = None, geonames_id: int | None = None) -> None
 
 
 
@@ -6724,8 +7016,8 @@ class pyworldatlas.City[source]
 An immutable bundled populated place.
 
 Every city has a display name, country code, and WGS84 coordinates.
-Population, elevation, timezone, capital roles, alternate names, and the
-GeoNames identifier are optional snapshot fields.
+Population, elevation, timezone, capital roles, and the GeoNames
+identifier are optional snapshot fields.
 
 
 
@@ -6735,7 +7027,7 @@ Return a compact place label such as "Tokyo (JP)".
 
 
 
-__init__(name: str, country_code: str, coordinates: Coordinate, population: int | None = None, elevation_m: float | None = None, timezone_id: str | None = None, capital_roles: tuple[str, ...] = (), alternate_names: tuple[str, ...] = (), geonames_id: int | None = None) -> None
+__init__(name: str, country_code: str, coordinates: Coordinate, population: int | None = None, elevation_m: float | None = None, timezone_id: str | None = None, capital_roles: tuple[str, ...] = (), geonames_id: int | None = None) -> None
 
 
 
@@ -7558,6 +7850,26 @@ __init__(*args, **kwargs)
 
 
 
+exception pyworldatlas.PackNotInstalledError[source]
+
+Raised when a feature needs an optional data pack that is not installed.
+
+The message names the pyworldatlas get command that installs it.
+
+
+
+classmethod __new__(*args, **kwargs)
+
+
+
+
+
+__init__(*args, **kwargs)
+
+
+
+
+
 Optional maps
 
 Maps read their data from an installed map pack (pyworldatlas get maps or
@@ -8030,6 +8342,36 @@ Changelog
 
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
+
+0.12.1
+
+A more welcoming atlas, honest licensing, and up-to-date documentation.
+
+Welcome: a “Look up anything” search on the home page, starting points
+for students, teachers, and developers, and a new Teaching with PyWorldAtlas guide.
+
+Playground: Surprise me, a five-question quiz with a score, and three
+challenge recipes. See Playground.
+
+Shorter pages: a shorter README, “In 30 seconds” examples, real output in
+guides, and Copy buttons on every code block.
+
+Maps: place markers rest on the ground; the blue layer is now “Water and
+ice”.
+
+Licensing: the package metadata reads
+MIT AND CC-BY-4.0 AND Unicode-3.0 AND CC0-1.0, matching the data it
+ships. The wheel includes the CC BY 4.0 text and the third-party notices,
+which list every source with its terms and the changes made.
+
+Removed: six fields that were always empty (Area.disputed_km2,
+Geography.centroid, CountryCodes.wikidata,
+Capital.largest_city, Capital.alternate_names,
+City.alternate_names) and the include_history argument of
+Country.to_dict and to_json, which had no effect.
+
+Documentation: a refreshed home page, package description, quickstart,
+installation guide, and API overview.
 
 0.12.0
 

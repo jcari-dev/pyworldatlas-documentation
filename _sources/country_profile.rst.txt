@@ -5,6 +5,17 @@ A :class:`~pyworldatlas.Country` is an immutable, typed view of one country in
 the bundled dataset. Fields are regular Python attributes rather than nested
 dictionary keys.
 
+.. admonition:: In 30 seconds
+   :class: atlas-quick
+
+   .. doctest::
+
+      >>> from pyworldatlas import Atlas
+      >>> with Atlas() as atlas:
+      ...     kenya = atlas.country("Kenya")
+      >>> kenya.capital.name, kenya.travel.summary
+      ('Nairobi', 'Plug G · 240 V, 50 Hz · drives on the left')
+
 Profile example
 ---------------
 
