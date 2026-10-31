@@ -83,13 +83,13 @@ raises a clear missing or ambiguous-place exception instead.
 Find nearby cities
 ------------------
 
-:meth:`~pyworldatlas.Atlas.nearest_cities` accepts the same origin types as the
+:meth:`~pyworldatlas.Atlas.cities_near` accepts the same origin types as the
 distance API. ``within_country`` can turn it into a local exploration activity:
 
 .. doctest::
 
    >>> with Atlas() as atlas:
-   ...     nearby = atlas.nearest_cities(
+   ...     nearby = atlas.cities_near(
    ...         "Santo Domingo",
    ...         origin_country="DO",
    ...         within_country="DO",

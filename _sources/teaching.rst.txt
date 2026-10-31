@@ -69,7 +69,7 @@ continent or region with ``continent`` or ``region``.
 More activities
 ---------------
 
-- **Which is higher?** :meth:`~pyworldatlas.Atlas.place_quiz` asks about
+- **Which is higher?** :meth:`~pyworldatlas.Atlas.quiz` asks about
   famous mountains, islands, and lakes: "Which is higher: Mont Blanc or
   Denali?" (:doc:`learning`).
 - **Why seasons happen.** Compare the length of the same day in Oslo and Cape

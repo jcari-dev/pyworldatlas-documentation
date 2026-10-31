@@ -17,7 +17,7 @@ keeping the typed profile available underneath it:
    from pyworldatlas import Atlas
 
    with Atlas() as atlas:
-       print(atlas.country("Brazil").summary())
+       print(atlas.country("Brazil").summary)
 
 Unavailable values are omitted. Pass ``local_language="ja"`` or another
 covered code to request a particular local identity. The result is display
@@ -31,7 +31,6 @@ Flag emoji
    - |flag-jp| Japan
    - |flag-br| Brazil
    - |flag-ch| Switzerland
-   - |flag-cn| China
    - |flag-fr| France
    - |flag-ae| United Arab Emirates
 
@@ -106,9 +105,9 @@ and static-site generation:
    >>> card.timezone_ids
    ('Asia/Tokyo',)
    >>> card.coastline_km
-   29751.0
+   29751
    >>> (card.highest_point.name, card.highest_point.elevation_m)
-   ('Mount Fuji', 3776.0)
+   ('Mount Fuji', 3776)
    >>> card.climate_zone_codes
    ('Cfa', 'Dfb', 'Dfa', 'Af', 'Dfc')
    >>> card.to_dict()["country"]["numeric"]

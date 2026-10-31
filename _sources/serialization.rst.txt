@@ -45,15 +45,15 @@ romanization, source, and exact locator when a country is serialized:
 .. doctest::
 
    >>> with Atlas() as atlas:
-   ...     india = atlas.country("India").to_dict()
-   >>> hindi = next(name for name in india["local_names"] if name["language_code"] == "hi")
-   >>> (hindi["text"], hindi["script_code"], hindi["romanized_short_name"])
-   ('भारत', 'Deva', 'Bhārat')
-   >>> (hindi["kind"], hindi["language_status"])
+   ...     japan = atlas.country("Japan").to_dict()
+   >>> japanese = next(name for name in japan["local_names"] if name["language_code"] == "ja")
+   >>> (japanese["text"], japanese["script_code"], japanese["romanized_short_name"])
+   ('日本', 'Jpan', 'Nihon, or Nippon')
+   >>> (japanese["kind"], japanese["language_status"])
    ('national_official', 'official')
-   >>> hindi["source"]["id"]
+   >>> japanese["source"]["id"]
    'ungegn-country-names-2017'
-   >>> 'PDF page 44' in hindi["source_locator"]
+   >>> 'PDF page 48' in japanese["source_locator"]
    True
 
 Discovery values
@@ -86,8 +86,8 @@ nearby-city results serialize recursively:
    >>> with Atlas() as atlas:
    ...     japan = atlas.country("Japan").to_dict()
    ...     ranking = atlas.rank("population", limit=1)[0]
-   ...     nearby = atlas.nearest_capitals("Tokyo", country="JP", limit=1)[0]
-   ...     nearby_city = atlas.nearest_cities(
+   ...     nearby = atlas.capitals_near("Wellington", country="NZ", limit=1)[0]
+   ...     nearby_city = atlas.cities_near(
    ...         "Santo Domingo", origin_country="DO", within_country="DO", limit=1
    ...     )[0]
    >>> japan["anthems"][0]["title"]
@@ -97,7 +97,7 @@ nearby-city results serialize recursively:
    >>> json.loads(ranking.to_json())["position"]
    1
    >>> json.loads(nearby.to_json())["capital"]["name"]
-   'Seoul'
+   'Kingston'
    >>> json.loads(nearby_city.to_json())["city"]["name"]
    'Santo Domingo Este'
 
@@ -110,10 +110,10 @@ country profiles. This keeps a path payload small and detached from SQLite:
 .. doctest::
 
    >>> with Atlas() as atlas:
-   ...     path = atlas.border_path("Portugal", "China")
+   ...     path = atlas.border_path("Portugal", "Poland")
    >>> path.names
-   ('Portugal', 'Spain', 'France', 'Germany', 'Poland', 'Russia', 'China')
+   ('Portugal', 'Spain', 'France', 'Germany', 'Poland')
    >>> path.to_dict()["countries"][0]
    {'name': 'Portugal', 'alpha2': 'PT', 'alpha3': 'PRT', 'numeric': '620'}
    >>> json.loads(path.to_json())["crossings"]
-   6
+   4

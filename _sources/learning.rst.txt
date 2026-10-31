@@ -49,7 +49,7 @@ A country in one friendly call
 
    with Atlas() as atlas:
        brazil = atlas.country("Brazil")
-       print(brazil.summary())
+       print(brazil.summary)
 
 The summary brings together the flag, selected local identity, capital,
 location, snapshot population, currencies and languages, anthem title,
@@ -81,16 +81,16 @@ source locator. The package never manufactures a translation or romanization.
    >>> with Atlas() as atlas:
    ...     for country_name, language_code in (
    ...         ("Dominican Republic", "es"),
-   ...         ("China", "zh"),
-   ...         ("India", "hi"),
+   ...         ("Mongolia", "mn"),
+   ...         ("Nepal", "ne"),
    ...         ("Japan", "ja"),
    ...     ):
    ...         country = atlas.country(country_name)
    ...         local = country.local_name(language_code)
    ...         print(country.flag, local.short_name, f"[{local.script_code}]")
    🇩🇴 República Dominicana [Latn]
-   🇨🇳 中国 [Hans]
-   🇮🇳 भारत [Deva]
+   🇲🇳 Монгол [Cyrl]
+   🇳🇵 नेपाल [Deva]
    🇯🇵 日本 [Jpan]
 
 Turn coordinates into a compass activity
@@ -125,7 +125,7 @@ Explore nearby cities
 
    >>> with Atlas() as atlas:
    ...     print([city.label for city in atlas.search_cities("santo", country="DO", limit=3)])
-   ...     nearby = atlas.nearest_cities(
+   ...     nearby = atlas.cities_near(
    ...         "Santo Domingo",
    ...         origin_country="DO",
    ...         within_country="DO",
@@ -184,7 +184,7 @@ Questions about famous places
      2. Denali
    Answer: 2 (Denali, 6,194 m)
 
-:meth:`~pyworldatlas.Atlas.place_quiz` asks about the best-known mountains,
+:meth:`~pyworldatlas.Atlas.quiz` asks about the best-known mountains,
 islands, lakes, and waterfalls. ``"kinds"`` asks what kind of place something
 is, ``"higher"`` which of two mountains is higher, and ``"closer_to_equator"``
 which of two places is closer to the equator. Every answer comes straight from
@@ -194,7 +194,7 @@ the data, and the same ``seed`` always gives the same questions.
 
    >>> from pyworldatlas import Atlas
    >>> with Atlas() as atlas:
-   ...     question = atlas.place_quiz("higher", count=1, seed="lesson-1")[0]
+   ...     question = atlas.quiz("higher", count=1, seed="lesson-1")[0]
    >>> question.prompt.startswith("Which is higher")
    True
    >>> question.is_correct(question.answer_number)

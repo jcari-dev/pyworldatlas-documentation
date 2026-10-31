@@ -1,0 +1,930 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>pyworldatlas.maps._world | PyWorldAtlas</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=d8a2add5" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pyworldatlas.css?v=bd68652e" />
+
+  
+    <link rel="shortcut icon" href="../../../_static/globe.svg"/>
+    <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/_modules/pyworldatlas/maps/_world.html" />
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=1019fba8"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script defer="defer" src="../../../_static/playground.js?v=f2b92c27"></script>
+      <script defer="defer" src="../../../_static/copy.js?v=b2770d27"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+   
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description" content="pyworldatlas.maps._world in PyWorldAtlas, the offline Python package for country profiles, physical geography, cities, distances, and classroom learning." />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="PyWorldAtlas" />
+  <meta property="og:title" content="pyworldatlas.maps._world | PyWorldAtlas" />
+  <meta property="og:description" content="pyworldatlas.maps._world in PyWorldAtlas, the offline Python package for country profiles, physical geography, cities, distances, and classroom learning." />
+  <meta property="og:url" content="https://jcari-dev.github.io/pyworldatlas-documentation/_modules/pyworldatlas/maps/_world.html" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="pyworldatlas.maps._world | PyWorldAtlas" />
+  <meta name="twitter:description" content="pyworldatlas.maps._world in PyWorldAtlas, the offline Python package for country profiles, physical geography, cities, distances, and classroom learning." />
+
+</head>
+
+<body class="wy-body-for-nav">
+   
+  <a class="atlas-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            PyWorldAtlas
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Start here</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../quickstart.html">Quickstart</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../quickstart.html#install">Install</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quickstart.html#check-the-installation">Check the installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quickstart.html#meet-a-country">Meet a country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quickstart.html#explore-the-world-in-five-minutes">Explore the world in five minutes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quickstart.html#look-up-search-and-collect">Look up, search, and collect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quickstart.html#combine-facts-with-geography">Combine facts with geography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quickstart.html#what-to-remember">What to remember</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quickstart.html#where-to-go-next">Where to go next</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../playground.html">Playground</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../playground.html#what-is-running">What is running?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../playground.html#things-worth-trying">Things worth trying</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../playground.html#use-the-package-locally">Use the package locally</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../installation.html">Installation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#requirements">Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#install-from-pypi">Install from PyPI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#optional-data-packs">Optional data packs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#optional-3d-maps">Optional 3D maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#install-a-source-checkout">Install a source checkout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#install-the-built-wheel-offline">Install the built wheel offline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../installation.html#verify-the-installation">Verify the installation</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Examples and learning</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../learning.html">Learning activities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning.html#a-country-in-one-friendly-call">A country in one friendly call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning.html#a-gallery-of-writing-systems">A gallery of writing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning.html#turn-coordinates-into-a-compass-activity">Turn coordinates into a compass activity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning.html#explore-nearby-cities">Explore nearby cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning.html#build-a-repeatable-multiple-choice-lesson">Build a repeatable multiple-choice lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning.html#questions-about-famous-places">Questions about famous places</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning.html#dig-through-the-earth">Dig through the Earth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../learning.html#where-to-go-next">Where to go next</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../quests.html">Quests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../quests.html#the-long-way-to-vienna">1. The long way to Vienna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quests.html#next-door-capitals">2. Next-door capitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quests.html#the-longest-day">3. The longest day</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quests.html#top-of-the-alps">4. Top of the Alps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quests.html#islands-only">5. Islands only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../quests.html#dig-straight-down">6. Dig straight down</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../cheatsheet.html">Cheat sheet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet.html#look-things-up">Look things up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet.html#filter-and-rank">Filter and rank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet.html#measure">Measure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet.html#borders">Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet.html#learn">Learn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet.html#with-the-optional-packs">With the optional packs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cheatsheet.html#in-a-terminal">In a terminal</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../teaching.html">Teaching with PyWorldAtlas</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../teaching.html#a-lesson-in-15-minutes">A lesson in 15 minutes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../teaching.html#one-quiz-for-the-whole-class">One quiz for the whole class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../teaching.html#more-activities">More activities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../teaching.html#classrooms-without-internet">Classrooms without internet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../teaching.html#what-you-can-rely-on">What you can rely on</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../recipes.html">Example programs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../recipes.html#build-a-world-snapshot">Build a world snapshot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../recipes.html#print-a-country-dossier">Print a country dossier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../recipes.html#cross-four-writing-systems">Cross four writing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../recipes.html#create-a-comparison-table">Create a comparison table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../recipes.html#build-a-distance-toolkit">Build a distance toolkit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../recipes.html#search-and-explore-nearby-cities">Search and explore nearby cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../recipes.html#trace-geographic-relationships">Trace geographic relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../recipes.html#explore-a-climate-profile">Explore a climate profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../recipes.html#compose-search-filters-and-rankings">Compose search, filters, and rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../recipes.html#create-a-repeatable-lesson">Create a repeatable lesson</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../recipes.html#export-a-portable-unicode-profile">Export a portable Unicode profile</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../recipes.html#continue-exploring">Continue exploring</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Explore the atlas</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../country_profile.html">Country profiles</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../country_profile.html#profile-example">Profile example</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../country_profile.html#current-field-coverage">Current field coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../country_profile.html#convenience-and-discovery-views">Convenience and discovery views</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../country_profile.html#physical-geography">Physical geography</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../country_profile.html#names-and-aliases">Names and aliases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../country_profile.html#capital-and-cities">Capital and cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../country_profile.html#sources">Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../country_profile.html#immutability">Immutability</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../places.html">Every place on Earth</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#searching-by-name">Searching by name</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#one-search-for-everything">One search for everything</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#the-best-known-places-in-a-country">The best-known places in a country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#what-is-near-here">What is near here?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#what-is-in-the-school-atlas">What is in the school atlas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#more-places-with-packs">More places with packs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../places.html#how-it-stays-small-and-fast">How it stays small and fast</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../landmarks.html">Airports and World Heritage</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../landmarks.html#airports">Airports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../landmarks.html#world-heritage-sites">World Heritage sites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../landmarks.html#sources">Sources</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../statistics.html">The world in numbers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../statistics.html#a-country-over-time">A country over time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../statistics.html#one-value">One value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../statistics.html#ranking">Ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../statistics.html#on-a-world-map">On a world map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../statistics.html#how-the-numbers-are-kept">How the numbers are kept</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../maps.html">Interactive 3D maps</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../maps.html#install-a-map-pack">Install a map pack</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../maps.html#open-your-first-map">Open your first map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../maps.html#places-on-the-map">Places on the map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../maps.html#select-a-quality-explicitly">Select a quality explicitly</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../maps.html#notebooks-customization-and-export">Notebooks, customization, and export</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../maps.html#create-a-documentation-gif">Create a documentation GIF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../maps.html#data-meaning-and-limits">Data meaning and limits</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../physical_geography.html">Physical geography</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../physical_geography.html#a-country-in-four-lines">A country in four lines</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../physical_geography.html#area-and-coastline">Area and coastline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../physical_geography.html#elevation-and-named-extremes">Elevation and named extremes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../physical_geography.html#rivers-and-lakes">Rivers and lakes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../physical_geography.html#climate-profiles">Climate profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../physical_geography.html#physical-filters-and-rankings">Physical filters and rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../physical_geography.html#learning-prompts">Learning prompts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../physical_geography.html#executable-example">Executable example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reference_facts.html">Country reference facts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference_facts.html#anthem-titles">Anthem titles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference_facts.html#reviewed-mottos">Reviewed mottos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference_facts.html#demonyms">Demonyms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference_facts.html#travel-basics">Travel basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference_facts.html#practical-metadata">Practical metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference_facts.html#coverage">Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../reference_facts.html#source-inspection">Source inspection</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../rankings.html">Rankings and nearby capitals</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../rankings.html#profile-filters">Profile filters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rankings.html#country-rankings">Country rankings</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../rankings.html#nearest-capitals">Nearest capitals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../local_names.html">Local names and writing systems</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../local_names.html#coverage-at-a-glance">Coverage at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../local_names.html#understand-the-english-fields">Understand the English fields</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../local_names.html#start-with-one-country">Start with one country</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../local_names.html#explore-writing-systems">Explore writing systems</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../local_names.html#inspect-the-evidence-level">Inspect the evidence level</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../local_names.html#romanization-is-source-data">Romanization is source data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../local_names.html#discover-coverage">Discover coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../local_names.html#how-the-language-is-selected">How the language is selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../local_names.html#source-and-review-rules">Source and review rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../local_names.html#try-the-example">Try the example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../capitals_cities.html">Capitals and major cities</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../capitals_cities.html#capital-records">Capital records</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../capitals_cities.html#missing-capitals">Missing capitals</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capitals_cities.html#major-cities">Major cities</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capitals_cities.html#search-city-names">Search city names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../capitals_cities.html#find-nearby-cities">Find nearby cities</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../coordinates_distances.html">Coordinates and distances</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../coordinates_distances.html#look-up-coordinates">Look up coordinates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coordinates_distances.html#distance-between-places">Distance between places</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coordinates_distances.html#country-and-model-inputs">Country and model inputs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coordinates_distances.html#raw-latitude-and-longitude">Raw latitude and longitude</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coordinates_distances.html#friendly-coordinate-labels">Friendly coordinate labels</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../coordinates_distances.html#country-coordinates">Country coordinates</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../sun.html">Sun and seasons</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../sun.html#why-seasons-happen">Why seasons happen</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../borders.html">Land borders and paths</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../borders.html#api-at-a-glance">API at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../borders.html#neighbors">Neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../borders.html#shared-neighbors">Shared neighbors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../borders.html#shortest-land-paths">Shortest land paths</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../borders.html#land-connectivity">Land connectivity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../borders.html#connected-land-regions">Connected land regions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../borders.html#border-flashcards">Border flashcards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../borders.html#where-each-value-comes-from">Where each value comes from</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../borders.html#data-policy">Data policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../borders.html#executable-example">Executable example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../discovery.html">Discovery tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../discovery.html#readable-country-summaries">Readable country summaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../discovery.html#flag-emoji">Flag emoji</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../discovery.html#derived-profile-facts">Derived profile facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../discovery.html#discovery-cards">Discovery cards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../discovery.html#reproducible-country-samples">Reproducible country samples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../discovery.html#structured-flashcards">Structured flashcards</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../discovery.html#multiple-choice-questions">Multiple-choice questions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../discovery.html#supported-topics">Supported topics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../discovery.html#data-and-interpretation">Data and interpretation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../discovery.html#executable-example">Executable example</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../searching.html">Lookup and search</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../searching.html#exact-lookup">Exact lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../searching.html#safe-lookup">Safe lookup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../searching.html#ranked-search">Ranked search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../searching.html#city-name-search">City-name search</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../searching.html#countries-and-places-together">Countries and places together</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../searching.html#filtering">Filtering</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../serialization.html">Serialization</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../serialization.html#dictionary-output">Dictionary output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../serialization.html#json-output">JSON output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../serialization.html#local-name-provenance">Local-name provenance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../serialization.html#discovery-values">Discovery values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../serialization.html#reference-facts-and-ranking-results">Reference facts and ranking results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../serialization.html#border-paths">Border paths</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Data and trust</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../why.html">Why PyWorldAtlas?</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../why.html#the-product-promise">The product promise</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../why.html#who-is-it-for">Who is it for?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../why.html#what-it-is-not">What it is not</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../why.html#what-is-bundled">What is bundled</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../educational_principles.html">Educational purpose and editorial policy</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../educational_principles.html#editorial-commitments">Editorial commitments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../educational_principles.html#how-sources-are-selected">How sources are selected</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../educational_principles.html#names-areas-and-borders">Names, areas, and borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../educational_principles.html#publication-boundaries">Publication boundaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../educational_principles.html#using-the-package-in-education">Using the package in education</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../educational_principles.html#community-and-corrections">Community and corrections</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../educational_principles.html#policy-enforcement">Policy enforcement</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_sources.html">Data sources and freshness</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#field-specific-source-policy">Field-specific source policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#united-nations-m49">United Nations M49</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#geonames">GeoNames</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#natural-earth">Natural Earth</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#reviewed-border-decisions">Reviewed border decisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#unicode-cldr-48-2">Unicode CLDR 48.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#iana-language-subtag-registry">IANA Language Subtag Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#cia-world-factbook-structured-country-profiles">CIA World Factbook structured country profiles</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#koppen-geiger-climate-classification-maps">Köppen-Geiger climate classification maps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#noaa-ncei-etopo-2022">NOAA NCEI ETOPO 2022</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#wikidata-national-motto-statements">Wikidata national-motto statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#world-bank-world-development-indicators">World Bank World Development Indicators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#ourairports">OurAirports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#wikidata-world-heritage-statements">Wikidata World Heritage statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#wikidata-travel-basics-statements">Wikidata travel-basics statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#united-nations-protocol-and-liaison-service">United Nations Protocol and Liaison Service</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#derived-discovery-values">Derived discovery values</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#source-priority-in-the-0-13-0-release">Source priority in the 0.13.0 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data_quality.html">Data quality and limitations</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_quality.html#educational-and-editorial-quality">Educational and editorial quality</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_quality.html#validation-layers">Validation layers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_quality.html#coverage">Coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_quality.html#missing-data-is-a-valid-value">Missing data is a valid value</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_quality.html#interpretation-cautions">Interpretation cautions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data_quality.html#run-the-validation-suite">Run the validation suite</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../_generated/project_status.html">Project status</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../_generated/project_status.html#coverage-at-a-glance">Coverage at a glance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_generated/project_status.html#detailed-coverage">Detailed coverage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../_generated/project_status.html#build-identity">Build identity</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../roadmap.html">Roadmap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../roadmap.html#what-0-9-adds">What 0.9 adds</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../roadmap.html#deferred-work">Deferred work</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../api.html">API reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#find-the-right-object">Find the right object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#how-to-read-an-entry">How to read an entry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#atlas">Atlas</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.Atlas"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#look-things-up">Look things up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#filter-and-rank">Filter and rank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#measure">Measure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#borders">Borders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#learn">Learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#numbers-and-maps">Numbers and maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#landmarks">Landmarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#the-atlas-itself">The atlas itself</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#older-names">Older names</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#country-models">Country models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#country-profile">Country profile</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#names-codes-and-administrative-metadata">Names, codes, and administrative metadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#reference-facts">Reference facts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#compact-country-views">Compact country views</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#geographic-models">Geographic models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#coordinates-and-area">Coordinates and area</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#physical-geography">Physical geography</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#places">Places</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#results-and-metadata">Results and metadata</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.BorderPathResult"><code class="docutils literal notranslate"><span class="pre">BorderPathResult</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CountryRanking"><code class="docutils literal notranslate"><span class="pre">CountryRanking</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CapitalDistance"><code class="docutils literal notranslate"><span class="pre">CapitalDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CityDistance"><code class="docutils literal notranslate"><span class="pre">CityDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.Airport"><code class="docutils literal notranslate"><span class="pre">Airport</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.WorldHeritageSite"><code class="docutils literal notranslate"><span class="pre">WorldHeritageSite</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.SiteDistance"><code class="docutils literal notranslate"><span class="pre">SiteDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.Antipode"><code class="docutils literal notranslate"><span class="pre">Antipode</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.PlaceQuestion"><code class="docutils literal notranslate"><span class="pre">PlaceQuestion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.Indicator"><code class="docutils literal notranslate"><span class="pre">Indicator</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.StatisticSeries"><code class="docutils literal notranslate"><span class="pre">StatisticSeries</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.StatisticValue"><code class="docutils literal notranslate"><span class="pre">StatisticValue</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.SunTimes"><code class="docutils literal notranslate"><span class="pre">SunTimes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.PlaceDistance"><code class="docutils literal notranslate"><span class="pre">PlaceDistance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CountryMatch"><code class="docutils literal notranslate"><span class="pre">CountryMatch</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.Flashcard"><code class="docutils literal notranslate"><span class="pre">Flashcard</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.QuizQuestion"><code class="docutils literal notranslate"><span class="pre">QuizQuestion</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.DatasetInfo"><code class="docutils literal notranslate"><span class="pre">DatasetInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.SourceReference"><code class="docutils literal notranslate"><span class="pre">SourceReference</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#newer-names">Newer names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#printing-results">Printing results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.show_details"><code class="docutils literal notranslate"><span class="pre">show_details</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.Distance"><code class="docutils literal notranslate"><span class="pre">Distance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.models.units.SummaryText"><code class="docutils literal notranslate"><span class="pre">SummaryText</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#exceptions">Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.AtlasError"><code class="docutils literal notranslate"><span class="pre">AtlasError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.AtlasClosedError"><code class="docutils literal notranslate"><span class="pre">AtlasClosedError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.DatasetError"><code class="docutils literal notranslate"><span class="pre">DatasetError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.DatasetNotFoundError"><code class="docutils literal notranslate"><span class="pre">DatasetNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.DatasetVersionError"><code class="docutils literal notranslate"><span class="pre">DatasetVersionError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.DatasetIntegrityError"><code class="docutils literal notranslate"><span class="pre">DatasetIntegrityError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CountryNotFoundError"><code class="docutils literal notranslate"><span class="pre">CountryNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.AmbiguousCountryError"><code class="docutils literal notranslate"><span class="pre">AmbiguousCountryError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.PlaceNotFoundError"><code class="docutils literal notranslate"><span class="pre">PlaceNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.AmbiguousPlaceError"><code class="docutils literal notranslate"><span class="pre">AmbiguousPlaceError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.CapitalNotFoundError"><code class="docutils literal notranslate"><span class="pre">CapitalNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.MapSupportNotInstalledError"><code class="docutils literal notranslate"><span class="pre">MapSupportNotInstalledError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.PackNotInstalledError"><code class="docutils literal notranslate"><span class="pre">PackNotInstalledError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#optional-maps">Optional maps</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.maps.CountryMap"><code class="docutils literal notranslate"><span class="pre">CountryMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.maps.WorldMap"><code class="docutils literal notranslate"><span class="pre">WorldMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.maps.available_map_qualities"><code class="docutils literal notranslate"><span class="pre">available_map_qualities()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.maps.MapDataError"><code class="docutils literal notranslate"><span class="pre">MapDataError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#module-pyworldatlas.packs">Data packs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.packs.get"><code class="docutils literal notranslate"><span class="pre">get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.packs.add"><code class="docutils literal notranslate"><span class="pre">add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.packs.installed"><code class="docutils literal notranslate"><span class="pre">installed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.packs.available"><code class="docutils literal notranslate"><span class="pre">available()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.packs.remove"><code class="docutils literal notranslate"><span class="pre">remove()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.packs.pack_path"><code class="docutils literal notranslate"><span class="pre">pack_path()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.packs.data_dir"><code class="docutils literal notranslate"><span class="pre">data_dir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.packs.default_data_dir"><code class="docutils literal notranslate"><span class="pre">default_data_dir()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.packs.PackInfo"><code class="docutils literal notranslate"><span class="pre">PackInfo</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.packs.InstalledPack"><code class="docutils literal notranslate"><span class="pre">InstalledPack</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#pyworldatlas.packs.PackError"><code class="docutils literal notranslate"><span class="pre">PackError</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../api.html#data-contracts-and-provenance">Data contracts and provenance</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#country-identity">Country identity</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#reference-and-discovery-facts">Reference and discovery facts</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#id1">Physical geography</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#coordinates-cities-and-distance">Coordinates, cities, and distance</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#land-borders">Land borders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api.html#publication-scope">Publication scope</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../glossary.html">Glossary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id1">0.13.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id2">0.12.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id3">0.12.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id4">0.11.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id5">0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id6">0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id7">0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id8">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id9">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id10">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id11">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id12">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id13">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id14">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id15">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id16">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id17">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#reserved-tag-not-published-to-pypi">0.4.0 (reserved tag, not published to PyPI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id18">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id19">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id20">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#unpublished-candidate">0.2.0 (unpublished candidate)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../changelog.html#id21">0.1.0</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">PyWorldAtlas</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content style-external-links">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">Module code</a></li>
+          <li class="breadcrumb-item"><a href="../maps.html">pyworldatlas.maps</a></li>
+      <li class="breadcrumb-item active">pyworldatlas.maps._world</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+  <span id="main-content" tabindex="-1"></span>
+  
+           <div itemprop="articleBody">
+             
+  <h1>Source code for pyworldatlas.maps._world</h1><div class="highlight"><pre>
+<span></span><span class="sd">"""A flat world map that colors each country by one statistic, as plain SVG.</span>
+
+<span class="sd">The outlines are the generalized display outlines already shipped in the map</span>
+<span class="sd">packs. They are drawn on the Equal Earth projection, which keeps every</span>
+<span class="sd">country's area in proportion, and colored in five classes that each hold about</span>
+<span class="sd">the same number of countries.</span>
+<span class="sd">"""</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">__future__</span><span class="w"> </span><span class="kn">import</span> <span class="n">annotations</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">functools</span><span class="w"> </span><span class="kn">import</span> <span class="n">lru_cache</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">hashlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">sha256</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">html</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">pathlib</span><span class="w"> </span><span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">tempfile</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">TYPE_CHECKING</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">webbrowser</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">zlib</span>
+
+<span class="kn">from</span><span class="w"> </span><span class="nn">..</span><span class="w"> </span><span class="kn">import</span> <span class="n">packs</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">..models._display</span><span class="w"> </span><span class="kn">import</span> <span class="n">friendly_repr</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">._scene</span><span class="w"> </span><span class="kn">import</span> <span class="n">MapDataError</span>
+
+<span class="k">if</span> <span class="n">TYPE_CHECKING</span><span class="p">:</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">..models</span><span class="w"> </span><span class="kn">import</span> <span class="n">Indicator</span><span class="p">,</span> <span class="n">StatisticValue</span>
+
+<span class="n">WIDTH</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">HEIGHT</span> <span class="o">=</span> <span class="mi">487</span>
+<span class="n">COLORS</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"#e7f2f8"</span><span class="p">,</span> <span class="s2">"#a9d3e6"</span><span class="p">,</span> <span class="s2">"#5fa8cc"</span><span class="p">,</span> <span class="s2">"#2b78a8"</span><span class="p">,</span> <span class="s2">"#0b4a73"</span><span class="p">)</span>
+<span class="sd">"""Light to dark blue, one per class; lighter means a smaller number, not a worse one."""</span>
+
+<span class="n">_A1</span><span class="p">,</span> <span class="n">_A2</span><span class="p">,</span> <span class="n">_A3</span><span class="p">,</span> <span class="n">_A4</span> <span class="o">=</span> <span class="mf">1.340264</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.081106</span><span class="p">,</span> <span class="mf">0.000893</span><span class="p">,</span> <span class="mf">0.003796</span>
+<span class="n">_M</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+<span class="n">_X_EXTENT</span> <span class="o">=</span> <span class="mf">2.70663</span>
+<span class="n">_Y_EXTENT</span> <span class="o">=</span> <span class="mf">1.31731</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_project</span><span class="p">(</span><span class="n">longitude</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">latitude</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Return SVG coordinates on the Equal Earth projection (Šavrič et al., 2018)."""</span>
+    <span class="n">theta</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">asin</span><span class="p">(</span><span class="n">_M</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">latitude</span><span class="p">)))</span>
+    <span class="n">t2</span> <span class="o">=</span> <span class="n">theta</span> <span class="o">*</span> <span class="n">theta</span>
+    <span class="n">t6</span> <span class="o">=</span> <span class="n">t2</span> <span class="o">*</span> <span class="n">t2</span> <span class="o">*</span> <span class="n">t2</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">(</span>
+        <span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">radians</span><span class="p">(</span><span class="n">longitude</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+        <span class="o">/</span> <span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="p">(</span><span class="mi">9</span> <span class="o">*</span> <span class="n">_A4</span> <span class="o">*</span> <span class="n">t6</span> <span class="o">*</span> <span class="n">t2</span> <span class="o">+</span> <span class="mi">7</span> <span class="o">*</span> <span class="n">_A3</span> <span class="o">*</span> <span class="n">t6</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">_A2</span> <span class="o">*</span> <span class="n">t2</span> <span class="o">+</span> <span class="n">_A1</span><span class="p">))</span>
+    <span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">theta</span> <span class="o">*</span> <span class="p">(</span><span class="n">_A4</span> <span class="o">*</span> <span class="n">t6</span> <span class="o">*</span> <span class="n">t2</span> <span class="o">+</span> <span class="n">_A3</span> <span class="o">*</span> <span class="n">t6</span> <span class="o">+</span> <span class="n">_A2</span> <span class="o">*</span> <span class="n">t2</span> <span class="o">+</span> <span class="n">_A1</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">WIDTH</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">+</span> <span class="n">x</span> <span class="o">*</span> <span class="n">WIDTH</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">_X_EXTENT</span><span class="p">),</span> <span class="n">HEIGHT</span> <span class="o">/</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">y</span> <span class="o">*</span> <span class="n">HEIGHT</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">_Y_EXTENT</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_ring_path</span><span class="p">(</span><span class="n">ring</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]],</span> <span class="n">shift</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">points</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">float</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">longitude</span><span class="p">,</span> <span class="n">latitude</span> <span class="ow">in</span> <span class="n">ring</span><span class="p">:</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">_project</span><span class="p">(</span><span class="n">longitude</span> <span class="o">+</span> <span class="n">shift</span><span class="p">,</span> <span class="n">latitude</span><span class="p">)</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">points</span> <span class="ow">and</span> <span class="nb">abs</span><span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">y</span> <span class="o">-</span> <span class="n">points</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">1.2</span><span class="p">:</span>
+            <span class="k">continue</span>  <span class="c1"># closer than about a pixel to the last point kept</span>
+        <span class="n">points</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">points</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">""</span>
+    <span class="k">return</span> <span class="s2">"M"</span> <span class="o">+</span> <span class="s2">"L"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">g</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="n">points</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"Z"</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_close_around_pole</span><span class="p">(</span><span class="n">ring</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]])</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]:</span>
+<span class="w">    </span><span class="sd">"""Give a ring that circles a pole a full turn of coastline on each side.</span>
+
+<span class="sd">    Outlines are stored with continuous longitudes, so a ring around a pole</span>
+<span class="sd">    covers just under 360 degrees and its last coast edge crosses the seam.</span>
+<span class="sd">    Repeating the neighbouring coast points one turn away keeps that edge.</span>
+<span class="sd">    """</span>
+    <span class="n">coast</span> <span class="o">=</span> <span class="p">[</span><span class="n">point</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">ring</span> <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">&lt;</span> <span class="mf">89.99</span><span class="p">]</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">coast</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">ring</span>
+    <span class="n">start</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">coast</span><span class="p">)),</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">index</span><span class="p">:</span> <span class="n">coast</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">coast</span> <span class="o">=</span> <span class="n">coast</span><span class="p">[</span><span class="n">start</span><span class="p">:]</span> <span class="o">+</span> <span class="n">coast</span><span class="p">[:</span><span class="n">start</span><span class="p">]</span>
+    <span class="n">first</span><span class="p">,</span> <span class="n">last</span> <span class="o">=</span> <span class="n">coast</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coast</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">last</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">first</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span>
+        <span class="n">coast</span><span class="o">.</span><span class="n">reverse</span><span class="p">()</span>
+        <span class="n">first</span><span class="p">,</span> <span class="n">last</span> <span class="o">=</span> <span class="n">coast</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">coast</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">pole</span> <span class="o">=</span> <span class="o">-</span><span class="mf">90.0</span> <span class="k">if</span> <span class="n">ring</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="nb">min</span><span class="p">(</span><span class="n">point</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">ring</span><span class="p">)</span> <span class="o">&lt;</span> <span class="o">-</span><span class="mf">89.99</span> <span class="k">else</span> <span class="mf">90.0</span>
+    <span class="k">return</span> <span class="p">[</span>
+        <span class="p">[</span><span class="n">last</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">360</span><span class="p">,</span> <span class="n">last</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span> <span class="o">*</span><span class="n">coast</span><span class="p">,</span> <span class="p">[</span><span class="n">first</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">360</span><span class="p">,</span> <span class="n">first</span><span class="p">[</span><span class="mi">1</span><span class="p">]],</span>
+        <span class="p">[</span><span class="n">first</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">360</span><span class="p">,</span> <span class="n">pole</span><span class="p">],</span> <span class="p">[</span><span class="n">last</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">360</span><span class="p">,</span> <span class="n">pole</span><span class="p">],</span>
+    <span class="p">]</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_country_path</span><span class="p">(</span><span class="n">rings</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]]])</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">parts</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">ring</span> <span class="ow">in</span> <span class="n">rings</span><span class="p">:</span>
+        <span class="n">longitudes</span> <span class="o">=</span> <span class="p">[</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">ring</span><span class="p">]</span>
+        <span class="k">if</span> <span class="nb">max</span><span class="p">(</span><span class="n">longitudes</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">longitudes</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">350</span><span class="p">:</span>
+            <span class="n">ring</span> <span class="o">=</span> <span class="n">_close_around_pole</span><span class="p">(</span><span class="n">ring</span><span class="p">)</span>
+            <span class="n">longitudes</span> <span class="o">=</span> <span class="p">[</span><span class="n">point</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">ring</span><span class="p">]</span>
+        <span class="n">low</span><span class="p">,</span> <span class="n">high</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">longitudes</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">longitudes</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">shift</span> <span class="ow">in</span> <span class="p">(</span><span class="o">-</span><span class="mf">360.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">360.0</span><span class="p">):</span>  <span class="c1"># draw the copies that reach the visible world</span>
+            <span class="k">if</span> <span class="n">low</span> <span class="o">+</span> <span class="n">shift</span> <span class="o">&lt;</span> <span class="mi">180</span> <span class="ow">and</span> <span class="n">high</span> <span class="o">+</span> <span class="n">shift</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">180</span><span class="p">:</span>
+                <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">_ring_path</span><span class="p">(</span><span class="n">ring</span><span class="p">,</span> <span class="n">shift</span><span class="p">))</span>
+    <span class="k">return</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">parts</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_globe_path</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="n">edge</span> <span class="o">=</span> <span class="p">[(</span><span class="mf">180.0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">lat</span><span class="p">))</span> <span class="k">for</span> <span class="n">lat</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">90</span><span class="p">,</span> <span class="mi">91</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+    <span class="n">edge</span> <span class="o">+=</span> <span class="p">[(</span><span class="o">-</span><span class="mf">180.0</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">lat</span><span class="p">))</span> <span class="k">for</span> <span class="n">lat</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">90</span><span class="p">,</span> <span class="o">-</span><span class="mi">91</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">)]</span>
+    <span class="k">return</span> <span class="s2">"M"</span> <span class="o">+</span> <span class="s2">"L"</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">y</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2">"</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="p">(</span><span class="n">_project</span><span class="p">(</span><span class="o">*</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">edge</span><span class="p">))</span> <span class="o">+</span> <span class="s2">"Z"</span>
+
+
+<span class="nd">@lru_cache</span><span class="p">(</span><span class="n">maxsize</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">_outlines</span><span class="p">(</span><span class="n">database</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">modified</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Return each country's SVG path, read once per installed map pack file."""</span>
+    <span class="k">del</span> <span class="n">modified</span>  <span class="c1"># part of the cache key only, so a replaced pack is read again</span>
+    <span class="n">connection</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="sa">f</span><span class="s2">"file:</span><span class="si">{</span><span class="n">Path</span><span class="p">(</span><span class="n">database</span><span class="p">)</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span><span class="si">}</span><span class="s2">?mode=ro"</span><span class="p">,</span> <span class="n">uri</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">dict</span><span class="p">(</span><span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"SELECT key, value FROM metadata"</span><span class="p">))</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"format_version"</span><span class="p">)</span> <span class="o">!=</span> <span class="s2">"1"</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">MapDataError</span><span class="p">(</span><span class="s2">"The installed map pack is incompatible"</span><span class="p">)</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span>
+            <span class="s2">"SELECT alpha2, payload, uncompressed_bytes, sha256 FROM country_map ORDER BY alpha2"</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
+    <span class="k">finally</span><span class="p">:</span>
+        <span class="n">connection</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+    <span class="n">outlines</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">for</span> <span class="n">alpha2</span><span class="p">,</span> <span class="n">compressed</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="n">expected</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="n">raw</span> <span class="o">=</span> <span class="n">zlib</span><span class="o">.</span><span class="n">decompress</span><span class="p">(</span><span class="n">compressed</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span> <span class="o">!=</span> <span class="n">size</span> <span class="ow">or</span> <span class="n">sha256</span><span class="p">(</span><span class="n">raw</span><span class="p">)</span><span class="o">.</span><span class="n">hexdigest</span><span class="p">()</span> <span class="o">!=</span> <span class="n">expected</span><span class="p">:</span>
+                <span class="k">raise</span> <span class="n">MapDataError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The installed map record for </span><span class="si">{</span><span class="n">alpha2</span><span class="si">}</span><span class="s2"> failed its integrity check"</span><span class="p">)</span>
+            <span class="n">outlines</span><span class="p">[</span><span class="n">alpha2</span><span class="p">]</span> <span class="o">=</span> <span class="n">_country_path</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">raw</span><span class="p">)[</span><span class="s2">"boundary"</span><span class="p">])</span>
+        <span class="k">except</span> <span class="p">(</span><span class="ne">KeyError</span><span class="p">,</span> <span class="ne">ValueError</span><span class="p">,</span> <span class="n">zlib</span><span class="o">.</span><span class="n">error</span><span class="p">)</span> <span class="k">as</span> <span class="n">error</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">MapDataError</span><span class="p">(</span><span class="sa">f</span><span class="s2">"The installed map record for </span><span class="si">{</span><span class="n">alpha2</span><span class="si">}</span><span class="s2"> could not be read"</span><span class="p">)</span> <span class="kn">from</span><span class="w"> </span><span class="nn">error</span>
+    <span class="k">return</span> <span class="n">outlines</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_class_edges</span><span class="p">(</span><span class="n">values</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">    </span><span class="sd">"""Return up to four rising boundaries that split the values into equal-count classes."""</span>
+    <span class="n">ordered</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">values</span><span class="p">)</span>
+    <span class="n">edges</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">float</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">step</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">COLORS</span><span class="p">)):</span>
+        <span class="n">edge</span> <span class="o">=</span> <span class="n">ordered</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">ordered</span><span class="p">)</span> <span class="o">*</span> <span class="n">step</span> <span class="o">//</span> <span class="nb">len</span><span class="p">(</span><span class="n">COLORS</span><span class="p">)]</span>
+        <span class="k">if</span> <span class="n">edge</span> <span class="o">&gt;</span> <span class="n">ordered</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="n">edges</span> <span class="ow">or</span> <span class="n">edge</span> <span class="o">&gt;</span> <span class="n">edges</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]):</span>
+            <span class="n">edges</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">edge</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">tuple</span><span class="p">(</span><span class="n">edges</span><span class="p">)</span>
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">_short</span><span class="p">(</span><span class="n">value</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">decimals</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return a legend-sized number, such as ``"1.4 billion"`` or ``"72.5"``."""</span>
+    <span class="k">for</span> <span class="n">size</span><span class="p">,</span> <span class="n">word</span> <span class="ow">in</span> <span class="p">((</span><span class="mf">1e9</span><span class="p">,</span> <span class="s2">"billion"</span><span class="p">),</span> <span class="p">(</span><span class="mf">1e6</span><span class="p">,</span> <span class="s2">"million"</span><span class="p">),</span> <span class="p">(</span><span class="mf">1e3</span><span class="p">,</span> <span class="s2">"thousand"</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="nb">abs</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="n">size</span><span class="p">:</span>
+            <span class="n">scaled</span> <span class="o">=</span> <span class="n">value</span> <span class="o">/</span> <span class="n">size</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">scaled</span><span class="si">:</span><span class="s2">,.</span><span class="si">{</span><span class="mi">0</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nb">abs</span><span class="p">(</span><span class="n">scaled</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">word</span><span class="si">}</span><span class="s2">"</span>
+    <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">value</span><span class="si">:</span><span class="s2">,.</span><span class="si">{</span><span class="n">decimals</span><span class="si">}</span><span class="s2">f</span><span class="si">}</span><span class="s2">"</span>
+
+
+<div class="viewcode-block" id="WorldMap">
+<a class="viewcode-back" href="../../../api.html#pyworldatlas.maps.WorldMap">[docs]</a>
+<span class="nd">@dataclass</span><span class="p">(</span><span class="n">frozen</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">slots</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">WorldMap</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""A world map with every country colored by one statistic.</span>
+
+<span class="sd">    Countries fall into five classes that each hold about the same number of</span>
+<span class="sd">    countries, from light (smaller numbers) to dark (larger numbers). The</span>
+<span class="sd">    colors order the published numbers only; they do not say which is better.</span>
+<span class="sd">    Countries without a value are hatched and labelled "No data".</span>
+<span class="sd">    """</span>
+
+    <span class="n">indicator</span><span class="p">:</span> <span class="n">Indicator</span>
+    <span class="n">values</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="n">StatisticValue</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">"""The value drawn for each country, in alphabetical order of country name."""</span>
+    <span class="n">names</span><span class="p">:</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="o">...</span><span class="p">]</span>
+<span class="w">    </span><span class="sd">"""Every country on the map as ``(alpha2, name)``, alphabetical by name."""</span>
+    <span class="n">year</span><span class="p">:</span> <span class="nb">int</span> <span class="o">|</span> <span class="kc">None</span>
+<span class="w">    </span><span class="sd">"""The requested year, or ``None`` for each country's latest value."""</span>
+    <span class="n">database</span><span class="p">:</span> <span class="nb">str</span>
+<span class="w">    </span><span class="sd">"""The map pack file the outlines are read from."""</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">title</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return the map title, such as ``"Life expectancy at birth (years), latest year"``."""</span>
+        <span class="n">when</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"in </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">"</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">year</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="s2">"latest year"</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> (</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">unit</span><span class="si">}</span><span class="s2">), </span><span class="si">{</span><span class="n">when</span><span class="si">}</span><span class="s2">"</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">class_edges</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">tuple</span><span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="o">...</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">"""Return the boundaries between color classes, lowest first."""</span>
+        <span class="k">return</span> <span class="n">_class_edges</span><span class="p">([</span><span class="n">item</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">])</span>
+
+<div class="viewcode-block" id="WorldMap.description">
+<a class="viewcode-back" href="../../../api.html#pyworldatlas.maps.WorldMap.description">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">description</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return a plain-language summary of the map for screen readers."""</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+            <span class="k">return</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">}</span><span class="s2">. No country has a value."</span>
+        <span class="n">low</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        <span class="n">high</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"World map of </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span><span class="si">}</span><span class="s2">. </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)</span><span class="si">}</span><span class="s2"> of "</span>
+            <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="p">)</span><span class="si">}</span><span class="s2"> countries have a value, from </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">low</span><span class="p">)</span><span class="si">}</span><span class="s2"> "</span>
+            <span class="sa">f</span><span class="s2">"to </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">high</span><span class="p">)</span><span class="si">}</span><span class="s2">. The table lists every value. "</span>
+            <span class="sa">f</span><span class="s2">"Source: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">source</span><span class="si">}</span><span class="s2">."</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_legend</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]:</span>
+        <span class="n">decimals</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">decimals</span>
+        <span class="n">edges</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">class_edges</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">:</span>
+            <span class="k">return</span> <span class="p">[]</span>
+        <span class="n">bounds</span> <span class="o">=</span> <span class="p">[</span><span class="nb">min</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="o">*</span><span class="n">edges</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">value</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="p">[</span>
+            <span class="p">(</span><span class="n">COLORS</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">_short</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="n">index</span><span class="p">],</span><span class="w"> </span><span class="n">decimals</span><span class="p">)</span><span class="si">}</span><span class="s2"> to </span><span class="si">{</span><span class="n">_short</span><span class="p">(</span><span class="n">bounds</span><span class="p">[</span><span class="n">index</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">],</span><span class="w"> </span><span class="n">decimals</span><span class="p">)</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+            <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bounds</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="p">]</span>
+
+<div class="viewcode-block" id="WorldMap.to_svg">
+<a class="viewcode-back" href="../../../api.html#pyworldatlas.maps.WorldMap.to_svg">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_svg</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return the map as a standalone SVG image with a title, legend, and source line.</span>
+
+<span class="sd">        Each country carries a hover title with its value and year. The image</span>
+<span class="sd">        follows the reader's light or dark color scheme.</span>
+<span class="sd">        """</span>
+        <span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">database</span><span class="p">)</span>
+        <span class="n">outlines</span> <span class="o">=</span> <span class="n">_outlines</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">path</span><span class="p">),</span> <span class="n">path</span><span class="o">.</span><span class="n">stat</span><span class="p">()</span><span class="o">.</span><span class="n">st_mtime_ns</span><span class="p">)</span>
+        <span class="n">prefix</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"pwa-</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">key</span><span class="si">}</span><span class="s2">"</span>
+        <span class="n">edges</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">class_edges</span>
+        <span class="n">by_area</span> <span class="o">=</span> <span class="p">{</span><span class="n">item</span><span class="o">.</span><span class="n">area</span><span class="p">:</span> <span class="n">item</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">}</span>
+        <span class="n">shapes</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">alpha2</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="p">:</span>
+            <span class="n">outline</span> <span class="o">=</span> <span class="n">outlines</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">alpha2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">outline</span><span class="p">:</span>
+                <span class="k">continue</span>
+            <span class="n">item</span> <span class="o">=</span> <span class="n">by_area</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">alpha2</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">item</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">fill</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"url(#</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">-none)"</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: no data"</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">fill</span> <span class="o">=</span> <span class="n">COLORS</span><span class="p">[</span><span class="nb">sum</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">value</span> <span class="o">&gt;=</span> <span class="n">edge</span> <span class="k">for</span> <span class="n">edge</span> <span class="ow">in</span> <span class="n">edges</span><span class="p">)]</span>
+                <span class="n">label</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s2">: </span><span class="si">{</span><span class="n">item</span><span class="si">}</span><span class="s2">"</span>
+            <span class="n">shapes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">f</span><span class="s1">'&lt;path d="</span><span class="si">{</span><span class="n">outline</span><span class="si">}</span><span class="s1">" fill="</span><span class="si">{</span><span class="n">fill</span><span class="si">}</span><span class="s1">"&gt;&lt;title&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">label</span><span class="p">)</span><span class="si">}</span><span class="s1">&lt;/title&gt;&lt;/path&gt;'</span><span class="p">)</span>
+        <span class="n">top</span> <span class="o">=</span> <span class="n">HEIGHT</span> <span class="o">+</span> <span class="mi">12</span>
+        <span class="n">legend</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="sa">f</span><span class="s1">'&lt;text x="16" y="</span><span class="si">{</span><span class="n">top</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">8</span><span class="si">}</span><span class="s1">" class="t"&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">)</span><span class="si">}</span><span class="s1">&lt;/text&gt;'</span><span class="p">,</span>
+        <span class="p">]</span>
+        <span class="n">x</span><span class="p">,</span> <span class="n">row</span> <span class="o">=</span> <span class="mf">16.0</span><span class="p">,</span> <span class="n">top</span> <span class="o">+</span> <span class="mi">18</span>
+        <span class="k">for</span> <span class="n">color</span><span class="p">,</span> <span class="n">label</span> <span class="ow">in</span> <span class="p">[</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">_legend</span><span class="p">(),</span> <span class="p">(</span><span class="sa">f</span><span class="s2">"url(#</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s2">-none)"</span><span class="p">,</span> <span class="s2">"No data"</span><span class="p">)]:</span>
+            <span class="n">width</span> <span class="o">=</span> <span class="mi">19</span> <span class="o">+</span> <span class="mf">7.4</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">label</span><span class="p">)</span> <span class="o">+</span> <span class="mi">18</span>
+            <span class="k">if</span> <span class="n">x</span> <span class="o">+</span> <span class="n">width</span> <span class="o">&gt;</span> <span class="n">WIDTH</span> <span class="o">-</span> <span class="mi">16</span><span class="p">:</span>  <span class="c1"># wrap onto the next line</span>
+                <span class="n">x</span><span class="p">,</span> <span class="n">row</span> <span class="o">=</span> <span class="mf">16.0</span><span class="p">,</span> <span class="n">row</span> <span class="o">+</span> <span class="mi">22</span>
+            <span class="n">legend</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                <span class="sa">f</span><span class="s1">'&lt;rect x="</span><span class="si">{</span><span class="n">x</span><span class="si">:</span><span class="s1">g</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">row</span><span class="si">}</span><span class="s1">" width="14" height="14" fill="</span><span class="si">{</span><span class="n">color</span><span class="si">}</span><span class="s1">" class="k"/&gt;'</span>
+                <span class="sa">f</span><span class="s1">'&lt;text x="</span><span class="si">{</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">19</span><span class="si">:</span><span class="s1">g</span><span class="si">}</span><span class="s1">" y="</span><span class="si">{</span><span class="n">row</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">12</span><span class="si">}</span><span class="s1">"&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">label</span><span class="p">)</span><span class="si">}</span><span class="s1">&lt;/text&gt;'</span>
+            <span class="p">)</span>
+            <span class="n">x</span> <span class="o">+=</span> <span class="n">width</span>
+        <span class="n">legend</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s1">'&lt;text x="16" y="</span><span class="si">{</span><span class="n">row</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">36</span><span class="si">}</span><span class="s1">" class="s"&gt;Source: </span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">source</span><span class="p">)</span><span class="si">}</span><span class="s1">. '</span>
+            <span class="s2">"Outlines: Natural Earth, for display only.&lt;/text&gt;"</span>
+        <span class="p">)</span>
+        <span class="n">globe</span> <span class="o">=</span> <span class="n">_globe_path</span><span class="p">()</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s1">'&lt;svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 </span><span class="si">{</span><span class="n">WIDTH</span><span class="si">}</span><span class="s1"> </span><span class="si">{</span><span class="n">row</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">46</span><span class="si">}</span><span class="s1">" '</span>
+            <span class="sa">f</span><span class="s1">'role="img" aria-labelledby="</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">-title </span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">-desc" '</span>
+            <span class="s1">'font-family="system-ui, sans-serif" font-size="13"&gt;'</span>
+            <span class="sa">f</span><span class="s1">'&lt;title id="</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">-title"&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">)</span><span class="si">}</span><span class="s1">&lt;/title&gt;'</span>
+            <span class="sa">f</span><span class="s1">'&lt;desc id="</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">-desc"&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">())</span><span class="si">}</span><span class="s1">&lt;/desc&gt;'</span>
+            <span class="s2">"&lt;style&gt;text{fill:#1f2933}.t{font-weight:600;font-size:15px}.s{font-size:11px;fill:#52606d}"</span>
+            <span class="s2">".g{fill:#f4f8fb;stroke:#9aa5b1}.c{stroke:#33414e;stroke-width:.4;stroke-linejoin:round}"</span>
+            <span class="s2">".k{stroke:#33414e;stroke-width:.6}"</span>
+            <span class="s2">"@media (prefers-color-scheme:dark){text{fill:#e4e7eb}.s{fill:#b0b8c1}"</span>
+            <span class="s2">".g{fill:#1c2630;stroke:#7b8794}.c,.k{stroke:#d9e2ec}}&lt;/style&gt;"</span>
+            <span class="sa">f</span><span class="s1">'&lt;defs&gt;&lt;pattern id="</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">-none" width="6" height="6" patternUnits="userSpaceOnUse" '</span>
+            <span class="s1">'patternTransform="rotate(45)"&gt;&lt;rect width="6" height="6" fill="#eceff1"/&gt;'</span>
+            <span class="s1">'&lt;line y2="6" stroke="#8a96a3" stroke-width="1.5"/&gt;&lt;/pattern&gt;'</span>
+            <span class="sa">f</span><span class="s1">'&lt;clipPath id="</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">-globe"&gt;&lt;path d="</span><span class="si">{</span><span class="n">globe</span><span class="si">}</span><span class="s1">"/&gt;&lt;/clipPath&gt;&lt;/defs&gt;'</span>
+            <span class="sa">f</span><span class="s1">'&lt;path d="</span><span class="si">{</span><span class="n">globe</span><span class="si">}</span><span class="s1">" class="g"/&gt;'</span>
+            <span class="sa">f</span><span class="s1">'&lt;g clip-path="url(#</span><span class="si">{</span><span class="n">prefix</span><span class="si">}</span><span class="s1">-globe)" class="c"&gt;</span><span class="si">{</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">shapes</span><span class="p">)</span><span class="si">}</span><span class="s1">&lt;/g&gt;'</span>
+            <span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">legend</span><span class="p">)</span><span class="si">}</span><span class="s1">&lt;/svg&gt;'</span>
+        <span class="p">)</span></div>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">_repr_html_</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">to_svg</span><span class="p">()</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">friendly_repr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="si">!r}</span><span class="s2">"</span><span class="p">)</span>
+
+<div class="viewcode-block" id="WorldMap.to_html">
+<a class="viewcode-back" href="../../../api.html#pyworldatlas.maps.WorldMap.to_html">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_html</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Return a complete offline HTML page with the map and a table of every value.</span>
+
+<span class="sd">        The table lists each country in alphabetical order with its value and</span>
+<span class="sd">        year, so the map can be read without seeing it.</span>
+<span class="sd">        """</span>
+        <span class="n">named</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">names</span><span class="p">)</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="s2">""</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"&lt;tr&gt;&lt;th scope=row&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">named</span><span class="p">[</span><span class="n">item</span><span class="o">.</span><span class="n">area</span><span class="p">])</span><span class="si">}</span><span class="s2">&lt;/th&gt;"</span>
+            <span class="sa">f</span><span class="s2">"&lt;td&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">item</span><span class="o">.</span><span class="n">value</span><span class="p">))</span><span class="si">}</span><span class="s2">&lt;/td&gt;&lt;td&gt;</span><span class="si">{</span><span class="n">item</span><span class="o">.</span><span class="n">year</span><span class="si">}</span><span class="s2">&lt;/td&gt;&lt;/tr&gt;"</span>
+            <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span>
+        <span class="p">)</span>
+        <span class="n">missing</span> <span class="o">=</span> <span class="p">[</span><span class="n">name</span> <span class="k">for</span> <span class="n">alpha2</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">names</span> <span class="k">if</span> <span class="n">alpha2</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">{</span><span class="n">i</span><span class="o">.</span><span class="n">area</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">values</span><span class="p">}]</span>
+        <span class="n">no_data</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">"&lt;p&gt;No data: </span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="s1">', '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">missing</span><span class="p">))</span><span class="si">}</span><span class="s2">.&lt;/p&gt;"</span> <span class="k">if</span> <span class="n">missing</span> <span class="k">else</span> <span class="s2">""</span>
+        <span class="p">)</span>
+        <span class="k">return</span> <span class="p">(</span>
+            <span class="s2">"&lt;!doctype html&gt;&lt;html lang=en&gt;&lt;meta charset=utf-8&gt;"</span>
+            <span class="s1">'&lt;meta name=viewport content="width=device-width,initial-scale=1"&gt;'</span>
+            <span class="sa">f</span><span class="s2">"&lt;title&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/title&gt;"</span>
+            <span class="s2">"&lt;style&gt;:root{color-scheme:light dark}body{margin:0 auto;max-width:1100px;padding:16px;"</span>
+            <span class="s2">"font:16px/1.5 system-ui,sans-serif;background:#fff;color:#1f2933}"</span>
+            <span class="s2">"@media (prefers-color-scheme:dark){body{background:#111820;color:#e4e7eb}}"</span>
+            <span class="s2">"h1{font-size:1.4rem}svg{width:100%;height:auto}table{border-collapse:collapse}"</span>
+            <span class="s2">"th,td{padding:2px 12px 2px 0;text-align:left}td{font-variant-numeric:tabular-nums}"</span>
+            <span class="s2">"summary{cursor:pointer;font-weight:600}&lt;/style&gt;"</span>
+            <span class="sa">f</span><span class="s2">"&lt;h1&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/h1&gt;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">to_svg</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span>
+            <span class="sa">f</span><span class="s2">"&lt;p&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">description</span><span class="p">())</span><span class="si">}</span><span class="s2">&lt;/p&gt;"</span>
+            <span class="s2">"&lt;details&gt;&lt;summary&gt;Show every value as a table&lt;/summary&gt;"</span>
+            <span class="sa">f</span><span class="s2">"&lt;table&gt;&lt;caption&gt;</span><span class="si">{</span><span class="n">html</span><span class="o">.</span><span class="n">escape</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">title</span><span class="p">)</span><span class="si">}</span><span class="s2">&lt;/caption&gt;"</span>
+            <span class="s2">"&lt;thead&gt;&lt;tr&gt;&lt;th scope=col&gt;Country&lt;/th&gt;&lt;th scope=col&gt;Value&lt;/th&gt;&lt;th scope=col&gt;Year&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;"</span>
+            <span class="sa">f</span><span class="s2">"&lt;tbody&gt;</span><span class="si">{</span><span class="n">rows</span><span class="si">}</span><span class="s2">&lt;/tbody&gt;&lt;/table&gt;</span><span class="si">{</span><span class="n">no_data</span><span class="si">}</span><span class="s2">&lt;/details&gt;&lt;/html&gt;"</span>
+        <span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="WorldMap.write_html">
+<a class="viewcode-back" href="../../../api.html#pyworldatlas.maps.WorldMap.write_html">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_html</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Write the offline HTML page and return its resolved path."""</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+        <span class="n">target</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">target</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_html</span><span class="p">(),</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">target</span></div>
+
+
+<div class="viewcode-block" id="WorldMap.write_svg">
+<a class="viewcode-back" href="../../../api.html#pyworldatlas.maps.WorldMap.write_svg">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">write_svg</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Write the SVG image and return its resolved path."""</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">path</span><span class="p">)</span><span class="o">.</span><span class="n">expanduser</span><span class="p">()</span><span class="o">.</span><span class="n">resolve</span><span class="p">()</span>
+        <span class="n">target</span><span class="o">.</span><span class="n">parent</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="n">parents</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">target</span><span class="o">.</span><span class="n">write_text</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">to_svg</span><span class="p">(),</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf-8"</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s2">"</span><span class="se">\n</span><span class="s2">"</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">target</span></div>
+
+
+<div class="viewcode-block" id="WorldMap.show">
+<a class="viewcode-back" href="../../../api.html#pyworldatlas.maps.WorldMap.show">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">show</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">"""Open the map in the default browser and return the page's path."""</span>
+        <span class="n">target</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span>
+            <span class="n">Path</span><span class="p">(</span><span class="n">tempfile</span><span class="o">.</span><span class="n">gettempdir</span><span class="p">())</span> <span class="o">/</span> <span class="s2">"pyworldatlas-maps"</span> <span class="o">/</span> <span class="sa">f</span><span class="s2">"world-</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">indicator</span><span class="o">.</span><span class="n">key</span><span class="si">}</span><span class="s2">.html"</span>
+        <span class="p">)</span>
+        <span class="n">webbrowser</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">target</span><span class="o">.</span><span class="n">as_uri</span><span class="p">(),</span> <span class="n">new</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">target</span></div>
+</div>
+
+
+
+<span class="k">def</span><span class="w"> </span><span class="nf">outline_database</span><span class="p">(</span><span class="n">data_dir</span><span class="p">:</span> <span class="nb">str</span> <span class="o">|</span> <span class="n">Path</span> <span class="o">|</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Path</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">"""Return the installed map pack file to draw outlines from, preferring the smaller one."""</span>
+    <span class="k">for</span> <span class="n">pack</span> <span class="ow">in</span> <span class="p">(</span><span class="s2">"maps-lite"</span><span class="p">,</span> <span class="s2">"maps"</span><span class="p">):</span>
+        <span class="n">folder</span> <span class="o">=</span> <span class="n">packs</span><span class="o">.</span><span class="n">pack_path</span><span class="p">(</span><span class="n">pack</span><span class="p">,</span> <span class="n">data_dir</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">folder</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="p">(</span><span class="n">folder</span> <span class="o">/</span> <span class="s2">"maps.sqlite3"</span><span class="p">)</span><span class="o">.</span><span class="n">is_file</span><span class="p">():</span>
+            <span class="k">return</span> <span class="n">folder</span> <span class="o">/</span> <span class="s2">"maps.sqlite3"</span>
+    <span class="k">raise</span> <span class="n">MapDataError</span><span class="p">(</span><span class="s2">"World maps need a map pack. Run: pyworldatlas get maps-lite"</span><span class="p">)</span>
+</pre></div>
+
+           </div>
+          </div>
+
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, PyWorldAtlas maintainers.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

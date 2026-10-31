@@ -50,7 +50,7 @@ profile into an unstructured dictionary.
 
    with Atlas() as atlas:
        country = atlas.country("Brazil")
-       print(country.summary())
+       print(country.summary)
 
 .. raw:: html
 
@@ -69,8 +69,8 @@ selected identity.
    with Atlas() as atlas:
        for country_name, language_code in (
            ("Dominican Republic", "es"),
-           ("China", "zh"),
-           ("India", "hi"),
+           ("Mongolia", "mn"),
+           ("Nepal", "ne"),
            ("Japan", "ja"),
        ):
            country = atlas.country(country_name)
@@ -156,7 +156,7 @@ Combine partial city-name search with nearby-place discovery.
        matches = atlas.search_cities("santo", country="DO", limit=3)
        print("Search results:", ", ".join(city.label for city in matches))
 
-       nearby = atlas.nearest_cities(
+       nearby = atlas.cities_near(
            "Santo Domingo",
            origin_country="DO",
            within_country="DO",
@@ -180,17 +180,17 @@ connection questions.
    from pyworldatlas import Atlas
 
    with Atlas() as atlas:
-       path = atlas.border_path("Portugal", "China")
+       path = atlas.border_path("Portugal", "Poland")
        print(" → ".join(path.names))
        print("Crossings:", path.crossings)
 
-       amazon = atlas.countries_with_river("Amazon")
+       amazon = atlas.countries(river="Amazon")
        print(
            "Source-listed Amazon profiles:",
            ", ".join(country.name for country in amazon),
        )
 
-       geneva = atlas.countries_with_lake("Geneva")
+       geneva = atlas.countries(lake="Geneva")
        print(
            "Source-listed Lake Geneva profiles:",
            ", ".join(country.name for country in geneva),

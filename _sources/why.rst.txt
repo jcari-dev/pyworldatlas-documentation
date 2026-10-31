@@ -57,3 +57,53 @@ offline reference with explicit source and coverage boundaries.
 It is also not a live commentary or opinion service. Source conventions are
 attributed and their limitations are documented. The formal editorial
 commitments and community standard are in :doc:`educational_principles`.
+
+What is bundled
+---------------
+
+.. list-table:: Dataset 2026.10.27.1
+   :header-rows: 1
+   :widths: 62 38
+
+   * - Records
+     - Coverage
+   * - Countries and areas
+     - 248
+   * - Primary capitals
+     - 241 / 248
+   * - Populated places
+     - 6,265
+   * - Selected local-language identities
+     - 248 / 248
+   * - Sourced English formal names
+     - 240 / 248
+   * - Anthem titles
+     - 234 / 248
+   * - Reviewed source-listed mottos
+     - 32 / 248
+   * - Travel basics (plugs, mains supply, driving side)
+     - 245 / 248
+   * - English demonym profiles
+     - 227 / 248
+   * - Country timezone profiles
+     - 246 / 248, 417 records
+   * - Country-language metadata
+     - 722 records across 245 profiles
+   * - Reviewed land-border relationships
+     - 319
+   * - Total-area profiles
+     - 248 / 248
+   * - Land area and coastline
+     - 238 / 248 each
+   * - Highest and lowest points
+     - 240 / 248 each
+   * - Source-listed river records
+     - 188 across 80 profiles
+   * - Source-listed lake records
+     - 187 across 69 profiles
+   * - Plain-language climate summaries
+     - 240 / 248
+   * - Köppen-Geiger climate profiles
+     - 241 / 248
+   * - Overview and Standard 3D maps
+     - 248 / 248 each

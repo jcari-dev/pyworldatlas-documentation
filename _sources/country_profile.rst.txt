@@ -46,10 +46,10 @@ Profile example
    'Asia'
    >>> japan.region
    'Eastern Asia'
-   >>> japan.subregion
-   'Eastern Asia'
+   >>> japan.subregion is None  # UN M49 has no smaller region for Japan
+   True
    >>> japan.area_km2
-   377915.0
+   377915
    >>> japan.population
    126529100
    >>> round(japan.population_density, 2)
@@ -157,13 +157,13 @@ empty collection fields even when a familiar country currently has values.
 Convenience and discovery views
 -------------------------------
 
-For a quick human-readable introduction, ``country.summary()`` combines the
+For a quick human-readable introduction, ``country.summary`` combines the
 most useful available fields and skips missing ones:
 
 .. code-block:: python
 
    with Atlas() as atlas:
-       print(atlas.country("Brazil").summary())
+       print(atlas.country("Brazil").summary)
 
 Pass ``local_language="pt"`` to request a particular bundled local identity.
 The result is display text; structured programs should continue to use typed
@@ -198,11 +198,11 @@ Physical geography
 .. doctest::
 
    >>> japan.land_area_km2, japan.water_area_km2, round(japan.water_percent, 2)
-   (364485.0, 13430.0, 3.55)
+   (364485, 13430, 3.55)
    >>> japan.coastline_km, japan.mean_elevation_m
-   (29751.0, 438.0)
+   (29751, 438)
    >>> (japan.highest_point.name, japan.highest_point.elevation_m)
-   ('Mount Fuji', 3776.0)
+   ('Mount Fuji', 3776)
    >>> japan.climate.zone_codes
    ('Cfa', 'Dfb', 'Dfa', 'Af', 'Dfc')
 

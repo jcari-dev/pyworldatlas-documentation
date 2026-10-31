@@ -1,9 +1,9 @@
 Coordinates and distances
 =========================
 
-PyWorldAtlas stores signed WGS84 latitude and longitude on every bundled
+PyWorldAtlas stores signed WGS84 :term:`latitude` and :term:`longitude` on every bundled
 capital and populated-place record. Exact lookup, friendly display helpers, and
-dependency-free great-circle calculations all work offline.
+dependency-free :term:`great-circle <great-circle distance>` calculations all work offline.
 
 Look up coordinates
 -------------------

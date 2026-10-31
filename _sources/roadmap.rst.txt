@@ -11,15 +11,15 @@ public API until it is implemented, tested, documented, and published.
 
       .. rubric:: Current release
 
-      **0.12.0** adds the world in numbers: eleven World Bank indicators
-      since 1960, airports and World Heritage sites, place quizzes, and a
-      new playground.
+      **0.13.0** is friendly by default: one naming style, results that
+      read well, built-in help, world maps of statistics, and a cheat sheet,
+      quests, and dark mode in the docs.
 
    .. container:: atlas-card atlas-card-teal
 
       .. rubric:: Next milestone
 
-      **0.13** adds generated reference entries for every country, place,
+      **0.14** adds generated reference entries for every country, place,
       and landmark, and an offline site export.
 
    .. container:: atlas-card atlas-card-gold
@@ -97,6 +97,10 @@ public API until it is implemented, tested, documented, and published.
      - Statistics and landmarks packs, place quizzes, and the new playground
      - Published
    * - 0.13.0
+     - Complete
+     - One naming style, readable results, help, world maps, and friendlier docs
+     - Published
+   * - 0.14.0
      - Planned
      - Generated reference entries and offline site export
      - Not yet

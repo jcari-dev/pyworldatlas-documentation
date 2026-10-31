@@ -33,8 +33,8 @@ the source reports zero coastline and never turns missing data into a result.
 Country rankings
 ----------------
 
-:meth:`Atlas.rank_countries <pyworldatlas.Atlas.rank_countries>` and its short
-alias :meth:`Atlas.rank <pyworldatlas.Atlas.rank>` support these metrics:
+:meth:`Atlas.rank <pyworldatlas.Atlas.rank>` ranks countries by any of these
+metrics, and by every statistic in the statistics pack (see :doc:`statistics`):
 
 .. list-table:: Ranking metrics
    :header-rows: 1
@@ -89,9 +89,9 @@ alias :meth:`Atlas.rank <pyworldatlas.Atlas.rank>` support these metrics:
 
    >>> from pyworldatlas import Atlas
    >>> atlas = Atlas()
-   >>> results = atlas.rank("area", limit=3)
+   >>> results = atlas.rank("area", region="Western Europe", limit=3)
    >>> [(row.position, row.country.name, row.unit) for row in results]
-   [(1, 'Russia', 'km²'), (2, 'Antarctica', 'km²'), (3, 'Canada', 'km²')]
+   [(1, 'France', 'km²'), (2, 'Germany', 'km²'), (3, 'Austria', 'km²')]
    >>> smallest = atlas.rank("density", limit=2, descending=False)
    >>> smallest[0].value <= smallest[1].value
    True
@@ -104,10 +104,10 @@ values are excluded.
 
    >>> coastlines = atlas.rank("coastline", limit=3)
    >>> [(row.country.name, row.value, row.unit) for row in coastlines]
-   [('Canada', 202080.0, 'km'), ('Indonesia', 54716.0, 'km'), ('Greenland', 44087.0, 'km')]
-   >>> peaks = atlas.rank("highest_elevation", limit=3)
+   [('Canada', 202080, 'km'), ('Indonesia', 54716, 'km'), ('Greenland', 44087, 'km')]
+   >>> peaks = atlas.rank("highest_elevation", region="Western Europe", limit=3)
    >>> [(row.country.name, row.value) for row in peaks]
-   [('China', 8849.0), ('Nepal', 8849.0), ('Pakistan', 8611.0)]
+   [('France', 4810), ('Switzerland', 4634), ('Austria', 3798)]
 
 River and lake counts measure source-listed records, not every physical feature.
 Climate counts depend on the documented 0.1% class-share threshold. See
@@ -116,14 +116,14 @@ Climate counts depend on the documented 0.1% class-share threshold. See
 Nearest capitals
 ----------------
 
-:meth:`Atlas.nearest_capitals <pyworldatlas.Atlas.nearest_capitals>` accepts an
+:meth:`Atlas.capitals_near <pyworldatlas.Atlas.capitals_near>` accepts an
 exact city name, a country, a capital or city object, a
 :class:`~pyworldatlas.Coordinate`, or a ``(latitude, longitude)`` tuple.
 
 .. doctest::
 
    >>> origin = atlas.country("Dominican Republic")
-   >>> nearest = atlas.nearest_capitals(origin, limit=3)
+   >>> nearest = atlas.capitals_near(origin, limit=3)
    >>> [(item.capital.name, item.country.alpha2) for item in nearest]
    [('Port-au-Prince', 'HT'), ('Cockburn Town', 'TC'), ('San Juan', 'PR')]
    >>> nearest[0].unit

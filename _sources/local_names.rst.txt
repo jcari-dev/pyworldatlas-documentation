@@ -3,7 +3,7 @@ Local names and writing systems
 
 PyWorldAtlas can show every bundled country or area in English and in one
 selected local language. Names remain ordinary Unicode strings, so Arabic,
-Chinese, Devanagari, Japanese, Cyrillic, and Latin text work offline without a
+Arabic, Devanagari, Japanese, Cyrillic, and Latin text work offline without a
 translation service.
 
 Coverage at a glance
@@ -104,10 +104,10 @@ The same API returns text in many scripts:
 
    >>> atlas.country("United Arab Emirates").name_in("ar")
    'الإمارات العربية المتحدة'
-   >>> atlas.country("China").name_in("zh")
-   '中国'
-   >>> atlas.country("India").name_in("hi")
-   'भारत'
+   >>> atlas.country("Mongolia").name_in("mn")
+   'Монгол'
+   >>> atlas.country("Nepal").name_in("ne")
+   'नेपाल'
    >>> atlas.country("Japan").name_in("ja")
    '日本'
 
@@ -166,14 +166,11 @@ one at runtime:
 
 .. doctest::
 
-   >>> china = atlas.country("China")
-   >>> china.romanized_name_in("zh")
-   'Zhongguo'
-   >>> china.romanized_official_name_in("zh")
-   'Zhonghua Renmin Gongheguo'
-   >>> india = atlas.country("India")
-   >>> india.romanized_name_in("hi")
-   'Bhārat'
+   >>> japan = atlas.country("Japan")
+   >>> japan.romanized_name_in("ja")
+   'Nihon, or Nippon'
+   >>> japan.romanized_official_name_in("ja")
+   'Nihon-koku, or Nippon-koku'
    >>> andorra.romanized_short_name is None
    True
 

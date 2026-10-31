@@ -4,6 +4,34 @@ Changelog
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
 
+0.13.0
+------
+
+Friendly by default: clearer names, results that read well, and docs that are
+easier to start with.
+
+- **One naming style:** every distance search ends in ``_near``, ``rank()``
+  ranks statistics too, ``quiz()`` takes every topic, ``countries()`` is the
+  one filter, and ``find()`` matches the ``find`` command. The older names
+  still work until 1.0; see the :ref:`table of newer names <api-renamed>`.
+- **Results that read well:** printing any result gives one clear line, such
+  as ``#1 Canada: 202,080 km`` or ``9,713 km``, and distances keep working as
+  numbers.
+- **Did you mean...?** Mistyped names and topics suggest the closest match.
+- **Help built in:** ``atlas.help()`` and ``pyworldatlas tour`` print a dozen
+  things to try. Every method lists its arguments, return value, errors, and
+  a tested example.
+- **World maps of statistics:** ``atlas.world_map("life_expectancy")`` colors
+  every country by one number, as plain SVG with a table for screen readers.
+- **Sun times on the local clock** when the computer has time zone data.
+- **Docs:** a shorter welcome page, a :doc:`cheatsheet`, :doc:`quests`, a
+  :doc:`glossary` with meanings on hover, "Try it" links that open examples in
+  the :doc:`playground`, and dark mode. Every page passes the WCAG 2.2 AA
+  contrast check in light and dark.
+- **Cleaner data:** tidier lake and river names, no fake 0 km² areas, and
+  ``subregion`` is ``None`` when UN M49 has none.
+- **Fixed:** the land-border methods accept a ``Country`` as well as a name.
+
 0.12.1
 ------
 

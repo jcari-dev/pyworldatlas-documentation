@@ -62,12 +62,12 @@ rank first, population breaks ties, and no match returns an empty tuple.
 Countries and places together
 -----------------------------
 
-:meth:`~pyworldatlas.Atlas.lookup` searches countries, cities, regions,
+:meth:`~pyworldatlas.Atlas.find` searches countries, cities, regions,
 mountains, lakes, and landmarks in one call; see :doc:`places`.
 
 .. doctest::
 
-   >>> [str(item) for item in atlas.lookup("Ireland", limit=2)]
+   >>> [str(item) for item in atlas.find("Ireland", limit=2)]
    ['Ireland', 'Ireland, town (US)']
 
 Filtering

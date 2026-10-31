@@ -52,7 +52,7 @@ introduction for a terminal, notebook, or lesson:
 .. code-block:: python
 
    with Atlas() as atlas:
-       print(atlas.country("Dominican Republic").summary())
+       print(atlas.country("Dominican Republic").summary)
 
 Explore the world in five minutes
 ---------------------------------
@@ -72,15 +72,15 @@ through the Earth:
    5 h 54 min of daylight in Oslo at midwinter
    NZ
 
-Optional packs add more, each with one command: ``pyworldatlas get
+Optional :term:`packs <pack>` add more, each with one command: ``pyworldatlas get
 statistics`` for World Bank numbers since 1960 (:doc:`statistics`),
-``pyworldatlas get landmarks`` for airports and World Heritage sites
+``pyworldatlas get landmarks`` for airports and :term:`World Heritage sites <World Heritage site>`
 (:doc:`landmarks`), and ``pyworldatlas get maps`` for 3D maps (:doc:`maps`).
 
 Look up, search, and collect
 ----------------------------
 
-Names, aliases, alpha-2, alpha-3, and M49 codes resolve to the same profile.
+Names, aliases, :term:`alpha-2 <alpha-2 code>`, alpha-3, and M49 codes resolve to the same profile.
 The atlas also behaves like a normal Python collection:
 
 .. doctest::

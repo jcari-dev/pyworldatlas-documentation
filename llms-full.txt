@@ -1,4 +1,4 @@
-# PyWorldAtlas 0.12.1 documentation
+# PyWorldAtlas 0.13.0 documentation
 
 PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, a searchable school atlas of 200,000 places (11 million with packs), physical geography, climate classes, reviewed land borders, travel basics, sunrise and day length, distances, quizzes, and optional packs for 3D maps, airports and World Heritage sites, and World Bank statistics since 1960. It has no core runtime dependencies, needs no API key, and never uses the network at runtime. It is built to fit the 512 MB of a Raspberry Pi Zero 2 W.
 
@@ -62,7 +62,7 @@ attributes, while summary() provides a readable
 introduction for a terminal, notebook, or lesson:
 
 with Atlas() as atlas:
-    print(atlas.country("Dominican Republic").summary())
+    print(atlas.country("Dominican Republic").summary)
 
 Explore the world in five minutes
 
@@ -166,7 +166,7 @@ keeps that session alive while you explore.
 
 What is running?
 
-This is the real pyworldatlas==0.12.1 wheel published on PyPI, not a
+This is the real pyworldatlas==0.13.0 wheel published on PyPI, not a
 JavaScript imitation or a remote demonstration API. Pyodide runs CPython in
 WebAssembly, while a module Web Worker keeps execution away from the page’s
 interface. After startup, country queries read the same bundled SQLite database
@@ -363,13 +363,13 @@ Install the built wheel offline
 
 Test the exact release artifact without consulting a package index:
 
-python -m pip install --no-index --no-deps dist/pyworldatlas-0.12.1-py3-none-any.whl
+python -m pip install --no-index --no-deps dist/pyworldatlas-0.13.0-py3-none-any.whl
 
 Verify the installation
 
 >>> import pyworldatlas
 >>> pyworldatlas.__version__
-'0.12.1'
+'0.13.0'
 >>> from pyworldatlas import Atlas
 >>> with Atlas() as atlas:
 ...     print(atlas.country("DO").capital.name)
@@ -436,7 +436,7 @@ from pyworldatlas import Atlas
 
 with Atlas() as atlas:
     brazil = atlas.country("Brazil")
-    print(brazil.summary())
+    print(brazil.summary)
 
 The summary brings together the flag, selected local identity, capital,
 location, snapshot population, currencies and languages, anthem title,
@@ -463,16 +463,16 @@ source locator. The package never manufactures a translation or romanization.
 >>> with Atlas() as atlas:
 ...     for country_name, language_code in (
 ...         ("Dominican Republic", "es"),
-...         ("China", "zh"),
-...         ("India", "hi"),
+...         ("Mongolia", "mn"),
+...         ("Nepal", "ne"),
 ...         ("Japan", "ja"),
 ...     ):
 ...         country = atlas.country(country_name)
 ...         local = country.local_name(language_code)
 ...         print(country.flag, local.short_name, f"[{local.script_code}]")
 🇩🇴 República Dominicana [Latn]
-🇨🇳 中国 [Hans]
-🇮🇳 भारत [Deva]
+🇲🇳 Монгол [Cyrl]
+🇳🇵 नेपाल [Deva]
 🇯🇵 日本 [Jpan]
 
 Turn coordinates into a compass activity
@@ -501,7 +501,7 @@ CITY DISCOVERY
 
 >>> with Atlas() as atlas:
 ...     print([city.label for city in atlas.search_cities("santo", country="DO", limit=3)])
-...     nearby = atlas.nearest_cities(
+...     nearby = atlas.cities_near(
 ...         "Santo Domingo",
 ...         origin_country="DO",
 ...         within_country="DO",
@@ -552,7 +552,7 @@ Which is higher: Mont Blanc or Denali?
   2. Denali
 Answer: 2 (Denali, 6,194 m)
 
-place_quiz() asks about the best-known mountains,
+quiz() asks about the best-known mountains,
 islands, lakes, and waterfalls. "kinds" asks what kind of place something
 is, "higher" which of two mountains is higher, and "closer_to_equator"
 which of two places is closer to the equator. Every answer comes straight from
@@ -560,7 +560,7 @@ the data, and the same seed always gives the same questions.
 
 >>> from pyworldatlas import Atlas
 >>> with Atlas() as atlas:
-...     question = atlas.place_quiz("higher", count=1, seed="lesson-1")[0]
+...     question = atlas.quiz("higher", count=1, seed="lesson-1")[0]
 >>> question.prompt.startswith("Which is higher")
 True
 >>> question.is_correct(question.answer_number)
@@ -590,6 +590,212 @@ Explore names and provenance in Local names and writing systems.
 Follow rivers, lakes, elevation, and climate in Physical geography.
 
 Review every method and result object in API reference.
+
+========================================================================
+Quests
+Source: https://jcari-dev.github.io/pyworldatlas-documentation/quests.html
+========================================================================
+
+Brazil flag emoji
+
+Japan flag emoji
+
+Switzerland flag emoji
+
+China flag emoji
+
+France flag emoji
+
+United Arab Emirates flag emoji
+
+Quests
+
+Six small puzzles to solve with PyWorldAtlas. Each one names the call that
+helps. Try it yourself first, in the Playground or your own Python, then
+open the answer to check.
+
+Every quest starts from the same three lines:
+
+>>> from datetime import date
+>>> from pyworldatlas import Atlas
+>>> atlas = Atlas()
+
+1. The long way to Vienna
+
+How many borders do you cross to travel by land from Portugal to Austria?
+
+Hint: atlas.border_path()
+
+>>> print(atlas.border_path("Portugal", "Austria"))
+Portugal → Spain → France → Germany → Austria (4 border crossings)
+
+2. Next-door capitals
+
+Which capital city is closest to Vienna, and how far away is it?
+
+Hint: atlas.capitals_near()
+
+>>> print(atlas.capitals_near("Vienna", limit=1)[0])
+Bratislava, Slovakia · 55 km
+
+3. The longest day
+
+On 21 June, how much longer is the day in Reykjavik than in Lima?
+
+Hint: atlas.sun() with a latitude and longitude
+
+>>> reykjavik = atlas.sun((64.15, -21.94), date(2026, 6, 21))
+>>> lima = atlas.sun((-12.05, -77.04), date(2026, 6, 21))
+>>> reykjavik.daylight, lima.daylight
+('21 h 09 min', '11 h 25 min')
+>>> round(reykjavik.day_length_hours - lima.day_length_hours, 1)
+9.7
+
+Almost ten hours more. In June it is summer north of the equator and winter
+south of it.
+
+4. Top of the Alps
+
+Which country in Western Europe has the highest point, and how high is it?
+
+Hint: atlas.rank()
+
+>>> print(atlas.rank("highest_elevation", region="Western Europe", limit=1)[0])
+#1 France: 4,810 m
+
+That is Mont Blanc, on the border of France and Italy.
+
+5. Islands only
+
+How many countries and areas in Oceania have no land border at all?
+
+Hint: atlas.countries() with land_borders=False
+
+>>> len(atlas.countries(continent="Oceania", land_borders=False))
+28
+
+6. Dig straight down
+
+If you dug a tunnel straight through the Earth from Madrid, which country would
+you come out in?
+
+Hint: atlas.antipode() finds the antipode
+
+>>> spot = atlas.antipode("Madrid")
+>>> spot.nearest[0].place.country_code
+'NZ'
+
+New Zealand. Most of the land on Earth sits opposite ocean, so few cities have
+a city on the other side.
+
+atlas.close()
+
+Want more? The Cheat sheet lists the most useful calls, and
+atlas.quiz("capitals") asks five questions at a time.
+
+========================================================================
+Cheat sheet
+Source: https://jcari-dev.github.io/pyworldatlas-documentation/cheatsheet.html
+========================================================================
+
+Brazil flag emoji
+
+Japan flag emoji
+
+Switzerland flag emoji
+
+China flag emoji
+
+France flag emoji
+
+United Arab Emirates flag emoji
+
+Cheat sheet
+
+The calls you will use most, on one page. Print it for a classroom wall or
+keep it open next to your editor. Every line below runs as a test, so the
+answers are exactly what you will see.
+
+Start with three lines:
+
+>>> from datetime import date
+>>> from pyworldatlas import Atlas
+>>> atlas = Atlas()
+
+Stuck? atlas.help() prints a short tour, and pyworldatlas tour does the
+same in a terminal.
+
+Look things up
+
+>>> atlas.country("Japan").capital.name
+'Tokyo'
+>>> atlas.country("NZ").name
+'New Zealand'
+>>> print(atlas.city("Lima"))
+Lima (PE)
+>>> print(atlas.find("Kilimanjaro", limit=1)[0])
+Mount Kilimanjaro, mountain (TZ)
+
+Filter and rank
+
+>>> [country.name for country in atlas.countries(river="Danube")][:3]
+['Austria', 'Bulgaria', 'Croatia']
+>>> [country.name for country in atlas.countries(region="Western Europe", coastal=False)]
+['Austria', 'Liechtenstein', 'Luxembourg', 'Switzerland']
+>>> print(atlas.rank("area", region="Western Europe", limit=1)[0])
+#1 France: 643,801 km²
+
+Measure
+
+>>> print(atlas.distance_between("Paris", "Tokyo"))
+9,713 km
+>>> print(atlas.capitals_near("Oslo", limit=1)[0])
+Stockholm, Sweden · 417 km
+>>> atlas.sun((64.15, -21.94), date(2026, 6, 21)).daylight
+'21 h 09 min'
+
+Borders
+
+>>> [country.name for country in atlas.neighbors("Portugal")]
+['Spain']
+>>> atlas.shares_border("Spain", "France")
+True
+>>> print(atlas.border_path("Portugal", "Poland"))
+Portugal → Spain → France → Germany → Poland (4 border crossings)
+
+Learn
+
+>>> print(atlas.quiz("capitals", region="Western Europe", seed=1)[0])
+What is the capital of Germany?  1) Berlin  2) Bern  3) Vienna  4) Brussels
+>>> card = atlas.flashcards("capitals", region="Western Europe", count=3, seed=2)[0]
+>>> card.prompt, card.answer
+('What is the capital of Liechtenstein?', 'Vaduz')
+
+With the optional packs
+
+These need a pack first, such as pyworldatlas get statistics. See
+Installation.
+
+>>> print(atlas.statistic("Japan", "population"))
+123,366,734 people (2025)
+>>> print(atlas.rank("life_expectancy", limit=1)[0])
+#1 Monaco: 86.5 years (2024)
+>>> print(atlas.world_heritage_site("Machu Picchu"))
+Historic Sanctuary of Machu Picchu, mixed
+
+atlas.map("Iceland").show()              # a 3D map in your browser
+atlas.world_map("life_expectancy").show()  # every country, colored by one number
+
+In a terminal
+
+pyworldatlas country Japan
+pyworldatlas find Kilimanjaro
+pyworldatlas near -12.05 -77.04
+pyworldatlas tour
+
+atlas.close()
+
+Next, try the Quests, or look up any call in the API reference.
 
 ========================================================================
 Teaching with PyWorldAtlas
@@ -682,7 +888,7 @@ continent or region with continent or region.
 
 More activities
 
-Which is higher? place_quiz() asks about
+Which is higher? quiz() asks about
 famous mountains, islands, and lakes: “Which is higher: Mont Blanc or
 Denali?” (Learning activities).
 
@@ -778,7 +984,7 @@ from pyworldatlas import Atlas
 
 with Atlas() as atlas:
     country = atlas.country("Brazil")
-    print(country.summary())
+    print(country.summary)
 
 Cross four writing systems
 
@@ -790,8 +996,8 @@ from pyworldatlas import Atlas
 with Atlas() as atlas:
     for country_name, language_code in (
         ("Dominican Republic", "es"),
-        ("China", "zh"),
-        ("India", "hi"),
+        ("Mongolia", "mn"),
+        ("Nepal", "ne"),
         ("Japan", "ja"),
     ):
         country = atlas.country(country_name)
@@ -856,7 +1062,7 @@ with Atlas() as atlas:
     matches = atlas.search_cities("santo", country="DO", limit=3)
     print("Search results:", ", ".join(city.label for city in matches))
 
-    nearby = atlas.nearest_cities(
+    nearby = atlas.cities_near(
         "Santo Domingo",
         origin_country="DO",
         within_country="DO",
@@ -873,17 +1079,17 @@ connection questions.
 from pyworldatlas import Atlas
 
 with Atlas() as atlas:
-    path = atlas.border_path("Portugal", "China")
+    path = atlas.border_path("Portugal", "Poland")
     print(" → ".join(path.names))
     print("Crossings:", path.crossings)
 
-    amazon = atlas.countries_with_river("Amazon")
+    amazon = atlas.countries(river="Amazon")
     print(
         "Source-listed Amazon profiles:",
         ", ".join(country.name for country in amazon),
     )
 
-    geneva = atlas.countries_with_lake("Geneva")
+    geneva = atlas.countries(lake="Geneva")
     print(
         "Source-listed Lake Geneva profiles:",
         ", ".join(country.name for country in geneva),
@@ -1035,10 +1241,10 @@ False
 'Asia'
 >>> japan.region
 'Eastern Asia'
->>> japan.subregion
-'Eastern Asia'
+>>> japan.subregion is None  # UN M49 has no smaller region for Japan
+True
 >>> japan.area_km2
-377915.0
+377915
 >>> japan.population
 126529100
 >>> round(japan.population_density, 2)
@@ -1219,11 +1425,11 @@ empty collection fields even when a familiar country currently has values.
 
 Convenience and discovery views
 
-For a quick human-readable introduction, country.summary() combines the
+For a quick human-readable introduction, country.summary combines the
 most useful available fields and skips missing ones:
 
 with Atlas() as atlas:
-    print(atlas.country("Brazil").summary())
+    print(atlas.country("Brazil").summary)
 
 Pass local_language="pt" to request a particular bundled local identity.
 The result is display text; structured programs should continue to use typed
@@ -1253,11 +1459,11 @@ demonyms. See Country reference facts.
 Physical geography
 
 >>> japan.land_area_km2, japan.water_area_km2, round(japan.water_percent, 2)
-(364485.0, 13430.0, 3.55)
+(364485, 13430, 3.55)
 >>> japan.coastline_km, japan.mean_elevation_m
-(29751.0, 438.0)
+(29751, 438)
 >>> (japan.highest_point.name, japan.highest_point.elevation_m)
-('Mount Fuji', 3776.0)
+('Mount Fuji', 3776)
 >>> japan.climate.zone_codes
 ('Cfa', 'Dfb', 'Dfa', 'Af', 'Dfc')
 
@@ -1382,14 +1588,14 @@ place_kinds()), category ("water",
 
 One search for everything
 
-lookup() searches countries and places together, for
+find() searches countries and places together, for
 a search box that accepts anything. A country named exactly comes first as its
 full profile, then the best-known places.
 
->>> [str(item) for item in atlas.lookup("Georgia", limit=2)]
-['Georgia', 'Georgia, state or province (US)']
->>> atlas.lookup("Georgia")[0].capital.name
-'Tbilisi'
+>>> [str(item) for item in atlas.find("Luxembourg", limit=2)]
+['Luxembourg', 'Luxembourg, capital city (LU)']
+>>> atlas.find("Luxembourg")[0].capital.name
+'Luxembourg'
 
 The best-known places in a country
 
@@ -1476,9 +1682,9 @@ similar spots are not included in any edition.
 
 The command line has the same searches:
 
-pyworldatlas find Georgia
+pyworldatlas find Luxembourg
 pyworldatlas place "Lake Titicaca"
-pyworldatlas near 27.9881 86.9250 --kind peak
+pyworldatlas near -3.0674 37.3556 --kind peak
 
 How it stays small and fast
 
@@ -1549,7 +1755,7 @@ In 30 seconds
 >>> from pyworldatlas import Atlas
 >>> with Atlas() as atlas:
 ...     print(atlas.airport("LHR"))
-...     print(atlas.world_heritage_sites_near("Cusco", limit=1)[0].site.name)
+...     print(atlas.heritage_sites_near("Cusco", limit=1)[0].site.name)
 LHR · London Heathrow Airport (GB)
 Historic centre of Cusco
 
@@ -1576,13 +1782,13 @@ World Heritage sites
 
 world_heritage_sites() lists sites in list order,
 with the year each was inscribed and whether it was chosen for cultural or
-natural value, or both. world_heritage_sites_near()
+natural value, or both. heritage_sites_near()
 finds the sites closest to any city, place, or coordinate:
 
 >>> site = atlas.world_heritage_site("Machu Picchu")
 >>> site.name, site.category, site.inscribed
 ('Historic Sanctuary of Machu Picchu', 'mixed', 1983)
->>> nearest = atlas.world_heritage_sites_near("Cusco", limit=2)
+>>> nearest = atlas.heritage_sites_near("Cusco", limit=2)
 >>> 274 in [item.site.site_id for item in nearest]
 True
 >>> atlas.close()
@@ -1661,15 +1867,18 @@ the value for a year. Each value knows its unit and year:
 >>> str(atlas.statistic("Brazil", "urban_population", 1960))
 '44.7% of people (1960)'
 
-Sorting
+Ranking
 
-sort_by_statistic() lists countries by one
-indicator. Sorting only orders the published numbers; it does not say which
-is better.
+rank() ranks countries by any indicator, the same
+way it ranks area or coastline. Without a year each country uses its latest
+published value, and every row says which year that is. Ranking only orders
+the published numbers; it does not say which is better.
 
->>> top = atlas.sort_by_statistic("forest_area", limit=3)
->>> all(item.value > 90 for item in top)
+>>> top = atlas.rank("forest_area", limit=3)
+>>> all(row.value > 90 for row in top)
 True
+>>> top[0].unit, top[0].source.startswith("World Bank")
+('% of land', True)
 >>> [indicator.key for indicator in atlas.indicators()][:3]
 ['birth_rate', 'death_rate', 'drinking_water']
 >>> atlas.close()
@@ -1683,6 +1892,33 @@ Access to electricity in Kenya rose from 10.9% of people in 1993 to 77.0% of peo
 $ pyworldatlas stat Japan life_expectancy
 Life expectancy at birth in Japan rose from 67.7 years in 1960 to 84.0 years in 2024.
 1960 ▁▂▃▃▃▄▄▅▅▅▆▆▆▇▇▇▇▇████ 2024
+
+On a world map
+
+world_map() colors every country by one
+indicator, using each country’s latest value or the value for one year. It
+needs a map pack as well (pyworldatlas get maps-lite). Countries fall into
+five classes that each hold about the same number of countries, from light
+(smaller numbers) to dark (larger numbers). Countries without a value are
+hatched and marked “No data”.
+
+>>> atlas = Atlas()
+>>> world = atlas.world_map("life_expectancy")
+>>> world.title
+'Life expectancy at birth (years), latest year'
+>>> world.to_svg().startswith("<svg")
+True
+>>> atlas.close()
+
+show() opens the map in your browser, write_html() saves a page with
+the map and a table of every value, and write_svg() saves just the image.
+In a notebook the map displays on its own. Hover over a country to see its
+value and year. The map is drawn with plain SVG on the Equal Earth
+projection, which keeps every country’s area in proportion; nothing is
+downloaded when it opens.
+
+$ pyworldatlas world-map forest_area
+$ pyworldatlas world-map population --year 2000 --output population-2000.html
 
 How the numbers are kept
 
@@ -2008,7 +2244,7 @@ highest point Pico da Neblina · dominant represented class Aw
 🇧🇷 Brazil
 Land 8,358,140 km² | Water 157,630 km²
 Pico da Neblina 2,994 m
-mostly tropical, but temperate in south
+Mostly tropical, but temperate in south.
 
 Area and coastline
 
@@ -2022,8 +2258,8 @@ coastline length.
 ...     print(japan.area_km2, japan.land_area_km2, japan.water_area_km2)
 ...     print(round(japan.water_percent, 2), japan.coastline_km)
 ...     print(japan.is_coastal, japan.is_landlocked)
-377915.0 364485.0 13430.0
-3.55 29751.0
+377915 364485 13430
+3.55 29751
 True False
 
 The boolean conveniences remain None when coastline data is unavailable.
@@ -2042,9 +2278,9 @@ point is below sea level.
 ...     print(japan.mean_elevation_m)
 ...     print(japan.highest_point.name, japan.highest_point.elevation_m)
 ...     print(japan.lowest_point.name, japan.lowest_point.elevation_m)
-438.0
-Mount Fuji 3776.0
-Hachiro-gata -4.0
+438
+Mount Fuji 3776
+Hachiro-gata -4
 
 source_label preserves the compact source wording. is_approximate is
 true only when the source explicitly marked its measurement as approximate.
@@ -2057,8 +2293,8 @@ Rivers and lakes are immutable typed records. Search helpers make shared
 features easy to discover:
 
 >>> with Atlas() as atlas:
-...     print([country.name for country in atlas.countries_with_river("Amazon")])
-...     print([country.name for country in atlas.countries_with_lake("Geneva")])
+...     print([country.name for country in atlas.countries(river="Amazon")])
+...     print([country.name for country in atlas.countries(lake="Geneva")])
 ['Brazil', 'Peru']
 ['France', 'Switzerland']
 
@@ -2096,7 +2332,7 @@ threshold are omitted. They are useful for broad educational comparison, not
 site-level climate determination.
 
 >>> with Atlas() as atlas:
-...     print(len(atlas.countries_in_climate_zone("Af")))
+...     print(len(atlas.countries(climate_zone="Af")))
 ...     print(atlas.climate_zone_codes()[-2:])
 73
 ('ET', 'EF')
@@ -2115,9 +2351,9 @@ lowest_elevation, river_count, lake_count, and
 climate_zone_count.
 
 >>> with Atlas() as atlas:
-...     rows = atlas.rank("coastline", limit=5)
+...     rows = atlas.rank("coastline", limit=3)
 ...     print([(row.country.name, row.value) for row in rows])
-[('Canada', 202080.0), ('Indonesia', 54716.0), ('Greenland', 44087.0), ('Russia', 37653.0), ('Philippines', 36289.0)]
+[('Canada', 202080), ('Indonesia', 54716), ('Greenland', 44087)]
 
 Rankings describe the bundled source fields; they do not judge countries.
 Missing values are excluded and ties use the country name for deterministic
@@ -2159,11 +2395,11 @@ with Atlas() as atlas:
 
     print(
         "Amazon profiles:",
-        ", ".join(country.name for country in atlas.countries_with_river("Amazon")),
+        ", ".join(country.name for country in atlas.countries(river="Amazon")),
     )
     print(
         "Lake Geneva profiles:",
-        ", ".join(country.name for country in atlas.countries_with_lake("Geneva")),
+        ", ".join(country.name for country in atlas.countries(lake="Geneva")),
     )
 
     print("Longest sourced coastlines:")
@@ -2217,7 +2453,7 @@ one is in the accepted source layer.
 >>> brazil = atlas.country("Brazil")
 >>> (brazil.motto.text, brazil.motto.english_text, brazil.motto.language_code)
 ('Ordem e Progresso', 'Order and Progress', 'pt')
->>> atlas.country("China").motto is None
+>>> atlas.country("Iceland").motto is None
 True
 
 Motto coverage is deliberately conservative. The model calls these
@@ -2399,8 +2635,8 @@ the source reports zero coastline and never turns missing data into a result.
 
 Country rankings
 
-Atlas.rank_countries and its short
-alias Atlas.rank support these metrics:
+Atlas.rank ranks countries by any of these
+metrics, and by every statistic in the statistics pack (see The world in numbers):
 
 Ranking metrics
 
@@ -2502,9 +2738,9 @@ classes
 
 >>> from pyworldatlas import Atlas
 >>> atlas = Atlas()
->>> results = atlas.rank("area", limit=3)
+>>> results = atlas.rank("area", region="Western Europe", limit=3)
 >>> [(row.position, row.country.name, row.unit) for row in results]
-[(1, 'Russia', 'km²'), (2, 'Antarctica', 'km²'), (3, 'Canada', 'km²')]
+[(1, 'France', 'km²'), (2, 'Germany', 'km²'), (3, 'Austria', 'km²')]
 >>> smallest = atlas.rank("density", limit=2, descending=False)
 >>> smallest[0].value <= smallest[1].value
 True
@@ -2515,10 +2751,10 @@ values are excluded.
 
 >>> coastlines = atlas.rank("coastline", limit=3)
 >>> [(row.country.name, row.value, row.unit) for row in coastlines]
-[('Canada', 202080.0, 'km'), ('Indonesia', 54716.0, 'km'), ('Greenland', 44087.0, 'km')]
->>> peaks = atlas.rank("highest_elevation", limit=3)
+[('Canada', 202080, 'km'), ('Indonesia', 54716, 'km'), ('Greenland', 44087, 'km')]
+>>> peaks = atlas.rank("highest_elevation", region="Western Europe", limit=3)
 >>> [(row.country.name, row.value) for row in peaks]
-[('China', 8849.0), ('Nepal', 8849.0), ('Pakistan', 8611.0)]
+[('France', 4810), ('Switzerland', 4634), ('Austria', 3798)]
 
 River and lake counts measure source-listed records, not every physical feature.
 Climate counts depend on the documented 0.1% class-share threshold. See
@@ -2526,12 +2762,12 @@ Physical geography before interpreting those metrics.
 
 Nearest capitals
 
-Atlas.nearest_capitals accepts an
+Atlas.capitals_near accepts an
 exact city name, a country, a capital or city object, a
 Coordinate, or a (latitude, longitude) tuple.
 
 >>> origin = atlas.country("Dominican Republic")
->>> nearest = atlas.nearest_capitals(origin, limit=3)
+>>> nearest = atlas.capitals_near(origin, limit=3)
 >>> [(item.capital.name, item.country.alpha2) for item in nearest]
 [('Port-au-Prince', 'HT'), ('Cockburn Town', 'TC'), ('San Juan', 'PR')]
 >>> nearest[0].unit
@@ -2550,10 +2786,10 @@ with Atlas() as atlas:
     yen_profiles = atlas.countries(currency_code="JPY")
     print([country.name for country in yen_profiles])
 
-    for result in atlas.rank_countries("area", limit=5):
+    for result in atlas.rank("area", limit=5):
         print(result.position, result.country.name, result.value, result.unit)
 
-    for result in atlas.nearest_capitals((18.4861, -69.9312), limit=4):
+    for result in atlas.capitals_near((18.4861, -69.9312), limit=4):
         print(result.country.name, result.capital.name, round(result.distance), result.unit)
 
 ========================================================================
@@ -2577,7 +2813,7 @@ Local names and writing systems
 
 PyWorldAtlas can show every bundled country or area in English and in one
 selected local language. Names remain ordinary Unicode strings, so Arabic,
-Chinese, Devanagari, Japanese, Cyrillic, and Latin text work offline without a
+Arabic, Devanagari, Japanese, Cyrillic, and Latin text work offline without a
 translation service.
 
 Coverage at a glance
@@ -2683,10 +2919,10 @@ The same API returns text in many scripts:
 
 >>> atlas.country("United Arab Emirates").name_in("ar")
 'الإمارات العربية المتحدة'
->>> atlas.country("China").name_in("zh")
-'中国'
->>> atlas.country("India").name_in("hi")
-'भारत'
+>>> atlas.country("Mongolia").name_in("mn")
+'Монгол'
+>>> atlas.country("Nepal").name_in("ne")
+'नेपाल'
 >>> atlas.country("Japan").name_in("ja")
 '日本'
 
@@ -2739,14 +2975,11 @@ Romanization is source data
 Romanization is present only when UNGEGN prints it. PyWorldAtlas never creates
 one at runtime:
 
->>> china = atlas.country("China")
->>> china.romanized_name_in("zh")
-'Zhongguo'
->>> china.romanized_official_name_in("zh")
-'Zhonghua Renmin Gongheguo'
->>> india = atlas.country("India")
->>> india.romanized_name_in("hi")
-'Bhārat'
+>>> japan = atlas.country("Japan")
+>>> japan.romanized_name_in("ja")
+'Nihon, or Nippon'
+>>> japan.romanized_official_name_in("ja")
+'Nihon-koku, or Nippon-koku'
 >>> andorra.romanized_short_name is None
 True
 
@@ -2957,11 +3190,11 @@ raises a clear missing or ambiguous-place exception instead.
 
 Find nearby cities
 
-nearest_cities() accepts the same origin types as the
+cities_near() accepts the same origin types as the
 distance API. within_country can turn it into a local exploration activity:
 
 >>> with Atlas() as atlas:
-...     nearby = atlas.nearest_cities(
+...     nearby = atlas.cities_near(
 ...         "Santo Domingo",
 ...         origin_country="DO",
 ...         within_country="DO",
@@ -3260,7 +3493,7 @@ tuple[Country, ...]
 
 Other entities in the same component
 
-countries_with_no_land_borders()
+countries(land_borders=False)
 
 tuple[Country, ...]
 
@@ -3280,7 +3513,7 @@ Maritime proximity is not a border. A country never shares a border with
 itself.
 
 >>> with Atlas() as atlas:
-...     print(atlas.shares_border("Spain", "Morocco"))
+...     print(atlas.shares_border("Spain", "Portugal"))
 ...     print(atlas.shares_border("United States", "Cuba"))
 True
 False
@@ -3296,29 +3529,29 @@ Shortest land paths
 
 border_path() uses breadth-first search. Both
 endpoints appear in the returned BorderPathResult, and
-crossings is one fewer than the number of countries. Alphabetic neighbor
+crossings, the number of border crossings, is one fewer than the number of countries. Alphabetic neighbor
 order makes equal-length choices deterministic.
 
 >>> with Atlas() as atlas:
-...     path = atlas.border_path("Portugal", "China")
+...     path = atlas.border_path("Portugal", "Poland")
 ...     print(path.crossings)
 ...     print(" -> ".join(country.name for country in path.countries))
-6
-Portugal -> Spain -> France -> Germany -> Poland -> Russia -> China
+4
+Portugal -> Spain -> France -> Germany -> Poland
 
 Convenience properties avoid repeatedly unpacking the country references:
 
 >>> path.names
-('Portugal', 'Spain', 'France', 'Germany', 'Poland', 'Russia', 'China')
+('Portugal', 'Spain', 'France', 'Germany', 'Poland')
 >>> path.alpha2_codes
-('PT', 'ES', 'FR', 'DE', 'PL', 'RU', 'CN')
+('PT', 'ES', 'FR', 'DE', 'PL')
 
 The result is detached from the database and serializable. If no land route
 exists, border_path and border_crossings return None.
 
 >>> with Atlas() as atlas:
-...     print(atlas.border_path("Japan", "China"))
-...     print(atlas.border_crossings("Japan", "China"))
+...     print(atlas.border_path("Japan", "Iceland"))
+...     print(atlas.border_crossings("Japan", "Iceland"))
 None
 None
 
@@ -3330,8 +3563,8 @@ whether travel is possible. Identical endpoints return True because the
 shortest graph path contains zero crossings.
 
 >>> with Atlas() as atlas:
-...     print(atlas.has_land_route("Portugal", "China"))
-...     print(atlas.has_land_route("Japan", "China"))
+...     print(atlas.has_land_route("Portugal", "Austria"))
+...     print(atlas.has_land_route("Iceland", "Norway"))
 ...     print(atlas.has_land_route("Japan", "Japan"))
 True
 False
@@ -3343,7 +3576,7 @@ countries_reachable_by_land(country) returns the rest of the starting
 country’s connected component. The starting country is excluded. An island or
 other borderless entity returns an empty tuple.
 
-countries_with_no_land_borders() returns all 85 entities that have no edge
+countries(land_borders=False) returns all 85 entities that have no edge
 in the reviewed graph. This classification follows the package entity scope and
 border policy; it is not a general definition of an island country.
 
@@ -3352,16 +3585,16 @@ Border flashcards
 The deterministic flashcard API supports two graph topics:
 
 >>> with Atlas() as atlas:
-...     neighbor_card = atlas.flashcards(topic="neighbors", count=1, seed=42)[0]
-...     count_card = atlas.flashcards(topic="border_counts", count=1, seed=42)[0]
+...     neighbor_card = atlas.flashcards(topic="neighbors", count=1, seed=17)[0]
+...     count_card = atlas.flashcards(topic="border_counts", count=1, seed=17)[0]
 ...     print(neighbor_card.prompt)
 ...     print(neighbor_card.answer)
 ...     print(count_card.prompt)
 ...     print(count_card.answer)
-Which countries or areas share a reviewed land border with Kuwait?
-Iraq, Saudi Arabia
-How many reviewed land neighbors does Kuwait have?
-2
+Which countries or areas share a reviewed land border with Denmark?
+Germany
+How many reviewed land neighbors does Denmark have?
+1
 
 neighbors cards exclude entities with no accepted land neighbor because
 they would have no answer. border_counts cards include them and use 0.
@@ -3409,16 +3642,16 @@ with Atlas() as atlas:
     france = atlas.neighbors("France")
     print("France:", ", ".join(country.name for country in france))
 
-    path = atlas.border_path("Portugal", "China")
+    path = atlas.border_path("Portugal", "Poland")
     if path is not None:
         route = " -> ".join(path.names)
         print(f"{path.crossings} crossings: {route}")
         print("Codes:", " -> ".join(path.alpha2_codes))
 
-    print("Japan to China by land:", atlas.border_path("Japan", "China"))
-    print("Portugal and China are land-connected:", atlas.has_land_route("Portugal", "China"))
+    print("Japan to Iceland by land:", atlas.border_path("Japan", "Iceland"))
+    print("Portugal and Austria are land-connected:", atlas.has_land_route("Portugal", "Austria"))
 
-    card = atlas.flashcards(topic="neighbors", count=1, seed=42)[0]
+    card = atlas.flashcards(topic="neighbors", count=1, seed=17)[0]
     print(card.prompt)
     print(card.answer)
 
@@ -3454,7 +3687,7 @@ keeping the typed profile available underneath it:
 from pyworldatlas import Atlas
 
 with Atlas() as atlas:
-    print(atlas.country("Brazil").summary())
+    print(atlas.country("Brazil").summary)
 
 Unavailable values are omitted. Pass local_language="ja" or another
 covered code to request a particular local identity. The result is display
@@ -3467,8 +3700,6 @@ Japan flag emoji Japan
 Brazil flag emoji Brazil
 
 Switzerland flag emoji Switzerland
-
-China flag emoji China
 
 France flag emoji France
 
@@ -3536,9 +3767,9 @@ and static-site generation:
 >>> card.timezone_ids
 ('Asia/Tokyo',)
 >>> card.coastline_km
-29751.0
+29751
 >>> (card.highest_point.name, card.highest_point.elevation_m)
-('Mount Fuji', 3776.0)
+('Mount Fuji', 3776)
 >>> card.climate_zone_codes
 ('Cfa', 'Dfb', 'Dfa', 'Af', 'Dfc')
 >>> card.to_dict()["country"]["numeric"]
@@ -3794,10 +4025,10 @@ rank first, population breaks ties, and no match returns an empty tuple.
 
 Countries and places together
 
-lookup() searches countries, cities, regions,
+find() searches countries, cities, regions,
 mountains, lakes, and landmarks in one call; see Every place on Earth.
 
->>> [str(item) for item in atlas.lookup("Ireland", limit=2)]
+>>> [str(item) for item in atlas.find("Ireland", limit=2)]
 ['Ireland', 'Ireland, town (US)']
 
 Filtering
@@ -3874,15 +4105,15 @@ Local-name records keep their evidence kind, language status, script,
 romanization, source, and exact locator when a country is serialized:
 
 >>> with Atlas() as atlas:
-...     india = atlas.country("India").to_dict()
->>> hindi = next(name for name in india["local_names"] if name["language_code"] == "hi")
->>> (hindi["text"], hindi["script_code"], hindi["romanized_short_name"])
-('भारत', 'Deva', 'Bhārat')
->>> (hindi["kind"], hindi["language_status"])
+...     japan = atlas.country("Japan").to_dict()
+>>> japanese = next(name for name in japan["local_names"] if name["language_code"] == "ja")
+>>> (japanese["text"], japanese["script_code"], japanese["romanized_short_name"])
+('日本', 'Jpan', 'Nihon, or Nippon')
+>>> (japanese["kind"], japanese["language_status"])
 ('national_official', 'official')
->>> hindi["source"]["id"]
+>>> japanese["source"]["id"]
 'ungegn-country-names-2017'
->>> 'PDF page 44' in hindi["source_locator"]
+>>> 'PDF page 48' in japanese["source_locator"]
 True
 
 Discovery values
@@ -3909,8 +4140,8 @@ nearby-city results serialize recursively:
 >>> with Atlas() as atlas:
 ...     japan = atlas.country("Japan").to_dict()
 ...     ranking = atlas.rank("population", limit=1)[0]
-...     nearby = atlas.nearest_capitals("Tokyo", country="JP", limit=1)[0]
-...     nearby_city = atlas.nearest_cities(
+...     nearby = atlas.capitals_near("Wellington", country="NZ", limit=1)[0]
+...     nearby_city = atlas.cities_near(
 ...         "Santo Domingo", origin_country="DO", within_country="DO", limit=1
 ...     )[0]
 >>> japan["anthems"][0]["title"]
@@ -3920,7 +4151,7 @@ nearby-city results serialize recursively:
 >>> json.loads(ranking.to_json())["position"]
 1
 >>> json.loads(nearby.to_json())["capital"]["name"]
-'Seoul'
+'Kingston'
 >>> json.loads(nearby_city.to_json())["city"]["name"]
 'Santo Domingo Este'
 
@@ -3930,13 +4161,13 @@ BorderPathResult serializes compact country references rather than full
 country profiles. This keeps a path payload small and detached from SQLite:
 
 >>> with Atlas() as atlas:
-...     path = atlas.border_path("Portugal", "China")
+...     path = atlas.border_path("Portugal", "Poland")
 >>> path.names
-('Portugal', 'Spain', 'France', 'Germany', 'Poland', 'Russia', 'China')
+('Portugal', 'Spain', 'France', 'Germany', 'Poland')
 >>> path.to_dict()["countries"][0]
 {'name': 'Portugal', 'alpha2': 'PT', 'alpha3': 'PRT', 'numeric': '620'}
 >>> json.loads(path.to_json())["crossings"]
-6
+4
 
 ========================================================================
 Why PyWorldAtlas?
@@ -4019,6 +4250,98 @@ offline reference with explicit source and coverage boundaries.
 It is also not a live commentary or opinion service. Source conventions are
 attributed and their limitations are documented. The formal editorial
 commitments and community standard are in Educational purpose and editorial policy.
+
+What is bundled
+
+Dataset 2026.10.27.1
+
+
+
+
+
+Records
+
+Coverage
+
+Countries and areas
+
+248
+
+Primary capitals
+
+241 / 248
+
+Populated places
+
+6,265
+
+Selected local-language identities
+
+248 / 248
+
+Sourced English formal names
+
+240 / 248
+
+Anthem titles
+
+234 / 248
+
+Reviewed source-listed mottos
+
+32 / 248
+
+Travel basics (plugs, mains supply, driving side)
+
+245 / 248
+
+English demonym profiles
+
+227 / 248
+
+Country timezone profiles
+
+246 / 248, 417 records
+
+Country-language metadata
+
+722 records across 245 profiles
+
+Reviewed land-border relationships
+
+319
+
+Total-area profiles
+
+248 / 248
+
+Land area and coastline
+
+238 / 248 each
+
+Highest and lowest points
+
+240 / 248 each
+
+Source-listed river records
+
+188 across 80 profiles
+
+Source-listed lake records
+
+187 across 69 profiles
+
+Plain-language climate summaries
+
+240 / 248
+
+Köppen-Geiger climate profiles
+
+241 / 248
+
+Overview and Standard 3D maps
+
+248 / 248 each
 
 ========================================================================
 Educational purpose and editorial policy
@@ -4173,7 +4496,7 @@ pipeline downloads raw snapshots, records checksums, normalizes independent
 records, validates them, and generates the SQLite database. The installed
 runtime never contacts these services.
 
-The 0.12 core uses dataset 2026.10.27.1. Optional map editions add
+The 0.13 core uses dataset 2026.10.27.1. Optional map editions add
 separately installed, integrity-checked visualization records derived from
 pinned elevation, climate, outline, and river snapshots. Neither the core nor
 the installed map viewer contacts a source service at runtime.
@@ -4677,7 +5000,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.12.1 release
+Source priority in the 0.13.0 release
 
 
 
@@ -5252,7 +5575,7 @@ Project status
 This page is generated from the validated build report. It is a compact
 snapshot of the package, dataset, and coverage that ship together.
 
-0.12.1
+0.13.0
 
 library version
 
@@ -5343,13 +5666,13 @@ public API until it is implemented, tested, documented, and published.
 
 Current release
 
-0.12.0 adds the world in numbers: eleven World Bank indicators
-since 1960, airports and World Heritage sites, place quizzes, and a
-new playground.
+0.13.0 is friendly by default: one naming style, results that
+read well, built-in help, world maps of statistics, and a cheat sheet,
+quests, and dark mode in the docs.
 
 Next milestone
 
-0.13 adds generated reference entries for every country, place,
+0.14 adds generated reference entries for every country, place,
 and landmark, and an offline site export.
 
 On the way to 1.0
@@ -5496,6 +5819,14 @@ Published
 
 0.13.0
 
+Complete
+
+One naming style, readable results, help, world maps, and friendlier docs
+
+Published
+
+0.14.0
+
 Planned
 
 Generated reference entries and offline site export
@@ -5614,9 +5945,9 @@ Specific subclasses of AtlasError
 
 Optional maps
 
-Opening or exporting an installed 3D map edition
+Opening or exporting a 3D country map or a world map of a statistic
 
-CountryMap and map-data errors
+CountryMap, WorldMap, and map-data errors
 
 Data packs
 
@@ -5648,6 +5979,15 @@ nearby-place search; filtering; distances, sun times, and antipodes; border
 paths and rankings; flashcards and quizzes; dataset metadata; and the optional
 maps, landmarks, and statistics packs.
 
+The examples on this page assume an open atlas, made with
+from pyworldatlas import Atlas and atlas = Atlas(). Every example is run
+as a test, so what you see is what you get.
+
+from pyworldatlas import Atlas
+atlas = Atlas()
+
+atlas.close()
+
 
 
 class pyworldatlas.Atlas[source]
@@ -5666,21 +6006,29 @@ pyworldatlas.packs.
 
 
 
+PLACE_QUIZ_TOPICS = ('closer_to_equator', 'higher', 'kinds')
+
+Topics about famous places that quiz() accepts besides learning_topics().
+
+
+
 __init__(database_path: str | Path | None = None, *, data_dir: str | Path | None = None) -> None[source]
 
 
 
 
 
-dataset_info() -> DatasetInfo[source]
-
-Return the installed library, database schema, and dataset versions.
-
-Record these values when a lesson or calculation must be reproducible.
+classmethod __new__(*args, **kwargs)
 
 
 
-country(query: str) -> Country[source]
+Look things up
+
+Find one country, city, or place by name or code.
+
+
+
+Atlas.country(query: str) -> Country[source]
 
 Return one country profile resolved from a name or standard code.
 
@@ -5690,37 +6038,88 @@ accent-tolerant. Missing queries raise CountryNotFoundError,
 with suggestions when available. A name shared by multiple profiles
 raises AmbiguousCountryError and lists the matches.
 
+Parameters
+
+query – A country name ("Japan"), alias, alpha-2 code ("JP"),
+alpha-3 code ("JPN"), or M49 code ("392").
+
+Returns
+
+The full Country profile.
+
+Raises
+
+CountryNotFoundError – Nothing matches. The message suggests close
+    spellings, such as “Did you mean Japan?”.
+
+AmbiguousCountryError – The name fits more than one country.
+
+Example
+
+>>> atlas.country("Japan")
+Country(name='Japan', alpha2='JP')
+>>> atlas.country("DE").name
+'Germany'
+>>> atlas.country("392").name
+'Japan'
 
 
-get(query: str, default: Country | None = None) -> Country | None[source]
+
+Atlas.get(query: str, default: Country | None = None) -> Country | None[source]
 
 Return a matching country, or default instead of raising.
 
 Use country() when a missing profile should be treated as an
 error. default is returned for both missing and non-unique queries.
 
+Parameters
 
+query – A country name or code, as for country().
 
-map(country: str | Country, *, quality: str = 'auto', places: int = 8) -> CountryMap[source]
+default – What to return when nothing matches.
 
-Return an interactive offline 3D map for a country profile.
+Returns
 
-country accepts the same names and codes as country(), or an
-already loaded Country. quality="auto" prefers Standard
-map data when installed and otherwise uses Overview data.
+The Country, or default.
 
-The map marks the places best-known towns, mountains and islands,
-lakes and seas, and landmarks of the country, each kind as a layer
-that can be shown or hidden. Pass places=0 for terrain only.
+Example
 
-The returned map opens in the default browser when its show()
-method is called. Maps need a map pack, installed once with
-pyworldatlas get maps (Standard) or pyworldatlas get maps-lite
-(Overview). Packs are read from this atlas’s data_dir.
+>>> atlas.get("FR")
+Country(name='France', alpha2='FR')
+>>> atlas.get("Atlantis") is None
+True
 
 
 
-search_countries(query: str, *, limit: int = 20) -> tuple[CountryMatch, ...][source]
+Atlas.find(query: str, *, limit: int = 10) -> tuple[Country | Place, ...][source]
+
+Find anything by name: countries, cities, regions, and landmarks.
+
+One search for human-entered text. A country that the query names
+exactly (by name, alias, or code) comes first as a full
+Country profile; then come the best-known places from
+search_places(), where a country-level place is replaced by its
+Country profile. atlas.find("Luxembourg") gives the country
+and then its capital city.
+
+Parameters
+
+query – Any name, such as "Luxembourg" or "Kilimanjaro".
+
+limit – The most results to return.
+
+Returns
+
+Country profiles and Place records, best first.
+
+Example
+
+>>> atlas.find("Luxembourg", limit=2)
+(Country(name='Luxembourg', alpha2='LU'), Place(english_name='Luxembourg', kind='capital city', country_code='LU'))
+
+
+
+Atlas.search_countries(query: str, *, limit: int = 20) -> tuple[CountryMatch, ...][source]
 
 Return ranked partial-name matches for human-entered text.
 
@@ -5728,160 +6127,406 @@ Matching is case-insensitive and accent-tolerant. Exact matches rank
 before prefixes and substrings. The returned tuple is empty when no
 indexed name matches; use country() for exact resolution.
 
+Parameters
+
+query – Part of a country name, such as "guin".
+
+limit – The most matches to return.
+
+Returns
+
+CountryMatch rows, best match first.
+
+Example
+
+>>> atlas.search_countries("guin", limit=3)
+(CountryMatch('Guinea'), CountryMatch('Guinea-Bissau'), CountryMatch('Equatorial Guinea'))
 
 
-countries(*, continent: str | None = None, region: str | None = None, currency_code: str | None = None, language_code: str | None = None, script_code: str | None = None, timezone_id: str | None = None, coastal: bool | None = None, koppen_geiger_code: str | None = None, has_rivers: bool | None = None, has_lakes: bool | None = None) -> tuple[Country, ...][source]
 
-Return countries alphabetically with optional exact profile filters.
+Atlas.city(query: str, *, country: str | None = None) -> City[source]
 
-Filters can be combined and use AND semantics. With no filters, every
+Return one exact bundled city, optionally limited to a country.
+
+Matching is case-insensitive and accent-tolerant. Pass a familiar
+country name or code when the city name is shared. Missing names raise
+PlaceNotFoundError; ambiguous names raise
+AmbiguousPlaceError with example matches.
+
+Parameters
+
+query – The city’s name, in any case and with or without accents.
+
+country – The country, when several cities share the name.
+
+Returns
+
+The City.
+
+Raises
+
+PlaceNotFoundError – No city has this name. The message suggests
+    close spellings.
+
+AmbiguousPlaceError – Several cities share the name; pass country.
+
+Example
+
+>>> atlas.city("Lima")
+City(name='Lima', country_code='PE')
+>>> atlas.city("bogota").name
+'Bogotá'
+
+
+
+Atlas.search_cities(query: str, *, country: str | None = None, limit: int = 20) -> tuple[City, ...][source]
+
+Return ranked city-name matches from the bundled place table.
+
+Matching is case-insensitive and accent-tolerant. Exact names rank
+first, followed by prefix and substring matches; population breaks
+ties. Pass country as a familiar country name or code to narrow the
+search. An empty result is returned when nothing matches.
+
+Parameters
+
+query – Part of a city name.
+
+country – Search only in this country.
+
+limit – The most cities to return.
+
+Returns
+
+City records, best match first.
+
+Example
+
+>>> atlas.search_cities("sao paulo", limit=2)
+(City(name='São Paulo', country_code='BR'),)
+
+
+
+Atlas.major_cities(country: str, *, limit: int | None = None) -> tuple[City, ...][source]
+
+Return populated places for a country, ordered by population and name.
+
+limit=None returns every bundled place for the country. The records
+come from the package snapshot and are not live population estimates.
+
+Parameters
+
+country – A country name or code.
+
+limit – The most cities to return, or None for all.
+
+Returns
+
+City records, largest first.
+
+Example
+
+>>> atlas.major_cities("Japan", limit=3)
+(City(name='Tokyo', country_code='JP'), City(name='Yokohama', country_code='JP'), City(name='Osaka', country_code='JP'))
+
+
+
+Atlas.coordinates(query: str, *, country: str | None = None) -> Coordinate[source]
+
+Return WGS84 coordinates for an exact bundled city lookup.
+
+This is shorthand for atlas.city(query, country=country).coordinates.
+
+Parameters
+
+query – The city’s name.
+
+country – The country, when several cities share the name.
+
+Returns
+
+The city’s Coordinate.
+
+Example
+
+>>> print(atlas.coordinates("Nairobi"))
+Coordinate(latitude=-1.28333, longitude=36.81667)
+
+
+
+Atlas.place(query: str, *, kind: str | None = None, country: str | None = None) -> Place[source]
+
+Return the best-known place with exactly this name.
+
+atlas.place("Kilimanjaro") is the mountain and atlas.place("Lake
+Victoria") the African lake. Narrow with kind or country to pick
+a less famous namesake. Raises PlaceNotFoundError when no place
+has this exact name.
+
+Parameters
+
+query – The place’s exact name.
+
+kind – Pick a place of this kind, such as "mountain".
+
+country – Pick a place in this country.
+
+Returns
+
+The Place.
+
+Raises
+
+PlaceNotFoundError – No place has this name. The message suggests
+    close spellings.
+
+Example
+
+>>> atlas.place("Kilimanjaro")
+Place(english_name='Mount Kilimanjaro', kind='mountain', country_code='TZ')
+>>> atlas.place("Kilimanjaro").elevation_m
+5895
+
+
+
+Atlas.search_places(query: str, *, kind: str | None = None, category: str | None = None, country: str | None = None, limit: int = 10) -> tuple[Place, ...][source]
+
+Find places on Earth by name, best known first.
+
+Searches the bundled school atlas (about 200,000 places: every country,
+region, town of 5,000 people or more, and well-known mountain, lake, river,
+island, and landmark) plus any installed place packs. Local and English
+names both match, without regard to case or accents: "Lake Titicaca"
+finds "Lago Titicaca". Exact names come first, then names that start
+with the query; better-known places break ties.
+
+Narrow results with kind (see place_kinds()), category
+(see place_categories()), or country.
+
+Parameters
+
+query – A name or the start of one.
+
+kind – Keep only this kind, such as "lake".
+
+category – Keep only this category, such as "water".
+
+country – Keep only places in this country.
+
+limit – The most places to return.
+
+Returns
+
+Place records, best match first.
+
+Example
+
+>>> atlas.search_places("Titicaca", limit=1)
+(Place(english_name='Lake Titicaca', kind='lake', country_code='BO'),)
+
+
+
+Atlas.places_in(country: str | Country, *, kind: str | None = None, category: str | None = None, limit: int = 20) -> tuple[Place, ...][source]
+
+Return the best-known places in a country from the school atlas.
+
+Towns, mountains, lakes, landmarks, and more, best known first. Narrow
+with kind (see place_kinds()) or category (see
+place_categories()). The capital, whole regions, schools,
+airports, and river points are left out unless asked for by kind.
+
+Parameters
+
+country – A country name, code, or profile.
+
+kind – Keep only this kind, such as "lake".
+
+category – Keep only this category, such as "water".
+
+limit – The most places to return.
+
+Returns
+
+Place records, best known first.
+
+Example
+
+>>> atlas.places_in("Peru", kind="lake", limit=2)
+(Place(english_name='Lake Junín', kind='lake', country_code='PE'),)
+
+
+
+static Atlas.place_kinds() -> tuple[str, ...][source]
+
+Return every place kind accepted by place searches, such as "volcano".
+
+Returns
+
+Kind names for the kind argument of place searches.
+
+Example
+
+>>> "volcano" in atlas.place_kinds()
+True
+
+
+
+static Atlas.place_categories() -> tuple[str, ...][source]
+
+Return the general place categories, such as "water" and "landform".
+
+Returns
+
+Category names for the category argument of place searches.
+
+Example
+
+>>> atlas.place_categories()
+('area', 'forest', 'landform', 'landmark', 'region', 'route', 'town', 'undersea', 'water')
+
+
+
+Atlas.__getitem__(query: str) -> Country[source]
+
+
+
+
+
+Atlas.__contains__(query: object) -> bool[source]
+
+
+
+
+
+Atlas.__len__() -> int[source]
+
+
+
+
+
+Atlas.__iter__() -> Iterator[Country][source]
+
+
+
+Filter and rank
+
+Pick countries that match, and put them in order.
+
+
+
+Atlas.countries(*, continent: str | None = None, region: str | None = None, currency_code: str | None = None, language_code: str | None = None, script_code: str | None = None, timezone_id: str | None = None, coastal: bool | None = None, koppen_geiger_code: str | None = None, has_rivers: bool | None = None, has_lakes: bool | None = None, river: str | None = None, lake: str | None = None, climate_zone: str | None = None, land_borders: bool | None = None) -> tuple[Country, ...][source]
+
+Return countries alphabetically, keeping only those that match every filter.
+
+This is the one place to filter countries. With no filters, every
 bundled profile is returned in display-name order.
 
 Physical-data filters only include profiles covered by the relevant
 source layer. For example, coastal=False means a sourced coastline
 of zero kilometres; it does not treat missing coastline data as zero.
 
+Parameters
 
+continent – Keep countries on this continent, such as "Africa".
 
-rank_countries(metric: str, *, limit: int | None = None, descending: bool = True, continent: str | None = None, region: str | None = None) -> tuple[CountryRanking, ...][source]
+region – Keep countries in this UN region or subregion.
 
-Rank countries by a documented sourced or directly derived metric.
+currency_code – Keep countries using this currency, such as "EUR".
 
-Supported physical metrics include "land_area", "water_area",
-"water_percent", "coastline", "mean_elevation",
-"highest_elevation", "lowest_elevation", "river_count",
-"lake_count", and "climate_zone_count". Existing population,
-total area, density, border, and city metrics remain available. Missing
-values are excluded.
+language_code – Keep countries with this language, such as "es".
 
+script_code – Keep countries writing in this script, such as "Cyrl".
 
+timezone_id – Keep countries in this time zone, such as "Asia/Tokyo".
 
-rank(metric: str, **kwargs: Any) -> tuple[CountryRanking, ...][source]
+coastal – True for a coastline, False for landlocked.
 
-Alias for rank_countries() suited to exploratory sessions.
+koppen_geiger_code – Older name for climate_zone.
 
+has_rivers – Keep countries with (or without) listed major rivers.
 
+has_lakes – Keep countries with (or without) listed major lakes.
 
-climate_zone_codes() -> tuple[str, ...][source]
+river – Keep countries a river flows through; part of the name is
+enough, in any case.
 
-Return every represented Köppen-Geiger code in source legend order.
+lake – Keep countries with this lake; part of the name is enough.
 
+climate_zone – Keep countries with this Köppen-Geiger zone, a code
+from climate_zone_codes() such as "Cfb".
 
+land_borders – False for islands and other countries with no
+land border, True for the rest.
 
-countries_in_climate_zone(code: str) -> tuple[Country, ...][source]
+Returns
 
-Return profiles containing the exact Köppen-Geiger class code.
+Matching Country profiles, alphabetical.
 
+Raises
 
+ValueError – The climate zone is unknown.
 
-countries_with_river(name: str | None = None) -> tuple[Country, ...][source]
+Example
 
-Return profiles with source-listed major rivers.
+>>> len(atlas.countries(continent="Africa", coastal=False))  # landlocked
+16
+>>> atlas.countries(river="Danube")[:3]
+(Country(name='Austria', alpha2='AT'), Country(name='Bulgaria', alpha2='BG'), Country(name='Croatia', alpha2='HR'))
+>>> len(atlas.countries(land_borders=False))
+85
 
-When name is supplied, it is matched case-insensitively against the
-concise feature name and retained source label. Results are alphabetical.
 
 
+Atlas.rank(metric: str, *, year: int | None = None, limit: int | None = None, descending: bool = True, continent: str | None = None, region: str | None = None) -> tuple[CountryRanking, ...][source]
 
-countries_with_lake(name: str | None = None) -> tuple[Country, ...][source]
+Rank countries by anything the atlas can measure, largest first.
 
-Return profiles with source-listed major lakes.
+Parameters
 
-When name is supplied, it is matched case-insensitively against the
-concise feature name and retained source label. Results are alphabetical.
+metric – A profile metric such as "area", "coastline", or
+"border_count" (all are listed in rank_countries()),
+or a statistic such as "life_expectancy" from
+indicators().
 
+year – Rank a statistic for one year. Without it, each country
+uses its latest published value, and the row’s year says
+which year that is.
 
+limit – Keep only the first limit rows.
 
-countries_with_local_names(*, language_code: str | None = None, script_code: str | None = None, name_kind: str | None = None) -> tuple[Country, ...][source]
+descending – False ranks smallest first.
 
-Return countries with sourced local-language name records.
+continent – Rank only countries on this continent.
 
-Results are alphabetical. language_code and script_code are
-optional, case-insensitive exact filters such as "es", "hi",
-"Deva", or "Jpan". Every UN M49 record has one selected local
-identity. Inspect LocalizedName.kind to distinguish reviewed
-national official forms from CLDR locale display names, or pass
-name_kind="national_official" or "locale_display" directly.
+region – Rank only countries in this region or subregion.
 
+Returns
 
+CountryRanking rows that print as #1 Canada: 202,080 km.
+Every row names its source. Missing values are left out, never
+guessed.
 
-countries_with_formal_names() -> tuple[Country, ...][source]
+Raises
 
-Return countries and areas with a sourced English formal name.
+ValueError – The metric is unknown. The message suggests a close
+    spelling and lists the choices.
 
-Results are alphabetical. Some countries use the same sourced text for
-their short and formal forms; check Country.has_distinct_formal_name
-when an application needs only distinct long forms.
+"population" ranks the bundled GeoNames snapshot; with a year
+it ranks the World Bank figures from the statistics pack. Ranking
+orders numbers only; it says nothing about which is better.
 
+Example
 
+>>> print(atlas.rank("coastline", limit=1)[0])
+#1 Canada: 202,080 km
+>>> atlas.rank("coastline", continent="Oceania", limit=2)
+(CountryRanking('#1 Australia: 25,760 km'), CountryRanking('#2 New Zealand: 15,134 km'))
+>>> atlas.rank("life_expectancy", year=2020, limit=1)
+(CountryRanking('#1 Monaco: 86.1 years (2020)'),)
 
-neighbors(country: str) -> tuple[Country, ...][source]
 
-Return countries sharing a reviewed land border with country.
 
-Results are alphabetized and immutable. Maritime neighbors, proximity,
-and mere point contacts are excluded. Countries and areas without an
-accepted land-border relationship return an empty tuple.
-
-
-
-shares_border(country1: str, country2: str) -> bool[source]
-
-Return whether two countries share a reviewed land border.
-
-
-
-shared_neighbors(country1: str, country2: str) -> tuple[Country, ...][source]
-
-Return alphabetized land neighbors shared by two countries.
-
-
-
-border_path(origin: str, destination: str) -> BorderPathResult | None[source]
-
-Return a deterministic shortest land-border path, or None.
-
-The path uses breadth-first search over the reviewed undirected graph.
-Both endpoints are included. Equal-length alternatives are resolved by
-alphabetic neighbor order. None means the two entities have no path
-through accepted land-border relationships; it is not an error.
-
-
-
-border_crossings(origin: str, destination: str) -> int | None[source]
-
-Return the fewest land-border crossings, or None if unreachable.
-
-
-
-has_land_route(origin: str, destination: str) -> bool[source]
-
-Return whether origin and destination are land-connected.
-
-This is derived at query time from the reviewed border graph; it does
-not use road, rail, ferry, maritime, or travel-access data. Identical
-endpoints return True because their shortest graph path has zero
-border crossings. Unknown country queries raise
-CountryNotFoundError.
-
-
-
-countries_reachable_by_land(country: str) -> tuple[Country, ...][source]
-
-Return every other entity in country’s land-connected component.
-
-The starting country is excluded. Results are alphabetized; an island
-or otherwise borderless entity returns an empty tuple.
-
-
-
-countries_with_no_land_borders() -> tuple[Country, ...][source]
-
-Return all bundled entities with no accepted land-border relation.
-
-
-
-sample_countries(*, count: int, continent: str | None = None, region: str | None = None, seed: int | str = 0) -> tuple[Country, ...][source]
+Atlas.sample_countries(*, count: int, continent: str | None = None, region: str | None = None, seed: int | str = 0) -> tuple[Country, ...][source]
 
 Return a reproducible educational sample of country profiles.
 
@@ -5894,18 +6539,619 @@ same ordered result across supported Python versions.
 count must be positive and cannot exceed the filtered population.
 continent and region follow countries() semantics.
 
+Parameters
+
+count – How many countries to pick.
+
+continent – Pick only from this continent.
+
+region – Pick only from this region or subregion.
+
+seed – The same seed always picks the same countries.
+
+Returns
+
+The picked Country profiles.
+
+Raises
+
+ValueError – count is not positive or is larger than the choices.
+
+Example
+
+>>> atlas.sample_countries(count=3, continent="Europe", seed="class-1")
+(Country(name='Andorra', alpha2='AD'), Country(name='Hungary', alpha2='HU'), Country(name='Monaco', alpha2='MC'))
 
 
-learning_topics() -> tuple[str, ...][source]
 
-Return topics supported by flashcards() and quiz().
+Atlas.countries_with_local_names(*, language_code: str | None = None, script_code: str | None = None, name_kind: str | None = None) -> tuple[Country, ...][source]
 
-The tuple is stable, alphabetized, and safe to use for menus, lesson
-builders, or playground controls.
+Return countries with sourced local-language name records.
+
+Results are alphabetical. language_code and script_code are
+optional, case-insensitive exact filters such as "es", "hi",
+"Deva", or "Jpan". Every UN M49 record has one selected local
+identity. Inspect LocalizedName.kind to distinguish reviewed
+national official forms from CLDR locale display names, or pass
+name_kind="national_official" or "locale_display" directly.
+
+Parameters
+
+language_code – Keep names in this language, such as "hi".
+
+script_code – Keep names in this script, such as "Deva".
+
+name_kind – "national_official" or "locale_display".
+
+Returns
+
+Matching Country profiles, alphabetical.
+
+Example
+
+>>> atlas.countries_with_local_names(language_code="pt")[:2]
+(Country(name='Angola', alpha2='AO'), Country(name='Brazil', alpha2='BR'))
 
 
 
-flashcards(*, topic: str, count: int, continent: str | None = None, region: str | None = None, seed: int | str = 0) -> tuple[Flashcard, ...][source]
+Atlas.countries_with_formal_names() -> tuple[Country, ...][source]
+
+Return countries and areas with a sourced English formal name.
+
+Results are alphabetical. Some countries use the same sourced text for
+their short and formal forms; check Country.has_distinct_formal_name
+when an application needs only distinct long forms.
+
+Returns
+
+Matching Country profiles, alphabetical.
+
+Example
+
+>>> france = atlas["France"]
+>>> france in atlas.countries_with_formal_names()
+True
+>>> france.formal_name
+'French Republic'
+
+
+
+Atlas.climate_zone_codes() -> tuple[str, ...][source]
+
+Return every represented Köppen-Geiger code in source legend order.
+
+Returns
+
+Codes such as "Af" (tropical rainforest) for use with
+countries(climate_zone=...).
+
+Example
+
+>>> atlas.climate_zone_codes()[:5]
+('Af', 'Am', 'Aw', 'BWh', 'BWk')
+
+
+
+Atlas.rank_countries(metric: str, *, limit: int | None = None, descending: bool = True, continent: str | None = None, region: str | None = None) -> tuple[CountryRanking, ...][source]
+
+Rank countries by a documented sourced or directly derived metric.
+
+Supported physical metrics include "land_area", "water_area",
+"water_percent", "coastline", "mean_elevation",
+"highest_elevation", "lowest_elevation", "river_count",
+"lake_count", and "climate_zone_count". Existing population,
+total area, density, border, and city metrics remain available. Missing
+values are excluded. Each row names its source.
+
+rank() does the same and also ranks statistics; prefer it in new
+code.
+
+Parameters
+
+metric – One of the metrics above, or "population", "area",
+"population_density", "border_count", or
+"major_city_count".
+
+limit – Keep only the first limit rows.
+
+descending – False ranks smallest first.
+
+continent – Rank only countries on this continent.
+
+region – Rank only countries in this region or subregion.
+
+Returns
+
+CountryRanking rows, first place first.
+
+Raises
+
+ValueError – The metric is unknown.
+
+Example
+
+>>> atlas.rank_countries("coastline", limit=2)
+(CountryRanking('#1 Canada: 202,080 km'), CountryRanking('#2 Indonesia: 54,716 km'))
+
+Measure
+
+Distances, the nearest things, the sun, and the other side of the Earth.
+
+
+
+Atlas.distance_between(first: str | Country | Capital | City | Coordinate | tuple[float, float], second: str | Country | Capital | City | Coordinate | tuple[float, float], *, unit: str = 'km', first_country: str | None = None, second_country: str | None = None) -> float[source]
+
+Return great-circle distance between city, model, or coordinate inputs.
+
+Accepted inputs are exact bundled-city names, City,
+Capital, Country, Coordinate, or
+(latitude, longitude) tuples. Country objects use their primary
+capitals. unit accepts "km", "mi", or "nmi".
+The result is a surface measurement, not a road or flight route.
+
+Parameters
+
+first – Where to measure from.
+
+second – Where to measure to.
+
+unit – "km", "mi", or "nmi".
+
+first_country – The country of first, when its name is shared.
+
+second_country – The country of second, when its name is shared.
+
+Returns
+
+a number that prints with its unit.
+
+Return type
+
+A Distance
+
+Example
+
+>>> atlas.distance_between("Paris", "Tokyo")
+Distance(9712.5, 'km')
+>>> print(atlas.distance_between("Paris", "Tokyo", unit="mi"))
+6,035 mi
+
+
+
+Atlas.capitals_near(origin: str | Country | Capital | City | Coordinate | tuple[float, float], *, limit: int = 5, unit: str = 'km', country: str | None = None, include_origin: bool = False) -> tuple[CapitalDistance, ...][source]
+
+Return primary capitals nearest to a city, country, or coordinate.
+
+String origins use the exact city lookup and may be constrained with
+country. Pass a Country to measure from its primary
+capital or a Coordinate for an arbitrary starting point.
+unit accepts "km", "mi", or "nmi". Results are ordered
+nearest first with deterministic name tie-breaking.
+
+Parameters
+
+origin – A city or place name, a country (its capital), any model
+with coordinates, or a (latitude, longitude) tuple.
+
+limit – The most capitals to return.
+
+unit – "km", "mi", or "nmi".
+
+country – The country of origin, when its name is shared.
+
+include_origin – Also list a capital at the origin itself.
+
+Returns
+
+CapitalDistance rows, nearest first.
+
+Example
+
+>>> atlas.capitals_near("Paris", limit=2)
+(CapitalDistance('Brussels, Belgium · 264 km'), CapitalDistance('Luxembourg, Luxembourg · 287 km'))
+
+
+
+Atlas.cities_near(origin: str | Country | Capital | City | Coordinate | tuple[float, float], *, limit: int = 5, unit: str = 'km', origin_country: str | None = None, within_country: str | None = None, include_origin: bool = False) -> tuple[CityDistance, ...][source]
+
+Return bundled populated places nearest to an origin.
+
+String origins are exact city names and can be disambiguated with
+origin_country. within_country limits results to one country or
+area. By default, records at the origin’s exact coordinates are omitted.
+Distances are great-circle surface measurements, not road distances.
+
+Parameters
+
+origin – A city or place name, a country (its capital), any model
+with coordinates, or a (latitude, longitude) tuple.
+
+limit – The most cities to return.
+
+unit – "km", "mi", or "nmi".
+
+origin_country – The country of origin, when its name is shared.
+
+within_country – Return only cities in this country.
+
+include_origin – Also list a city at the origin itself.
+
+Returns
+
+CityDistance rows, nearest first.
+
+Example
+
+>>> atlas.cities_near("Reykjavik", limit=2)
+(CityDistance('Tórshavn (FO) · 795 km'), CityDistance('Aberdeen (GB) · 1,321 km'))
+
+
+
+Atlas.places_near(origin: str | Country | Capital | City | Place | Coordinate | tuple[float, float], *, limit: int = 10, kind: str | None = None, category: str | None = None, unit: str = 'km', include_origin: bool = False, origin_country: str | None = None) -> tuple[PlaceDistance, ...][source]
+
+Return the places nearest to an origin, nearest first.
+
+The origin can be a city name, any place or country model, a
+Coordinate, or a (latitude, longitude) tuple. Filter with
+kind or category (category="water" finds the nearest lakes
+and rivers). Distances are great-circle surface measurements in
+"km", "mi", or "nmi".
+
+Parameters
+
+origin – A city or place name, a country (its capital), any model
+with coordinates, or a (latitude, longitude) tuple.
+
+limit – The most places to return.
+
+kind – Keep only this kind, such as "volcano".
+
+category – Keep only this category, such as "water".
+
+unit – "km", "mi", or "nmi".
+
+include_origin – Also list places named like the origin, at the origin.
+
+origin_country – The country of origin, when its name is shared.
+
+Returns
+
+PlaceDistance rows, nearest first.
+
+Example
+
+>>> atlas.places_near("Reykjavik", kind="volcano", limit=2)
+(PlaceDistance('Sundhnúkur, volcano (IS) · 38 km'), PlaceDistance('Lágafell, volcano (IS) · 42 km'))
+
+
+
+Atlas.heritage_sites_near(origin: str | Country | Capital | City | Place | Coordinate | tuple[float, float], *, limit: int = 10, category: str | None = None, unit: str = 'km') -> tuple[SiteDistance, ...][source]
+
+Return the World Heritage sites nearest to a place, nearest first.
+
+origin is a city or place name, a country (its capital), a model
+with coordinates, or a (latitude, longitude) tuple. unit is
+"km" or "mi". Needs the landmarks pack.
+
+Parameters
+
+origin – A city or place name, a country (its capital), any model
+with coordinates, or a (latitude, longitude) tuple.
+
+limit – The most sites to return.
+
+category – Keep only "cultural", "natural", or "mixed" sites.
+
+unit – "km" or "mi".
+
+Returns
+
+SiteDistance rows, nearest first.
+
+Example
+
+>>> atlas.heritage_sites_near("Cusco", limit=1)
+(SiteDistance('Historic centre of Cusco, cultural · 1.9 km'),)
+
+
+
+Atlas.sun(where: str | Country | Capital | City | Place | Coordinate | tuple[float, float], on: date | None = None) -> SunTimes[source]
+
+Return sunrise, sunset, day length, and the noon sun height for a place.
+
+where is a city or place name, a country (its capital), a model with
+coordinates, or a (latitude, longitude) tuple. on defaults to
+today. Times are in UTC, and also on the local clock when the place is a
+city, capital, or country and the computer has time zone data (see
+SunTimes). They agree with almanac times to about a minute
+between latitudes 72° north and south. Compare atlas.sun("Oslo",
+date(2026, 6, 21)) with December to see why seasons happen.
+
+Parameters
+
+where – A city or place name, a country (its capital), any model
+with coordinates, or a (latitude, longitude) tuple.
+
+on – The day, or None for today.
+
+Returns
+
+SunTimes that print as one sentence.
+
+Example
+
+>>> from datetime import date
+>>> print(atlas.sun((59.91, 10.75), date(2026, 6, 21)))  # Oslo
+On 21 June 2026 the sun rises at 01:53 UTC and sets at 20:43 UTC, giving 18 h 50 min of daylight. At noon it is 54° above the horizon.
+
+
+
+Atlas.antipode(where: str | Country | Capital | City | Place | Coordinate | tuple[float, float], *, limit: int = 3) -> Antipode[source]
+
+Return the point on the opposite side of the Earth, and the places nearest it.
+
+Dig straight down through the centre of the Earth and you come out at
+the antipode: the latitude flips north and south, and the longitude
+moves halfway around the world. where is a city or place name, a
+country (its capital), a model with coordinates, or a (latitude,
+longitude) tuple. Most antipodes are at sea. nearest lists
+well-known places within 500 km of the antipode first, nearest first.
+
+Parameters
+
+where – A city or place name, a country (its capital), any model
+with coordinates, or a (latitude, longitude) tuple.
+
+limit – How many nearby places to list.
+
+Returns
+
+An Antipode with the opposite point and the places nearest it.
+
+Example
+
+>>> print(atlas.antipode("Madrid"))
+Straight through the centre of the Earth from 40.42° N, 3.70° W you would come out at 40.42° S, 176.30° E. The nearest well-known place is Waipatiki, town (NZ), 4.9 km away.
+
+Borders
+
+Who touches whom by land, and how to get there.
+
+
+
+Atlas.neighbors(country: str | Country) -> tuple[Country, ...][source]
+
+Return countries sharing a reviewed land border with country.
+
+Results are alphabetized and immutable. Maritime neighbors, proximity,
+and mere point contacts are excluded. Countries and areas without an
+accepted land-border relationship return an empty tuple.
+
+Parameters
+
+country – A country name, code, or profile.
+
+Returns
+
+The neighboring Country profiles, alphabetical.
+
+Raises
+
+CountryNotFoundError – The country is unknown.
+
+Example
+
+>>> atlas.neighbors("Portugal")
+(Country(name='Spain', alpha2='ES'),)
+>>> atlas.neighbors("Japan")
+()
+
+
+
+Atlas.shares_border(country1: str | Country, country2: str | Country) -> bool[source]
+
+Return whether two countries share a reviewed land border.
+
+Parameters
+
+country1 – A country name, code, or profile.
+
+country2 – Another country.
+
+Returns
+
+True when the two touch by land.
+
+Example
+
+>>> atlas.shares_border("France", "Spain")
+True
+>>> atlas.shares_border("France", "Portugal")
+False
+
+
+
+Atlas.shared_neighbors(country1: str | Country, country2: str | Country) -> tuple[Country, ...][source]
+
+Return alphabetized land neighbors shared by two countries.
+
+Parameters
+
+country1 – A country name, code, or profile.
+
+country2 – Another country.
+
+Returns
+
+The Country profiles that border both.
+
+Example
+
+>>> atlas.shared_neighbors("France", "Germany")
+(Country(name='Belgium', alpha2='BE'), Country(name='Luxembourg', alpha2='LU'), Country(name='Switzerland', alpha2='CH'))
+
+
+
+Atlas.border_path(origin: str | Country, destination: str | Country) -> BorderPathResult | None[source]
+
+Return a deterministic shortest land-border path, or None.
+
+The path uses breadth-first search over the reviewed undirected graph.
+Both endpoints are included. Equal-length alternatives are resolved by
+alphabetic neighbor order. None means the two entities have no path
+through accepted land-border relationships; it is not an error.
+
+Parameters
+
+origin – The starting country.
+
+destination – The country to reach.
+
+Returns
+
+A BorderPathResult that prints as the route, or None.
+
+Example
+
+>>> print(atlas.border_path("Portugal", "Poland"))
+Portugal → Spain → France → Germany → Poland (4 border crossings)
+>>> atlas.border_path("Japan", "France") is None
+True
+
+
+
+Atlas.border_crossings(origin: str | Country, destination: str | Country) -> int | None[source]
+
+Return the fewest land-border crossings, or None if unreachable.
+
+Parameters
+
+origin – The starting country.
+
+destination – The country to reach.
+
+Returns
+
+The number of borders crossed on the shortest land route.
+
+Example
+
+>>> atlas.border_crossings("Portugal", "Germany")
+3
+>>> atlas.border_crossings("Japan", "Iceland") is None
+True
+
+
+
+Atlas.has_land_route(origin: str | Country, destination: str | Country) -> bool[source]
+
+Return whether origin and destination are land-connected.
+
+This is derived at query time from the reviewed border graph; it does
+not use road, rail, ferry, maritime, or travel-access data. Identical
+endpoints return True because their shortest graph path has zero
+border crossings. Unknown country queries raise
+CountryNotFoundError.
+
+Parameters
+
+origin – The starting country.
+
+destination – The country to reach.
+
+Returns
+
+True when you could walk from one to the other across borders.
+
+Example
+
+>>> atlas.has_land_route("Portugal", "Austria")
+True
+>>> atlas.has_land_route("Iceland", "Norway")
+False
+
+
+
+Atlas.countries_reachable_by_land(country: str | Country) -> tuple[Country, ...][source]
+
+Return every other entity in country’s land-connected component.
+
+The starting country is excluded. Results are alphabetized; an island
+or otherwise borderless entity returns an empty tuple.
+
+Parameters
+
+country – The starting country.
+
+Returns
+
+The other Country profiles you could reach across borders.
+
+Example
+
+>>> len(atlas.countries_reachable_by_land("Portugal")) > 50
+True
+>>> atlas.countries_reachable_by_land("Japan")
+()
+
+Learn
+
+Quizzes, flashcards, and a short tour.
+
+
+
+Atlas.quiz(topic: Literal['closer_to_equator', 'higher', 'kinds'], *, count: int = 5, choices: int = 4, continent: str | None = None, region: str | None = None, seed: int | str = 0) -> tuple[PlaceQuestion, ...][source]
+
+Atlas.quiz(topic: str, *, count: int = 5, choices: int = 4, continent: str | None = None, region: str | None = None, seed: int | str = 0) -> tuple[QuizQuestion, ...]
+
+Build multiple-choice questions from sourced facts.
+
+Parameters
+
+topic – A country topic from learning_topics(), such as
+"capitals" or "flags", or a place topic from
+PLACE_QUIZ_TOPICS: "higher" (which mountain is
+higher?), "kinds" (what kind of place is it?), or
+"closer_to_equator".
+
+count – How many questions to make.
+
+choices – Answers per country question, from 2 through 6. Place
+questions come with their own choices.
+
+continent – Ask only about countries on this continent.
+
+region – Ask only about countries in this region or subregion.
+
+seed – The same seed always gives the same questions, choices, and
+answer positions, on every supported Python version.
+
+Returns
+
+QuizQuestion rows for country topics, or
+PlaceQuestion rows for place topics. Each prints as the
+question with numbered choices.
+
+Raises
+
+ValueError – The topic is unknown, or the filters leave too few
+    distinct answers for the requested number of choices.
+
+No scoring, learner data, or session state is stored.
+
+Example
+
+>>> question = atlas.quiz("capitals", count=1, region="Western Europe")[0]
+>>> print(question)
+What is the capital of Switzerland?  1) Monaco  2) Bern  3) Amsterdam  4) Berlin
+>>> question.answer
+'Bern'
+>>> print(atlas.quiz("higher", count=1, seed=7)[0])
+Which is higher: Mauna Loa or Weisshorn?  1) Mauna Loa  2) Weisshorn
+
+
+
+Atlas.flashcards(topic: str, *, count: int = 10, continent: str | None = None, region: str | None = None, seed: int | str = 0) -> tuple[Flashcard, ...][source]
 
 Return deterministic, immutable geography flashcards.
 
@@ -5926,187 +7172,123 @@ reviewed land-border graph. Local-name cards use the selected CLDR or
 UNGEGN identity record for every country and area.
 Flashcards are structured values, not an interactive game.
 
+Parameters
 
+topic – A topic from learning_topics(), such as "capitals".
 
-quiz(*, topic: str, count: int, choices: int = 4, continent: str | None = None, region: str | None = None, seed: int | str = 0) -> tuple[QuizQuestion, ...][source]
+count – How many cards to make.
 
-Build deterministic multiple-choice questions from sourced facts.
+continent – Use only countries on this continent.
 
-topic accepts every value returned by learning_topics().
-choices must be an integer from 2 through 6. Questions, distractors,
-and answer positions remain stable for the same dataset, filters, and
-seed, making answer keys reproducible across supported Python versions.
+region – Use only countries in this region or subregion.
 
-The method raises ValueError when the filtered profiles do not
-provide enough distinct answers for the requested number of choices.
-No scoring, learner data, or session state is stored.
+seed – The same seed always gives the same cards.
 
+Returns
 
+Flashcard rows that print as the prompt and its answer.
 
-major_cities(country: str, *, limit: int | None = None) -> tuple[City, ...][source]
+Raises
 
-Return populated places for a country, ordered by population and name.
+ValueError – The topic is unknown or count is too large.
 
-limit=None returns every bundled place for the country. The records
-come from the package snapshot and are not live population estimates.
+Example
 
+>>> card = atlas.flashcards("capitals", count=1, region="Western Europe")[0]
+>>> print(card)
+What is the capital of Switzerland? Bern
+>>> card.answer
+'Bern'
 
 
-search_cities(query: str, *, country: str | None = None, limit: int = 20) -> tuple[City, ...][source]
 
-Return ranked city-name matches from the bundled place table.
+Atlas.learning_topics() -> tuple[str, ...][source]
 
-Matching is case-insensitive and accent-tolerant. Exact names rank
-first, followed by prefix and substring matches; population breaks
-ties. Pass country as a familiar country name or code to narrow the
-search. An empty result is returned when nothing matches.
+Return topics supported by flashcards() and quiz().
 
+The tuple is stable, alphabetized, and safe to use for menus, lesson
+builders, or playground controls.
 
+Returns
 
-city(query: str, *, country: str | None = None) -> City[source]
+Topic names such as "capitals" and "flags".
 
-Return one exact bundled city, optionally limited to a country.
+Example
 
-Matching is case-insensitive and accent-tolerant. Pass a familiar
-country name or code when the city name is shared. Missing names raise
-PlaceNotFoundError; ambiguous names raise
-AmbiguousPlaceError with example matches.
+>>> atlas.learning_topics()[:4]
+('alpha_2_codes', 'alpha_3_codes', 'areas', 'border_counts')
 
 
 
-coordinates(query: str, *, country: str | None = None) -> Coordinate[source]
+Atlas.help() -> None[source]
 
-Return WGS84 coordinates for an exact bundled city lookup.
+Print a short tour: about a dozen things to try, grouped by topic.
 
-This is shorthand for atlas.city(query, country=country).coordinates.
+Every line is a real call you can copy. pyworldatlas tour prints
+the same tour on the command line.
 
+Example
 
+>>> atlas.help()
+PyWorldAtlas: things to try
+...
 
-distance_between(first: str | Country | Capital | City | Coordinate | tuple[float, float], second: str | Country | Capital | City | Coordinate | tuple[float, float], *, unit: str = 'km', first_country: str | None = None, second_country: str | None = None) -> float[source]
+Numbers and maps
 
-Return great-circle distance between city, model, or coordinate inputs.
+World Bank statistics, world maps, and 3D country maps. These need the statistics or a map pack.
 
-Accepted inputs are exact bundled-city names, City,
-Capital, Country, Coordinate, or
-(latitude, longitude) tuples. Country objects use their primary
-capitals. unit accepts "km", "mi", or "nmi".
-The result is a surface measurement, not a road or flight route.
 
 
-
-nearest_capitals(origin: str | Country | Capital | City | Coordinate | tuple[float, float], *, limit: int = 5, unit: str = 'km', country: str | None = None, include_origin: bool = False) -> tuple[CapitalDistance, ...][source]
-
-Return primary capitals nearest to a city, country, or coordinate.
-
-String origins use the exact city lookup and may be constrained with
-country. Pass a Country to measure from its primary
-capital or a Coordinate for an arbitrary starting point.
-unit accepts "km", "mi", or "nmi". Results are ordered
-nearest first with deterministic name tie-breaking.
-
-
-
-nearest_cities(origin: str | Country | Capital | City | Coordinate | tuple[float, float], *, limit: int = 5, unit: str = 'km', origin_country: str | None = None, within_country: str | None = None, include_origin: bool = False) -> tuple[CityDistance, ...][source]
-
-Return bundled populated places nearest to an origin.
-
-String origins are exact city names and can be disambiguated with
-origin_country. within_country limits results to one country or
-area. By default, records at the origin’s exact coordinates are omitted.
-Distances are great-circle surface measurements, not road distances.
-
-
-
-PLACE_PACKS = ('places-explorer', 'places-world')
-
-Data packs that add places to the bundled school atlas, smallest first.
-
-
-
-static place_kinds() -> tuple[str, ...][source]
-
-Return every place kind accepted by place searches, such as "volcano".
-
-
-
-static place_categories() -> tuple[str, ...][source]
-
-Return the general place categories, such as "water" and "landform".
-
-
-
-search_places(query: str, *, kind: str | None = None, category: str | None = None, country: str | None = None, limit: int = 10) -> tuple[Place, ...][source]
-
-Find places on Earth by name, best known first.
-
-Searches the bundled school atlas (about 200,000 places: every country,
-region, town of 5,000 people or more, and well-known mountain, lake, river,
-island, and landmark) plus any installed place packs. Local and English
-names both match, without regard to case or accents: "Lake Titicaca"
-finds "Lago Titicaca". Exact names come first, then names that start
-with the query; better-known places break ties.
-
-Narrow results with kind (see place_kinds()), category
-(see place_categories()), or country.
-
-
-
-place(query: str, *, kind: str | None = None, country: str | None = None) -> Place[source]
-
-Return the best-known place with exactly this name.
-
-atlas.place("Kilimanjaro") is the mountain and atlas.place("Lake
-Victoria") the African lake. Narrow with kind or country to pick
-a less famous namesake. Raises PlaceNotFoundError when no place
-has this exact name.
-
-
-
-places_in(country: str | Country, *, kind: str | None = None, category: str | None = None, limit: int = 20) -> tuple[Place, ...][source]
-
-Return the best-known places in a country from the school atlas.
-
-Towns, mountains, lakes, landmarks, and more, best known first. Narrow
-with kind (see place_kinds()) or category (see
-place_categories()). The capital, whole regions, schools,
-airports, and river points are left out unless asked for by kind.
-
-
-
-lookup(query: str, *, limit: int = 10) -> tuple[Country | Place, ...][source]
-
-Find anything by name: countries, cities, regions, and landmarks.
-
-One search for human-entered text. A country that the query names
-exactly (by name, alias, or code) comes first as a full
-Country profile; then come the best-known places from
-search_places(), where a country-level place is replaced by its
-Country profile. atlas.lookup("Georgia") gives the country
-and then the US state.
-
-
-
-places_near(origin: str | Country | Capital | City | Place | Coordinate | tuple[float, float], *, limit: int = 10, kind: str | None = None, category: str | None = None, unit: str = 'km', include_origin: bool = False, origin_country: str | None = None) -> tuple[PlaceDistance, ...][source]
-
-Return the places nearest to an origin, nearest first.
-
-The origin can be a city name, any place or country model, a
-Coordinate, or a (latitude, longitude) tuple. Filter with
-kind or category (category="water" finds the nearest lakes
-and rivers). Distances are great-circle surface measurements in
-"km", "mi", or "nmi".
-
-
-
-indicators() -> tuple[Indicator, ...][source]
+Atlas.indicators() -> tuple[Indicator, ...][source]
 
 Return every statistic in the statistics pack, such as life_expectancy.
 
 Needs the statistics pack (pyworldatlas get statistics).
 
+Returns
+
+Every Indicator, with its unit and source.
+
+Raises
+
+PackNotInstalledError – The statistics pack is not installed.
+
+Example
+
+>>> len(atlas.indicators())
+11
+>>> atlas.indicators()[0]
+Indicator(key='birth_rate', unit='per 1,000 people a year')
 
 
-time_series(country: str | Country, indicator: str) -> StatisticSeries[source]
+
+Atlas.statistic(country: str | Country, indicator: str, year: int | None = None) -> StatisticValue | None[source]
+
+Return one published value, the latest unless year is given.
+
+Returns None when the publisher has no value; missing values are
+never estimated. Needs the statistics pack.
+
+Parameters
+
+country – A country name, code, or profile, or "world".
+
+indicator – A key from indicators().
+
+year – The year to read, or None for the latest.
+
+Returns
+
+A StatisticValue, or None.
+
+Example
+
+>>> print(atlas.statistic("Brazil", "urban_population", 1960))
+44.7% of people (1960)
+
+
+
+Atlas.time_series(country: str | Country, indicator: str) -> StatisticSeries[source]
 
 Return the yearly values of an indicator for a country, from 1960.
 
@@ -6114,66 +7296,180 @@ country is a country name, code, or profile, or "world" for the
 World Bank’s world total. Years without a published value are None.
 Needs the statistics pack (pyworldatlas get statistics).
 
+Parameters
+
+country – A country name, code, or profile, or "world".
+
+indicator – A key from indicators(), such as "life_expectancy".
+
+Returns
+
+A StatisticSeries with a summary sentence.
+
+Raises
+
+ValueError – The indicator is unknown.
+
+PackNotInstalledError – The statistics pack is not installed.
+
+Example
+
+>>> print(atlas.time_series("Kenya", "electricity_access").summary)
+Access to electricity in Kenya rose from 10.9% of people in 1993 to 77.0% of people in 2024.
 
 
-statistic(country: str | Country, indicator: str, year: int | None = None) -> StatisticValue | None[source]
 
-Return one published value, the latest unless year is given.
+Atlas.world_map(indicator: str, *, year: int | None = None) -> WorldMap[source]
 
-Returns None when the publisher has no value; missing values are
-never estimated. Needs the statistics pack.
+Return a world map with every country colored by one indicator.
+
+Each country shows its value for year, or its latest value when
+year is None. Countries fall into five classes with about the
+same number of countries each; the colors order the numbers and say
+nothing about which is better. Call show() to open the map,
+write_html() or write_svg() to save it, or display it in a
+notebook. Needs the statistics pack and a map pack
+(pyworldatlas get statistics and pyworldatlas get maps-lite).
+
+Parameters
+
+indicator – A key from indicators().
+
+year – The year to show, or None for each country’s latest.
+
+Returns
+
+A WorldMap.
+
+Example
+
+>>> print(atlas.world_map("life_expectancy", year=2020))
+Life expectancy at birth (years), in 2020
 
 
 
-sort_by_statistic(indicator: str, *, year: int | None = None, descending: bool = True, limit: int | None = 10) -> tuple[StatisticValue, ...][source]
+Atlas.map(country: str | Country, *, quality: str = 'auto', places: int = 8) -> CountryMap[source]
+
+Return an interactive offline 3D map for a country profile.
+
+country accepts the same names and codes as country(), or an
+already loaded Country. quality="auto" prefers Standard
+map data when installed and otherwise uses Overview data.
+
+The map marks the places best-known towns, mountains and islands,
+lakes and seas, and landmarks of the country, each kind as a layer
+that can be shown or hidden. Pass places=0 for terrain only.
+
+The returned map opens in the default browser when its show()
+method is called. Maps need a map pack, installed once with
+pyworldatlas get maps (Standard) or pyworldatlas get maps-lite
+(Overview). Packs are read from this atlas’s data_dir.
+
+Parameters
+
+country – A country name, code, or profile.
+
+quality – "auto", "standard", or "overview".
+
+places – How many well-known places to mark.
+
+Returns
+
+A CountryMap.
+
+Raises
+
+MapSupportNotInstalledError – No map pack is installed.
+
+Example
+
+>>> japan = atlas.map("Japan")
+>>> print(japan)
+3D map of Japan
+
+
+
+Atlas.sort_by_statistic(indicator: str, *, year: int | None = None, descending: bool = True, limit: int | None = 10) -> tuple[StatisticValue, ...][source]
 
 List countries sorted by one indicator, for a year or each one’s latest.
 
 Sorting only orders the published numbers; it says nothing about which
 is better. Countries without a value are left out. Needs the
-statistics pack.
+statistics pack. rank() gives the same order as numbered rows
+with country names; prefer it in new code.
+
+Parameters
+
+indicator – A key from indicators().
+
+year – The year to compare, or None for each country’s latest.
+
+descending – False sorts smallest first.
+
+limit – The most rows to return, or None for all.
+
+Returns
+
+StatisticValue rows, sorted.
+
+Example
+
+>>> atlas.sort_by_statistic("forest_area", limit=2)
+(StatisticValue(indicator='forest_area', area='FM', year=2024, value=92.1), StatisticValue(indicator='forest_area', area='SR', year=2024, value=91.5))
+
+Landmarks
+
+Airports and UNESCO World Heritage sites. These need the landmarks pack.
 
 
 
-airport(code: str) -> Airport[source]
+Atlas.airport(code: str) -> Airport[source]
 
 Return the airport with this IATA ("LHR") or ICAO ("EGLL") code.
 
 Needs the landmarks pack (pyworldatlas get landmarks). Raises
 PlaceNotFoundError for an unknown code.
 
+Parameters
+
+code – A three-letter IATA or four-letter ICAO code.
+
+Returns
+
+The Airport.
+
+Example
+
+>>> atlas.airport("LHR")
+Airport(iata_code='LHR', name='London Heathrow Airport')
 
 
-airports(country: str | Country | None = None, *, size: str | None = None) -> tuple[Airport, ...][source]
+
+Atlas.airports(country: str | Country | None = None, *, size: str | None = None) -> tuple[Airport, ...][source]
 
 Return airports with scheduled flights, largest first, then by name.
 
 Narrow with country and size ("large", "medium", or
 "small"). Needs the landmarks pack (pyworldatlas get landmarks).
 
+Parameters
 
+country – Keep only airports in this country.
 
-world_heritage_sites(*, category: str | None = None) -> tuple[WorldHeritageSite, ...][source]
+size – Keep only "large", "medium", or "small" airports.
 
-Return UNESCO World Heritage sites in list order.
+Returns
 
-Narrow with category ("cultural", "natural", or "mixed").
-Use world_heritage_sites_near() to find the sites around a place.
-Needs the landmarks pack (pyworldatlas get landmarks).
+Airport records.
 
+Example
 
-
-world_heritage_sites_near(origin: str | Country | Capital | City | Place | Coordinate | tuple[float, float], *, limit: int = 10, category: str | None = None, unit: str = 'km') -> tuple[SiteDistance, ...][source]
-
-Return the World Heritage sites nearest to a place, nearest first.
-
-origin is a city or place name, a country (its capital), a model
-with coordinates, or a (latitude, longitude) tuple. unit is
-"km" or "mi". Needs the landmarks pack.
+>>> atlas.airports("Iceland", size="medium")[:2]
+(Airport(iata_code='EGS', name='Egilsstaðir Airport'), Airport(iata_code='GRY', name='Grímsey Airport'))
 
 
 
-world_heritage_site(query: str | int) -> WorldHeritageSite[source]
+Atlas.world_heritage_site(query: str | int) -> WorldHeritageSite[source]
 
 Return one World Heritage site by list number or name.
 
@@ -6181,56 +7477,153 @@ Names match without regard to case or accents: an exact name first,
 then the one site whose name contains the query. Raises
 PlaceNotFoundError or AmbiguousPlaceError.
 
+Parameters
 
+query – The site’s list number, or its name or part of it.
 
-sun(where: str | Country | Capital | City | Place | Coordinate | tuple[float, float], on: date | None = None) -> SunTimes[source]
+Returns
 
-Return sunrise, sunset, day length, and the noon sun height for a place.
+The WorldHeritageSite.
 
-where is a city or place name, a country (its capital), a model with
-coordinates, or a (latitude, longitude) tuple. on defaults to
-today. Times are in UTC and agree with almanac times to about a minute
-between latitudes 72° north and south. Compare atlas.sun("Oslo",
-date(2026, 6, 21)) with December to see why seasons happen.
+Example
 
-
-
-PLACE_QUIZ_TOPICS = ('closer_to_equator', 'higher', 'kinds')
-
-Topics accepted by place_quiz().
+>>> atlas.world_heritage_site("Machu Picchu")
+WorldHeritageSite(site_id=274, name='Historic Sanctuary of Machu Picchu')
 
 
 
-place_quiz(topic: str, *, count: int = 5, seed: int | str = 0) -> tuple[PlaceQuestion, ...][source]
+Atlas.world_heritage_sites(*, category: str | None = None) -> tuple[WorldHeritageSite, ...][source]
 
-Return multiple-choice questions about famous natural places.
+Return UNESCO World Heritage sites in list order.
 
-Topics are "kinds" (what kind of place is it?), "higher" (which
-of two mountains is higher?), and "closer_to_equator" (which of two
-places is closer to the equator?). Questions come from the best-known
-mountains (3,000 m and higher), islands, lakes, rivers, and seas in the
-school atlas, and the same seed always gives the same questions.
+Narrow with category ("cultural", "natural", or "mixed").
+Use heritage_sites_near() to find the sites around a place.
+Needs the landmarks pack (pyworldatlas get landmarks).
+
+Parameters
+
+category – Keep only "cultural", "natural", or "mixed" sites.
+
+Returns
+
+WorldHeritageSite records.
+
+Example
+
+>>> atlas.world_heritage_sites(category="mixed")[0]
+WorldHeritageSite(site_id=39, name='Ngorongoro Conservation Area')
+
+The atlas itself
+
+Versions, and closing the database.
 
 
 
-antipode(where: str | Country | Capital | City | Place | Coordinate | tuple[float, float], *, limit: int = 3) -> Antipode[source]
+Atlas.dataset_info() -> DatasetInfo[source]
 
-Return the point on the opposite side of the Earth, and the places nearest it.
+Return the installed library, database schema, and dataset versions.
 
-Dig straight down through the centre of the Earth and you come out at
-the antipode: the latitude flips north and south, and the longitude
-moves halfway around the world. where is a city or place name, a
-country (its capital), a model with coordinates, or a (latitude,
-longitude) tuple. Most antipodes are at sea.
+Record these values when a lesson or calculation must be reproducible.
+
+Returns
+
+A DatasetInfo with versions, build date, and source names.
+
+Example
+
+>>> print(atlas.dataset_info())
+PyWorldAtlas ..., 248 countries
+>>> atlas.dataset_info().country_count
+248
 
 
 
-close() -> None[source]
+Atlas.close() -> None[source]
 
 Close the read-only database connection.
 
 Calling close() more than once is safe. Queries on a closed atlas
 raise AtlasClosedError; models returned earlier remain usable.
+
+Example
+
+>>> other = Atlas()
+>>> other.close()
+>>> other.close()  # closing twice is safe
+
+
+
+Atlas.__enter__() -> Atlas[source]
+
+
+
+
+
+Atlas.__exit__(*args: object) -> None[source]
+
+
+
+Older names
+
+These still work and return the same results, but will be removed in 1.0. See Newer names.
+
+
+
+Atlas.nearest_capitals(*args: Any, **kwargs: Any) -> tuple[CapitalDistance, ...][source]
+
+Older name for capitals_near(), kept until 1.0.
+
+
+
+Atlas.nearest_cities(*args: Any, **kwargs: Any) -> tuple[CityDistance, ...][source]
+
+Older name for cities_near(), kept until 1.0.
+
+
+
+Atlas.world_heritage_sites_near(*args: Any, **kwargs: Any) -> tuple[SiteDistance, ...][source]
+
+Older name for heritage_sites_near(), kept until 1.0.
+
+
+
+Atlas.lookup(query: str, *, limit: int = 10) -> tuple[Country | Place, ...][source]
+
+Older name for find(), kept until 1.0.
+
+
+
+Atlas.place_quiz(topic: str, *, count: int = 5, seed: int | str = 0) -> tuple[PlaceQuestion, ...][source]
+
+Older name for quiz(topic) with a place topic, kept until 1.0.
+
+
+
+Atlas.countries_with_river(name: str | None = None) -> tuple[Country, ...][source]
+
+Older name for countries(river=name), kept until 1.0.
+
+With no name it is countries(has_rivers=True).
+
+
+
+Atlas.countries_with_lake(name: str | None = None) -> tuple[Country, ...][source]
+
+Older name for countries(lake=name), kept until 1.0.
+
+With no name it is countries(has_lakes=True).
+
+
+
+Atlas.countries_in_climate_zone(code: str) -> tuple[Country, ...][source]
+
+Older name for countries(climate_zone=code), kept until 1.0.
+
+
+
+Atlas.countries_with_no_land_borders() -> tuple[Country, ...][source]
+
+Older name for countries(land_borders=False), kept until 1.0.
 
 
 
@@ -6511,15 +7904,16 @@ CountryDiscoveryCard.to_json().
 
 
 
-summary(*, local_language: str | None = None) -> str[source]
+property summary: SummaryText
 
 Return a readable, multiline introduction to this country profile.
 
-The summary favors useful classroom facts and omits unavailable values.
-Pass a language code to request a particular bundled local name; with
-no code, the selected non-English local identity is used when present.
-This is a presentation helper rather than a serialization format; use
-to_dict() when field names and machine-readable values matter.
+print(country.summary) shows useful classroom facts and leaves out
+unavailable values. To show the local name in a particular language,
+call it with a language code: country.summary(local_language="fr").
+Without one, the selected non-English local identity is used when
+present. This is for reading; use to_dict() when field names and
+machine-readable values matter.
 
 
 
@@ -6723,6 +8117,12 @@ A compact, immutable country identifier used in educational results.
 The reference contains display and lookup identifiers only. It deliberately
 avoids nesting a complete Country profile inside flashcards and
 discovery results.
+
+
+
+property country_code: str
+
+Return the two-letter code, the same value other results call country_code.
 
 
 
@@ -6976,7 +8376,7 @@ Return whether the source reports zero coastline, or None.
 
 
 
-__init__(coastline_km: float | None = None, mean_elevation_m: float | None = None, highest_point: ElevationPoint | None = None, lowest_point: ElevationPoint | None = None, rivers: tuple[River, ...] = (), lakes: tuple[Lake, ...] = (), climate: ClimateProfile = ClimateProfile(summary=None, koppen_geiger_zones=(), reference_period=None, resolution_degrees=None, minimum_share_percent=None, summary_source=None, classification_source=None), source: SourceReference | None = None, source_locator: str | None = None) -> None
+__init__(coastline_km: float | None = None, mean_elevation_m: float | None = None, highest_point: ElevationPoint | None = None, lowest_point: ElevationPoint | None = None, rivers: tuple[River, ...] = (), lakes: tuple[Lake, ...] = (), climate: ClimateProfile = ClimateProfile('climate unknown'), source: SourceReference | None = None, source_locator: str | None = None) -> None
 
 
 
@@ -6988,7 +8388,7 @@ Core geographic classification and physical measurements.
 
 
 
-__init__(continent: str | None, region: str | None, subregion: str | None, area: Area = Area(total_km2=None, land_km2=None, water_km2=None, water_percent=None), landlocked: bool | None = None, physical: PhysicalGeography = PhysicalGeography(coastline_km=None, mean_elevation_m=None, highest_point=None, lowest_point=None, rivers=(), lakes=(), climate=ClimateProfile(summary=None, koppen_geiger_zones=(), reference_period=None, resolution_degrees=None, minimum_share_percent=None, summary_source=None, classification_source=None), source=None, source_locator=None)) -> None
+__init__(continent: str | None, region: str | None, subregion: str | None, area: Area = Area('area unknown'), landlocked: bool | None = None, physical: PhysicalGeography = PhysicalGeography(coastline_km=None, highest_point=None, rivers=0, lakes=0)) -> None
 
 
 
@@ -7125,6 +8525,12 @@ class pyworldatlas.CountryRanking[source]
 
 One deterministic position in a country ranking.
 
+source names where the value comes from, such as "GeoNames country
+population snapshot". Different sources can disagree: the statistics
+pack’s World Bank population (atlas.rank("population", year=2020))
+is newer and dated by year. year is the year of a statistic, and
+None for profile metrics such as area.
+
 
 
 to_dict() -> dict[str, Any][source]
@@ -7139,7 +8545,7 @@ Serialize this ranking row as JSON.
 
 
 
-__init__(position: int, country: CountryReference, metric: str, value: int | float, unit: str) -> None
+__init__(position: int, country: CountryReference, metric: str, value: int | float, unit: str, source: str | None = None, year: int | None = None) -> None
 
 
 
@@ -7174,7 +8580,7 @@ class pyworldatlas.CityDistance[source]
 A nearby populated place and its great-circle distance from an origin.
 
 The compact country reference disambiguates city names. unit records
-the unit requested from pyworldatlas.Atlas.nearest_cities().
+the unit requested from pyworldatlas.Atlas.cities_near().
 
 
 
@@ -7271,8 +8677,9 @@ class pyworldatlas.Antipode[source]
 
 The point on the exact opposite side of the Earth from an origin.
 
-nearest lists the known places closest to the antipode, nearest first;
-most antipodes are at sea, so the nearest place can be far away.
+nearest lists well-known places within 500 km of the antipode first,
+then other places, each group nearest first. Most antipodes are at sea, so
+the nearest place can be far away.
 
 
 
@@ -7370,6 +8777,12 @@ publisher has no value for is None and is never filled in.
 
 
 
+property country_code: str | None
+
+Return the two-letter country code, or None for the world total.
+
+
+
 property last_year: int
 
 Return the last year in the series.
@@ -7433,6 +8846,12 @@ One published value: an indicator for a country (or the world) in a year.
 
 
 
+property country_code: str | None
+
+Return the two-letter country code, or None for the world total.
+
+
+
 to_dict() -> dict[str, Any][source]
 
 Return JSON-compatible primitives for this value.
@@ -7453,13 +8872,29 @@ __init__(indicator: Indicator, area: str, year: int, value: float) -> None
 
 class pyworldatlas.SunTimes[source]
 
-Sunrise, sunset, and daylight for one place on one date, in UTC.
+Sunrise, sunset, and daylight for one place on one date.
 
+sunrise, sunset, and solar_noon are in UTC. When the place’s
+time zone is known (timezone_id, such as "Europe/Paris") and the
+computer has time zone data, local_sunrise and
+local_sunset give the local clock times and the summary uses them.
 sunrise and sunset are None during the midnight sun (day length
 24 hours) and the polar night (day length 0). A UTC time can fall on the
 day before or after date far from Greenwich. noon_sun_height is the
 sun’s angle above the horizon at solar noon, in degrees; it is negative
 when the sun stays below the horizon.
+
+
+
+property local_sunrise: datetime | None
+
+Return sunrise on the local clock, or None when the time zone is unknown.
+
+
+
+property local_sunset: datetime | None
+
+Return sunset on the local clock, or None when the time zone is unknown.
 
 
 
@@ -7487,7 +8922,7 @@ Serialize these sun times as JSON.
 
 
 
-__init__(coordinates: Coordinate, date: date, solar_noon: datetime, sunrise: datetime | None, sunset: datetime | None, day_length_hours: float, noon_sun_height: float) -> None
+__init__(coordinates: Coordinate, date: date, solar_noon: datetime, sunrise: datetime | None, sunset: datetime | None, day_length_hours: float, noon_sun_height: float, timezone_id: str | None = None) -> None
 
 
 
@@ -7622,6 +9057,163 @@ A source used for fields in a country profile.
 
 
 __init__(id: str, name: str, homepage: str, retrieved_at: str, version: str | None = None, license_name: str | None = None, license_url: str | None = None, notes: str | None = None) -> None
+
+
+
+
+
+Newer names
+
+Version 0.13 gave every method the same naming style. The older names still
+work and return exactly the same results, so existing code keeps running. They
+will be removed in 1.0, so new code should use the newer names.
+
+
+
+
+
+Older name
+
+Newer name
+
+nearest_capitals(...)
+
+capitals_near()
+
+nearest_cities(...)
+
+cities_near()
+
+world_heritage_sites_near(...)
+
+heritage_sites_near()
+
+lookup(...)
+
+find()
+
+rank_countries(...) and sort_by_statistic(...)
+
+rank(), which ranks statistics too
+
+place_quiz("higher")
+
+quiz("higher"), which takes place topics too
+
+countries_with_river("Nile")
+
+countries(river="Nile")
+
+countries_with_lake("Victoria")
+
+countries(lake="Victoria")
+
+countries_in_climate_zone("Cfb")
+
+countries(climate_zone="Cfb")
+
+countries_with_no_land_borders()
+
+countries(land_borders=False)
+
+New to the atlas? atlas.help() prints a short
+tour of things to try, and pyworldatlas tour prints it on the command line.
+
+
+
+Printing results
+
+Every result prints as one readable line, such as
+CountryRanking('#1 Canada: 202,080 km'). Call
+pyworldatlas.show_details() to print every field instead, or set the
+environment variable PYWORLDATLAS_DETAILS=1. Details change only how
+results print; to_dict() always returns every field.
+
+import pyworldatlas
+
+with pyworldatlas.show_details():
+    print(repr(atlas.rank("area", limit=1)[0]))
+
+
+
+class pyworldatlas.show_details[source]
+
+Print every field of a result instead of the short one-line form.
+
+show_details() turns details on, show_details(False) turns them
+off, and with show_details(): ... turns them on only inside the block.
+
+>>> import pyworldatlas
+>>> with pyworldatlas.show_details():
+...     pass
+
+
+
+__init__(on: bool = True) -> None[source]
+
+
+
+
+
+classmethod __new__(*args, **kwargs)
+
+
+
+
+
+class pyworldatlas.Distance[source]
+
+A great-circle distance that is still a plain number.
+
+Distance behaves exactly like a float (add it, compare it, round
+it, or save it to JSON), and also remembers its unit. Printing it gives
+friendly text such as "9,713 km"; distances under 10 keep one decimal,
+such as "0.3 km".
+
+>>> from pyworldatlas import Distance
+>>> distance = Distance(9712.518, "km")
+>>> print(distance)
+9,713 km
+>>> distance > 9000
+True
+
+
+
+static __new__(cls, value: float, unit: str = 'km') -> Distance[source]
+
+
+
+
+
+property text: str
+
+Return the distance as friendly text, such as "9,713 km".
+
+
+
+__init__()
+
+
+
+
+
+class pyworldatlas.models.units.SummaryText[source]
+
+Text that can also be called, so country.summary and country.summary() both work.
+
+Summaries are properties on every result. Country summaries used to be a
+method; calling one still works, and country.summary(local_language="fr")
+still chooses which local name to show.
+
+
+
+static __new__(cls, text: str, build: Callable[[...], str]) -> SummaryText[source]
+
+
+
+
+
+__init__()
 
 
 
@@ -7977,6 +9569,101 @@ high-resolution PNG of the current view.
 
 
 
+class pyworldatlas.maps.WorldMap[source]
+
+A world map with every country colored by one statistic.
+
+Countries fall into five classes that each hold about the same number of
+countries, from light (smaller numbers) to dark (larger numbers). The
+colors order the published numbers only; they do not say which is better.
+Countries without a value are hatched and labelled “No data”.
+
+
+
+values: tuple[StatisticValue, ...]
+
+The value drawn for each country, in alphabetical order of country name.
+
+
+
+names: tuple[tuple[str, str], ...]
+
+Every country on the map as (alpha2, name), alphabetical by name.
+
+
+
+year: int | None
+
+The requested year, or None for each country’s latest value.
+
+
+
+database: str
+
+The map pack file the outlines are read from.
+
+
+
+property title: str
+
+Return the map title, such as "Life expectancy at birth (years), latest year".
+
+
+
+property class_edges: tuple[float, ...]
+
+Return the boundaries between color classes, lowest first.
+
+
+
+description() -> str[source]
+
+Return a plain-language summary of the map for screen readers.
+
+
+
+to_svg() -> str[source]
+
+Return the map as a standalone SVG image with a title, legend, and source line.
+
+Each country carries a hover title with its value and year. The image
+follows the reader’s light or dark color scheme.
+
+
+
+__init__(indicator: Indicator, values: tuple[StatisticValue, ...], names: tuple[tuple[str, str], ...], year: int | None, database: str) -> None
+
+
+
+
+
+to_html() -> str[source]
+
+Return a complete offline HTML page with the map and a table of every value.
+
+The table lists each country in alphabetical order with its value and
+year, so the map can be read without seeing it.
+
+
+
+write_html(path: str | Path) -> Path[source]
+
+Write the offline HTML page and return its resolved path.
+
+
+
+write_svg(path: str | Path) -> Path[source]
+
+Write the SVG image and return its resolved path.
+
+
+
+show() -> Path[source]
+
+Open the map in the default browser and return the page’s path.
+
+
+
 pyworldatlas.maps.available_map_qualities(data_dir: str | Path | None = None) -> tuple[str, ...][source]
 
 Return installed map qualities from least to most detailed.
@@ -8158,7 +9845,7 @@ their contributing source when one is bundled. Country.sources lists
 sources used somewhere in the profile; it is not a field-by-field provenance
 map. See Country reference facts for coverage and interpretation rules.
 
-Country.summary() is presentation-ready text that omits unavailable facts.
+Country.summary is presentation-ready text that omits unavailable facts.
 Use model attributes, to_dict(), or discovery_card() when a stable
 structured shape matters. Rankings describe sourced or directly calculated
 values; they do not score or judge countries. Quiz and flashcard helpers are
@@ -8185,7 +9872,7 @@ measurements; compass labels are orientation aids, not route instructions.
 
 Atlas.city() performs exact lookup and reports ambiguous names.
 search_cities() performs accent-tolerant partial matching, while
-nearest_cities() orders results by great-circle distance. Optional country
+cities_near() orders results by great-circle distance. Optional country
 arguments narrow the lookup or returned places.
 
 Land borders
@@ -8203,6 +9890,98 @@ current affairs, opinion, or speculative narrative. Missing scalar values are
 None and are never invented to fill a source gap. See
 Educational purpose and editorial policy and Data sources and freshness for the publication and
 source policies.
+
+========================================================================
+Glossary
+Source: https://jcari-dev.github.io/pyworldatlas-documentation/glossary.html
+========================================================================
+
+Brazil flag emoji
+
+Japan flag emoji
+
+Switzerland flag emoji
+
+China flag emoji
+
+France flag emoji
+
+United Arab Emirates flag emoji
+
+Glossary
+
+Short meanings for the words these docs use. Across the guides, a word with a
+dotted underline links here, and pointing at it shows its meaning.
+
+alpha-2 code
+
+A two-letter country code from the ISO 3166 standard, such as JP for
+Japan. PyWorldAtlas accepts it anywhere a country name works.
+
+antipode
+
+The point exactly opposite a place on the other side of the Earth. A
+straight tunnel through the center of the Earth would come out there.
+
+border crossing
+
+One step from a country into a neighboring country over a shared land
+border.
+
+capital
+
+A country’s capital city, as given by the atlas’s sources. The
+capital is usually where the national government meets.
+
+coastline
+
+The length of a country’s coast along the sea, in kilometers.
+
+great-circle distance
+
+The shortest distance between two places over the curved surface of
+the Earth, the route a plane would ideally fly.
+
+Köppen climate zone
+
+A climate class from the Köppen system, such as Cfb for a mild
+ocean climate. The first letter is the main group: A tropical,
+B dry, C mild, D cold winters, and E polar.
+
+landlocked
+
+Having no coast on the open sea, such as Austria or Switzerland.
+
+latitude
+
+How far north or south of the equator a place is, from 90° S to 90° N.
+South is negative, so 12° S is written -12.
+
+local name
+
+A country’s name in its own language and writing system, such as
+日本 (Nihon) for Japan.
+
+longitude
+
+How far east or west of the prime meridian through Greenwich a place
+is, from 180° W to 180° E. West is negative.
+
+pack
+
+An optional download that adds more data, such as 3D maps or
+statistics. Install one with pyworldatlas get, then it works
+offline.
+
+region
+
+A group of countries from the United Nations M49 list, such as Western
+Europe or South America.
+
+World Heritage site
+
+A place listed by UNESCO for its cultural or natural value to all of
+humanity, such as Machu Picchu.
 
 ========================================================================
 Migration from 0.0.x
@@ -8342,6 +10121,41 @@ Changelog
 
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
+
+0.13.0
+
+Friendly by default: clearer names, results that read well, and docs that are
+easier to start with.
+
+One naming style: every distance search ends in _near, rank()
+ranks statistics too, quiz() takes every topic, countries() is the
+one filter, and find() matches the find command. The older names
+still work until 1.0; see the table of newer names.
+
+Results that read well: printing any result gives one clear line, such
+as #1 Canada: 202,080 km or 9,713 km, and distances keep working as
+numbers.
+
+Did you mean…? Mistyped names and topics suggest the closest match.
+
+Help built in: atlas.help() and pyworldatlas tour print a dozen
+things to try. Every method lists its arguments, return value, errors, and
+a tested example.
+
+World maps of statistics: atlas.world_map("life_expectancy") colors
+every country by one number, as plain SVG with a table for screen readers.
+
+Sun times on the local clock when the computer has time zone data.
+
+Docs: a shorter welcome page, a Cheat sheet, Quests, a
+Glossary with meanings on hover, “Try it” links that open examples in
+the Playground, and dark mode. Every page passes the WCAG 2.2 AA
+contrast check in light and dark.
+
+Cleaner data: tidier lake and river names, no fake 0 km² areas, and
+subregion is None when UN M49 has none.
+
+Fixed: the land-border methods accept a Country as well as a name.
 
 0.12.1
 

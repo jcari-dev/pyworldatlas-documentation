@@ -6,26 +6,27 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" /><title>Lookup and search | PyWorldAtlas</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d75fae25" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=d8a2add5" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
-      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=631a5f8e" />
+      <link rel="stylesheet" type="text/css" href="_static/pyworldatlas.css?v=bd68652e" />
 
   
     <link rel="shortcut icon" href="_static/globe.svg"/>
     <link rel="canonical" href="https://jcari-dev.github.io/pyworldatlas-documentation/searching.html" />
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=c5b435e8"></script>
+      <script src="_static/documentation_options.js?v=1019fba8"></script>
       <script src="_static/doctools.js?v=9bcbadda"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-      <script defer="defer" src="_static/playground.js?v=e1fd9edb"></script>
-      <script defer="defer" src="_static/copy.js?v=be2d8949"></script>
+      <script defer="defer" src="_static/playground.js?v=f2b92c27"></script>
+      <script defer="defer" src="_static/copy.js?v=b2770d27"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Serialization" href="serialization.html" />
     <link rel="prev" title="Discovery tools" href="discovery.html" />
    
+  <meta name="color-scheme" content="light dark" />
   <meta name="description" content="Lookup and search in PyWorldAtlas, the offline Python package for country profiles, physical geography, cities, distances, and classroom learning." />
   <meta name="robots" content="index, follow" />
   <meta property="og:type" content="website" />
@@ -104,6 +105,25 @@
 <li class="toctree-l2"><a class="reference internal" href="learning.html#where-to-go-next">Where to go next</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="quests.html">Quests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="quests.html#the-long-way-to-vienna">1. The long way to Vienna</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quests.html#next-door-capitals">2. Next-door capitals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quests.html#the-longest-day">3. The longest day</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quests.html#top-of-the-alps">4. Top of the Alps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quests.html#islands-only">5. Islands only</a></li>
+<li class="toctree-l2"><a class="reference internal" href="quests.html#dig-straight-down">6. Dig straight down</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="cheatsheet.html">Cheat sheet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html#look-things-up">Look things up</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html#filter-and-rank">Filter and rank</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html#measure">Measure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html#borders">Borders</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html#learn">Learn</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html#with-the-optional-packs">With the optional packs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cheatsheet.html#in-a-terminal">In a terminal</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="teaching.html">Teaching with PyWorldAtlas</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="teaching.html#a-lesson-in-15-minutes">A lesson in 15 minutes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="teaching.html#one-quiz-for-the-whole-class">One quiz for the whole class</a></li>
@@ -160,7 +180,8 @@
 <li class="toctree-l1"><a class="reference internal" href="statistics.html">The world in numbers</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="statistics.html#a-country-over-time">A country over time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistics.html#one-value">One value</a></li>
-<li class="toctree-l2"><a class="reference internal" href="statistics.html#sorting">Sorting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#ranking">Ranking</a></li>
+<li class="toctree-l2"><a class="reference internal" href="statistics.html#on-a-world-map">On a world map</a></li>
 <li class="toctree-l2"><a class="reference internal" href="statistics.html#how-the-numbers-are-kept">How the numbers are kept</a></li>
 </ul>
 </li>
@@ -290,6 +311,7 @@
 <li class="toctree-l2"><a class="reference internal" href="why.html#the-product-promise">The product promise</a></li>
 <li class="toctree-l2"><a class="reference internal" href="why.html#who-is-it-for">Who is it for?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="why.html#what-it-is-not">What it is not</a></li>
+<li class="toctree-l2"><a class="reference internal" href="why.html#what-is-bundled">What is bundled</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="educational_principles.html">Educational purpose and editorial policy</a><ul>
@@ -322,7 +344,7 @@
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#wikidata-official-name-statements">Wikidata official-name statements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#ungegn-list-of-country-names">UNGEGN List of Country Names</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#derived-discovery-values">Derived discovery values</a></li>
-<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-12-1-release">Source priority in the 0.12.1 release</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data_sources.html#source-priority-in-the-0-13-0-release">Source priority in the 0.13.0 release</a></li>
 <li class="toctree-l2"><a class="reference internal" href="data_sources.html#inspect-sources-in-python">Inspect sources in Python</a></li>
 </ul>
 </li>
@@ -354,6 +376,15 @@
 <li class="toctree-l2"><a class="reference internal" href="api.html#how-to-read-an-entry">How to read an entry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#atlas">Atlas</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Atlas"><code class="docutils literal notranslate"><span class="pre">Atlas</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#look-things-up">Look things up</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#filter-and-rank">Filter and rank</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#measure">Measure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#borders">Borders</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#learn">Learn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#numbers-and-maps">Numbers and maps</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#landmarks">Landmarks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#the-atlas-itself">The atlas itself</a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#older-names">Older names</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#country-models">Country models</a><ul>
@@ -391,6 +422,13 @@
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.SourceReference"><code class="docutils literal notranslate"><span class="pre">SourceReference</span></code></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#newer-names">Newer names</a></li>
+<li class="toctree-l2"><a class="reference internal" href="api.html#printing-results">Printing results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.show_details"><code class="docutils literal notranslate"><span class="pre">show_details</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.Distance"><code class="docutils literal notranslate"><span class="pre">Distance</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.models.units.SummaryText"><code class="docutils literal notranslate"><span class="pre">SummaryText</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#exceptions">Exceptions</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AtlasError"><code class="docutils literal notranslate"><span class="pre">AtlasError</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.AtlasClosedError"><code class="docutils literal notranslate"><span class="pre">AtlasClosedError</span></code></a></li>
@@ -409,6 +447,7 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="api.html#optional-maps">Optional maps</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.maps.CountryMap"><code class="docutils literal notranslate"><span class="pre">CountryMap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.maps.WorldMap"><code class="docutils literal notranslate"><span class="pre">WorldMap</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.maps.available_map_qualities"><code class="docutils literal notranslate"><span class="pre">available_map_qualities()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="api.html#pyworldatlas.maps.MapDataError"><code class="docutils literal notranslate"><span class="pre">MapDataError</span></code></a></li>
 </ul>
@@ -438,29 +477,31 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.12.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.12.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.11.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.11.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.10.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.9.5</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.4</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.9.3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.9.2</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.9.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.9.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.8.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.8.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.7.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.6.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.5.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id1">0.13.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id2">0.12.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id3">0.12.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id4">0.11.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id5">0.11.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id6">0.10.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id7">0.9.5</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id8">0.9.4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id9">0.9.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id10">0.9.2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id11">0.9.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id12">0.9.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id13">0.8.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id14">0.8.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id15">0.7.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id16">0.6.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id17">0.5.0</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#reserved-tag-not-published-to-pypi">0.4.0 (reserved tag, not published to PyPI)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id17">0.3.1</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id18">0.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id19">0.2.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id18">0.3.1</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id19">0.3.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id20">0.2.1</a></li>
 <li class="toctree-l2"><a class="reference internal" href="changelog.html#unpublished-candidate">0.2.0 (unpublished candidate)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="changelog.html#id20">0.1.0</a></li>
+<li class="toctree-l2"><a class="reference internal" href="changelog.html#id21">0.1.0</a></li>
 </ul>
 </li>
 </ul>
@@ -544,9 +585,9 @@ rank first, population breaks ties, and no match returns an empty tuple.</p>
 </section>
 <section id="countries-and-places-together">
 <h2>Countries and places together<a class="headerlink" href="#countries-and-places-together" title="Link to this heading"></a></h2>
-<p><a class="reference internal" href="api.html#pyworldatlas.Atlas.lookup" title="pyworldatlas.Atlas.lookup"><code class="xref py py-meth docutils literal notranslate"><span class="pre">lookup()</span></code></a> searches countries, cities, regions,
+<p><a class="reference internal" href="api.html#pyworldatlas.Atlas.find" title="pyworldatlas.Atlas.find"><code class="xref py py-meth docutils literal notranslate"><span class="pre">find()</span></code></a> searches countries, cities, regions,
 mountains, lakes, and landmarks in one call; see <a class="reference internal" href="places.html"><span class="doc">Every place on Earth</span></a>.</p>
-<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">lookup</span><span class="p">(</span><span class="s2">"Ireland"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
+<div class="highlight-pycon notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">item</span><span class="p">)</span> <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">atlas</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">"Ireland"</span><span class="p">,</span> <span class="n">limit</span><span class="o">=</span><span class="mi">2</span><span class="p">)]</span>
 <span class="go">['Ireland', 'Ireland, town (US)']</span>
 </pre></div>
 </div>

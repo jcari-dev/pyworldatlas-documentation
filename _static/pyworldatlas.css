@@ -1118,13 +1118,13 @@
 }
 
 .atlas-button-run {
-  background: #3f8c79;
-  border-color: #4b9b87;
+  background: #2c736d;
+  border-color: #3b8a83;
   color: #fff;
 }
 
 .atlas-button-run:hover:not(:disabled) {
-  background: #367b6b;
+  background: #255f5a;
 }
 
 .atlas-button-stop {
@@ -1339,4 +1339,637 @@
   opacity: 1;
   outline: 2px solid #3981a5;
   outline-offset: 1px;
+}
+
+/* Try-it links, glossary words, quest answers, and printing. */
+.rst-content a.atlas-try {
+  display: inline-block;
+  margin: -0.85rem 0 1.4rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.rst-content a.atlas-try:hover,
+.rst-content a.atlas-try:focus-visible {
+  text-decoration: underline;
+}
+
+.rst-content .std-term {
+  border-bottom: 1px dotted currentColor;
+}
+
+.rst-content details.atlas-answer {
+  margin: 0 0 1.5rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid var(--atlas-line);
+  border-left: 3px solid var(--atlas-teal);
+  border-radius: 6px;
+}
+
+.rst-content details.atlas-answer > summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--atlas-teal);
+}
+
+.rst-content details.atlas-answer[open] > summary {
+  margin-bottom: 0.6rem;
+}
+
+@media print {
+  .wy-nav-side,
+  .wy-nav-top,
+  .rst-versions,
+  .wy-breadcrumbs-aside,
+  .rst-footer-buttons,
+  .atlas-skip-link,
+  .atlas-copy,
+  .atlas-try {
+    display: none !important;
+  }
+
+  .wy-nav-content-wrap {
+    margin-left: 0;
+  }
+
+  .wy-nav-content {
+    max-width: none;
+  }
+
+  .rst-content div[class^="highlight"],
+  .rst-content div.highlight {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+}
+
+/* Text the base theme draws below 4.5:1 contrast. */
+.rst-content code.literal,
+.rst-content tt.literal {
+  color: #b83226;
+}
+
+footer,
+footer p,
+.rst-footer-buttons + hr + div,
+footer .rst-content {
+  color: #5e6d78;
+}
+
+.rst-content .note .admonition-title,
+.rst-content .seealso .admonition-title {
+  background: #246f95;
+}
+
+.rst-content .warning .admonition-title,
+.rst-content .caution .admonition-title,
+.rst-content .attention .admonition-title {
+  background: #8a5a12;
+}
+
+.rst-content .danger .admonition-title,
+.rst-content .error .admonition-title {
+  background: #a33a3a;
+}
+
+.rst-content dl.py .viewcode-link {
+  color: #24635d;
+}
+
+.rst-content dl.py dt.sig a,
+.rst-content dl.py dt.sig a .pre {
+  color: #1d5f8a;
+}
+
+html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt {
+  color: #234b60;
+}
+
+/* Dark mode follows the reader's system setting. */
+@media screen and (prefers-color-scheme: dark) {
+  :root {
+    --atlas-blue: #7cc0e3;
+    --atlas-blue-soft: #16252f;
+    --atlas-teal: #6cc5b4;
+    --atlas-teal-soft: #142621;
+    --atlas-gold: #d9b866;
+    --atlas-gold-soft: #262113;
+    --atlas-ink: #dce6ec;
+    --atlas-muted: #a7b6c0;
+    --atlas-line: #2f404c;
+    --atlas-page: #0e161c;
+    --atlas-surface: #15212a;
+    --atlas-surface-2: #1b2934;
+    --atlas-heading: #cfe3ee;
+    --atlas-link: #7cc0e3;
+    --atlas-link-visited: #c3a6e6;
+    color-scheme: dark;
+  }
+
+  body,
+  .wy-body-for-nav,
+  .wy-nav-content-wrap,
+  .wy-nav-content {
+    background: var(--atlas-page);
+    color: var(--atlas-ink);
+  }
+
+  .rst-content,
+  .rst-content p,
+  .rst-content li,
+  .rst-content dd,
+  .rst-content td,
+  .rst-content th,
+  .wy-breadcrumbs,
+  .wy-breadcrumbs li,
+  footer,
+  footer p {
+    color: var(--atlas-ink);
+  }
+
+  a,
+  .rst-content a,
+  .wy-breadcrumbs a,
+  footer a {
+    color: var(--atlas-link);
+  }
+
+  a:visited {
+    color: var(--atlas-link-visited);
+  }
+
+  .rst-content h1,
+  .rst-content h2,
+  .rst-content h3,
+  .rst-content h4,
+  .rst-content h5,
+  .rst-content h6,
+  .rst-content .rubric,
+  .rst-content .document > div > section > h1,
+  .atlas-hero-title,
+  .atlas-card h3,
+  .atlas-card .rubric,
+  .atlas-card strong,
+  .atlas-door strong,
+  .atlas-stat strong {
+    color: var(--atlas-heading);
+  }
+
+  .rst-content h2,
+  .rst-content hr,
+  footer hr {
+    border-color: var(--atlas-line);
+  }
+
+  .wy-nav-top,
+  .wy-side-nav-search {
+    background: #17384a;
+  }
+
+  .rst-content .document > div > section > h1 + p {
+    background: var(--atlas-surface);
+    border-left-color: #3f7d9c;
+    color: var(--atlas-ink);
+  }
+
+  .atlas-hero,
+  .atlas-map-showcase {
+    background: var(--atlas-surface);
+    border-color: var(--atlas-line);
+    box-shadow: none;
+  }
+
+  .atlas-hero-copy,
+  .atlas-door span,
+  .atlas-stat span {
+    color: var(--atlas-muted);
+  }
+
+  .atlas-stat,
+  .atlas-card,
+  .atlas-card-blue,
+  .atlas-card-teal,
+  .atlas-card-gold,
+  .atlas-flag-row,
+  .rst-content a.atlas-door,
+  .rst-content .atlas-project-link,
+  .rst-content dl.py.class,
+  .rst-content dl.py.exception,
+  .rst-content dl.py.function,
+  .rst-content dl.py.class > dd > dl.py,
+  .rst-content details.atlas-answer,
+  .atlas-skip-link {
+    background: var(--atlas-surface);
+    border-color: var(--atlas-line);
+    box-shadow: none;
+    color: var(--atlas-ink);
+  }
+
+  .rst-content .atlas-project-link {
+    color: var(--atlas-heading);
+  }
+
+  .rst-content .atlas-project-link-primary,
+  .rst-content .atlas-recipe-launch-primary {
+    background: #2c736d;
+    border-color: #2c736d;
+    color: #fff;
+  }
+
+  .rst-content .atlas-recipe-launch {
+    border-color: var(--atlas-line);
+    color: var(--atlas-link);
+  }
+
+  .rst-content .atlas-recipe-launch:hover,
+  .rst-content .atlas-recipe-launch:focus-visible {
+    background: var(--atlas-surface-2);
+  }
+
+  .atlas-example-label {
+    color: var(--atlas-teal);
+  }
+
+  .rst-content code,
+  .rst-content tt,
+  .rst-content code.literal,
+  .rst-content tt.literal {
+    background: var(--atlas-surface-2);
+    border-color: var(--atlas-line);
+    color: #f2b8a2;
+  }
+
+  .rst-content a code,
+  .rst-content a code.literal,
+  .rst-content a code.xref,
+  .rst-content code.xref {
+    color: var(--atlas-link);
+  }
+
+  .rst-content div[class^="highlight"],
+  .rst-content div.highlight,
+  .rst-content pre.literal-block {
+    background: #0d1117;
+    border-color: var(--atlas-line);
+    box-shadow: none;
+    color: #e6edf3;
+  }
+
+  .rst-content div[class^="highlight"] pre {
+    color: #e6edf3;
+  }
+
+  .rst-content .highlight .hll { background-color: #6e7681 }
+  .rst-content .highlight { background: #0d1117; color: #E6EDF3 }
+  .rst-content .highlight .c { color: #8B949E; font-style: italic }
+  .rst-content .highlight .err { color: #F85149 }
+  .rst-content .highlight .esc { color: #E6EDF3 }
+  .rst-content .highlight .g { color: #E6EDF3 }
+  .rst-content .highlight .k { color: #FF7B72 }
+  .rst-content .highlight .l { color: #A5D6FF }
+  .rst-content .highlight .n { color: #E6EDF3 }
+  .rst-content .highlight .o { color: #FF7B72; font-weight: bold }
+  .rst-content .highlight .x { color: #E6EDF3 }
+  .rst-content .highlight .p { color: #E6EDF3 }
+  .rst-content .highlight .ch { color: #8B949E; font-style: italic }
+  .rst-content .highlight .cm { color: #8B949E; font-style: italic }
+  .rst-content .highlight .cp { color: #8B949E; font-weight: bold; font-style: italic }
+  .rst-content .highlight .cpf { color: #8B949E; font-style: italic }
+  .rst-content .highlight .c1 { color: #8B949E; font-style: italic }
+  .rst-content .highlight .cs { color: #8B949E; font-weight: bold; font-style: italic }
+  .rst-content .highlight .gd { color: #FFA198; background-color: #490202 }
+  .rst-content .highlight .ge { color: #E6EDF3; font-style: italic }
+  .rst-content .highlight .ges { color: #E6EDF3; font-weight: bold; font-style: italic }
+  .rst-content .highlight .gr { color: #FFA198 }
+  .rst-content .highlight .gh { color: #79C0FF; font-weight: bold }
+  .rst-content .highlight .gi { color: #56D364; background-color: #0F5323 }
+  .rst-content .highlight .go { color: #8B949E }
+  .rst-content .highlight .gp { color: #8B949E }
+  .rst-content .highlight .gs { color: #E6EDF3; font-weight: bold }
+  .rst-content .highlight .gu { color: #79C0FF }
+  .rst-content .highlight .gt { color: #FF7B72 }
+  .rst-content .highlight .g-Underline { color: #E6EDF3; text-decoration: underline }
+  .rst-content .highlight .kc { color: #79C0FF }
+  .rst-content .highlight .kd { color: #FF7B72 }
+  .rst-content .highlight .kn { color: #FF7B72 }
+  .rst-content .highlight .kp { color: #79C0FF }
+  .rst-content .highlight .kr { color: #FF7B72 }
+  .rst-content .highlight .kt { color: #FF7B72 }
+  .rst-content .highlight .ld { color: #79C0FF }
+  .rst-content .highlight .m { color: #A5D6FF }
+  .rst-content .highlight .s { color: #A5D6FF }
+  .rst-content .highlight .na { color: #E6EDF3 }
+  .rst-content .highlight .nb { color: #E6EDF3 }
+  .rst-content .highlight .nc { color: #F0883E; font-weight: bold }
+  .rst-content .highlight .no { color: #79C0FF; font-weight: bold }
+  .rst-content .highlight .nd { color: #D2A8FF; font-weight: bold }
+  .rst-content .highlight .ni { color: #FFA657 }
+  .rst-content .highlight .ne { color: #F0883E; font-weight: bold }
+  .rst-content .highlight .nf { color: #D2A8FF; font-weight: bold }
+  .rst-content .highlight .nl { color: #79C0FF; font-weight: bold }
+  .rst-content .highlight .nn { color: #FF7B72 }
+  .rst-content .highlight .nx { color: #E6EDF3 }
+  .rst-content .highlight .py { color: #79C0FF }
+  .rst-content .highlight .nt { color: #7EE787 }
+  .rst-content .highlight .nv { color: #79C0FF }
+  .rst-content .highlight .ow { color: #FF7B72; font-weight: bold }
+  .rst-content .highlight .pm { color: #E6EDF3 }
+  .rst-content .highlight .w { color: #6E7681 }
+  .rst-content .highlight .mb { color: #A5D6FF }
+  .rst-content .highlight .mf { color: #A5D6FF }
+  .rst-content .highlight .mh { color: #A5D6FF }
+  .rst-content .highlight .mi { color: #A5D6FF }
+  .rst-content .highlight .mo { color: #A5D6FF }
+  .rst-content .highlight .sa { color: #79C0FF }
+  .rst-content .highlight .sb { color: #A5D6FF }
+  .rst-content .highlight .sc { color: #A5D6FF }
+  .rst-content .highlight .dl { color: #79C0FF }
+  .rst-content .highlight .sd { color: #A5D6FF }
+  .rst-content .highlight .s2 { color: #A5D6FF }
+  .rst-content .highlight .se { color: #79C0FF }
+  .rst-content .highlight .sh { color: #79C0FF }
+  .rst-content .highlight .si { color: #A5D6FF }
+  .rst-content .highlight .sx { color: #A5D6FF }
+  .rst-content .highlight .sr { color: #79C0FF }
+  .rst-content .highlight .s1 { color: #A5D6FF }
+  .rst-content .highlight .ss { color: #A5D6FF }
+  .rst-content .highlight .bp { color: #E6EDF3 }
+  .rst-content .highlight .fm { color: #D2A8FF; font-weight: bold }
+  .rst-content .highlight .vc { color: #79C0FF }
+  .rst-content .highlight .vg { color: #79C0FF }
+  .rst-content .highlight .vi { color: #79C0FF }
+  .rst-content .highlight .vm { color: #79C0FF }
+  .rst-content .highlight .il { color: #A5D6FF }
+
+  .rst-content table.docutils,
+  .rst-content table.docutils td,
+  .rst-content table.docutils th,
+  .wy-table-bordered-all td,
+  .rst-content table.field-list td {
+    border-color: var(--atlas-line);
+  }
+
+  .rst-content table.docutils thead,
+  .rst-content table.docutils thead th {
+    background: var(--atlas-surface-2);
+    color: var(--atlas-heading);
+  }
+
+  .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,
+  .wy-table-odd td,
+  .wy-table-striped tr:nth-child(2n-1) td {
+    background: var(--atlas-surface);
+  }
+
+  .rst-content table.docutils tbody tr:nth-child(even),
+  .rst-content table.docutils tbody tr:nth-child(even) td {
+    background: var(--atlas-page);
+  }
+
+  .rst-content dl.py > dt.sig,
+  .rst-content dl.py.class > dt.sig,
+  .rst-content dl.py.exception > dt.sig,
+  .rst-content dl.py.function > dt.sig,
+  .rst-content dl:not(.docutils) dt,
+  .rst-content dl:not(.docutils) dl dt {
+    background: var(--atlas-surface-2);
+    border-color: #3f7d9c;
+    color: var(--atlas-ink);
+  }
+
+  .rst-content dl.py .sig-name,
+  .rst-content dl.py .sig-prename,
+  .rst-content dl:not(.docutils) .descname,
+  .rst-content dl:not(.docutils) .descclassname {
+    color: var(--atlas-heading);
+  }
+
+  .rst-content dl.py .property,
+  .rst-content .sig-paren,
+  .rst-content .sig-param,
+  .rst-content em.property {
+    color: var(--atlas-muted);
+  }
+
+  .rst-content dl.py .viewcode-link,
+  .rst-content .viewcode-back {
+    color: var(--atlas-teal);
+  }
+
+  .rst-content .admonition,
+  .rst-content .note,
+  .rst-content .tip,
+  .rst-content .hint,
+  .rst-content .important,
+  .rst-content .seealso,
+  .rst-content .admonition-todo,
+  .rst-content .attention,
+  .rst-content .caution,
+  .rst-content .warning,
+  .rst-content .danger,
+  .rst-content .error {
+    background: var(--atlas-surface);
+    color: var(--atlas-ink);
+  }
+
+  .rst-content .admonition-title,
+  .rst-content .note .admonition-title,
+  .rst-content .seealso .admonition-title {
+    background: #1f4f68;
+    color: #fff;
+  }
+
+  .rst-content .tip .admonition-title,
+  .rst-content .hint .admonition-title,
+  .rst-content .important .admonition-title,
+  .rst-content .admonition.tip > .admonition-title {
+    background: #1f5a52;
+  }
+
+  .rst-content .warning .admonition-title,
+  .rst-content .caution .admonition-title,
+  .rst-content .attention .admonition-title {
+    background: #6b4a12;
+  }
+
+  .rst-content .danger .admonition-title,
+  .rst-content .error .admonition-title {
+    background: #7a2626;
+  }
+
+  .rst-content .atlas-copy {
+    background: var(--atlas-surface-2);
+    border-color: #4f6876;
+    color: var(--atlas-ink);
+  }
+
+  .rst-content .atlas-copy:hover,
+  .rst-content .atlas-copy:focus-visible,
+  .atlas-hero-search input:focus-visible {
+    outline-color: var(--atlas-blue);
+  }
+
+  input[type="text"],
+  input[type="search"],
+  .wy-side-nav-search input[type="text"] {
+    background: var(--atlas-surface);
+    border-color: #4f6876;
+    color: var(--atlas-ink);
+  }
+
+  .atlas-playground,
+  .atlas-runtime-facts span,
+  .atlas-explore-card,
+  .atlas-quiz-card,
+  .atlas-preset,
+  .atlas-explore-surprise,
+  .atlas-runtime-status,
+  .atlas-playground-header kbd,
+  .atlas-playground-fallback {
+    background: var(--atlas-surface);
+    border-color: var(--atlas-line);
+    box-shadow: none;
+    color: var(--atlas-ink);
+  }
+
+  .atlas-playground-header {
+    background: var(--atlas-surface-2);
+    border-color: var(--atlas-line);
+  }
+
+  .atlas-playground-header h2,
+  .atlas-playground .atlas-explore-card h4,
+  .atlas-playground .atlas-quiz-prompt,
+  .atlas-preset strong,
+  .atlas-runtime-facts strong,
+  .rst-content .atlas-playground .atlas-explore-card dd,
+  .atlas-explore-card dd {
+    color: var(--atlas-heading);
+  }
+
+  .atlas-playground-header p,
+  .atlas-playground .atlas-explore-status,
+  .atlas-playground .atlas-explore-subtitle,
+  .rst-content .atlas-playground .atlas-explore-card dt,
+  .atlas-explore-card dt,
+  .atlas-playground .atlas-quiz-intro,
+  .atlas-playground .atlas-quiz-progress,
+  .atlas-playground .atlas-control-label,
+  .atlas-playground .atlas-preset-group-label,
+  .atlas-preset span {
+    color: var(--atlas-muted);
+  }
+
+  .atlas-explore-form input,
+  .atlas-quiz-choice,
+  .atlas-explore-open {
+    background: var(--atlas-surface);
+    border-color: #4f6876;
+    color: var(--atlas-ink);
+  }
+
+  .atlas-quiz-choice:hover:not(:disabled),
+  .atlas-quiz-choice:focus-visible,
+  .atlas-explore-open:hover:not(:disabled) {
+    background: var(--atlas-surface-2);
+  }
+
+  .atlas-quiz-choice[data-state="right"] {
+    background: #143a30;
+    border-color: #6cc5b4;
+    color: #c9efe6;
+  }
+
+  .atlas-quiz-choice[data-state="wrong"] {
+    background: #3f1c1c;
+    border-color: #e08b8b;
+    color: #f6cfcf;
+  }
+
+  .atlas-preset[aria-pressed="true"] {
+    border-color: #3f7d9c;
+    box-shadow: inset 3px 0 var(--atlas-blue);
+  }
+
+  .atlas-playground-workspace {
+    border-color: var(--atlas-line);
+  }
+
+  html .rst-content div.atlas-playground div.atlas-playground-header p > kbd {
+    background: var(--atlas-surface-2);
+    color: var(--atlas-ink);
+  }
+
+  html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) .descclassname,
+  html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) .descname,
+  html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) .sig-name {
+    color: var(--atlas-heading);
+  }
+
+  .rst-content a.atlas-recipe-launch-primary,
+  .rst-content a.atlas-project-link-primary {
+    color: #fff;
+  }
+
+  .rst-content dl.py dt.sig a,
+  .rst-content dl.py dt.sig a .pre {
+    color: var(--atlas-link);
+  }
+
+  .wy-nav-side {
+    background: #111b22;
+  }
+
+  .wy-menu-vertical li.current {
+    background: #17242d;
+  }
+
+  .wy-menu-vertical li.current a,
+  .wy-menu-vertical li.toctree-l2 a,
+  .wy-menu-vertical li.toctree-l3 a {
+    border-color: var(--atlas-line);
+    color: #c9d6de;
+  }
+
+  .wy-menu-vertical li.current a:hover,
+  .wy-menu-vertical li.toctree-l2.current > a,
+  .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
+    background: #1f303b;
+  }
+
+  .wy-menu-vertical li.on a,
+  .wy-menu-vertical li.current > a,
+  .wy-menu-vertical li.toctree-l1.current > a {
+    background: var(--atlas-page);
+    border-color: var(--atlas-line);
+    color: #fff;
+  }
+
+  .rst-content table.docutils caption,
+  .rst-content table.docutils caption .caption-text {
+    color: var(--atlas-ink);
+  }
+
+  .rst-content .admonition.note,
+  .rst-content .admonition.tip,
+  .rst-content .admonition.atlas-quick {
+    background: var(--atlas-surface);
+  }
+
+  .rst-content .admonition.atlas-quick > .admonition-title {
+    background: #1f5a52;
+  }
+
+  html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt,
+  html.writer-html5 .rst-content dl[class]:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) dl:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) > dt {
+    background: var(--atlas-surface-2);
+    border-color: #3f7d9c;
+    color: var(--atlas-ink);
+  }
+
+  .rst-content .highlight .linenos,
+  .rst-content .linenos {
+    color: #8b949e;
+  }
 }

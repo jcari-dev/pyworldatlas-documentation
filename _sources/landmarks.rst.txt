@@ -12,7 +12,7 @@ scheduled passenger flights and every site on the UNESCO World Heritage List.
       >>> from pyworldatlas import Atlas
       >>> with Atlas() as atlas:
       ...     print(atlas.airport("LHR"))
-      ...     print(atlas.world_heritage_sites_near("Cusco", limit=1)[0].site.name)
+      ...     print(atlas.heritage_sites_near("Cusco", limit=1)[0].site.name)
       LHR · London Heathrow Airport (GB)
       Historic centre of Cusco
 
@@ -45,7 +45,7 @@ World Heritage sites
 
 :meth:`~pyworldatlas.Atlas.world_heritage_sites` lists sites in list order,
 with the year each was inscribed and whether it was chosen for cultural or
-natural value, or both. :meth:`~pyworldatlas.Atlas.world_heritage_sites_near`
+natural value, or both. :meth:`~pyworldatlas.Atlas.heritage_sites_near`
 finds the sites closest to any city, place, or coordinate:
 
 .. doctest::
@@ -53,7 +53,7 @@ finds the sites closest to any city, place, or coordinate:
    >>> site = atlas.world_heritage_site("Machu Picchu")
    >>> site.name, site.category, site.inscribed
    ('Historic Sanctuary of Machu Picchu', 'mixed', 1983)
-   >>> nearest = atlas.world_heritage_sites_near("Cusco", limit=2)
+   >>> nearest = atlas.heritage_sites_near("Cusco", limit=2)
    >>> 274 in [item.site.site_id for item in nearest]
    True
    >>> atlas.close()

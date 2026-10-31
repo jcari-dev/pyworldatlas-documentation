@@ -5,7 +5,7 @@ PyWorldAtlas
 
    .. container:: atlas-hero-text
 
-      :atlas-kicker:`Offline · source-aware · made for learning`
+      :atlas-kicker:`Offline · no account · made for learning`
 
       .. container:: atlas-hero-title
 
@@ -14,21 +14,15 @@ PyWorldAtlas
       .. container:: atlas-hero-copy
 
          Every country, 200,000 places, the sun, statistics since 1960, and 3D
-         maps. Free, no account, and it works without internet.
+         maps. Free, and it works without internet.
 
       .. raw:: html
 
-         <form class="atlas-hero-search" action="playground.html" method="get" role="search">
-           <label class="visually-hidden" for="atlas-hero-query">Look up a country or place</label>
-           <input id="atlas-hero-query" name="q" type="search" autocomplete="off"
-                  placeholder="Look up anything: Japan, Everest, Sahara…" required>
-           <button type="submit">Explore</button>
-         </form>
-         <p class="atlas-hero-try">Try
-           <a href="playground.html?q=Japan">Japan</a>,
-           <a href="playground.html?q=Mount%20Everest">Mount Everest</a>, or
-           <a href="playground.html?q=Lake%20Titicaca">Lake Titicaca</a>.
-           Opens the playground, which runs Python in your browser.</p>
+         <nav class="atlas-project-links" aria-label="Get started">
+           <a class="atlas-project-link atlas-project-link-primary" href="playground.html">Try it in your browser</a>
+           <a class="atlas-project-link" href="quickstart.html">Quickstart</a>
+           <a class="atlas-project-link" href="api.html">API reference</a>
+         </nav>
 
    .. container:: atlas-hero-map
 
@@ -36,329 +30,105 @@ PyWorldAtlas
          :alt: PyWorldAtlas Standard 3D elevation map of Iceland
          :target: maps.html
 
-**Documented version:** 0.12.1 | **Dataset:** 2026.10.27.1 |
-**Python:** 3.10–3.14 | **Profiles:** 248
-
-.. raw:: html
-
-   <nav class="atlas-project-links" aria-label="PyWorldAtlas links">
-     <a class="atlas-project-link atlas-project-link-primary" href="playground.html">Open playground</a>
-     <a class="atlas-project-link" href="maps.html">3D maps</a>
-     <a class="atlas-project-link" href="api.html">API reference</a>
-     <a class="atlas-project-link" href="https://github.com/jcari-dev/pyworldatlas">GitHub</a>
-     <a class="atlas-project-link" href="https://pypi.org/project/pyworldatlas/">PyPI</a>
-   </nav>
-
-.. container:: atlas-stat-grid
-
-   .. container:: atlas-stat
-
-      **248**
-
-      country and area profiles
-
-   .. container:: atlas-stat
-
-      **200,000**
-
-      places built in, 11 million with packs
-
-   .. container:: atlas-stat
-
-      **0**
-
-      runtime dependencies
-
-Start here
-----------
-
-.. raw:: html
-
-   <div class="atlas-doors">
-     <a class="atlas-door" href="playground.html">
-       <span class="atlas-door-icon" aria-hidden="true">🧒</span>
-       <strong>I'm a student</strong>
-       <span>Look things up, take a quiz, and try changing a little Python in your browser. No install.</span>
-     </a>
-     <a class="atlas-door" href="teaching.html">
-       <span class="atlas-door-icon" aria-hidden="true">🍎</span>
-       <strong>I'm a teacher</strong>
-       <span>Quizzes and flashcards that are the same for the whole class, lesson ideas, and offline use.</span>
-     </a>
-     <a class="atlas-door" href="quickstart.html">
-       <span class="atlas-door-icon" aria-hidden="true">💻</span>
-       <strong>I'm a developer</strong>
-       <span>Install with pip, zero dependencies, typed and tested. Quickstart and full API reference.</span>
-     </a>
-   </div>
-
-Open the terrain
-----------------
-
-.. container:: atlas-map-showcase
-
-   .. image:: /_static/iceland-rotation.gif
-      :alt: Animated PyWorldAtlas Standard 3D elevation map of Iceland
-      :target: maps.html
-
-   .. container:: atlas-map-showcase-copy
-
-      **Iceland in the Standard map edition.** This complete turn is rendered
-      from the package's real Plotly figure, with the coastline, Reykjavík, a
-      river overlay, elevation scale, terrain-height and label controls, and
-      source notes. Select it for the complete map guide.
-
-.. code-block:: python
-
-   from pyworldatlas import Atlas
-
-   with Atlas() as atlas:
-       atlas.map("Iceland").show(auto_rotate=True)
-
-The map opens as a rotatable local browser view. Play or pause automatic
-rotation, change its speed, switch between Elevation and Climate, or download a
-high-resolution PNG. Add maps once with ``pyworldatlas get maps``; no extra
-Python packages are needed.
-
-A small taste of the atlas
---------------------------
-
-.. container:: atlas-flag-row
-
-   - |flag-br| Brazil
-   - |flag-jp| Japan
-   - |flag-ch| Switzerland
-   - |flag-cn| China
-   - |flag-fr| France
-   - |flag-ae| United Arab Emirates
-
-Flag values are Unicode regional-indicator emoji derived from each alpha-2
-code. The row above uses local documentation artwork for consistent display;
-see :doc:`discovery` for the exact API and rendering contract.
-
-Start with something interesting
---------------------------------
-
-.. doctest::
-
-   >>> from pyworldatlas import Atlas
-   >>> with Atlas() as atlas:
-   ...     brazil = atlas.country("Brazil")
-   ...     print(brazil.flag, brazil.name_in("pt"), "|", brazil.capital.name)
-   ...     print(brazil.highest_point.name, f"{brazil.highest_point.elevation_m:,.0f} m")
-   ...     print(", ".join(river.name for river in brazil.rivers[:3]))
-   ...     print(brazil.climate.dominant_zone.code, brazil.climate.dominant_zone.name)
-   🇧🇷 Brasil | Brasília
-   Pico da Neblina 2,994 m
-   Amazon, Río de la Plata/Paraná, Tocantins
-   Aw Tropical, savannah
-
-The installed wheel contains ordinary Python source and one read-only database.
-Constructing :class:`~pyworldatlas.Atlas` never contacts a server and does not
-load every country into memory.
-
-.. _explore-the-atlas:
-
-Explore the atlas
------------------
-
-.. container:: atlas-card-grid
-
-   .. container:: atlas-card atlas-card-blue
-
-      .. rubric:: Meet a country
-
-      Combine local names, flag emoji, capital, anthem title, motto, demonym,
-      currency, languages, timezones, and source references in one typed
-      profile. Start with :doc:`country_profile`.
-
-   .. container:: atlas-card atlas-card-teal
-
-      .. rubric:: Explore the physical world
-
-      Read coastlines, area components, elevation extremes, source-listed
-      rivers and lakes, and represented Köppen-Geiger classes. Visit
-      :doc:`physical_geography`.
-
-   .. container:: atlas-card atlas-card-blue
-
-      .. rubric:: Open the terrain
-
-      Launch an offline, rotatable country surface with elevation, climate,
-      rivers, and the capital in one call. See :doc:`maps`.
-
-   .. container:: atlas-card atlas-card-gold
-
-      .. rubric:: Measure between places
-
-      Calculate great-circle distance, initial bearing, and spherical midpoint
-      from cities, capitals, countries, or coordinates. Try
-      :doc:`coordinates_distances`.
-
-   .. container:: atlas-card atlas-card-blue
-
-      .. rubric:: Find any place on Earth
-
-      Search 200,000 towns, mountains, lakes, rivers, and landmarks by local or
-      English name, or 11 million with packs, and list what is nearby. See
-      :doc:`places`.
-
-   .. container:: atlas-card atlas-card-teal
-
-      .. rubric:: The world in numbers
-
-      Follow population, life expectancy, forest area, electricity, and more
-      since 1960, with one-line charts. See :doc:`statistics`.
-
-   .. container:: atlas-card atlas-card-gold
-
-      .. rubric:: Sun, seasons, and travel
-
-      Work out sunrise and day length anywhere, see why seasons happen, and
-      check plugs, mains power, and driving side. See :doc:`sun` and
-      :doc:`reference_facts`.
-
-   .. container:: atlas-card atlas-card-blue
-
-      .. rubric:: Airports and World Heritage
-
-      Look up airports by code and find the World Heritage sites near any
-      place. See :doc:`landmarks`.
-
-   .. container:: atlas-card atlas-card-teal
-
-      .. rubric:: Follow land connections
-
-      Discover reviewed neighbors, shared neighbors, shortest land-border
-      paths, crossings, and connected components in :doc:`borders`.
-
-   .. container:: atlas-card atlas-card-gold
-
-      .. rubric:: Discover and compare
-
-      Compose exact filters, inspect nearby capitals, and rank sourced or
-      transparently derived values with :doc:`rankings`.
-
-   .. container:: atlas-card atlas-card-blue
-
-      .. rubric:: Teach and learn
-
-      Create flashcards, multiple-choice quizzes about countries and famous
-      places, antipodes, and discovery cards with :doc:`learning` and
-      :doc:`discovery`.
-
-   .. container:: atlas-card atlas-card-teal
-
-      .. rubric:: Search and reuse data
-
-      Combine ranked text search with exact profile filters, then export typed
-      results as portable dictionaries or JSON. See :doc:`searching` and
-      :doc:`serialization`.
-
-Choose your next step
----------------------
-
-.. container:: atlas-card-grid
-
-   .. container:: atlas-card atlas-card-blue
-
-      .. rubric:: New to PyWorldAtlas?
-
-      Follow the concise :doc:`quickstart` to install the package, open an
-      atlas, and make your first useful queries.
-
-   .. container:: atlas-card atlas-card-teal
-
-      .. rubric:: Want to try it first?
-
-      Open the :doc:`playground` and run the package in your browser with no
-      local setup.
-
-   .. container:: atlas-card atlas-card-gold
-
-      .. rubric:: Ready to build?
-
-      Copy a complete program from :doc:`recipes` or browse the focused guides
-      in the **Explore the atlas** section of the navigation.
-
-What is bundled
----------------
-
-.. list-table:: Dataset 2026.10.27.1
-   :header-rows: 1
-   :widths: 62 38
-
-   * - Records
-     - Coverage
-   * - Countries and areas
-     - 248
-   * - Primary capitals
-     - 241 / 248
-   * - Populated places
-     - 6,265
-   * - Selected local-language identities
-     - 248 / 248
-   * - Sourced English formal names
-     - 240 / 248
-   * - Anthem titles
-     - 234 / 248
-   * - Reviewed source-listed mottos
-     - 32 / 248
-   * - Travel basics (plugs, mains supply, driving side)
-     - 245 / 248
-   * - English demonym profiles
-     - 227 / 248
-   * - Country timezone profiles
-     - 246 / 248, 417 records
-   * - Country-language metadata
-     - 722 records across 245 profiles
-   * - Reviewed land-border relationships
-     - 319
-   * - Total-area profiles
-     - 248 / 248
-   * - Land area and coastline
-     - 238 / 248 each
-   * - Highest and lowest points
-     - 240 / 248 each
-   * - Source-listed river records
-     - 188 across 80 profiles
-   * - Source-listed lake records
-     - 187 across 69 profiles
-   * - Plain-language climate summaries
-     - 240 / 248
-   * - Köppen-Geiger climate profiles
-     - 241 / 248
-   * - Overview and Standard 3D maps
-     - 248 / 248 each
-
-Designed for exploration
-------------------------
-
-PyWorldAtlas supports exact lookup and ranked search, immutable typed models,
-Unicode local names and flag emoji, WGS84 coordinates, distance/bearing/midpoint
-calculations, deterministic samples and flashcards, land-border paths, profile
-filters, physical-feature searches, rankings, nearest-capital queries, and
-optional offline 3D maps.
-Public results serialize to JSON-compatible dictionaries without losing their
-source context.
-
-Educational scope
------------------
-
-PyWorldAtlas provides offline factual geography for education and reference.
-It does not provide political commentary or opinion. Values follow documented
-source conventions, missing data remains explicit, and every field family has
-a defined source role and publication boundary. Read :doc:`educational_principles`
-for the formal policy and :doc:`data_sources` for exact provenance.
-
-Install
--------
+248 countries and areas · 200,000 places · 0 dependencies · Python 3.10 to
+3.14 · version 0.13.0
+
+Start in three lines
+--------------------
 
 .. code-block:: console
 
    python -m pip install pyworldatlas
 
-The current source checkout can be installed with ``python -m pip install -e .``.
+.. rst-class:: atlas-try-these
+
+.. doctest::
+
+   >>> from pyworldatlas import Atlas
+   >>> atlas = Atlas()
+   >>> print(atlas.border_path("Portugal", "Poland"))
+   Portugal → Spain → France → Germany → Poland (4 border crossings)
+
+Lost? ``atlas.help()`` prints a dozen more things to try.
+
+Pick your path
+--------------
+
+.. raw:: html
+
+   <div class="atlas-doors">
+     <a class="atlas-door" href="playground.html">
+       <strong>I'm a student</strong>
+       <span>Look things up, take a quiz, and change a little Python in your browser. No install.</span>
+     </a>
+     <a class="atlas-door" href="teaching.html">
+       <strong>I'm a teacher</strong>
+       <span>Quizzes that are the same for the whole class, lesson ideas, and offline use.</span>
+     </a>
+     <a class="atlas-door" href="quickstart.html">
+       <strong>I'm a developer</strong>
+       <span>Zero dependencies, typed and tested. Quickstart and the full API reference.</span>
+     </a>
+   </div>
+
+.. _explore-the-atlas:
+
+Try these
+---------
+
+Find anything by name:
+
+.. rst-class:: atlas-try-these
+
+.. doctest::
+
+   >>> atlas.find("Kilimanjaro", limit=1)
+   (Place(english_name='Mount Kilimanjaro', kind='mountain', country_code='TZ'),)
+
+Measure the world:
+
+.. rst-class:: atlas-try-these
+
+.. doctest::
+
+   >>> print(atlas.distance_between("Paris", "Tokyo"))
+   9,713 km
+
+Quiz yourself:
+
+.. rst-class:: atlas-try-these
+
+.. doctest::
+
+   >>> print(atlas.quiz("capitals", region="Western Europe")[0])
+   What is the capital of Switzerland?  1) Monaco  2) Bern  3) Amsterdam  4) Berlin
+
+Rank countries:
+
+.. rst-class:: atlas-try-these
+
+.. doctest::
+
+   >>> print(atlas.rank("coastline", limit=1)[0])
+   #1 Canada: 202,080 km
+
+See the terrain in 3D, after ``pyworldatlas get maps``:
+
+.. code-block:: python
+
+   atlas.map("Iceland").show(auto_rotate=True)
+
+.. image:: /_static/iceland-rotation.gif
+   :alt: Animated PyWorldAtlas Standard 3D elevation map of Iceland
+   :target: maps.html
+
+.. testcleanup::
+
+   atlas.close()
+
+Every guide is in the menu, from :doc:`country_profile` to :doc:`statistics`.
+To learn where the data comes from, read :doc:`why`, :doc:`data_sources`, and
+:doc:`educational_principles`.
 
 .. toctree::
    :hidden:
@@ -375,6 +145,8 @@ The current source checkout can be installed with ``python -m pip install -e .``
    :caption: Examples and learning
 
    learning
+   quests
+   cheatsheet
    teaching
    recipes
 
@@ -418,4 +190,5 @@ The current source checkout can be installed with ``python -m pip install -e .``
    :caption: Reference
 
    api
+   glossary
    changelog

@@ -35,7 +35,7 @@ one is in the accepted source layer.
    >>> brazil = atlas.country("Brazil")
    >>> (brazil.motto.text, brazil.motto.english_text, brazil.motto.language_code)
    ('Ordem e Progresso', 'Order and Progress', 'pt')
-   >>> atlas.country("China").motto is None
+   >>> atlas.country("Iceland").motto is None
    True
 
 Motto coverage is deliberately conservative. The model calls these

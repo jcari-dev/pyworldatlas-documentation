@@ -55,18 +55,21 @@ the value for a year. Each value knows its unit and year:
    >>> str(atlas.statistic("Brazil", "urban_population", 1960))
    '44.7% of people (1960)'
 
-Sorting
+Ranking
 -------
 
-:meth:`~pyworldatlas.Atlas.sort_by_statistic` lists countries by one
-indicator. Sorting only orders the published numbers; it does not say which
-is better.
+:meth:`~pyworldatlas.Atlas.rank` ranks countries by any indicator, the same
+way it ranks area or coastline. Without a ``year`` each country uses its latest
+published value, and every row says which year that is. Ranking only orders
+the published numbers; it does not say which is better.
 
 .. doctest::
 
-   >>> top = atlas.sort_by_statistic("forest_area", limit=3)
-   >>> all(item.value > 90 for item in top)
+   >>> top = atlas.rank("forest_area", limit=3)
+   >>> all(row.value > 90 for row in top)
    True
+   >>> top[0].unit, top[0].source.startswith("World Bank")
+   ('% of land', True)
    >>> [indicator.key for indicator in atlas.indicators()][:3]
    ['birth_rate', 'death_rate', 'drinking_water']
    >>> atlas.close()
@@ -82,6 +85,38 @@ From the command line:
    $ pyworldatlas stat Japan life_expectancy
    Life expectancy at birth in Japan rose from 67.7 years in 1960 to 84.0 years in 2024.
    1960 ▁▂▃▃▃▄▄▅▅▅▆▆▆▇▇▇▇▇████ 2024
+
+On a world map
+--------------
+
+:meth:`~pyworldatlas.Atlas.world_map` colors every country by one
+indicator, using each country's latest value or the value for one year. It
+needs a map pack as well (``pyworldatlas get maps-lite``). Countries fall into
+five classes that each hold about the same number of countries, from light
+(smaller numbers) to dark (larger numbers). Countries without a value are
+hatched and marked "No data".
+
+.. doctest::
+
+   >>> atlas = Atlas()
+   >>> world = atlas.world_map("life_expectancy")
+   >>> world.title
+   'Life expectancy at birth (years), latest year'
+   >>> world.to_svg().startswith("<svg")
+   True
+   >>> atlas.close()
+
+``show()`` opens the map in your browser, ``write_html()`` saves a page with
+the map and a table of every value, and ``write_svg()`` saves just the image.
+In a notebook the map displays on its own. Hover over a country to see its
+value and year. The map is drawn with plain SVG on the Equal Earth
+projection, which keeps every country's area in proportion; nothing is
+downloaded when it opens.
+
+.. code-block:: console
+
+   $ pyworldatlas world-map forest_area
+   $ pyworldatlas world-map population --year 2000 --output population-2000.html
 
 How the numbers are kept
 ------------------------

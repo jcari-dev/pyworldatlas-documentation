@@ -114,8 +114,8 @@ with Atlas() as atlas:
 with Atlas() as atlas:
     for query, language in [
         ("Dominican Republic", "es"),
-        ("China", "zh"),
-        ("India", "hi"),
+        ("Mongolia", "mn"),
+        ("Nepal", "ne"),
         ("Japan", "ja"),
     ]:
         country = atlas.country(query)
@@ -157,7 +157,7 @@ with Atlas() as atlas:
 
 with Atlas() as atlas:
     origin = atlas.city("Santo Domingo", country="DO")
-    nearby = atlas.nearest_capitals(origin, limit=8)
+    nearby = atlas.capitals_near(origin, limit=8)
 
     print(f"NEAREST CAPITALS TO {origin.name.upper()}")
     for number, place in enumerate(nearby, 1):
@@ -174,7 +174,7 @@ with Atlas() as atlas:
       code: `from pyworldatlas import Atlas
 
 with Atlas() as atlas:
-    path = atlas.border_path("Portugal", "China")
+    path = atlas.border_path("Portugal", "Poland")
     print(" → ".join(path.names))
     print(f"\\nFewest reviewed land-border crossings: {path.crossings}")
 
@@ -190,8 +190,8 @@ with Atlas() as atlas:
       code: `from pyworldatlas import Atlas
 
 with Atlas() as atlas:
-    amazon = atlas.countries_with_river("Amazon")
-    geneva = atlas.countries_with_lake("Geneva")
+    amazon = atlas.countries(river="Amazon")
+    geneva = atlas.countries(lake="Geneva")
 
     print("Countries linked to the source-listed Amazon:")
     print("  " + " → ".join(country.name for country in amazon))
@@ -259,7 +259,7 @@ with Atlas() as atlas:
     for city in matches:
         print(f"  {city.label:<30} {city.coordinates.format()}")
 
-    nearby = atlas.nearest_cities(
+    nearby = atlas.cities_near(
         "Santo Domingo",
         origin_country="DO",
         within_country="DO",
@@ -374,7 +374,7 @@ with Atlas() as atlas:
       code: `from pyworldatlas import Atlas
 
 with Atlas() as atlas:
-    for name in ("Japan", "United Kingdom", "Brazil", "India", "Kenya"):
+    for name in ("Japan", "United Kingdom", "Brazil", "Canada", "Kenya"):
         country = atlas.country(name)
         if country.travel:
             print(f"{country.flag} {country.name:<15} {country.travel.summary}")`,
@@ -387,9 +387,9 @@ with Atlas() as atlas:
       code: `from pyworldatlas import Atlas
 
 with Atlas() as atlas:
-    for query in ("Georgia", "Victoria", "Amazon"):
+    for query in ("Luxembourg", "Victoria", "Titicaca"):
         print(f"{query}:")
-        for result in atlas.lookup(query, limit=4):
+        for result in atlas.find(query, limit=4):
             print(f"  {result}")`,
     },
     {
@@ -682,6 +682,20 @@ with Atlas() as atlas:
     }
   }
 
+  // Code sent from a "Try it" link on another page, carried in the URL hash so
+  // it never reaches a server.
+  function requestedExample() {
+    return new URLSearchParams(window.location.hash.slice(1)).get("example");
+  }
+
+  function loadExample(code) {
+    editor.value = code;
+    filename.textContent = "example.py";
+    for (const button of presetsElement.querySelectorAll("button")) {
+      button.setAttribute("aria-pressed", "false");
+    }
+  }
+
   function renderPresets() {
     const categories = [...new Set(presets.map((preset) => preset.category))];
     for (const category of categories) {
@@ -903,10 +917,16 @@ with Atlas() as atlas:
     const requested = presets.find((preset) => preset.id === parameters.get("recipe"));
     if (requested) {
       selectPreset(requested, false);
+    } else if (parameters.get("example")) {
+      loadExample(parameters.get("example"));
     }
   });
 
   renderPresets();
-  selectPreset(selectedPreset, false);
+  if (requestedExample()) {
+    loadExample(requestedExample());
+  } else {
+    selectPreset(selectedPreset, false);
+  }
   createWorker();
 })();

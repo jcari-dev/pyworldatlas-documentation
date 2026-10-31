@@ -6,7 +6,7 @@ pipeline downloads raw snapshots, records checksums, normalizes independent
 records, validates them, and generates the SQLite database. The installed
 runtime never contacts these services.
 
-The 0.12 core uses dataset ``2026.10.27.1``. Optional map editions add
+The 0.13 core uses dataset ``2026.10.27.1``. Optional map editions add
 separately installed, integrity-checked visualization records derived from
 pinned elevation, climate, outline, and river snapshots. Neither the core nor
 the installed map viewer contacts a source service at runtime.
@@ -452,7 +452,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.12.1 release
+Source priority in the 0.13.0 release
 -------------------------------------
 
 .. list-table::
