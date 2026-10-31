@@ -1,4 +1,4 @@
-# PyWorldAtlas 0.13.0
+# PyWorldAtlas 0.13.1
 
 > PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, a searchable school atlas of 200,000 places (11 million with packs), physical geography, climate classes, reviewed land borders, travel basics, sunrise and day length, distances, quizzes, and optional packs for 3D maps, airports and World Heritage sites, and World Bank statistics since 1960. It has no core runtime dependencies, needs no API key, and never uses the network at runtime. It is built to fit the 512 MB of a Raspberry Pi Zero 2 W.
 

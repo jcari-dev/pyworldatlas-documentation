@@ -4,6 +4,16 @@ Changelog
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
 
+0.13.1
+------
+
+A fix for printing results on Windows.
+
+- **Fixed:** printing a result such as a border path no longer fails on
+  Windows when a script's output is saved to a file or piped to another
+  program. If the output cannot show symbols such as ``→`` and ``°``, it
+  switches to UTF-8, as the ``pyworldatlas`` command already does.
+
 0.13.0
 ------
 

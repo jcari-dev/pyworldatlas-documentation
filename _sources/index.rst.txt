@@ -31,7 +31,7 @@ PyWorldAtlas
          :target: maps.html
 
 248 countries and areas · 200,000 places · 0 dependencies · Python 3.10 to
-3.14 · version 0.13.0
+3.14 · version 0.13.1
 
 Start in three lines
 --------------------

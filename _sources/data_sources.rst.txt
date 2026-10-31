@@ -452,7 +452,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.13.0 release
+Source priority in the 0.13.1 release
 -------------------------------------
 
 .. list-table::

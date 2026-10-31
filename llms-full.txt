@@ -1,4 +1,4 @@
-# PyWorldAtlas 0.13.0 documentation
+# PyWorldAtlas 0.13.1 documentation
 
 PyWorldAtlas is an offline world-geography Python package built around one bundled, source-aware database: country profiles, names, capitals, cities, a searchable school atlas of 200,000 places (11 million with packs), physical geography, climate classes, reviewed land borders, travel basics, sunrise and day length, distances, quizzes, and optional packs for 3D maps, airports and World Heritage sites, and World Bank statistics since 1960. It has no core runtime dependencies, needs no API key, and never uses the network at runtime. It is built to fit the 512 MB of a Raspberry Pi Zero 2 W.
 
@@ -166,7 +166,7 @@ keeps that session alive while you explore.
 
 What is running?
 
-This is the real pyworldatlas==0.13.0 wheel published on PyPI, not a
+This is the real pyworldatlas==0.13.1 wheel published on PyPI, not a
 JavaScript imitation or a remote demonstration API. Pyodide runs CPython in
 WebAssembly, while a module Web Worker keeps execution away from the page’s
 interface. After startup, country queries read the same bundled SQLite database
@@ -363,13 +363,13 @@ Install the built wheel offline
 
 Test the exact release artifact without consulting a package index:
 
-python -m pip install --no-index --no-deps dist/pyworldatlas-0.13.0-py3-none-any.whl
+python -m pip install --no-index --no-deps dist/pyworldatlas-0.13.1-py3-none-any.whl
 
 Verify the installation
 
 >>> import pyworldatlas
 >>> pyworldatlas.__version__
-'0.13.0'
+'0.13.1'
 >>> from pyworldatlas import Atlas
 >>> with Atlas() as atlas:
 ...     print(atlas.country("DO").capital.name)
@@ -5000,7 +5000,7 @@ provenance, coverage, and freshness limits of their underlying profile fields.
 Neighbor and border-count flashcards are calculated from the reviewed graph and
 introduce no additional border claims.
 
-Source priority in the 0.13.0 release
+Source priority in the 0.13.1 release
 
 
 
@@ -5575,7 +5575,7 @@ Project status
 This page is generated from the validated build report. It is a compact
 snapshot of the package, dataset, and coverage that ship together.
 
-0.13.0
+0.13.1
 
 library version
 
@@ -10121,6 +10121,15 @@ Changelog
 
 This record summarizes user-visible package, data, documentation, and release
 changes. The newest published release appears first.
+
+0.13.1
+
+A fix for printing results on Windows.
+
+Fixed: printing a result such as a border path no longer fails on
+Windows when a script’s output is saved to a file or piped to another
+program. If the output cannot show symbols such as → and °, it
+switches to UTF-8, as the pyworldatlas command already does.
 
 0.13.0
 
